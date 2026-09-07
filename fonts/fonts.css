@@ -1,0 +1,66 @@
+/* Selbst gehostete Schriften fuer machsleicht.de — ersetzt Google Fonts.
+ *
+ * ANLASS (06.09.2026)
+ * 170 ausgelieferte Seiten luden DM Sans und Fraunces von fonts.googleapis.com;
+ * dabei geht die IP jedes Besuchers an Google. Die Datenschutzerklaerung legt das
+ * offen und stuetzt es auf Art. 6 Abs. 1 lit. f (berechtigtes Interesse) — nur liegt
+ * im selben Repo der Beweis, dass die Alternative trivial ist: der party-worker
+ * hostet GENAU DIESE ZWEI Schriften seit dem 16.07. selbst, live verifiziert.
+ * Die Umstellung wurde einmal gemacht und nie auf die Hauptseite uebertragen.
+ *
+ * Die Deklarationen sind woertlich die aus party-worker.js:1234 — dort seit Monaten
+ * in Produktion. Beide Dateien sind Variable Fonts, eine Deklaration deckt deshalb
+ * den ganzen Gewichtsbereich ab (die Google-Links forderten je nach Seite 400-900).
+ *
+ * WICHTIG bei kuenftigen Seiten: Es reicht NICHT, den Stylesheet-Link zu tauschen.
+ * Die beiden <link rel="preconnect">-Zeilen auf fonts.googleapis.com und
+ * fonts.gstatic.com muessen mit raus — ein preconnect baut DNS/TCP/TLS auf und
+ * uebertraegt die IP auch dann, wenn keine Schrift mehr von dort kommt. Wer nur den
+ * Stylesheet tauscht, hat die Schrift lokal und den Kontakt trotzdem.
+ *
+ * baloo2.woff2 liegt daneben, wird aber nur vom Worker (Gaesteseite) gebraucht und
+ * hier bewusst nicht deklariert — eine ungenutzte Deklaration laedt zwar nichts,
+ * behauptet aber eine Verwendung, die es nicht gibt.
+ */
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url(/fonts/dmsans.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/fraunces.woff2) format('woff2');
+}
+
+/* 07.09.2026 — Nachtrag: Lilita One + Nunito (nur der Planer /kindergeburtstag nutzt sie).
+ * Sie waren am 06.09. die einzige verbliebene Google-Verbindung der ganzen Seite. Bolle hat
+ * das Beschaffen ausdruecklich freigegeben; beide stehen unter der SIL Open Font License 1.1
+ * und duerfen selbst gehostet werden.
+ * Nunito ist ein Variable Font: Google liefert fuer 400, 600, 700 UND 800 dieselbe Datei
+ * (XRXV3I6Li01BKofINeaB.woff2, per CSS-API nachgeprueft) — eine Deklaration mit Bereich
+ * deckt deshalb alle vier im Planer benutzten Gewichte ab. Lilita One hat nur einen Schnitt.
+ * Subset: latin (U+0000-00FF) — deckt Deutsch samt Umlauten und ss ab.
+ */
+
+@font-face {
+  font-family: 'Lilita One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/lilitaone.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(/fonts/nunito.woff2) format('woff2');
+}
