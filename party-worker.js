@@ -383,7 +383,15 @@ export default {
            Treffer (Befund Pruefstand 07.09.). Damit der Deckel nicht jeden Tag dieselben Altbestand-
            Keys frisst, schreibt der Lauf jeden gelesenen Altbestand-Key mit Metadata zurueck (Inhalt
            unveraendert): ab dem naechsten Lauf kostet er keinen Read mehr, nach ceil(N/MAX_READS)
-           Laeufen ist der Altbestand leer. Die Uebergangsluecke bis dahin ist Bolles Entscheidung. */
+           Laeufen ist der Altbestand leer. Uebergangsluecke bis dahin: Bolle 07.09. — im KV liegen
+           nur Testpartys (N << MAX_READS), der erste Lauf liest alles nach, kein Nachhol-Zweig.
+           Nachziehen neben der Live-Seite (Pruefstand 07.09.): (a) Fenster get->put je Altbestand-
+           Party, hoechstens MAX_READS je Lauf, jedes so lang wie ein KV-Put, nur in Uebergangs-
+           laeufen — ein RSVP darin wird von put(raw) ueberschrieben, der Gast antwortet neu
+           (Klasse W10). (b) KV: 1 Write je Sekunde je Key — kollidiert ein Gast-Write mit dem
+           Nachziehen, scheitert einer: unserer -> catch -> fehler++, Party bleibt Altbestand bis
+           zum naechsten Lauf; der Gast-Put (RSVP, ohne try/catch) -> 500 sichtbar, Neuversuch.
+           Kein stiller Verlust auf beiden Wegen. */
         if (geprueft >= MAX_READS) { gecappt = true; break; }
         const raw = await env.PARTY.get(k.name); geprueft++;   // zaehlt den Read, nicht den Parse
         if (!raw) continue;

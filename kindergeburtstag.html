@@ -3353,19 +3353,25 @@ window.plausible.init=function(){};window.plausible.q=[];
        anderer Name oder anderes Motto — oder der Link bringt WENIGER mit, als hier schon liegt
        (Pruefstand 07.09.: Link vor der Namenseingabe angefordert, lokal danach den Namen
        eingetragen -> der benannte Plan wuerde sonst stumm durch den namenlosen ersetzt).
+       Wache davor: ein Plan zaehlt erst mit Name oder Datum. Ein ?motto=dino-Einstieg von einer
+       SEO-Seite speichert per goStage->autoSave {motto, name:""} — ohne diese Wache fragte der
+       naechste fremde Magic-Link nach einem Plan, den nie jemand angefangen hat (Pruefstand 07.09.).
+       Und was die Wache passieren laesst, vergleicht _anders auch: sonst liefe "lokal 15.10. ohne
+       Name, Link Mia + 20.11., gleiches Motto" ohne Rueckfrage durch und das Datum waere weg.
        Im Normalfall (derselbe Plan, anderes Geraet) keine
        Unterbrechung; im Randfall (Handy: Bens Dino-Party angefangen, Laptop-Link: Mias
        Piraten-Plan) kein stiller, unwiderruflicher Verlust. Quelle fuer "was liegt hier" ist
        der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor "Weitermachen" noch
        der Default. */
     const _lokal = window.__resumeSnapshot || ((typeof loadSavedState === 'function') ? loadSavedState() : null);
-    if(_lokal && (_lokal.name || (_lokal.motto && _lokal.motto.id))){
-      const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id;
-      const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '';
-      const _anders = (_ln && _ln !== _kn) || (_lm && _lm !== _km);   // lokal Benanntes, das der Link nicht identisch mitbringt (auch: gar nicht)
+    if(_lokal && (_lokal.name || _lokal.date)){   // Name oder Datum tippt nur ein Mensch — Motto/Alter/Gaeste kommen auch per Link in den Speicher (kein ?datum=-Parameter, Pruefstand 07.09.)
+      const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id, _ld = _lokal.date || '';
+      const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '', _kd = d.date || '';
+      const _anders = (_ln && _ln !== _kn) || (_lm && _lm !== _km) || (_ld && _ld !== _kd);   // lokal Name/Motto/Datum, das der Link nicht identisch mitbringt (auch: gar nicht) — was als Arbeit zaehlt, zaehlt als Unterschied
       if(_anders){
-        const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan';
-        const _linkLabel  = (d.name ? poss(String(d.name).trim()) + ' ' : '') + ((m && m.name) || 'Kindergeburtstags') + '-Plan';
+        const _vom = x => /^\d{4}-\d{2}-\d{2}$/.test(x || '') ? ' vom ' + new Date(x + 'T00:00:00').toLocaleDateString('de-DE', {day:'numeric', month:'long'}) : '';   // Datum im Text: nur so ist \"gleicher Name, anderes Datum\" zu entscheiden
+        const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan' + _vom(_lokal.date);
+        const _linkLabel  = (d.name ? poss(String(d.name).trim()) + ' ' : '') + ((m && m.name) || 'Kindergeburtstags') + '-Plan' + _vom(d.date);
         if(!confirm('Auf diesem Gerät liegt schon ' + _lokalLabel + '.\n\nDurch ' + _linkLabel + ' aus dem Link ersetzen?')){
           showFlash('Dein Plan auf diesem Gerät bleibt unverändert.');
           try{ if(window.plausible) plausible('plan_restore_declined', {}); }catch(e){}
