@@ -356,7 +356,8 @@ export default {
      entschieden, die Funktion zu bauen statt den Text zu streichen.
      Empfaenger: party.email — die Adresse, die der Gastgeber fuer seinen Verwaltungs-Link gab.
      Eine einmalige Erinnerung an die EIGENE Party ist transaktional, kein Newsletter; sie
-     braucht kein separates Opt-in. Idempotent ueber party.reminded7 (Zeitstempel).
+     braucht kein separates Opt-in — Bolle 07.09. (Review M6): Service-Mail, und Datenschutz §11,
+     E-Mail-Feld im Planer und DOI-Mail sagen jetzt genau das. Idempotent ueber party.reminded7.
      Datums-Index: partyOpts() legt party.date als KV-Metadata ab (seit 07.09.); der Lauf liest
      nur Treffer und Altbestand ohne Metadata — den zieht er beim ersten Read nach (s. unten). */
   async scheduled(event, env, ctx) {
@@ -1128,7 +1129,7 @@ export default {
       const newsletterBlock = newsletterOptIn ? `
         <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
         <h2 style="font-size:17px;color:#2D2319;margin:0 0 8px">\u{1F4EC} Newsletter best\u00E4tigen</h2>
-        <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
+        <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag per Mail bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
         <a href="${confirmUrl}" style="display:block;background:#fff;color:#D4812A;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
         <p style="color:#aaa;font-size:11px;line-height:1.5;margin:10px 0 0">Der Link ist 7 Tage g\u00FCltig. Kein Klick = keine Speicherung, kein Newsletter.</p>
       ` : "";
@@ -1259,7 +1260,7 @@ export default {
 
       // Token verbrauchen (Replay-Schutz)
       await env.PARTY.delete(`doi:${token}`);
-      return new Response(doiPage("success","Deine E-Mail-Adresse ist bestätigt. Du bekommst nichts Uninteressantes — nur Tipps zum Kindergeburtstag und eine Erinnerung 7 Tage vorher. Abbestellen jederzeit per Link in jeder Mail."), {headers:{"Content-Type":"text/html;charset=utf-8"}});
+      return new Response(doiPage("success","Deine E-Mail-Adresse ist bestätigt. Du bekommst nichts Uninteressantes — nur Tipps zum Kindergeburtstag. Abbestellen jederzeit per Link in jeder Mail."), {headers:{"Content-Type":"text/html;charset=utf-8"}});
     }
 
     // Frontend: Home
@@ -1638,7 +1639,7 @@ function creatorPage() {
       <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
       <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;cursor:pointer;user-select:none;padding:8px 2px">
         <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#E65100;cursor:pointer">
-        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
+        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
       </label>
       <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
       <p id="editUrl" style="display:none"></p>
@@ -2688,7 +2689,7 @@ async function loadWishes(){
       if(shared){
         sharedMeta='Gemeinsam schenken';
         if(w.claimedCount)sharedMeta+=' ('+w.claimedCount+' dabei';
-        if(collected>0)sharedMeta+=(w.claimedCount?', ':' (')+collected+'\\u20AC gesammelt';
+        if(collected>0)sharedMeta+=(w.claimedCount?', ':' (')+collected+' \\u20AC gesammelt';
         if(w.claimedCount||collected>0)sharedMeta+=')';
       }
       return '<div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">'+escC(w.title)+'</div><div style="font-size:12px;color:var(--m)">'
@@ -2856,7 +2857,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <!-- 07.09.2026: paypalMe war NUR im Alt-Creator setzbar. Der Server nimmt es beim PUT laengst an
            (:517 sanitizePaypal) — es fehlte allein das Feld hier. Ohne dieses Feld haette die Umleitung
            des Alt-Creators das Gemeinschaftsgeschenk still abgeschaltet. -->
-      <div class="field"><label>PayPal für Gemeinschaftsgeschenke <span style="font-weight:400;color:var(--m);font-size:12px">(optional — erscheint bei Wünschen, die als „Gemeinsam“ markiert sind)</span></label><input type="text" id="edPaypal" maxlength="100" placeholder="paypal.me/DeinName" value="${esc(party.paypalMe||'')}"></div>
+      <div class="field"><label>PayPal für Gemeinschaftsgeschenke <span style="font-weight:400;color:var(--m);font-size:12px">(optional — erscheint bei Wünschen, die als „Gemeinsam“ markiert sind und einen Preis haben)</span></label><input type="text" id="edPaypal" maxlength="100" placeholder="paypal.me/DeinName" value="${esc(party.paypalMe||'')}"></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
         <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${fristText(party)} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
