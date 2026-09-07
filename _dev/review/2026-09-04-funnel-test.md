@@ -716,10 +716,24 @@ entschied: 194 − 189 = 5.
 
 **Warum die Fehlmenge gefährlicher ist als die Fehlnull:** ein zu weites Muster fängt zu viel
 und **sieht dabei gründlich aus**. Eine Null macht sofort misstrauisch („habe ich richtig
-gesucht?"), eine zu große Zahl wirkt wie Sorgfalt und wird weitergereicht. Beide Sessions haben
-heute nach oben übertrieben, keine nach unten. Konsequenz: **die kleinere Zahl gewinnt, bis die
-größere begründet ist** — und eine Zahl, die man weitergibt, wird vorher gegengerechnet
-(Differenz aufschlüsseln, nicht nur zählen).
+gesucht?"), eine zu große Zahl wirkt wie Sorgfalt und wird weitergereicht.
+
+**KORRIGIERTE FASSUNG (07.09.) — die erste war eine Übergeneralisierung aus vier Fällen.**
+Am 06.09. zeigten alle vier Fehlmengen nach oben, und wir schlossen daraus „wir übertreiben
+nach oben". Am 07.09. kamen drei Fälle in die Gegenrichtung, alle beim Gegenlesen:
+ein `focus()`-Muster fand **1 statt 9** Treffern (und der eine war zufällig der richtige — mit
+einem zweiten Fall im eingeklappten Bereich wäre eine falsche Entwarnung herausgekommen);
+ein `grep '^2\.'` traf die falsche von zwei Nummerierungen desselben Dokuments; und meine
+Kommentarzeilen-Zählung lag bei 6 statt 5. **Die Richtung hängt am Muster, nicht an uns.**
+
+> **Jede Zahl, die zur Erwartung passt, ist begründungspflichtig — die nach oben fällt nur
+> schneller auf.**
+
+Der Unterschied hat Folgen: Die erste Fassung hätte dazu erzogen, große Zahlen misstrauisch
+zu prüfen und kleine durchzuwinken — genau falsch herum für die drei Fälle vom 07.09. Praxis
+bleibt: eine Zahl, die man weitergibt, vorher gegenrechnen (Differenz aufschlüsseln, nicht nur
+zählen), und bei einem Ergebnis, das die eigene Vermutung bestätigt, **einmal mehr** nachsehen
+statt einmal weniger.
 
 **R-E — Belege mit Adressen, nicht mit Zuständen. Dann verfällt Doku hörbar statt still.**
 Die Synthese des Tages, und sie erklärt fast jeden Doku-Befund rückwirkend. „Produktives
