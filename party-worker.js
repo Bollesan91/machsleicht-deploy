@@ -1246,6 +1246,13 @@ h1,h2,h3{font-family:var(--fd)}
 .motto-chip{padding:8px 14px;border-radius:99px;border:2px solid var(--l);background:var(--card);cursor:pointer;font:500 13px var(--f);color:var(--d);transition:all .2s;white-space:nowrap}
 .motto-chip:hover{border-color:var(--a);background:var(--al)}
 .motto-chip.active{border-color:var(--a);background:var(--a);color:#fff}
+/* 07.09.2026 (G5): Spaeter-Jobs im Leerzustand als Einzeiler. */
+.sp-fold{padding-top:0;padding-bottom:0}
+.sp-fold[open]{padding-bottom:18px}
+.sp-fold__sum{list-style:none;padding:16px 0;margin:0;font-weight:700;display:flex;align-items:center;gap:8px}
+.sp-fold__sum::-webkit-details-marker{display:none}
+.sp-fold__sum::after{content:"▾";margin-left:auto;opacity:.5;transition:transform .15s}
+.sp-fold[open] .sp-fold__sum::after{transform:rotate(180deg)}
 .card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.04);border:1px solid var(--l);margin-top:12px}
 input,textarea{width:100%;padding:10px 14px;border:2px solid var(--l);border-radius:12px;font:400 15px var(--f);color:var(--d);background:#FAFAF5;outline:none;transition:border .2s}
 input:focus,textarea:focus{border-color:var(--a)}
@@ -2612,6 +2619,30 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
     ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
     ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
+    <!-- 07.09.2026 (G5): Die Gaesteliste steht jetzt HIER, unter den Zahlen, die sie erklaert.
+         Vorher zwei Karten: das Status-Grid und daneben eine Badge-Zeile "1 dabei / vielleicht /
+         abgesagt" aus denselben Arrays — zweimal dieselbe Zahl, plus bei 0 Gaesten zwei
+         Leerzustands-Saetze. Die Zeilen bleiben BEWUSST unsortiert: gi ist der Index im
+         Server-Array, geloescht wird nach Index mit Namens-Wache (:551/:555). Eine Sortierung
+         wuerde gi verschieben, die Wache greift, und es wird STILL nichts geloescht. -->
+    ${party.guests.length===0?`<p style="color:var(--m);font-size:13px;text-align:center;padding:12px 0">Noch keine Antworten. Teile den Link!</p>`:""}
+    ${party.guests.map((g,gi)=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
+        <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
+        <div style="flex:1">
+          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
+          ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
+          ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
+        </div>
+        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" data-i="${gi}" style="background:none;border:none;font-size:12px;cursor:pointer;color:var(--m);text-decoration:underline;padding:4px 6px" title="Diesen Eintrag entfernen">entfernen</button>
+      </div>`).join("")}
+    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u201Eentfernen\u201C nimmst du genau diese Zeile heraus und gibst den Platz wieder frei \u2014 andere Eintr\u00E4ge mit demselben Vornamen bleiben stehen.</p>`:""}
+
+    <!-- 07.09.2026 (G5): Link teilen IST der Tag-1-Job und stand bisher als LETZTER Block der
+         Seite. URL im Klartext und der Hinweis auf den Namens-Code gab es nur dort — jetzt hier,
+         direkt bei den Knoepfen, die dasselbe tun. Die untere Karte ist damit entfallen. -->
+    <p style="font-size:12px;color:var(--m);margin-bottom:8px">G\u00E4ste geben \u201E<strong style="color:var(--a)">${name}</strong>\u201C als Code ein.</p>
+      <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
@@ -2654,34 +2685,19 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
   </div>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F465} Gästeliste</h2>
-    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-      <span class="badge success">\u2705 ${ja.length} dabei</span>
-      ${vielleicht.length?`<span class="badge" style="background:#FFF3E0;color:#E65100">\u{1F914} ${vielleicht.length} vielleicht</span>`:""}
-      ${nein.length?`<span class="badge" style="background:#FFEBEE;color:#C62828">\u274C ${nein.length} abgesagt</span>`:""}
-    </div>
-    ${party.guests.length===0?`<p style="color:var(--m);font-size:13px;text-align:center;padding:12px 0">Noch keine Antworten. Teile den Link!</p>`:""}
-    ${party.guests.map((g,gi)=>`
-      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
-        <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
-        <div style="flex:1">
-          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
-          ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
-          ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
-        </div>
-        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" data-i="${gi}" style="background:none;border:none;font-size:12px;cursor:pointer;color:var(--m);text-decoration:underline;padding:4px 6px" title="Diesen Eintrag entfernen">entfernen</button>
-      </div>`).join("")}
-    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u201Eentfernen\u201C nimmst du genau diese Zeile heraus und gibst den Platz wieder frei \u2014 andere Eintr\u00E4ge mit demselben Vornamen bleiben stehen.</p>`:""}
-  </div>
 
-  ${allergies.length?`<div class="card fade-up">
-    <h2 style="font-size:15px;color:#C62828;margin-bottom:12px">\u26A0\uFE0F Allergien-\u00DCbersicht</h2>
-    ${allergies.map(g=>`<div style="padding:6px 0;font-size:14px"><strong>${esc(g.name)}</strong>: ${esc(g.allergies)}</div>`).join("")}
-  </div>`:""}
+  <!-- 07.09.2026 (G5): Allergien-Uebersichtskarte entfernt. Dieselben Name:Allergie-Paare
+       standen bereits im Status-Banner (allergenList) UND inline in jeder Gaestezeile — eine
+       dritte Karte liess die Seite genau in der Phase wachsen, in der der Gastgeber Ueberblick
+       braucht. Gegengeprueft (machsleicht-7b): es gibt keinen Pfad, auf dem sie die einzige
+       Anzeige waere — beide speisen sich aus party.guests, die Liste filtert nicht. -->
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
+  <!-- 07.09.2026 (G5): Beide Bloecke sind Spaeter-Jobs. An Tag 1 will der Gastgeber den Link
+       verschicken und Zusagen sehen — nicht Wuensche pflegen. Im LEERZUSTAND stehen sie als
+       Einzeiler da und klappen auf Klick auf; sobald Inhalt existiert, sind sie offen. Die
+       Formulare bleiben im DOM, addInvite()/addWishEd() greifen unveraendert. -->
+  <details class="card fade-up sp-fold"${(Array.isArray(party.invites)&&party.invites.length)?" open":""}>
+    <summary class="sp-fold__sum" style="font-size:15px;color:${color};cursor:pointer">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></summary>
     <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
@@ -2689,10 +2705,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <button class="btn btn-sm" style="background:${color}" onclick="addInvite()">+ Einladen</button>
     </div>
     <p id="invHint" style="font-size:11px;color:var(--m);margin-top:8px"></p>
-  </div>
+  </details>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
+  <details class="card fade-up sp-fold"${hasWishes?" open":""}>
+    <summary class="sp-fold__sum" style="font-size:15px;color:${color};cursor:pointer">\u{1F381} Wunschliste</summary>
     ${hasWishes?party.wishes.filter(w=>w&&/^[a-z0-9]{1,12}$/.test(String(w.id||""))).map(w=>`
       <div class="wish-item">
         <div style="flex:1">
@@ -2717,7 +2733,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         <label style="display:flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap;color:var(--m)"><input type="checkbox" id="newWishShared"> Gemeinsam</label>
       </div>
       <button class="btn btn-outline btn-sm" onclick="addWishEd()">+ Wunsch hinzuf\u00FCgen</button>
-    </div>
+  </details>
   </div>
   <script>
   function _curWishes(){ return ${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")}; }
@@ -2743,15 +2759,6 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   }
   </script>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F4F2} Link teilen</h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:8px">G\u00E4ste geben \u201E<strong style="color:var(--a)">${name}</strong>\u201C als Code ein.</p>
-    <div class="share-box" style="margin-bottom:10px">
-      <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
-      <button class="btn" style="background:${color}" onclick="shareWA()">\u{1F4F2} Per WhatsApp teilen</button>
-    </div>
-    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink(this)">\u{1F4CB} Link kopieren</button>
-  </div>
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();

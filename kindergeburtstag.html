@@ -44,7 +44,7 @@
     { "@type": "Question", "name": "Welche Spiele eignen sich für welches Alter?", "acceptedAnswer": { "@type": "Answer", "text": "Für 3–5 Jahre einfache Bewegungs- und Suchspiele. Für 6–8 Jahre Rallyes, Bastelstationen und Quiz-Runden. Für 9–12 Jahre Escape-Rooms, Code-Knacken und Team-Wettkämpfe. Jedes Motto bringt eigene, altersgerechte Spiele mit — der Planer blendet aus, was für die Altersgruppe nicht passt." } },
     { "@type": "Question", "name": "Wie viele Kinder soll ich einladen?", "acceptedAnswer": { "@type": "Answer", "text": "Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Snack-Mengen und Kosten passt der Planer automatisch an die Gästezahl an." } },
     { "@type": "Question", "name": "Wie lange sollte ein Kindergeburtstag dauern?", "acceptedAnswer": { "@type": "Answer", "text": "2 Stunden für 3–5-Jährige, rund 3 Stunden für 6–8-Jährige, 3–4 Stunden für 9–12-Jährige. Ein bewährter Rhythmus: 30 Minuten Ankommen, 60–90 Minuten Programm, 30 Minuten Kuchen, 30 Minuten Abschluss. Der Planer erstellt den Zeitplan mit konkreten Uhrzeiten." } },
-    { "@type": "Question", "name": "Was tun, wenn die Kinder zu wild werden?", "acceptedAnswer": { "@type": "Answer", "text": "Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Der Planer hat einen Ruhemodus: Ein Klick tauscht Action-Aktivitäten gegen ruhige Alternativen wie Ausmalen, Rätsel oder Memory, ohne dass der Ablauf zusammenbricht." } },
+    { "@type": "Question", "name": "Was tun, wenn die Kinder zu wild werden?", "acceptedAnswer": { "@type": "Answer", "text": "Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal": weniger Stationen, mehr Luft dazwischen." } },
     { "@type": "Question", "name": "Kindergeburtstag Last Minute — was tun?", "acceptedAnswer": { "@type": "Answer", "text": "Konzentrier dich auf drei Dinge: ein bekanntes Spiel, etwas zu essen, ein kleines Mitgebsel. Mehr braucht es nicht. Der Notfallplan erstellt in 2 Minuten einen funktionierenden Ablauf mit Minimal-Deko, einfachen Aktivitäten und Supermarkt-Kuchen." } },
     { "@type": "Question", "name": "Was brauche ich für einen Kindergeburtstag zuhause?", "acceptedAnswer": { "@type": "Answer", "text": "Deko passend zum Motto (ab etwa 5 Euro), Kuchen oder Muffins, Snacks und Getränke, 2–3 Spiele und kleine Mitgebsel. Mehr ist selten nötig. Der Planer erstellt dir eine Einkaufsliste mit Mengenangaben und Kosten pro Kind, damit nichts Doppeltes im Wagen landet." } },
     { "@type": "Question", "name": "Welche Mottos sind am beliebtesten?", "acceptedAnswer": { "@type": "Answer", "text": "Dauerbrenner sind Piraten und Dino, dazu Einhorn, Feuerwehr, Safari, Weltraum, Detektiv, Prinzessin, Superheld und Meerjungfrau. Weniger überlaufen, aber stark: Dschungel, Feen, Pferde, Ritter und Baustelle. Alle 15 sind im Planer mit fertigem Zeitplan und Spielen hinterlegt." } },
@@ -682,6 +682,19 @@ window.plausible.init=function(){};window.plausible.q=[];
   .pl__title{flex:1;display:flex;flex-direction:column;font-size:14px;font-weight:700;color:#3A2E22;min-width:0}
   .pl__title>span:first-child{overflow:hidden;text-overflow:ellipsis}
   .pl__dur{font-weight:600;font-size:11px;color:#999}
+  /* 07.09.2026 (Funnel-Test G4) — Der Plan startet im LESE-Modus.
+     Gezaehlt wurden am Delight-Peak 31 sichtbare Knoepfe, 21 davon Bearbeiten-Werkzeug an
+     jeder einzelnen Zeile (26x26px, unter der Touch-Norm von 44px). Wer gerade seinen
+     fertigen Plan zum ersten Mal sieht, liest ihn — er sortiert ihn nicht um. Das Werkzeug
+     erscheint erst auf "Plan anpassen". Gedruckt wird immer ohne Werkzeug: die print-Regel versteckt pl__ctrl/pl__add/pl__addrow
+     und seit heute auch den Umschalter selbst (nachgeprueft, nicht angenommen). */
+  .plan-mod:not(.plan-mod--edit) .pl__ctrl,
+  .plan-mod:not(.plan-mod--edit) .pl__add,
+  .plan-mod:not(.plan-mod--edit) .pl__addrow{display:none}
+  .plan-edit-toggle{background:none;border:1px solid #E2D5C4;border-radius:9px;padding:6px 12px;font:inherit;font-size:12px;font-weight:700;color:#8a7a64;cursor:pointer;min-height:34px}
+  .plan-edit-toggle:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00)}
+  .plan-mod--edit .plan-edit-toggle{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
+  .plan-edit-hint{margin-left:8px;font-size:12px;color:#8a7a64}
   .pl__ctrl{flex:0 0 auto;display:flex;gap:2px}
   .pl__ctrl button{width:26px;height:26px;border:1px solid #E2D5C4;background:#fff;border-radius:7px;cursor:pointer;font-size:12px;color:#8a7a64;line-height:1;padding:0;font-family:inherit}
   .pl__ctrl button:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00)}
@@ -697,7 +710,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   @media print{
-    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout-section,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev{display:none!important}
+    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout-section,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev,.plan-edit-toggle,.plan-edit-hint{display:none!important}
     .stage{display:none!important}
     #stage3.revealed{display:block!important}   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
     .plan__edit-btn,.timeline-add,.game-tag{display:none!important}
@@ -922,6 +935,16 @@ window.plausible.init=function(){};window.plausible.q=[];
           <label for="psEmailInput" style="display:block;font-size:13px;font-weight:700;margin:0 0 4px">Deine E-Mail für den Verwaltungs-Link</label>
           <input type="email" id="psEmailInput" placeholder="deine@email.de" autocomplete="email" style="width:100%;padding:11px 12px;border:1px solid #E8D9BC;border-radius:8px;font-size:14px;box-sizing:border-box">
           <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen — 14 Tage nach der Party löscht sich ohnehin alles von selbst. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
+          <!-- 07.09.2026: Newsletter-Opt-in in den Planer geholt (gab es nur im alten Creator).
+               Der sichtbare Text nennt AUSSCHLIESSLICH, was tatsaechlich passiert. Der alte
+               Creator wirbt an derselben Stelle zusaetzlich mit einer terminbezogenen Mail vor
+               der Party — die verschickt keine Maschine (kein Cron im Worker, kein [triggers]
+               in wrangler.toml). Diese Zusage gehoert hier nicht hin, solange das so ist.
+               Unangehakt per Default; die Adresse wird per Double-Opt-In im Worker bestaetigt. -->
+          <label id="psNewsletterRow" style="display:flex;align-items:flex-start;gap:9px;margin:12px 0 0;cursor:pointer;user-select:none">
+            <input type="checkbox" id="psNewsletter" style="flex-shrink:0;width:17px;height:17px;margin-top:2px;accent-color:var(--accent,#FF6F00);cursor:pointer">
+            <span style="font-size:12px;color:#5A6473;line-height:1.5">Schick mir ab und zu Ideen für Kindergeburtstage per Mail. Jederzeit abbestellbar, wir bestätigen deine Adresse vorher per Klick. <a href="/datenschutz" target="_blank" rel="noopener" style="color:#5A6473">Datenschutz</a></span>
+          </label>
         </div>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
@@ -1191,7 +1214,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="faq-item"><h3>Welche Spiele eignen sich für welches Alter?</h3><p>Für 3–5 Jahre einfache Bewegungs- und Suchspiele. Für 6–8 Jahre Rallyes, Bastelstationen und Quiz-Runden. Für 9–12 Jahre Escape-Rooms, Code-Knacken und Team-Wettkämpfe. Jedes Motto bringt eigene, altersgerechte Spiele mit — der Planer blendet aus, was für die Altersgruppe nicht passt.</p></div>
       <div class="faq-item"><h3>Wie viele Kinder soll ich einladen?</h3><p>Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Snack-Mengen und Kosten passt der Planer automatisch an die Gästezahl an.</p></div>
       <div class="faq-item"><h3>Wie lange sollte ein Kindergeburtstag dauern?</h3><p>2 Stunden für 3–5-Jährige, rund 3 Stunden für 6–8-Jährige, 3–4 Stunden für 9–12-Jährige. Ein bewährter Rhythmus: 30 Minuten Ankommen, 60–90 Minuten Programm, 30 Minuten Kuchen, 30 Minuten Abschluss. Der Planer erstellt den Zeitplan mit konkreten Uhrzeiten.</p></div>
-      <div class="faq-item"><h3>Was tun, wenn die Kinder zu wild werden?</h3><p>Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Der Planer hat einen Ruhemodus: Ein Klick tauscht Action-Aktivitäten gegen ruhige Alternativen wie Ausmalen, Rätsel oder Memory, ohne dass der Ablauf zusammenbricht.</p></div>
+      <div class="faq-item"><h3>Was tun, wenn die Kinder zu wild werden?</h3><p>Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal": weniger Stationen, mehr Luft dazwischen.</p></div>
       <div class="faq-item"><h3>Kindergeburtstag Last Minute — was tun?</h3><p>Konzentrier dich auf drei Dinge: ein bekanntes Spiel, etwas zu essen, ein kleines Mitgebsel. Mehr braucht es nicht. Der Notfallplan erstellt in 2 Minuten einen funktionierenden Ablauf mit Minimal-Deko, einfachen Aktivitäten und Supermarkt-Kuchen.</p></div>
       <div class="faq-item"><h3>Was brauche ich für einen Kindergeburtstag zuhause?</h3><p>Deko passend zum Motto (ab etwa 5 Euro), Kuchen oder Muffins, Snacks und Getränke, 2–3 Spiele und kleine Mitgebsel. Mehr ist selten nötig. Der Planer erstellt dir eine Einkaufsliste mit Mengenangaben und Kosten pro Kind, damit nichts Doppeltes im Wagen landet.</p></div>
       <div class="faq-item"><h3>Welche Mottos sind am beliebtesten?</h3><p>Dauerbrenner sind Piraten und Dino, dazu Einhorn, Feuerwehr, Safari, Weltraum, Detektiv, Prinzessin, Superheld und Meerjungfrau. Weniger überlaufen, aber stark: Dschungel, Feen, Pferde, Ritter und Baustelle. Alle 15 sind im Planer mit fertigem Zeitplan und Spielen hinterlegt.</p></div>
@@ -2067,8 +2090,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     const unused=(v.games||[]).filter(g=>!inPlan.has(g.name) && (!/schatz(suche|spur|jagd)/i.test(g.name||'')||/nacht|stirnlampe/i.test(g.name||'')));
     window.__planPool=unused.map(g=>g.name);
     const addGames=unused.length?`<div class="pl__add"><span class="pl__add-lbl">Weiteres Spiel:</span> ${unused.map((g,i)=>`<button type="button" class="pl__chip" onclick="planAddGame(${i})">+ ${esc(_cleanGameTitle(g.name))}</button>`).join('')}</div>`:'';
-    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Dein Plan${planStart?' · '+esc(planStart)+'–'+esc(planEnd):''} · ${gameCount} Spiele</h3></header>
-      <p class="games-hint">Tipp: ▲▼ verschieben, × entfernt einen Punkt, „+" nimmt ein Spiel dazu. Spiel antippen für die Anleitung.</p>
+    return `<article class="mod plan-mod${window.__planEdit?' plan-mod--edit':''}"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Dein Plan${planStart?' · '+esc(planStart)+'–'+esc(planEnd):''} · ${gameCount} Spiele</h3></header>
+      <p class="games-hint"><button type="button" class="plan-edit-toggle" id="planEditToggle" onclick="togglePlanEdit()" aria-pressed="${window.__planEdit?'true':'false'}">${window.__planEdit?'✓ Fertig angepasst':'✏️ Plan anpassen'}</button><span class="plan-edit-hint">Spiel antippen für die Anleitung.</span></p>
       <div class="pl">${rows}</div>
       ${addGames}
       <div class="pl__addrow"><button type="button" class="pl__chip pl__chip--cust" onclick="togglePlanForm()">+ Eigener Programmpunkt</button>
@@ -2362,6 +2385,21 @@ window.plausible.init=function(){};window.plausible.q=[];
   /* Verhaltensgleich mit poss() in paket/core/paket-core.js — Stufe 18 prueft das.
      Typografischer Apostroph U+2019 statt des geraden ASCII-Zeichens: der Kern
      benutzte ihn im Zischlaut-Fall laengst, und deutsche Typografie verlangt ihn. */
+  /* 07.09.2026: Umschalter fuer den Lese-/Bearbeiten-Modus des Plans (G4).
+     Der Zustand lebt bewusst NICHT im gespeicherten state: er ist eine Ansichtssache
+     dieses Besuchs, kein Teil der Party. Beim naechsten Oeffnen liest man wieder. */
+  window.__planEdit = false;
+  function togglePlanEdit(){
+    window.__planEdit = !window.__planEdit;
+    const box = document.querySelector('.plan-mod');
+    if(box) box.classList.toggle('plan-mod--edit', window.__planEdit);
+    const btn = document.getElementById('planEditToggle');
+    if(btn){
+      btn.textContent = window.__planEdit ? '✓ Fertig angepasst' : '✏️ Plan anpassen';
+      btn.setAttribute('aria-pressed', window.__planEdit ? 'true' : 'false');
+    }
+    try{ if(window.plausible) plausible('plan_edit_mode', {props:{an: window.__planEdit ? '1' : '0'}}); }catch(e){}
+  }
   function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "’" : "’s")) : s; }
   /* 07.09.2026 — Deutsche Zahlformatierung. Anlass (Funnel-Test 04.09., F3): der Plan druckte
      "7.4 €/Kind" und "2.0 l" — englischer Dezimalpunkt an der Stelle, an der Eltern die Kosten
@@ -2716,7 +2754,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const id = url.split('?')[0].split('/').filter(Boolean).pop();
     const token = (editUrl.match(/[?&]edit=([^&]+)/) || [])[1] || '';
     try{
-      const r = await fetch('https://party.machsleicht.de/api/party/' + encodeURIComponent(id) + '/send-edit-link', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ editToken: token, email }) });
+      const r = await fetch('https://party.machsleicht.de/api/party/' + encodeURIComponent(id) + '/send-edit-link', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ editToken: token, email, newsletterOptIn: !!(document.getElementById('psNewsletter')||{}).checked }) });
       const p = document.getElementById('psEmailSent'), t = document.getElementById('psEmailSentTo');
       if(t) t.textContent = email;
       if(r.ok){ if(p) p.style.display = 'block'; try{ if(window.plausible) plausible('edit_link_emailed', {props:{source:'wizard-auto'}}); }catch(e){} }
