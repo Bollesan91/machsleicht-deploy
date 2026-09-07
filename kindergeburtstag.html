@@ -3350,7 +3350,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!d || typeof d !== 'object') return;
     const m = d.mottoId && MOTTOS.find(x => x.id === d.mottoId);
     /* 07.09.2026 (Bolle): Rueckfrage NUR, wenn auf diesem Geraet ein ANDERER Plan liegt —
-       anderer Name oder anderes Motto. Im Normalfall (derselbe Plan, anderes Geraet) keine
+       anderer Name oder anderes Motto — oder der Link bringt WENIGER mit, als hier schon liegt
+       (Pruefstand 07.09.: Link vor der Namenseingabe angefordert, lokal danach den Namen
+       eingetragen -> der benannte Plan wuerde sonst stumm durch den namenlosen ersetzt).
+       Im Normalfall (derselbe Plan, anderes Geraet) keine
        Unterbrechung; im Randfall (Handy: Bens Dino-Party angefangen, Laptop-Link: Mias
        Piraten-Plan) kein stiller, unwiderruflicher Verlust. Quelle fuer "was liegt hier" ist
        der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor "Weitermachen" noch
@@ -3359,7 +3362,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(_lokal && (_lokal.name || (_lokal.motto && _lokal.motto.id))){
       const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id;
       const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '';
-      const _anders = (_ln && _kn && _ln !== _kn) || (_lm && _km && _lm !== _km);
+      const _anders = (_ln && _ln !== _kn) || (_lm && _lm !== _km);   // lokal Benanntes, das der Link nicht identisch mitbringt (auch: gar nicht)
       if(_anders){
         const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan';
         const _linkLabel  = (d.name ? poss(String(d.name).trim()) + ' ' : '') + ((m && m.name) || 'Kindergeburtstags') + '-Plan';
