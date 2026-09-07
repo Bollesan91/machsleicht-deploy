@@ -18,8 +18,8 @@ Aktivierung ist gesetzt (Bolle 13.07.).
 
 ## Was geprüft werden soll
 
-Der Kindergeburtstags-Planer auf `machsleicht.de/kindergeburtstag` (Branch `draft`, Commits
-`baaf3680` bis `a96fc8c6`). Er führt Eltern in fünf Schritten vom Motto zum fertigen Plan mit
+Der Kindergeburtstags-Planer auf `machsleicht.de/kindergeburtstag` (Branch `draft` ab Commit
+`2fd73ab3`, Stand = Branchspitze, keine obere Grenze). Er führt Eltern in fünf Schritten vom Motto zum fertigen Plan mit
 Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und danach umgebaut.
 
 **Der Vertrag, gegen den du prüfen sollst:**
@@ -67,7 +67,7 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
    Handlung?
 9. **Versprechen gegen Maschine.** Sammle **jede** Zusage im sichtbaren Text („wir schicken
    dir…", „Erinnerung…", „automatisch…") und prüfe für jede einzeln, welcher Code sie einlöst.
-   *Hinweis: drei bekannte Fälle sind dokumentiert und werden gerade gebaut — melde sie, aber
+   *Hinweis: drei bekannte Fälle sind gebaut, aber erst nach dem Worker-Deploy live (Grenzen unten) — melde sie, aber
    markiere sie als bekannt.*
 10. **Fremde Verbindungen.** Öffne den Planer und die Datenschutzerklärung und prüfe die
     Netzwerkanfragen. Geht eine Anfrage an einen Server, den die Datenschutzerklärung nicht
@@ -76,9 +76,11 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     einen Geburtstag?". **Folge dem Link.** Bekommst du, was der Text verspricht?
 12. **Rückkehr.** Fang einen Plan an, lade die Seite neu. Was steht im Wiederaufnahme-Banner?
     **Nimm dafür ausdrücklich zwei Namen: einen auf Zischlaut (Mats, Max, Lars) und einen ohne
-    (Mia, Lena) — und einmal gar keinen.** Alle drei Fälle müssen stimmen: „Mats' Piraten-Plan",
-    „Mias Piraten-Plan", und ohne Namen ein Satz ganz ohne Genitiv. *Mit „Mia" allein sieht man
-    den Fehler nicht — er zeigt sich nur bei Zischlaut-Endung.*
+    (Mia, Lena) — und einmal gar keinen.** Alle drei Fälle müssen stimmen: „Mats’ Piraten-Plan",
+    „Mia’s Piraten-Plan", und ohne Namen ein Satz ganz ohne Genitiv. *Mit „Mia" allein sieht man
+    den Fehler nicht — er zeigt sich nur bei Zischlaut-Endung. Das ’s bei „Mia" ist die dokumentierte
+   Stilentscheidung (poss(): Name’s, bei s/ß/x/z nur der Apostroph — `OFFENE-REVIEW-PUNKTE.md`) und
+   kein Finding; der Planer setzt dabei den typografischen Apostroph ’.*
 13. **Deep-Link.** Ruf den Planer mit `?motto=piraten&alter=9` auf. Kommt das Alter im Feld an,
     passen Gruppe und Plan dazu? Probier auch einen Wert am Rand (1, 14) und einen ungültigen (0).
 
@@ -115,7 +117,7 @@ Am Ende ein Score 0–100 als Telemetrie — er entscheidet nichts und wird nirg
 
 Nicht Gegenstand: der alte Creator auf `party.machsleicht.de` (Stilllegung ist eine offene
 Produktentscheidung), `generate-seo-pages.js` (eigenes Ticket seit Mai), und die drei
-Versprechen aus Winkel 9, deren Funktionen gerade gebaut werden.
+Versprechen aus Winkel 9, deren Funktionen gebaut, aber noch nicht deployt sind.
 
 **Zwei Dinge, die dieser Auftrag ausdrücklich NICHT abdeckt — damit niemand sie für geprüft
 hält:**
@@ -130,7 +132,7 @@ live — im Browser gegen `machsleicht.de` sind sie bis dahin NICHT prüfbar:**
 - **Die Umleitung** `party.machsleicht.de/` → Planer (302, `mottoId`→`motto`, `ref` durchgereicht).
 - **Die Erinnerungsmail 7 Tage vor der Party** (`scheduled`-Handler, Cron 08:00 UTC). Sie lässt
   sich ohnehin nicht klicken — prüfbar nur über einen manuellen Trigger oder das Worker-Log
-  (`reminder7: ziel=… geprueft=… gesendet=…`).
+  (`reminder7: ziel=… per-index-uebersprungen=… gelesen=… gesendet=… fehler=… gecappt=…`).
 - **Der Magic-Link** (`/api/plan`): Winkel 19 prüft die Meldung im Planer; ob die Mail ankommt und
   der Link den Stand wiederherstellt, ist erst nach dem Deploy messbar. **Dann bitte:** Plan
   anlegen, „Später" nutzen, auf einem **anderen Gerät** den Link öffnen — steht alles wieder da,

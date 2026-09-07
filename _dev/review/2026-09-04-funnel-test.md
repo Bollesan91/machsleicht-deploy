@@ -888,3 +888,25 @@ Bolles Entscheidungen der zweiten Fragerunde, Commits `964ad987` und `9a7697a2`.
 **Ein Ablauffehler, zum zweiten Mal:** Die Positivkontrolle meldete `partyOpts-Aufrufe=9 (soll 8)` — und der Commit war schon durch, weil die Kontrolle nur als Echo in der `node --check && git commit`-Kette lief. Aufgeklärt: 8 Aufrufe + 1 Definition, mein Muster `partyOpts(party` traf die Funktionsdefinition mit. Inhaltlich korrekt. **Konsequenz:** Kontrollzahlen gehören in einen Assert, der die Kette bricht — nicht in ein Echo, das man nach dem Commit liest.
 
 **Vom Prüfstand bestätigt (alle vier Fragen halten):** Datumsformat `YYYY-MM-DD` auf beiden Seiten des Vergleichs (`validDate` :336 vs. `toLocaleDateString("en-CA")`) — das war die stille Null, vor der er Angst hatte · `calcTTL`-Form identisch mit allen anderen Schreibpfaden · keine Präfix-Route fängt `/api/plan/` ab · `saveEdit()` liest per ID, `edPaypal` ist vorbefüllt (kein Bestandsverlust beim Speichern) · kein Doppelversand (Flag erst nach `res.ok`).
+
+**Positivkontrolle für den Cron ohne Deploy:** `party-worker.js` als byte-identische Kopie (272.499 Bytes, Assert) unter `.mjs` geladen,
+`env.PARTY` und `fetch` als Attrappen mit fünf Partys: heute+7 mit `metadata.date` (P1), heute+7 **ohne**
+metadata = Altbestand (P2), heute+3 (P3), heute+7 mit `reminded7` (P4), heute+7 ohne E-Mail (P5).
+Zwölf Erwartungen, **12/12 erfüllt:** Mails nur an P1+P2, P3 per Index übersprungen und **nie gelesen**,
+P2 gelesen und beim Rückschreiben mit `metadata.date` versehen, P1 behält seine metadata, `reminded7`
+gesetzt, Gästezahl 1 (ja/nein getrennt), Edit-Link in der Mail, jeder Put mit positiver TTL,
+Log `reminder7: ziel=… per-index-uebersprungen=1 gelesen=4 gesendet=2 fehler=0 gecappt=false`.
+
+**Der erste Lauf war 11/12 — und die rote Zeile war meine Erwartung, nicht der Worker.** Ich hatte
+„Mias Piraten-Party" als Soll getippt; `poss()` liefert nach Bolles Stilentscheid „Mia's" (Name's, bei
+s/ß/x/z nur der Apostroph — `OFFENE-REVIEW-PUNKTE.md`:25). R-A, wieder: getippt statt abgeleitet.
+Derselbe Fehler stand als Soll in **Winkel 12 des Prüfauftrags** und hätte dem Reviewer ein falsches
+MAJOR eingebaut — korrigiert (`2026-09-07-funnel-umsetzung-prompt.md`), zusammen mit der dort getippten
+Logzeile (`geprueft=` gibt es nicht, der Worker schreibt `gelesen=`; jetzt aus `party-worker.js`:420
+abgeleitet), dem Commit-Bereich (Prüfstand: „`draft` ab `2fd73ab3`", keine obere Grenze) und zwei
+Stellen „wird gerade gebaut" → „gebaut, nicht deployt".
+
+**Beobachtung, nicht angefasst:** die Worker-`poss()` (`party-worker.js`:230 und :1828) setzt den geraden
+Apostroph `'`, die Planer-`poss()` (`kindergeburtstag.html`:2403) den typografischen `’`. Mail-Betreff
+und Gäste-Teilen-Text sagen „Mia's", das Resume-Banner „Mia’s". Kosmetisch; Stufe 18 vergleicht nur
+Planer gegen `paket/core/paket-core.js`. Kandidat für die Prüfstand-Liste, keine Handlung ohne Bolle.
