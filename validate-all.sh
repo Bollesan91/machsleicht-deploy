@@ -1193,6 +1193,25 @@ else
   red "Stufe 71: eine Seite zeigt auf ein Vorschaubild, das es nicht gibt — geteilte Links haetten keine Karte"
 fi
 
+echo ""
+echo "── STUFE 72: Jeder JSON-LD-Block jeder Seite ist gueltiges JSON ──"
+# Anlass (07.09.): Der Ruhemodus-Text des Planers (964ad987) setzte im FAQ-JSON-LD ein
+# gerades Anfuehrungszeichen mitten in einen String — der ganze Block war kein JSON mehr,
+# und Google verwirft dann das komplette FAQPage-Markup der Seite, nicht die eine Stelle.
+# Sechs Laeufe (1-6 der Funnel-Challenge) waren blind: Stufe 15 nimmt ld+json ausdruecklich
+# aus (node --check liest kein JSON), und keine andere Stufe parst die Bloecke. Dieselbe
+# Klasse wie Stufe 15 — die Datei muss erst einmal sein, was sie behauptet — fuer JSON statt
+# JavaScript. Gegenprobe mit zwei Armen: ein gerades Anfuehrungszeichen in einen gueltigen
+# Block, und der echte Stand aus 964ad987, in dem genau der FAQ-Block wiedergefunden werden muss.
+if python _dev/scripts/check-ldjson-parst.py && python _dev/scripts/check-ldjson-parst.py --gegenprobe > "$LOGDIR/ldjson-gegenprobe.log" 2>&1; then
+  green "Jeder JSON-LD-Block ist gueltiges JSON"
+else
+  # Beleg aus DIESEM Lauf, nicht aus der Datei.
+  python _dev/scripts/check-ldjson-parst.py 2>&1 | grep -E "FAIL|HINWEIS" | head -6
+  python _dev/scripts/check-ldjson-parst.py --gegenprobe 2>&1 | tail -3
+  red "Stufe 72: ein JSON-LD-Block parst nicht — Suchmaschinen verwerfen das ganze Markup der Seite — oder die Gegenprobe schlaegt nicht mehr an"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

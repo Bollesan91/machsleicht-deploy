@@ -226,18 +226,16 @@ ALLE = [
     Probe(
         name="stufe-67-cache-buster",
         warum="Ein Cache-Buster aelter als seine Datei liefert Nutzern alten Code",
-        gate=Gate.skript("_dev/scripts/check-cache-buster.py", timeout=900),
+        gate=Gate.skript("_dev/scripts/check-cache-buster.py", 900),
         datei="_dev/scripts/check-cache-buster.py",
-        suchen="if stand and datum < stand:",
-        ersetzen="if stand and datum < '19700101':",
+        # Die Ausnahme "nicht beweisbar" ist am 03.09. WEGGEFALLEN: seit die
+        # Arbeitskopie ein Klon mit echter Historie ist, misst Stufe 67 dort
+        # richtig. Eine Ausnahme, die ihren Grund ueberlebt, deckt beim naechsten
+        # Mal einen echten Fund — das ist dieselbe Klasse, vor der Stufe 65 mit
+        # ihrer Ausnahmeliste warnt.
+        suchen="    return bool(stand) and datum < stand",
+        ersetzen="    return True  # jede Datei gilt als veraltet (Probe)",
         erwartete_treffer=1,
-        nicht_beweisbar=(
-            "Stufe 67 misst gegen die GIT-HISTORIE. Die Arbeitskopie bekommt beim "
-            "Anlegen einen frischen Commit, also ist dort jede Datei 'von heute' und "
-            "jeder Buster zu alt — gemessen 02.09.: die Stufe meldet in der Kopie 45 "
-            "und 15 Referenzen als veraltet, die es real nicht sind. Ihr Biss ist "
-            "stattdessen direkt im Repo belegt: sie hat vier echte Faelle gefunden "
-            "(core.js, core.css, paket.css, paket-core.js), die vorher niemand sah."),
     ),
     # --- Stufe 69: Pruefauftrag ohne False-Positive-Liste -----------------------
     Probe(
@@ -276,6 +274,20 @@ ALLE = [
         ersetzen="        if bild not in bestand or True:",
         erwartete_treffer=1,
     ),
+    # --- Stufe 72: JSON-LD parst -------------------------------------------------
+    # 07.09.: Der Ruhemodus-Text im Planer (964ad987) trug im FAQ-JSON-LD ein gerades
+    # Anfuehrungszeichen mitten im String. Sechs Linterlaeufe gruen — keine Stufe hatte
+    # je gefragt, ob ein ld+json-Block JSON ist (Stufe 15 nimmt ihn ausdruecklich aus).
+    # Die Probe setzt genau dieses Zeichen in eine FAQ-Frage, die nur im JSON-LD steht.
+    Probe(
+        name="stufe-72-ldjson",
+        warum="Ein gerades Anfuehrungszeichen in einem JSON-LD-String muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-ldjson-parst.py"),
+        datei="kindergeburtstag.html",
+        suchen='"name": "Was tun, wenn die Kinder zu wild werden?"',
+        ersetzen='"name": "Was tun, wenn die Kinder zu "wild" werden?"',
+        erwartete_treffer=1,
+    ),
     # --- Die Gegenproben selbst unter Beweispflicht ------------------------------
     # Eine Gegenprobe behauptet ihre eigene Schaerfe. Am 02.09. waren zwei von zwei
     # angesehenen defekt: eine fehlte ganz (Flag wurde geschluckt), eine prueefte die
@@ -307,6 +319,15 @@ ALLE = [
         datei="_dev/scripts/check-vorschaubilder.py",
         suchen='phantom = "og-gibt-es-garantiert-nicht-xyz.png"',
         ersetzen='phantom = "og-home.png"  # existiert (Probe)',
+        erwartete_treffer=1,
+    ),
+    Probe(
+        name="gegenprobe-beisst-72-ldjson",
+        warum="Die Gegenprobe von Stufe 72 muss merken, wenn der Parser nichts mehr parst",
+        gate=Gate.skript("_dev/scripts/check-ldjson-parst.py", 300, "--gegenprobe"),
+        datei="_dev/scripts/check-ldjson-parst.py",
+        suchen="    wert = json.loads(roh)",
+        ersetzen="    wert = {}  # Regel ausgehebelt (Probe)",
         erwartete_treffer=1,
     ),
 ]
