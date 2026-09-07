@@ -3324,6 +3324,57 @@ window.plausible.init=function(){};window.plausible.q=[];
     setTimeout(() => document.getElementById('modalEmail').focus(), 100);
   }
   function closeSaveLater(){ document.getElementById('saveLaterModal').classList.remove('open') }
+  /* 07.09.2026 — MAGIC-LINK, Planer-Seite. Bis heute versprach das "Spaeter"-Modal einen Link
+     und der Code legte die Adresse nur in eine Warteliste (Funnel-Test F9). Jetzt: die EINGABEN
+     (nicht das Motto-Objekt mit allen Spielen) gehen an /api/plan, der Worker mailt einen Link
+     mit ?plan=<token>, und restorePlanFromLink() baut den Stand daraus wieder auf — auf jedem
+     Geraet. Das Motto laedt der Planer aus MOTTOS nach, wie beim Deep-Link ?motto=. */
+  function planEingaben(){
+    return {
+      name: state.name || '', mottoId: (state.motto && state.motto.id) || '',
+      exactAge: state.exactAge || null, date: state.date || '', time: state.time || '', endTime: state.endTime || '',
+      guests: state.guests || null, location: state.location || '',
+      hostName: state.hostName || '', hostPhone: state.hostPhone || '', areaHint: state.areaHint || '', adresse: state.adresse || '',
+      partyMessage: state.partyMessage || '', crewText: state.crewText || '',
+      eliteVariant: state.eliteVariant || 'standard', eliteOff: Array.isArray(state.eliteOff) ? state.eliteOff : [],
+      games: Array.isArray(state.games) ? state.games : []
+    };
+  }
+  async function restorePlanFromLink(token){
+    let d;
+    try{
+      const r = await fetch('https://party.machsleicht.de/api/plan/' + encodeURIComponent(token));
+      if(!r.ok){ showFlash(r.status === 404 ? '⚠️ Dieser Link ist abgelaufen — dein Plan auf diesem Gerät ist davon unberührt.' : '⚠️ Der Plan konnte gerade nicht geladen werden.'); return; }
+      d = (await r.json()).plan;
+    }catch(e){ showFlash('⚠️ Der Plan konnte gerade nicht geladen werden.'); return; }
+    if(!d || typeof d !== 'object') return;
+    const m = d.mottoId && MOTTOS.find(x => x.id === d.mottoId);
+    if(m){ state.motto = m; applyAccent(m); state.eliteOff = []; }
+    if(d.name) state.name = String(d.name).slice(0,40);
+    if(d.date) state.date = d.date; if(d.time) state.time = d.time; if(d.endTime) state.endTime = d.endTime;
+    if(d.guests) state.guests = d.guests; if(d.location) state.location = d.location;
+    state.hostName = d.hostName || ''; state.hostPhone = d.hostPhone || ''; state.areaHint = d.areaHint || '';
+    state.adresse = d.adresse || ''; state.partyMessage = d.partyMessage || ''; state.crewText = d.crewText || '';
+    if(d.eliteVariant) state.eliteVariant = d.eliteVariant;
+    if(Array.isArray(d.eliteOff)) state.eliteOff = d.eliteOff;
+    if(Array.isArray(d.games) && d.games.length) state.games = d.games;
+    if(d.exactAge){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
+    // Formularfelder aus dem State befuellen — dieselben Wege wie beim Resume
+    try{ if(typeof syncEckdaten === 'function') syncEckdaten(); }catch(e){}
+    const setz = (id, v) => { const el = document.getElementById(id); if(el && v != null && v !== '') el.value = v; };
+    setz('iqName', state.name); setz('iqDate', state.date); setz('iqTime', state.time); setz('iqEndTime', state.endTime);
+    setz('iqGuests', state.guests); setz('iqExactAge', state.exactAge);
+    setz('psHostName', state.hostName); setz('psHostPhone', state.hostPhone); setz('psAreaHint', state.areaHint);
+    setz('psAddress', state.adresse); setz('psMessage', state.partyMessage); setz('psCrew', state.crewText);
+    try{ renderAges(); }catch(e){}
+    if(state.motto){ try{ document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji; document.getElementById('chosenMottoName').textContent = state.motto.name; }catch(e){} }
+    try{ if(state.motto && state.name){ state.invite.title = state.motto.invite.title; state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; } }catch(e){}
+    autoSave();
+    // Dorthin, wo der Elternteil weitermachen kann: mit Name -> Plan, ohne -> Eckdaten
+    try{ goStage(state.motto && state.name ? 3 : (state.motto ? 2 : 1)); }catch(e){}
+    showFlash('✅ Dein Plan ist wieder da — genau da, wo du aufgehört hast.');
+    try{ if(window.plausible) plausible('plan_restored', {props:{via:'magiclink'}}); }catch(e){}
+  }
   function sendMagicLinkModal(){
     const email = document.getElementById('modalEmail').value.trim();
     if(!email || !email.includes('@')){ alert('Bitte gültige Email eingeben'); return; }
@@ -3340,9 +3391,9 @@ window.plausible.init=function(){};window.plausible.q=[];
         .catch(() => showFlash('⚠️ Eintragen hat gerade nicht geklappt — bitte später nochmal versuchen.'));
     } else {
       // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
-      fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: 'magiclink' }) })
-        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('💾 Lokal gespeichert ✓ — wir sagen dir per E-Mail Bescheid, sobald der Link-Versand live ist.'); })
-        .catch(() => showFlash('💾 Lokal gespeichert ✓ — Vormerken hat gerade nicht geklappt, bitte spaeter nochmal.'));
+      fetch('https://party.machsleicht.de/api/plan', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, plan: planEingaben() }) })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('✉️ Dein Link ist unterwegs an ' + email + ' — damit machst du auf jedem Gerät genau hier weiter.'); })
+        .catch(() => showFlash('⚠️ Versand hat gerade nicht geklappt — dein Plan ist auf diesem Gerät gespeichert, versuch es gleich nochmal.'));
     }
   }
 
@@ -3554,11 +3605,13 @@ window.plausible.init=function(){};window.plausible.q=[];
            funktionierte. Jetzt derselbe Bereich wie ueberall sonst. Gefunden von machsleicht-7b. */
         const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=1 && v<=14){ state.exactAge = v; state.age = gruppeAusAlter(v); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
         const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20){ state.guests = v; window.__hasEntryParam = true; } }
-        const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
+        const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }
+        const _pl = p.get('plan'); if(_pl && /^[A-Za-z0-9_-]{16,96}$/.test(_pl)){ window.__planToken = _pl; }   // 07.09.: Magic-Link, Wiederherstellung laeuft nach dem Init (s. restorePlanFromLink)   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
       }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
       if(!state.age){ state.age = '6-8'; }
+      if(window.__planToken){ restorePlanFromLink(window.__planToken); }   // 07.09.: Magic-Link greift NACH dem lokalen Resume, damit er ihn ueberschreibt
       // Deep-Link-Eintritt (?motto/?thema von SEO-Seiten) seedet die Einladung aus dem Motto-Template,
       // sonst zeigt renderInvitePreview() eine leere Vorschau am Haupt-Einstieg. Nicht ueberschreiben, wenn schon gesetzt (Resume).
       if(state.motto && state.motto.invite && !state.invite.title && !state.invite.body){

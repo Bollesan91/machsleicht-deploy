@@ -39,6 +39,18 @@
   src: url(/fonts/fraunces.woff2) format('woff2');
 }
 
+/* ENTSCHEIDUNG 07.09.2026 (Bolle): Drei Schriftsysteme sind Absicht, nicht Drift.
+ *   Gaesteseite  = Baloo 2 + DM Sans   (kindlich — Beschluss Sommer 2026, SESSION-NOTES:2946)
+ *   Editor/404   = Fraunces + DM Sans  (nuechtern — Eltern-Werkzeug NACH der Entscheidung)
+ *   Planer       = Lilita One + Nunito (verspielt — der Planer IST die Entscheidung: 16 Motto-
+ *                                       Karten, Emojis, die erste Flaeche, die Eltern sehen)
+ * Der Planer war bis heute das einzige UNBESCHLOSSENE System (Funnel-Test F11). Bolle hat
+ * am 07.09. entschieden, ihn so zu lassen und den Beschluss hier festzuhalten — NICHT ihn
+ * auf Fraunces zu ziehen: das ist genau die Serif, die im Sommer als Teil der Diagnose
+ * "sauberes SaaS-Event-Tool statt Kinderwelt" von der Gaesteseite geflogen ist.
+ * Wer eine vierte Schrift einfuehrt oder eine dieser drei tauscht, braucht einen neuen Beschluss.
+ */
+
 /* 07.09.2026 — Nachtrag: Lilita One + Nunito (nur der Planer /kindergeburtstag nutzt sie).
  * Sie waren am 06.09. die einzige verbliebene Google-Verbindung der ganzen Seite. Bolle hat
  * das Beschaffen ausdruecklich freigegeben; beide stehen unter der SIL Open Font License 1.1

@@ -341,6 +341,64 @@ function validTime(t) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(t)) ? asSt
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
 export default {
+  /* 07.09.2026 — ERINNERUNG 7 TAGE VOR DER PARTY.
+     Das Versprechen stand an drei Stellen im Text, ohne dass irgendeine Maschine es einloeste:
+     kein scheduled-Handler, kein [triggers]-Block (Funnel-Test K1-2). Bolle hat am 07.09.
+     entschieden, die Funktion zu bauen statt den Text zu streichen.
+     Empfaenger: party.email — die Adresse, die der Gastgeber fuer seinen Verwaltungs-Link gab.
+     Eine einmalige Erinnerung an die EIGENE Party ist transaktional, kein Newsletter; sie
+     braucht kein separates Opt-in. Idempotent ueber party.reminded7 (Zeitstempel).
+     KV hat keinen Datums-Index: taeglich ein Lauf ueber prefix "party:" (list + get je Key).
+     Bei heutiger Groessenordnung Sekunden; ab einigen tausend Partys braucht es einen Index. */
+  async scheduled(event, env, ctx) {
+    if (!env.RESEND_API_KEY) return;
+    const ziel = new Date(Date.now() + 7*86400000).toLocaleDateString("en-CA", {timeZone:"Europe/Berlin"});
+    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0;
+    do {
+      const seite = await env.PARTY.list({prefix:"party:", cursor, limit:1000});
+      for (const k of seite.keys) {
+        const raw = await env.PARTY.get(k.name); if (!raw) continue;
+        let party; try { party = JSON.parse(raw); } catch(e) { continue; }
+        geprueft++;
+        if (party.date !== ziel || !party.email || party.reminded7) continue;
+        const id = k.name.slice("party:".length);
+        const name = asStr(party.childName).replace(/[\x00-\x1F\x7F]/g, " ").slice(0, 40);
+        const gaeste = (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status === "ja").length;
+        const dateStr = new Date(party.date + "T00:00:00").toLocaleDateString("de-DE", {weekday:"long", day:"numeric", month:"long"});
+        const gastUrl = `https://party.machsleicht.de/${id}`;
+        const editUrl = party.editToken ? `https://party.machsleicht.de/${id}?edit=${party.editToken}` : gastUrl;
+        const motto = asStr(party.motto) || "Kindergeburtstag";
+        const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
+  <h2 style="margin:0 0 12px">Noch eine Woche bis zu ${esc(poss(name))} ${esc(motto)}-Party \u{1F389}</h2>
+  <p>Am <strong>${esc(dateStr)}</strong> ist es so weit. Bisher haben <strong>${gaeste}</strong> ${gaeste === 1 ? "Kind" : "Kinder"} zugesagt.</p>
+  <p>Jetzt lohnt sich ein Blick auf die G\u00E4steliste \u2014 Allergien, Abholzeiten und wer noch nicht geantwortet hat:</p>
+  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
+  <p style="font-size:13px;color:#666">Der Link zum Weiterleiten an Eltern bleibt: <a href="${esc(gastUrl)}">${esc(gastUrl)}</a></p>
+  <p style="font-size:12px;color:#999;margin-top:24px">Diese einmalige Erinnerung bekommst du, weil du beim Anlegen der Partyseite diese Adresse f\u00FCr deinen Verwaltungs-Link angegeben hast. Kein Newsletter, keine weitere Mail dieser Art.</p>
+</div>`;
+        try {
+          const res = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+            body: JSON.stringify({
+              from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+              reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+              to: [party.email],
+              subject: `In 7 Tagen: ${poss(name)} ${motto}-Party`,
+              html
+            })
+          });
+          if (res.ok) {
+            party.reminded7 = new Date().toISOString();
+            await env.PARTY.put(k.name, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+            gesendet++;
+          } else { fehler++; }
+        } catch(e) { fehler++; }
+      }
+      cursor = seite.list_complete ? undefined : seite.cursor;
+    } while (cursor);
+    console.log(`reminder7: ziel=${ziel} geprueft=${geprueft} gesendet=${gesendet} fehler=${fehler}`);
+  },
   async fetch(request, env) {
    try {
     const url = new URL(request.url);
@@ -795,6 +853,72 @@ export default {
     // Loest das 6KB-URL-Limit: Editor laedt das Foto hoch -> kurze ID -> Link /e/<slug>?fid=<id>.
     // F2 (Wizard-Gate 13.07.): Produkt-Warteliste (Plan-PDF / Komplettpaket). Nur E-Mail + Produkt,
     // KV-TTL 12 Monate (DSGVO-Absatz in datenschutz.html), einmalige Start-Info, kein Newsletter.
+    /* 07.09.2026 — MAGIC-LINK FUER DEN PLANER ("Spaeter").
+       Das Modal versprach "Wir schicken dir einen Link, mit dem du den Plan jederzeit
+       weiterbearbeiten kannst — auch von einem anderen Geraet" — der Code legte die Adresse aber
+       nur in einen Warteliste-Eimer (Funnel-Test F9 / K1-1). Bolle: Funktion bauen.
+       Gespeichert werden NUR die Eingaben (Name, Motto-ID, Alter, Datum ...), nie das aufgeblasene
+       Motto-Objekt mit allen Spielen — das laedt der Planer aus seiner eigenen Datenbasis nach.
+       90 Tage Haltbarkeit, danach verfaellt der Link von selbst. E-Mail bleibt intern. */
+    if (path === "/api/plan" && request.method === "POST") {
+      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"}, 500, request);
+      const body = await request.json().catch(() => ({}));
+      const email = (asStr(body.email)).trim().slice(0, 120);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
+      const _ip = request.headers.get("cf-connecting-ip") || "";
+      if (_ip) {
+        const _rlKey = "rl:plan:" + _ip + ":" + Math.floor(Date.now()/3600000);
+        const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
+        if (_cnt >= 5) return json({error:"Zu viele Links in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
+      }
+      const q = (body && typeof body.plan === "object" && body.plan) ? body.plan : {};
+      const s = (v, n) => asStr(v).slice(0, n);
+      const num = (v, lo, hi) => { const x = parseInt(v, 10); return (x >= lo && x <= hi) ? x : null; };
+      const arr = (v, n, len) => Array.isArray(v) ? v.slice(0, n).map(x => asStr(x).slice(0, len)) : [];
+      const plan = {
+        name: s(q.name, 40), mottoId: s(q.mottoId, 24).toLowerCase().replace(/[^a-z0-9-]/g, ""),
+        exactAge: num(q.exactAge, 1, 14), date: /^\d{4}-\d{2}-\d{2}$/.test(asStr(q.date)) ? q.date : "",
+        time: /^\d{2}:\d{2}$/.test(asStr(q.time)) ? q.time : "", endTime: /^\d{2}:\d{2}$/.test(asStr(q.endTime)) ? q.endTime : "",
+        guests: num(q.guests, 1, 30), location: s(q.location, 12),
+        hostName: s(q.hostName, 60), hostPhone: s(q.hostPhone, 30), areaHint: s(q.areaHint, 80), adresse: s(q.adresse, 200),
+        partyMessage: s(q.partyMessage, 300), crewText: s(q.crewText, 1600),
+        eliteVariant: ["minimal", "standard", "wow"].includes(q.eliteVariant) ? q.eliteVariant : "standard",
+        eliteOff: arr(q.eliteOff, 40, 80), games: arr(q.games, 12, 80)
+      };
+      const token = generateToken();
+      await env.PARTY.put(`plan:${token}`, JSON.stringify({email, plan, created: new Date().toISOString()}), {expirationTtl: 90*24*60*60});
+      const link = `https://machsleicht.de/kindergeburtstag?plan=${token}`;
+      const wer = plan.name ? poss(plan.name.replace(/[\x00-\x1F\x7F]/g, " ")) + " " : "dein ";
+      const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
+  <h2 style="margin:0 0 12px">Hier ist ${esc(wer)}Plan zum Weitermachen</h2>
+  <p>Mit diesem Link \u00F6ffnest du den Planer genau dort, wo du aufgeh\u00F6rt hast \u2014 auf jedem Ger\u00E4t:</p>
+  <p><a href="${esc(link)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
+  <p style="font-size:13px;color:#666;word-break:break-all">${esc(link)}</p>
+  <p style="font-size:12px;color:#999;margin-top:24px">Der Link gilt 90 Tage. Wir haben nur diese eine Mail geschickt \u2014 nur daf\u00FCr, kein Newsletter.</p>
+</div>`;
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+          body: JSON.stringify({
+            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+            reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+            to: [email], subject: "Dein Kindergeburtstags-Plan zum Weitermachen", html
+          })
+        });
+        if (!res.ok) return json({error:"Versand fehlgeschlagen"}, 502, request);
+      } catch(e) { return json({error:"Versand fehlgeschlagen"}, 502, request); }
+      return json({ok:true}, 200, request);
+    }
+    if (path.startsWith("/api/plan/") && request.method === "GET") {
+      const token = path.slice("/api/plan/".length);
+      if (!/^[A-Za-z0-9_-]{16,96}$/.test(token)) return json({error:"Ungueltiger Link"}, 400, request);
+      const raw = await env.PARTY.get(`plan:${token}`);
+      if (!raw) return json({error:"Dieser Link ist abgelaufen oder unbekannt"}, 404, request);
+      let d; try { d = JSON.parse(raw); } catch(e) { return json({error:"Kaputt"}, 500, request); }
+      return json({plan: d.plan}, 200, request);
+    }
     if (path === "/api/waitlist" && request.method === "POST") {
       const body = await request.json().catch(() => ({}));
       const email = (asStr(body.email)).trim().slice(0, 120);
@@ -1098,7 +1222,18 @@ export default {
     }
 
     // Frontend: Home
-    if (path==="/"||path==="") return new Response(creatorPage(),{headers:{"Content-Type":"text/html;charset=utf-8"}});
+    if (path==="/"||path==="") {
+      // 07.09.2026 (Bolle: "umleiten"): Der Alt-Creator erzeugte Partyseiten zweiter Klasse — ohne Plan,
+      // ohne Altersgruppe, ohne Attribution (er las ?ref= nie). Der Planer kann alles davon.
+      // Parameter werden uebersetzt: mottoId -> motto (der Planer liest 'motto'), ref wird durchgereicht.
+      // paypalMe/Gemeinschaftsgeschenk sind seit heute im Editor nachpflegbar — kein Feature geht verloren.
+      // creatorPage() bleibt vorerst im Code (Rueckweg), kann nach einigen Wochen Redirect-Betrieb raus.
+      const _q = url.searchParams, _ziel = new URL("https://machsleicht.de/kindergeburtstag");
+      const _m = (_q.get("mottoId")||_q.get("motto")||"").toLowerCase().replace(/[^a-z]/g,"").slice(0,20);
+      if (_m) _ziel.searchParams.set("motto", _m);
+      const _r = _q.get("ref")||""; if (/^[a-z0-9]{6,12}$/.test(_r)) _ziel.searchParams.set("ref", _r);
+      return Response.redirect(_ziel.toString(), 302);
+    }
 
     // Frontend: Party
     // FONTS (self-hosted, H3/DSGVO: kein Google-Kontakt von Gastseiten; SIL-OFL-Fonts aus KV)
@@ -2677,6 +2812,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 ohne G\u00E4steliste jeder, der \u00FCber den Gruppenlink zusagt, mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 ohne G\u00E4steliste jeder \u00FCber den Gruppenlink, mit Liste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+      <!-- 07.09.2026: paypalMe war NUR im Alt-Creator setzbar. Der Server nimmt es beim PUT laengst an
+           (:517 sanitizePaypal) — es fehlte allein das Feld hier. Ohne dieses Feld haette die Umleitung
+           des Alt-Creators das Gemeinschaftsgeschenk still abgeschaltet. -->
+      <div class="field"><label>PayPal für Gemeinschaftsgeschenke <span style="font-weight:400;color:var(--m);font-size:12px">(optional — erscheint bei Wünschen, die als „Gemeinsam“ markiert sind)</span></label><input type="text" id="edPaypal" maxlength="100" placeholder="paypal.me/DeinName" value="${esc(party.paypalMe||'')}"></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
         <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${fristText(party)} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
@@ -2802,7 +2941,8 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         endTime:document.getElementById("edEndTime").value,address:document.getElementById("edAddress").value,
         hostName:document.getElementById("edHostName").value,hostPhone:(document.getElementById("edHostPhone").value||"").trim(),
         areaHint:document.getElementById("edAreaHint").value,
-        notes:document.getElementById("edNotes").value};
+        notes:document.getElementById("edNotes").value,
+        paypalMe:(document.getElementById("edPaypal")||{}).value||""};
       // M6/M9: dieselben Regeln wie der Server (sonst meldet der Client OK und der Server verwirft),
       // und der Absender ist hier genauso Pflicht wie beim Anlegen.
       // M5 (Re-Check): der Vorname war das einzige Feld, dessen Leere die Einladung KAPUTT macht —
