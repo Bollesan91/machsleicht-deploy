@@ -199,6 +199,15 @@ function generateId(len = 8) {
 function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
 }
+/* 07.09.2026 — EIN Optionsobjekt fuer alle party:-Puts. Bis heute acht Schreibpfade in drei
+   Schreibweisen, alle nur mit expirationTtl. KV liefert bei list() je Key auch metadata —
+   das ist der Datums-Index, den die Erinnerungsmail braucht: der Cron filtert ueber die
+   Keys und ruft get() nur fuer Treffer auf (Reads von N auf Treffer). Altbestand ohne
+   metadata faellt im Cron auf get() zurueck, bis ihn der naechste Schreibvorgang nachzieht.
+   (Vorschlag machsleicht-7b.) */
+function partyOpts(party) {
+  return { expirationTtl: calcTTL(party && party.date), metadata: { date: (party && party.date) || "" } };
+}
 function calcTTL(partyDate) {
   // Bolle-Regel 13.07.2026: Party + alle Daten (Fotos, Gaeste) verfallen automatisch
   // 14 TAGE NACH DEM PARTYDATUM. Manuell loeschen geht jederzeit vorher (Edit-Link, DELETE).
@@ -353,10 +362,14 @@ export default {
   async scheduled(event, env, ctx) {
     if (!env.RESEND_API_KEY) return;
     const ziel = new Date(Date.now() + 7*86400000).toLocaleDateString("en-CA", {timeZone:"Europe/Berlin"});
-    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0;
+    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0;
     do {
       const seite = await env.PARTY.list({prefix:"party:", cursor, limit:1000});
       for (const k of seite.keys) {
+        // Index-Pfad: Keys mit metadata.date werden OHNE get() aussortiert. Altbestand ohne
+        // metadata (vor dem 07.09. geschrieben) faellt auf den Voll-Read zurueck.
+        const md = k.metadata && typeof k.metadata.date === "string" ? k.metadata.date : null;
+        if (md !== null && md !== ziel) { uebersprungen++; continue; }
         const raw = await env.PARTY.get(k.name); if (!raw) continue;
         let party; try { party = JSON.parse(raw); } catch(e) { continue; }
         geprueft++;
@@ -369,7 +382,7 @@ export default {
         const editUrl = party.editToken ? `https://party.machsleicht.de/${id}?edit=${party.editToken}` : gastUrl;
         const motto = asStr(party.motto) || "Kindergeburtstag";
         const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
-  <h2 style="margin:0 0 12px">Noch eine Woche bis zu ${esc(poss(name))} ${esc(motto)}-Party \u{1F389}</h2>
+  <h2 style="margin:0 0 12px">Noch eine Woche bis ${name ? "zu " + esc(poss(name)) : "zur"} ${esc(motto)}-Party \u{1F389}</h2>
   <p>Am <strong>${esc(dateStr)}</strong> ist es so weit. Bisher haben <strong>${gaeste}</strong> ${gaeste === 1 ? "Kind" : "Kinder"} zugesagt.</p>
   <p>Jetzt lohnt sich ein Blick auf die G\u00E4steliste \u2014 Allergien, Abholzeiten und wer noch nicht geantwortet hat:</p>
   <p><a href="${esc(editUrl)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
@@ -384,20 +397,20 @@ export default {
               from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
               reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
               to: [party.email],
-              subject: `In 7 Tagen: ${poss(name)} ${motto}-Party`,
+              subject: `In 7 Tagen: ${name ? poss(name) + " " : "die "}${motto}-Party`,
               html
             })
           });
           if (res.ok) {
             party.reminded7 = new Date().toISOString();
-            await env.PARTY.put(k.name, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+            await env.PARTY.put(k.name, JSON.stringify(party), partyOpts(party));
             gesendet++;
           } else { fehler++; }
         } catch(e) { fehler++; }
       }
       cursor = seite.list_complete ? undefined : seite.cursor;
     } while (cursor);
-    console.log(`reminder7: ziel=${ziel} geprueft=${geprueft} gesendet=${gesendet} fehler=${fehler}`);
+    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} gesendet=${gesendet} fehler=${fehler}`);
   },
   async fetch(request, env) {
    try {
@@ -471,7 +484,7 @@ export default {
       const _prValid = body.photoRound && isSafePhoto(body.photoRound);
       party.hasGamePhoto = !!_prValid;
       party.hasPhoto = !!(body.photo && isSafePhoto(body.photo)); // og:image-Flag (WhatsApp-Link-Vorschau via /api/ogimg) — vermeidet KV-Read beim Serve
-      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
@@ -639,7 +652,7 @@ export default {
         await env.PARTY.delete(`photoRound:${id}`); // Orphan-Altbestand des frueheren (kaputten) PATCH-Kontrakts mit abraeumen
         party.hasGamePhoto = true;
       }
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, entfernt:_entfernt}, 200, request);
     }
 
@@ -688,7 +701,7 @@ export default {
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
 
@@ -775,7 +788,7 @@ export default {
       if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // L8
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
       // Welle 2 (Playtest-Datenschutz-Befund, Bolle-Entscheid 31.07.): Hat die Party eine Gaesteliste
       // (invites), bekommt NUR noch eine Token-Zusage die Adresse — ein anonymer Namens-POST mit
@@ -834,7 +847,7 @@ export default {
         else wish.claimedBy.push(guestName);
       }
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W9-2: fehlte hier als einzigem party:-Schreibpfad (W8-5-Luecke)
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, ..._wishPub()}, 200, request);
     }
 
@@ -1047,7 +1060,7 @@ export default {
       // Save email to party
       party.email = email;
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
-      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
 
       // Send email via Resend
       if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500, request);
@@ -1078,7 +1091,7 @@ export default {
         };
         // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
         party.doiToken = doiToken;
-        await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+        await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
         await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
         confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
       }
