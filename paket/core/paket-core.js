@@ -67,7 +67,8 @@ function esclink(s){
    Bis 05.08. fehlte im Normalfall der Apostroph ganz — aus Tino wurde "Tinos".
    Das stand auf jedem Blatt des bezahlten Pakets. Muss verhaltensgleich
    bleiben mit poss() in kindergeburtstag.html; Stufe 18 prueft das. */
-function poss(n){ n=String(n||'').trim(); if(!n) return ''; return n + (/[sßxz]$/i.test(n) ? "'" : "'s"); }   // Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil), gleich mit Planer und Worker
+// Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil), gleich mit Planer und Worker. Einzeiler bleibt Einzeiler — Stufe 18 liest ihn so.
+function poss(n){ n=String(n||'').trim(); if(!n) return ''; return n + (/[sßxz]$/i.test(n) ? "'" : "'s"); }
 function fmtDate(iso){ /* YYYY-MM-DD -> "Samstag, 12. September 2026" */
   if(!/^\d{4}-\d{2}-\d{2}$/.test(iso||'')) return '';
   const d = new Date(iso+'T12:00:00');

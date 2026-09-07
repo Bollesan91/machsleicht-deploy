@@ -1072,7 +1072,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="checkout-card__icon">📋</div>
         <h3 class="checkout-card__title">Online speichern</h3>
         <div class="checkout-card__price">Kostenlos</div>
-        <ul class="checkout-card__features"><li>Auf diesem Gerät automatisch gespeichert</li><li>Plan + Einladung + Partyseite</li><li>Magic-Link per E-Mail <small style="color:#b08642">· geplant</small></li></ul>
+        <ul class="checkout-card__features"><li>Auf diesem Gerät automatisch gespeichert</li><li>Plan + Einladung + Partyseite</li><li>Plan-Link per E-Mail</li></ul>
         <button class="checkout-card__btn" onclick="openSaveLater()">Plan-Link per E-Mail</button>
       </div>
       <div class="checkout-card checkout-card--free">
@@ -1501,6 +1501,16 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Compute age-number for invite text (null-safe — C5 Fix)
   // F5: echtes Alter bevorzugen (Gaesteseite/Einladung sollen kein geratenes Alter zeigen); sonst Gruppen-Mitte als Fallback.
   function ageNum(){ if(state.exactAge) return String(state.exactAge); if(!state.age) return '7'; return state.age === '3-5' ? '5' : state.age === '6-8' ? '7' : '10' }
+  /* Review M4 + Re-Check (07.09.): das Tagesplan-Ende folgt der Altersgruppe, solange der Nutzer es nicht selbst
+     gesetzt hat (state.endTimeManuell, gesetzt in liveUpdateEndTime). Der fruehere Vergleich mit der Vorgabe der
+     "alten Gruppe" griff im Hauptpfad nie: der Planer startet mit age '6-8' und 16:30. Gleiche Funktion fuer
+     setExactAge und den Deep-Link ?alter=. */
+  function endeNachGruppe(gruppe){
+    try{ const info = ALTERS_INFO[gruppe]; if(!info || state.endTimeManuell || state.endTime === info.ende) return;
+      state.endTime = info.ende;
+      const _q = document.getElementById('qEndTime'), _i = document.getElementById('iqEndTime'); if(_q) _q.value = info.ende; if(_i) _i.value = info.ende;
+      if(state.motto) renderPlanPreview(); }catch(e){}
+  }
   function setExactAge(v){
     const n = parseInt(v,10);
     state.exactAge = (n>=1 && n<=14) ? n : null;
@@ -1515,15 +1525,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       const _alteGruppe = state.age;
       if(_neueGruppe !== _alteGruppe) state.eliteOff = [];   // (b) Parität zum alten pickAge
       state.age = _neueGruppe;                               // (a)
-      /* Review M4 (07.09.): die Info-Box versprach je Gruppe ein Tagesplan-Ende (16:30/17:00/18:00), aber
-         nichts setzte es — state.endTime blieb auf 16:30. Jetzt zieht das Ende mit der Gruppe, solange der
-         Nutzer es nicht selbst gesetzt hat (Wert leer oder gleich der Vorgabe der vorherigen Gruppe). */
-      try{ const _altEnde = (ALTERS_INFO[_alteGruppe] || {}).ende || '16:30', _neuEnde = ALTERS_INFO[_neueGruppe].ende;
-        if(_neueGruppe !== _alteGruppe && (!state.endTime || state.endTime === _altEnde)){
-          state.endTime = _neuEnde;
-          const _q = document.getElementById('qEndTime'), _i = document.getElementById('iqEndTime'); if(_q) _q.value = _neuEnde; if(_i) _i.value = _neuEnde;
-          if(state.motto) renderPlanPreview();
-        } }catch(e){}
+      endeNachGruppe(_neueGruppe);   // Review M4 / Re-Check: Ende folgt der Gruppe, solange nicht selbst gesetzt
+      try{ const _a = document.getElementById('iqExactAge'); if(_a) _a.removeAttribute('aria-invalid'); }catch(e){}   // Re-Check MINOR 6: gueltige Eingabe hebt die Markierung auf
       showPlanBtn();
     } else {
       /* Review m1 (07.09.): 0, 15 oder leer liessen state.age und den Plan-Knopf stehen — der Plan gehoerte
@@ -1531,10 +1534,11 @@ window.plausible.init=function(){};window.plausible.q=[];
          Info-Box sagt, was fehlt, und revealPlan verweigert ohne exactAge. */
       state.age = null;
       try{ const _b = document.getElementById('toPlanBtn'); if(_b) _b.style.display = 'none'; }catch(e){}
+      try{ ['stage3','stage4','stage5'].forEach(id => { const s = document.getElementById(id); if(s) s.classList.remove('revealed'); }); }catch(e){}   // Re-Check MINOR 5: enthuellte Stufen zeigten sonst still den 6-8-Fallback
     }
     try{ renderAgeInfo(); }catch(e){}                       // (c) NUR die Info-Box — nie renderAges(),
     /* das wuerde das Eingabefeld selbst ersetzen und der Fokus waere nach der ersten Ziffer weg. */
-    if(state.motto){ state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; const be=document.getElementById('iBody'); if(be) be.value = state.invite.body; }
+    if(state.motto){ state.invite.body = (state.name ? state.name + ' ' : '') + state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name); const be=document.getElementById('iBody'); if(be) be.value = state.invite.body; }
     try{ renderPlanPreview(); }catch(e){}
     try{ renderInvitePreview(); }catch(e){}
     autoSave();
@@ -1563,6 +1567,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   // ===== AUTO-SAVE =====
   let saveTimer = null;
+  const _STATE_DEFAULT = JSON.parse(JSON.stringify(state));   // Startwerte (nach Init) fuer den Ersetzen-Pfad des Magic-Links (Re-Check MINOR 2)
   function autoSave(){
     if(saveTimer) clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
@@ -1717,7 +1722,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('chosenMottoName').textContent = state.motto.name;
     // Reset invite to motto-default
     state.invite.title = state.motto.invite.title;
-    state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
+    state.invite.body = (state.name ? state.name + ' ' : '') + state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name);
     /* Review M3 (07.09.): renderInvitePreview fuellt #iTitle/#iBody nur, wenn sie leer sind, und kopiert
        sie danach in den State zurueck — der geteilte Text trug nach einem Motto-Wechsel das alte Motto.
        Gleiche Konvention wie setExactAge: der Vorlagentext ist ableitbar und wird neu geschrieben. */
@@ -1797,7 +1802,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const ageGames = gamesForAge(state.motto, age);
     state.games = ageGames.slice(0,5).map(g => g.name);
     // C3-Fix: identisches Muster wie pickMotto (kein doppeltes "wird {age}", kein slice-Hack der bei Nicht-"wird"-Mottos Grammatik zerstoert)
-    state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
+    state.invite.body = (state.name ? state.name + ' ' : '') + state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name);
     renderPlanPreview();
     autoSave();
     // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
@@ -2018,7 +2023,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== V3 GENERATIVER PLAN (Spec §10) — erzeugt EINE geordnete activities[] aus dem Spiel-Pool + Standard-Beats.
   // VERDRAHTET: renderElitePlan -> renderPlanList nutzt das (seit 19.06.). Ersetzt den alten schedule/games-Doppelrender.
   function _gameLoud(g){ const l=String((g&&g.loudness)||'').toLowerCase(); if(/laut|hoch|wild|tobe/.test(l)) return 2; if(/leise|ruhig|niedrig|konzentr/.test(l)) return 0; return 1; }
-  const _EMO_LEAD = /^[\s\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+/u;
+  const _EMO_LEAD = /^(?:\s|[0-9#*]\uFE0F?\u20E3|[\p{Extended_Pictographic}\uFE0F\u200D\u{1F3FB}-\u{1F3FF}])+/u;   // dieselbe Menge wie _EMO_GRAB (Re-Check m14): sonst steht das Keycap doppelt — "3 Stationen" bleibt, weil ein Keycap das ⃣ braucht
   const _EMO_GRAB = /^\s*((?:[0-9#*]\uFE0F?\u20E3|[\p{Extended_Pictographic}\uFE0F\u200D\u{1F3FB}-\u{1F3FF}])+)/u;   // Review m14: Keycaps (1️⃣) sind Emojis — sonst "🎮 1️⃣ Navigations-Test"
   function _gameEmoji(n){ const m=String(n||'').match(_EMO_GRAB); return m?m[1]:'🎮'; }
   function _cleanGameTitle(n){ return String(n||'').replace(_EMO_LEAD,'').replace(/\s*[—–-]\s*Spielanleitung\s*$/i,'').trim(); }
@@ -2436,7 +2441,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     try{ if(window.plausible) plausible('plan_edit_mode', {props:{an: window.__planEdit ? '1' : '0'}}); }catch(e){}
   }
-  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s")) : s; }   // Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil wie in "mach's"), gleich mit party-worker.js und paket-core.js
+  // Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil wie in "mach's"), gleich mit party-worker.js und paket-core.js. Einzeiler bleibt Einzeiler — Stufe 18 liest ihn so.
+  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s")) : s; }
   /* 07.09.2026 — Deutsche Zahlformatierung. Anlass (Funnel-Test 04.09., F3): der Plan druckte
      "7.4 €/Kind" und "2.0 l" — englischer Dezimalpunkt an der Stelle, an der Eltern die Kosten
      lesen. Im ganzen Repo gab es keinen Locale-Formatierer (Intl.NumberFormat / toLocaleString('de')
@@ -2460,7 +2466,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; try{ const _f=document.getElementById('iDeadline'); if(_f && (!_f.value || _f.value === state.invite.fristAuto)){ const _n = fristAuto(); _f.value = _n; state.invite.deadline = _n; state.invite.fristAuto = _n; } }catch(e){} autoSave() }   // Review m5: automatische Frist zieht mit dem Datum, Eigentext bleibt
   function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
-  function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; if(state.motto) renderPlanPreview(); autoSave() }
+  function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; state.endTimeManuell = true; if(state.motto) renderPlanPreview(); autoSave() }   // Manuell gesetzt: die Gruppe fasst das Ende nicht mehr an
   function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; const il=document.getElementById('iqGuestsLabel'); if(il) il.textContent = v; autoSave() }
   // Inline-Eckdaten (Scroll-Funnel)
   function pickLocationInline(loc){
@@ -2577,6 +2583,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(!bodyEl.value) bodyEl.value = state.invite.body || `${state.name} wird ${ageNum()} und feiert!`;
       // Antwort-Frist dynamisch aus dem Party-Datum ableiten (Party − 7 Tage) statt hartkodiertem Datum,
       // sonst verschickt man eine Einladung mit bereits abgelaufener Frist (Review-Befund 15.06.2026).
+      if(deadlineEl && !deadlineEl.value && state.invite.deadline) deadlineEl.value = state.invite.deadline;   // Re-Check: gespeicherte Frist (auch Eigentext) ueberlebte sonst nur eine Sitzung
       if(deadlineEl && !deadlineEl.value){
         const dl = fristAuto();
         if(dl){ deadlineEl.value = dl; state.invite.fristAuto = dl; }   // merken, was automatisch war — nur das darf liveUpdateDate ersetzen
@@ -3390,11 +3397,10 @@ window.plausible.init=function(){};window.plausible.q=[];
        anderer Name oder anderes Motto — oder der Link bringt WENIGER mit, als hier schon liegt
        (Pruefstand 07.09.: Link vor der Namenseingabe angefordert, lokal danach den Namen
        eingetragen -> der benannte Plan wuerde sonst stumm durch den namenlosen ersetzt).
-       Wache davor: ein Plan zaehlt erst mit Name oder Datum. Ein ?motto=dino-Einstieg von einer
-       SEO-Seite speichert per goStage->autoSave {motto, name:""} — ohne diese Wache fragte der
-       naechste fremde Magic-Link nach einem Plan, den nie jemand angefangen hat (Pruefstand 07.09.).
-       Und was die Wache passieren laesst, vergleicht _anders auch: sonst liefe "lokal 15.10. ohne
-       Name, Link Mia + 20.11., gleiches Motto" ohne Rueckfrage durch und das Datum waere weg.
+       Wache davor: ein Plan zaehlt erst mit getipptem Namen oder aktiver Partyseite. Ein ?motto=dino-Einstieg
+       von einer SEO-Seite speichert per goStage->autoSave {motto, name:"", date: Vorgabe} — das Datum ist
+       IMMER gesetzt (defaultDate) und beweist nichts (Re-Check 07.09.). Feldkonflikte innerhalb derselben
+       Identitaet (Datum, Nummer, Crew) entscheidet die Zeitregel unten, nicht die Rueckfrage.
        Im Normalfall (derselbe Plan, anderes Geraet) keine
        Unterbrechung; im Randfall (Handy: Bens Dino-Party angefangen, Laptop-Link: Mias
        Piraten-Plan) kein stiller, unwiderruflicher Verlust. Quelle fuer "was liegt hier" ist
@@ -3402,11 +3408,12 @@ window.plausible.init=function(){};window.plausible.q=[];
        der Default. */
     const _lokal = window.__resumeSnapshot || ((typeof loadSavedState === 'function') ? loadSavedState() : null);
     let _ersetzt = false, _gleicherPlan = false;   // _ersetzt: Nutzer will per Rueckfrage AUSDRUECKLICH den Link-Plan; _gleicherPlan: Name+Motto identisch (nur Datum anders)
-    if(_lokal && (_lokal.name || _lokal.date)){   // Name oder Datum tippt nur ein Mensch — Motto/Alter/Gaeste kommen auch per Link in den Speicher (kein ?datum=-Parameter, Pruefstand 07.09.)
-      const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id, _ld = _lokal.date || '';
-      const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '', _kd = d.date || '';
-      const _anders = (_ln && _ln !== _kn) || (_lm && _lm !== _km) || (_ld && _ld !== _kd);   // lokal Name/Motto/Datum, das der Link nicht identisch mitbringt (auch: gar nicht) — was als Arbeit zaehlt, zaehlt als Unterschied
-      _gleicherPlan = (_ln === _kn && _lm === _km);   // gleiche Identitaet: ein "Ersetzen" tauscht dann nur Werte, es loescht keinen Geraetestand
+    const _planDa = (l) => !!(l && (String(l.name||'').trim() || (l.partyseite && l.partyseite.active)));   // Re-Check MINOR 1: state.date ist per Default IMMER gesetzt — Beleg fuer Arbeit sind ein getippter Name oder eine aktive Partyseite
+    if(_planDa(_lokal)){
+      const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id;
+      const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '';
+      const _anders = (_ln && _kn && _ln !== _kn) || (_lm && _km && _lm !== _km);   // andere Identitaet nur, wenn BEIDE Seiten etwas sagen und es sich unterscheidet; eine leere Seite ist unbekannt, nicht anders (Pruefstand 07.09.) — Luecken fuellt die Zeitregel, Datum ist kein Identitaetsmerkmal
+      _gleicherPlan = !_anders;   // gleiche oder unbekannte Identitaet: kein "Ersetzen" gegen einen namenlosen Schnappschuss, der Geraetestand bleibt Basis
       if(_anders){
         const _vom = x => /^\d{4}-\d{2}-\d{2}$/.test(x || '') ? ' vom ' + new Date(x + 'T00:00:00').toLocaleDateString('de-DE', {day:'numeric', month:'long'}) : '';   // Datum im Text: nur so ist \"gleicher Name, anderes Datum\" zu entscheiden
         const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan' + _vom(_lokal.date);
@@ -3425,12 +3432,13 @@ window.plausible.init=function(){};window.plausible.q=[];
        Plan und wird er nicht ausdruecklich ersetzt, ist er die Basis (Sub-Objekte einzeln gemergt, wie
        resumeWork); der Link legt nur mit, was er tatsaechlich traegt — leere Werte und leere Listen
        ueberschreiben nichts. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
-    const _basisLokal = !!(_lokal && (!_ersetzt || _gleicherPlan));
+    const _basisLokal = !!(_lokal && _planDa(_lokal) && (!_ersetzt || _gleicherPlan));   // ohne echten Plan (Phantom) zaehlt der Link voll — sonst gewaenne ein Vorgabedatum ueber das echte
+    if(!_basisLokal){ try{ const _def = JSON.parse(JSON.stringify(_STATE_DEFAULT)); Object.keys(state).forEach(k => { delete state[k]; }); Object.assign(state, _def); }catch(e){} }   // Re-Check MINOR 2: "vom Default starten" braucht einen echten Reset — wer waehrend des Fetch "Weitermachen" klickte, hatte den vollen lokalen Plan in state
     /* Zeitregel (Pruefstand 07.09.): auf demselben Geraet ist der Link immer aelter als der lokale Stand — er
        wurde daraus gebaut. Ist der Geraetestand juenger als der Link, fuellt der Link nur Luecken; ist der Link
        juenger (anderes Geraet mit alter Kopie), ueberschreibt er nicht-leere Werte. Ohne Zeitstempel gilt die
        Ueberschreib-Regel. So gewinnt immer die juengere Quelle, und nichts Juengeres wird still aelter. */
-    const _linkNeuer = !_basisLokal || !_lokal.lastSaved || !_linkZeit || _linkZeit > _lokal.lastSaved;
+    const _linkNeuer = !_basisLokal || (!!_lokal.lastSaved && !!_linkZeit && _linkZeit > _lokal.lastSaved);   // unbekanntes Alter = konservativ: nur Luecken fuellen (Pruefstand 07.09.)
     const _uebernimm = (k, v) => { if(v == null || v === '') return; if(_linkNeuer || !state[k]) state[k] = v; };
     if(_basisLokal){ try{ Object.keys(_lokal).forEach(k => { const v = _lokal[k]; state[k] = ((k === 'invite' || k === 'partyseite' || k === 'plan') && v && typeof v === 'object' && !Array.isArray(v)) ? Object.assign({}, state[k] || {}, v) : v; }); if(state.motto && state.motto.id){ const _live = MOTTOS.find(x => x.id === state.motto.id); if(_live) state.motto = _live; } applyAccent(state.motto); }catch(e){} }   // wie resumeWork: invite/partyseite/plan als NEUE Objekte ueber die Defaults gemergt — nichts Geteiltes mutieren (state.motto kann die Live-MOTTOS-Referenz sein) —, Motto an die Live-Referenz binden
     const _mottoVorher = (state.motto && state.motto.id) || '';
@@ -3439,7 +3447,16 @@ window.plausible.init=function(){};window.plausible.q=[];
     _uebernimm('date', d.date); _uebernimm('time', d.time); _uebernimm('endTime', d.endTime);
     _uebernimm('guests', d.guests); _uebernimm('location', d.location);
     _uebernimm('hostName', d.hostName); _uebernimm('hostPhone', d.hostPhone); _uebernimm('areaHint', d.areaHint);
-    _uebernimm('adresse', d.adresse); _uebernimm('partyMessage', d.partyMessage); _uebernimm('crewText', d.crewText);
+    _uebernimm('adresse', d.adresse); _uebernimm('partyMessage', d.partyMessage);
+    /* Crew (Re-Check MAJOR 2, umgekehrte Alter): bei aktiver Partyseite haengen an jedem Namen ein synchronisierter Gast-Link
+       und die Drei-Wege-Logik in scheduleCrewSync, die fehlende Namen als bewusst entfernt liest. Ein Link darf deshalb
+       Namen nur HINZUFUEGEN, nie entfernen — Entfernen bleibt Handarbeit im Feld. Ohne aktive Partyseite gilt die Zeitregel. */
+    if(d.crewText && _basisLokal && state.partyseite && state.partyseite.active && state.crewText){
+      const _teile = t => String(t || '').split(/[\n,]/).map(s => s.trim()).filter(Boolean);
+      const _vorhanden = new Set(_teile(state.crewText).map(s => s.toLowerCase()));
+      const _neu = _teile(d.crewText).filter(s => !_vorhanden.has(s.toLowerCase()));
+      if(_neu.length) state.crewText = state.crewText.replace(/\s+$/, '') + '\n' + _neu.join('\n');
+    } else _uebernimm('crewText', d.crewText);
     if(d.eliteVariant){ if(!_basisLokal) state.eliteVariant = d.eliteVariant; else if(d.eliteVariant !== 'standard' && (_linkNeuer || !state.eliteVariant || state.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant; }   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
     if(Array.isArray(d.eliteOff) && d.eliteOff.length && (_linkNeuer || !(state.eliteOff || []).length)) state.eliteOff = d.eliteOff;
     if(Array.isArray(d.games) && d.games.length && (_linkNeuer || !(state.games || []).length)) state.games = d.games;
@@ -3454,7 +3471,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(state.crewText){ try{ setCrew(state.crewText); }catch(e){} }   // Review M2 (07.09.): die Textarea allein sendet nichts — state.crew entsteht nur in setCrew()
     try{ renderAges(); }catch(e){}
     if(state.motto){ try{ document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji; document.getElementById('chosenMottoName').textContent = state.motto.name; }catch(e){} }
-    try{ if(state.motto && (!_basisLokal || _mottoVorher !== state.motto.id || !(state.invite && state.invite.title))){ state.invite.title = state.motto.invite.title; state.invite.body = state.name ? `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}` : ''; } }catch(e){}   // Review M3-Ergaenzung: der Titel haengt am Motto, nicht am Namen
+    try{ if(state.motto && (!_basisLokal || _mottoVorher !== state.motto.id || !(state.invite && state.invite.title))){ state.invite.title = state.motto.invite.title; state.invite.body = state.name ? state.name + ' ' + state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name) : ''; } }catch(e){}   // Review M3-Ergaenzung: der Titel haengt am Motto, nicht am Namen
     /* Der Link ist die AUSDRUECKLICHE Absicht — der lokale Resume-Banner darf ihn nicht
        ueberschreiben. resumeWork() ersetzt den State komplett (Object.assign ueber den
        Snapshot); ein Klick auf "Weitermachen" nach dem Restore haette den Link-Stand still
@@ -3470,7 +3487,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function sendMagicLinkModal(){
     const email = document.getElementById('modalEmail').value.trim();
-    if(!email || !email.includes('@')){ alert('Bitte gültige Email eingeben'); return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ alert('Bitte gültige E-Mail eingeben'); return; }   // Re-Check: der Worker verlangt ein Vollmuster — includes('@') liess Eingaben durch, die dort 400 wurden
     const mode = window.__slMode || 'save';
     closeSaveLater();
     if(mode === 'pdf' || mode === 'print'){
@@ -3497,7 +3514,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     flash.textContent = msg;
     flash.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#0F7B3F;color:#fff;padding:12px 24px;border-radius:999px;font-family:Nunito;font-weight:800;font-size:14px;z-index:300;box-shadow:0 6px 20px rgba(0,0,0,.2);animation:fadeIn .25s';
     document.body.appendChild(flash);
-    setTimeout(() => flash.remove(), /^⚠️/.test(msg) ? 6500 : 2200);   // Review m16: Fehlertexte bleiben, bis man sie gelesen hat
+    setTimeout(() => flash.remove(), Math.max(2200, Math.min(9000, String(msg).length * 55)));   // Re-Check m16: Lesezeit nach Textlaenge (~55 ms/Zeichen, 2,2–9 s) statt Praefix-Regel
   }
 
   // ===== Sticky scroll =====
@@ -3696,7 +3713,7 @@ window.plausible.init=function(){};window.plausible.q=[];
            (min/max am Input, setExactAge und gruppeAusAlter stimmen alle drei ueberein).
            Ein Link mit ?alter=13 wurde also stumm ignoriert, waehrend dieselbe Zahl von Hand
            funktionierte. Jetzt derselbe Bereich wie ueberall sonst. Gefunden von machsleicht-7b. */
-        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=1 && v<=14){ state.exactAge = v; state.age = gruppeAusAlter(v); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=1 && v<=14){ state.exactAge = v; state.age = gruppeAusAlter(v); endeNachGruppe(state.age); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
         const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20){ state.guests = v; window.__hasEntryParam = true; } }
         const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }
         const _pl = p.get('plan'); if(_pl && /^[A-Za-z0-9_-]{16,96}$/.test(_pl)){ window.__planToken = _pl; }   // 07.09.: Magic-Link, Wiederherstellung laeuft nach dem Init (s. restorePlanFromLink)   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
