@@ -1567,7 +1567,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   // ===== AUTO-SAVE =====
   let saveTimer = null;
-  const _STATE_DEFAULT = JSON.parse(JSON.stringify(state));   // Startwerte (nach Init) fuer den Ersetzen-Pfad des Magic-Links (Re-Check MINOR 2)
+  const _STATE_DEFAULT = JSON.parse(JSON.stringify(state));   // Startwerte VOR der Init-Motto-Zuweisung (motto: null) fuer den Ersetzen-Pfad des Magic-Links (Re-Check MINOR 2); den Motto-Fallback setzt restorePlanFromLink
   function autoSave(){
     if(saveTimer) clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
@@ -3434,6 +3434,7 @@ window.plausible.init=function(){};window.plausible.q=[];
        ueberschreiben nichts. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
     const _basisLokal = !!(_lokal && _planDa(_lokal) && (!_ersetzt || _gleicherPlan));   // ohne echten Plan (Phantom) zaehlt der Link voll — sonst gewaenne ein Vorgabedatum ueber das echte
     if(!_basisLokal){ try{ const _def = JSON.parse(JSON.stringify(_STATE_DEFAULT)); Object.keys(state).forEach(k => { delete state[k]; }); Object.assign(state, _def); }catch(e){} }   // Re-Check MINOR 2: "vom Default starten" braucht einen echten Reset — wer waehrend des Fetch "Weitermachen" klickte, hatte den vollen lokalen Plan in state
+    if(!_basisLokal && !state.motto && !m){ state.motto = MOTTOS.find(x => x.id === 'piraten') || MOTTOS[0]; }   // Pruefstand (A): _STATE_DEFAULT traegt motto:null — bringt der Link kein aufloesbares Motto (Custom-Motto von Geraet A), laese der Rest sonst state.motto.* auf null
     /* Zeitregel (Pruefstand 07.09.): auf demselben Geraet ist der Link immer aelter als der lokale Stand — er
        wurde daraus gebaut. Ist der Geraetestand juenger als der Link, fuellt der Link nur Luecken; ist der Link
        juenger (anderes Geraet mit alter Kopie), ueberschreibt er nicht-leere Werte. Ohne Zeitstempel gilt die
@@ -3452,15 +3453,15 @@ window.plausible.init=function(){};window.plausible.q=[];
        und die Drei-Wege-Logik in scheduleCrewSync, die fehlende Namen als bewusst entfernt liest. Ein Link darf deshalb
        Namen nur HINZUFUEGEN, nie entfernen — Entfernen bleibt Handarbeit im Feld. Ohne aktive Partyseite gilt die Zeitregel. */
     if(d.crewText && _basisLokal && state.partyseite && state.partyseite.active && state.crewText){
-      const _teile = t => String(t || '').split(/[\n,]/).map(s => s.trim()).filter(Boolean);
-      const _vorhanden = new Set(_teile(state.crewText).map(s => s.toLowerCase()));
-      const _neu = _teile(d.crewText).filter(s => !_vorhanden.has(s.toLowerCase()));
+      const _vorhanden = new Set(parseCrew(state.crewText).map(s => s.toLowerCase()));   // Pruefstand (C): derselbe Parser wie beim Senden — ein Feld, ein Parser
+      const _neu = parseCrew(d.crewText).filter(s => !_vorhanden.has(s.toLowerCase()));
       if(_neu.length) state.crewText = state.crewText.replace(/\s+$/, '') + '\n' + _neu.join('\n');
     } else _uebernimm('crewText', d.crewText);
     if(d.eliteVariant){ if(!_basisLokal) state.eliteVariant = d.eliteVariant; else if(d.eliteVariant !== 'standard' && (_linkNeuer || !state.eliteVariant || state.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant; }   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
     if(Array.isArray(d.eliteOff) && d.eliteOff.length && (_linkNeuer || !(state.eliteOff || []).length)) state.eliteOff = d.eliteOff;
     if(Array.isArray(d.games) && d.games.length && (_linkNeuer || !(state.games || []).length)) state.games = d.games;
     if(d.exactAge && (_linkNeuer || !state.exactAge)){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
+    if(d.endTime && state.age && ALTERS_INFO[state.age] && state.endTime !== ALTERS_INFO[state.age].ende) state.endTimeManuell = true;   // Pruefstand (B): das Flag reist nicht im Link — ein Ende abseits der Gruppenvorgabe ist offensichtlich von Hand, sonst zoege der naechste Alterswechsel es zurueck
     // Formularfelder aus dem State befuellen — dieselben Wege wie beim Resume
     try{ if(typeof syncEckdaten === 'function') syncEckdaten(); }catch(e){}
     const setz = (id, v) => { const el = document.getElementById(id); if(el && v != null && v !== '') el.value = v; };
@@ -3482,7 +3483,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Dorthin, wo der Elternteil weitermachen kann: mit Name -> Plan, ohne -> Eckdaten
     try{ if(_basisLokal){ syncPsGameUI(); renderPlanPreview(); } }catch(e){}   // wie resumeWork: lokale Spielwahl und Plan sichtbar machen
     try{ goStage(Math.max(_basisLokal ? (state.stage || 1) : 1, state.motto && state.name ? 3 : (state.motto ? 2 : 1))); }catch(e){}   // lokale Stage, aber nie hinter das zurueck, was der Link hergibt
-    showFlash(_basisLokal ? '✅ Dein Plan ist wieder da.' : '✅ Dein Plan ist wieder da — Motto, Eckdaten und Gäste. Ein Foto müsstest du neu einfügen.');
+    showFlash(_basisLokal ? '✅ Dein Plan ist wieder da.' : (/^custom-/.test(String(d.mottoId || '')) && !m ? '✅ Dein Plan ist wieder da — dein eigenes Motto trägst du auf diesem Gerät bitte neu ein, ein Foto ebenfalls.' : '✅ Dein Plan ist wieder da — Motto, Eckdaten und Gäste. Ein Foto müsstest du neu einfügen.'));
     try{ if(window.plausible) plausible('plan_restored', {props:{via:'magiclink'}}); }catch(e){}
   }
   function sendMagicLinkModal(){
