@@ -5,13 +5,15 @@
  * Liest alle HTML-Dateien im Repo, gleicht mit _redirects ab,
  * und generiert eine saubere sitemap.xml mit korrekten URLs.
  *
- * Aufruf: node _dev/scripts/generate-sitemap.js
- * Wird automatisch bei jedem "Ende" ausgeführt.
+ * Aufruf: node _dev/scripts/generate-sitemap.js [--technisch]
+ * Wird automatisch bei jedem "Ende" ausgeführt (git-sync-Skill, VOR dem Commit).
+ * --technisch: die ungecommitteten Änderungen dieser Sitzung sind ein technischer Sweep (kein sichtbares Wort
+ *   geändert) und zählen nicht als Inhaltsänderung — ohne das Flag bekäme jede berührte Seite heute als lastmod.
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync, execFileSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '../..');
 const DOMAIN = 'https://machsleicht.de';
@@ -29,6 +31,12 @@ const _lastmodCache = {};
 // beginnt, zaehlt ebenfalls nicht — die Sperre ist damit eine Commit-Konvention, die SHA-Liste nur der Seed.
 const TECHNISCHE_COMMITS = ['74ea116d'];
 const TECHNISCH_BETREFF = /^Technisch:/i;
+// Re-Check 2 (07.09.), MINOR 4a: Die Working-Tree-Regel unten kennt den Betreff-Marker nicht — der existiert vor dem Commit
+// noch nicht. Ein technischer Sweep, bei "Ende" VOR dem Commit generiert, stempelte alle beruehrten Seiten auf heute (das
+// 74ea116d-Symptom, nur eine Runde spaeter). Deshalb: --technisch schaltet die Regel ab, und wie viele URLs sie gestempelt
+// hat, steht sichtbar in der Ausgabezeile.
+const TECHNISCHE_SITZUNG = process.argv.includes('--technisch');
+let heuteWegenWorkingTree = 0;
 // Re-Check 07.09.: ein Shallow-Clone liefert je Datei nur HEAD — alle Seiten truegen dasselbe Datum, ohne Fehler. Laut scheitern.
 if (execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT, encoding: 'utf-8' }).trim() === 'true') {
   throw new Error('generate-sitemap: Shallow-Clone — git log liefert nur HEAD, lastmod waere uniform. Voll klonen.');
@@ -39,8 +47,10 @@ function getLastmod(filePath) {
   try {
     // Re-Check 07.09. (1): Der Generator laeuft bei "Ende" VOR dem Commit — eine gerade geaenderte Seite bekaeme sonst
     // still das Datum des VORHERIGEN Commits. Geaendert oder ungetrackt = wird heute committet = TODAY.
-    if (execFileSync('git', ['status', '--porcelain', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim()) { _lastmodCache[filePath] = TODAY; return TODAY; }
-    const out = execFileSync('git', ['log', '--format=%H %cs %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
+    if (!TECHNISCHE_SITZUNG && execFileSync('git', ['status', '--porcelain', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim()) { heuteWegenWorkingTree++; _lastmodCache[filePath] = TODAY; return TODAY; }
+    // %as = Author-Datum: Rebase/Amend setzen das Committer-Datum (%cs) neu, ohne dass sich ein Wort aendert — mit %cs wanderten
+    // so beruehrte Seiten still auf ein gemeinsames Datum (Re-Check 2, MINOR 4b; Datenprobe 07.09.: 244/244 Seiten heute gleich).
+    const out = execFileSync('git', ['log', '--format=%H %as %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
     const zeilen = out.split('\n').map(l => l.trim().match(/^(\S+) (\S+) ?(.*)$/)).filter(Boolean);
     const treffer = zeilen.find(m => !TECHNISCHE_COMMITS.some(t => m[1].startsWith(t)) && !TECHNISCH_BETREFF.test(m[3]));
     // Re-Check (3): nur technische Historie -> aeltester Commit (Anlage) statt still TODAY
@@ -252,7 +262,8 @@ function generateSitemap() {
   const outPath = path.join(ROOT, 'sitemap.xml');
   fs.writeFileSync(outPath, xml);
 
-  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY}); ${skippedRedirect} 301/410-Quellen + ${skippedExclude} themenfremde übersprungen`);
+  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY}); ${skippedRedirect} 301/410-Quellen + ${skippedExclude} themenfremde übersprungen; ${heuteWegenWorkingTree} URLs auf heute wegen ungecommitteter Änderungen${TECHNISCHE_SITZUNG ? ' (--technisch: Regel aus)' : ''}`);
+  if (heuteWegenWorkingTree > 0) console.log(`  Hinweis: War das ein technischer Sweep ohne sichtbare Textänderung, dann mit --technisch neu generieren — sonst tragen diese ${heuteWegenWorkingTree} URLs ein falsches, gemeinsames Datum.`);
 }
 
 generateSitemap();
