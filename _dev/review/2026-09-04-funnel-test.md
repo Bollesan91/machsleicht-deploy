@@ -1001,3 +1001,55 @@ Git-Fehler. Ergebnis: 51 URLs auf ihr echtes Datum (01.–03.09.), `/kindergebur
 als Linter-Stufe mit Gegenprobe (Prüfstand-Zone, Bolles Wort). (3) Lauf 7 nach diesem Commit-Block. (4) Re-Check der
 Fixes im frischen Tab (Bolles Konto bei 90 % Sitzungslimit — Bolle: jetzt versuchen). (5) Nach Review: „ende deploy"
 + Worker-Deploy; danach GSC (Sitemap neu einreichen, URL-Prüfung `/kindergeburtstag`, `/datenschutz`).
+
+## Follow-up nach dem Gegenlesen des Prüfstands und Re-Check
+
+**Follow-up `3eee06e9`** (nach dem Gegenlesen des Prüfstands, mit Harness-Gegenprobe gegen den alten Baum):
+- **Zeitregel im Link-Merge:** auf demselben Gerät ist der Magic-Link immer älter als der lokale Stand — „nicht-leer
+  überschreibt" drehte eine frisch geänderte Telefonnummer zurück. Jetzt gibt `GET /api/plan` `created` mit, der Planer
+  vergleicht mit `lastSaved`: Link jünger → überschreibt nicht-leere Werte; sonst füllt er nur Lücken; ohne Zeitstempel
+  gilt die Überschreib-Regel. Harness-Fall H (Gerät jünger) war vorher rot, H2 (Link jünger) prüft die Gegenrichtung.
+- **Geteilte Motto-Referenz nicht mehr mutiert:** der M1-Merge aus `547868d3` verschmolz Sub-Objekte per `Object.assign`
+  in bestehende Objekte — war `state.motto` schon die Live-`MOTTOS`-Referenz (`?motto=…&plan=…`), wurde das geteilte
+  Motto mit der gespeicherten Kopie überschrieben. **Selbst eingebauter Fehler**, gefunden durch den eigenen Harness-Fall I
+  (rot gegen 76807ab9: `MOTTOS[dino].name === "Dino (gespeichert)"`). Jetzt wie `resumeWork`: invite/partyseite/plan als
+  neue Objekte über die Defaults, alles andere ersetzt, Motto an die Live-Referenz gebunden.
+- **Generator:** Commits mit Betreff `Technisch:` zählen nicht als Inhaltsänderung (abgeleitete Regel, SHA-Liste bleibt
+  Seed); Kontrollzahl: Neulauf byte-identisch zur committeten Sitemap. `e26b93c2` bleibt bewusst ungesperrt (gemischter
+  Commit — Prüfstand: 24 Seiten drei Wochen zu frisch ist ehrlicher als ein verstecktes echtes Datum).
+- Harness danach **37/37 in 10 Fällen**; die Commit-Nachricht von `3eee06e9` nennt „33/33" — die Zahl war getippt, nicht
+  aus dem Lauf gelesen (R-A). Der Commit bleibt, die Korrektur steht hier.
+
+**Ablauf-Kollision:** der Prüfstand startete Lauf 7 gegen `76807ab9`, während `3eee06e9` in den Baum kam — mein
+„Strom steht" hatte er für den früheren Stand gelesen. Regel ab jetzt: nach „Strom steht" kein Commit ohne vorheriges
+„Strom offen" an den Prüfstand. Ob Lauf 7 wertlos war, entscheidet der Startzeitpunkt (seine Messung).
+
+**Stufe 72 (Prüfstand, ld+json parst):** 484/484 Blöcke bei HEAD, der FAQ-Block war seit `964ad987` kaputt und ab
+`547868d3` heil; Gegenprobe zweiarmig. Kopplung: die Probe sucht den String `"name": "Was tun, wenn die Kinder zu wild
+werden?"` im Planer-JSON-LD — ändert sich die FAQ-Frage, meldet der Prüfstand MUTATION-LEER.
+
+**Re-Check (frischer Tab, Fable 5.1 · Maximal, Diff `620a332a..1b1a01ed` per raw-URL auf `76807ab9`):** der erste Anlauf
+(Chat `1c49d96b`) ging verloren — der Tab verließ die Automations-Gruppe, im Chat blieb kein Assistenten-Beitrag, keine
+Limit-Meldung; zweiter Anlauf in neuem Chat `2bd801b2`, Tab unangetastet gelassen. Ergebnis:
+
+| Nr. | Reviewer-Status (gegen `76807ab9`) | Stufe 3 | Erledigt in |
+|---|---|---|---|
+| M1 | teilweise / **neu kaputt**: `Object.assign(state.motto, kopie)` korrumpierte den Live-Motto-Katalog (`state.motto` ist ab Init die MOTTOS-Referenz) | bestätigt = Harness-Fall I | `3eee06e9` |
+| M1 | Wache „Name oder Datum" filtert nichts — `state.date` ist per Default immer gesetzt; Datumsklausel fragte beim SEO-Phantom sogar häufiger | bestätigt (mein Denkfehler, vom Prüfstand mitgetragen) | Block 3: Wache = getippter Name oder aktive Partyseite, Datumsklausel raus, Zeitregel entscheidet Feldkonflikte |
+| M1 | „Ersetzen startet vom Default" ohne Reset — nach „Weitermachen" während des Fetch legt sich ein fremder Link über den vollen Plan | bestätigt | Block 3: `_STATE_DEFAULT`-Reset im Ersetzen-/Kein-lokal-Pfad, Harness-Fall K |
+| M2 | behoben, **Folgefehler**: älterer eigener Link → `setCrew` → Crew-Sync löscht später ergänzte Gast-Links | bestätigt | `3eee06e9` (Zeitregel: älterer Link füllt nur Lücken), Harness-Fall J |
+| M3 | behoben; Eigentext wird beim Motto-Wechsel überschrieben; führendes Leerzeichen bei leerem Namen | Ticket `invite.userEdited`; Leerzeichen Block 3 (3 Stellen) | Block 3 |
+| M4 | **nicht** (Hauptpfad): Planer startet mit `age='6-8'`/16:30, der Vergleich mit der „alten Gruppe" griff beim ersten Eintrag nie; Deep-Link ohne Ende | bestätigt | Block 3: `endeNachGruppe()` + `endTimeManuell`, auch für `?alter=`, Harness `age_test` 7 Fälle |
+| M5 | teilweise: eliteVariant/eliteOff/created und der IP-Drosselschlüssel `rl:plan:` fehlten in §11 | bestätigt | Block 3: §11 ergänzt, §10 „Missbrauchsschutz" für alle Drossel-Schlüssel |
+| M6 | behoben (grep über Planer, Worker, DSE: keine Restzusage) | — | `37c3ae09` |
+| M7 | teilweise: `· geplant` neben dem Live-Knopf (:1075) | bestätigt | Block 3 |
+| m1 | behoben; enthüllter Plan blieb bei ungültiger Eingabe sichtbar (6-8-Fallback); `aria-invalid` nie entfernt | bestätigt | Block 3 (revealed einklappen, aria-invalid aufheben) |
+| m2, m3, m5, m6–m13, m15, JSON-LD, Sitemap-Kern | behoben | — | `547868d3` / `37c3ae09` / `7de1cb98` |
+| m14 | **neu kaputt**: `_EMO_LEAD` kannte keine Keycaps → „1️⃣ 1️⃣ Navigations-Test" | bestätigt | Block 3 |
+| m16 | teilweise: Kriterium war das Präfix, nicht die Fehlerklasse | bestätigt | Block 3: Dauer nach Textlänge |
+| Sitemap | Kern behoben; stille Pfade: geänderte/ungetrackte Datei → Datum des vorherigen Commits, Shallow-Clone → uniform, rein technische Historie → TODAY, %cs vs %as | bestätigt (1–3), (4) bewusst bei %cs belassen | Block 3: `git status` je Datei → TODAY, Shallow → Abbruch, ältester Commit statt TODAY |
+| vorbestehend | `#iDeadline` nach Reload nie aus dem State befüllt; `sendMagicLinkModal` prüft nur `@` | mitgenommen | Block 3 |
+
+Score 61 (Telemetrie): „Zwei fix-induzierte MAJORs auf genau dem Pfad, den M1 heilen sollte, plus M4 im Hauptpfad unwirksam; der Rest ist sauber umgesetzt." Beide MAJORs waren zum Zeitpunkt der Lieferung bereits in `3eee06e9` behoben — gefunden durch den eigenen Harness (Fälle H/I gegen den alten Baum rot), bevor der Reviewer fertig war. Tool-Limit am Ende erreicht, Liste vollständig.
+
+**Block 3 committet:** `bb52e0d4` (Planer, paket-core, Datenschutz), `aeb5ccf9` (Sitemap-Generator), `25f7844b` (Technisch: Paket-Maschine — Manifeste w17, Cache-Buster, Rundlauf-Beweis grün). Lauf 7 = `3eee06e9`: 3 Rot (Stufe 18 → `bb52e0d4`, Stufe 67 → `25f7844b`, Stufe 70 = Stufe-72-Skript untracked, Bolles Entscheidung).

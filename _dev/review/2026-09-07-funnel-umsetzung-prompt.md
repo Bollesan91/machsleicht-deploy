@@ -104,11 +104,16 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     erhalten, wenn du sie ablehnst?** Öffne danach einen Link zum *selben* Plan (Ben, Dino) —
     kommt dann **keine** Rückfrage? Beides muss stimmen: Randfall geschützt, Normalfall
     ununterbrochen. **Dritter Fall:** fordere den Link an, *bevor* ein Name eingetragen ist, trag
-    danach lokal einen Namen ein und öffne den Link auf demselben Gerät — die Rückfrage muss
-    kommen (der Link bringt weniger mit, als lokal liegt). **Vierter Fall:** öffne erst
-    `?motto=dino`, verlasse die Seite, öffne dann einen fremden Magic-Link — **keine** Rückfrage
-    (ein Motto-Klick ist kein Plan; ein Plan zählt erst mit Name oder Datum). **Fünfter Fall:**
-    gleicher Name, gleiches Motto, anderes Datum → Rückfrage, und **beide Daten stehen im Text**.
+    danach lokal einen Namen ein und öffne den Link auf demselben Gerät — **keine** Rückfrage, und
+    der lokale Plan bleibt vollständig: eine leere Seite ist unbekannt, nicht anders; der ältere Link füllt nur Lücken.
+    **Vierter Fall:** öffne erst `?motto=dino`, verlasse die Seite, öffne dann einen fremden Magic-Link — **keine**
+    Rückfrage (ein Motto-Klick ist kein Plan; ein Plan zählt erst mit getipptem Namen oder aktiver Partyseite — ein
+    Datum beweist nichts, es ist per Vorgabe immer gesetzt). **Fünfter Fall:** gleicher Name, gleiches Motto, anderes
+    Datum → **keine** Rückfrage; die jüngere Quelle gewinnt: ist der Gerätestand jünger als der Link (oder das Alter
+    unbekannt), füllt der Link nur Lücken; ist der Link jünger, überschreibt er — außer der Gästeliste einer aktiven
+    Partyseite, die ein Link nur ergänzen, nie kürzen darf. **Sechster Fall:** Rückfrage bejaht bei anderem Plan,
+    nachdem im Banner schon „Weitermachen" geklickt war — der fremde Plan darf keine Reste (Partyseite, Crew, Foto)
+    des alten mitschleppen.
 
 ## Was du liefern sollst
 
