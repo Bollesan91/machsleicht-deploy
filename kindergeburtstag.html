@@ -3378,11 +3378,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     };
   }
   async function restorePlanFromLink(token){
-    let d;
+    let d, _linkZeit = 0;
     try{
       const r = await fetch('https://party.machsleicht.de/api/plan/' + encodeURIComponent(token));
       if(!r.ok){ showFlash(r.status === 404 ? '⚠️ Dieser Link ist abgelaufen — dein Plan auf diesem Gerät ist davon unberührt.' : '⚠️ Der Plan konnte gerade nicht geladen werden.'); return; }
-      d = (await r.json()).plan;
+      const _antwort = await r.json(); d = _antwort.plan; _linkZeit = Date.parse(_antwort.created || '') || 0;
     }catch(e){ showFlash('⚠️ Der Plan konnte gerade nicht geladen werden.'); return; }
     if(!d || typeof d !== 'object') return;
     const m = d.mottoId && MOTTOS.find(x => x.id === d.mottoId);
@@ -3424,21 +3424,26 @@ window.plausible.init=function(){};window.plausible.q=[];
        Link nicht traegt: aktive Partyseite, Plan-Zeilen, Einladungstext, Foto. Deshalb: liegt lokal ein
        Plan und wird er nicht ausdruecklich ersetzt, ist er die Basis (Sub-Objekte einzeln gemergt, wie
        resumeWork); der Link legt nur mit, was er tatsaechlich traegt — leere Werte und leere Listen
-       ueberschreiben nichts. Ein aelterer Link kann so einzelne neuere Werte zuruecksetzen (Datum),
-       aber nie Unverwandtes loeschen. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
+       ueberschreiben nichts. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
     const _basisLokal = !!(_lokal && (!_ersetzt || _gleicherPlan));
-    if(_basisLokal){ try{ Object.keys(_lokal).forEach(k => { const v = _lokal[k]; if(v && typeof v === 'object' && !Array.isArray(v) && state[k] && typeof state[k] === 'object' && !Array.isArray(state[k])) Object.assign(state[k], v); else state[k] = v; }); if(state.motto && state.motto.id){ const _live = MOTTOS.find(x => x.id === state.motto.id); if(_live) state.motto = _live; } applyAccent(state.motto); }catch(e){} }   // wie resumeWork: Sub-Objekte mergen, Motto an die Live-Referenz binden
+    /* Zeitregel (Pruefstand 07.09.): auf demselben Geraet ist der Link immer aelter als der lokale Stand — er
+       wurde daraus gebaut. Ist der Geraetestand juenger als der Link, fuellt der Link nur Luecken; ist der Link
+       juenger (anderes Geraet mit alter Kopie), ueberschreibt er nicht-leere Werte. Ohne Zeitstempel gilt die
+       Ueberschreib-Regel. So gewinnt immer die juengere Quelle, und nichts Juengeres wird still aelter. */
+    const _linkNeuer = !_basisLokal || !_lokal.lastSaved || !_linkZeit || _linkZeit > _lokal.lastSaved;
+    const _uebernimm = (k, v) => { if(v == null || v === '') return; if(_linkNeuer || !state[k]) state[k] = v; };
+    if(_basisLokal){ try{ Object.keys(_lokal).forEach(k => { const v = _lokal[k]; state[k] = ((k === 'invite' || k === 'partyseite' || k === 'plan') && v && typeof v === 'object' && !Array.isArray(v)) ? Object.assign({}, state[k] || {}, v) : v; }); if(state.motto && state.motto.id){ const _live = MOTTOS.find(x => x.id === state.motto.id); if(_live) state.motto = _live; } applyAccent(state.motto); }catch(e){} }   // wie resumeWork: invite/partyseite/plan als NEUE Objekte ueber die Defaults gemergt — nichts Geteiltes mutieren (state.motto kann die Live-MOTTOS-Referenz sein) —, Motto an die Live-Referenz binden
     const _mottoVorher = (state.motto && state.motto.id) || '';
     if(m){ if(_mottoVorher !== m.id) state.eliteOff = []; state.motto = m; applyAccent(m); }
-    if(d.name) state.name = String(d.name).slice(0,40);
-    if(d.date) state.date = d.date; if(d.time) state.time = d.time; if(d.endTime) state.endTime = d.endTime;
-    if(d.guests) state.guests = d.guests; if(d.location) state.location = d.location;
-    if(d.hostName) state.hostName = d.hostName; if(d.hostPhone) state.hostPhone = d.hostPhone; if(d.areaHint) state.areaHint = d.areaHint;
-    if(d.adresse) state.adresse = d.adresse; if(d.partyMessage) state.partyMessage = d.partyMessage; if(d.crewText) state.crewText = d.crewText;
-    if(d.eliteVariant && !(_basisLokal && d.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant;   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
-    if(Array.isArray(d.eliteOff) && d.eliteOff.length) state.eliteOff = d.eliteOff;
-    if(Array.isArray(d.games) && d.games.length) state.games = d.games;
-    if(d.exactAge){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
+    _uebernimm('name', d.name ? String(d.name).slice(0,40) : '');
+    _uebernimm('date', d.date); _uebernimm('time', d.time); _uebernimm('endTime', d.endTime);
+    _uebernimm('guests', d.guests); _uebernimm('location', d.location);
+    _uebernimm('hostName', d.hostName); _uebernimm('hostPhone', d.hostPhone); _uebernimm('areaHint', d.areaHint);
+    _uebernimm('adresse', d.adresse); _uebernimm('partyMessage', d.partyMessage); _uebernimm('crewText', d.crewText);
+    if(d.eliteVariant){ if(!_basisLokal) state.eliteVariant = d.eliteVariant; else if(d.eliteVariant !== 'standard' && (_linkNeuer || !state.eliteVariant || state.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant; }   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
+    if(Array.isArray(d.eliteOff) && d.eliteOff.length && (_linkNeuer || !(state.eliteOff || []).length)) state.eliteOff = d.eliteOff;
+    if(Array.isArray(d.games) && d.games.length && (_linkNeuer || !(state.games || []).length)) state.games = d.games;
+    if(d.exactAge && (_linkNeuer || !state.exactAge)){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
     // Formularfelder aus dem State befuellen — dieselben Wege wie beim Resume
     try{ if(typeof syncEckdaten === 'function') syncEckdaten(); }catch(e){}
     const setz = (id, v) => { const el = document.getElementById(id); if(el && v != null && v !== '') el.value = v; };

@@ -959,7 +959,7 @@ export default {
       const raw = await env.PARTY.get(`plan:${token}`);
       if (!raw) return json({error:"Dieser Link ist abgelaufen oder unbekannt"}, 404, request);
       let d; try { d = JSON.parse(raw); } catch(e) { return json({error:"Kaputt"}, 500, request); }
-      return json({plan: d.plan}, 200, request);
+      return json({plan: d.plan, created: d.created || ''}, 200, request);   // created: der Planer entscheidet damit, ob der Link juenger ist als der Geraetestand (Zeitregel, Pruefstand 07.09.)
     }
     if (path === "/api/waitlist" && request.method === "POST") {
       const body = await request.json().catch(() => ({}));

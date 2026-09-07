@@ -25,14 +25,17 @@ const _lastmodCache = {};
 // Der Schrift-Umzug 74ea116d hat 169 Seiten beruehrt, ohne ein sichtbares Wort zu aendern — mit ihm
 // als lastmod truegen alle 136 URLs dasselbe Datum, und genau das entwertet Google (s. o.). Commits in
 // dieser Liste werden beim Ableiten uebersprungen; das naechstaeltere zaehlt. Volle SHAs oder Praefixe.
+// Fuer die Zukunft abgeleitet statt gepflegt (Pruefstand 07.09.): ein Commit, dessen Betreff mit "Technisch:"
+// beginnt, zaehlt ebenfalls nicht — die Sperre ist damit eine Commit-Konvention, die SHA-Liste nur der Seed.
 const TECHNISCHE_COMMITS = ['74ea116d'];
+const TECHNISCH_BETREFF = /^Technisch:/i;
 function getLastmod(filePath) {
   if (_lastmodCache[filePath] !== undefined) return _lastmodCache[filePath];
   let d = TODAY; // Fallback: neue/ungetrackte Datei
   try {
-    const out = execFileSync('git', ['log', '--format=%H %cs', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
-    const zeile = out.split('\n').map(l => l.trim()).find(l => l && !TECHNISCHE_COMMITS.some(t => l.startsWith(t)));
-    const datum = zeile ? zeile.split(' ')[1] : '';
+    const out = execFileSync('git', ['log', '--format=%H %cs %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
+    const treffer = out.split('\n').map(l => l.trim().match(/^(\S+) (\S+) ?(.*)$/)).find(m => m && !TECHNISCHE_COMMITS.some(t => m[1].startsWith(t)) && !TECHNISCH_BETREFF.test(m[3]));
+    const datum = treffer ? treffer[2] : '';
     if (/^\d{4}-\d{2}-\d{2}$/.test(datum)) d = datum;
   } catch (e) { throw new Error('generate-sitemap: git log fehlgeschlagen fuer ' + filePath + ' — ' + (e && e.message)); }   // laut scheitern: ein stiller TODAY-Stempel auf allen 136 URLs war am 07.09. das Symptom
   _lastmodCache[filePath] = d;
