@@ -78,7 +78,7 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     **Nimm dafür ausdrücklich zwei Namen: einen auf Zischlaut (Mats, Max, Lars) und einen ohne
     (Mia, Lena) — und einmal gar keinen.** Alle drei Fälle müssen stimmen: „Mats’ Piraten-Plan",
     „Mia’s Piraten-Plan", und ohne Namen ein Satz ganz ohne Genitiv. *Mit „Mia" allein sieht man
-    den Fehler nicht — er zeigt sich nur bei Zischlaut-Endung. Das ’s bei „Mia" ist die dokumentierte
+    nicht, ob der Fall stimmt — das zeigt sich nur bei Zischlaut-Endung. Das ’s bei „Mia" ist die dokumentierte
    Stilentscheidung (poss(): Name’s, bei s/ß/x/z nur der Apostroph — `OFFENE-REVIEW-PUNKTE.md`) und
    kein Finding; der Planer setzt dabei den typografischen Apostroph ’.*
 13. **Deep-Link.** Ruf den Planer mit `?motto=piraten&alter=9` auf. Kommt das Alter im Feld an,
@@ -105,7 +105,10 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     kommt dann **keine** Rückfrage? Beides muss stimmen: Randfall geschützt, Normalfall
     ununterbrochen. **Dritter Fall:** fordere den Link an, *bevor* ein Name eingetragen ist, trag
     danach lokal einen Namen ein und öffne den Link auf demselben Gerät — die Rückfrage muss
-    kommen (der Link bringt weniger mit, als lokal liegt).
+    kommen (der Link bringt weniger mit, als lokal liegt). **Vierter Fall:** öffne erst
+    `?motto=dino`, verlasse die Seite, öffne dann einen fremden Magic-Link — **keine** Rückfrage
+    (ein Motto-Klick ist kein Plan; ein Plan zählt erst mit Name oder Datum). **Fünfter Fall:**
+    gleicher Name, gleiches Motto, anderes Datum → Rückfrage, und **beide Daten stehen im Text**.
 
 ## Was du liefern sollst
 
