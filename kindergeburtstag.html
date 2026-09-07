@@ -3349,6 +3349,27 @@ window.plausible.init=function(){};window.plausible.q=[];
     }catch(e){ showFlash('⚠️ Der Plan konnte gerade nicht geladen werden.'); return; }
     if(!d || typeof d !== 'object') return;
     const m = d.mottoId && MOTTOS.find(x => x.id === d.mottoId);
+    /* 07.09.2026 (Bolle): Rueckfrage NUR, wenn auf diesem Geraet ein ANDERER Plan liegt —
+       anderer Name oder anderes Motto. Im Normalfall (derselbe Plan, anderes Geraet) keine
+       Unterbrechung; im Randfall (Handy: Bens Dino-Party angefangen, Laptop-Link: Mias
+       Piraten-Plan) kein stiller, unwiderruflicher Verlust. Quelle fuer "was liegt hier" ist
+       der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor "Weitermachen" noch
+       der Default. */
+    const _lokal = window.__resumeSnapshot || ((typeof loadSavedState === 'function') ? loadSavedState() : null);
+    if(_lokal && (_lokal.name || (_lokal.motto && _lokal.motto.id))){
+      const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id;
+      const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '';
+      const _anders = (_ln && _kn && _ln !== _kn) || (_lm && _km && _lm !== _km);
+      if(_anders){
+        const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan';
+        const _linkLabel  = (d.name ? poss(String(d.name).trim()) + ' ' : '') + ((m && m.name) || 'Kindergeburtstags') + '-Plan';
+        if(!confirm('Auf diesem Gerät liegt schon ' + _lokalLabel + '.\n\nDurch ' + _linkLabel + ' aus dem Link ersetzen?')){
+          showFlash('Dein Plan auf diesem Gerät bleibt unverändert.');
+          try{ if(window.plausible) plausible('plan_restore_declined', {}); }catch(e){}
+          return;
+        }
+      }
+    }
     if(m){ state.motto = m; applyAccent(m); state.eliteOff = []; }
     if(d.name) state.name = String(d.name).slice(0,40);
     if(d.date) state.date = d.date; if(d.time) state.time = d.time; if(d.endTime) state.endTime = d.endTime;

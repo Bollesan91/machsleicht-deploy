@@ -875,3 +875,16 @@ Bolles Entscheidungen der zweiten Fragerunde, Commits `964ad987` und `9a7697a2`.
 **Beim Editor-Umbau hätte ich zweimal den falschen Block getroffen:** `finde('Wunschliste</h2>')` fand Zeile 1427 im Alt-Creator statt 2700 im Editor; `addWish()` hieß `addWishEd()`. Beide Male hat der Assert vor dem Write gestoppt. Seitdem: alle Suchen ab dem Editor-Anker.
 
 **Nicht live prüfbar heute:** die Umleitung, die Erinnerung und `/api/plan` laufen erst mit dem nächsten Worker-Deploy. Der Prüfauftrag nennt das unter „Grenzen".
+
+## Nachtrag 07.09., dritte Runde — aus der Gegenprüfung des Prüfstands
+
+| Punkt | Was kam | Was gebaut wurde | Commit |
+|---|---|---|---|
+| **Datums-Index** | „KV liefert je Key `metadata` — der Index existiert schon, du hast ihn nicht benutzt" | `partyOpts(party)` = `{expirationTtl, metadata:{date}}`, ersetzt **acht** `party:`-Puts in drei Schreibweisen (Regex, Assert auf genau 8). Der Cron filtert über `seite.keys` und liest nur Treffer + Altbestand ohne metadata. Log trennt `per-index-uebersprungen` von `gelesen` | `f6edb5f1` |
+| **Workers-Plan** | Bolle: **Free-Plan** | 1.000 KV-Reads/Tag für Cron **und** Live-Seite zusammen; jede Gästeseite ist ein Read. Deshalb `MAX_READS = 200` je Lauf, Rest morgen (`gecappt` im Log). Trifft praktisch nur den Altbestand — der schrumpft mit jedem Schreibvorgang | s.u. |
+| **Magic-Link-Rückfrage** | Bolle: „Nachfragen, wenn anderer Plan da ist — was sagst du?" · ich: ja | `confirm()` **nur**, wenn lokal ein Plan mit anderem Namen **oder** anderem Motto liegt. Quelle ist der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor „Weitermachen" noch der Default. Normalfall ohne Unterbrechung | s.u. |
+| MINOR | `poss("")` → Doppelleerzeichen im Betreff | „bis zur Piraten-Party" / „die Piraten-Party" ohne Namen | `f6edb5f1` |
+
+**Ein Ablauffehler, zum zweiten Mal:** Die Positivkontrolle meldete `partyOpts-Aufrufe=9 (soll 8)` — und der Commit war schon durch, weil die Kontrolle nur als Echo in der `node --check && git commit`-Kette lief. Aufgeklärt: 8 Aufrufe + 1 Definition, mein Muster `partyOpts(party` traf die Funktionsdefinition mit. Inhaltlich korrekt. **Konsequenz:** Kontrollzahlen gehören in einen Assert, der die Kette bricht — nicht in ein Echo, das man nach dem Commit liest.
+
+**Vom Prüfstand bestätigt (alle vier Fragen halten):** Datumsformat `YYYY-MM-DD` auf beiden Seiten des Vergleichs (`validDate` :336 vs. `toLocaleDateString("en-CA")`) — das war die stille Null, vor der er Angst hatte · `calcTTL`-Form identisch mit allen anderen Schreibpfaden · keine Präfix-Route fängt `/api/plan/` ab · `saveEdit()` liest per ID, `edPaypal` ist vorbefüllt (kein Bestandsverlust beim Speichern) · kein Doppelversand (Flag erst nach `res.ok`).

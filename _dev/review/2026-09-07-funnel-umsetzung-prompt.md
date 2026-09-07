@@ -97,6 +97,11 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     und **rechne nach**, ob jede Zusage darin von einer Funktion gedeckt ist.
 19. **„Später".** Klick oben rechts auf „Später", gib eine Adresse ein. Was sagt die Meldung
     danach — und stimmt sie mit dem überein, was das Modal vorher versprochen hat?
+20. **Der fremde Plan** *(nach dem Worker-Deploy)*. Fang auf einem Gerät „Ben, Dino" an. Öffne
+    dort einen Magic-Link zu „Mia, Piraten". **Kommt eine Rückfrage — und bleibt Bens Plan
+    erhalten, wenn du sie ablehnst?** Öffne danach einen Link zum *selben* Plan (Ben, Dino) —
+    kommt dann **keine** Rückfrage? Beides muss stimmen: Randfall geschützt, Normalfall
+    ununterbrochen.
 
 ## Was du liefern sollst
 

@@ -362,7 +362,8 @@ export default {
   async scheduled(event, env, ctx) {
     if (!env.RESEND_API_KEY) return;
     const ziel = new Date(Date.now() + 7*86400000).toLocaleDateString("en-CA", {timeZone:"Europe/Berlin"});
-    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0;
+    const MAX_READS = 200;   // Free-Plan: 1.000 KV-Reads/Tag fuer alles — der Cron nimmt hoechstens ein Fuenftel
+    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0, gecappt = false;
     do {
       const seite = await env.PARTY.list({prefix:"party:", cursor, limit:1000});
       for (const k of seite.keys) {
@@ -370,6 +371,12 @@ export default {
         // metadata (vor dem 07.09. geschrieben) faellt auf den Voll-Read zurueck.
         const md = k.metadata && typeof k.metadata.date === "string" ? k.metadata.date : null;
         if (md !== null && md !== ziel) { uebersprungen++; continue; }
+        /* 07.09.2026 (Bolle: Free-Plan). Der Workers-Free-Plan deckelt KV-Reads auf 1.000/Tag —
+           fuer Cron UND Live-Seite zusammen. Jede Gaesteseite ist ein Read. Der Cron darf die
+           Seite nicht aushungern: hoechstens MAX_READS Voll-Reads je Lauf, der Rest morgen.
+           Trifft praktisch nur den Altbestand ohne metadata; der schrumpft mit jedem
+           Schreibvorgang von selbst, danach liest der Cron nur noch echte Treffer. */
+        if (geprueft >= MAX_READS) { gecappt = true; break; }
         const raw = await env.PARTY.get(k.name); if (!raw) continue;
         let party; try { party = JSON.parse(raw); } catch(e) { continue; }
         geprueft++;
@@ -408,9 +415,9 @@ export default {
           } else { fehler++; }
         } catch(e) { fehler++; }
       }
-      cursor = seite.list_complete ? undefined : seite.cursor;
+      cursor = (seite.list_complete || gecappt) ? undefined : seite.cursor;   // gecappt: nicht weiterblaettern, Rest morgen
     } while (cursor);
-    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} gesendet=${gesendet} fehler=${fehler}`);
+    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} gesendet=${gesendet} fehler=${fehler} gecappt=${gecappt}`);
   },
   async fetch(request, env) {
    try {
