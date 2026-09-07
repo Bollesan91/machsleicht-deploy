@@ -1,0 +1,163 @@
+diff --git a/_dev/scripts/generate-sitemap.js b/_dev/scripts/generate-sitemap.js
+index d6d9f11a..db836b1f 100644
+--- a/_dev/scripts/generate-sitemap.js
++++ b/_dev/scripts/generate-sitemap.js
+@@ -5,13 +5,15 @@
+  * Liest alle HTML-Dateien im Repo, gleicht mit _redirects ab,
+  * und generiert eine saubere sitemap.xml mit korrekten URLs.
+  *
+- * Aufruf: node _dev/scripts/generate-sitemap.js
+- * Wird automatisch bei jedem "Ende" ausgeführt.
++ * Aufruf: node _dev/scripts/generate-sitemap.js [--technisch]
++ * Wird automatisch bei jedem "Ende" ausgeführt (git-sync-Skill, VOR dem Commit).
++ * --technisch: die ungecommitteten Änderungen dieser Sitzung sind ein technischer Sweep (kein sichtbares Wort
++ *   geändert) und zählen nicht als Inhaltsänderung — ohne das Flag bekäme jede berührte Seite heute als lastmod.
+  */
+ 
+ const fs = require('fs');
+ const path = require('path');
+-const { execSync, execFileSync } = require('child_process');
++const { execFileSync } = require('child_process');
+ 
+ const ROOT = path.resolve(__dirname, '../..');
+ const DOMAIN = 'https://machsleicht.de';
+@@ -29,6 +31,12 @@ const _lastmodCache = {};
+ // beginnt, zaehlt ebenfalls nicht — die Sperre ist damit eine Commit-Konvention, die SHA-Liste nur der Seed.
+ const TECHNISCHE_COMMITS = ['74ea116d'];
+ const TECHNISCH_BETREFF = /^Technisch:/i;
++// Re-Check 2 (07.09.), MINOR 4a: Die Working-Tree-Regel unten kennt den Betreff-Marker nicht — der existiert vor dem Commit
++// noch nicht. Ein technischer Sweep, bei "Ende" VOR dem Commit generiert, stempelte alle beruehrten Seiten auf heute (das
++// 74ea116d-Symptom, nur eine Runde spaeter). Deshalb: --technisch schaltet die Regel ab, und wie viele URLs sie gestempelt
++// hat, steht sichtbar in der Ausgabezeile.
++const TECHNISCHE_SITZUNG = process.argv.includes('--technisch');
++let heuteWegenWorkingTree = 0;
+ // Re-Check 07.09.: ein Shallow-Clone liefert je Datei nur HEAD — alle Seiten truegen dasselbe Datum, ohne Fehler. Laut scheitern.
+ if (execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT, encoding: 'utf-8' }).trim() === 'true') {
+   throw new Error('generate-sitemap: Shallow-Clone — git log liefert nur HEAD, lastmod waere uniform. Voll klonen.');
+@@ -39,8 +47,10 @@ function getLastmod(filePath) {
+   try {
+     // Re-Check 07.09. (1): Der Generator laeuft bei "Ende" VOR dem Commit — eine gerade geaenderte Seite bekaeme sonst
+     // still das Datum des VORHERIGEN Commits. Geaendert oder ungetrackt = wird heute committet = TODAY.
+-    if (execFileSync('git', ['status', '--porcelain', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim()) { _lastmodCache[filePath] = TODAY; return TODAY; }
+-    const out = execFileSync('git', ['log', '--format=%H %cs %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
++    if (!TECHNISCHE_SITZUNG && execFileSync('git', ['status', '--porcelain', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim()) { heuteWegenWorkingTree++; _lastmodCache[filePath] = TODAY; return TODAY; }
++    // %as = Author-Datum: Rebase/Amend setzen das Committer-Datum (%cs) neu, ohne dass sich ein Wort aendert — mit %cs wanderten
++    // so beruehrte Seiten still auf ein gemeinsames Datum (Re-Check 2, MINOR 4b; Datenprobe 07.09.: 244/244 Seiten heute gleich).
++    const out = execFileSync('git', ['log', '--format=%H %as %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
+     const zeilen = out.split('\n').map(l => l.trim().match(/^(\S+) (\S+) ?(.*)$/)).filter(Boolean);
+     const treffer = zeilen.find(m => !TECHNISCHE_COMMITS.some(t => m[1].startsWith(t)) && !TECHNISCH_BETREFF.test(m[3]));
+     // Re-Check (3): nur technische Historie -> aeltester Commit (Anlage) statt still TODAY
+@@ -252,7 +262,8 @@ function generateSitemap() {
+   const outPath = path.join(ROOT, 'sitemap.xml');
+   fs.writeFileSync(outPath, xml);
+ 
+-  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY}); ${skippedRedirect} 301/410-Quellen + ${skippedExclude} themenfremde übersprungen`);
++  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY}); ${skippedRedirect} 301/410-Quellen + ${skippedExclude} themenfremde übersprungen; ${heuteWegenWorkingTree} URLs auf heute wegen ungecommitteter Änderungen${TECHNISCHE_SITZUNG ? ' (--technisch: Regel aus)' : ''}`);
++  if (heuteWegenWorkingTree > 0) console.log(`  Hinweis: War das ein technischer Sweep ohne sichtbare Textänderung, dann mit --technisch neu generieren — sonst tragen diese ${heuteWegenWorkingTree} URLs ein falsches, gemeinsames Datum.`);
+ }
+ 
+ generateSitemap();
+diff --git a/datenschutz.html b/datenschutz.html
+index ac8ace2e..ae2246fe 100755
+--- a/datenschutz.html
++++ b/datenschutz.html
+@@ -120,7 +120,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <h3>Speicherort und Auftragsverarbeitung</h3>
+     <p>Die Daten werden in <strong>Cloudflare Workers KV</strong> gespeichert (Cloudflare, Inc., San Francisco, USA). Cloudflare verarbeitet die Daten als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender Auftragsverarbeitungsvertrag (DPA) liegt vor. Cloudflare hat sich dem EU-US Data Privacy Framework verpflichtet.</p>
+     <h3>Missbrauchsschutz</h3>
+-    <p>Für das Anlegen von Partyseiten, Zusagen und Änderungen durch Gäste, Foto-Uploads und Wartelisten-Einträge zählen wir Anfragen je IP-Adresse in Stundenfenstern (Speicherdauer zwei Stunden, ebenfalls in Cloudflare Workers KV). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am Schutz vor Missbrauch und Überlastung).</p>
++    <p>Für das Anlegen von Partyseiten, das erneute Zusenden des Bearbeitungs-Links, Zusagen und Änderungen durch Gäste, Foto-Uploads, Wartelisten-Einträge und den Plan-Link des Planers (Abschnitt 11) zählen wir Anfragen je IP-Adresse in Stundenfenstern (Speicherdauer zwei Stunden, ebenfalls in Cloudflare Workers KV). Für das erneute Zusenden des Bearbeitungs-Links zählen wir zusätzlich je Partyseite die Anfragen pro Tag — ohne IP-Adresse, Speicherdauer zwei Tage. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am Schutz vor Missbrauch und Überlastung).</p>
+     <h3>Speicherdauer</h3>
+     <p>Die Partyseiten werden gelöscht, sobald sie nicht mehr benötigt werden, <strong>spätestens 14 Tage nach dem Partydatum</strong>. Ist bei einer Partyseite kein (gültiges) Datum hinterlegt, löschen wir sie spätestens 30 Tage nach der letzten Änderung. Ein zur Partyseite hochgeladenes Foto wird immer gemeinsam mit ihr gelöscht, folgt also derselben Frist. Du kannst deine Partyseite samt Foto auch selbst jederzeit löschen (Knopf „Party endgültig löschen" über deinen Edit-Link). Auf ausdrücklichen Wunsch löschen wir sie ebenfalls jederzeit vorher — schreibe dazu eine E-Mail mit dem Bearbeitungs-Link an kontakt@machsleicht.de.</p>
+     <p>Beim Schnell-Einladungs-Tool (machsleicht.de/einladung/erstellen/) speichern wir Name, Datum, Uhrzeit, Treffpunkt und WhatsApp-Nummer nicht auf unseren Servern — diese Angaben stecken kodiert im Einladungslink selbst und liegen damit allein in deiner Hand. Nur ein optional hochgeladenes Foto speichern wir; es wird spätestens 90 Tage nach dem Hochladen gelöscht. Diese Frist gilt ausschließlich für Fotos aus diesem Schnell-Tool — Fotos auf einer Partyseite folgen der oben genannten Party-Frist.</p>
+@@ -132,7 +132,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <p>Zum Versand transaktionaler E-Mails (z.B. Bearbeitungs-Link für deine Partyseite aus §10) nutzen wir <strong>Resend</strong> (Resend, Inc., San Francisco, USA). An Resend wird deine E-Mail-Adresse und der Inhalt der Nachricht übermittelt. Resend verarbeitet die Daten als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender DPA liegt vor. Resend hat sich dem EU-US Data Privacy Framework verpflichtet.</p>
+     <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — ohne Edit-Link keine Nutzung der Partyseite) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, sofern ausdrücklich erteilt).</p>
+     <p><strong>Erinnerung 7 Tage vor der Party:</strong> Hast du eine Partyseite mit deiner E-Mail-Adresse angelegt, schicken wir dir einmalig sieben Tage vor dem Partydatum eine Erinnerung an diese Adresse (Stand der Zusagen, Link zur Verwaltung). Sie ist Teil des Partyseiten-Service wie der Bearbeitungs-Link — keine Werbung, kein Newsletter, keine weitere Mail dieser Art. Ob sie verschickt wurde, vermerken wir an der Partyseite; der Vermerk wird mit ihr gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+-    <p><strong>Plan-Link per E-Mail (Kindergeburtstags-Planer):</strong> Über „Später“ kannst du dir einen Link schicken lassen, mit dem du deinen Plan auf einem anderen Gerät weiterbearbeitest. Dafür speichern wir deine E-Mail-Adresse und die Eckdaten des Plans (Motto, Vorname und Alter des Kindes, Datum, Uhrzeit, Gästezahl, Ort, Aufwandsstufe sowie gewählte und abgewählte Spiele, außerdem — soweit eingetragen — Name der Familie, Handynummer, ungefähre Ortsangabe, Adresse, Nachricht an die Gäste und die Vornamen der Gästeliste) zusammen mit dem Zeitpunkt der Anforderung unter einem zufälligen Kennzeichen in Cloudflare Workers KV (Auftragsverarbeitung wie in Abschnitt 10 beschrieben). Ein Foto wird nicht übertragen. Der Link ist 90 Tage gültig; danach werden diese Daten automatisch gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung des von dir angeforderten Links). Zum Schutz vor Missbrauch zählen wir Anfragen an diese Funktion je IP-Adresse in einem Zwei-Stunden-Fenster (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse am Schutz vor Missbrauch); der Zähler wird danach automatisch gelöscht.</p>
++    <p><strong>Plan-Link per E-Mail (Kindergeburtstags-Planer):</strong> Über „Später“ kannst du dir einen Link schicken lassen, mit dem du deinen Plan auf einem anderen Gerät weiterbearbeitest. Dafür speichern wir deine E-Mail-Adresse und die Eckdaten des Plans (Motto, Vorname und Alter des Kindes, Datum, Uhrzeit, Gästezahl, Ort, Aufwandsstufe sowie gewählte und abgewählte Spiele, außerdem — soweit eingetragen — Name der Familie, Handynummer, ungefähre Ortsangabe, Adresse, Nachricht an die Gäste und die Vornamen der Gästeliste) zusammen mit dem Zeitpunkt der Anforderung unter einem zufälligen Kennzeichen in Cloudflare Workers KV (Auftragsverarbeitung wie in Abschnitt 10 beschrieben). Ein Foto wird nicht übertragen. Der Link ist 90 Tage gültig; danach werden diese Daten automatisch gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung des von dir angeforderten Links). Zum Schutz vor Missbrauch zählen wir Anfragen an diese Funktion je IP-Adresse in Stundenfenstern (Speicherdauer zwei Stunden, wie in Abschnitt 10 beschrieben; Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse am Schutz vor Missbrauch); der Zähler wird danach automatisch gelöscht.</p>
+     <p><strong>Newsletter (Double-Opt-In):</strong> Für Tipps rund um den Kindergeburtstag (Newsletter) holen wir eine separate, ausdrückliche Einwilligung per Double-Opt-In ein: Nach Ankreuzen der entsprechenden Checkbox beim Erstellen einer Partyseite enthält die Edit-Link-E-Mail zusätzlich einen einmaligen Bestätigungslink für den Newsletter. Erst nach Klick auf diesen Link wird deine E-Mail-Adresse in unsere Newsletter-Liste aufgenommen (ebenfalls bei Resend gehostet). Der Bestätigungslink ist 7 Tage gültig. Bestätigst du nicht, löschen wir deine Daten automatisch. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+     <p><strong>Produkt-Warteliste (Plan-PDF / Komplettpaket):</strong> Trägst du dich freiwillig auf eine Warteliste ein, speichern wir deine E-Mail-Adresse und das gewünschte Produkt, um dich einmalig zum Produktstart zu informieren. Keine Newsletter-Aufnahme, keine Weitergabe. Die Daten werden spätestens 12 Monate nach dem Eintrag automatisch gelöscht — vorher jederzeit auf Wunsch per E-Mail an kontakt@machsleicht.de. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+     <p><strong>Nachweis der Einwilligung:</strong> Zum Nachweis der erteilten Einwilligung (Art. 7 Abs. 1 DSGVO) protokollieren wir bei Opt-In und Bestätigung jeweils Zeitpunkt, IP-Adresse und User-Agent deines Browsers. Diese Daten werden zusammen mit deiner E-Mail-Adresse gespeichert, solange du im Newsletter eingetragen bist, sowie anschließend zur Erfüllung rechtlicher Nachweispflichten für bis zu drei Jahre.</p>
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index f26300a6..7efaab22 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -2464,7 +2464,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     }
+     autoSave();
+   }
+-  function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; try{ const _f=document.getElementById('iDeadline'); if(_f && (!_f.value || _f.value === state.invite.fristAuto)){ const _n = fristAuto(); _f.value = _n; state.invite.deadline = _n; state.invite.fristAuto = _n; } }catch(e){} autoSave() }   // Review m5: automatische Frist zieht mit dem Datum, Eigentext bleibt
++  function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; const _altAuto = fristAuto(); state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; try{ const _dl = (state.invite && state.invite.deadline) || ''; if(!_dl || _dl === state.invite.fristAuto || _dl === _altAuto){ const _n = fristAuto(); const _f=document.getElementById('iDeadline'); if(_f) _f.value = _n; state.invite.deadline = _n; state.invite.fristAuto = _n; } }catch(e){} autoSave() }   // Review m5: automatische Frist zieht mit dem Datum, Eigentext bleibt. Re-Check 2 MINOR 2: Massstab ist der State, nicht das Feld — #iDeadline ist bis Stufe 4 leer; "war automatisch" heisst gleich dem Merker ODER gleich der Auto-Frist des alten Datums (Staende ohne Merker)
+   function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
+   function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; state.endTimeManuell = true; if(state.motto) renderPlanPreview(); autoSave() }   // Manuell gesetzt: die Gruppe fasst das Ende nicht mehr an
+   function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; const il=document.getElementById('iqGuestsLabel'); if(il) il.textContent = v; autoSave() }
+@@ -2817,8 +2817,8 @@ window.plausible.init=function(){};window.plausible.q=[];
+     try{ const _pm=document.getElementById('psMessage'); if(_pm && document.activeElement!==_pm && (state.partyMessage||'')!==_pm.value) _pm.value = state.partyMessage || ''; }catch(e){}   // #25 Nachricht hydrieren (Resume)
+     // Crew-Namen hydrieren (Resume/Rueckkehr) — nie waehrend des Tippens, sonst springt der Cursor.
+     try{ const _pc=document.getElementById('psCrew'); if(_pc && document.activeElement!==_pc){
+-      /* Rohtext bevorzugen; nur alte Saves (vor crewText) fallen auf die geparsten Namen zurueck. */
+-      const _ct = (typeof state.crewText==='string' && state.crewText) ? state.crewText : (Array.isArray(state.crew)?state.crew:[]).join('\n');
++      /* Rohtext bevorzugen; nur alte Saves (vor crewText) fallen auf die geparsten Namen zurueck (crewTextLokal). */
++      const _ct = crewTextLokal();
+       if(_ct!==_pc.value) _pc.value=_ct;
+     } updateCrewInfo(); }catch(e){}
+     // Nach dem Merge gibt es keine eigene Partyseiten-Browser-Vorschau mehr (nur noch die Telefon-Einladung).
+@@ -2913,6 +2913,11 @@ window.plausible.init=function(){};window.plausible.q=[];
+   const CREW_MAX = 30;        // = MAX_GUESTS im Worker (makeInvites slice)
+   const CREW_NAME_MAX = 50;   // = Namens-slice in makeInvites (Welle 2: 30->50, harmonisiert mit Gast-Namen)
+   const CREW_TEXT_MAX = 1600; // EINE Quelle fuer textarea-maxlength + crewText-Kappung (Gate: 30*50+29=1529)
++  /* Re-Check 2 (07.09.), MINOR 1: Speicherstaende von vor dem Rohtext (31.07.) tragen crew ohne crewText. Wer die Crew
++     nur ueber state.crewText liest, haelt so einen Stand fuer leer — die Hydrierung fiel deshalb schon auf crew zurueck,
++     die Link-Vereinigung nicht und ersetzte: ein frueher synchronisierter Name galt beim naechsten Sync als gestrichen,
++     samt Gast-Link. Eine Formel fuer beide Leser. */
++  function crewTextLokal(){ return (typeof state.crewText==='string' && state.crewText) ? state.crewText : (Array.isArray(state.crew)?state.crew:[]).join('\n'); }
+   function parseCrew(txt){
+     const seen = Object.create(null), out = [];
+     String(txt||'').split(/[\n,;]+/).forEach(function(raw){
+@@ -3407,13 +3412,12 @@ window.plausible.init=function(){};window.plausible.q=[];
+        der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor "Weitermachen" noch
+        der Default. */
+     const _lokal = window.__resumeSnapshot || ((typeof loadSavedState === 'function') ? loadSavedState() : null);
+-    let _ersetzt = false, _gleicherPlan = false;   // _ersetzt: Nutzer will per Rueckfrage AUSDRUECKLICH den Link-Plan; _gleicherPlan: Name+Motto identisch (nur Datum anders)
++    let _ersetzt = false;   // Nutzer will per Rueckfrage AUSDRUECKLICH den Link-Plan (nur nach _anders moeglich); gleiche oder unbekannte Identitaet fragt nicht, der Geraetestand bleibt Basis
+     const _planDa = (l) => !!(l && (String(l.name||'').trim() || (l.partyseite && l.partyseite.active)));   // Re-Check MINOR 1: state.date ist per Default IMMER gesetzt — Beleg fuer Arbeit sind ein getippter Name oder eine aktive Partyseite
+     if(_planDa(_lokal)){
+       const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id;
+       const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '';
+       const _anders = (_ln && _kn && _ln !== _kn) || (_lm && _km && _lm !== _km);   // andere Identitaet nur, wenn BEIDE Seiten etwas sagen und es sich unterscheidet; eine leere Seite ist unbekannt, nicht anders (Pruefstand 07.09.) — Luecken fuellt die Zeitregel, Datum ist kein Identitaetsmerkmal
+-      _gleicherPlan = !_anders;   // gleiche oder unbekannte Identitaet: kein "Ersetzen" gegen einen namenlosen Schnappschuss, der Geraetestand bleibt Basis
+       if(_anders){
+         const _vom = x => /^\d{4}-\d{2}-\d{2}$/.test(x || '') ? ' vom ' + new Date(x + 'T00:00:00').toLocaleDateString('de-DE', {day:'numeric', month:'long'}) : '';   // Datum im Text: nur so ist \"gleicher Name, anderes Datum\" zu entscheiden
+         const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan' + _vom(_lokal.date);
+@@ -3432,7 +3436,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+        Plan und wird er nicht ausdruecklich ersetzt, ist er die Basis (Sub-Objekte einzeln gemergt, wie
+        resumeWork); der Link legt nur mit, was er tatsaechlich traegt — leere Werte und leere Listen
+        ueberschreiben nichts. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
+-    const _basisLokal = !!(_lokal && _planDa(_lokal) && (!_ersetzt || _gleicherPlan));   // ohne echten Plan (Phantom) zaehlt der Link voll — sonst gewaenne ein Vorgabedatum ueber das echte
++    const _basisLokal = !!(_lokal && _planDa(_lokal) && !_ersetzt);   // ohne echten Plan (Phantom) zaehlt der Link voll — sonst gewaenne ein Vorgabedatum ueber das echte
+     if(!_basisLokal){ try{ const _def = JSON.parse(JSON.stringify(_STATE_DEFAULT)); Object.keys(state).forEach(k => { delete state[k]; }); Object.assign(state, _def); }catch(e){} }   // Re-Check MINOR 2: "vom Default starten" braucht einen echten Reset — wer waehrend des Fetch "Weitermachen" klickte, hatte den vollen lokalen Plan in state
+     if(!_basisLokal && !state.motto && !m){ state.motto = MOTTOS.find(x => x.id === 'piraten') || MOTTOS[0]; }   // Pruefstand (A): _STATE_DEFAULT traegt motto:null — bringt der Link kein aufloesbares Motto (Custom-Motto von Geraet A), laese der Rest sonst state.motto.* auf null
+     /* Zeitregel (Pruefstand 07.09.): auf demselben Geraet ist der Link immer aelter als der lokale Stand — er
+@@ -3452,16 +3456,17 @@ window.plausible.init=function(){};window.plausible.q=[];
+     /* Crew (Re-Check MAJOR 2, umgekehrte Alter): bei aktiver Partyseite haengen an jedem Namen ein synchronisierter Gast-Link
+        und die Drei-Wege-Logik in scheduleCrewSync, die fehlende Namen als bewusst entfernt liest. Ein Link darf deshalb
+        Namen nur HINZUFUEGEN, nie entfernen — Entfernen bleibt Handarbeit im Feld. Ohne aktive Partyseite gilt die Zeitregel. */
+-    if(d.crewText && _basisLokal && state.partyseite && state.partyseite.active && state.crewText){
+-      const _vorhanden = new Set(parseCrew(state.crewText).map(s => s.toLowerCase()));   // Pruefstand (C): derselbe Parser wie beim Senden — ein Feld, ein Parser
++    const _crewLokal = (_basisLokal && state.partyseite && state.partyseite.active) ? crewTextLokal() : '';   // Re-Check 2 MINOR 1: dieselbe Basis wie die Hydrierung — Alt-Staende (crew ohne crewText) sind nicht leer
++    if(d.crewText && _crewLokal){
++      const _vorhanden = new Set(parseCrew(_crewLokal).map(s => s.toLowerCase()));   // Pruefstand (C): derselbe Parser wie beim Senden — ein Feld, ein Parser
+       const _neu = parseCrew(d.crewText).filter(s => !_vorhanden.has(s.toLowerCase()));
+-      if(_neu.length) state.crewText = state.crewText.replace(/\s+$/, '') + '\n' + _neu.join('\n');
++      if(_neu.length) state.crewText = _crewLokal.replace(/\s+$/, '') + '\n' + _neu.join('\n');
+     } else _uebernimm('crewText', d.crewText);
+     if(d.eliteVariant){ if(!_basisLokal) state.eliteVariant = d.eliteVariant; else if(d.eliteVariant !== 'standard' && (_linkNeuer || !state.eliteVariant || state.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant; }   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
+     if(Array.isArray(d.eliteOff) && d.eliteOff.length && (_linkNeuer || !(state.eliteOff || []).length)) state.eliteOff = d.eliteOff;
+     if(Array.isArray(d.games) && d.games.length && (_linkNeuer || !(state.games || []).length)) state.games = d.games;
+     if(d.exactAge && (_linkNeuer || !state.exactAge)){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
+-    if(d.endTime && state.age && ALTERS_INFO[state.age] && state.endTime !== ALTERS_INFO[state.age].ende) state.endTimeManuell = true;   // Pruefstand (B): das Flag reist nicht im Link — ein Ende abseits der Gruppenvorgabe ist offensichtlich von Hand, sonst zoege der naechste Alterswechsel es zurueck
++    if(d.endTime && state.endTime === d.endTime && d.endTime !== _STATE_DEFAULT.endTime && state.age && ALTERS_INFO[state.age] && state.endTime !== ALTERS_INFO[state.age].ende) state.endTimeManuell = true;   // Pruefstand (B): das Flag reist nicht im Link — ein Ende abseits der Gruppenvorgabe ist offensichtlich von Hand, sonst zoege der naechste Alterswechsel es zurueck. Re-Check 2 MINOR 5: nur fuer den Wert, der jetzt gilt UND aus dem Link kam; der Startwert ist kein Beleg — Staende von vor dem Gruppen-Ende tragen ihn ohne Absicht, und ohne diese Ausnahme schriebe jeder Restore sie als Handarbeit fest
+     // Formularfelder aus dem State befuellen — dieselben Wege wie beim Resume
+     try{ if(typeof syncEckdaten === 'function') syncEckdaten(); }catch(e){}
+     const setz = (id, v) => { const el = document.getElementById(id); if(el && v != null && v !== '') el.value = v; };

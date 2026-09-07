@@ -50,7 +50,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260818"></script>
+<script src="/paket/core/paket-core.js?v=20260907"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -563,7 +563,7 @@ function shTimeline(){
     ? '<div class="note">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
       +' — passen nicht mehr sicher vor den Ritterschlag. Anleitungen stehen trotzdem in Teil III.</div>'
     : '';
-  return sheet(hd('Teil I · So läuft der Tag','Der große Ritter-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
+  return sheet(hd('Teil I · So läuft der Tag','Der große Ritter-Tag — Minute für Minute', variant().timeWindow?('Vorlage: '+variant().timeWindow.split(',')[0]+' — der Plan unten läuft in euren Zeiten'):'')
     +'<div class="tl grow">'
     +tl.rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
       +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')

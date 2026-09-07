@@ -437,10 +437,15 @@ try {
        "eine Party mit dreissig Absagen behauptet gar nichts ueber Kapazitaet");
   }
   ok((await call("/gibtsnicht99")).status === 404, "unbekannte Party -> 404");
-  const creatorDoc = await call("/");
-  const creatorHtml = await creatorDoc.text();
-  ok(creatorDoc.status === 200 && creatorHtml.length > 2000, "creator rendert");
-  docs.push({ form: null, kind: "creator", label: "creator", body: creatorHtml, html: true });
+  // 07.09.2026: Der Root leitet seit 9a7697a2 auf den Planer um (Bolle: "umleiten"). Bis dahin
+  // verlangte diese Stufe 200 + Creator-HTML — die ALTE Zusage. Geprueft wird jetzt die NEUE:
+  // 302 auf machsleicht.de/kindergeburtstag, mottoId -> motto uebersetzt, ref durchgereicht.
+  // call() ruft worker.fetch direkt, folgt also keinem Redirect — die 302 ist hier sichtbar.
+  // Kein docs.push mehr: es gibt keinen Creator-Rumpf, den die Folgepruefungen lesen koennten.
+  const creatorDoc = await call("/?mottoId=piraten&ref=abc123");
+  const creatorLoc = creatorDoc.headers.get("location") || "";
+  ok(creatorDoc.status === 302 && creatorLoc.startsWith("https://machsleicht.de/kindergeburtstag"), "root leitet auf den Planer um");
+  ok(creatorLoc.includes("motto=piraten") && creatorLoc.includes("ref=abc123"), "umleitung uebersetzt mottoId->motto und reicht ref durch");
 
   // ══ Zustandswechsel: nach JEDER Zusage wird alles erneut geholt ═══════════
   // (Der vierte Gutachter hat genau hier zugeschlagen: die API wurde nur direkt nach dem

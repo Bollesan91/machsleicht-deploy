@@ -199,6 +199,15 @@ function generateId(len = 8) {
 function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
 }
+/* 07.09.2026 — EIN Optionsobjekt fuer alle party:-Puts. Bis heute acht Schreibpfade in drei
+   Schreibweisen, alle nur mit expirationTtl. KV liefert bei list() je Key auch metadata —
+   das ist der Datums-Index, den die Erinnerungsmail braucht: der Cron filtert ueber die
+   Keys und ruft get() nur fuer Treffer auf (Reads von N auf Treffer). Altbestand ohne
+   metadata faellt im Cron auf get() zurueck, bis ihn der naechste Schreibvorgang nachzieht.
+   (Vorschlag machsleicht-7b.) */
+function partyOpts(party) {
+  return { expirationTtl: calcTTL(party && party.date), metadata: { date: (party && party.date) || "" } };
+}
 function calcTTL(partyDate) {
   // Bolle-Regel 13.07.2026: Party + alle Daten (Fotos, Gaeste) verfallen automatisch
   // 14 TAGE NACH DEM PARTYDATUM. Manuell loeschen geht jederzeit vorher (Edit-Link, DELETE).
@@ -341,6 +350,97 @@ function validTime(t) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(t)) ? asSt
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
 export default {
+  /* 07.09.2026 — ERINNERUNG 7 TAGE VOR DER PARTY.
+     Das Versprechen stand an drei Stellen im Text, ohne dass irgendeine Maschine es einloeste:
+     kein scheduled-Handler, kein [triggers]-Block (Funnel-Test K1-2). Bolle hat am 07.09.
+     entschieden, die Funktion zu bauen statt den Text zu streichen.
+     Empfaenger: party.email — die Adresse, die der Gastgeber fuer seinen Verwaltungs-Link gab.
+     Eine einmalige Erinnerung an die EIGENE Party ist transaktional, kein Newsletter; sie
+     braucht kein separates Opt-in — Bolle 07.09. (Review M6): Service-Mail, und Datenschutz §11,
+     E-Mail-Feld im Planer und DOI-Mail sagen jetzt genau das. Idempotent ueber party.reminded7.
+     Datums-Index: partyOpts() legt party.date als KV-Metadata ab (seit 07.09.); der Lauf liest
+     nur Treffer und Altbestand ohne Metadata — den zieht er beim ersten Read nach (s. unten). */
+  async scheduled(event, env, ctx) {
+    if (!env.RESEND_API_KEY) return;
+    const ziel = new Date(Date.now() + 7*86400000).toLocaleDateString("en-CA", {timeZone:"Europe/Berlin"});
+    const MAX_READS = 200;   // Deckel je Lauf; Herleitung im Kommentar unten (1.000 KV-Operationen je Aufruf)
+    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0, nachgezogen = 0, gecappt = false;
+    do {
+      const seite = await env.PARTY.list({prefix:"party:", cursor, limit:1000});
+      for (const k of seite.keys) {
+        // Index-Pfad: Keys mit metadata.date werden OHNE get() aussortiert. Altbestand ohne
+        // metadata (vor dem 07.09. geschrieben) faellt auf den Voll-Read zurueck.
+        const md = k.metadata && typeof k.metadata.date === "string" ? k.metadata.date : null;
+        if (md !== null && md !== ziel) { uebersprungen++; continue; }
+        /* 07.09.2026 (Bolle: Free-Plan). Grenzen laut developers.cloudflare.com/kv/platform/limits
+           (07.09. nachgelesen): 100.000 Reads/Tag und 1.000 Writes/Tag (Free), 1.000 KV-Operationen
+           je Worker-Aufruf (Free UND Paid). Die erste Fassung dieses Kommentars nannte "1.000
+           Reads/Tag" — falsch um Faktor 100. Bindend sind die Operationen je Aufruf und die Writes
+           je Tag, die sich der Cron mit RSVP/Edit der Live-Seite teilt. Deckel: MAX_READS Reads je
+           Lauf, je Read hoechstens ein Write (Nachziehen unten) -> unter 2*MAX_READS+Listenseiten
+           Operationen je Aufruf, unter MAX_READS+gesendet Writes je Tag.
+           Was hinter dem Deckel liegt, wird an DIESEM Tag nicht geprueft, und morgen ist ziel ein
+           anderer Tag — die erste Fassung versprach die Pruefung "morgen"; das galt fuer die Reads, nicht fuer die
+           Treffer (Befund Pruefstand 07.09.). Damit der Deckel nicht jeden Tag dieselben Altbestand-
+           Keys frisst, schreibt der Lauf jeden gelesenen Altbestand-Key mit Metadata zurueck (Inhalt
+           unveraendert): ab dem naechsten Lauf kostet er keinen Read mehr, nach ceil(N/MAX_READS)
+           Laeufen ist der Altbestand leer. Uebergangsluecke bis dahin: Bolle 07.09. — im KV liegen
+           nur Testpartys (N << MAX_READS), der erste Lauf liest alles nach, kein Nachhol-Zweig.
+           Nachziehen neben der Live-Seite (Pruefstand 07.09.): (a) Fenster get->put je Altbestand-
+           Party, hoechstens MAX_READS je Lauf, jedes so lang wie ein KV-Put, nur in Uebergangs-
+           laeufen — ein RSVP darin wird von put(raw) ueberschrieben, der Gast antwortet neu
+           (Klasse W10). (b) KV: 1 Write je Sekunde je Key — kollidiert ein Gast-Write mit dem
+           Nachziehen, scheitert einer: unserer -> catch -> fehler++, Party bleibt Altbestand bis
+           zum naechsten Lauf; der Gast-Put (RSVP, ohne try/catch) -> 500 sichtbar, Neuversuch.
+           Kein stiller Verlust auf beiden Wegen. */
+        if (geprueft >= MAX_READS) { gecappt = true; break; }
+        const raw = await env.PARTY.get(k.name); geprueft++;   // zaehlt den Read, nicht den Parse
+        if (!raw) continue;
+        let party; try { party = JSON.parse(raw); } catch(e) { continue; }
+        if (party.date !== ziel || !party.email || party.reminded7) {
+          // Altbestand nachziehen: raw unveraendert zurueck, nur Metadata (+TTL nach derselben Regel
+          // wie jeder andere Put). Der Trefferpfad unten schreibt ohnehin mit partyOpts.
+          if (md === null) { try { await env.PARTY.put(k.name, raw, partyOpts(party)); nachgezogen++; } catch(e) { fehler++; } }
+          continue;
+        }
+        const id = k.name.slice("party:".length);
+        const name = asStr(party.childName).replace(/[\x00-\x1F\x7F]/g, " ").slice(0, 40);
+        const gaeste = (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status === "ja").length;
+        const dateStr = new Date(party.date + "T00:00:00").toLocaleDateString("de-DE", {weekday:"long", day:"numeric", month:"long"});
+        const gastUrl = `https://party.machsleicht.de/${id}`;
+        const editUrl = party.editToken ? `https://party.machsleicht.de/${id}?edit=${party.editToken}` : gastUrl;
+        const motto = asStr(party.motto) || "Kindergeburtstag";
+        const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
+  <h2 style="margin:0 0 12px">Noch eine Woche bis ${name ? "zu " + esc(poss(name)) : "zur"} ${esc(motto)}-Party \u{1F389}</h2>
+  <p>Am <strong>${esc(dateStr)}</strong> ist es so weit. Bisher haben <strong>${gaeste}</strong> ${gaeste === 1 ? "Kind" : "Kinder"} zugesagt.</p>
+  <p>Jetzt lohnt sich ein Blick auf die G\u00E4steliste \u2014 Allergien, Abholzeiten und wer noch nicht geantwortet hat:</p>
+  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
+  <p style="font-size:13px;color:#666">Der Link zum Weiterleiten an Eltern bleibt: <a href="${esc(gastUrl)}">${esc(gastUrl)}</a></p>
+  <p style="font-size:12px;color:#999;margin-top:24px">Diese einmalige Erinnerung bekommst du, weil du beim Anlegen der Partyseite diese Adresse f\u00FCr deinen Verwaltungs-Link angegeben hast. Kein Newsletter, keine weitere Mail dieser Art.</p>
+</div>`;
+        try {
+          const res = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+            body: JSON.stringify({
+              from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+              reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+              to: [party.email],
+              subject: `In 7 Tagen: ${name ? poss(name) + " " : "die "}${motto}-Party`,
+              html
+            })
+          });
+          if (res.ok) {
+            party.reminded7 = new Date().toISOString();
+            await env.PARTY.put(k.name, JSON.stringify(party), partyOpts(party));
+            gesendet++;
+          } else { fehler++; }
+        } catch(e) { fehler++; }
+      }
+      cursor = (seite.list_complete || gecappt) ? undefined : seite.cursor;   // gecappt: nicht weiterblaettern; nachgezogene Keys kosten im naechsten Lauf keinen Read
+    } while (cursor);
+    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} nachgezogen=${nachgezogen} gesendet=${gesendet} fehler=${fehler} gecappt=${gecappt}`);
+  },
   async fetch(request, env) {
    try {
     const url = new URL(request.url);
@@ -413,7 +513,7 @@ export default {
       const _prValid = body.photoRound && isSafePhoto(body.photoRound);
       party.hasGamePhoto = !!_prValid;
       party.hasPhoto = !!(body.photo && isSafePhoto(body.photo)); // og:image-Flag (WhatsApp-Link-Vorschau via /api/ogimg) — vermeidet KV-Read beim Serve
-      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
@@ -581,7 +681,7 @@ export default {
         await env.PARTY.delete(`photoRound:${id}`); // Orphan-Altbestand des frueheren (kaputten) PATCH-Kontrakts mit abraeumen
         party.hasGamePhoto = true;
       }
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, entfernt:_entfernt}, 200, request);
     }
 
@@ -630,7 +730,7 @@ export default {
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
 
@@ -717,7 +817,7 @@ export default {
       if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // L8
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
       // Welle 2 (Playtest-Datenschutz-Befund, Bolle-Entscheid 31.07.): Hat die Party eine Gaesteliste
       // (invites), bekommt NUR noch eine Token-Zusage die Adresse — ein anonymer Namens-POST mit
@@ -776,7 +876,7 @@ export default {
         else wish.claimedBy.push(guestName);
       }
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W9-2: fehlte hier als einzigem party:-Schreibpfad (W8-5-Luecke)
-      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
       return json({ok:true, ..._wishPub()}, 200, request);
     }
 
@@ -795,6 +895,72 @@ export default {
     // Loest das 6KB-URL-Limit: Editor laedt das Foto hoch -> kurze ID -> Link /e/<slug>?fid=<id>.
     // F2 (Wizard-Gate 13.07.): Produkt-Warteliste (Plan-PDF / Komplettpaket). Nur E-Mail + Produkt,
     // KV-TTL 12 Monate (DSGVO-Absatz in datenschutz.html), einmalige Start-Info, kein Newsletter.
+    /* 07.09.2026 — MAGIC-LINK FUER DEN PLANER ("Spaeter").
+       Das Modal versprach "Wir schicken dir einen Link, mit dem du den Plan jederzeit
+       weiterbearbeiten kannst — auch von einem anderen Geraet" — der Code legte die Adresse aber
+       nur in einen Warteliste-Eimer (Funnel-Test F9 / K1-1). Bolle: Funktion bauen.
+       Gespeichert werden NUR die Eingaben (Name, Motto-ID, Alter, Datum ...), nie das aufgeblasene
+       Motto-Objekt mit allen Spielen — das laedt der Planer aus seiner eigenen Datenbasis nach.
+       90 Tage Haltbarkeit, danach verfaellt der Link von selbst. E-Mail bleibt intern. */
+    if (path === "/api/plan" && request.method === "POST") {
+      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"}, 500, request);
+      const body = await request.json().catch(() => ({}));
+      const email = (asStr(body.email)).trim().slice(0, 120);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
+      const _ip = request.headers.get("cf-connecting-ip") || "";
+      if (_ip) {
+        const _rlKey = "rl:plan:" + _ip + ":" + Math.floor(Date.now()/3600000);
+        const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
+        if (_cnt >= 5) return json({error:"Zu viele Links in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
+      }
+      const q = (body && typeof body.plan === "object" && body.plan) ? body.plan : {};
+      const s = (v, n) => asStr(v).slice(0, n);
+      const num = (v, lo, hi) => { const x = parseInt(v, 10); return (x >= lo && x <= hi) ? x : null; };
+      const arr = (v, n, len) => Array.isArray(v) ? v.slice(0, n).map(x => asStr(x).slice(0, len)) : [];
+      const plan = {
+        name: s(q.name, 40), mottoId: s(q.mottoId, 24).toLowerCase().replace(/[^a-z0-9-]/g, ""),
+        exactAge: num(q.exactAge, 1, 14), date: /^\d{4}-\d{2}-\d{2}$/.test(asStr(q.date)) ? q.date : "",
+        time: /^\d{2}:\d{2}$/.test(asStr(q.time)) ? q.time : "", endTime: /^\d{2}:\d{2}$/.test(asStr(q.endTime)) ? q.endTime : "",
+        guests: num(q.guests, 1, 30), location: s(q.location, 12),
+        hostName: s(q.hostName, 60), hostPhone: s(q.hostPhone, 30), areaHint: s(q.areaHint, 80), adresse: s(q.adresse, 200),
+        partyMessage: s(q.partyMessage, 300), crewText: s(q.crewText, 1600),
+        eliteVariant: ["minimal", "standard", "wow"].includes(q.eliteVariant) ? q.eliteVariant : "standard",
+        eliteOff: arr(q.eliteOff, 40, 80), games: arr(q.games, 12, 80)
+      };
+      const token = generateToken();
+      await env.PARTY.put(`plan:${token}`, JSON.stringify({email, plan, created: new Date().toISOString()}), {expirationTtl: 90*24*60*60});
+      const link = `https://machsleicht.de/kindergeburtstag?plan=${token}`;
+      const wer = plan.name ? poss(plan.name.replace(/[\x00-\x1F\x7F]/g, " ")) + " " : "dein ";
+      const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
+  <h2 style="margin:0 0 12px">Hier ist ${esc(wer)}Plan zum Weitermachen</h2>
+  <p>Mit diesem Link \u00F6ffnest du den Planer genau dort, wo du aufgeh\u00F6rt hast \u2014 auf jedem Ger\u00E4t:</p>
+  <p><a href="${esc(link)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
+  <p style="font-size:13px;color:#666;word-break:break-all">${esc(link)}</p>
+  <p style="font-size:12px;color:#999;margin-top:24px">Der Link gilt 90 Tage. Wir haben nur diese eine Mail geschickt \u2014 nur daf\u00FCr, kein Newsletter.</p>
+</div>`;
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+          body: JSON.stringify({
+            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+            reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+            to: [email], subject: "Dein Kindergeburtstags-Plan zum Weitermachen", html
+          })
+        });
+        if (!res.ok) return json({error:"Versand fehlgeschlagen"}, 502, request);
+      } catch(e) { return json({error:"Versand fehlgeschlagen"}, 502, request); }
+      return json({ok:true}, 200, request);
+    }
+    if (path.startsWith("/api/plan/") && request.method === "GET") {
+      const token = path.slice("/api/plan/".length);
+      if (!/^[A-Za-z0-9_-]{16,96}$/.test(token)) return json({error:"Ungueltiger Link"}, 400, request);
+      const raw = await env.PARTY.get(`plan:${token}`);
+      if (!raw) return json({error:"Dieser Link ist abgelaufen oder unbekannt"}, 404, request);
+      let d; try { d = JSON.parse(raw); } catch(e) { return json({error:"Kaputt"}, 500, request); }
+      return json({plan: d.plan, created: d.created || ''}, 200, request);   // created: der Planer entscheidet damit, ob der Link juenger ist als der Geraetestand (Zeitregel, Pruefstand 07.09.)
+    }
     if (path === "/api/waitlist" && request.method === "POST") {
       const body = await request.json().catch(() => ({}));
       const email = (asStr(body.email)).trim().slice(0, 120);
@@ -923,7 +1089,7 @@ export default {
       // Save email to party
       party.email = email;
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
-      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
 
       // Send email via Resend
       if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500, request);
@@ -954,7 +1120,7 @@ export default {
         };
         // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
         party.doiToken = doiToken;
-        await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+        await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
         await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
         confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
       }
@@ -963,7 +1129,7 @@ export default {
       const newsletterBlock = newsletterOptIn ? `
         <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
         <h2 style="font-size:17px;color:#2D2319;margin:0 0 8px">\u{1F4EC} Newsletter best\u00E4tigen</h2>
-        <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
+        <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag per Mail bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
         <a href="${confirmUrl}" style="display:block;background:#fff;color:#D4812A;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
         <p style="color:#aaa;font-size:11px;line-height:1.5;margin:10px 0 0">Der Link ist 7 Tage g\u00FCltig. Kein Klick = keine Speicherung, kein Newsletter.</p>
       ` : "";
@@ -1094,11 +1260,22 @@ export default {
 
       // Token verbrauchen (Replay-Schutz)
       await env.PARTY.delete(`doi:${token}`);
-      return new Response(doiPage("success","Deine E-Mail-Adresse ist bestätigt. Du bekommst nichts Uninteressantes — nur Tipps zum Kindergeburtstag und eine Erinnerung 7 Tage vorher. Abbestellen jederzeit per Link in jeder Mail."), {headers:{"Content-Type":"text/html;charset=utf-8"}});
+      return new Response(doiPage("success","Deine E-Mail-Adresse ist bestätigt. Du bekommst nichts Uninteressantes — nur Tipps zum Kindergeburtstag. Abbestellen jederzeit per Link in jeder Mail."), {headers:{"Content-Type":"text/html;charset=utf-8"}});
     }
 
     // Frontend: Home
-    if (path==="/"||path==="") return new Response(creatorPage(),{headers:{"Content-Type":"text/html;charset=utf-8"}});
+    if (path==="/"||path==="") {
+      // 07.09.2026 (Bolle: "umleiten"): Der Alt-Creator erzeugte Partyseiten zweiter Klasse — ohne Plan,
+      // ohne Altersgruppe, ohne Attribution (er las ?ref= nie). Der Planer kann alles davon.
+      // Parameter werden uebersetzt: mottoId -> motto (der Planer liest 'motto'), ref wird durchgereicht.
+      // paypalMe/Gemeinschaftsgeschenk sind seit heute im Editor nachpflegbar — kein Feature geht verloren.
+      // creatorPage() bleibt vorerst im Code (Rueckweg), kann nach einigen Wochen Redirect-Betrieb raus.
+      const _q = url.searchParams, _ziel = new URL("https://machsleicht.de/kindergeburtstag");
+      const _m = (_q.get("mottoId")||_q.get("motto")||"").toLowerCase().replace(/[^a-z]/g,"").slice(0,20);
+      if (_m) _ziel.searchParams.set("motto", _m);
+      const _r = _q.get("ref")||""; if (/^[a-z0-9]{6,12}$/.test(_r)) _ziel.searchParams.set("ref", _r);
+      return Response.redirect(_ziel.toString(), 302);
+    }
 
     // Frontend: Party
     // FONTS (self-hosted, H3/DSGVO: kein Google-Kontakt von Gastseiten; SIL-OFL-Fonts aus KV)
@@ -1246,6 +1423,13 @@ h1,h2,h3{font-family:var(--fd)}
 .motto-chip{padding:8px 14px;border-radius:99px;border:2px solid var(--l);background:var(--card);cursor:pointer;font:500 13px var(--f);color:var(--d);transition:all .2s;white-space:nowrap}
 .motto-chip:hover{border-color:var(--a);background:var(--al)}
 .motto-chip.active{border-color:var(--a);background:var(--a);color:#fff}
+/* 07.09.2026 (G5): Spaeter-Jobs im Leerzustand als Einzeiler. */
+.sp-fold{padding-top:0;padding-bottom:0}
+.sp-fold[open]{padding-bottom:18px}
+.sp-fold__sum{list-style:none;padding:16px 0;margin:0;font-weight:700;display:flex;align-items:center;gap:8px}
+.sp-fold__sum::-webkit-details-marker{display:none}
+.sp-fold__sum::after{content:"▾";margin-left:auto;opacity:.5;transition:transform .15s}
+.sp-fold[open] .sp-fold__sum::after{transform:rotate(180deg)}
 .card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.04);border:1px solid var(--l);margin-top:12px}
 input,textarea{width:100%;padding:10px 14px;border:2px solid var(--l);border-radius:12px;font:400 15px var(--f);color:var(--d);background:#FAFAF5;outline:none;transition:border .2s}
 input:focus,textarea:focus{border-color:var(--a)}
@@ -1455,7 +1639,7 @@ function creatorPage() {
       <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
       <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;cursor:pointer;user-select:none;padding:8px 2px">
         <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#E65100;cursor:pointer">
-        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
+        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
       </label>
       <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
       <p id="editUrl" style="display:none"></p>
@@ -2244,7 +2428,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 10 Minuten, ohne Anmeldung.</p>
-  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://machsleicht.de/kindergeburtstag?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -2505,7 +2689,7 @@ async function loadWishes(){
       if(shared){
         sharedMeta='Gemeinsam schenken';
         if(w.claimedCount)sharedMeta+=' ('+w.claimedCount+' dabei';
-        if(collected>0)sharedMeta+=(w.claimedCount?', ':' (')+collected+'\\u20AC gesammelt';
+        if(collected>0)sharedMeta+=(w.claimedCount?', ':' (')+collected+' \\u20AC gesammelt';
         if(w.claimedCount||collected>0)sharedMeta+=')';
       }
       return '<div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">'+escC(w.title)+'</div><div style="font-size:12px;color:var(--m)">'
@@ -2612,6 +2796,30 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
     ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
     ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
+    <!-- 07.09.2026 (G5): Die Gaesteliste steht jetzt HIER, unter den Zahlen, die sie erklaert.
+         Vorher zwei Karten: das Status-Grid und daneben eine Badge-Zeile "1 dabei / vielleicht /
+         abgesagt" aus denselben Arrays — zweimal dieselbe Zahl, plus bei 0 Gaesten zwei
+         Leerzustands-Saetze. Die Zeilen bleiben BEWUSST unsortiert: gi ist der Index im
+         Server-Array, geloescht wird nach Index mit Namens-Wache (:551/:555). Eine Sortierung
+         wuerde gi verschieben, die Wache greift, und es wird STILL nichts geloescht. -->
+    ${party.guests.length===0?`<p style="color:var(--m);font-size:13px;text-align:center;padding:12px 0">Noch keine Antworten. Teile den Link!</p>`:""}
+    ${party.guests.map((g,gi)=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
+        <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
+        <div style="flex:1">
+          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
+          ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
+          ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
+        </div>
+        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" data-i="${gi}" style="background:none;border:none;font-size:12px;cursor:pointer;color:var(--m);text-decoration:underline;padding:4px 6px" title="Diesen Eintrag entfernen">entfernen</button>
+      </div>`).join("")}
+    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u201Eentfernen\u201C nimmst du genau diese Zeile heraus und gibst den Platz wieder frei \u2014 andere Eintr\u00E4ge mit demselben Vornamen bleiben stehen.</p>`:""}
+
+    <!-- 07.09.2026 (G5): Link teilen IST der Tag-1-Job und stand bisher als LETZTER Block der
+         Seite. URL im Klartext und der Hinweis auf den Namens-Code gab es nur dort — jetzt hier,
+         direkt bei den Knoepfen, die dasselbe tun. Die untere Karte ist damit entfallen. -->
+    <p style="font-size:12px;color:var(--m);margin-bottom:8px">G\u00E4ste geben \u201E<strong style="color:var(--a)">${name}</strong>\u201C als Code ein.</p>
+      <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
@@ -2646,6 +2854,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 ohne G\u00E4steliste jeder, der \u00FCber den Gruppenlink zusagt, mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 ohne G\u00E4steliste jeder \u00FCber den Gruppenlink, mit Liste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+      <!-- 07.09.2026: paypalMe war NUR im Alt-Creator setzbar. Der Server nimmt es beim PUT laengst an
+           (:517 sanitizePaypal) — es fehlte allein das Feld hier. Ohne dieses Feld haette die Umleitung
+           des Alt-Creators das Gemeinschaftsgeschenk still abgeschaltet. -->
+      <div class="field"><label>PayPal für Gemeinschaftsgeschenke <span style="font-weight:400;color:var(--m);font-size:12px">(optional — erscheint bei Wünschen, die als „Gemeinsam“ markiert sind und einen Preis haben)</span></label><input type="text" id="edPaypal" maxlength="100" placeholder="paypal.me/DeinName" value="${esc(party.paypalMe||'')}"></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
         <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${fristText(party)} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
@@ -2654,34 +2866,19 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
   </div>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F465} Gästeliste</h2>
-    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-      <span class="badge success">\u2705 ${ja.length} dabei</span>
-      ${vielleicht.length?`<span class="badge" style="background:#FFF3E0;color:#E65100">\u{1F914} ${vielleicht.length} vielleicht</span>`:""}
-      ${nein.length?`<span class="badge" style="background:#FFEBEE;color:#C62828">\u274C ${nein.length} abgesagt</span>`:""}
-    </div>
-    ${party.guests.length===0?`<p style="color:var(--m);font-size:13px;text-align:center;padding:12px 0">Noch keine Antworten. Teile den Link!</p>`:""}
-    ${party.guests.map((g,gi)=>`
-      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
-        <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
-        <div style="flex:1">
-          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
-          ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
-          ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
-        </div>
-        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" data-i="${gi}" style="background:none;border:none;font-size:12px;cursor:pointer;color:var(--m);text-decoration:underline;padding:4px 6px" title="Diesen Eintrag entfernen">entfernen</button>
-      </div>`).join("")}
-    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u201Eentfernen\u201C nimmst du genau diese Zeile heraus und gibst den Platz wieder frei \u2014 andere Eintr\u00E4ge mit demselben Vornamen bleiben stehen.</p>`:""}
-  </div>
 
-  ${allergies.length?`<div class="card fade-up">
-    <h2 style="font-size:15px;color:#C62828;margin-bottom:12px">\u26A0\uFE0F Allergien-\u00DCbersicht</h2>
-    ${allergies.map(g=>`<div style="padding:6px 0;font-size:14px"><strong>${esc(g.name)}</strong>: ${esc(g.allergies)}</div>`).join("")}
-  </div>`:""}
+  <!-- 07.09.2026 (G5): Allergien-Uebersichtskarte entfernt. Dieselben Name:Allergie-Paare
+       standen bereits im Status-Banner (allergenList) UND inline in jeder Gaestezeile — eine
+       dritte Karte liess die Seite genau in der Phase wachsen, in der der Gastgeber Ueberblick
+       braucht. Gegengeprueft (machsleicht-7b): es gibt keinen Pfad, auf dem sie die einzige
+       Anzeige waere — beide speisen sich aus party.guests, die Liste filtert nicht. -->
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
+  <!-- 07.09.2026 (G5): Beide Bloecke sind Spaeter-Jobs. An Tag 1 will der Gastgeber den Link
+       verschicken und Zusagen sehen — nicht Wuensche pflegen. Im LEERZUSTAND stehen sie als
+       Einzeiler da und klappen auf Klick auf; sobald Inhalt existiert, sind sie offen. Die
+       Formulare bleiben im DOM, addInvite()/addWishEd() greifen unveraendert. -->
+  <details class="card fade-up sp-fold"${(Array.isArray(party.invites)&&party.invites.length)?" open":""}>
+    <summary class="sp-fold__sum" style="font-size:15px;color:${color};cursor:pointer">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></summary>
     <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
@@ -2689,10 +2886,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <button class="btn btn-sm" style="background:${color}" onclick="addInvite()">+ Einladen</button>
     </div>
     <p id="invHint" style="font-size:11px;color:var(--m);margin-top:8px"></p>
-  </div>
+  </details>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
+  <details class="card fade-up sp-fold"${hasWishes?" open":""}>
+    <summary class="sp-fold__sum" style="font-size:15px;color:${color};cursor:pointer">\u{1F381} Wunschliste</summary>
     ${hasWishes?party.wishes.filter(w=>w&&/^[a-z0-9]{1,12}$/.test(String(w.id||""))).map(w=>`
       <div class="wish-item">
         <div style="flex:1">
@@ -2717,7 +2914,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         <label style="display:flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap;color:var(--m)"><input type="checkbox" id="newWishShared"> Gemeinsam</label>
       </div>
       <button class="btn btn-outline btn-sm" onclick="addWishEd()">+ Wunsch hinzuf\u00FCgen</button>
-    </div>
+  </details>
   </div>
   <script>
   function _curWishes(){ return ${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")}; }
@@ -2743,15 +2940,6 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   }
   </script>
 
-  <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F4F2} Link teilen</h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:8px">G\u00E4ste geben \u201E<strong style="color:var(--a)">${name}</strong>\u201C als Code ein.</p>
-    <div class="share-box" style="margin-bottom:10px">
-      <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
-      <button class="btn" style="background:${color}" onclick="shareWA()">\u{1F4F2} Per WhatsApp teilen</button>
-    </div>
-    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink(this)">\u{1F4CB} Link kopieren</button>
-  </div>
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
@@ -2795,7 +2983,8 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         endTime:document.getElementById("edEndTime").value,address:document.getElementById("edAddress").value,
         hostName:document.getElementById("edHostName").value,hostPhone:(document.getElementById("edHostPhone").value||"").trim(),
         areaHint:document.getElementById("edAreaHint").value,
-        notes:document.getElementById("edNotes").value};
+        notes:document.getElementById("edNotes").value,
+        paypalMe:(document.getElementById("edPaypal")||{}).value||""};
       // M6/M9: dieselben Regeln wie der Server (sonst meldet der Client OK und der Server verwirft),
       // und der Absender ist hier genauso Pflicht wie beim Anlegen.
       // M5 (Re-Check): der Vorname war das einzige Feld, dessen Leere die Einladung KAPUTT macht —

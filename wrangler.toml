@@ -11,3 +11,10 @@ enabled = true
 [[kv_namespaces]]
 binding = "PARTY"
 id = "92b9c66fe812421aa9e7a2522ae1b7f1"
+
+# 07.09.2026: Zeitplan fuer die Erinnerungsmail 7 Tage vor der Party. Bis heute stand das
+# Versprechen an drei Stellen im Text, ohne dass irgendeine Maschine es einloeste (kein
+# scheduled-Handler, kein triggers-Block). Bolle hat entschieden, die Funktion zu bauen.
+# Taeglich 08:00 UTC = 09:00/10:00 Berlin. Der Handler ist idempotent (Flag je Party).
+[triggers]
+crons = ["0 8 * * *"]

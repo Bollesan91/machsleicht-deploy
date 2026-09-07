@@ -32,7 +32,7 @@
     "w14": "const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';",
     "w15": "meta.push(g>0 ? ('<b>'+g+'</b> Freibeuter an Bord') : 'Crew sammelt sich noch');",
     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'",
-    "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+    "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Vorlage: '+variant().timeWindow.split(',')[0]+' — der Plan unten läuft in euren Zeiten'):'')",
     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)",
     "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Kombüsen-Menü</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",

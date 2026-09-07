@@ -39,3 +39,4 @@ __pycache__/
 
 # Linter-Logs: je Lauf ein frisches Verzeichnis (s. LOGDIR in validate-all.sh)
 _dev/.lintlogs/
+.tp3

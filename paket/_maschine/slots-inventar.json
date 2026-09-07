@@ -96,7 +96,7 @@
       "meerjungfrau": "+'<h1>'+esc(poss(nm))+' großer<br>Tauchgang</h1>'",
       "piraten": "+'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'"
     },
-    "return sheet(hd('Teil I · So läuft der Tag','Der große Einsatztag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')": {
+    "return sheet(hd('Teil I · So läuft der Tag','Der große Einsatztag — Minute für Minute', variant().timeWindow?('Vorlage: '+variant().timeWindow.split(',')[0]+' — der Plan unten läuft in euren Zeiten'):'')": {
       "baustelle": "return sheet(hd('Teil I · So läuft der Tag','Der große Bautag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
       "dino": "return sheet(hd('Teil I · So läuft der Tag','Der große Dino-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
       "meerjungfrau": "return sheet(hd('Teil I · So läuft der Tag','Der große Tauchtag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",

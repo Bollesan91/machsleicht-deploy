@@ -1010,7 +1010,12 @@ else
   # davon) und braucht Minuten — ein Neulauf allein fuer den Beleg waere unverhaeltnismaessig.
   # Sie darf aus der Datei lesen, weil $LOGDIR je Lauf NEU angelegt wird: dort kann nichts
   # Altes und nichts Fremdes stehen. Bitte nicht mit den anderen "vereinheitlichen".
-  tail -6 "$LOGDIR/render-gegenprobe.log" 2>/dev/null
+  # 07.09.2026: Scheitert der RENDERER (erstes &&-Glied oben), laeuft die Gegenprobe nie und diese
+  # Datei entsteht nie. tail auf die fehlende Datei gab Exit 1, 2>/dev/null verschluckte nur die
+  # MELDUNG, und set -e beendete das Skript VOR der red-Zeile: kein roter Satz, kein Banner,
+  # Stufen 61-71 ungelaufen (Lauf 4, 07.09.). Die Stufe, die Worker-Bruch fangen soll, killte den
+  # Linter genau dann, wenn sie einen fing. Jetzt: nur lesen, wenn die Datei da ist; nie abbrechen.
+  [ -f "$LOGDIR/render-gegenprobe.log" ] && tail -6 "$LOGDIR/render-gegenprobe.log" || true
   red "Stufe 60: Gaesteseite rendert nicht sauber, verspricht etwas ohne Deckung — oder die Gegenprobe schlaegt nicht mehr an"
 fi
 
@@ -1186,6 +1191,25 @@ else
   python _dev/scripts/check-vorschaubilder.py 2>&1 | grep -E "FAIL" | head -6
   python _dev/scripts/check-vorschaubilder.py --gegenprobe 2>&1 | tail -4
   red "Stufe 71: eine Seite zeigt auf ein Vorschaubild, das es nicht gibt — geteilte Links haetten keine Karte"
+fi
+
+echo ""
+echo "── STUFE 72: Jeder JSON-LD-Block jeder Seite ist gueltiges JSON ──"
+# Anlass (07.09.): Der Ruhemodus-Text des Planers (964ad987) setzte im FAQ-JSON-LD ein
+# gerades Anfuehrungszeichen mitten in einen String — der ganze Block war kein JSON mehr,
+# und Google verwirft dann das komplette FAQPage-Markup der Seite, nicht die eine Stelle.
+# Sechs Laeufe (1-6 der Funnel-Challenge) waren blind: Stufe 15 nimmt ld+json ausdruecklich
+# aus (node --check liest kein JSON), und keine andere Stufe parst die Bloecke. Dieselbe
+# Klasse wie Stufe 15 — die Datei muss erst einmal sein, was sie behauptet — fuer JSON statt
+# JavaScript. Gegenprobe mit zwei Armen: ein gerades Anfuehrungszeichen in einen gueltigen
+# Block, und der echte Stand aus 964ad987, in dem genau der FAQ-Block wiedergefunden werden muss.
+if python _dev/scripts/check-ldjson-parst.py && python _dev/scripts/check-ldjson-parst.py --gegenprobe > "$LOGDIR/ldjson-gegenprobe.log" 2>&1; then
+  green "Jeder JSON-LD-Block ist gueltiges JSON"
+else
+  # Beleg aus DIESEM Lauf, nicht aus der Datei.
+  python _dev/scripts/check-ldjson-parst.py 2>&1 | grep -E "FAIL|HINWEIS" | head -6
+  python _dev/scripts/check-ldjson-parst.py --gegenprobe 2>&1 | tail -3
+  red "Stufe 72: ein JSON-LD-Block parst nicht — Suchmaschinen verwerfen das ganze Markup der Seite — oder die Gegenprobe schlaegt nicht mehr an"
 fi
 
 # ── ERGEBNIS ──
