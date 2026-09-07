@@ -881,7 +881,7 @@ Bolles Entscheidungen der zweiten Fragerunde, Commits `964ad987` und `9a7697a2`.
 | Punkt | Was kam | Was gebaut wurde | Commit |
 |---|---|---|---|
 | **Datums-Index** | „KV liefert je Key `metadata` — der Index existiert schon, du hast ihn nicht benutzt" | `partyOpts(party)` = `{expirationTtl, metadata:{date}}`, ersetzt **acht** `party:`-Puts in drei Schreibweisen (Regex, Assert auf genau 8). Der Cron filtert über `seite.keys` und liest nur Treffer + Altbestand ohne metadata. Log trennt `per-index-uebersprungen` von `gelesen` | `f6edb5f1` |
-| **Workers-Plan** | Bolle: **Free-Plan** | 1.000 KV-Reads/Tag für Cron **und** Live-Seite zusammen; jede Gästeseite ist ein Read. Deshalb `MAX_READS = 200` je Lauf, Rest morgen (`gecappt` im Log). Trifft praktisch nur den Altbestand — der schrumpft mit jedem Schreibvorgang | s.u. |
+| **Workers-Plan** | Bolle: **Free-Plan** | ~~1.000 KV-Reads/Tag~~ **korrigiert 07.09. abends:** laut Cloudflare-Doku 100.000 Reads/Tag, 1.000 Writes/Tag, 1.000 KV-Operationen je Aufruf. `MAX_READS = 200` je Lauf bleibt (Herleitung: Operationen je Aufruf), aber „Rest morgen" stimmte nicht — s. Nachtrag „Der Deckel hatte ein Loch" | s.u. |
 | **Magic-Link-Rückfrage** | Bolle: „Nachfragen, wenn anderer Plan da ist — was sagst du?" · ich: ja | `confirm()` **nur**, wenn lokal ein Plan mit anderem Namen **oder** anderem Motto liegt. Quelle ist der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor „Weitermachen" noch der Default. Normalfall ohne Unterbrechung | s.u. |
 | MINOR | `poss("")` → Doppelleerzeichen im Betreff | „bis zur Piraten-Party" / „die Piraten-Party" ohne Namen | `f6edb5f1` |
 
@@ -910,3 +910,38 @@ Stellen „wird gerade gebaut" → „gebaut, nicht deployt".
 Apostroph `'`, die Planer-`poss()` (`kindergeburtstag.html`:2403) den typografischen `’`. Mail-Betreff
 und Gäste-Teilen-Text sagen „Mia's", das Resume-Banner „Mia’s". Kosmetisch; Stufe 18 vergleicht nur
 Planer gegen `paket/core/paket-core.js`. Kandidat für die Prüfstand-Liste, keine Handlung ohne Bolle.
+
+**Der Deckel hatte ein Loch (Befund Prüfstand, 07.09. abends):** `MAX_READS = 200` brach den Lauf nach 200 Reads ab,
+„der Rest morgen" — aber morgen ist `ziel` ein anderer Tag, und `list()` liefert jeden Tag dieselbe
+Reihenfolge: Altbestand hinter Position 200 wäre an seinem Tag nie geprüft worden, still, mit
+`gecappt=true` als scheinbar korrektem Log. Bolle hatte den Deckel auf diese Zusage hin genehmigt.
+Zweiter Fehler im selben Kommentar: „Free-Plan = 1.000 KV-Reads/Tag" — aus dem Gedächtnis getippt.
+Die Primärquelle (developers.cloudflare.com/kv/platform/limits, 07.09. abgerufen) sagt **100.000
+Reads/Tag, 1.000 Writes/Tag, 1.000 KV-Operationen je Aufruf**. Der Deckel bleibt richtig, aber aus
+anderem Grund: Operationen je Aufruf; die Writes je Tag teilt sich der Cron mit RSVP und Edit.
+
+**Fix (`20202411`):** Kommentar mit Herleitung aus der Primärquelle und Nennung der falschen Fassung
+statt stiller Korrektur; der Zähler zählt den Read, nicht den Parse; **Selbstheilung:** jeder
+gelesene Altbestand-Key ohne Treffer wird mit `raw` + `partyOpts` zurückgeschrieben (Inhalt
+unverändert, nur Metadata) — ab dem nächsten Lauf kostet er keinen Read mehr; Log `nachgezogen=`.
+Positivkontrolle auf **23 Erwartungen** in zwei Szenarien erweitert: A wie gehabt plus Altbestand
+ohne Treffer (nachgezogen, Inhalt byte-gleich, kein Doppel-Put beim Treffer); B = 205 Altbestand,
+drei Läufe: `gelesen=200 nachgezogen=200 gecappt=true` → `uebersprungen=200 gelesen=5 nachgezogen=5`
+→ `uebersprungen=205 gelesen=0`. Der Rest kommt jetzt wirklich im nächsten Lauf dran.
+
+**Bleibt — Bolles Entscheidung:** die Übergangslücke. Bis der Altbestand nachgezogen ist
+(⌈N/200⌉ Läufe), wird eine Altbestand-Party hinter dem Deckel an ihrem Tag nicht geprüft. Bei
+N ≤ 200 gibt es die Lücke nicht (der erste Lauf liest alles). N kennt nur das Cloudflare-Dashboard.
+Optionen: nichts weiter (N ≤ 200) — oder ein Nachhol-Zweig beim ersten Read (0 < Tage ≤ 7 → Mail
+mit echter Tageszahl), der von selbst stirbt, sobald kein Altbestand mehr da ist.
+
+**Zwei Ablauffehler dabei, beide vom Typ der Newsletter-Checkbox:** der Assert `'Rest morgen' not in out`
+traf mein eigenes Zitat der alten Zusage im neuen Kommentar — erklären ja, wörtlich zitieren nein, auch
+in Code-Kommentaren. Und eine getippte Vorab-Kontrollzahl (`grep -c == 2`, tatsächlich 3: die Kopfzeile
+fehlte) brach die Kette, bevor etwas lief. Fail-safe — aber R-A, wieder.
+
+**Rückfrage-Prädikat (MINOR Prüfstand, `6d453704`):** `_anders` verlangte einen Namen auf *beiden* Seiten;
+lokal „Mia", Link ohne Namen (vor der Namenseingabe angefordert) → keine Rückfrage, stiller Ersatz —
+genau der Randfall, für den die Rückfrage gebaut ist. Jetzt: Rückfrage, sobald lokal ein Name oder
+Motto liegt, das der Link nicht identisch mitbringt (auch: gar nicht). Beide Skriptblöcke `node --check`
+sauber; Winkel 20 um diesen dritten Fall ergänzt.

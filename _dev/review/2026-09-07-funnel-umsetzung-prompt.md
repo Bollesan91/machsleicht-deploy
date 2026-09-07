@@ -103,7 +103,9 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     dort einen Magic-Link zu „Mia, Piraten". **Kommt eine Rückfrage — und bleibt Bens Plan
     erhalten, wenn du sie ablehnst?** Öffne danach einen Link zum *selben* Plan (Ben, Dino) —
     kommt dann **keine** Rückfrage? Beides muss stimmen: Randfall geschützt, Normalfall
-    ununterbrochen.
+    ununterbrochen. **Dritter Fall:** fordere den Link an, *bevor* ein Name eingetragen ist, trag
+    danach lokal einen Namen ein und öffne den Link auf demselben Gerät — die Rückfrage muss
+    kommen (der Link bringt weniger mit, als lokal liegt).
 
 ## Was du liefern sollst
 
@@ -132,7 +134,7 @@ live — im Browser gegen `machsleicht.de` sind sie bis dahin NICHT prüfbar:**
 - **Die Umleitung** `party.machsleicht.de/` → Planer (302, `mottoId`→`motto`, `ref` durchgereicht).
 - **Die Erinnerungsmail 7 Tage vor der Party** (`scheduled`-Handler, Cron 08:00 UTC). Sie lässt
   sich ohnehin nicht klicken — prüfbar nur über einen manuellen Trigger oder das Worker-Log
-  (`reminder7: ziel=… per-index-uebersprungen=… gelesen=… gesendet=… fehler=… gecappt=…`).
+  (`reminder7: ziel=… per-index-uebersprungen=… gelesen=… nachgezogen=… gesendet=… fehler=… gecappt=…`).
 - **Der Magic-Link** (`/api/plan`): Winkel 19 prüft die Meldung im Planer; ob die Mail ankommt und
   der Link den Stand wiederherstellt, ist erst nach dem Deploy messbar. **Dann bitte:** Plan
   anlegen, „Später" nutzen, auf einem **anderen Gerät** den Link öffnen — steht alles wieder da,
