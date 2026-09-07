@@ -357,13 +357,13 @@ export default {
      Empfaenger: party.email — die Adresse, die der Gastgeber fuer seinen Verwaltungs-Link gab.
      Eine einmalige Erinnerung an die EIGENE Party ist transaktional, kein Newsletter; sie
      braucht kein separates Opt-in. Idempotent ueber party.reminded7 (Zeitstempel).
-     KV hat keinen Datums-Index: taeglich ein Lauf ueber prefix "party:" (list + get je Key).
-     Bei heutiger Groessenordnung Sekunden; ab einigen tausend Partys braucht es einen Index. */
+     Datums-Index: partyOpts() legt party.date als KV-Metadata ab (seit 07.09.); der Lauf liest
+     nur Treffer und Altbestand ohne Metadata — den zieht er beim ersten Read nach (s. unten). */
   async scheduled(event, env, ctx) {
     if (!env.RESEND_API_KEY) return;
     const ziel = new Date(Date.now() + 7*86400000).toLocaleDateString("en-CA", {timeZone:"Europe/Berlin"});
-    const MAX_READS = 200;   // Free-Plan: 1.000 KV-Reads/Tag fuer alles — der Cron nimmt hoechstens ein Fuenftel
-    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0, gecappt = false;
+    const MAX_READS = 200;   // Deckel je Lauf; Herleitung im Kommentar unten (1.000 KV-Operationen je Aufruf)
+    let cursor = undefined, geprueft = 0, gesendet = 0, fehler = 0, uebersprungen = 0, nachgezogen = 0, gecappt = false;
     do {
       const seite = await env.PARTY.list({prefix:"party:", cursor, limit:1000});
       for (const k of seite.keys) {
@@ -371,16 +371,29 @@ export default {
         // metadata (vor dem 07.09. geschrieben) faellt auf den Voll-Read zurueck.
         const md = k.metadata && typeof k.metadata.date === "string" ? k.metadata.date : null;
         if (md !== null && md !== ziel) { uebersprungen++; continue; }
-        /* 07.09.2026 (Bolle: Free-Plan). Der Workers-Free-Plan deckelt KV-Reads auf 1.000/Tag —
-           fuer Cron UND Live-Seite zusammen. Jede Gaesteseite ist ein Read. Der Cron darf die
-           Seite nicht aushungern: hoechstens MAX_READS Voll-Reads je Lauf, der Rest morgen.
-           Trifft praktisch nur den Altbestand ohne metadata; der schrumpft mit jedem
-           Schreibvorgang von selbst, danach liest der Cron nur noch echte Treffer. */
+        /* 07.09.2026 (Bolle: Free-Plan). Grenzen laut developers.cloudflare.com/kv/platform/limits
+           (07.09. nachgelesen): 100.000 Reads/Tag und 1.000 Writes/Tag (Free), 1.000 KV-Operationen
+           je Worker-Aufruf (Free UND Paid). Die erste Fassung dieses Kommentars nannte "1.000
+           Reads/Tag" — falsch um Faktor 100. Bindend sind die Operationen je Aufruf und die Writes
+           je Tag, die sich der Cron mit RSVP/Edit der Live-Seite teilt. Deckel: MAX_READS Reads je
+           Lauf, je Read hoechstens ein Write (Nachziehen unten) -> unter 2*MAX_READS+Listenseiten
+           Operationen je Aufruf, unter MAX_READS+gesendet Writes je Tag.
+           Was hinter dem Deckel liegt, wird an DIESEM Tag nicht geprueft, und morgen ist ziel ein
+           anderer Tag — die erste Fassung versprach die Pruefung "morgen"; das galt fuer die Reads, nicht fuer die
+           Treffer (Befund Pruefstand 07.09.). Damit der Deckel nicht jeden Tag dieselben Altbestand-
+           Keys frisst, schreibt der Lauf jeden gelesenen Altbestand-Key mit Metadata zurueck (Inhalt
+           unveraendert): ab dem naechsten Lauf kostet er keinen Read mehr, nach ceil(N/MAX_READS)
+           Laeufen ist der Altbestand leer. Die Uebergangsluecke bis dahin ist Bolles Entscheidung. */
         if (geprueft >= MAX_READS) { gecappt = true; break; }
-        const raw = await env.PARTY.get(k.name); if (!raw) continue;
+        const raw = await env.PARTY.get(k.name); geprueft++;   // zaehlt den Read, nicht den Parse
+        if (!raw) continue;
         let party; try { party = JSON.parse(raw); } catch(e) { continue; }
-        geprueft++;
-        if (party.date !== ziel || !party.email || party.reminded7) continue;
+        if (party.date !== ziel || !party.email || party.reminded7) {
+          // Altbestand nachziehen: raw unveraendert zurueck, nur Metadata (+TTL nach derselben Regel
+          // wie jeder andere Put). Der Trefferpfad unten schreibt ohnehin mit partyOpts.
+          if (md === null) { try { await env.PARTY.put(k.name, raw, partyOpts(party)); nachgezogen++; } catch(e) { fehler++; } }
+          continue;
+        }
         const id = k.name.slice("party:".length);
         const name = asStr(party.childName).replace(/[\x00-\x1F\x7F]/g, " ").slice(0, 40);
         const gaeste = (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status === "ja").length;
@@ -415,9 +428,9 @@ export default {
           } else { fehler++; }
         } catch(e) { fehler++; }
       }
-      cursor = (seite.list_complete || gecappt) ? undefined : seite.cursor;   // gecappt: nicht weiterblaettern, Rest morgen
+      cursor = (seite.list_complete || gecappt) ? undefined : seite.cursor;   // gecappt: nicht weiterblaettern; nachgezogene Keys kosten im naechsten Lauf keinen Read
     } while (cursor);
-    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} gesendet=${gesendet} fehler=${fehler} gecappt=${gecappt}`);
+    console.log(`reminder7: ziel=${ziel} per-index-uebersprungen=${uebersprungen} gelesen=${geprueft} nachgezogen=${nachgezogen} gesendet=${gesendet} fehler=${fehler} gecappt=${gecappt}`);
   },
   async fetch(request, env) {
    try {
