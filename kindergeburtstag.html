@@ -42,9 +42,9 @@
     { "@type": "Question", "name": "Wie plane ich einen Kindergeburtstag schnell?", "acceptedAnswer": { "@type": "Answer", "text": "Am schnellsten geht es, wenn du zuerst Alter, Motto und Gästezahl festlegst — alles andere ergibt sich daraus. Der Planer oben erstellt daraus einen kompletten Ablauf mit Zeitplan, Spielen, Einkaufsliste und Kosten pro Kind. Realistisch bist du in wenigen Minuten durch." } },
     { "@type": "Question", "name": "Was kostet ein Kindergeburtstag?", "acceptedAnswer": { "@type": "Answer", "text": "Typischerweise 4–12 Euro pro Kind. Der genaue Betrag hängt von Motto und Gästezahl ab. Im Minimal-Modus bleibst du oft unter 5 Euro pro Kind — inklusive Deko, Mitgebsel und Snacks. Selbermachen und Leihen statt Kaufen drückt den Preis zusätzlich." } },
     { "@type": "Question", "name": "Welche Spiele eignen sich für welches Alter?", "acceptedAnswer": { "@type": "Answer", "text": "Für 3–5 Jahre einfache Bewegungs- und Suchspiele. Für 6–8 Jahre Rallyes, Bastelstationen und Quiz-Runden. Für 9–12 Jahre Escape-Rooms, Code-Knacken und Team-Wettkämpfe. Jedes Motto bringt eigene, altersgerechte Spiele mit — der Planer blendet aus, was für die Altersgruppe nicht passt." } },
-    { "@type": "Question", "name": "Wie viele Kinder soll ich einladen?", "acceptedAnswer": { "@type": "Answer", "text": "Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Snack-Mengen und Kosten passt der Planer automatisch an die Gästezahl an." } },
+    { "@type": "Question", "name": "Wie viele Kinder soll ich einladen?", "acceptedAnswer": { "@type": "Answer", "text": "Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Die Einkaufsliste ist für eine feste Kinderzahl gerechnet; der Planer zeigt dir den Betrag pro Kind und rechnet die Summe auf deine Gästezahl hoch." } },
     { "@type": "Question", "name": "Wie lange sollte ein Kindergeburtstag dauern?", "acceptedAnswer": { "@type": "Answer", "text": "2 Stunden für 3–5-Jährige, rund 3 Stunden für 6–8-Jährige, 3–4 Stunden für 9–12-Jährige. Ein bewährter Rhythmus: 30 Minuten Ankommen, 60–90 Minuten Programm, 30 Minuten Kuchen, 30 Minuten Abschluss. Der Planer erstellt den Zeitplan mit konkreten Uhrzeiten." } },
-    { "@type": "Question", "name": "Was tun, wenn die Kinder zu wild werden?", "acceptedAnswer": { "@type": "Answer", "text": "Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal": weniger Stationen, mehr Luft dazwischen." } },
+    { "@type": "Question", "name": "Was tun, wenn die Kinder zu wild werden?", "acceptedAnswer": { "@type": "Answer", "text": "Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal“: weniger Stationen, mehr Luft dazwischen." } },
     { "@type": "Question", "name": "Kindergeburtstag Last Minute — was tun?", "acceptedAnswer": { "@type": "Answer", "text": "Konzentrier dich auf drei Dinge: ein bekanntes Spiel, etwas zu essen, ein kleines Mitgebsel. Mehr braucht es nicht. Der Notfallplan erstellt in 2 Minuten einen funktionierenden Ablauf mit Minimal-Deko, einfachen Aktivitäten und Supermarkt-Kuchen." } },
     { "@type": "Question", "name": "Was brauche ich für einen Kindergeburtstag zuhause?", "acceptedAnswer": { "@type": "Answer", "text": "Deko passend zum Motto (ab etwa 5 Euro), Kuchen oder Muffins, Snacks und Getränke, 2–3 Spiele und kleine Mitgebsel. Mehr ist selten nötig. Der Planer erstellt dir eine Einkaufsliste mit Mengenangaben und Kosten pro Kind, damit nichts Doppeltes im Wagen landet." } },
     { "@type": "Question", "name": "Welche Mottos sind am beliebtesten?", "acceptedAnswer": { "@type": "Answer", "text": "Dauerbrenner sind Piraten und Dino, dazu Einhorn, Feuerwehr, Safari, Weltraum, Detektiv, Prinzessin, Superheld und Meerjungfrau. Weniger überlaufen, aber stark: Dschungel, Feen, Pferde, Ritter und Baustelle. Alle 15 sind im Planer mit fertigem Zeitplan und Spielen hinterlegt." } },
@@ -198,18 +198,20 @@ window.plausible.init=function(){};window.plausible.q=[];
      a 148px = 2578px Grid = 3,2 Bildschirmhoehen, und der Daumen sah nie mehr als 2 Mottos
      gleichzeitig. Motto-Waehlen ist aber Vergleichen. Zwei feste Spalten halbieren die
      Scrollstrecke auf ~1,6 Bildschirmhoehen. */
-  @media (max-width:420px){
-    .mottos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .motto-card{padding:14px 8px}
-    .motto-card__emoji{font-size:30px}
-    .motto-card__name{font-size:14px}
-  }
   .motto-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:20px 16px;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
   .motto-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--accent,#FF6F00)}
   .motto-card__emoji{font-size:48px;line-height:1;margin-bottom:8px;display:block}
   .motto-card__name{font-family:'Lilita One';font-size:17px}
   .motto-card__ages{display:block;margin-top:6px;font-size:11px;color:var(--accent,#FF6F00);font-weight:800;letter-spacing:.4px;text-transform:uppercase}
   .motto-card__badge{position:absolute;top:8px;right:8px;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:8px;letter-spacing:.4px;text-transform:uppercase}
+  /* Review m10 (07.09.): dieser Block stand VOR den Basisregeln — gleiche Spezifitaet, die spaetere Regel gewinnt,
+     also wirkten auf dem Handy nur die zwei Spalten. Hinter den Basisregeln greifen auch Padding, Emoji, Name. */
+  @media (max-width:420px){
+    .mottos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .motto-card{padding:14px 8px}
+    .motto-card__emoji{font-size:30px}
+    .motto-card__name{font-size:14px}
+  }
 
   /* STAGE 2: ALTER */
   .age-pick{max-width:880px;margin:0 auto;padding:48px 20px 80px}
@@ -695,8 +697,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-edit-toggle:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00)}
   .plan-mod--edit .plan-edit-toggle{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
   .plan-edit-hint{margin-left:8px;font-size:12px;color:#8a7a64}
-  .pl__ctrl{flex:0 0 auto;display:flex;gap:2px}
-  .pl__ctrl button{width:26px;height:26px;border:1px solid #E2D5C4;background:#fff;border-radius:7px;cursor:pointer;font-size:12px;color:#8a7a64;line-height:1;padding:0;font-family:inherit}
+  .pl__ctrl{flex:0 0 auto;display:flex;gap:4px}
+  .pl__ctrl button{width:40px;height:40px;border:1px solid #E2D5C4;background:#fff;border-radius:9px;cursor:pointer;font-size:15px;color:#8a7a64;line-height:1;padding:0;font-family:inherit}   /* Review m9: Daumenziel statt 26 px */
   .pl__ctrl button:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00)}
   .pl__ctrl .pl__rm{color:#C0392B}
   .pl__body{padding:2px 14px 12px;font-size:13px;line-height:1.55;color:#444}
@@ -934,7 +936,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div style="margin:12px 0 10px;text-align:left">
           <label for="psEmailInput" style="display:block;font-size:13px;font-weight:700;margin:0 0 4px">Deine E-Mail für den Verwaltungs-Link</label>
           <input type="email" id="psEmailInput" placeholder="deine@email.de" autocomplete="email" style="width:100%;padding:11px 12px;border:1px solid #E8D9BC;border-radius:8px;font-size:14px;box-sizing:border-box">
-          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen — 14 Tage nach der Party löscht sich ohnehin alles von selbst. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
+          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen — 14 Tage nach der Party löscht sich ohnehin alles von selbst. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail — und sieben Tage vor der Party einmal eine Erinnerung mit dem Stand der Zusagen. <strong>Sonst nichts</strong> — kein Newsletter, keine Werbung.</p>
           <!-- 07.09.2026: Newsletter-Opt-in in den Planer geholt (gab es nur im alten Creator).
                Der sichtbare Text nennt AUSSCHLIESSLICH, was tatsaechlich passiert. Der alte
                Creator wirbt an derselben Stelle zusaetzlich mit einer terminbezogenen Mail vor
@@ -1071,7 +1073,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <h3 class="checkout-card__title">Online speichern</h3>
         <div class="checkout-card__price">Kostenlos</div>
         <ul class="checkout-card__features"><li>Auf diesem Gerät automatisch gespeichert</li><li>Plan + Einladung + Partyseite</li><li>Magic-Link per E-Mail <small style="color:#b08642">· geplant</small></li></ul>
-        <button class="checkout-card__btn" onclick="openSaveLater()">Plan-Link vormerken</button>
+        <button class="checkout-card__btn" onclick="openSaveLater()">Plan-Link per E-Mail</button>
       </div>
       <div class="checkout-card checkout-card--free">
         <div class="checkout-card__icon">📥</div>
@@ -1212,9 +1214,9 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="faq-item"><h3>Wie plane ich einen Kindergeburtstag schnell?</h3><p>Am schnellsten geht es, wenn du zuerst Alter, Motto und Gästezahl festlegst — alles andere ergibt sich daraus. Der Planer oben erstellt daraus einen kompletten Ablauf mit Zeitplan, Spielen, Einkaufsliste und Kosten pro Kind. Realistisch bist du in wenigen Minuten durch.</p></div>
       <div class="faq-item"><h3>Was kostet ein Kindergeburtstag?</h3><p>Typischerweise 4–12 Euro pro Kind. Der genaue Betrag hängt von Motto und Gästezahl ab. Im Minimal-Modus bleibst du oft unter 5 Euro pro Kind — inklusive Deko, Mitgebsel und Snacks. Selbermachen und Leihen statt Kaufen drückt den Preis zusätzlich.</p></div>
       <div class="faq-item"><h3>Welche Spiele eignen sich für welches Alter?</h3><p>Für 3–5 Jahre einfache Bewegungs- und Suchspiele. Für 6–8 Jahre Rallyes, Bastelstationen und Quiz-Runden. Für 9–12 Jahre Escape-Rooms, Code-Knacken und Team-Wettkämpfe. Jedes Motto bringt eigene, altersgerechte Spiele mit — der Planer blendet aus, was für die Altersgruppe nicht passt.</p></div>
-      <div class="faq-item"><h3>Wie viele Kinder soll ich einladen?</h3><p>Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Snack-Mengen und Kosten passt der Planer automatisch an die Gästezahl an.</p></div>
+      <div class="faq-item"><h3>Wie viele Kinder soll ich einladen?</h3><p>Faustregel: Alter des Kindes = Anzahl der Gäste. Für ein 4-jähriges Kind also 4–6 Kinder, für ein 8-jähriges 6–10. Mehr Gäste heißt mehr Aufsicht — ab etwa 8 Kindern lohnt eine zweite erwachsene Person. Die Einkaufsliste ist für eine feste Kinderzahl gerechnet; der Planer zeigt dir den Betrag pro Kind und rechnet die Summe auf deine Gästezahl hoch.</p></div>
       <div class="faq-item"><h3>Wie lange sollte ein Kindergeburtstag dauern?</h3><p>2 Stunden für 3–5-Jährige, rund 3 Stunden für 6–8-Jährige, 3–4 Stunden für 9–12-Jährige. Ein bewährter Rhythmus: 30 Minuten Ankommen, 60–90 Minuten Programm, 30 Minuten Kuchen, 30 Minuten Abschluss. Der Planer erstellt den Zeitplan mit konkreten Uhrzeiten.</p></div>
-      <div class="faq-item"><h3>Was tun, wenn die Kinder zu wild werden?</h3><p>Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal": weniger Stationen, mehr Luft dazwischen.</p></div>
+      <div class="faq-item"><h3>Was tun, wenn die Kinder zu wild werden?</h3><p>Plane bewusst Ruhepunkte ein — nach einem Action-Spiel ein ruhiges. Im Plan kannst du jedes Spiel einzeln tauschen, verschieben oder entfernen und ruhigere Punkte wie Basteln oder Vorlesen dazunehmen. Wer es insgesamt entspannter mag, stellt den Aufwand auf „Minimal“: weniger Stationen, mehr Luft dazwischen.</p></div>
       <div class="faq-item"><h3>Kindergeburtstag Last Minute — was tun?</h3><p>Konzentrier dich auf drei Dinge: ein bekanntes Spiel, etwas zu essen, ein kleines Mitgebsel. Mehr braucht es nicht. Der Notfallplan erstellt in 2 Minuten einen funktionierenden Ablauf mit Minimal-Deko, einfachen Aktivitäten und Supermarkt-Kuchen.</p></div>
       <div class="faq-item"><h3>Was brauche ich für einen Kindergeburtstag zuhause?</h3><p>Deko passend zum Motto (ab etwa 5 Euro), Kuchen oder Muffins, Snacks und Getränke, 2–3 Spiele und kleine Mitgebsel. Mehr ist selten nötig. Der Planer erstellt dir eine Einkaufsliste mit Mengenangaben und Kosten pro Kind, damit nichts Doppeltes im Wagen landet.</p></div>
       <div class="faq-item"><h3>Welche Mottos sind am beliebtesten?</h3><p>Dauerbrenner sind Piraten und Dino, dazu Einhorn, Feuerwehr, Safari, Weltraum, Detektiv, Prinzessin, Superheld und Meerjungfrau. Weniger überlaufen, aber stark: Dschungel, Feen, Pferde, Ritter und Baustelle. Alle 15 sind im Planer mit fertigem Zeitplan und Spielen hinterlegt.</p></div>
@@ -1510,9 +1512,25 @@ window.plausible.init=function(){};window.plausible.q=[];
        (c) Info-Kaestchen neu zeichnen, damit die Zeiten zur eingegebenen Zahl passen. */
     const _neueGruppe = state.exactAge ? gruppeAusAlter(state.exactAge) : null;
     if(_neueGruppe){
-      if(_neueGruppe !== state.age) state.eliteOff = [];   // (b) Parität zum alten pickAge
-      state.age = _neueGruppe;                              // (a)
+      const _alteGruppe = state.age;
+      if(_neueGruppe !== _alteGruppe) state.eliteOff = [];   // (b) Parität zum alten pickAge
+      state.age = _neueGruppe;                               // (a)
+      /* Review M4 (07.09.): die Info-Box versprach je Gruppe ein Tagesplan-Ende (16:30/17:00/18:00), aber
+         nichts setzte es — state.endTime blieb auf 16:30. Jetzt zieht das Ende mit der Gruppe, solange der
+         Nutzer es nicht selbst gesetzt hat (Wert leer oder gleich der Vorgabe der vorherigen Gruppe). */
+      try{ const _altEnde = (ALTERS_INFO[_alteGruppe] || {}).ende || '16:30', _neuEnde = ALTERS_INFO[_neueGruppe].ende;
+        if(_neueGruppe !== _alteGruppe && (!state.endTime || state.endTime === _altEnde)){
+          state.endTime = _neuEnde;
+          const _q = document.getElementById('qEndTime'), _i = document.getElementById('iqEndTime'); if(_q) _q.value = _neuEnde; if(_i) _i.value = _neuEnde;
+          if(state.motto) renderPlanPreview();
+        } }catch(e){}
       showPlanBtn();
+    } else {
+      /* Review m1 (07.09.): 0, 15 oder leer liessen state.age und den Plan-Knopf stehen — der Plan gehoerte
+         zu einer Zahl, die nicht mehr im Feld stand. Ungueltig = kein Alter: Gruppe weg, Knopf weg, die
+         Info-Box sagt, was fehlt, und revealPlan verweigert ohne exactAge. */
+      state.age = null;
+      try{ const _b = document.getElementById('toPlanBtn'); if(_b) _b.style.display = 'none'; }catch(e){}
     }
     try{ renderAgeInfo(); }catch(e){}                       // (c) NUR die Info-Box — nie renderAges(),
     /* das wuerde das Eingabefeld selbst ersetzen und der Fokus waere nach der ersten Ziffer weg. */
@@ -1590,7 +1608,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     // deshalb der eigene Zweig statt eines Ersatzworts im Possessiv.
     const _nm = (saved.name || '').trim();
     document.getElementById('resumeWho').textContent =
-      _nm ? `${poss(_nm)} ${_mn}-Plan` : `Dein ${_mn}-Plan`;
+      _nm ? `${poss(_nm)} ${_mn}-Plan` : `dein ${_mn}-Plan`;   // Review m8: Nominalphrase nach Doppelpunkt, klein wie "dein Kind"
     const mins = saved.lastSaved ? Math.round((Date.now() - saved.lastSaved) / 60000) : 0;
     document.getElementById('resumeWhen').textContent = mins < 1 ? 'wenigen Sekunden' : mins < 60 ? `${mins} Min` : `${Math.round(mins/60)} h`;
     document.getElementById('resumeBanner').classList.add('show');
@@ -1616,8 +1634,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Restore-Pfad: Eckdaten + Name-Gate aus dem gespeicherten State setzen (sonst strandet der "Plan ansehen"-Button:
     // unsichtbar bzw. disabled trotz vorhandenem Namen). Button sichtbar machen, da der Nutzer seinen Flow fortsetzt.
     try{ syncEckdaten(); }catch(e){}
-    try{ const tpb=document.getElementById('toPlanBtn'); if(tpb) tpb.style.display=''; }catch(e){}
-    goStage(state.stage || 1);
+    /* Review m2 (07.09.): Speicherstaende von vor dem Alters-Umbau tragen eine Gruppe, aber keine Zahl.
+       Ohne Zahl kein Plan-Knopf und zurueck auf die Eckdaten — die eine Altersfrage gilt auch fuer Rueckkehrer. */
+    const _ohneZahl = !state.exactAge;
+    try{ const tpb=document.getElementById('toPlanBtn'); if(tpb) tpb.style.display = _ohneZahl ? 'none' : ''; }catch(e){}
+    if(_ohneZahl){ try{ showFlash('Bitte trag noch das genaue Alter ein — dann passt der Plan.'); }catch(e){} }
+    goStage(_ohneZahl && (state.stage || 1) > 2 ? 2 : (state.stage || 1));
   }
   function discardResume(){
     document.getElementById('resumeBanner').classList.remove('show');
@@ -1696,6 +1718,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Reset invite to motto-default
     state.invite.title = state.motto.invite.title;
     state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
+    /* Review M3 (07.09.): renderInvitePreview fuellt #iTitle/#iBody nur, wenn sie leer sind, und kopiert
+       sie danach in den State zurueck — der geteilte Text trug nach einem Motto-Wechsel das alte Motto.
+       Gleiche Konvention wie setExactAge: der Vorlagentext ist ableitbar und wird neu geschrieben. */
+    { const _t = document.getElementById('iTitle'), _b = document.getElementById('iBody'); if(_t) _t.value = state.invite.title; if(_b) _b.value = state.invite.body; }
     renderAges();
     autoSave();
     /* Gate-M2 (01.08.): Paket-Knopf, Kachel-Beschriftung und Link-Ziel haengen an
@@ -1715,20 +1741,26 @@ window.plausible.init=function(){};window.plausible.q=[];
      Plan-Cache, Paket-Variante und den Worker-Payload — sie darf nie leer bleiben. */
   function gruppeAusAlter(n){ const v = parseInt(n,10); if(!(v>=1 && v<=14)) return null; return v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); }
   const ALTERS_INFO = {
-    '3-5':  {titel:'Kindergartenkinder',  desc:'Kurze Spiele, viel Mitmachen',            features:['Tagesplan 14:00–16:30','Kurze, einfache Spiele','Schatzsuche kindgerecht leicht']},
-    '6-8':  {titel:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','Aktive Spiele mit Wettkampf','Schatzsuche mit Rätseln']},
-    '9-12': {titel:'Grundschulkinder',    desc:'Anspruchsvollere Rätsel',                features:['Tagesplan 14:00–18:00','Knifflige Spiele & Rätsel','Schatzsuche mit Geheimschrift']}
+    '3-5':  {titel:'Kindergartenkinder',  desc:'Kurze Spiele, viel Mitmachen',            ende:'16:30', features:['Tagesplan','Kurze, einfache Spiele','Schatzsuche kindgerecht leicht']},
+    '6-8':  {titel:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', ende:'17:00', features:['Tagesplan','Aktive Spiele mit Wettkampf','Schatzsuche mit Rätseln']},
+    '9-12': {titel:'Grundschulkinder',    desc:'Anspruchsvollere Rätsel',                ende:'18:00', features:['Tagesplan','Knifflige Spiele & Rätsel','Schatzsuche mit Geheimschrift']}
   };
   function renderAgeInfo(){
     const box = document.getElementById('ageInfoBox');
     if(!box) return;
-    const gruppe = state.exactAge ? gruppeAusAlter(state.exactAge) : null;
+    const n = state.exactAge;
+    const gruppe = n ? gruppeAusAlter(n) : null;
     const info = gruppe ? ALTERS_INFO[gruppe] : null;
+    /* Review m3 + Bolle 07.09. ("annehmen, aber ehrlich sagen"): fuer 1-2 gibt es nur den Plan der Juengsten,
+       fuer 13-14 nur den der Grossen. Das steht jetzt dran, statt still "3-5 Jahre" zu zeigen. */
+    const rand = !n ? null : (n < 3 ? `Für ${n} Jahre nehmen wir den Plan der Jüngsten (3–5) — die Spiele sind für ab 3 gedacht, nimm die einfachsten.`
+                         : (n > 12 ? `Für ${n} Jahre nehmen wir den Plan der Großen (9–12) — die Spiele sind bis 12 gedacht, nimm die kniffligsten.` : null));
+    const roh = ((document.getElementById('iqExactAge') || {}).value || '').trim();
     box.innerHTML = info ? `
-        <div class="age-info__head"><b>${gruppe} Jahre</b> · ${info.titel}</div>
-        <div class="age-info__desc">${info.desc}</div>
-        <ul class="age-card__features">${info.features.map(f => `<li>${f}</li>`).join('')}</ul>
-      ` : `<div class="age-info__desc">Trag das Alter ein — Spiele, Rätsel und Zeiten passen sich automatisch an.</div>`;
+        <div class="age-info__head"><b>${rand ? n + ' Jahre → Plan ' + gruppe : gruppe + ' Jahre'}</b> · ${info.titel}</div>
+        <div class="age-info__desc">${rand || info.desc}</div>
+        <ul class="age-card__features">${info.features.map(f => `<li>${f === 'Tagesplan' ? 'Tagesplan ' + (state.time || '14:00') + '–' + (state.endTime || info.ende) : f}</li>`).join('')}</ul>
+      ` : `<div class="age-info__desc">${roh ? 'Bitte eine Zahl von 1 bis 14 eintragen.' : 'Trag das Alter ein — Spiele, Rätsel und Zeiten passen sich automatisch an.'}</div>`;
   }
   function renderAges(){
     const grid = document.getElementById('agesGrid');
@@ -1798,6 +1830,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       const nm = document.getElementById('iqName');
       if(nm){ nm.setAttribute('aria-invalid','true'); nm.setAttribute('aria-describedby','nameReqHint'); const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }   // W-FORMERR: Fehler auch fuer Screenreader/Tastatur ansagen
       return;   // KEIN goStage(3) ohne Namen
+    }
+    if(!state.exactAge){   // Review m1: kein Plan ohne gueltiges Alter (1-14)
+      try{ const _a = document.getElementById('iqExactAge'); if(_a){ _a.setAttribute('aria-invalid','true'); _a.scrollIntoView({behavior:'smooth', block:'center'}); setTimeout(()=>{try{_a.focus()}catch(e){}}, 350); } renderAgeInfo(); }catch(e){}
+      return;
     }
     const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
     const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
@@ -1983,7 +2019,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // VERDRAHTET: renderElitePlan -> renderPlanList nutzt das (seit 19.06.). Ersetzt den alten schedule/games-Doppelrender.
   function _gameLoud(g){ const l=String((g&&g.loudness)||'').toLowerCase(); if(/laut|hoch|wild|tobe/.test(l)) return 2; if(/leise|ruhig|niedrig|konzentr/.test(l)) return 0; return 1; }
   const _EMO_LEAD = /^[\s\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+/u;
-  const _EMO_GRAB = /^\s*([\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+)/u;
+  const _EMO_GRAB = /^\s*((?:[0-9#*]\uFE0F?\u20E3|[\p{Extended_Pictographic}\uFE0F\u200D\u{1F3FB}-\u{1F3FF}])+)/u;   // Review m14: Keycaps (1️⃣) sind Emojis — sonst "🎮 1️⃣ Navigations-Test"
   function _gameEmoji(n){ const m=String(n||'').match(_EMO_GRAB); return m?m[1]:'🎮'; }
   function _cleanGameTitle(n){ return String(n||'').replace(_EMO_LEAD,'').replace(/\s*[—–-]\s*Spielanleitung\s*$/i,'').trim(); }
   function _planGameCount(variantId){ const s=String(variantId||'').toLowerCase(); if(/wow|max/.test(s)) return 6; if(/min/.test(s)) return 3; return 5; }
@@ -2122,7 +2158,7 @@ window.plausible.init=function(){};window.plausible.q=[];
      (Kein Pfad-Glob in diesem Kommentar: die Zeichenfolge Stern-Schraegstrich
      wuerde ihn hier vorzeitig beenden und die Seite zerlegen.) */
   function _eliteOptional(s){ const l=String((s&&s.label)||''); return /^Optional:/.test(l) || /\(([^)]*\boptional\b[^)]*)\)/i.test(l); }
-  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0, extra=0; (list||[]).forEach(s=> { if(_eliteOptional(s)) extra+=(s.priceEur||0); else sum+=(s.priceEur||0); }); return {sum, extra, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
+  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0, extra=0; (list||[]).forEach(s=> { if(_eliteOptional(s)) extra+=(s.priceEur||0); else sum+=(s.priceEur||0); }); const perChild = base ? Math.round(sum/base*10)/10 : 0; return {sum, extra, base, guests, perChild, total: Math.round(perChild*guests)}; }   // Review m11: Liste ist fuer `base` Kinder gerechnet — pro Kind konstant, Summe skaliert mit der Gaestezahl
 
   // Countdown-Vorbereitungsplan aus data/motto (preparationWeeks). Zwei Daten-Schemas im Bestand:
   //  A) Dict {minus4Weeks…dayOf: {headline, items:[{icon,title,detail} | string]}}  (39 Dateien)
@@ -2175,7 +2211,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const shop = (v.shoppingList || []).map(s => {
       const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
       const reason = s.categoryReasoning ? ` title="${escA(s.categoryReasoning)}"` : '';
-      const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
+      const price = s.priceEur ? ` <span class="eshop__price">${esc(num(s.priceEur))} €</span>` : '';   // Review m7: deutsche Schreibweise auch hier, falls je ein Dezimalpreis kommt
       // Bolle 13.07.: KOMPLETT Affiliate — Items ohne kuratierte URL bekommen einen Amazon-Suchlink (Tag, plain &, L3).
       const term = String(s.label||'').replace(/\(.*?\)/g, '').trim();
       const url = s.url || (term ? 'https://www.amazon.de/s?k=' + encodeURIComponent(term) + '&tag=machsleicht21-21' : '');
@@ -2183,7 +2219,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         ? `<li${reason}><a href="${escA(url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
         : `<li${reason}>${label}${price}</li>`;
     }).join('');
-    const shopMeta = `ca. ${num(sh.sum)} € · ${eur(sh.perChild)} €/Kind · ${sh.guests} ${sh.guests===1?'Kind':'Kinder'}${sh.extra?` · optional +${num(sh.extra)} €`:''}${sh.guests>sh.base?' · Mengen ggf. erhöhen':''}`;
+    const shopMeta = `ca. ${num(sh.total)} € für ${sh.guests} ${sh.guests===1?'Kind':'Kinder'} · ${eur(sh.perChild)} €/Kind${sh.extra?` · optional +${num(sh.extra)} €`:''}${sh.guests!==sh.base?` · Liste für ${sh.base} Kinder gerechnet`:''}`;
 
     // SURFACE: bisher ungenutzte Felder (lagen im JSON brach)
     const extras = (v.food||v.decoration||v.giveaways) ? foldMod('🎈', 'Essen, Deko & Mitgebsel', `${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}`) : '';
@@ -2249,7 +2285,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function alsLokalesDatum(s){ const t = String(s || '').split('-'); return t.length === 3 ? new Date(+t[0], +t[1]-1, +t[2]) : new Date(s); }
   function formatDateShort(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
   function formatDateLong(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
-  function locationLabel(l){ return {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }
+  function locationLabel(l){ return {zuhause:'bei uns zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }   // Review m6: im geteilten Text steht das fuer Fremde
 
   // ===== CUSTOM TIMELINE =====
   function toggleTimelineForm(){
@@ -2400,7 +2436,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     try{ if(window.plausible) plausible('plan_edit_mode', {props:{an: window.__planEdit ? '1' : '0'}}); }catch(e){}
   }
-  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "’" : "’s")) : s; }
+  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s")) : s; }   // Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil wie in "mach's"), gleich mit party-worker.js und paket-core.js
   /* 07.09.2026 — Deutsche Zahlformatierung. Anlass (Funnel-Test 04.09., F3): der Plan druckte
      "7.4 €/Kind" und "2.0 l" — englischer Dezimalpunkt an der Stelle, an der Eltern die Kosten
      lesen. Im ganzen Repo gab es keinen Locale-Formatierer (Intl.NumberFormat / toLocaleString('de')
@@ -2422,7 +2458,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     autoSave();
   }
-  function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; autoSave() }
+  function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; try{ const _f=document.getElementById('iDeadline'); if(_f && (!_f.value || _f.value === state.invite.fristAuto)){ const _n = fristAuto(); _f.value = _n; state.invite.deadline = _n; state.invite.fristAuto = _n; } }catch(e){} autoSave() }   // Review m5: automatische Frist zieht mit dem Datum, Eigentext bleibt
   function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
   function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; if(state.motto) renderPlanPreview(); autoSave() }
   function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; const il=document.getElementById('iqGuestsLabel'); if(il) il.textContent = v; autoSave() }
@@ -2520,6 +2556,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     autoSave();
   }
 
+  // Antwort-Frist = Party minus 7 Tage (Review-Befund 15.06.: sonst Einladung mit abgelaufener Frist). Eine Quelle fuer Erstbefuellung und Datumswechsel (Review m5, 07.09.).
+  function fristAuto(){ try{ if(state.date){ const d=new Date(state.date); d.setDate(d.getDate()-7); if(!isNaN(d.getTime())) return 'Bitte Bescheid geben bis '+String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'; } }catch(e){} return ''; }
   function renderInvitePreview(){
     // Studio-CTA nur zeigen, wenn der Autopilot druesben auch startet — Studio-Gate ist plannerStateReady =
     // name + canonicalThemeId(motto.id): custom-Mottos haben (noch) kein Studio-Theme und muessen hier raus,
@@ -2540,9 +2578,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       // Antwort-Frist dynamisch aus dem Party-Datum ableiten (Party − 7 Tage) statt hartkodiertem Datum,
       // sonst verschickt man eine Einladung mit bereits abgelaufener Frist (Review-Befund 15.06.2026).
       if(deadlineEl && !deadlineEl.value){
-        let dl='';
-        try{ if(state.date){ const d=new Date(state.date); d.setDate(d.getDate()-7); if(!isNaN(d.getTime())) dl='Bitte Bescheid geben bis '+String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'; } }catch(e){}
-        if(dl) deadlineEl.value = dl;
+        const dl = fristAuto();
+        if(dl){ deadlineEl.value = dl; state.invite.fristAuto = dl; }   // merken, was automatisch war — nur das darf liveUpdateDate ersetzen
       }
       state.invite.title = titleEl.value;
       state.invite.body = bodyEl.value;
@@ -3260,7 +3297,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Ein Modal, drei Modi: 'save' (Plan-Link), 'pdf' + 'print' (ehrliche Warteliste statt Fake-Button).
   // Warteliste = messbares Monetarisierungs-Signal ohne UWG-Risiko (kein "kaufen", das nichts kauft).
   const SL_MODES = {
-    save:  { h:'💾 Plan geräteübergreifend sichern', p:'Dein Plan ist schon auf diesem Gerät gespeichert. Trag deine E-Mail ein, dann schicken wir dir den geräteübergreifenden Link, sobald die Funktion live ist.', btn:'Vormerken' },
+    save:  { h:'💾 Plan-Link per E-Mail', p:'Dein Plan ist auf diesem Gerät gespeichert. Trag deine E-Mail ein, dann schicken wir dir einen Link, mit dem du deinen Plan auf jedem Gerät weiterbearbeitest.', btn:'Link schicken' },   // Review M7 (07.09.): der Laufzeittext versprach "sobald die Funktion live ist" — sie ist es
     pdf:   { h:'📥 Plan-PDF — sag mir Bescheid',  p:'Der PDF-Export ist in Arbeit. Trag deine Email ein, dann schicke ich dir das fertige PDF, sobald es da ist. Dein Plan ist solange online gespeichert und jederzeit abrufbar.', btn:'Auf die Liste setzen' },
     print: { h:'📦 Komplettpaket Print — Warteliste', p:'Das Druck-Komplettpaket (Urkunden, Spielkarten, Einladungen — 15+ Seiten) ist in Vorbereitung. Trag dich ein und du erfährst als Erster, sobald es bestellbar ist. Keine Zahlung, keine Verpflichtung.', btn:'Auf die Warteliste' }
   };
@@ -3364,10 +3401,12 @@ window.plausible.init=function(){};window.plausible.q=[];
        der Resume-Snapshot bzw. localStorage — nicht `state`, das ist vor "Weitermachen" noch
        der Default. */
     const _lokal = window.__resumeSnapshot || ((typeof loadSavedState === 'function') ? loadSavedState() : null);
+    let _ersetzt = false, _gleicherPlan = false;   // _ersetzt: Nutzer will per Rueckfrage AUSDRUECKLICH den Link-Plan; _gleicherPlan: Name+Motto identisch (nur Datum anders)
     if(_lokal && (_lokal.name || _lokal.date)){   // Name oder Datum tippt nur ein Mensch — Motto/Alter/Gaeste kommen auch per Link in den Speicher (kein ?datum=-Parameter, Pruefstand 07.09.)
       const _ln = String(_lokal.name||'').trim().toLowerCase(), _lm = _lokal.motto && _lokal.motto.id, _ld = _lokal.date || '';
       const _kn = String(d.name||'').trim().toLowerCase(), _km = d.mottoId || '', _kd = d.date || '';
       const _anders = (_ln && _ln !== _kn) || (_lm && _lm !== _km) || (_ld && _ld !== _kd);   // lokal Name/Motto/Datum, das der Link nicht identisch mitbringt (auch: gar nicht) — was als Arbeit zaehlt, zaehlt als Unterschied
+      _gleicherPlan = (_ln === _kn && _lm === _km);   // gleiche Identitaet: ein "Ersetzen" tauscht dann nur Werte, es loescht keinen Geraetestand
       if(_anders){
         const _vom = x => /^\d{4}-\d{2}-\d{2}$/.test(x || '') ? ' vom ' + new Date(x + 'T00:00:00').toLocaleDateString('de-DE', {day:'numeric', month:'long'}) : '';   // Datum im Text: nur so ist \"gleicher Name, anderes Datum\" zu entscheiden
         const _lokalLabel = (_lokal.name ? poss(String(_lokal.name).trim()) + ' ' : '') + ((_lokal.motto && _lokal.motto.name) || 'Kindergeburtstags') + '-Plan' + _vom(_lokal.date);
@@ -3377,16 +3416,27 @@ window.plausible.init=function(){};window.plausible.q=[];
           try{ if(window.plausible) plausible('plan_restore_declined', {}); }catch(e){}
           return;
         }
+        _ersetzt = true;   // ausdrueckliche Absicht: Link-Plan statt Geraeteplan
       }
     }
-    if(m){ state.motto = m; applyAccent(m); state.eliteOff = []; }
+    /* 07.09.2026 (Review M1): Vor "Weitermachen" ist `state` der Default. Die Link-Felder darauf zu
+       setzen und zu speichern, warf im NORMALFALL (gleicher Plan, keine Rueckfrage) alles weg, was der
+       Link nicht traegt: aktive Partyseite, Plan-Zeilen, Einladungstext, Foto. Deshalb: liegt lokal ein
+       Plan und wird er nicht ausdruecklich ersetzt, ist er die Basis (Sub-Objekte einzeln gemergt, wie
+       resumeWork); der Link legt nur mit, was er tatsaechlich traegt — leere Werte und leere Listen
+       ueberschreiben nichts. Ein aelterer Link kann so einzelne neuere Werte zuruecksetzen (Datum),
+       aber nie Unverwandtes loeschen. Wer per Rueckfrage ersetzt, startet wie bisher vom Default. */
+    const _basisLokal = !!(_lokal && (!_ersetzt || _gleicherPlan));
+    if(_basisLokal){ try{ Object.keys(_lokal).forEach(k => { const v = _lokal[k]; if(v && typeof v === 'object' && !Array.isArray(v) && state[k] && typeof state[k] === 'object' && !Array.isArray(state[k])) Object.assign(state[k], v); else state[k] = v; }); if(state.motto && state.motto.id){ const _live = MOTTOS.find(x => x.id === state.motto.id); if(_live) state.motto = _live; } applyAccent(state.motto); }catch(e){} }   // wie resumeWork: Sub-Objekte mergen, Motto an die Live-Referenz binden
+    const _mottoVorher = (state.motto && state.motto.id) || '';
+    if(m){ if(_mottoVorher !== m.id) state.eliteOff = []; state.motto = m; applyAccent(m); }
     if(d.name) state.name = String(d.name).slice(0,40);
     if(d.date) state.date = d.date; if(d.time) state.time = d.time; if(d.endTime) state.endTime = d.endTime;
     if(d.guests) state.guests = d.guests; if(d.location) state.location = d.location;
-    state.hostName = d.hostName || ''; state.hostPhone = d.hostPhone || ''; state.areaHint = d.areaHint || '';
-    state.adresse = d.adresse || ''; state.partyMessage = d.partyMessage || ''; state.crewText = d.crewText || '';
-    if(d.eliteVariant) state.eliteVariant = d.eliteVariant;
-    if(Array.isArray(d.eliteOff)) state.eliteOff = d.eliteOff;
+    if(d.hostName) state.hostName = d.hostName; if(d.hostPhone) state.hostPhone = d.hostPhone; if(d.areaHint) state.areaHint = d.areaHint;
+    if(d.adresse) state.adresse = d.adresse; if(d.partyMessage) state.partyMessage = d.partyMessage; if(d.crewText) state.crewText = d.crewText;
+    if(d.eliteVariant && !(_basisLokal && d.eliteVariant === 'standard')) state.eliteVariant = d.eliteVariant;   // 'standard' ist auch der Default des Links — auf lokaler Basis kein Beleg
+    if(Array.isArray(d.eliteOff) && d.eliteOff.length) state.eliteOff = d.eliteOff;
     if(Array.isArray(d.games) && d.games.length) state.games = d.games;
     if(d.exactAge){ state.exactAge = d.exactAge; state.age = gruppeAusAlter(d.exactAge) || state.age; }
     // Formularfelder aus dem State befuellen — dieselben Wege wie beim Resume
@@ -3396,9 +3446,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     setz('iqGuests', state.guests); setz('iqExactAge', state.exactAge);
     setz('psHostName', state.hostName); setz('psHostPhone', state.hostPhone); setz('psAreaHint', state.areaHint);
     setz('psAddress', state.adresse); setz('psMessage', state.partyMessage); setz('psCrew', state.crewText);
+    if(state.crewText){ try{ setCrew(state.crewText); }catch(e){} }   // Review M2 (07.09.): die Textarea allein sendet nichts — state.crew entsteht nur in setCrew()
     try{ renderAges(); }catch(e){}
     if(state.motto){ try{ document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji; document.getElementById('chosenMottoName').textContent = state.motto.name; }catch(e){} }
-    try{ if(state.motto && state.name){ state.invite.title = state.motto.invite.title; state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; } }catch(e){}
+    try{ if(state.motto && (!_basisLokal || _mottoVorher !== state.motto.id || !(state.invite && state.invite.title))){ state.invite.title = state.motto.invite.title; state.invite.body = state.name ? `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}` : ''; } }catch(e){}   // Review M3-Ergaenzung: der Titel haengt am Motto, nicht am Namen
     /* Der Link ist die AUSDRUECKLICHE Absicht — der lokale Resume-Banner darf ihn nicht
        ueberschreiben. resumeWork() ersetzt den State komplett (Object.assign ueber den
        Snapshot); ein Klick auf "Weitermachen" nach dem Restore haette den Link-Stand still
@@ -3407,8 +3458,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     try{ const _rb = document.getElementById('resumeBanner'); if(_rb) _rb.classList.remove('show'); }catch(e){}
     autoSave();
     // Dorthin, wo der Elternteil weitermachen kann: mit Name -> Plan, ohne -> Eckdaten
-    try{ goStage(state.motto && state.name ? 3 : (state.motto ? 2 : 1)); }catch(e){}
-    showFlash('✅ Dein Plan ist wieder da — genau da, wo du aufgehört hast.');
+    try{ if(_basisLokal){ syncPsGameUI(); renderPlanPreview(); } }catch(e){}   // wie resumeWork: lokale Spielwahl und Plan sichtbar machen
+    try{ goStage(Math.max(_basisLokal ? (state.stage || 1) : 1, state.motto && state.name ? 3 : (state.motto ? 2 : 1))); }catch(e){}   // lokale Stage, aber nie hinter das zurueck, was der Link hergibt
+    showFlash(_basisLokal ? '✅ Dein Plan ist wieder da.' : '✅ Dein Plan ist wieder da — Motto, Eckdaten und Gäste. Ein Foto müsstest du neu einfügen.');
     try{ if(window.plausible) plausible('plan_restored', {props:{via:'magiclink'}}); }catch(e){}
   }
   function sendMagicLinkModal(){
@@ -3428,7 +3480,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     } else {
       // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
       fetch('https://party.machsleicht.de/api/plan', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, plan: planEingaben() }) })
-        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('✉️ Dein Link ist unterwegs an ' + email + ' — damit machst du auf jedem Gerät genau hier weiter.'); })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('✉️ Dein Link ist unterwegs an ' + email + ' — damit bearbeitest du deinen Plan auf jedem Gerät weiter.'); })
         .catch(() => showFlash('⚠️ Versand hat gerade nicht geklappt — dein Plan ist auf diesem Gerät gespeichert, versuch es gleich nochmal.'));
     }
   }
@@ -3440,7 +3492,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     flash.textContent = msg;
     flash.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#0F7B3F;color:#fff;padding:12px 24px;border-radius:999px;font-family:Nunito;font-weight:800;font-size:14px;z-index:300;box-shadow:0 6px 20px rgba(0,0,0,.2);animation:fadeIn .25s';
     document.body.appendChild(flash);
-    setTimeout(() => flash.remove(), 2200);
+    setTimeout(() => flash.remove(), /^⚠️/.test(msg) ? 6500 : 2200);   // Review m16: Fehlertexte bleiben, bis man sie gelesen hat
   }
 
   // ===== Sticky scroll =====
