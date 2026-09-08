@@ -764,8 +764,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="topnav__progress">
       <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 3: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
-      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 4: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
       <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Fertig" onclick="jumpStage(5)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
@@ -839,7 +839,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
 <!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
 <section class="stage" id="stage4">
-  <div class="back-anchor"><button onclick="goStage(2)">← Zurück zu den Eckdaten</button></div>
+  <div class="back-anchor"><button onclick="goStage(3)">← Zurück zum Plan</button></div>
   <div class="editor">
     <div class="editor__pane">
       <header class="editor__head">
@@ -996,8 +996,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
-    <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
+    <p class="stage-advance__hint">Fertig mit der Einladung? Dann mach dich fertig für den Tag — Plan, Einkauf und Materialien warten.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Weiter: Fertig machen →</button>
   </div>
 </section>
 
@@ -1036,8 +1036,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
+    <p class="stage-advance__hint">Dein Plan steht. Willst du die Kinder gleich einladen?</p>
+    <button class="stage-advance__btn" onclick="goStage(4)">Kinder einladen →</button>
+    <button class="stage-advance__btn" onclick="goStage(5)" style="margin-top:10px;background:transparent;color:var(--ink);border:2px solid var(--line)">Ohne Einladung fertig machen →</button>
     <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
@@ -1842,10 +1843,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
     const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
-    goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
+    goStage(3);   // 08.09.2026 (Bolle): der Plan ist das Versprechen der Landingpages ("Plan in 10 Minuten") und damit der erste Aha-Moment.
+                  // Bis heute stand die Einladung dazwischen: wer wegen eines Ablaufs kam, musste erst eine Einladung bauen (Phase B, 13.07.).
   }
-  // Uebergang Einladung -> Plan (seedet den Plan erst hier)
-  function planFromInvite(){ goStage(3); }   // Render uebernimmt goStage(3) (Re-Check: Doppel-Render vermeiden)
 
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
@@ -2332,7 +2332,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE NAV =====
-  const STAGE_ORDER = [1, 2, 4, 3, 5];               // logische Schritt-Reihenfolge der Stage-IDs
+  const STAGE_ORDER = [1, 2, 3, 4, 5];               // logische Schritt-Reihenfolge der Stage-IDs (08.09.2026: Plan VOR Einladung, s. revealPlan)
   const ORD = id => STAGE_ORDER.indexOf(id);
   function goStage(n){
     if(n > 5) n = 5;   // Migration: alte localStorage-States (6-Stage-Funnel) auf den gemergten 5-Stage-Funnel klemmen
@@ -2419,7 +2419,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!tpb) return;
     // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
     // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
-    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zur Einladung →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zu deinem Plan →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
@@ -3279,7 +3279,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         const _syncMorph = function(){
           const a = !!(state.partyseite && state.partyseite.active);
           const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = a ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
-          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
+          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Kinder einladen →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
         };
         _syncMorph();
         window.__syncStickyMorph = _syncMorph;   // goStage(3) refresht den gemorphten Zustand
