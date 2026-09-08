@@ -1,0 +1,57 @@
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index 423c4147..c6b0345d 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -378,9 +378,11 @@ window.plausible.init=function(){};window.plausible.q=[];
+   .stage-advance__btn:hover{transform:scale(1.03)}
+   /* Diese Klasse stand seit je da und wurde nie dargestellt — Block 8c ist ihr erster Auftritt (Abwahl-Weg
+      unter dem Plan). Bei 375 px gemessen und dreifach berichtigt: #888 auf dem Seitengrund ergab 3.37:1
+-     (AA verlangt 4.5 fuer 13 px), die Klickflaeche war 18 px hoch (WCAG 2.5.8: 24), und ein block-Knopf mit
++     (AA verlangt 4.5 fuer 13 px), die Klickflaeche war 17,7 px hoch (WCAG 2.5.8: 24), und ein block-Knopf mit
+      automatischer Breite folgt keinem text-align — er stand links statt unter dem Hauptknopf. Jetzt 4.98:1,
+-     216x36, Mitte deckungsgleich. #7a6a50 ist die Palettenfarbe aus dem Spiel-Hinweis dieser Datei. */
++     224,8 x 38, Mitte deckungsgleich, einzeilig ab 320 px. #7a6a50 ist die Palettenfarbe aus dem
++     Spiel-Hinweis dieser Datei. Die Groessen sind mit der ausgelieferten Nunito gemessen — eine fruehere
++     Messung lief auf Ersatzschrift und war deshalb zu klein. */
+   .stage-advance__skip{display:block;margin:14px auto 0;padding:10px 14px;background:none;border:none;color:#7a6a50;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
+ 
+   /* Back-Anchor on Stage 4+5 */
+@@ -1610,13 +1612,19 @@ window.plausible.init=function(){};window.plausible.q=[];
+       // Die alte Ordnung war 1,2,4,3,5. Wer bis m kam, hat alle Stufen mit ORD_alt <= ORD_alt(m) gesehen;
+       // der neue Merker ist der laengste Anfang der NEUEN Ordnung, der ganz in dieser Menge liegt.
+       // 1->1, 2->2, 4->2 (Einladung gesehen, Plan nicht), 3->4 (Plan gesehen, also auch die Einladung
+-      // davor), 5->5. Ein blosses Zuruecksetzen auf 1 liess Rueckkehrer ihre Stufen ein zweites Mal
++      // davor), 5->5. Die 6 stammt aus der Zeit vor dem Merge von Einladung und Partyseite (siehe den
++      // Kommentar an Stufe 5 im Markup) und bedeutet ebenfalls "war komplett durch", also 6->5; ohne sie
++      // fiele genau diese Gruppe ueber den Rueckfall auf 1 und zaehlte doppelt.
++      // Ein blosses Zuruecksetzen auf 1 liess Rueckkehrer ihre Stufen ein zweites Mal
+       // zaehlen und hob den Trichter genau im Umstellungsfenster (Re-Check 10, MINOR 1).
+       // Bei 4 bleibt genau ein Ereignis zu viel. Das ist keine Ungenauigkeit, sondern eine Eigenschaft
+       // der Aufgabe: die alte Besuchsmenge {1,2,4} ist kein Anfang der neuen Ordnung, eine verlustfreie
+-      // Abbildung gibt es also nicht. Gewaehlt ist die Richtung, die lieber einmal zu viel zaehlt als
+-      // einmal zu wenig — ein fehlender Schritt waere im Trichter unsichtbar, ein zusaetzlicher nicht.
+-      if(parsed._so !== 8){ parsed._maxStage = ({1:1, 2:2, 4:2, 3:4, 5:5})[parsed._maxStage] || 1; parsed._so = 8; }
++      // Abbildung gibt es also nicht; gewaehlt ist die Richtung, die lieber einmal zu viel zaehlt.
++      // Das gilt fuer die Abbildung, NICHT fuer den ganzen Weg: wer mit stage 4 gespeichert hat, springt
++      // beim Wiederaufnehmen direkt dorthin, feuert nur wizard_stage:4, und die Plan-Stufe bleibt fuer ihn
++      // unzaehlbar. Das war vorher genauso und ist eine Eigenschaft des Wiederaufnahme-Sprungs, nicht
++      // dieser Tabelle — aber es steht hier, damit niemand dem Kommentar mehr glaubt, als er halten kann.
++      if(parsed._so !== 8){ parsed._maxStage = ({1:1, 2:2, 4:2, 3:4, 5:5, 6:5})[parsed._maxStage] || 1; parsed._so = 8; }
+       return parsed;
+     } catch(e){ return null }
+   }
+@@ -2390,7 +2398,13 @@ window.plausible.init=function(){};window.plausible.q=[];
+     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
+     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
+     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
+-    if(n === 3){ try{ renderPlanPreview(); }catch(e){} try{ syncPlanAdvance(); }catch(e){}   // Final-Gate M1: Eckdaten-Aenderungen (v.a. Gaeste) beim Rueckweg in den Plan uebernehmen
++    // Der Abschluss unter dem Plan gehoert zu Stufe 3, die ab dem ersten Betreten dauerhaft sichtbar
++    // bleibt — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten der Stufe.
++    // Vorher hing er an n === 3; die Wiederaufnahme springt aber direkt auf die gespeicherte Stufe, und
++    // ein Rueckkehrer mit laufender Partyseite las unter seinem Plan weiter "Kinder einladen"
++    // (Re-Check 11, MINOR 1). Deckt Wiederaufnahme und Magic-Link mit ab.
++    try{ syncPlanAdvance(); }catch(e){}
++    if(n === 3){ try{ renderPlanPreview(); }catch(e){}   // Final-Gate M1: Eckdaten-Aenderungen (v.a. Gaeste) beim Rueckweg in den Plan uebernehmen
+       if(window.__syncStickyMorph){ try{ window.__syncStickyMorph(); }catch(e){} } }
+     if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
+     if(n === 5) renderDoneSummary();

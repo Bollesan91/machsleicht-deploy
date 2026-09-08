@@ -376,7 +376,14 @@ window.plausible.init=function(){};window.plausible.q=[];
   .stage-advance__hint{color:#888;font-size:13px;margin-bottom:14px}
   .stage-advance__btn{background:#FF6F00;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
   .stage-advance__btn:hover{transform:scale(1.03)}
-  .stage-advance__skip{display:block;margin-top:14px;background:none;border:none;color:#888;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
+  /* Diese Klasse stand seit je da und wurde nie dargestellt — Block 8c ist ihr erster Auftritt (Abwahl-Weg
+     unter dem Plan). Bei 375 px gemessen und dreifach berichtigt: #888 auf dem Seitengrund ergab 3.37:1
+     (AA verlangt 4.5 fuer 13 px), die Klickflaeche war 17,7 px hoch (WCAG 2.5.8: 24), und ein block-Knopf mit
+     automatischer Breite folgt keinem text-align — er stand links statt unter dem Hauptknopf. Jetzt 4.98:1,
+     224,8 x 38, Mitte deckungsgleich, einzeilig ab 320 px. #7a6a50 ist die Palettenfarbe aus dem
+     Spiel-Hinweis dieser Datei. Die Groessen sind mit der ausgelieferten Nunito gemessen — eine fruehere
+     Messung lief auf Ersatzschrift und war deshalb zu klein. */
+  .stage-advance__skip{display:block;margin:14px auto 0;padding:10px 14px;background:none;border:none;color:#7a6a50;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
 
   /* Back-Anchor on Stage 4+5 */
   .back-anchor{max-width:1100px;margin:0 auto;padding:20px 20px 0}
@@ -764,8 +771,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="topnav__progress">
       <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 3: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
-      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 4: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
       <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Fertig" onclick="jumpStage(5)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
@@ -837,9 +844,51 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 </section>
 
+<!-- STAGE 3: PLAN -->
+<section class="stage" id="stage3">
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
+    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
+  </div>
+
+  <section class="plan-hero">
+    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
+    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
+    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
+  </section>
+
+  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:26px">🎮</span>
+    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
+    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
+  </div>
+
+  <div class="plan">
+    <header class="plan__header">
+      <div class="plan__header-text">
+        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <div class="plan__meta">
+          <span id="planDate1">Termin noch offen</span>
+          <span><span id="planGuests1">6</span> Gäste</span>
+          <span id="planLocation1">zuhause</span>
+        </div>
+      </div>
+      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
+    </header>
+    <div class="plan__body" id="planBody"></div>
+  </div>
+
+  <div class="stage-advance">
+    <p class="stage-advance__hint" id="planAdvanceHint">Dein Plan steht. Willst du die Kinder gleich einladen?</p>
+    <button class="stage-advance__btn" id="planAdvanceBtn" onclick="goStage(4)">Kinder einladen →</button>
+    <button class="stage-advance__skip" id="planAdvanceSkip" onclick="goStage(5)">Ohne Einladung fertig machen →</button>
+    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
+  </div>
+</section>
+
 <!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
 <section class="stage" id="stage4">
-  <div class="back-anchor"><button onclick="goStage(2)">← Zurück zu den Eckdaten</button></div>
+  <div class="back-anchor"><button onclick="goStage(3)">← Zurück zum Plan</button></div>
   <div class="editor">
     <div class="editor__pane">
       <header class="editor__head">
@@ -996,49 +1045,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
-    <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
-  </div>
-</section>
-
-<!-- STAGE 3: PLAN -->
-<section class="stage" id="stage3">
-  <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
-    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
-  </div>
-
-  <section class="plan-hero">
-    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
-    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
-    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
-  </section>
-
-  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <span style="font-size:26px">🎮</span>
-    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
-    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
-  </div>
-
-  <div class="plan">
-    <header class="plan__header">
-      <div class="plan__header-text">
-        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
-        <div class="plan__meta">
-          <span id="planDate1">Termin noch offen</span>
-          <span><span id="planGuests1">6</span> Gäste</span>
-          <span id="planLocation1">zuhause</span>
-        </div>
-      </div>
-      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
-    </header>
-    <div class="plan__body" id="planBody"></div>
-  </div>
-
-  <div class="stage-advance">
-    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
-    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
+    <p class="stage-advance__hint">Fertig mit der Einladung? Dann schau, was du dir für den Tag mitnimmst — online oder gedruckt.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Weiter: Fertig machen →</button>
   </div>
 </section>
 
@@ -1105,8 +1113,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <h3>So funktioniert's</h3>
     <ol class="seo-base__steps">
       <li><strong>Motto &amp; Alter wählen.</strong> Wir filtern Spiele, Deko und Ablauf passend für 3–5, 6–8 oder 9–12 Jahre — keine Auswahl, die für die Altersgruppe gar nicht funktioniert.</li>
-      <li><strong>Einladung &amp; Partyseite verschicken.</strong> Spiel-Einladung wählen, Foto rein, aktivieren — der Link geht per WhatsApp an die Eltern, Zusagen kommen automatisch zurück.</li>
       <li><strong>Plan feinschleifen &amp; drucken.</strong> Tagesplan mit Uhrzeiten, 4–7 Spiele mit Anleitung, Einkaufsliste mit Preisen und Snack-Mengen — berechnet für genau deine Gästezahl. Kostenlos, ohne Anmeldung.</li>
+      <li><strong>Einladung &amp; Partyseite verschicken.</strong> Spiel-Einladung wählen, Foto rein, aktivieren — der Link geht per WhatsApp an die Eltern, Zusagen kommen automatisch zurück.</li>
     </ol>
 
     <h3>Welches Programm passt zu welchem Alter?</h3>
@@ -1483,7 +1491,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     partyseite: { slug:'lukas7', rsvp:true, photos:false, wish:false, chat:false, active:false },   // photos/chat raus (F4: kein Worker-Backend)
     step: 1,
     eliteVariant: 'standard',
-    lastSaved: null
+    lastSaved: null,
+    _so: 8   // Schritt-Ordnung, unter der dieser Stand entstand (08.09.2026, Block 8: Plan vor Einladung). Siehe loadSavedState.
   };
 
   function defaultDate(){
@@ -1596,6 +1605,26 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(!saved) return null;
       const parsed = JSON.parse(saved);
       if(!parsed.motto || typeof parsed.motto !== 'object' || !parsed.motto.id) return null;   // Typ-Guard: altes String-Motto-Schema wuerde sonst pickAge/renderPlanPreview mit TypeError brechen (Befund Kritik-Welle)
+      // 08.09.2026 (Pruefstand-Befund zu Block 8): _maxStage ist die weiteste erreichte Stufe und wird per ORD()
+      // verglichen, also nach Position. Vor Block 8 lag die Einladung an Position 2 — ein Stand von gestern traegt
+      // deshalb 4, waehrend der Plan heute Position 3 hat. Ohne diese Zeile laese goStage(3) den ersten Plan eines
+      // Rueckkehrers als Rueckschritt und zaehlte ihn nicht. Einmal auf Anfang setzen; _so haelt fest, dass es schon geschah.
+      // Die alte Ordnung war 1,2,4,3,5. Wer bis m kam, hat alle Stufen mit ORD_alt <= ORD_alt(m) gesehen;
+      // der neue Merker ist der laengste Anfang der NEUEN Ordnung, der ganz in dieser Menge liegt.
+      // 1->1, 2->2, 4->2 (Einladung gesehen, Plan nicht), 3->4 (Plan gesehen, also auch die Einladung
+      // davor), 5->5. Die 6 stammt aus der Zeit vor dem Merge von Einladung und Partyseite (siehe den
+      // Kommentar an Stufe 5 im Markup) und bedeutet ebenfalls "war komplett durch", also 6->5; ohne sie
+      // fiele genau diese Gruppe ueber den Rueckfall auf 1 und zaehlte doppelt.
+      // Ein blosses Zuruecksetzen auf 1 liess Rueckkehrer ihre Stufen ein zweites Mal
+      // zaehlen und hob den Trichter genau im Umstellungsfenster (Re-Check 10, MINOR 1).
+      // Bei 4 bleibt genau ein Ereignis zu viel. Das ist keine Ungenauigkeit, sondern eine Eigenschaft
+      // der Aufgabe: die alte Besuchsmenge {1,2,4} ist kein Anfang der neuen Ordnung, eine verlustfreie
+      // Abbildung gibt es also nicht; gewaehlt ist die Richtung, die lieber einmal zu viel zaehlt.
+      // Das gilt fuer die Abbildung, NICHT fuer den ganzen Weg: wer mit stage 4 gespeichert hat, springt
+      // beim Wiederaufnehmen direkt dorthin, feuert nur wizard_stage:4, und die Plan-Stufe bleibt fuer ihn
+      // unzaehlbar. Das war vorher genauso und ist eine Eigenschaft des Wiederaufnahme-Sprungs, nicht
+      // dieser Tabelle — aber es steht hier, damit niemand dem Kommentar mehr glaubt, als er halten kann.
+      if(parsed._so !== 8){ parsed._maxStage = ({1:1, 2:2, 4:2, 3:4, 5:5, 6:5})[parsed._maxStage] || 1; parsed._so = 8; }
       return parsed;
     } catch(e){ return null }
   }
@@ -1842,10 +1871,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
     const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
-    goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
+    goStage(3);   // 08.09.2026 (Bolle): der Plan ist das Versprechen der Landingpages ("Plan in 10 Minuten") und damit der erste Aha-Moment.
+                  // Bis heute stand die Einladung dazwischen: wer wegen eines Ablaufs kam, musste erst eine Einladung bauen (Phase B, 13.07.).
   }
-  // Uebergang Einladung -> Plan (seedet den Plan erst hier)
-  function planFromInvite(){ goStage(3); }   // Render uebernimmt goStage(3) (Re-Check: Doppel-Render vermeiden)
 
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
@@ -2332,31 +2360,50 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE NAV =====
-  const STAGE_ORDER = [1, 2, 4, 3, 5];               // logische Schritt-Reihenfolge der Stage-IDs
+  const STAGE_ORDER = [1, 2, 3, 4, 5];               // logische Schritt-Reihenfolge der Stage-IDs (08.09.2026: Plan VOR Einladung, s. revealPlan)
   const ORD = id => STAGE_ORDER.indexOf(id);
+  // "Die Einladung ist erledigt" heisst: die Partyseite ist aktiv, Gaeste koennen zusagen. Dieselbe Wahrheit
+  // benutzen die Fertig-Seite (doneBadge) und die mitlaufende Leiste — deshalb hier einmal benannt.
+  const EINLADUNG_LAEUFT = () => !!(state.partyseite && state.partyseite.active);
   function goStage(n){
     if(n > 5) n = 5;   // Migration: alte localStorage-States (6-Stage-Funnel) auf den gemergten 5-Stage-Funnel klemmen
     state.stage = n;
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
-    // Phase B (Bolle 13.07.): logische Ordnung Motto -> Eckdaten -> EINLADUNG(4) -> PLAN(3) -> Fertig.
+    // Block 8 (Bolle 08.09.): logische Ordnung Motto -> Eckdaten -> PLAN(3) -> EINLADUNG(4) -> Fertig.
     // Stage-IDs bleiben stabil (Resume/Analytics), nur Reveal + Dots folgen STAGE_ORDER.
     const cur = ORD(n);
-    STAGE_ORDER.forEach(id => { if(id >= 3 && ORD(id) <= cur){ const rs = document.getElementById('stage'+id); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(id !== n && id === 4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } } });
+    // Ein Abschnitt wird aufgedeckt, wenn der Nutzer ihn betritt oder daran vorbei ist — mit einer Ausnahme:
+    // Stufe 4. Wer vom Plan aus "ohne Einladung" abkuerzt, soll den Editor nicht zwischen Plan und Abschluss
+    // stehen haben (Re-Check 9, MINOR 1); wer die Einladung dagegen schon laufen hat, soll sie sehen und
+    // wieder anspringen koennen, auch aus einem Stand der alten Reihenfolge (MINOR 3). Stufe 4 haengt
+    // deshalb nicht an der Position, sondern an der Leistung: sie liegt HINTER dem Plan und waere ueber
+    // einen Positionsvergleich fuer einen Rueckkehrer nie zu erreichen.
+    const _aufdecken = id => id === n || (id === 4 ? (EINLADUNG_LAEUFT() && cur >= ORD(3)) : ORD(id) < cur);
+    STAGE_ORDER.forEach(id => { if(id >= 3 && _aufdecken(id)){ const rs = document.getElementById('stage'+id); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(id !== n && id === 4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } } });
     for(let i=1; i<=5; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
+      const s = document.getElementById('stage'+i);
+      const _zu = i >= 3 && !(s && s.classList.contains('revealed'));   // nie geoeffnet
       dot.classList.remove('done','active','locked');
       let _locked = false;
-      if(ORD(i) < cur) dot.classList.add('done');
-      else if(i === n) dot.classList.add('active');
-      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))){ dot.classList.add('locked'); _locked = true; } }
+      if(i === n) dot.classList.add('active');
+      else if(_zu && ORD(i) > cur){ dot.classList.add('locked'); _locked = true; }   // liegt noch vor dem Nutzer
+      else if(!_zu && ORD(i) < cur) dot.classList.add('done');
+      // Uebersprungen (zu, aber schon dahinter): weder erledigt noch gesperrt — anklickbar zum Nachholen.
       dot.setAttribute('tabindex', _locked ? '-1' : '0');   // A11y: gelockte Dots aus der Tab-Reihenfolge nehmen
     }
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
+    // Der Abschluss unter dem Plan gehoert zu Stufe 3, die ab dem ersten Betreten dauerhaft sichtbar
+    // bleibt — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten der Stufe.
+    // Vorher hing er an n === 3; die Wiederaufnahme springt aber direkt auf die gespeicherte Stufe, und
+    // ein Rueckkehrer mit laufender Partyseite las unter seinem Plan weiter "Kinder einladen"
+    // (Re-Check 11, MINOR 1). Deckt Wiederaufnahme und Magic-Link mit ab.
+    try{ syncPlanAdvance(); }catch(e){}
     if(n === 3){ try{ renderPlanPreview(); }catch(e){}   // Final-Gate M1: Eckdaten-Aenderungen (v.a. Gaeste) beim Rueckweg in den Plan uebernehmen
       if(window.__syncStickyMorph){ try{ window.__syncStickyMorph(); }catch(e){} } }
     if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
@@ -2367,9 +2414,23 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
-    // Nur zu bereits freigeschalteten Abschnitten springen — kein Voraus-Springen im Funnel (Stage 1/2 immer offen).
-    if(n >= 3){ const t = document.getElementById('stage'+n); if(!(t && t.classList.contains('revealed'))) return; }
+    // Kein Voraus-Springen im Funnel (Stage 1/2 immer offen). Zurueck auf einen uebersprungenen Schritt
+    // dagegen schon — sonst waere die abgewaehlte Einladung ueber die Punkte nicht mehr nachzuholen.
+    if(n >= 3){ const t = document.getElementById('stage'+n); if(!(t && t.classList.contains('revealed')) && ORD(n) > ORD(state.stage)) return; }
     return goStage(n);
+  }
+
+  // Der Abschluss unter dem Plan spricht denselben Zustand wie die mitlaufende Leiste und die Fertig-Seite.
+  // Vorher war er statisches Markup: Ein Rueckkehrer mit laufender Partyseite wurde erneut zum Einladen
+  // geschickt, waehrend die Leiste daneben schon "Fertig machen" anbot (Re-Check 9, MINOR 5).
+  function syncPlanAdvance(){
+    const a = EINLADUNG_LAEUFT();
+    const h = document.getElementById('planAdvanceHint');
+    if(h) h.textContent = a ? 'Deine Einladung läuft schon — dann fehlt nur noch der letzte Schliff.' : 'Dein Plan steht. Willst du die Kinder gleich einladen?';
+    const b = document.getElementById('planAdvanceBtn');
+    if(b){ b.textContent = a ? 'Fertig machen →' : 'Kinder einladen →'; b.onclick = function(){ goStage(EINLADUNG_LAEUFT() ? 5 : 4); }; }
+    const s = document.getElementById('planAdvanceSkip');
+    if(s) s.style.display = a ? 'none' : '';
   }
 
   // ===== WIZARD =====
@@ -2419,7 +2480,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!tpb) return;
     // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
     // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
-    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zur Einladung →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zu deinem Plan →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
@@ -3214,6 +3275,11 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
+      // Der Plan-Abschluss und die mitlaufende Leiste lesen beide EINLADUNG_LAEUFT(); beide werden sonst
+      // erst beim naechsten goStage(3) frisch. Wer hier aktiviert und danach nur hochscrollt, las unter
+      // seinem Plan weiter "Kinder einladen" (Re-Check 10, MINOR 2).
+      try{ syncPlanAdvance(); }catch(e){}
+      try{ if(window.__syncStickyMorph) window.__syncStickyMorph(); }catch(e){}
       /* Selbst-Catch 31.07.: Die beim Anlegen gesendeten Namen SIND der zuletzt synchronisierte
          Stand. Ohne diese Zeile haelt der Drei-Wege-Merge sie beim ersten Loeschen faelschlich
          fuer Fremd-Ergaenzungen und laesst das geloeschte Kind wieder auferstehen. */
@@ -3279,7 +3345,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         const _syncMorph = function(){
           const a = !!(state.partyseite && state.partyseite.active);
           const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = a ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
-          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
+          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Kinder einladen →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
         };
         _syncMorph();
         window.__syncStickyMorph = _syncMorph;   // goStage(3) refresht den gemorphten Zustand
