@@ -147,23 +147,23 @@ const MOTTO_COLORS = {
 // ── Theme System (full palette per motto) ──────────────
 const THEMES = {
   piraten:      {a:"#1E3A5F",d:"#0A1A2F",m:"#16304D",l:"#B8C7D9",bg:"#EAF0F6",h1:"#0A1A2F",h2:"#1E3A5F",h3:"#4A6886"},
-  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784",bt:"#2D2319"},
-  safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D",bt:"#2D2319"},
+  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#4C7C2A",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784",bt:"#2D2319"},
+  safari:       {a:"#F57F17",d:"#4E3419",m:"#8C6D34",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D",bt:"#2D2319"},
   weltraum:     {a:"#1565C0",d:"#0D1B2A",m:"#1B3A5C",l:"#BBDEFB",bg:"#E3F2FD",h1:"#0D47A1",h2:"#1565C0",h3:"#64B5F6"},
   detektiv:     {a:"#546E7A",d:"#1B262C",m:"#455A64",l:"#CFD8DC",bg:"#ECEFF1",h1:"#263238",h2:"#455A64",h3:"#90A4AE"},
   superheld:    {a:"#D32F2F",d:"#4A0E0E",m:"#8B2222",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#EF5350"},
   prinzessin:   {a:"#E4165C",d:"#4A0E27",m:"#AD1457",l:"#F8BBD0",bg:"#FCE4EC",h1:"#880E4F",h2:"#C2185B",h3:"#F06292"},
   einhorn:      {a:"#AB47BC",d:"#4A148C",m:"#7B1FA2",l:"#E1BEE7",bg:"#F3E5F5",h1:"#6A1B9A",h2:"#9C27B0",h3:"#BA68C8"},
-  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#00838F",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1",bt:"#2D2319"},
+  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#007A85",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1",bt:"#2D2319"},
   feuerwehr:    {a:"#D32F2F",d:"#4A0E0E",m:"#C62828",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#E57373"},
   ritter:       {a:"#795548",d:"#3E2723",m:"#5D4037",l:"#D7CCC8",bg:"#EFEBE9",h1:"#4E342E",h2:"#6D4C41",h3:"#A1887F"},
   zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#B85000",l:"#FFE0B2",bg:"#FFF3E0",h1:"#994300",h2:"#D65D00",h3:"#FFB74D",bt:"#2D2319"},
   baustelle:    {a:"#F57F17",d:"#4A3000",m:"#B05608",l:"#FFF9C4",bg:"#FFFDE7",h1:"#934806",h2:"#CD6509",h3:"#FFF176",bt:"#2D2319"},
   pferde:       {a:"#976B49",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
-  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#558B2F",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
+  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#4C7C2A",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
   feen:         {a:"#9C27B0",d:"#38006B",m:"#7B1FA2",l:"#E1BEE7",bg:"#F5EEF8",h1:"#4A148C",h2:"#9C27B0",h3:"#CE93D8"},
 };
-const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960",bt:"#2D2319"};
+const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#807362",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960",bt:"#2D2319"};
 
 function getTheme(motto) {
   if (!motto) return DEFAULT_THEME;
@@ -1141,7 +1141,7 @@ export default {
       ` : "";
 
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
+        <p style="color:#807362;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
         <a href="${editUrl}" style="display:block;background:#A66521;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
@@ -1420,7 +1420,7 @@ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--a:${color};--al:${color}18;--bg:#FFFCF7;--card:#fff;--d:#2D2319;--m:#8B7D6B;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px}
+:root{--a:${color};--al:${color}18;--bg:#FFFCF7;--card:#fff;--d:#2D2319;--m:#807362;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px}
 body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased}
 .container{max-width:480px;margin:0 auto;padding:16px}@media(min-width:900px){.container{max-width:760px}}/* 08.09.2026: baseHead hatte keinen einzigen Breiten-Umbruchpunkt — auf jedem Desktop stand hier eine 480-px-Spalte in der Mitte und sonst nichts. Bolles Entscheidung: erst nur breiter, kein Umbau. Die beiden Kurzmeldungs-Seiten (404, DOI) halten per Inline-Breite dagegen: dort steht ein voll breiter .btn allein im Behaelter, der sonst zum Balken wuerde. */
 h1,h2,h3{font-family:var(--fd)}
