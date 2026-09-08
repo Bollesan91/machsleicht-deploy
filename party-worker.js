@@ -1144,7 +1144,7 @@ export default {
         <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
-        <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
+        <a href="${editUrl}" style="display:block;background:#A66521;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
         <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
         ${newsletterBlock}
         <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
