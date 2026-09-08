@@ -420,7 +420,7 @@ export default {
   <h2 style="margin:0 0 12px">Noch eine Woche bis ${name ? "zu " + esc(poss(name)) : "zur"} ${esc(motto)}-Party \u{1F389}</h2>
   <p>Am <strong>${esc(dateStr)}</strong> ist es so weit. Bisher haben <strong>${gaeste}</strong> ${gaeste === 1 ? "Kind" : "Kinder"} zugesagt.</p>
   <p>Jetzt lohnt sich ein Blick auf die G\u00E4steliste \u2014 Allergien, Abholzeiten und wer noch nicht geantwortet hat:</p>
-  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
+  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#C25400;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
   <p style="font-size:13px;color:#666">Der Link zum Weiterleiten an Eltern bleibt: <a href="${esc(gastUrl)}">${esc(gastUrl)}</a></p>
   <p style="font-size:12px;color:#999;margin-top:24px">Diese einmalige Erinnerung bekommst du, weil du beim Anlegen der Partyseite diese Adresse f\u00FCr deinen Verwaltungs-Link angegeben hast. Kein Newsletter, keine weitere Mail dieser Art.</p>
 </div>`;
@@ -941,7 +941,7 @@ export default {
       const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
   <h2 style="margin:0 0 12px">Hier ist ${esc(wer)}Plan zum Weitermachen</h2>
   <p>Mit diesem Link \u00F6ffnest du den Planer genau dort, wo du aufgeh\u00F6rt hast \u2014 auf jedem Ger\u00E4t:</p>
-  <p><a href="${esc(link)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
+  <p><a href="${esc(link)}" style="display:inline-block;background:#C25400;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
   <p style="font-size:13px;color:#666;word-break:break-all">${esc(link)}</p>
   <p style="font-size:12px;color:#999;margin-top:24px">Der Link gilt 90 Tage. Wir haben nur diese eine Mail geschickt \u2014 nur daf\u00FCr, kein Newsletter.</p>
 </div>`;
@@ -2440,7 +2440,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 10 Minuten, ohne Anmeldung.</p>
-  <a href="https://machsleicht.de/kindergeburtstag?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://machsleicht.de/kindergeburtstag?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#C25400;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
