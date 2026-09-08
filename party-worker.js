@@ -1136,16 +1136,16 @@ export default {
         <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
         <h2 style="font-size:17px;color:#2D2319;margin:0 0 8px">\u{1F4EC} Newsletter best\u00E4tigen</h2>
         <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag per Mail bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
-        <a href="${confirmUrl}" style="display:block;background:#fff;color:#D4812A;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
+        <a href="${confirmUrl}" style="display:block;background:#fff;color:#A66521;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
         <p style="color:#aaa;font-size:11px;line-height:1.5;margin:10px 0 0">Der Link ist 7 Tage g\u00FCltig. Kein Klick = keine Speicherung, kein Newsletter.</p>
       ` : "";
 
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
+        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
         <a href="${editUrl}" style="display:block;background:#A66521;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
-        <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
+        <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#A66521">${guestUrl}</a></p>
         ${newsletterBlock}
         <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
         <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.</p>
@@ -2714,7 +2714,7 @@ async function loadWishes(){
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
         +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<button class="wish-btn taken" onclick="unclaimWish(\\x27'+w.id+'\\x27,this)">Vergeben</button>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
-        +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
+        +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;color:#fff;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
   }catch(e){}
