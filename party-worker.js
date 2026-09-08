@@ -1422,7 +1422,7 @@ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--a:${color};--al:${color}18;--bg:#FFFCF7;--card:#fff;--d:#2D2319;--m:#8B7D6B;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px}
 body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased}
-.container{max-width:480px;margin:0 auto;padding:16px}
+.container{max-width:480px;margin:0 auto;padding:16px}@media(min-width:900px){.container{max-width:760px}}/* 08.09.2026: baseHead hatte keinen einzigen Breiten-Umbruchpunkt — auf jedem Desktop stand hier eine 480-px-Spalte in der Mitte und sonst nichts. Bolles Entscheidung: erst nur breiter, kein Umbau. Die beiden Kurzmeldungs-Seiten (404, DOI) halten per Inline-Breite dagegen: dort steht ein voll breiter .btn allein im Behaelter, der sonst zum Balken wuerde. */
 h1,h2,h3{font-family:var(--fd)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 24px;background:var(--a);color:#fff;border:none;border-radius:var(--r);font:600 15px var(--f);cursor:pointer;transition:all .2s;width:100%;text-decoration:none}
 .btn:active{transform:scale(.97)}
@@ -3104,7 +3104,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 function notFoundPage() {
   return `${baseHead("Nicht gefunden \u2014 " + BRAND,"Party nicht gefunden")}
 <body>
-<div class="container" style="text-align:center;padding:60px 16px">
+<div class="container" style="text-align:center;padding:60px 16px;max-width:520px">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
   <div style="font-size:56px;margin-bottom:12px">\u{1F50D}</div>
   <h1 style="font-size:22px;margin-bottom:8px">Party nicht gefunden</h1>
