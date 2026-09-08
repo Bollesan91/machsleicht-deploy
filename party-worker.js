@@ -34,7 +34,7 @@ const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — ger
 // 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
 // Repo-Root am 08.09.2026: 30 Dateien; im Set die 27 Motto-Banner. Nicht im Set: og-home/og-default (Rueckfallbilder, keine Mottos) und
 // prinzessin als benannte Ausnahme — Kopie von og-frozen.png seit 41e58176 (30.05.); Design-Ticket Bolle 08.09.2026 — sie faellt auf og-home zurueck, bis ein eigenes
-// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). Gegenprobe: Paar OG_MOTTOS <-> og-*.png ohne home/default mit benannten Ausnahmen in Stufe 65 (check-freischaltlisten.py, Pruefstand 08.09.2026).
+// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). OFFEN (Ticket 08.09.2026): heute prueft keine Stufe, ob dieses Set zu den og-*.png passt — ein neues Motto-Bild faellt still auf og-home.
 const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
 const MAX_GUESTS = 30;
 const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
