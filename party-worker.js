@@ -32,10 +32,10 @@ function corsHeaders(request) {
 const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
 const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale im Worker in zwei Schreibweisen (mit und ohne Leerzeichen), seitenweit vier.
 // 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
-// Repo-Root am 08.09.2026: 30 Dateien, davon 26 mit eindeutigem Inhalt. Byte-gleiche Dateien sind Platzhalter, kein Motto-Bild
-// (Re-Check 5: og-prinzessin.png war eine Kopie des Frozen-Banners — jede fotolose Prinzessin-Party haette das falsche Bild gezeigt); sie
-// fallen auf og-home.png zurueck, bis ein eigenes Bild existiert. Paar in Stufe 65 (Pruefstand): Set == eindeutige og-*.png.
-const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
+// Repo-Root am 08.09.2026: 30 Dateien; im Set die 27 Motto-Banner. Nicht im Set: og-home/og-default (Rueckfallbilder, keine Mottos) und
+// prinzessin als benannte Ausnahme — Kopie von og-frozen.png seit 41e58176 (30.05.); Design-Ticket Bolle 08.09.2026 — sie faellt auf og-home zurueck, bis ein eigenes
+// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). Paar in Stufe 65: Set == og-*.png ohne home/default, Ausnahmen benannt.
+const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
 const MAX_GUESTS = 30;
 const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
 // Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
