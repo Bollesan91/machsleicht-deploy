@@ -30,6 +30,12 @@ function corsHeaders(request) {
 // Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
 // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
 const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
+const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale im Worker in zwei Schreibweisen (mit und ohne Leerzeichen); seitenweit kamen Logo-Markup und die apostrophlose Form dazu.
+// 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
+// Repo-Root am 08.09.2026: 30 Dateien; im Set die 27 Motto-Banner. Nicht im Set: og-home/og-default (Rueckfallbilder, keine Mottos) und
+// prinzessin als benannte Ausnahme — Kopie von og-frozen.png seit 41e58176 (30.05.); Design-Ticket Bolle 08.09.2026 — sie faellt auf og-home zurueck, bis ein eigenes
+// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). OFFEN (Ticket 08.09.2026): heute prueft keine Stufe, ob dieses Set zu den og-*.png passt — ein neues Motto-Bild faellt still auf og-home.
+const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
 const MAX_GUESTS = 30;
 const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
 // Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
@@ -423,7 +429,7 @@ export default {
             method: "POST",
             headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
             body: JSON.stringify({
-              from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+              from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
               reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
               to: [party.email],
               subject: `In 7 Tagen: ${name ? poss(name) + " " : "die "}${motto}-Party`,
@@ -944,7 +950,7 @@ export default {
           method: "POST",
           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
           body: JSON.stringify({
-            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+            from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email], subject: "Dein Kindergeburtstags-Plan zum Weitermachen", html
           })
@@ -1151,7 +1157,7 @@ export default {
           method: "POST",
           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
           body: JSON.stringify({
-            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+            from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email],
             subject: `Dein Edit-Link: ${poss(childName).replace(/[\x00-\x1F\x7F]/g," ")} Partyseite`,  // W13-3: Steuerzeichen im childName raus (Resend-Subject-Header-Injektion, gleiche Klasse wie P0-Welle-1E)
@@ -1306,7 +1312,9 @@ export default {
       return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
     }
 
-    return new Response("Not found",{status:404});
+    // Live-Re-Check 07.09. (F5): ein vertippter Link bekam 9 Byte "Not found" als text/plain — die HTML-Seite gab es nur fuer unbekannte Party-IDs
+    if (path.startsWith("/api/")) return json({error:"Nicht gefunden"}, 404, request);
+    return new Response(notFoundPage(),{status:404,headers:{"Content-Type":"text/html;charset=utf-8"}});
    } catch (e) {
      // #30c: jeder unbehandelte Throw (z.B. Type-Confusion bei falschem Feld-Typ via Direkt-API) -> sauberer CORS-Fehler statt CF-1101 ohne CORS-Header.
      return json({error:"Serverfehler — bitte Eingaben pruefen"}, 500, request);
@@ -1406,7 +1414,7 @@ ${description?`<meta property="og:description" content="${esc(description)}">`:"
 ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:image" content="https://machsleicht.de/og-home.png">
-<meta property="og:site_name" content="mach'sleicht">
+<meta property="og:site_name" content="${BRAND}">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
@@ -1490,7 +1498,7 @@ ${noTrack ? "" : '<script defer src="https://cloud.umami.is/script.js" data-webs
 // ERSTELLER-SEITE
 // ═══════════════════════════════════════════════════════════════
 function creatorPage() {
-  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
+  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 " + BRAND,"Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
@@ -2002,7 +2010,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
   const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
-  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
+  return `${baseHead(ogTitle+" \u2014 " + BRAND, ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
@@ -2140,7 +2148,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>${esc(ogTitle)} \u2014 mach\u2019s leicht</title>
+<title>${esc(ogTitle)} \u2014 ${BRAND}</title>
 <meta property="og:title" content="${esc(ogTitle)}">
 <meta property="og:description" content="${esc(ogDesc)}">
 <meta property="og:type" content="website">
@@ -2149,9 +2157,13 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="600">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
+<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-${OG_MOTTOS.has(party.mottoId)?party.mottoId:"home"}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://machsleicht.de/og-${OG_MOTTOS.has(party.mottoId)?party.mottoId:"home"}.png">`}
 <meta property="og:locale" content="de_DE">
-<meta property="og:site_name" content="mach\u2019sleicht">
+<meta property="og:site_name" content="${BRAND}">
 <meta name="referrer" content="${(isPreview||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
 <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
@@ -2515,7 +2527,7 @@ function checkCode(){
 document.getElementById("codeInput").addEventListener("keydown",function(e){if(e.key==="Enter")checkCode();});
 
 // ── PHOTO ──
-async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
+async function loadPhoto(){if(!${party.hasPhoto?"true":"false"})return;try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
 
 // ── GUEST COUNT ──
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
@@ -2581,6 +2593,7 @@ async function sendRsvp(){
     }
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
+    btn.textContent="\\u2705 Gesendet!";   // Live-Re-Check 07.09. (F1): der Knopf blieb nach dem Erfolg auf "Wird gesendet..." stehen, obwohl die Bestaetigung darunter erschien
     localStorage.setItem(rsvpKey(),JSON.stringify({exp:RSVP_EXP,name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
@@ -2942,7 +2955,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
 
   <script>
-  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
+  (async function(){if(!${party.hasPhoto?"true":"false"})return;try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   // Runde 9 (P1): ohne diesen Weg ist jede Kapazitaetsgrenze eine Falle, die ein Fremder
@@ -3024,13 +3037,18 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
       INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
       sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
-      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB}"; bC.title="Link kopieren";
-      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705"; setTimeout(function(){bC.textContent="\u{1F4CB}";},1500); }); };
-      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC}"; bW.title="Per WhatsApp senden";
-      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
-      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715"; bX.title="Entfernen"; bX.style.color="#C62828";
+      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="Link"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
+      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="Kopiert!"; setTimeout(function(){bC.textContent="Link";},2000); }); };
+      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="WhatsApp"; bW.title="Per WhatsApp senden";
+      bW.onclick=function(){ const rn=(INV_ROLES.find(function(r){return r.id===inv.role;})||{}).n; const t=inv.n+", du bist "+(rn?"als "+rn+" ":"")+"eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
+      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";   // Re-Check 7: ohne Emoji — mit Emoji kappte die Ellipse "WhatsApp" auf 360-px-Androids (79 px Text auf 75 px Inhalt)
       bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
-      row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+      // Re-Check 6 (08.09.): Zeile 2 ist ein eigener Container, die drei Knoepfe teilen sich seine Breite (flex:1, nowrap, Ellipse) — damit ist ein
+      // Umbruch auf JEDER Breite ausgeschlossen. Vorher stand hier ein Null-Hoehen-Umbruchelement und die Behauptung "geschlossen in Zeile 2";
+      // in Chromium gemessen brauchten die Knoepfe 325 px auf 301 px Karte und brachen auf 375/390 px dreizeilig um.
+      const acts=document.createElement("div"); acts.style.cssText="flex-basis:100%;display:flex;gap:6px;min-width:0";
+      [bC,bW,bX].forEach(function(b){ b.style.cssText+=";display:block;text-align:center;flex:1 1 0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;padding:8px 6px"; acts.appendChild(b); });
+      row.appendChild(nm); row.appendChild(sel); row.appendChild(acts);
       root.appendChild(row);
     });
     const hint=document.getElementById("invHint");
@@ -3084,7 +3102,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 // 404
 // ═══════════════════════════════════════════════════════════════
 function notFoundPage() {
-  return `${baseHead("Nicht gefunden \u2014 mach\u2019s leicht","Party nicht gefunden")}
+  return `${baseHead("Nicht gefunden \u2014 " + BRAND,"Party nicht gefunden")}
 <body>
 <div class="container" style="text-align:center;padding:60px 16px">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
@@ -3106,7 +3124,7 @@ try{var m=location.pathname.match(/^\\/([a-z0-9]{6,12})$/);if(m){var p=m[1];for(
 function doiPage(kind, msg) {
   const isSuccess = kind === "success";
   const emoji = isSuccess ? "\u2705" : "\u26A0\uFE0F";
-  const title = isSuccess ? "Bestätigt \u2014 mach\u2019s leicht" : "Bestätigung fehlgeschlagen \u2014 mach\u2019s leicht";
+  const title = isSuccess ? "Bestätigt \u2014 " + BRAND : "Bestätigung fehlgeschlagen \u2014 " + BRAND;
   const heading = isSuccess ? "Alles klar!" : "Hmm, das hat nicht geklappt";
   return `${baseHead(title, msg)}
 <body>

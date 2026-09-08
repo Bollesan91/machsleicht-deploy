@@ -1,0 +1,1009 @@
+diff --git a/_dev/scripts/einladung-hub-gen/generate.js b/_dev/scripts/einladung-hub-gen/generate.js
+index 2e8b8dc9..c98d66b8 100644
+--- a/_dev/scripts/einladung-hub-gen/generate.js
++++ b/_dev/scripts/einladung-hub-gen/generate.js
+@@ -91,7 +91,7 @@ function og(m, title, desc, url) {
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="${title}">
+ <meta name="twitter:description" content="${desc}">
+diff --git a/einladung/baustelle/index.html b/einladung/baustelle/index.html
+index caf94c42..34f31507 100644
+--- a/einladung/baustelle/index.html
++++ b/einladung/baustelle/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Baustellen-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Baustellen-Einladung mit Mini-Spiel: Gäste fangen den Bagger-Frechdachs und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/baustelle/vorlagen/index.html b/einladung/baustelle/vorlagen/index.html
+index a2c5fec9..87ffbe08 100644
+--- a/einladung/baustelle/vorlagen/index.html
++++ b/einladung/baustelle/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Baustellen-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Baustellen-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/detektiv/index.html b/einladung/detektiv/index.html
+index c9d1e34e..cef987fb 100644
+--- a/einladung/detektiv/index.html
++++ b/einladung/detektiv/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Detektiv-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Detektiv-Einladung mit Mini-Spiel: Gäste lösen den Fall und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/detektiv/vorlagen/index.html b/einladung/detektiv/vorlagen/index.html
+index 3be18b61..8052ddbc 100644
+--- a/einladung/detektiv/vorlagen/index.html
++++ b/einladung/detektiv/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Detektiv-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Detektiv-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/dino/index.html b/einladung/dino/index.html
+index 15a5c0a3..d4d4f072 100644
+--- a/einladung/dino/index.html
++++ b/einladung/dino/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Dino-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Dino-Einladung mit Mini-Spiel: Gäste lassen Baby-Dinos schlüpfen und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/dino/vorlagen/index.html b/einladung/dino/vorlagen/index.html
+index 631670db..939755ff 100644
+--- a/einladung/dino/vorlagen/index.html
++++ b/einladung/dino/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Dino-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Dino-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/dschungel/index.html b/einladung/dschungel/index.html
+index ced3c558..b459979a 100644
+--- a/einladung/dschungel/index.html
++++ b/einladung/dschungel/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Dschungel-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Dschungel-Einladung mit Mini-Spiel: Gäste retten die Expedition und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/dschungel/vorlagen/index.html b/einladung/dschungel/vorlagen/index.html
+index 8a1fe6d0..a58ee2a2 100644
+--- a/einladung/dschungel/vorlagen/index.html
++++ b/einladung/dschungel/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Dschungel-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Dschungel-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/einhorn/index.html b/einladung/einhorn/index.html
+index f03751f9..412c7cf2 100644
+--- a/einladung/einhorn/index.html
++++ b/einladung/einhorn/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Einhorn-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Einhorn-Einladung mit Mini-Spiel: Gäste fangen das freche Einhorn und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/einhorn/vorlagen/index.html b/einladung/einhorn/vorlagen/index.html
+index 7ccfab59..fe0ba972 100644
+--- a/einladung/einhorn/vorlagen/index.html
++++ b/einladung/einhorn/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Einhorn-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Einhorn-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/feen/index.html b/einladung/feen/index.html
+index 92928957..853cba2f 100644
+--- a/einladung/feen/index.html
++++ b/einladung/feen/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Feen-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Feen-Einladung mit Mini-Spiel: Gäste retten den Feen-Zauber und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/feen/vorlagen/index.html b/einladung/feen/vorlagen/index.html
+index eca2d7cf..a9dc98bd 100644
+--- a/einladung/feen/vorlagen/index.html
++++ b/einladung/feen/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Feen-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Feen-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/feuerwehr/index.html b/einladung/feuerwehr/index.html
+index 6f9e5828..55fc49a1 100644
+--- a/einladung/feuerwehr/index.html
++++ b/einladung/feuerwehr/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Feuerwehr-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Feuerwehr-Einladung mit Mini-Spiel: Gäste löschen den Einsatz und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/feuerwehr/vorlagen/index.html b/einladung/feuerwehr/vorlagen/index.html
+index cedebde1..05732dbb 100644
+--- a/einladung/feuerwehr/vorlagen/index.html
++++ b/einladung/feuerwehr/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Feuerwehr-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Feuerwehr-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/index.html b/einladung/index.html
+index 113fd02e..8052224d 100755
+--- a/einladung/index.html
++++ b/einladung/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Einladung Kindergeburtstag — 15 Mottos mit Mitmachspiel">
+ <meta name="twitter:description" content="Einladungskarte mit integriertem Mini-Spiel — 15 Mottos zur Auswahl. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/meerjungfrau/index.html b/einladung/meerjungfrau/index.html
+index b275914f..80ae7f3c 100644
+--- a/einladung/meerjungfrau/index.html
++++ b/einladung/meerjungfrau/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Meerjungfrau-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Meerjungfrau-Einladung mit Mini-Spiel: Gäste tauchen nach Meeresschätzen und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/meerjungfrau/vorlagen/index.html b/einladung/meerjungfrau/vorlagen/index.html
+index 40b22b0d..42fbb454 100644
+--- a/einladung/meerjungfrau/vorlagen/index.html
++++ b/einladung/meerjungfrau/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Meerjungfrau-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Meerjungfrau-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/pferde/index.html b/einladung/pferde/index.html
+index 4e6e9484..257d8587 100644
+--- a/einladung/pferde/index.html
++++ b/einladung/pferde/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Pferde-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Pferde-Einladung mit Mini-Spiel: Gäste fangen das freche Pony und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/pferde/vorlagen/index.html b/einladung/pferde/vorlagen/index.html
+index d00a5f5a..f6651183 100644
+--- a/einladung/pferde/vorlagen/index.html
++++ b/einladung/pferde/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Pferde-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Pferde-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/piraten/index.html b/einladung/piraten/index.html
+index 360cc6be..bda96808 100755
+--- a/einladung/piraten/index.html
++++ b/einladung/piraten/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Piraten-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Piraten-Einladung mit Mini-Spiel: Gäste heben den Schatz und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/piraten/vorlagen/index.html b/einladung/piraten/vorlagen/index.html
+index 64019de1..86b298b4 100644
+--- a/einladung/piraten/vorlagen/index.html
++++ b/einladung/piraten/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Piraten-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Piraten-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/prinzessin/index.html b/einladung/prinzessin/index.html
+index ce9d77ae..ab7d1311 100644
+--- a/einladung/prinzessin/index.html
++++ b/einladung/prinzessin/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Prinzessinnen-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Prinzessinnen-Einladung mit Mini-Spiel: Gäste retten die Krone und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/prinzessin/vorlagen/index.html b/einladung/prinzessin/vorlagen/index.html
+index 3889d3ac..b98775cb 100644
+--- a/einladung/prinzessin/vorlagen/index.html
++++ b/einladung/prinzessin/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Prinzessinnen-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Prinzessinnen-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/ritter/index.html b/einladung/ritter/index.html
+index efd6a13d..ac11134e 100644
+--- a/einladung/ritter/index.html
++++ b/einladung/ritter/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Ritter-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Ritter-Einladung mit Mini-Spiel: Gäste bändigen den Drachen und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/ritter/vorlagen/index.html b/einladung/ritter/vorlagen/index.html
+index 5ef34b47..a8ff554e 100644
+--- a/einladung/ritter/vorlagen/index.html
++++ b/einladung/ritter/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Ritter-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Ritter-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/safari/index.html b/einladung/safari/index.html
+index 170bfd3c..b3525f4f 100644
+--- a/einladung/safari/index.html
++++ b/einladung/safari/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Safari-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Safari-Einladung mit Mini-Spiel: Gäste gehen auf Foto-Safari und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/safari/vorlagen/index.html b/einladung/safari/vorlagen/index.html
+index 5af6c8fe..e5b24293 100644
+--- a/einladung/safari/vorlagen/index.html
++++ b/einladung/safari/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Safari-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Safari-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/superheld/index.html b/einladung/superheld/index.html
+index dadcb057..5398e966 100644
+--- a/einladung/superheld/index.html
++++ b/einladung/superheld/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Superhelden-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Superhelden-Einladung mit Mini-Spiel: Gäste schnappen den Schurken und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/superheld/vorlagen/index.html b/einladung/superheld/vorlagen/index.html
+index 3f613bad..156ecc01 100644
+--- a/einladung/superheld/vorlagen/index.html
++++ b/einladung/superheld/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Superhelden-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Superhelden-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/weltraum/index.html b/einladung/weltraum/index.html
+index b71ba9ee..05010a4d 100644
+--- a/einladung/weltraum/index.html
++++ b/einladung/weltraum/index.html
+@@ -22,7 +22,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Weltraum-Einladung Kindergeburtstag — mit Mini-Spiel im Handy">
+ <meta name="twitter:description" content="Digitale Weltraum-Einladung mit Mini-Spiel: Gäste retten die Mission und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.">
+diff --git a/einladung/weltraum/vorlagen/index.html b/einladung/weltraum/vorlagen/index.html
+index 08d5eda8..96f7d84b 100644
+--- a/einladung/weltraum/vorlagen/index.html
++++ b/einladung/weltraum/vorlagen/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Weltraum-Einladungstexte — 7 Vorlagen zum Kopieren">
+ <meta name="twitter:description" content="Fertige Weltraum-Einladungstexte für den Kindergeburtstag: kurz, lang, gereimt, für WhatsApp und Kita. Kostenlos kopieren.">
+diff --git a/einladung/whatsapp/index.html b/einladung/whatsapp/index.html
+index 2de85e90..9b858a8d 100644
+--- a/einladung/whatsapp/index.html
++++ b/einladung/whatsapp/index.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="machsleicht.de">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:image" content="https://machsleicht.de/og-piraten.png">
+ <link rel="icon" type="image/x-icon" href="/favicon.ico">
+diff --git a/index.html b/index.html
+index 6d8b3a7d..eed928ff 100755
+--- a/index.html
++++ b/index.html
+@@ -7,7 +7,7 @@
+ <meta name="description" content="Kindergeburtstag planen — Motto wählen, Alter und Gäste eingeben, fertigen Plan mit Zeitablauf, Spielen, Einkaufsliste und Schatzsuche bekommen. Kostenlos.">
+ <meta name="robots" content="index,follow">
+ <link rel="canonical" href="https://machsleicht.de/">
+-<meta property="og:title" content="Kindergeburtstag planen kostenlos — mach'sleicht">
++<meta property="og:title" content="Kindergeburtstag planen kostenlos — mach's leicht">
+ <meta property="og:description" content="Kindergeburtstag planen — kostenlos in 10 Minuten. Zeitablauf, Spiele, Einkaufsliste, Schatzsuche. Ohne Anmeldung.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://machsleicht.de/">
+@@ -16,7 +16,7 @@
+ <meta property="og:image:height" content="630">
+ <meta property="og:image:alt" content="Kindergeburtstag planen kostenlos — mach'sleicht">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <!-- Twitter / X -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Kindergeburtstag planen kostenlos — mach'sleicht">
+diff --git a/kindergeburtstag/baustelle-3-5-jahre.html b/kindergeburtstag/baustelle-3-5-jahre.html
+index ff7e9676..836f15a8 100644
+--- a/kindergeburtstag/baustelle-3-5-jahre.html
++++ b/kindergeburtstag/baustelle-3-5-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🏗️ Baustelle-Kindergeburtstag 3-5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Baustelle-Kindergeburtstag für 3-5-Jährige als kleiner Bau-Tag: 3 fertige Konzepte mit Helm-Übergabe, Sand-Bagger-Station, Bauklotz-Burg-Bauen und Schatzsuche nach Schrauben. Kostenlos.">
+diff --git a/kindergeburtstag/baustelle-6-8-jahre.html b/kindergeburtstag/baustelle-6-8-jahre.html
+index ec0d4db2..2d356810 100644
+--- a/kindergeburtstag/baustelle-6-8-jahre.html
++++ b/kindergeburtstag/baustelle-6-8-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🏗️ Baustelle-Kindergeburtstag 6-8 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Baustelle-Kindergeburtstag für 6-8-Jährige: 3 fertige Baustellen-Konzepte mit Bauarbeiter-Lizenz, Bauklotz-Wettbewerb, Werkzeug-Quiz, Schrauben-Schatzsuche und Bauleiter-Diplom mit Stempeln.">
+diff --git a/kindergeburtstag/baustelle-9-12-jahre.html b/kindergeburtstag/baustelle-9-12-jahre.html
+index 1a3c929d..1a4eac15 100644
+--- a/kindergeburtstag/baustelle-9-12-jahre.html
++++ b/kindergeburtstag/baustelle-9-12-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🏗️ Baustelle-Kindergeburtstag 9-12 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.">
+diff --git a/kindergeburtstag/detektiv-3-5-jahre.html b/kindergeburtstag/detektiv-3-5-jahre.html
+index dc71dcd8..03916c20 100644
+--- a/kindergeburtstag/detektiv-3-5-jahre.html
++++ b/kindergeburtstag/detektiv-3-5-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🔍 Detektiv-Kindergeburtstag — 3–5 Jahre">
+ <meta name="twitter:description" content="3 fertige Spürnasen-Konzepte mit Lupen-Basteln und Spuren-Suche.">
+diff --git a/kindergeburtstag/detektiv-6-8-jahre.html b/kindergeburtstag/detektiv-6-8-jahre.html
+index 4b11267a..f54f6e03 100644
+--- a/kindergeburtstag/detektiv-6-8-jahre.html
++++ b/kindergeburtstag/detektiv-6-8-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🔍 Detektiv-Kindergeburtstag — 6–8 Jahre">
+ <meta name="twitter:description" content="3 fertige Fall-Konzepte mit Schwur-Ritual, Fingerabdrücken und Geheimtinte.">
+diff --git a/kindergeburtstag/detektiv-9-12-jahre.html b/kindergeburtstag/detektiv-9-12-jahre.html
+index 68e73f83..d607df74 100644
+--- a/kindergeburtstag/detektiv-9-12-jahre.html
++++ b/kindergeburtstag/detektiv-9-12-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🔍 Detektiv-Kindergeburtstag — 9–12 Jahre">
+ <meta name="twitter:description" content="3 fertige Fall-Konzepte mit Ermittler-Spezialisierung und echten Codes.">
+diff --git a/kindergeburtstag/dino-3-5-jahre.html b/kindergeburtstag/dino-3-5-jahre.html
+index a2aca54b..3ab5495f 100644
+--- a/kindergeburtstag/dino-3-5-jahre.html
++++ b/kindergeburtstag/dino-3-5-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach\'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦕 Dino-Abenteuer Kindergeburtstag — 3–5 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit altersgerechten Spielen, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/dino-6-8-jahre.html b/kindergeburtstag/dino-6-8-jahre.html
+index d229603a..afebfdfb 100644
+--- a/kindergeburtstag/dino-6-8-jahre.html
++++ b/kindergeburtstag/dino-6-8-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦕 Dino-Abenteuer Kindergeburtstag — 6–8 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Spielanleitungen, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/dino-9-12-jahre.html b/kindergeburtstag/dino-9-12-jahre.html
+index 6695d8a1..91a841da 100644
+--- a/kindergeburtstag/dino-9-12-jahre.html
++++ b/kindergeburtstag/dino-9-12-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦕 Dino-Abenteuer Kindergeburtstag — 9–12 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Escape-Challenges, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/einhorn-3-5-jahre.html b/kindergeburtstag/einhorn-3-5-jahre.html
+index f5ca7382..85a42772 100644
+--- a/kindergeburtstag/einhorn-3-5-jahre.html
++++ b/kindergeburtstag/einhorn-3-5-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🦄 Einhorn-Kindergeburtstag 3–5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Einhorn-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen und Einkaufsliste.">
+diff --git a/kindergeburtstag/einhorn-6-8-jahre.html b/kindergeburtstag/einhorn-6-8-jahre.html
+index 64cfc76b..386913c9 100644
+--- a/kindergeburtstag/einhorn-6-8-jahre.html
++++ b/kindergeburtstag/einhorn-6-8-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦄 Einhorn-Kindergeburtstag — 6–8 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Spielanleitungen, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/einhorn-9-12-jahre.html b/kindergeburtstag/einhorn-9-12-jahre.html
+index 0cac6004..0e479848 100644
+--- a/kindergeburtstag/einhorn-9-12-jahre.html
++++ b/kindergeburtstag/einhorn-9-12-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🦄 Einhorn-Kindergeburtstag 9–12 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Einhorn-Kindergeburtstag für 9–12 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Aktivitäten und Einkaufsliste.">
+diff --git a/kindergeburtstag/feuerwehr-3-5-jahre.html b/kindergeburtstag/feuerwehr-3-5-jahre.html
+index 1b64ab05..e63b2b68 100644
+--- a/kindergeburtstag/feuerwehr-3-5-jahre.html
++++ b/kindergeburtstag/feuerwehr-3-5-jahre.html
+@@ -14,7 +14,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="machsleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🚒 Feuerwehr-Kindergeburtstag 3–5 Jahre — 3 Party-Konzepte">
+ <meta name="twitter:description" content="Feuerwehr-Kindergeburtstag für 3–5 Jahre: 3 Konzepte mit Zeitplan, Schicht-Appell, Schaum-Löschen und Einkaufsliste.">
+diff --git a/kindergeburtstag/meerjungfrau-3-5-jahre.html b/kindergeburtstag/meerjungfrau-3-5-jahre.html
+index 00da8756..d313ac4c 100644
+--- a/kindergeburtstag/meerjungfrau-3-5-jahre.html
++++ b/kindergeburtstag/meerjungfrau-3-5-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🧜‍♀️ Meerjungfrau-Kindergeburtstag 3–5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Meerjungfrau-Kindergeburtstag für 3–5 Jahre: 3 Konzepte mit Zeitplan, Korallen-Garten, Perlen-Suche und Einkaufsliste.">
+diff --git a/kindergeburtstag/meerjungfrau-6-8-jahre.html b/kindergeburtstag/meerjungfrau-6-8-jahre.html
+index f16b9628..b473a8ea 100644
+--- a/kindergeburtstag/meerjungfrau-6-8-jahre.html
++++ b/kindergeburtstag/meerjungfrau-6-8-jahre.html
+@@ -16,7 +16,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🧜‍♀️ Meerjungfrau-Kindergeburtstag — 6–8 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Spielanleitungen, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/meerjungfrau-9-12-jahre.html b/kindergeburtstag/meerjungfrau-9-12-jahre.html
+index 84bcdc7a..3feca294 100644
+--- a/kindergeburtstag/meerjungfrau-9-12-jahre.html
++++ b/kindergeburtstag/meerjungfrau-9-12-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🧜‍♀️ Meerjungfrau-Kindergeburtstag 9–12 Jahre — Atlantis-Expedition">
+   <meta name="twitter:description" content="Meerjungfrau-Kindergeburtstag für 9–12 Jahre: 3 fertige Atlantis-Expeditions-Konzepte mit echten Logik-Rätseln.">
+diff --git a/kindergeburtstag/pferde-3-5-jahre.html b/kindergeburtstag/pferde-3-5-jahre.html
+index 696187d8..6cbea21b 100644
+--- a/kindergeburtstag/pferde-3-5-jahre.html
++++ b/kindergeburtstag/pferde-3-5-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🐴 Pferde-Kindergeburtstag 3-5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Pferde-Kindergeburtstag für 3-5-Jährige als Ponyhof-Tag: 3 fertige Konzepte mit Plüsch-Ponys, Hufeisen-Werfen, Pferde-Schleifen und Reiter-Taufe. Kostenlos.">
+diff --git a/kindergeburtstag/pferde-6-8-jahre.html b/kindergeburtstag/pferde-6-8-jahre.html
+index dc0f894a..693294ca 100644
+--- a/kindergeburtstag/pferde-6-8-jahre.html
++++ b/kindergeburtstag/pferde-6-8-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🐴 Pferde-Kindergeburtstag 6-8 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Pferde-Kindergeburtstag für 6-8-Jährige: 3 fertige Reiterhof-Konzepte mit Reiter-Lizenz, Hindernis-Parcours, Pony-Quiz, Pferde-Pflege-Station und Karotten-Schatzsuche.">
+diff --git a/kindergeburtstag/pferde-9-12-jahre.html b/kindergeburtstag/pferde-9-12-jahre.html
+index 3040c693..226ec8f3 100644
+--- a/kindergeburtstag/pferde-9-12-jahre.html
++++ b/kindergeburtstag/pferde-9-12-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🐴 Pferde-Kindergeburtstag 9-12 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Pferde-Kindergeburtstag für 9-12-Jährige: 3 fertige Reiterhof-Konzepte mit Stallmeister-Prüfung, bewertetem Reit-Parcours, Pferde-Quiz Klasse 2, Hufschmied-Workshop und Stallmeister-Diplom mit Funktion.">
+diff --git a/kindergeburtstag/piraten-6-8-jahre.html b/kindergeburtstag/piraten-6-8-jahre.html
+index 824b59ac..8faf33be 100644
+--- a/kindergeburtstag/piraten-6-8-jahre.html
++++ b/kindergeburtstag/piraten-6-8-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🏴‍☠️ Piraten-Abenteuer Kindergeburtstag — 6–8 Jahre">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Schatzsuche, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/prinzessin-3-5-jahre.html b/kindergeburtstag/prinzessin-3-5-jahre.html
+index 92463cfa..b62163ee 100644
+--- a/kindergeburtstag/prinzessin-3-5-jahre.html
++++ b/kindergeburtstag/prinzessin-3-5-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="👑 Prinzessin-Kindergeburtstag 3–5 Jahre">
+   <meta name="twitter:description" content="Prinzessin-Kindergeburtstag für 3–5 Jahre: Zeitplan, Krone basteln, Schloss-Tanz, Schatzkiste.">
+diff --git a/kindergeburtstag/prinzessin-6-8-jahre.html b/kindergeburtstag/prinzessin-6-8-jahre.html
+index 690325e8..a53fe4c7 100644
+--- a/kindergeburtstag/prinzessin-6-8-jahre.html
++++ b/kindergeburtstag/prinzessin-6-8-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="👑 Prinzessin-Kindergeburtstag 6–8 Jahre">
+   <meta name="twitter:description" content="Prinzessin-Kindergeburtstag für 6–8 Jahre: Schloss-Mystery, Ball-Choreo, Märchen-Code.">
+diff --git a/kindergeburtstag/prinzessin-9-12-jahre.html b/kindergeburtstag/prinzessin-9-12-jahre.html
+index e006aa93..5d33b1db 100644
+--- a/kindergeburtstag/prinzessin-9-12-jahre.html
++++ b/kindergeburtstag/prinzessin-9-12-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="👑 Prinzessin-Kindergeburtstag 9–12 Jahre">
+   <meta name="twitter:description" content="Prinzessin-Kindergeburtstag für 9–12 Jahre: Schloss-Mystery, Multi-Stage-Codes, Erbsen-Test.">
+diff --git a/kindergeburtstag/ritter-3-5-jahre.html b/kindergeburtstag/ritter-3-5-jahre.html
+index 4595635f..0a5cbf49 100644
+--- a/kindergeburtstag/ritter-3-5-jahre.html
++++ b/kindergeburtstag/ritter-3-5-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🛡️ Ritter-Kindergeburtstag 3-5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Ritter-Kindergeburtstag für 3-5-Jährige als kleiner Burg-Tag: 3 fertige Konzepte mit Schild-Bemalen, weichen Pool-Nudel-Schwertern, Drachen-Wurf und Königs-Krönung. Kostenlos.">
+diff --git a/kindergeburtstag/ritter-6-8-jahre.html b/kindergeburtstag/ritter-6-8-jahre.html
+index 7aeb9c12..63c8c004 100644
+--- a/kindergeburtstag/ritter-6-8-jahre.html
++++ b/kindergeburtstag/ritter-6-8-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🛡️ Ritter-Kindergeburtstag 6-8 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Ritter-Kindergeburtstag für 6-8-Jährige: 3 fertige Burg-Konzepte mit Knappen-Ausbildung, Wappen-Werkstatt, Schwert-Parcours, Burgen-Quiz und Drachen-Schatzsuche. Mit Knappen-Brief.">
+diff --git a/kindergeburtstag/ritter-9-12-jahre.html b/kindergeburtstag/ritter-9-12-jahre.html
+index bc318d95..f8d74e71 100644
+--- a/kindergeburtstag/ritter-9-12-jahre.html
++++ b/kindergeburtstag/ritter-9-12-jahre.html
+@@ -13,7 +13,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🛡️ Ritter-Kindergeburtstag 9-12 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Ritter-Kindergeburtstag für 9-12-Jährige: 3 fertige Burg-Konzepte mit Ritter-Ausbildung, bewertetem Schwert-Parcours, Mittelalter-Quiz, Burgenermittlung als Krimi-Quest und Ritter-Diplom mit Funktion.">
+diff --git a/kindergeburtstag/safari-3-5-jahre.html b/kindergeburtstag/safari-3-5-jahre.html
+index 44fb5d04..a35f2d50 100644
+--- a/kindergeburtstag/safari-3-5-jahre.html
++++ b/kindergeburtstag/safari-3-5-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦁 Safari-Kindergeburtstag — 3–5 Jahre (Tier-Helfer-Konzept)">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte als Tier-Helfer-Tag, mit Zeitplan, einfachen Spielanleitungen und Einkaufsliste.">
+diff --git a/kindergeburtstag/safari-6-8-jahre.html b/kindergeburtstag/safari-6-8-jahre.html
+index 665704ce..7b1e0a4e 100644
+--- a/kindergeburtstag/safari-6-8-jahre.html
++++ b/kindergeburtstag/safari-6-8-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦁 Safari-Kindergeburtstag — 6–8 Jahre (Junior-Ranger-Konzept)">
+ <meta name="twitter:description" content="3 fertige Party-Konzepte mit Junior-Ranger-Ausbildung, Spielanleitungen, Zeitplan und Einkaufsliste.">
+diff --git a/kindergeburtstag/safari-9-12-jahre.html b/kindergeburtstag/safari-9-12-jahre.html
+index 526c877c..0b95200f 100644
+--- a/kindergeburtstag/safari-9-12-jahre.html
++++ b/kindergeburtstag/safari-9-12-jahre.html
+@@ -15,7 +15,7 @@
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="mach's leicht">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="🦁 Safari-Kindergeburtstag — 9–12 Jahre (Reservat-Expedition)">
+ <meta name="twitter:description" content="3 fertige Expeditions-Konzepte mit Spezialisierung, Codes, Karten und Einkaufsliste.">
+diff --git a/kindergeburtstag/superheld-3-5-jahre.html b/kindergeburtstag/superheld-3-5-jahre.html
+index 63cee43b..be5e2c0b 100644
+--- a/kindergeburtstag/superheld-3-5-jahre.html
++++ b/kindergeburtstag/superheld-3-5-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🦸 Superheld-Kindergeburtstag 3–5 Jahre">
+   <meta name="twitter:description" content="Superheld-Kindergeburtstag für 3–5 Jahre: Zeitplan, 5 altersgerechte Spiele, Schurken-Tag, Helden-Urkunde.">
+diff --git a/kindergeburtstag/superheld-6-8-jahre.html b/kindergeburtstag/superheld-6-8-jahre.html
+index c20898ca..bd914130 100644
+--- a/kindergeburtstag/superheld-6-8-jahre.html
++++ b/kindergeburtstag/superheld-6-8-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🦸 Superheld-Kindergeburtstag 6–8 Jahre">
+   <meta name="twitter:description" content="Superheld-Kindergeburtstag für 6–8 Jahre: Zeitplan, 5 Team-Spiele, Geheim-Code, Helden-Parcours.">
+diff --git a/kindergeburtstag/superheld-9-12-jahre.html b/kindergeburtstag/superheld-9-12-jahre.html
+index e5358041..b941d6c9 100644
+--- a/kindergeburtstag/superheld-9-12-jahre.html
++++ b/kindergeburtstag/superheld-9-12-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🦸 Superheld-Kindergeburtstag 9–12 Jahre">
+   <meta name="twitter:description" content="Superheld-Kindergeburtstag für 9–12 Jahre: Strategie-Mission, Codes, Verhör-Analyse, Foto-Story.">
+diff --git a/kindergeburtstag/weltraum-3-5-jahre.html b/kindergeburtstag/weltraum-3-5-jahre.html
+index cb1c0a68..73142dcb 100644
+--- a/kindergeburtstag/weltraum-3-5-jahre.html
++++ b/kindergeburtstag/weltraum-3-5-jahre.html
+@@ -14,7 +14,7 @@
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:locale" content="de_DE">
+-  <meta property="og:site_name" content="machsleicht">
++  <meta property="og:site_name" content="mach's leicht">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="🚀 Weltraum-Kindergeburtstag 3–5 Jahre — 3 Party-Konzepte">
+   <meta name="twitter:description" content="Weltraum-Kindergeburtstag für 3–5 Jahre: 3 Konzepte mit Zeitplan, Karton-Raumschiff, Mond-Kuchen und Einkaufsliste.">
+diff --git a/party-worker.js b/party-worker.js
+index 2a2f949f..08f6d2f7 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -30,6 +30,10 @@ function corsHeaders(request) {
+ // Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
+ // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
+ const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
++const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale in vier Schreibweisen (mit und ohne Leerzeichen, gerader und typografischer Apostroph).
++// 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
++// Repo-Root am 08.09.2026 (30 Dateien); Kandidat fuer eine Linter-Stufe: Set == Dateien.
++const OG_MOTTOS = new Set(["baustelle", "default", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "home", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "prinzessin", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
+ const MAX_GUESTS = 30;
+ const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
+ // Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
+@@ -423,7 +427,7 @@ export default {
+             method: "POST",
+             headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+             body: JSON.stringify({
+-              from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
++              from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
+               reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+               to: [party.email],
+               subject: `In 7 Tagen: ${name ? poss(name) + " " : "die "}${motto}-Party`,
+@@ -944,7 +948,7 @@ export default {
+           method: "POST",
+           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+           body: JSON.stringify({
+-            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
++            from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
+             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+             to: [email], subject: "Dein Kindergeburtstags-Plan zum Weitermachen", html
+           })
+@@ -1151,7 +1155,7 @@ export default {
+           method: "POST",
+           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+           body: JSON.stringify({
+-            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
++            from: env.RESEND_FROM || BRAND + " <kontakt@machsleicht.de>",
+             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
+             to: [email],
+             subject: `Dein Edit-Link: ${poss(childName).replace(/[\x00-\x1F\x7F]/g," ")} Partyseite`,  // W13-3: Steuerzeichen im childName raus (Resend-Subject-Header-Injektion, gleiche Klasse wie P0-Welle-1E)
+@@ -1408,7 +1412,7 @@ ${description?`<meta property="og:description" content="${esc(description)}">`:"
+ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
+ <meta property="og:locale" content="de_DE">
+ <meta property="og:image" content="https://machsleicht.de/og-home.png">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="${BRAND}">
+ <meta name="referrer" content="strict-origin-when-cross-origin">
+ <style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
+ <link rel="icon" href="https://machsleicht.de/favicon.ico">
+@@ -1492,7 +1496,7 @@ ${noTrack ? "" : '<script defer src="https://cloud.umami.is/script.js" data-webs
+ // ERSTELLER-SEITE
+ // ═══════════════════════════════════════════════════════════════
+ function creatorPage() {
+-  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach's leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
++  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 " + BRAND,"Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
+ <body>
+ <div class="container">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -2004,7 +2008,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
+   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
+   const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
+   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+-  return `${baseHead(ogTitle+" \u2014 mach's leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
++  return `${baseHead(ogTitle+" \u2014 " + BRAND, ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
+ <body>
+ <div class="container">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -2142,7 +2146,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="robots" content="noindex,nofollow">
+-<title>${esc(ogTitle)} \u2014 mach's leicht</title>
++<title>${esc(ogTitle)} \u2014 ${BRAND}</title>
+ <meta property="og:title" content="${esc(ogTitle)}">
+ <meta property="og:description" content="${esc(ogDesc)}">
+ <meta property="og:type" content="website">
+@@ -2151,9 +2155,13 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
+ <meta property="og:image:width" content="800">
+ <meta property="og:image:height" content="600">
+ <meta name="twitter:card" content="summary_large_image">
+-<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
++<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-${OG_MOTTOS.has(party.mottoId)?party.mottoId:"home"}.png">
++<meta property="og:image:width" content="1200">
++<meta property="og:image:height" content="630">
++<meta name="twitter:card" content="summary_large_image">
++<meta name="twitter:image" content="https://machsleicht.de/og-${OG_MOTTOS.has(party.mottoId)?party.mottoId:"home"}.png">`}
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach'sleicht">
++<meta property="og:site_name" content="${BRAND}">
+ <meta name="referrer" content="${(isPreview||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
+ <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
+ <link rel="icon" href="https://machsleicht.de/favicon.ico">
+@@ -3027,11 +3035,11 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+       const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
+       INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
+       sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
+-      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB}"; bC.title="Link kopieren";
+-      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705"; setTimeout(function(){bC.textContent="\u{1F4CB}";},1500); }); };
+-      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC}"; bW.title="Per WhatsApp senden";
+-      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
+-      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715"; bX.title="Entfernen"; bX.style.color="#C62828";
++      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB} Link kopieren"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
++      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705 Kopiert"; setTimeout(function(){bC.textContent="\u{1F4CB} Link kopieren";},1500); }); };
++      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC} WhatsApp"; bW.title="Per WhatsApp senden";
++      bW.onclick=function(){ const rn=(INV_ROLES.find(function(r){return r.id===inv.role;})||{}).n; const t=inv.n+", du bist "+(rn?"als "+rn+" ":"")+"eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
++      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715 Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";
+       bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
+       row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+       root.appendChild(row);
+@@ -3087,7 +3095,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+ // 404
+ // ═══════════════════════════════════════════════════════════════
+ function notFoundPage() {
+-  return `${baseHead("Nicht gefunden \u2014 mach's leicht","Party nicht gefunden")}
++  return `${baseHead("Nicht gefunden \u2014 " + BRAND,"Party nicht gefunden")}
+ <body>
+ <div class="container" style="text-align:center;padding:60px 16px">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -3109,7 +3117,7 @@ try{var m=location.pathname.match(/^\\/([a-z0-9]{6,12})$/);if(m){var p=m[1];for(
+ function doiPage(kind, msg) {
+   const isSuccess = kind === "success";
+   const emoji = isSuccess ? "\u2705" : "\u26A0\uFE0F";
+-  const title = isSuccess ? "Bestätigt \u2014 mach's leicht" : "Bestätigung fehlgeschlagen \u2014 mach's leicht";
++  const title = isSuccess ? "Bestätigt \u2014 " + BRAND : "Bestätigung fehlgeschlagen \u2014 " + BRAND;
+   const heading = isSuccess ? "Alles klar!" : "Hmm, das hat nicht geklappt";
+   return `${baseHead(title, msg)}
+ <body>
