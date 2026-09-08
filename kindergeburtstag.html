@@ -374,15 +374,18 @@ window.plausible.init=function(){};window.plausible.q=[];
   /* Stage-advance */
   .stage-advance{max-width:920px;margin:0 auto;padding:30px 20px 60px;text-align:center}
   .stage-advance__hint{color:#888;font-size:13px;margin-bottom:14px}
-  .stage-advance__btn{background:#FF6F00;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
+  .stage-advance__btn{background:#C25400;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
   .stage-advance__btn:hover{transform:scale(1.03)}
   /* Diese Klasse stand seit je da und wurde nie dargestellt — Block 8c ist ihr erster Auftritt (Abwahl-Weg
      unter dem Plan). Bei 375 px gemessen und dreifach berichtigt: #888 auf dem Seitengrund ergab 3.37:1
      (AA verlangt 4.5 fuer 13 px), die Klickflaeche war 17,7 px hoch (WCAG 2.5.8: 24), und ein block-Knopf mit
      automatischer Breite folgt keinem text-align — er stand links statt unter dem Hauptknopf. Jetzt 4.98:1,
      224,8 x 38, Mitte deckungsgleich, einzeilig ab 320 px. #7a6a50 ist die Palettenfarbe aus dem
-     Spiel-Hinweis dieser Datei. Die Groessen sind mit der ausgelieferten Nunito gemessen — eine fruehere
-     Messung lief auf Ersatzschrift und war deshalb zu klein. */
+     Spiel-Hinweis dieser Datei. Zu den Groessen zwei Einschraenkungen, beide nachgemessen: eine fruehere
+     Messung lief ganz auf Ersatzschrift und war deshalb zu klein; und der Pfeil U+2192 steckt nicht in
+     nunito.woff2 — er ist in Nunito wie in einer erfundenen Familie exakt 13,00 px breit, kommt also auch
+     jetzt aus der Ersatzschrift (die Buchstaben nicht: 32,03 gegen 30,34 px fuer "Ohne"). Die Breite ist
+     damit nur zum Teil in der ausgelieferten Schrift gemessen; die Hoehe und der Kontrast sind es ganz. */
   .stage-advance__skip{display:block;margin:14px auto 0;padding:10px 14px;background:none;border:none;color:#7a6a50;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
 
   /* Back-Anchor on Stage 4+5 */
@@ -459,7 +462,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .send-block__actions{display:flex;gap:8px;flex-wrap:wrap}
   .send-block__btn{flex:1;min-width:120px;padding:11px;border:none;border-radius:8px;font-family:'Nunito';font-weight:800;font-size:13px;cursor:pointer;background:#fff;color:var(--accent,#1E3A5F);transition:transform .15s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
   .send-block__btn:hover{transform:scale(1.02)}
-  .send-block__btn--wa{background:#25D366;color:#fff}
+  .send-block__btn--wa{background:#25D366;color:#1A1A1A}
   .send-block__btn--email{background:var(--accent,#1E3A5F);color:#fff}
   .send-status{margin-top:12px;font-size:12px;color:#0F7B3F;font-weight:700;display:flex;align-items:center;gap:6px}
   .send-status::before{content:'📨'}
@@ -860,7 +863,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <span style="font-size:26px">🎮</span>
     <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
-    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
+    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#C25400;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
   </div>
 
   <div class="plan">
@@ -1038,10 +1041,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     </div>
   </div>
 
-  <div id="studioCta" style="margin:18px auto 0;max-width:1100px;width:calc(100% - 40px);padding:16px;background:#FFF8EC;border:2px solid #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+  <div id="studioCta" style="margin:18px auto 0;max-width:1100px;width:calc(100% - 40px);padding:16px;background:#FFF8EC;border:2px solid #A66521;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <span style="font-size:26px">🎨</span>
     <div style="flex:1;min-width:200px"><b>Deine Bild-Einladung ist fertig</b><br><small style="color:#7a6a50">Deine fertigen Looks aus deinen Angaben — zum Teilen als Bild für WhatsApp, Ausdrucken oder Verschicken.</small></div>
-    <a href="/einladung/studio/?autopilot=1" id="studioAutopilotLink" onclick="try{buildAutopilotHref(this)}catch(e){}try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
+    <a href="/einladung/studio/?autopilot=1" id="studioAutopilotLink" onclick="try{buildAutopilotHref(this)}catch(e){}try{plausible('autopilot_open')}catch(e){}" style="background:#A66521;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
   </div>
 
   <div class="stage-advance">
@@ -1406,7 +1409,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       games:[{emoji:'⚔️',name:'Schwertkampf',desc:'Schaumstoff-Säbel'},{emoji:'🏰',name:'Burg-Bauen',desc:'Karton-Stafette'},{emoji:'🐉',name:'Drachen-Werfen',desc:'Plüsch-Drache-Treffer'},{emoji:'🛡️',name:'Wappen-Memory',desc:'Heraldik-Paare'},{emoji:'🏃',name:'Ritter-Parcours',desc:'Hindernis-Lauf'},{emoji:'🔤',name:'Runen-Code',desc:'Geheim-Schrift'},{emoji:'🛡️',name:'Schild-Pantomime',desc:'Verteidigungs-Posen'},{emoji:'🏹',name:'Bogenschießen',desc:'Saugnapf-Pfeile'},{emoji:'🧠',name:'Ritter-Quiz',desc:'Mittelalter-Wissen'},{emoji:'👸',name:'Burgfräulein-Suche',desc:'Versteckspiel'}],
       stations:['Burgtor','Rittersaal','Drachen-Höhle','Geheim-Gang','DER GOLDENE GRAL'],
       invite:{title:'⚔️ Ritterschwur',body:'wird {age} — du wirst zum Ritter geschlagen!'}},
-    {id:'baustelle', emoji:'🚧', name:'Baustelle', accent:'#E65100', accent2:'#FFE0B2', persona:'Bauarbeiter', badge:'Neu',
+    {id:'baustelle', emoji:'🚧', name:'Baustelle', accent:'#CC4800', accent2:'#FFE0B2', persona:'Bauarbeiter', badge:'Neu',
       games:[{emoji:'🚜',name:'Bagger-Werfen',desc:'Murmeln in Eimer'},{emoji:'🧱',name:'Stein-Stapel',desc:'Wer baut höchste?'},{emoji:'🔧',name:'Werkzeug-Memory',desc:'Tool-Paare'},{emoji:'⛑️',name:'Helm-Stafette',desc:'Helm weiterreichen'},{emoji:'🏃',name:'Maurer-Lauf',desc:'Mit Eimer-Tragen'},{emoji:'🎭',name:'Baustellen-Pantomime',desc:'Welcher Beruf?'},{emoji:'🥛',name:'Beton-Mix',desc:'Schaum-Schlagen'},{emoji:'🔨',name:'Hammer-Hoch',desc:'Wer hält länger?'},{emoji:'🚛',name:'Lastwagen-Rennen',desc:'Spielzeug-Auto-Stafette'},{emoji:'🧠',name:'Werkzeug-Quiz',desc:'Wozu dient was?'}],
       stations:['Bauwagen','Materialhaufen','Kran','Bauplan','DIE FUNDAMENTSTEIN-KISTE'],
       invite:{title:'🚧 Baustelle!',body:'wird {age} — du bist im Bautrupp dabei!'}},
@@ -1556,7 +1559,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== ACCENT COLOR APPLY =====
   function applyAccent(motto){
     const root = document.documentElement.style;
-    const accent = motto?.accent || '#FF6F00';
+    const accent = motto?.accent || '#C25400';
     const accent2 = motto?.accent2 || '#FFD700';
     const accentDark = darken(accent, 15);
     const accentLight = lighten(accent, 15);
@@ -2398,8 +2401,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
-    // Der Abschluss unter dem Plan gehoert zu Stufe 3, die ab dem ersten Betreten dauerhaft sichtbar
-    // bleibt — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten der Stufe.
+    // Der Abschluss unter dem Plan gehoert zu Stufe 3, und die bleibt nach dem Betreten sichtbar, waehrend
+    // der Nutzer weitergeht — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten.
+    // (Nicht „dauerhaft": setExactAge nimmt 'revealed' bei ungueltigem Alter wieder weg. Der Schluss haelt
+    // trotzdem, weil die Stufe nur ueber revealPlan() -> goStage(3) zurueckkommt und der Renderer da laeuft.)
     // Vorher hing er an n === 3; die Wiederaufnahme springt aber direkt auf die gespeicherte Stufe, und
     // ein Rueckkehrer mit laufender Partyseite las unter seinem Plan weiter "Kinder einladen"
     // (Re-Check 11, MINOR 1). Deckt Wiederaufnahme und Magic-Link mit ab.
@@ -3275,9 +3280,12 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
-      // Der Plan-Abschluss und die mitlaufende Leiste lesen beide EINLADUNG_LAEUFT(); beide werden sonst
-      // erst beim naechsten goStage(3) frisch. Wer hier aktiviert und danach nur hochscrollt, las unter
-      // seinem Plan weiter "Kinder einladen" (Re-Check 10, MINOR 2).
+      // Der Plan-Abschluss und die mitlaufende Leiste lesen beide EINLADUNG_LAEUFT(). Hier steht kein
+      // goStage danach, also wuerde beides den alten Zustand behalten: wer aktiviert und danach nur
+      // hochscrollt, laese unter seinem Plan weiter "Kinder einladen" (Re-Check 10, MINOR 2).
+      // (Der Plan-Abschluss wird seit Block 8e ohnehin bei jedem Schrittwechsel gerendert — nur die
+      // mitlaufende Leiste haengt noch an n === 3. Der Kommentar sagte frueher beides und wurde damit
+      // von seinem eigenen Fix widerlegt; Re-Check 12, MINOR 1.)
       try{ syncPlanAdvance(); }catch(e){}
       try{ if(window.__syncStickyMorph) window.__syncStickyMorph(); }catch(e){}
       /* Selbst-Catch 31.07.: Die beim Anlegen gesendeten Namen SIND der zuletzt synchronisierte

@@ -147,23 +147,23 @@ const MOTTO_COLORS = {
 // ── Theme System (full palette per motto) ──────────────
 const THEMES = {
   piraten:      {a:"#1E3A5F",d:"#0A1A2F",m:"#16304D",l:"#B8C7D9",bg:"#EAF0F6",h1:"#0A1A2F",h2:"#1E3A5F",h3:"#4A6886"},
-  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784"},
-  safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D"},
+  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784",bt:"#2D2319"},
+  safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D",bt:"#2D2319"},
   weltraum:     {a:"#1565C0",d:"#0D1B2A",m:"#1B3A5C",l:"#BBDEFB",bg:"#E3F2FD",h1:"#0D47A1",h2:"#1565C0",h3:"#64B5F6"},
   detektiv:     {a:"#546E7A",d:"#1B262C",m:"#455A64",l:"#CFD8DC",bg:"#ECEFF1",h1:"#263238",h2:"#455A64",h3:"#90A4AE"},
   superheld:    {a:"#D32F2F",d:"#4A0E0E",m:"#8B2222",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#EF5350"},
-  prinzessin:   {a:"#E91E63",d:"#4A0E27",m:"#AD1457",l:"#F8BBD0",bg:"#FCE4EC",h1:"#880E4F",h2:"#C2185B",h3:"#F06292"},
+  prinzessin:   {a:"#E4165C",d:"#4A0E27",m:"#AD1457",l:"#F8BBD0",bg:"#FCE4EC",h1:"#880E4F",h2:"#C2185B",h3:"#F06292"},
   einhorn:      {a:"#AB47BC",d:"#4A148C",m:"#7B1FA2",l:"#E1BEE7",bg:"#F3E5F5",h1:"#6A1B9A",h2:"#9C27B0",h3:"#BA68C8"},
-  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#00838F",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1"},
+  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#00838F",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1",bt:"#2D2319"},
   feuerwehr:    {a:"#D32F2F",d:"#4A0E0E",m:"#C62828",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#E57373"},
   ritter:       {a:"#795548",d:"#3E2723",m:"#5D4037",l:"#D7CCC8",bg:"#EFEBE9",h1:"#4E342E",h2:"#6D4C41",h3:"#A1887F"},
-  zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#E65100",l:"#FFE0B2",bg:"#FFF3E0",h1:"#E65100",h2:"#FF6F00",h3:"#FFB74D"},
-  baustelle:    {a:"#F57F17",d:"#4A3000",m:"#F9A825",l:"#FFF9C4",bg:"#FFFDE7",h1:"#F57F17",h2:"#FBC02D",h3:"#FFF176"},
-  pferde:       {a:"#A1724E",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
+  zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#E65100",l:"#FFE0B2",bg:"#FFF3E0",h1:"#E65100",h2:"#FF6F00",h3:"#FFB74D",bt:"#2D2319"},
+  baustelle:    {a:"#F57F17",d:"#4A3000",m:"#F9A825",l:"#FFF9C4",bg:"#FFFDE7",h1:"#F57F17",h2:"#FBC02D",h3:"#FFF176",bt:"#2D2319"},
+  pferde:       {a:"#976B49",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
   dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#558B2F",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
   feen:         {a:"#9C27B0",d:"#38006B",m:"#7B1FA2",l:"#E1BEE7",bg:"#F5EEF8",h1:"#4A148C",h2:"#9C27B0",h3:"#CE93D8"},
 };
-const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960"};
+const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960",bt:"#2D2319"};
 
 function getTheme(motto) {
   if (!motto) return DEFAULT_THEME;
@@ -420,7 +420,7 @@ export default {
   <h2 style="margin:0 0 12px">Noch eine Woche bis ${name ? "zu " + esc(poss(name)) : "zur"} ${esc(motto)}-Party \u{1F389}</h2>
   <p>Am <strong>${esc(dateStr)}</strong> ist es so weit. Bisher haben <strong>${gaeste}</strong> ${gaeste === 1 ? "Kind" : "Kinder"} zugesagt.</p>
   <p>Jetzt lohnt sich ein Blick auf die G\u00E4steliste \u2014 Allergien, Abholzeiten und wer noch nicht geantwortet hat:</p>
-  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
+  <p><a href="${esc(editUrl)}" style="display:inline-block;background:#C25400;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Zur Verwaltung deiner Partyseite</a></p>
   <p style="font-size:13px;color:#666">Der Link zum Weiterleiten an Eltern bleibt: <a href="${esc(gastUrl)}">${esc(gastUrl)}</a></p>
   <p style="font-size:12px;color:#999;margin-top:24px">Diese einmalige Erinnerung bekommst du, weil du beim Anlegen der Partyseite diese Adresse f\u00FCr deinen Verwaltungs-Link angegeben hast. Kein Newsletter, keine weitere Mail dieser Art.</p>
 </div>`;
@@ -941,7 +941,7 @@ export default {
       const html = `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1A1A1A">
   <h2 style="margin:0 0 12px">Hier ist ${esc(wer)}Plan zum Weitermachen</h2>
   <p>Mit diesem Link \u00F6ffnest du den Planer genau dort, wo du aufgeh\u00F6rt hast \u2014 auf jedem Ger\u00E4t:</p>
-  <p><a href="${esc(link)}" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
+  <p><a href="${esc(link)}" style="display:inline-block;background:#C25400;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Plan weiterbearbeiten</a></p>
   <p style="font-size:13px;color:#666;word-break:break-all">${esc(link)}</p>
   <p style="font-size:12px;color:#999;margin-top:24px">Der Link gilt 90 Tage. Wir haben nur diese eine Mail geschickt \u2014 nur daf\u00FCr, kein Newsletter.</p>
 </div>`;
@@ -1136,16 +1136,16 @@ export default {
         <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
         <h2 style="font-size:17px;color:#2D2319;margin:0 0 8px">\u{1F4EC} Newsletter best\u00E4tigen</h2>
         <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag per Mail bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
-        <a href="${confirmUrl}" style="display:block;background:#fff;color:#D4812A;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
+        <a href="${confirmUrl}" style="display:block;background:#fff;color:#A66521;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
         <p style="color:#aaa;font-size:11px;line-height:1.5;margin:10px 0 0">Der Link ist 7 Tage g\u00FCltig. Kein Klick = keine Speicherung, kein Newsletter.</p>
       ` : "";
 
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
+        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
-        <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
-        <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
+        <a href="${editUrl}" style="display:block;background:#A66521;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
+        <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#A66521">${guestUrl}</a></p>
         ${newsletterBlock}
         <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
         <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.</p>
@@ -2170,7 +2170,7 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --a:${t.a};--al:${t.a}18;--ag:linear-gradient(135deg,${t.a},${t.h3});
+  --a:${t.a};--at:${t.bt || "#fff"};--al:${t.a}18;--ag:linear-gradient(135deg,${t.a},${t.h3});
   --bg:${t.bg};--card:#fff;--d:${t.d};--m:${t.m};--l:${t.l};
   --f:'DM Sans',system-ui,sans-serif;--fd:'Baloo 2','Comic Sans MS',cursive;--r:16px;
 }
@@ -2224,7 +2224,7 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .rsvp-card::before{height:4px}
 .guest-counter{display:flex;align-items:center;gap:8px;justify-content:center;padding:10px 16px;background:linear-gradient(135deg,${t.a}08,${t.a}18);border-radius:12px;margin-bottom:14px;border:1px solid ${t.a}30}
 .guest-dots{display:flex}
-.guest-dot{width:24px;height:24px;border-radius:50%;background:var(--ag);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;margin-left:-6px}
+.guest-dot{width:24px;height:24px;border-radius:50%;background:var(--a);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--at);font-weight:700;margin-left:-6px}
 .guest-dot:first-child{margin-left:0}
 .guest-counter-text{font-size:13px;font-weight:700;color:var(--a)}
 .rsvp-buttons{display:flex;gap:8px;margin-bottom:14px}
@@ -2252,7 +2252,7 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .wish-btn{padding:8px 16px;border-radius:12px;border:2px solid var(--a);background:transparent;color:var(--a);font:700 12px var(--f);cursor:pointer;white-space:nowrap;transition:all .2s}
 .wish-btn:hover{background:var(--al)}
 .wish-btn.taken{background:var(--l);color:var(--m);border-color:var(--l);cursor:default}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:var(--ag);color:#fff;border:none;border-radius:var(--r);font:700 15px var(--f);cursor:pointer;transition:all .2s;width:100%;text-decoration:none;box-shadow:0 4px 16px ${t.a}40}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:var(--a);color:var(--at);border:none;border-radius:var(--r);font:700 15px var(--f);cursor:pointer;transition:all .2s;width:100%;text-decoration:none;box-shadow:0 4px 16px ${t.a}40}
 .btn:active{transform:scale(.97)}
 .btn-outline{background:transparent;border:2px solid var(--a);color:var(--a);box-shadow:none}
 .btn-sm{padding:10px 16px;font-size:13px;width:auto}
@@ -2440,7 +2440,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 10 Minuten, ohne Anmeldung.</p>
-  <a href="https://machsleicht.de/kindergeburtstag?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://machsleicht.de/kindergeburtstag?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#C25400;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -2714,7 +2714,7 @@ async function loadWishes(){
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
         +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<button class="wish-btn taken" onclick="unclaimWish(\\x27'+w.id+'\\x27,this)">Vergeben</button>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
-        +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
+        +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;color:#fff;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
   }catch(e){}
