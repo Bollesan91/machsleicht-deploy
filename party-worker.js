@@ -34,7 +34,7 @@ const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — ger
 // 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
 // Repo-Root am 08.09.2026: 30 Dateien; im Set die 27 Motto-Banner. Nicht im Set: og-home/og-default (Rueckfallbilder, keine Mottos) und
 // prinzessin als benannte Ausnahme — Kopie von og-frozen.png seit 41e58176 (30.05.); Design-Ticket Bolle 08.09.2026 — sie faellt auf og-home zurueck, bis ein eigenes
-// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). Paar in Stufe 65: Set == og-*.png ohne home/default, Ausnahmen benannt.
+// Bild existiert (7c hatte per "eindeutiger Inhalt" auch das echte Frozen-Banner ausgeschlossen; Pruefstand-Einwand, 7d). Gegenprobe: Paar OG_MOTTOS <-> og-*.png ohne home/default mit benannten Ausnahmen in Stufe 65 (check-freischaltlisten.py, Pruefstand 08.09.2026).
 const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
 const MAX_GUESTS = 30;
 const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
@@ -3037,11 +3037,11 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
       INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
       sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
-      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB} Link"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
-      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705 Kopiert!"; setTimeout(function(){bC.textContent="\u{1F4CB} Link";},2000); }); };
-      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC} WhatsApp"; bW.title="Per WhatsApp senden";
+      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="Link"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
+      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="Kopiert!"; setTimeout(function(){bC.textContent="Link";},2000); }); };
+      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="WhatsApp"; bW.title="Per WhatsApp senden";
       bW.onclick=function(){ const rn=(INV_ROLES.find(function(r){return r.id===inv.role;})||{}).n; const t=inv.n+", du bist "+(rn?"als "+rn+" ":"")+"eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
-      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715 Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";
+      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";   // Re-Check 7: ohne Emoji — mit Emoji kappte die Ellipse "WhatsApp" auf 360-px-Androids (79 px Text auf 75 px Inhalt)
       bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
       // Re-Check 6 (08.09.): Zeile 2 ist ein eigener Container, die drei Knoepfe teilen sich seine Breite (flex:1, nowrap, Ellipse) — damit ist ein
       // Umbruch auf JEDER Breite ausgeschlossen. Vorher stand hier ein Null-Hoehen-Umbruchelement und die Behauptung "geschlossen in Zeile 2";
