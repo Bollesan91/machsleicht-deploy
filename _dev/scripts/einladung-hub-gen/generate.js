@@ -72,7 +72,7 @@ const HEAD_COMMON = (m) => `<meta name="theme-color" content="#FFFAF5">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/fonts/fonts.css">`;
 
 const ANALYTICS = `<!-- Privacy-friendly analytics by Umami -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
