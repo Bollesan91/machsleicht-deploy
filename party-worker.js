@@ -30,7 +30,7 @@ function corsHeaders(request) {
 // Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
 // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
 const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
-const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale im Worker in zwei Schreibweisen (mit und ohne Leerzeichen), seitenweit vier.
+const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale im Worker in zwei Schreibweisen (mit und ohne Leerzeichen); seitenweit kamen Logo-Markup und die apostrophlose Form dazu.
 // 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
 // Repo-Root am 08.09.2026: 30 Dateien; im Set die 27 Motto-Banner. Nicht im Set: og-home/og-default (Rueckfallbilder, keine Mottos) und
 // prinzessin als benannte Ausnahme — Kopie von og-frozen.png seit 41e58176 (30.05.); Design-Ticket Bolle 08.09.2026 — sie faellt auf og-home zurueck, bis ein eigenes
@@ -3043,8 +3043,12 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       bW.onclick=function(){ const rn=(INV_ROLES.find(function(r){return r.id===inv.role;})||{}).n; const t=inv.n+", du bist "+(rn?"als "+rn+" ":"")+"eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
       const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715 Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";
       bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
-      const br=document.createElement("div"); br.style.cssText="flex-basis:100%;height:0";   // Re-Check 5: Umbruch fest nach Name+Rolle, die drei Knoepfe stehen geschlossen in Zeile 2 (statt zufaellig dreizeilig)
-      row.appendChild(nm); row.appendChild(sel); row.appendChild(br); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+      // Re-Check 6 (08.09.): Zeile 2 ist ein eigener Container, die drei Knoepfe teilen sich seine Breite (flex:1, nowrap, Ellipse) — damit ist ein
+      // Umbruch auf JEDER Breite ausgeschlossen. Vorher stand hier ein Null-Hoehen-Umbruchelement und die Behauptung "geschlossen in Zeile 2";
+      // in Chromium gemessen brauchten die Knoepfe 325 px auf 301 px Karte und brachen auf 375/390 px dreizeilig um.
+      const acts=document.createElement("div"); acts.style.cssText="flex-basis:100%;display:flex;gap:6px;min-width:0";
+      [bC,bW,bX].forEach(function(b){ b.style.cssText+=";display:block;text-align:center;flex:1 1 0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;padding:8px 6px"; acts.appendChild(b); });
+      row.appendChild(nm); row.appendChild(sel); row.appendChild(acts);
       root.appendChild(row);
     });
     const hint=document.getElementById("invHint");
