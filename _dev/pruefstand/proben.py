@@ -261,6 +261,19 @@ ALLE = [
         ersetzen='"id":"piraten-klassikk"',
         erwartete_treffer=1,
     ),
+    # --- Stufe 65, fuenftes Paar: OG_MOTTOS gegen og-*.png (Block 7, 08.09.) ------------
+    # Ein getipptes Set im Worker gegen 30 Dateien im Root. Die Probe bricht die Listen-
+    # Seite: ein Slug ohne Datei -> die Vorschaukarte beim Teilen zeigt auf ein 404-Bild.
+    # Die andere Richtung (Datei ohne Slug) deckt die eingebaute --gegenprobe der Stufe.
+    Probe(
+        name="stufe-65-og-mottos",
+        warum="Ein Motto in OG_MOTTOS ohne og-<motto>.png muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-freischaltlisten.py"),
+        datei="party-worker.js",
+        suchen='"dino", "einhorn"',
+        ersetzen='"dinoo", "einhorn"',
+        erwartete_treffer=1,
+    ),
     # --- Stufe 71: Vorschaubilder, die es nicht gibt ----------------------------
     # 21 fehlende Bilddateien in 51 Verweisen (02.09.) — og:image und twitter:image
     # zeigten auf 404, sichtbar nur beim Teilen, nie im Repo. Die Probe bricht die

@@ -189,11 +189,41 @@ def liste_worker_spiele():
 # Bekannte, ENTSCHIEDENE Luecken. Kein Schweigen: jede steht mit Grund da und wird bei
 # JEDEM Lauf genannt. Eine Ausnahme ohne Begruendung ist eine abgeschaltete Regel, und
 # eine Ausnahmeliste, die still waechst, ist eine Regel, die niemand mehr liest.
+def liste_og_mottos():
+    """Block 7 (08.09.2026): Vorschaubild je Motto fuer Partyseiten ohne eigenes Foto —
+    ein GETIPPTES Set im Worker, die Dateien liegen im Root. `home` und `default` stehen
+    bewusst im Set: home ist der Rueckfall im Template, default das Bild ohne Motto."""
+    text = _lies(WORKER)
+    return set(_literal(text, r"const OG_MOTTOS\s*=\s*new Set\((\[[^\]]*\])\)", "OG_MOTTOS"))
+
+
+# `home` und `default` sind KEINE Motto-Banner: home ist der Rueckfall im Worker-Template, default
+# das Bild der motto-losen Seiten (59 bzw. 25 Seiten verweisen darauf). Sie gehoeren nicht ins
+# Motto-Set und werden hier bewusst ausgenommen — sonst meldet die Stufe zwei Dateien "ohne
+# Slug", die nie einen brauchen. Ihre byteidentische Gleichheit ist eine andere Klasse
+# (Dubletten), nicht diese.
+NICHT_MOTTO = {"home", "default"}
+
+
+def platte_og_bilder():
+    return set(p[len("og-"):-len(".png")] for p in versioniert()
+               if re.match(r"og-[a-z0-9-]+\.png$", p)) - NICHT_MOTTO
+
+
 BEKANNTE_LUECKEN = {
     # Leer, und das ist ein Ergebnis, keine Nachlaessigkeit: der prinzessin-Fall, der diese
     # Stufe ausgeloest hat, IST keine Luecke im ausgelieferten Stand — die Datei steht in
     # .gitignore (Zeile 33) und existiert nur lokal. Waere hier eine Ausnahme eingetragen
     # worden, haette sie eine Drift gedeckt, die es nie gab.
+    #
+    # 08.09.2026 (Bolle, per Rueckfrage): og-prinzessin.png ist seit 41e58176 (30.05.) eine
+    # byteidentische Kopie von og-frozen.png — kein eigenes Banner. Entscheidung: echtes Bild
+    # als Design-Ticket; bis dahin bleiben die Partyseiten neutral (prinzessin NICHT in
+    # OG_MOTTOS), die drei SEO-Seiten behalten die Datei. Deshalb hier eine benannte Luecke
+    # mit Grund und Datum — nicht loeschen, bevor das echte Banner da ist. Die Dublette
+    # selbst ist eine andere Klasse (zwei Dateien, ein Inhalt) und bleibt dort sichtbar.
+    ("OG_MOTTOS -> og-<motto>.png", "prinzessin"):
+        "Kopie von og-frozen.png (41e58176) — Design-Ticket 08.09.2026, Bolle",
 }
 
 LISTEN = [
@@ -220,6 +250,13 @@ LISTEN = [
      "liste": liste_mottos, "platte": platte_mottos,
      "nur_platte": "hat Daten, steht aber nicht in GAME_MOTTOS",
      "nur_liste": "steht in GAME_MOTTOS, hat aber keine Daten"},
+    # 08.09.2026 (Block 7, F8): og:image je Motto fuer Partyseiten ohne Foto. Ein Slug ohne
+    # Datei = 404 hinter der Vorschaukarte beim Teilen (dieselbe Klasse wie Stufe 71, nur zur
+    # Laufzeit gebaut); eine Datei ohne Slug = ein Motto, das still og-home.png bekommt.
+    {"name": "OG_MOTTOS -> og-<motto>.png",
+     "liste": liste_og_mottos, "platte": platte_og_bilder,
+     "nur_platte": "hat ein Vorschaubild, steht aber nicht in OG_MOTTOS — bekommt still og-home.png",
+     "nur_liste": "steht in OG_MOTTOS, das Bild fehlt — Vorschaukarte mit 404"},
 ]
 
 
