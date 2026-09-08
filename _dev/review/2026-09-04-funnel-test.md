@@ -1362,3 +1362,61 @@ Auf **drei** Seiten steht live keine lesbare Adresse mehr; auf `/ueber-uns` uebe
 2. **Befund 07: Knoepfe nachbauen.** Der Einladungstyp-Zweig wird sichtbar gemacht, Karte und Druck werden echte Varianten. Damit ist der tote Code eine Baustelle mit Auftrag — und die Stufen-Kandidatin „definierte Klassen werden benutzt" waere gegen genau diesen Code gelaufen. **Eine Stufe, die den Bestand anklagt, klagt manchmal einen Plan an.**
 3. **Kontrast: die fuenf festen Stellen dunkler machen**, plus das eine zu helle Motto (`baustelle`, `#E65100`, 3,79:1). Gemessen ueber 260 ausgelieferte Dateien und 47627 Regelbloecke: helle Schrift auf **festem** `#FF6F00` gibt es an 5 Stellen (Planer-Hauptknopf, Spiel-Hinweis, viraler Knopf der Gaesteseite, zwei Mail-Knoepfe), helle Schrift auf `var(--accent)` an 20 — und **14 von 15 Mottofarben liegen ueber 4,5:1**, keine unter 3,0. „Die Marke erfuellt AA nicht" war eine Vermutung, die durch zwei Haende ging, bevor sie gemessen wurde; richtig ist „fuenf Stellen benutzen den Ersatzwert statt des Akzents". Die zwei Mail-Knoepfe sind ein eigener Fall: dort kann niemand nachtraeglich etwas aendern.
 4. **Neue Stufen: „benutzte Stilvariablen sind gesetzt" und „Abschnitte in Trichter-Reihenfolge".** Die dritte (definierte Klassen werden benutzt) hat er nicht genommen — siehe Punkt 2.
+
+## Kontrast (08.09., Bloecke 9 bis 12) — acht Stellen, drei Entscheidungen, zwoelf Messfehler
+
+Ausgeloest von einer Randnotiz in Re-Check 10: weisse Schrift auf der orangen Marke erreicht 2,79:1 und liegt damit unter der AA-Schwelle 4,5 fuer normalen Text. Was daraus wurde, ist der laengste Faden des Tages — und **kein einziger Block hatte am Ende den Umfang, mit dem er angefangen hat.** Block 9 hiess „fuenf Stellen" und wurden sieben; Block 10 hiess „ein Wort" und wurden 17 Paletten plus Standard-Thema; Block 11 entstand ueberhaupt erst aus einem MAJOR gegen Block 9. **Jede Vergroesserung war eine Messung, keine Meinung.**
+
+### Was Bolle entschieden hat
+
+1. **Die eigene Marke wird dunkler, die Schrift bleibt weiss.** Der Wert ist gerechnet, nicht gewaehlt: `#FF6F00` hat Farbton 26,1°, volle Saettigung, 50 % Helligkeit; beides gehalten und nur die Helligkeit gesenkt, ergibt der erste Wert ueber der Schwelle **`#C25400` bei 38 %, 4,60:1**. Dasselbe fuer das einzige Motto darunter: `baustelle` `#E65100` (3,79) → `#CC4800` (4,67).
+2. **Auf der Gaesteseite behaelt der Knopf die Mottofarbe, die Schrift richtet sich danach.** Die Alternative (volle dunkle Flaeche) haette alle 17 geloest, macht aber aus jedem Motto einen fast schwarzen Klotz. Gewaehlt ist der Weg, der die Identitaet behaelt.
+3. **Bei WhatsApp bleibt das fremde Markengruen exakt, nur die Schrift wird dunkel.** `#25D366` ist WhatsApps Farbe; sie anzutasten haette Wiedererkennbarkeit gekostet, dunkle Schrift kostet nichts (1,98 → 8,78:1).
+
+### Re-Check 13 (Chat `0fd1e453`, Opus 5 Maximal): 2 MAJOR — beide gegen Behauptungen des Autors
+
+Der Gutachter hat den Diff byte-genau bestaetigt und **alle Kontrollzahlen nachgerechnet, keine war falsch.** Die MAJOR lagen nicht im Diff, sondern in dem, was er nicht enthielt.
+
+- **Es waren sieben Stellen, nicht fuenf.** `background:#D4812A;color:#fff` steht je einmal in beiden Dateien — der Autopilot-Knopf im Planer und **der Edit-Link in der Mail, mit der der Gastgeber seine Partyseite verwaltet.** Weiss darauf 3,01:1. **Der Commit-Betreff von Block 9 behauptet „GENAU die fuenf Stellen" und ist damit falsch;** die Richtigstellung steht hier, aber wer die Historie liest, hat dieses Doc nicht daneben.
+- **„Der Ersatzwert wird nie gerendert" war falsch.** Der CSS-Fallback feuert wirklich nie, aber `applyAccent` traegt einen zweiten in JavaScript (`:1562`), und `discardResume()` ruft `applyAccent(null)` (`:1685`). **Wer im Wiederaufnahme-Banner auf „Neu starten" klickt, setzt `--accent` scharf auf das Literal.**
+
+### Die Bloecke
+
+- **Block 9** (`030cdbf2`): die fuenf Stellen mit `background:#FF6F00;color:#fff` plus der Motto-Akzent `baustelle`. Gemessen ueber 260 ausgelieferte Dateien und 47627 Regelbloecke. **Nebenbei geklaert:** das Abzeichen „Neu" auf der Baustelle-Karte stand bei 3,79:1 **sichtbar auf dem ersten Bildschirm** — gefunden, weil alle 311 sichtbaren Knoten der Startstufe abgetastet wurden statt der erwarteten Elementsorte.
+- **Block 10** (`811a4ad9`): der Hauptknopf der Gaesteseite lag auf `linear-gradient(135deg, a, h3)`, also auf einem Verlauf zur **hellsten** Palettenfarbe, mit weisser Schrift. Am schlechtesten Ende erfuellte **ein** Motto von 17 die Schwelle; `baustelle` lag bei **1,16:1**. Jetzt: volle Mottofarbe, Schriftfarbe je Palette, zwei Akzente um zwei Helligkeitspunkte nachjustiert. **17 von 17.** Der Verlauf bleibt, wo kein Text darauf liegt.
+- **Block 11** (`df9ae560`): die zwei uebersehenen `#D4812A`-Flaechen → `#A66521` (4,66:1) und der JavaScript-Ersatzwert → `#C25400`.
+- **Block 12** (`888ea0af`): die zwei WhatsApp-Teilen-Knoepfe, **1,98:1 — der schlechteste Wert des Tages**, an einem Element, das jeder Gastgeber zum Teilen benutzt.
+
+**Abnahme:** stage 50/50, restore 59/59, frist 6/6, anders 12/12, age 8/8 und `node --check` vor jedem Commit; Laeufe 31 bis 33 des Pruefstands 0 Rot, 71/71, und Stufe 60 sechsmal in Folge unveraendert bei 339/4187.
+
+**Die Kontrollzahl, die zaehlt, ist nicht „acht behandelt", sondern die Erschoepfung:** ueber beide Dateien 3323 Regelbloecke gelesen, 11 mit heller Schrift auf fester Flaeche, davon **0 unter 4,5:1.** Vor dem Nachmittag waren es acht.
+
+### Eine Klasse, die uns beiden entgangen ist — und die naechste Entscheidung fuer Bolle
+
+Wir haben den ganzen Nachmittag **helle Schrift auf farbiger Flaeche** gesucht und die Umkehrung nie gestellt: **Markenfarbe als Schrift auf heller Flaeche.** Dieselbe Farbe, dieselbe Norm, andere Richtung. Sechs Stellen im Planer, alle unter der Schwelle:
+
+| Stelle | Farbe | Grund | Wert |
+|---|---|---|---|
+| `.topnav__brand` | `#FF6F00` | Seitengrund `#FFF8F0` | 2,65 |
+| `.topnav__btn:hover` | `#FF6F00` | `#FFF3E6` | 2,55 |
+| `.pick__head` | `#FF6F00` | Seitengrund | 2,65 |
+| Knopf „E-Mail aendern" | `#D4812A` | Seitengrund | 2,86 |
+| „✓ Gewaehlt" | `#D4812A` | Seitengrund | 2,86 |
+| Knopf „Gaeste uebernehmen" | `#D4812A` | Seitengrund | 2,86 |
+
+Der Seitengrund ist belegt (`html,body{…background:#FFF8F0…}`, `:128`), und fuer die betroffenen Elemente gibt es keine eigene Hintergrundregel. **Fuenf sichtbare Zustaende, einer nur im Hover.** Entscheidung offen.
+
+### Zwoelf Messfehler an einem Nachmittag, und was sie gemeinsam haben
+
+Sechs beim Autor, sechs beim Pruefstand. **Keiner waere an einem Exit-Code gescheitert; alle sahen aus wie Ergebnisse.** Und alle zwoelf sind aufgefallen, weil der jeweils andere nachgerechnet hat.
+
+- **Nach dem Wert suchen statt nach der Eigenschaft.** `#FF6F00` gesucht, `#D4812A` uebersehen (sieben statt fuenf Stellen). Die Umkehrung derselben Regel fand spaeter den achten Fall — die schaerfste Fassung: **wer nach dem sucht, was er erwartet, findet nie das Nachbarhaus.**
+- **Nach Rollen zaehlen statt nach Vorkommen.** 6 statt 17 Verwendungen der Palettenfarbe. **Erst zaehlen, dann deuten.**
+- **Indirektion uebersehen.** `${t.a}` → `--ag` → `var(--ag)`: zwei Schritte, das Muster sah einen.
+- **Position annehmen, wo Zugehoerigkeit gemeint war.** `class="` unmittelbar gefolgt vom Namen — die Klasse stand an zweiter Stelle, und aus „zweimal benutzt" wurde „tot". Trifft rueckwirkend jede Zaehlung „definiert, nie benutzt".
+- **Was in keiner Liste steht, wird nicht mitgezaehlt.** Zweimal am selben Nachmittag: `DEFAULT_THEME` und der `applyAccent`-Ersatzwert. **Erst fragen, was der Rueckfall ist, dann die Liste zaehlen.**
+- **Eine geschaetzte Zahl im Gewand einer gemessenen.** `#C85A00 ≈ 4,6:1` waere bei 4,27 gelandet. Schlimmer als eine falsche Messung, weil das Ungefaehr-Zeichen wie Bescheidenheit aussieht.
+- **Eine Zeilennummer ist bei 469 Zeichen keine Fundstelle, sondern eine Gegend.** 78 Zeilen im Planer sind laenger als 300 Zeichen, die laengste hat 14360. **Beleg ab jetzt: Zeile plus Spalte oder Wortlaut.**
+- **Ein Werkzeug, das an seiner eigenen Erfolgsmeldung scheitert.** Das Commit-Skript stuerzte beim LESEN der Ausgabe seines Kindprozesses ab (cp1252 an einem Gedankenstrich); die Aenderung lag im Baum, der Commit fehlte. **Nach einem abgestuerzten Werkzeug prueft man den Zustand, nicht die Absicht.**
+
+**Und der einzige Fall, in dem die Kontrolle vorher kam statt hinterher:** bei der letzten Messung stand die Gegenprobe (`x{border-color:#FF6F00;color:#FF6F00}` muss genau einen Treffer geben) **vor** dem Zaehlen und schloss vier `border-color`-Treffer aus, bevor sie in eine Zahl geraten konnten. **Der Unterschied zwischen Pruefen und Aufraeumen kostet dasselbe, nur in der anderen Reihenfolge.**
