@@ -381,8 +381,11 @@ window.plausible.init=function(){};window.plausible.q=[];
      (AA verlangt 4.5 fuer 13 px), die Klickflaeche war 17,7 px hoch (WCAG 2.5.8: 24), und ein block-Knopf mit
      automatischer Breite folgt keinem text-align — er stand links statt unter dem Hauptknopf. Jetzt 4.98:1,
      224,8 x 38, Mitte deckungsgleich, einzeilig ab 320 px. #7a6a50 ist die Palettenfarbe aus dem
-     Spiel-Hinweis dieser Datei. Die Groessen sind mit der ausgelieferten Nunito gemessen — eine fruehere
-     Messung lief auf Ersatzschrift und war deshalb zu klein. */
+     Spiel-Hinweis dieser Datei. Zu den Groessen zwei Einschraenkungen, beide nachgemessen: eine fruehere
+     Messung lief ganz auf Ersatzschrift und war deshalb zu klein; und der Pfeil U+2192 steckt nicht in
+     nunito.woff2 — er ist in Nunito wie in einer erfundenen Familie exakt 13,00 px breit, kommt also auch
+     jetzt aus der Ersatzschrift (die Buchstaben nicht: 32,03 gegen 30,34 px fuer "Ohne"). Die Breite ist
+     damit nur zum Teil in der ausgelieferten Schrift gemessen; die Hoehe und der Kontrast sind es ganz. */
   .stage-advance__skip{display:block;margin:14px auto 0;padding:10px 14px;background:none;border:none;color:#7a6a50;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
 
   /* Back-Anchor on Stage 4+5 */
@@ -2398,8 +2401,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
-    // Der Abschluss unter dem Plan gehoert zu Stufe 3, die ab dem ersten Betreten dauerhaft sichtbar
-    // bleibt — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten der Stufe.
+    // Der Abschluss unter dem Plan gehoert zu Stufe 3, und die bleibt nach dem Betreten sichtbar, waehrend
+    // der Nutzer weitergeht — er wird deshalb bei JEDEM Schrittwechsel gerendert, nicht nur beim Betreten.
+    // (Nicht „dauerhaft": setExactAge nimmt 'revealed' bei ungueltigem Alter wieder weg. Der Schluss haelt
+    // trotzdem, weil die Stufe nur ueber revealPlan() -> goStage(3) zurueckkommt und der Renderer da laeuft.)
     // Vorher hing er an n === 3; die Wiederaufnahme springt aber direkt auf die gespeicherte Stufe, und
     // ein Rueckkehrer mit laufender Partyseite las unter seinem Plan weiter "Kinder einladen"
     // (Re-Check 11, MINOR 1). Deckt Wiederaufnahme und Magic-Link mit ab.
@@ -3275,9 +3280,12 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
-      // Der Plan-Abschluss und die mitlaufende Leiste lesen beide EINLADUNG_LAEUFT(); beide werden sonst
-      // erst beim naechsten goStage(3) frisch. Wer hier aktiviert und danach nur hochscrollt, las unter
-      // seinem Plan weiter "Kinder einladen" (Re-Check 10, MINOR 2).
+      // Der Plan-Abschluss und die mitlaufende Leiste lesen beide EINLADUNG_LAEUFT(). Hier steht kein
+      // goStage danach, also wuerde beides den alten Zustand behalten: wer aktiviert und danach nur
+      // hochscrollt, laese unter seinem Plan weiter "Kinder einladen" (Re-Check 10, MINOR 2).
+      // (Der Plan-Abschluss wird seit Block 8e ohnehin bei jedem Schrittwechsel gerendert — nur die
+      // mitlaufende Leiste haengt noch an n === 3. Der Kommentar sagte frueher beides und wurde damit
+      // von seinem eigenen Fix widerlegt; Re-Check 12, MINOR 1.)
       try{ syncPlanAdvance(); }catch(e){}
       try{ if(window.__syncStickyMorph) window.__syncStickyMorph(); }catch(e){}
       /* Selbst-Catch 31.07.: Die beim Anlegen gesendeten Namen SIND der zuletzt synchronisierte
