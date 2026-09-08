@@ -1315,3 +1315,50 @@ Erstmals standen die eigenen Kontrollzahlen im Auftrag, nach dem Vorschlag des P
 **Abnahme von 8e.** stage 50/50 (fuenf Erwartungen vorher rot), restore 59/59, frist 6/6, anders 12/12, age 8/8. Browser mit jetzt korrekt ausgelieferter Schrift: Rueckkehrer mit laufender Partyseite und gespeicherter Stufe 4 landet nach „Weitermachen" auf Stufe 4, der Plan ist darueber sichtbar, und der Abschluss sagt „Fertig machen →" mit ausgeblendeter Abwahl. Knopf 224,8 x 38 bei 320, 375 und 414 px, einzeilig, Mitte deckungsgleich mit dem Hauptknopf, kein waagerechter Ueberlauf.
 
 **Zwei vorbestehende Kontrastwerte, im Browser nachgemessen — fuer Bolle, nicht nebenbei entschieden:** der Hinweistext ueber dem Knopf (`.stage-advance__hint`, `#888`) liegt bei **3,37:1**, also unter AA fuer 13-px-Text — dieselbe Farbe und dieselbe Begruendung, mit der der Abwahl-Knopf repariert wurde; die Argumentation ist bisher nur zur Haelfte angewendet. Und der **Hauptknopf** (`.stage-advance__btn`, weiss auf `#FF6F00`) liegt bei **2,79:1** bei 16 px/800, unter der Schwelle fuer grossen Text (18,66 px fett). Nach diesem Diff ist der leise Zweitweg das einzige AA-konforme Bedienelement des Blocks.
+
+### Re-Check 12 (Chat `84fc916d`, frischer Chat, Opus 5 Maximal, Diff `bdfde262..5caf63ec`): 0 MAJOR, 5 MINOR
+
+Alle fuenf unsichtbar fuer Nutzer: drei Kommentar-Aussagen, die der Code nicht deckt, und zwei Randfaelle der Uebersetzungstabelle. Der Gutachter hat dafuer alle 25 `goStage(...)`-Aufrufstellen einzeln durchgegangen und je Pfad geprueft (Wiederaufnahme, Magic-Link, Deep-Link, Motto-Wechsel), `state.partyseite.active` als genau eine Schreibstelle nachgewiesen und die Knoten-Reihenfolge gegen die Aufrufer gestellt. **Nebenbei eine Frage von uns beiden abgeraeumt:** `window.plausible` ist durch den Shim in Zeile 116 **immer** truthy — der Fortschrittsmerker haengt also nicht an einem Werbeblocker.
+
+- **MINOR 1, die schoenste Form des Tages:** der Kommentar am Erfolgspfad der Aktivierung wurde **durch seinen eigenen Fix falsch.** Er sagte „beide werden sonst erst beim naechsten `goStage(3)` frisch" — das stimmte, bis Block 8e den Plan-Abschluss zwei Zeilen weiter oben auf jeden Schrittwechsel umgestellt hat. Der Aufruf bleibt noetig, die Begruendung nicht.
+- **MINOR 2:** „mit der ausgelieferten Nunito gemessen" traegt die Breite nicht. Selbst nachgemessen: der Pfeil U+2192 ist in Nunito und in einer **erfundenen** Schriftfamilie exakt gleich breit (13,00 px), kommt also aus der Ersatzschrift; die Buchstaben nicht (32,03 gegen 30,34 px fuer „Ohne"). Zweite Ebene der Spiegel-Lehre: nicht nur „ist die Schrift geladen", sondern „enthaelt sie die Zeichen, die ich messe".
+- **MINOR 3:** „ab dem ersten Betreten dauerhaft sichtbar" ist zu stark — `setExactAge` (`:1546`) nimmt `revealed` bei ungueltigem Alter wieder weg. Der Schluss haelt trotzdem.
+- **MINOR 4/5, die Tabelle, als Ticket statt als Fix:** `_maxStage: 5` aus der **Sechs-Stufen-Aera** hiess „Partyseite erreicht, Fertig nicht" und wird jetzt auf „komplett durch" abgebildet. Der Gutachter sagt ausdruecklich, die alte 6er-Ordnung sei **aus dem Material nicht beweisbar**; unter beiden denkbaren Ordnungen verliert diese Gruppe mindestens einen Schritt. Das ist eine Recherche, kein Fix.
+
+### Block 8f — drei Kommentare berichtigt, null Code-Zeilen
+
+Bewusst **keine dreizehnte Review-Runde**: Bolles Schlusspunkt-Regel zielt auf Fix-Review-Zyklen, und hier gibt es kein Verhalten zu begutachten, nur Wortlaut. Die maschinelle Abnahme lief trotzdem (stage 50/50, restore 59/59, frist 6/6, anders 12/12, age 8/8), weil die Datei ausgeliefert wird. Dass wirklich nur Kommentare betroffen sind, prueft das Skript selbst, indem es beide Staende **ohne Kommentarbereiche** vergleicht.
+
+**Zwei Fehlschlaege beim Bauen, beide lehrreich:** Der erste Waechter pruefte auf Kommentar-PRAEFIX und schlug an, weil die Fortsetzungszeilen eines `/* */`-Blocks keinen tragen — **formal recht, inhaltlich unrecht.** Der zweite Assert war zu breit: „dauerhaft sichtbar" steht auch in einem fremden SEO-Kommentar (`:632`). Beide Male hielt die Kontrolle auf, beide Male lag sie daneben. Das stuetzt die Regel des Tages aus der anderen Richtung: **ein roter Test ist erst ein Befund, wenn der Test geprueft ist.**
+
+### Deploy (`main = d3f9bb25`, Merge von `draft = dc51973d`) und Live-Nachmessung
+
+Auf Bolles Wort. Kein Worker-Token noetig, `git diff main..draft -- party-worker.js` war leer. Zwoelf Live-Pruefungen, **elf bestanden — die zwoelfte war ein Fehler im Test, nicht auf der Seite**: gesucht wurde `og:site_name` auf dem Planer, das dort nie stand (Repo 0, Startseite 1, live korrekt). Gruen: Abschnittsfolge 1,2,3,4,5 · `STAGE_ORDER` natuerlich · „Weiter zu deinem Plan" · beide Wege unter dem Plan · `stage-advance__skip` benutzt · `var(--ink)`/`var(--line)` 0/0 · `_so: 8` · Tabelle mit `6:5` · `syncPlanAdvance` an zwei Aufrufstellen · `planFromInvite` weg · Fliesstext nennt den Plan zuerst. **Ausgelieferte Datei md5-gleich mit dem Repo.** Sitemap live 136 Adressen, Startseite und Planer auf 2026-09-08.
+
+**Der Trichter auf der echten Seite durchgeklickt, nicht am Spiegel:** Plan bei y = 2054, Einladung danach bei y = 4244 — darunter. Punkte 3 erledigt / 4 aktiv. Abkuerzungsweg: Stufe 5 aktiv, Einladung zu, Punkt 4 ohne Klasse mit `tabindex 0`, Abzeichen „⏳ Fast fertig — 1 Schritt offen". Schrift diesmal nachweislich geladen.
+
+### Der Befund, der beim Vergleich live gegen Repo herausfiel — und mit Block 8 nichts zu tun hat
+
+Der Pruefstand hat nach dem Deploy **alle 245 ausgelieferten Seiten live gegen das Repo gestellt**, nicht als Stichprobe: **240 identisch, 5 abweichend, 0 Abrufprobleme.** Im Repo geaendert war nur `kindergeburtstag.html` — die Regressionsfreiheit ist damit belegt statt behauptet. Und die fuenf Abweichungen sind der eigentliche Fund:
+
+**Cloudflares Mailschutz macht die Kontaktadresse auf den Pflichtseiten unlesbar.** Selbst nachgemessen:
+
+| Seite | live geschuetzt / Klartext | Repo geschuetzt / Klartext | Repo `mailto:` | live `mailto:` |
+|---|---|---|---|---|
+| /impressum | 1 / 0 | 0 / 1 | 0 | 0 |
+| /datenschutz | 6 / 0 | 0 / 7 | 1 | 0 |
+| /transparenz | 1 / 0 | 0 / 2 | 1 | 0 |
+| /ueber-uns | 3 / 2 | 0 / 7 | 3 | 0 |
+
+Auf **drei** Seiten steht live keine lesbare Adresse mehr; auf `/ueber-uns` ueberleben zwei Nennungen, weil Cloudflare nur `mailto:`-Links und ihren unmittelbaren Text anfasst. Der Knopf „📧 E-Mail schreiben" ist dort **noch da** — kaputt ist sein Ziel (`href="/cdn-cgi/l/email-protection#…"`). **Ein sichtbar intaktes Element mit totem Ziel ist schwerer zu entdecken als ein fehlendes**, und wer die Seite nur ansieht, haelt den Befund fuer erledigt. Auf **keiner** der vier Seiten steht live noch ein `mailto:`.
+
+**Der haerteste Fall ist das Impressum**, und er zeigt, dass der Schutz mehr tut als Links zu verschluesseln: dort steht im Repo (`:78`) schlicht `E-Mail: kontakt@machsleicht.de` als **reiner Text ohne Link** — `mailto:` kommt im Repo 0 Mal vor. Live macht Cloudflare daraus einen Anker auf den eigenen Schutzpfad mit dem sichtbaren Text `[email protected]`. Die Pflichtseite bot ohnehin nur eine Adresse zum Abtippen, und selbst die ist ohne JavaScript nicht mehr da. Betroffen sind §5 DDG (Impressum leicht erkennbar und unmittelbar erreichbar) und Art. 13 DSGVO (Kontaktdaten des Verantwortlichen). **Kein Code-Problem:** im Repo steht alles korrekt, die Ersetzung passiert auf dem Weg zum Leser. Ein Haken im Cloudflare-Dashboard (Scrape Shield → Email Address Obfuscation), nur Bolle kann ihn umlegen. Der Zustand besteht seit Monaten.
+
+**Die fuenfte Abweichung ist keine Cloudflare-Sache und fuer die Methode wichtig:** `einladung/studio/index.html` kommt live 20 Bytes kleiner an, weil **Netlify** die Seite umschreibt (doppelte zu einfachen Anfuehrungszeichen, `/kindergeburtstag.html` zu `/kindergeburtstag`). Eine von 245. Kein Schaden, aber: **eine ausgelieferte Datei ist nicht ueberall das, was im Repo steht.** „live == Repo" taugt deshalb nicht als Regel, wohl aber als **Regressionsprobe mit benannten Ausnahmen** — Mailschutz auf vier Seiten, Umschreibung auf der Studio-Seite. Sie kostet drei Minuten und hat heute zwei Dinge gefunden, die kein Grep je gezeigt haette, weil wir immer nur gefragt haben „ist das Neue da?" und nie „ist alles Uebrige noch das, was wir glauben?".
+
+### Bolles vier Entscheidungen vom 08.09.
+
+1. **Deploy: ja, jetzt.** Ausgefuehrt und live nachgemessen.
+2. **Befund 07: Knoepfe nachbauen.** Der Einladungstyp-Zweig wird sichtbar gemacht, Karte und Druck werden echte Varianten. Damit ist der tote Code eine Baustelle mit Auftrag — und die Stufen-Kandidatin „definierte Klassen werden benutzt" waere gegen genau diesen Code gelaufen. **Eine Stufe, die den Bestand anklagt, klagt manchmal einen Plan an.**
+3. **Kontrast: die fuenf festen Stellen dunkler machen**, plus das eine zu helle Motto (`baustelle`, `#E65100`, 3,79:1). Gemessen ueber 260 ausgelieferte Dateien und 47627 Regelbloecke: helle Schrift auf **festem** `#FF6F00` gibt es an 5 Stellen (Planer-Hauptknopf, Spiel-Hinweis, viraler Knopf der Gaesteseite, zwei Mail-Knoepfe), helle Schrift auf `var(--accent)` an 20 — und **14 von 15 Mottofarben liegen ueber 4,5:1**, keine unter 3,0. „Die Marke erfuellt AA nicht" war eine Vermutung, die durch zwei Haende ging, bevor sie gemessen wurde; richtig ist „fuenf Stellen benutzen den Ersatzwert statt des Akzents". Die zwei Mail-Knoepfe sind ein eigener Fall: dort kann niemand nachtraeglich etwas aendern.
+4. **Neue Stufen: „benutzte Stilvariablen sind gesetzt" und „Abschnitte in Trichter-Reihenfolge".** Die dritte (definierte Klassen werden benutzt) hat er nicht genommen — siehe Punkt 2.
