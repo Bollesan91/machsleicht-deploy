@@ -30,10 +30,12 @@ function corsHeaders(request) {
 // Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
 // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
 const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
-const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale in vier Schreibweisen (mit und ohne Leerzeichen, gerader und typografischer Apostroph).
+const BRAND = "mach's leicht";   // 08.09.2026 (Bolle): EIN Markenstring — gerader Apostroph, mit Leerzeichen. Vorher elf Literale im Worker in zwei Schreibweisen (mit und ohne Leerzeichen), seitenweit vier.
 // 08.09.2026 (Bolle, F8): Vorschaubild je Motto fuer WhatsApp/OG, wenn die Party kein Foto traegt. Abgeleitet aus den og-<slug>.png im
-// Repo-Root am 08.09.2026 (30 Dateien); Kandidat fuer eine Linter-Stufe: Set == Dateien.
-const OG_MOTTOS = new Set(["baustelle", "default", "detektiv", "dino", "einhorn", "feuerwehr", "frozen", "harry-potter", "home", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "prinzessin", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
+// Repo-Root am 08.09.2026: 30 Dateien, davon 26 mit eindeutigem Inhalt. Byte-gleiche Dateien sind Platzhalter, kein Motto-Bild
+// (Re-Check 5: og-prinzessin.png war eine Kopie des Frozen-Banners — jede fotolose Prinzessin-Party haette das falsche Bild gezeigt); sie
+// fallen auf og-home.png zurueck, bis ein eigenes Bild existiert. Paar in Stufe 65 (Pruefstand): Set == eindeutige og-*.png.
+const OG_MOTTOS = new Set(["baustelle", "detektiv", "dino", "einhorn", "feuerwehr", "harry-potter", "meerjungfrau", "minecraft", "ninjago", "paw-patrol", "pferde", "piraten", "pokemon", "ratgeber", "ritter", "safari", "schatzsuche", "schatzsuche-detektiv", "schatzsuche-dino", "schatzsuche-dschungel", "schatzsuche-feen", "schatzsuche-piraten", "schatzsuche-weltraum", "spider-man", "super-mario", "weltraum"]);
 const MAX_GUESTS = 30;
 const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
 // Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
@@ -3035,13 +3037,14 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
       INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
       sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
-      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB} Link kopieren"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
-      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705 Kopiert"; setTimeout(function(){bC.textContent="\u{1F4CB} Link kopieren";},1500); }); };
+      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB} Link"; bC.title="Link kopieren";   // 08.09. (Bolle, F7): Emoji allein war im Editor nicht zu verstehen — Wort dazu, hier und bei den zwei Nachbarn
+      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705 Kopiert!"; setTimeout(function(){bC.textContent="\u{1F4CB} Link";},2000); }); };
       const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC} WhatsApp"; bW.title="Per WhatsApp senden";
       bW.onclick=function(){ const rn=(INV_ROLES.find(function(r){return r.id===inv.role;})||{}).n; const t=inv.n+", du bist "+(rn?"als "+rn+" ":"")+"eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
       const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715 Entfernen"; bX.title="Entfernen"; bX.style.color="#C62828";
       bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
-      row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+      const br=document.createElement("div"); br.style.cssText="flex-basis:100%;height:0";   // Re-Check 5: Umbruch fest nach Name+Rolle, die drei Knoepfe stehen geschlossen in Zeile 2 (statt zufaellig dreizeilig)
+      row.appendChild(nm); row.appendChild(sel); row.appendChild(br); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
       root.appendChild(row);
     });
     const hint=document.getElementById("invHint");
