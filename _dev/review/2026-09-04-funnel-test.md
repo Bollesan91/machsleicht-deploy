@@ -2116,3 +2116,70 @@ wird beim naechsten Anlass falsch angewandt.**
 Messung zeigt und in die falsche Richtung zieht. Beim Grundton-Vorschlag haette sie Block 10 umgedreht,
 hier haette sie das Banner genommen. **Die Messung stimmte beide Male, die Ableitung nicht — und beide
 Male hat es die jeweils andere Sitzung gesehen.**
+
+### Richtigstellung zu T14 — vier Fassungen einer Zahl, und was daraus zu lernen ist
+
+Meine Zeile nannte drei Seiten als Beispiel und las sich wie eine Menge. **Sie war eine Stichprobe.**
+Beim Nachziehen sind an einem Vormittag **vier Fassungen derselben Zahl** entstanden — 156, 44, 23, 18 —,
+und die ersten drei standen auf einer Definition, die im Kopf stand statt in der Datei.
+
+**Deshalb steht die Definition hier ueber der Zahl und nicht daneben.**
+
+> **Grundmenge:** getrackte HTML ohne `_dev/`, `_build/`, `_src/` — **245**.
+> Beleg fuer die Abgrenzung: `/paket/prinzessin/` antwortet mit **404** (gitignored),
+> `/paket/ritter/` mit **200** (getrackt) — zwei Nachbarpfade, ein Ordner.
+> **Planer-Link:** `/kindergeburtstag`, optional mit `?` oder `#`, **nicht** gefolgt von `/`, `-` oder
+> Wortzeichen — **695 echte gegen 732 Fehltreffer** des lockeren Musters.
+> **Mottos:** die **15** Ids aus `kindergeburtstag.html`, nicht aus Ordnernamen.
+
+```
+Seiten mit echtem Planer-Link                140
+   mindestens einer MIT Parameter             87
+   KEINER mit Parameter                       53
+davon: Seite kennt Motto oder Alter           18   <- die handlungsfaehige Menge
+   15x einladung/<motto>/index.html           kennt ihr Motto
+    3x kindergeburtstag-5/-6/-7-jahre         kennt ihr Alter
+```
+
+**Ergebnis: 18 Seiten kennen etwas, das der Planer lesen kann, und geben es nicht mit.** Alle achtzehn
+sind generiert — die Reparatur ist eine Generatorzeile, keine achtzehn Handgriffe. Wer von der
+Piraten-Einladungsseite in den Planer geht, kaeme dann mit Piraten an statt bei null.
+
+**Die Kontrollzahl, die alles entschieden hat: 732 Fehltreffer gegen 695 Treffer.** Das lockere Muster
+`/kindergeburtstag[^"]*` zaehlt `/kindergeburtstag/<motto>` (die Motto-Seite) und
+`/kindergeburtstag-<ratgeber>` (die Ratgeberseiten) mit — **mehr Fehltreffer als Treffer.** Jede Zahl auf
+diesem Muster misst zwei verschiedene Dinge zusammen. Beide Sitzungen kamen unabhaengig auf **exakt 732**.
+
+**Und die vier Fassungen haben zwei verschiedene Ursachen, die zusammengehoeren:**
+
+- **Das Muster geraten** (Autor): `/kindergeburtstag/baustelle` als Planer-Link gezaehlt. Reparatur: ein
+  negativer Vorblick. Aufgefallen an einem Widerspruch in der eigenen Zahl — eine Datei stand auf der
+  Liste „gibt kein Motto mit" und enthielt `motto=`.
+- **Die Menge geraten** (Pruefstand): Mottos aus dem Ordnernamen abgeleitet, damit zaehlten `erstellen`,
+  `studio`, `text`, `whatsapp` und die Uebersichtsseite als Mottos mit — 23 statt 18. Reparatur: die Ids
+  aus der Quelle.
+
+**Beide Male stand die Definition im Kopf statt in der Datei, und beide Male war die Reparatur dieselbe:
+aus der Quelle ableiten.** Die Klasse dahinter ist die schaerfste des Tages: **eine Mengenaussage ohne
+Definition ist keine Messung, sondern eine Formulierung.** „Die generische Spur", „die Ueberschneidung ist
+gross", „156 Seiten ohne Parameter" — dreimal wie ein Befund geklungen, dreimal eine Formulierung.
+
+**Damit faellt auch meine Behauptung, T1 und T14 seien dieselbe Familie.** Gemessen: 3 von 18 und 3 von 17.
+**Klein, nicht gross — zwei Baustellen, nicht eine.** Zurueckgenommen.
+
+### Protokoll zwischen den Sitzungen, dritte Haelfte
+
+Ein Prueflauf ist an diesem Vormittag verlorengegangen, weil ein Doku-Commit 94 Sekunden nach der
+Lauf-Ankuendigung kam. Anders als beim Fall vom Vortag war diesmal der **Arbeitsbaum** betroffen, und zwar
+eine Datei, die zwei Stufen lesen — das Ergebnis war keinem SHA mehr zuzuordnen. **„Wahrscheinlich gruen"
+ist kein Gate.**
+
+Die Reparatur ist eine Regel, kein neues Wort:
+
+> **Eine Lauf-Ankuendigung hebt das stehende „Strom frei" auf. Nach dem Lauf kommt ein neues
+> „Strom frei \<SHA\>".**
+
+**Begruendung: eine Freigabe, die man nicht widerrufen kann, ist keine Freigabe, sondern eine
+Erinnerung.** Und die Last liegt bei der Seite, die sie pruefen kann: der Pruefstand kann nie wissen, ob
+seine Ankuendigung gelesen wurde — der Autor kann immer wissen, ob seit seinem letzten Schreiben ein
+passendes „Strom frei" stand.
