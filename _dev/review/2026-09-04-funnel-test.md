@@ -2524,3 +2524,131 @@ Motto-Seite ausgebaut wird, ist das die Reihenfolge.
 Zwei Zeilen im selben Kasten koennen aus zwei verschiedenen Zeitpunkten stammen, und **das Datum
 daneben zu lesen ist Teil des Befunds, nicht Beiwerk.** Dieselbe Form wie Falle 18 (die Datei ist
 nicht mehr die, die ich gelesen habe) — nur dass hier nicht der Baum, sondern der Bericht alt ist.
+
+### Der Plan-Token in der Adresszeile — zwei Tage live, vier Senken, eine Wortsuche entfernt
+
+Gefunden **nicht durch Suchen, sondern beim Gegenlesen eines Entwurfs.** Der Magic-Link
+`machsleicht.de/kindergeburtstag?plan=<token>` (seit 07.09.) traegt einen **Bearer-Schluessel**:
+
+```
+GET /api/plan/<token>   prueft NUR /^[A-Za-z0-9_-]{16,96}$/ — keine Authentifizierung
+plan:<token> enthaelt   email · Kindname · adresse (200 Zeichen) · hostPhone · Datum
+                        · exactAge · crewText
+```
+
+**Vier Senken, und der erste Fix deckte genau eine:**
+
+```
+1  Statistik-Dienst   umami meldet Pfad UND Query     -> data-exclude-search fehlte im Planer
+2  Browser-Verlauf    bleibt auf dem Geraet           \
+3  kopierte Adresse   "schau mal, mein Plan"           |-> replaceState 0x, pushState 0x, history. 0x
+4  Screenshot         der Token steht in der Leiste   /
+```
+
+**Zur ersten Senke: der Worker macht es an beiden Render-Stellen richtig** (`data-exclude-search`
+2x), **genau weil seine URLs `?edit=` und `?g=` tragen.** Der Planer hat den Schalter nicht — und
+seine URL traegt den Token. `data-do-not-track` hilft nicht: es steuert, ob der Dienst ein
+DNT-Signal **beachtet**, nicht was er **sendet**.
+
+**Und die haerteste Zeile des Befunds steht im eigenen Repo, datiert auf denselben Tag, an dem der
+Magic-Link gebaut wurde:**
+
+> `// P0-Security: Token NUR aus Body — Query-Parameter waere in CF-Logs persistiert` (Zeile 699)
+
+**Dieselbe Sorge, woertlich aufgeschrieben, zwei Dateien weiter — und beim Bauen nicht gelesen.**
+Das ist die Normen-Klasse dieses Tages in ihrer teuersten Form. Die Reparatur dagegen ist keine
+Regel, sondern eine Frage: **wenn ich einen Token in eine URL schreibe, wo steht in diesem Repo
+schon etwas ueber Tokens in URLs?** Die Antwort stand da. Sie wurde nicht gesucht.
+
+**Zur zweiten Senke, die der Pruefstand ergaenzt hat:** mein Fix haette die Senke geschlossen und
+die Quelle offen gelassen. **Auf einem geteilten Familienrechner ist der Verlauf die schlechteste
+Senke von allen — sie braucht keinen Dritten und kein Netz.** Beides wurde in EINEM Block gebaut,
+aus einem Grund, der die Reihenfolge betrifft: **getrennt gebaut haette nach dem ersten Commit ein
+halb geschlossenes Leck im Baum gestanden, und der zweite Teil haette wie Kosmetik ausgesehen.**
+
+Drei Gegenmessungen **vor** dem Bauen, die den Eingriff erst gefahrlos gemacht haben:
+`p.get('plan')` genau **1x** (also ist Loeschen sicher), `URLSearchParams` **2x** — wovon die zweite
+(`buildAutopilotHref`) eine URL **baut** statt die eigene zu lesen —, und `history.` vorher **0x**.
+
+### Die Bruecke, verworfen — und sechs Befunde, die dabei ersatzlos verschwanden
+
+Der Entwurf „Plan-Token an die Party haengen, Karte verlinkt in den Planer" wurde von einer
+adversarischen Gegenprobe zurueckgewiesen. **Drei Gruende, alle am Quelltext nachgelesen:**
+
+1. **Sie haette bei den meisten nichts getan — wegen der eigenen Benutzerfuehrung.** Ein Plan-Token
+   entsteht nur ueber „Spaeter -> E-Mail". Der Planer empfiehlt das **nach** dem Aktivieren der
+   Partyseite (Knopf in stage4, Mail in stage5, Abschlusstext 3377). Beim `/api/create` gibt es
+   also meist keinen Token — **und der Ausfall haette ausgesehen wie „hat halt keinen Link geholt".**
+2. **Sie haette eine Gefahr geschaffen.** Die Karte oeffnet den Planer mit wiederhergestelltem Plan,
+   aber ohne Kenntnis der bestehenden Partyseite (`planEingaben()` traegt `partyseite` nicht). Zwei
+   Klicks weiter steht der Aktivieren-Knopf scharf: **zweite Partyseite, zweiter editToken, Gaeste
+   auf zwei URLs.** Heute unmoeglich, weil die Karte in einen leeren Planer fuehrt.
+3. **`plan:<token>` ist ein eingefrorener Schnappschuss** — put 938, get 965, kein PUT. Die Karte
+   haette „Spiele, Zeitplan und Einkaufsliste" versprochen und den Stand vom Klick auf „Spaeter"
+   geliefert.
+
+**Bolle hat es kuerzer gesagt: „das klingt alles ziemlich scheisse."** Und er hatte recht — nicht an
+einem Detail, sondern an der Form. **Jede Pruefrunde machte den Umbau groesser statt kleiner. Das
+war das Signal, und es wurde nicht gelesen, sondern immer feiner geplant.**
+
+**Die neue Form ist kleiner, weil sie die Frage anders stellt: der Plan gehoert AUF die Partyseite,
+nicht daneben.** Der Planer schickt den fertig gerechneten Ablauf beim Anlegen mit
+(`_planTimes(state.plan.acts)` — die Liste, die er ohnehin rendert), der Worker legt sie unter
+`ablauf:<id>` mit `partyOpts` ab, die Editor-Seite zeigt sie als Karte. **Ein Gast-Aufruf liest den
+Schluessel nicht einmal; DELETE raeumt ihn mit ab.**
+
+**Und das ist der eigentliche Ertrag des Tages, den keine Befundtabelle zeigt:**
+
+```
+Token, der lecken kann      weg — es gibt keinen
+Sprung in den Planer        weg — man verlaesst die Partyseite nicht
+TTL-Schere                  weg — eine Frist statt zwei
+Anker, der das Banner nahm  zurueckgenommen
+Namen im 90-Tage-Satz       zurueckgenommen
+Sechserliste am falschen Stop  zurueckgenommen
+```
+
+**Sechs Befunde, keiner repariert, alle sechs gibt es nicht mehr.** Eine Tabelle zaehlt nur, was
+behandelt wurde — **das Beste an diesem Nachmittag war, was nicht mehr behandelt werden musste.**
+
+### Klasse: eine Regel, die Vorwissen verlangt, das erst hinterher entsteht
+
+Zweimal an einem Nachmittag war die Vorab-Anmeldung der Kennzahlen unvollstaendig — beim
+Statistik-Fix fehlten drei (`data_attribute`, `const_deklarationen`, `try_bloecke`), beim
+Ablauf-Bau wieder drei (`function_schluesselwort` +2, `try_bloecke` +1, `zeilen_ueber_300` +1).
+**Keine davon war ein Fehler; alle waren direkte Folgen der eigenen Zeile.**
+
+**Der Befund ist nicht die Nachlaessigkeit, sondern die Bauart der Regel: sie verlangt, VOR dem
+Schreiben zu wissen, welche von 60 Kennzahlen eine Zeile beruehrt — und das weiss man erst, wenn
+man die Zeile geschrieben hat.** Zweimal in Folge unvollstaendig ist kein Ausrutscher, das ist die
+Form.
+
+**Die Reparatur ist dieselbe wie bei der dritten Protokollfassung heute Vormittag: die Last dorthin
+legen, wo die Information tatsaechlich vorliegt.** Dort war es der Baum statt die Nachricht, hier
+ist es die Messung statt die Vorhersage:
+
+> **Angemeldet wird nur, was sich NICHT bewegen darf** (die neun stehen fest). **Der Pruefstand misst
+> alles; jede Bewegung ausserhalb der neun ist eine Frage an den Autor, kein Befund.**
+
+Dieselbe Diagnose in einem Satz: **eine Regel, die funktioniert, solange nichts Ungeplantes
+passiert, ist gegen genau den Fall wirkungslos, fuer den sie gebaut wurde.**
+
+### Zwei Tickets, ausdruecklich nicht nebenbei mitgenommen
+
+**1. Die Verbotsliste ist die falsche Richtung.** Der oeffentliche Party-GET filtert per
+DENY-Liste: `const {editToken,email,doiToken,ref,address,invites,...safe} = party;` — **sechs
+Felder geheim, 27 von 32 automatisch oeffentlich.** Der Fehler passiert damit **durch Vergessen,
+nicht durch Handeln**, und er ist schon passiert: **`party.reminded7` wird gesetzt und geht heute
+oeffentlich raus**, ohne dass es jemand entschieden haette. Eine Erlaubnisliste kehrt das um: dort
+ist ein vergessenes Feld unsichtbar statt oeffentlich. **27 betroffene Felder und fuenf Anker eines
+Gegenprobe-Skripts haengen an der Zeile — ein eigener Block, keine Beigabe.**
+
+**2. Worker und Planer sind bei der Statistik auseinandergelaufen.** Der Worker hat
+`data-exclude-search` ohne `data-do-not-track`, der Planer hatte es umgekehrt (jetzt beides).
+**Ob die Partyseiten zusaetzlich DNT beachten sollen, ist eine Verhaltensaenderung auf allen
+Seiten** — Bolles Entscheidung.
+
+**Und zwei, die zum Ablauf-Bau gehoeren:** die **Einkaufsliste** (wird vor der Party zuhause
+gebraucht, nicht am Partytag auf dem Handy) und das **Aktualisieren des Ablaufs** nach dem Anlegen.
+Der bestehende PATCH kann es; wann er feuern darf, haengt an **1.000 KV-Writes pro Tag im
+Gratis-Tarif** — nachgelesen im Kommentar Zeile 381, nicht geschaetzt.
