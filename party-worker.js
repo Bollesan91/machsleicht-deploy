@@ -520,6 +520,19 @@ export default {
       party.hasGamePhoto = !!_prValid;
       party.hasPhoto = !!(body.photo && isSafePhoto(body.photo)); // og:image-Flag (WhatsApp-Link-Vorschau via /api/ogimg) — vermeidet KV-Read beim Serve
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), partyOpts(party));
+      // 09.09.: Der Ablaufplan gehoert AUF die Partyseite, nicht daneben. Eigener Schluessel,
+      // KEIN Feld an der Party: der Public-GET strippt per VERBOTSLISTE (Zeile ~543), ein Feld
+      // ginge automatisch an jeden Gast — die Spielplanung geht die Gaeste nichts an.
+      // Haltbarkeit = die der Party (partyOpts): der Plan stirbt mit ihr, ohne eigene Regel.
+      if (Array.isArray(body.ablauf) && body.ablauf.length) {
+        const _ab = body.ablauf.slice(0, 24).map(a => ({
+          t: /^\d{2}:\d{2}$/.test(asStr(a && a.t)) ? asStr(a.t) : "",
+          e: asStr(a && a.e).slice(0, 4),
+          n: asStr(a && a.n).slice(0, 60),
+          d: Math.max(0, Math.min(300, parseInt(a && a.d, 10) || 0))
+        })).filter(a => a.n);
+        if (_ab.length) await env.PARTY.put(`ablauf:${id}`, JSON.stringify(_ab), partyOpts(party));
+      }
       if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
@@ -721,6 +734,8 @@ export default {
       await env.PARTY.delete(`photoRound:${id}`);
       await env.PARTY.delete(`invphoto:${id}`); // Review-MAJOR 2026-07-12 (DSGVO): Spielfoto blieb sonst nach "endgueltig loeschen" bis TTL unter /api/invimg abrufbar
       if (party.doiToken) await env.PARTY.delete(`doi:${party.doiToken}`);
+      await env.PARTY.delete(`ablauf:${id}`);   // 09.09.: der Ablaufplan gehoert zur Party
+      // und geht mit ihr — "alle zugehoerigen Daten" in der Antwort unten meint jetzt auch ihn.
       return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
     }
 
@@ -1309,7 +1324,12 @@ export default {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
       // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
+      // 09.09.: Der Ablauf wird NUR fuer die Editor-Ansicht gelesen — ein Gast-Aufruf fasst den
+      // Schluessel nicht einmal an. Als eigener Parameter durchgereicht, NICHT an `party`
+      // gehaengt: ein Feld am Party-Objekt liefe in den Public-GET (Verbotsliste).
+      let ablauf = [];
+      if (isEditor) { const _ar = await env.PARTY.get(`ablauf:${id}`); if (_ar) { const _ap = safeParse(_ar); if (Array.isArray(_ap)) ablauf = _ap; } }
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite,ablauf),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
     }
 
     // Live-Re-Check 07.09. (F5): ein vertippter Link bekam 9 Byte "Not found" als text/plain — die HTML-Seite gab es nur fuer unbekannte Party-IDs
@@ -1988,7 +2008,7 @@ function clearChipSelection(){
 // ═══════════════════════════════════════════════════════════════
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
-function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
+function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite, ablauf) {
   const color = /^#[0-9a-fA-F]{6}$/.test(party.mottoColor||"") ? party.mottoColor : "#D4812A";  // L10: Read-Guard wie bei paypalMe — Altbestand landet sonst ungeprueft im <style>
   const name = esc(party.childName);
   const age = party.age || "";
@@ -2014,7 +2034,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
-  ${editorView(party,color,dateStr,name,age,motto,emoji,ogUrl)}
+  ${editorView(party,color,dateStr,name,age,motto,emoji,ogUrl,ablauf)}
   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 </div>
 </body></html>`;
@@ -2788,7 +2808,7 @@ ${(isPreview || invite) ? "loadPhoto();loadWishes();loadGuestCount();" : ""}${in
 // ═══════════════════════════════════════════════════════════════
 // EDITOR VIEW
 // ═══════════════════════════════════════════════════════════════
-function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl, ablauf) {
   if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
   const ja = party.guests.filter(g=>g.status==="ja");
   const vielleicht = party.guests.filter(g=>g.status==="vielleicht");
@@ -2854,7 +2874,8 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin:0 0 8px">\u{1F4DD} Dein Ablaufplan</h2>
-    <p style="font-size:13px;color:var(--m);margin:0 0 12px">Spiele, Zeitplan und Einkaufsliste f\u00FCr den Tag. Hast du den Plan auf diesem Ger\u00E4t begonnen, geht es genau dort weiter.</p>
+    <p style="font-size:13px;color:var(--m);margin:0 0 12px">${(ablauf && ablauf.length) ? "Dein Ablauf f\u00FCr den Tag \u2014 so, wie du ihn beim Anlegen der Partyseite hattest." : "Spiele, Zeitplan und Einkaufsliste f\u00FCr den Tag. Hast du den Plan auf diesem Ger\u00E4t begonnen, geht es genau dort weiter."}</p>
+    ${(ablauf && ablauf.length) ? `<div style="border-top:1px solid var(--l);margin:4px 0 12px">${ablauf.map(a => `<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--l)"><span style="font-variant-numeric:tabular-nums;font-weight:700;font-size:13px;color:${color};min-width:44px">${esc(a.t)}</span><span style="font-size:13px">${esc(a.e)} ${esc(a.n)}</span></div>`).join("")}</div>` : ""}
     <a href="https://machsleicht.de/kindergeburtstag" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm" style="text-decoration:none">\u2192 Plan \u00F6ffnen</a>
   </div>
 

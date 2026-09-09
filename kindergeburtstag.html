@@ -3271,7 +3271,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       // M11: geprueft wird der DOM-Wert, gesendet wurde bisher der State — bei Autofill laufen
       // beide auseinander (Pflichtfeld bestanden, Payload leer). Jetzt dieselbe Quelle fuer beides.
       hostName: _psHost.slice(0,60), hostPhone: _psPhone.slice(0,30), areaHint: _psArea.slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
-      notes: _psNotes.slice(0,300), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
+      notes: _psNotes.slice(0,300), askAllergies: true, askPickup: true, ablauf: (function(){ try{ var _a = (state.plan && Array.isArray(state.plan.acts)) ? _planTimes(state.plan.acts) : []; return _a.slice(0,24).map(function(x){ return {t:x.time||'', e:x.emoji||'', n:x.title||'', d:+x.durationMin||0}; }); }catch(e){ return []; } })(), wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
     };
     try{
