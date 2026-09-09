@@ -2652,3 +2652,88 @@ Seiten** — Bolles Entscheidung.
 gebraucht, nicht am Partytag auf dem Handy) und das **Aktualisieren des Ablaufs** nach dem Anlegen.
 Der bestehende PATCH kann es; wann er feuern darf, haengt an **1.000 KV-Writes pro Tag im
 Gratis-Tarif** — nachgelesen im Kommentar Zeile 381, nicht geschaetzt.
+
+### Dritter Deploy 09.09. — `main = 0ec866d3`, Worker `0ff744cc` — und der erste mit HTML
+
+Bolles Wort: **„Gut Ende deploy."** Damit war der Datenschutz-Wortlaut freigegeben und der Deploy.
+
+**Vor dem Merge, weil HTML dabei ist:** `sitemap.xml` neu erzeugt (Generatorlauf angesagt).
+Nachgeprueft statt geglaubt — **der Generator hat NUR `sitemap.xml` angefasst**, die URL-Menge ist
+identisch (136 vor und nach), und **genau eine `lastmod` hat sich bewegt: `/kindergeburtstag`
+2026-09-08 -> 2026-09-09.**
+
+**Warum `/datenschutz` NICHT in der Sitemap steht — der Grund gehoert neben die Zahl, sonst liest es
+jemand in sechs Monaten als Luecke und traegt sie ein:**
+
+```
+/datenschutz    <meta name="robots" content="noindex">   ->  0x in der Sitemap
+/impressum      <meta name="robots" content="noindex">   ->  0x in der Sitemap
+/transparenz    KEIN noindex                             ->  1x in der Sitemap
+```
+
+**Zwei mit Ausschluss draussen, eine ohne drin — die Regel ist konsistent, nicht zufaellig.** Eine
+Seite mit `noindex` in einer Sitemap waere ein Widerspruch, den Google meldet. **Sie ist nicht
+vergessen, sie ist ausgeschlossen.** (Beobachtung des Pruefstands; die dritte Zeile als Gegenprobe
+ist von hier.)
+
+**Der Merge, mit einer Kontrolle, die den ganzen Zweifel abraeumt:**
+
+```
+git merge-tree --write-tree main draft   ->  0adcc61921d2
+git rev-parse draft^{tree}               ->  0adcc61921d2     IDENTISCH
+```
+
+**`main` hat exakt den geprueften Stand bekommen — nichts dazu, nichts weg.**
+
+**Reihenfolge Seite/Worker, vorher beide Richtungen durchgeprueft:** schickt der neue Planer
+`ablauf` an einen alten Worker, ignoriert der es (`/api/create` liest nur benannte Felder);
+akzeptiert der neue Worker `ablauf` und niemand schickt es, passiert nichts. **Gefahrlos heisst
+nicht beliebig — beides lief trotzdem dicht hintereinander.**
+
+**Live nachgemessen am ausgelieferten Planer:**
+
+```
+data-exclude-search   0 -> 2      der Statistik-Dienst bekommt den Query-String nicht mehr
+replaceState          0 -> 1      der Token verschwindet aus der Adresszeile
+ablauf                0 -> 1      der Planer schickt den Ablauf beim Anlegen mit
+Bytes            331.305 -> 332.451
+Datenschutz: "Ablaufplan" 2x, alter Halbsatz 0x · Sitemap: lastmod 2026-09-09
+/ · /kindergeburtstag · /datenschutz · /sitemap.xml   alle 200
+```
+
+**Ein Fehlalarm auf dem Weg, wieder aus dem eigenen Muster:** die erste Pruefung der
+Datenschutzseite meldete **0 Treffer fuer alle drei Suchen** — auch fuer den alten Halbsatz, der
+weg sein SOLLTE, und den neuen, der da sein sollte. **Beides 0 ist kein Befund, sondern ein
+Werkzeugausfall**, und so war es: `grep 'dazugeh.rigen'` traf den Umlaut nicht. Roh nachgesehen:
+alles korrekt. **Zwei Nullen in entgegengesetzte Richtungen sind der zuverlaessigste Hinweis
+darauf, dass nicht der Gegenstand, sondern die Messung kaputt ist.**
+
+### Der Live-Test, den ein Syntax-Gate nicht ersetzt
+
+`node --check` sagt, dass Code **parst** — nicht, dass er das Richtige **ausgibt**. Bei
+verschachtelten Template-Literalen ist genau das die Bruchstelle. Deshalb zwei Stufen:
+
+**1. Die Karte gerendert, vor dem Deploy, ohne Netz:** die fuenf Kartenzeilen aus der Datei
+geschnitten, mit der **echten** `esc()`-Funktion (nicht einem Nachbau) und Testdaten aufgerufen.
+**13 von 13**, darunter: ein Spielname `<script>alert(1)</script>` kommt als `&lt;script&gt;`
+heraus, kein `undefined`, keine rohe `${`-Interpolation, genau sechs gerenderte Zeilen.
+
+**2. Eine echte Party gegen das Live-System, mit Ablauf.** **9 von 9:**
+
+```
+Editor  200 · alle sechs Uhrzeiten · Titel gerendert · neuer Satz · sechs Ablaufzeilen
+GAST    200 · KEIN Ablauf · kein Spielname · kein editToken
+delete  200 · Kontrolle danach 404
+```
+
+**Der wichtigste Test ist der negative.** `ablauf:<id>` ist ein eigener Eintrag, aber **Zeile 543
+ist eine Verbotsliste, und die hat heute schon bewiesen, dass sie neue Felder durchlaesst**
+(`reminded7`). Ein **„steht nicht da" mit Empfangsbeweis** ist dort mehr wert als drei „steht da".
+
+**Und die Lehre vom Vormittag wurde angewandt, bevor sie gebraucht wurde:** die Aufraeumzeile stand
+im **selben** Skript wie die Probe, in einem `finally` — sie laeuft auch, wenn die Pruefung
+abbricht. **Genau daran ist heute Vormittag die eine Testparty gescheitert, die niemand mehr
+loeschen kann.** Nicht „ich denke dran", sondern die Zeile steht schon da.
+
+**Search Console: dieser Deploy ist der erste des Tages MIT HTML.** Die beiden am Vormittag waren
+fuer die Indexierung folgenlos; dieser traegt ein neues `lastmod` auf `/kindergeburtstag`.
