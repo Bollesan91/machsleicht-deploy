@@ -2280,3 +2280,50 @@ nach der letzten Aenderung. **Ticket, kein Blocker: die Plan-TTL an dieselbe Reg
 (meine Empfehlung, keine zweite Kopie, keine Abgleichregel) oder einmal erzeugen und ablegen (schneller
 beim zweiten Oeffnen, dafuer Dubletten und eine Verfallsregel). **Alles Weitere — Karte, Route, Druckmasse —
 haengt daran und ist danach Handwerk.**
+
+### Search Console, zweite Zehnerliste (09.09.) — und warum sie ins Dokument gehoert
+
+Bolle hat die Sitemap und die erste Zehnerliste am 08.09. eingereicht und heute nach zehn weiteren
+gefragt — **ausdruecklich „nicht die gleichen".** Er musste fragen, weil die erste Liste nur im Chat
+stand. **Eine Liste, die man nicht wiederfindet, ist eine Liste, die man doppelt einreicht.** Deshalb
+steht diese hier, mit dem Verfahren daneben.
+
+**Verfahren statt Gedaechtnis:** aus dem Sitzungsprotokoll (15.662 Zeilen) wurden die **85 Zeilen mit
+Search-Console- oder Indexierungs-Bezug** gefiltert und daraus **39 verschiedene URLs** gezogen — die
+Tabu-Menge. Gegen die 136 Sitemap-URLs gerechnet: **24 Ueberschneidungen fallen weg, 112 bleiben.**
+Aus denen die zehn. Jede live geprueft, alle drei Bedingungen erfuellt (**200 · Titel vorhanden ·
+mehr als 300 Woerter**), Spanne 650 bis 2379 Woerter.
+
+```
+1  /einladung/text/                   2078 W   staerkste Suchabsicht, die wir bedienen
+2  /kindergeburtstag-last-minute      1906 W   dringliche Suche, wenig Konkurrenz
+3  /kindergeburtstag-zuhause          1798 W   eigene Absicht, nicht "drinnen" von Runde 1
+4  /kindergeburtstag-5-jahre          2379 W   die fehlende Altersseite (6 und 7 sind eingereicht)
+5  /adventskalender-fuellen           1529 W   ZEITKRITISCH: Welle ab Oktober, Indexierung braucht Vorlauf
+6  /einladung/                        1556 W   Hub ueber 14 Motto-Vorlagen
+7  /kindergeburtstag/feuerwehr        2075 W   ein Motto-Hub als Fuehler fuer die anderen 13
+8  /kliniktasche-packen               1255 W   anderer Themenkreis, ganzjaehrig
+9  /baby-erstausstattung-checkliste   1419 W   dito
+10 /ueber-uns                          650 W   Vertrauenssignal, kuerzeste der zehn
+```
+
+**Bewusst NICHT drin: die rund 60 Motto-mal-Alter-Seiten** (`…/piraten-6-8-jahre` und Geschwister).
+Sie sind untereinander sehr aehnlich; zehn davon einzureichen sieht nach duenner Massenware aus.
+Stattdessen steht ein einziger Motto-Hub als Fuehler — zieht der, ziehen die anderen nach.
+
+**Anlass war eine andere Frage, und die Antwort gehoert dazu:** *„koennten wir Google austricksen,
+indem wir Ads kaufen? Dann muessten sie uns indexieren."* **Nein.** Anzeigenziele besucht
+**AdsBot-Google** fuer den Quality Score; **AdsBot schreibt nichts in den Suchindex.** Der Index wird
+von **Googlebot** gefuellt, der unabhaengig davon entscheidet, ob Geld fliesst — deshalb kann man auch
+eine Seite bewerben, die per `noindex` gar nicht in der Suche steht. Fuer Geld gibt es Traffic, nicht
+Indexierung.
+
+**Die technische Seite ist dabei gemessen worden, und sie ist frei:** `robots.txt` erlaubt alles
+Wesentliche, Sitemap eingetragen, `lastmod` bis 08.09. — **136 von 136 Sitemap-URLs abgerufen, 0 mit
+`meta robots noindex`**, jede Antwort mit Empfangsbeweis (`</html>` vorhanden).
+
+**Zwei eigene Fehlbefunde auf dem Weg dahin, beide vor dem Melden gefangen:** `/spiele` schien ein
+`noindex` zu tragen — es ist ein **404**, und das `noindex` gehoert der Fehlerseite. `/einladung` schien
+kein Canonical zu haben — es ist ein **301**, mein Grep las die Weiterleitung statt des Ziels.
+**Beide Male hat derselbe Schritt geholfen: erst den Statuscode holen, dann den Inhalt bewerten.**
+Eine Seite, mit der man gar nicht spricht, kann jede Eigenschaft zu haben scheinen.
