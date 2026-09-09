@@ -147,23 +147,23 @@ const MOTTO_COLORS = {
 // ── Theme System (full palette per motto) ──────────────
 const THEMES = {
   piraten:      {a:"#1E3A5F",d:"#0A1A2F",m:"#16304D",l:"#B8C7D9",bg:"#EAF0F6",h1:"#0A1A2F",h2:"#1E3A5F",h3:"#4A6886"},
-  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784",bt:"#2D2319"},
-  safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D",bt:"#2D2319"},
+  dino:         {a:"#4CAF50",d:"#1B5E20",m:"#4C7C2A",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784",bt:"#2D2319"},
+  safari:       {a:"#F57F17",d:"#4E3419",m:"#8C6D34",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D",bt:"#2D2319"},
   weltraum:     {a:"#1565C0",d:"#0D1B2A",m:"#1B3A5C",l:"#BBDEFB",bg:"#E3F2FD",h1:"#0D47A1",h2:"#1565C0",h3:"#64B5F6"},
   detektiv:     {a:"#546E7A",d:"#1B262C",m:"#455A64",l:"#CFD8DC",bg:"#ECEFF1",h1:"#263238",h2:"#455A64",h3:"#90A4AE"},
   superheld:    {a:"#D32F2F",d:"#4A0E0E",m:"#8B2222",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#EF5350"},
   prinzessin:   {a:"#E4165C",d:"#4A0E27",m:"#AD1457",l:"#F8BBD0",bg:"#FCE4EC",h1:"#880E4F",h2:"#C2185B",h3:"#F06292"},
   einhorn:      {a:"#AB47BC",d:"#4A148C",m:"#7B1FA2",l:"#E1BEE7",bg:"#F3E5F5",h1:"#6A1B9A",h2:"#9C27B0",h3:"#BA68C8"},
-  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#00838F",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1",bt:"#2D2319"},
+  meerjungfrau: {a:"#00ACC1",d:"#004D56",m:"#007A85",l:"#B2EBF2",bg:"#E0F7FA",h1:"#006064",h2:"#00ACC1",h3:"#4DD0E1",bt:"#2D2319"},
   feuerwehr:    {a:"#D32F2F",d:"#4A0E0E",m:"#C62828",l:"#FFCDD2",bg:"#FFEBEE",h1:"#B71C1C",h2:"#D32F2F",h3:"#E57373"},
   ritter:       {a:"#795548",d:"#3E2723",m:"#5D4037",l:"#D7CCC8",bg:"#EFEBE9",h1:"#4E342E",h2:"#6D4C41",h3:"#A1887F"},
   zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#B85000",l:"#FFE0B2",bg:"#FFF3E0",h1:"#994300",h2:"#D65D00",h3:"#FFB74D",bt:"#2D2319"},
   baustelle:    {a:"#F57F17",d:"#4A3000",m:"#B05608",l:"#FFF9C4",bg:"#FFFDE7",h1:"#934806",h2:"#CD6509",h3:"#FFF176",bt:"#2D2319"},
   pferde:       {a:"#976B49",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
-  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#558B2F",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
+  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#4C7C2A",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
   feen:         {a:"#9C27B0",d:"#38006B",m:"#7B1FA2",l:"#E1BEE7",bg:"#F5EEF8",h1:"#4A148C",h2:"#9C27B0",h3:"#CE93D8"},
 };
-const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960",bt:"#2D2319"};
+const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#807362",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960",bt:"#2D2319"};
 
 function getTheme(motto) {
   if (!motto) return DEFAULT_THEME;
@@ -1141,7 +1141,7 @@ export default {
       ` : "";
 
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
-        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
+        <p style="color:#807362;font-size:14px"><strong style="color:#A66521">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
         <a href="${editUrl}" style="display:block;background:#A66521;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
@@ -1420,9 +1420,9 @@ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--a:${color};--al:${color}18;--bg:#FFFCF7;--card:#fff;--d:#2D2319;--m:#8B7D6B;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px}
+:root{--a:${color};--al:${color}18;--bg:#FFFCF7;--card:#fff;--d:#2D2319;--m:#807362;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px}
 body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased}
-.container{max-width:480px;margin:0 auto;padding:16px}
+.container{max-width:480px;margin:0 auto;padding:16px}@media(min-width:900px){.container{max-width:760px}}/* 08.09.2026: baseHead hatte keinen einzigen Breiten-Umbruchpunkt — auf jedem Desktop stand hier eine 480-px-Spalte in der Mitte und sonst nichts. Bolles Entscheidung: erst nur breiter, kein Umbau. Die beiden Kurzmeldungs-Seiten (404, DOI) halten per Inline-Breite dagegen: dort steht ein voll breiter .btn allein im Behaelter, der sonst zum Balken wuerde. */
 h1,h2,h3{font-family:var(--fd)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 24px;background:var(--a);color:#fff;border:none;border-radius:var(--r);font:600 15px var(--f);cursor:pointer;transition:all .2s;width:100%;text-decoration:none}
 .btn:active{transform:scale(.97)}
@@ -2181,28 +2181,30 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:shimmer 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
 .hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
-.hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.6);margin-bottom:16px}
+.hero-inner::before{content:'';position:absolute;inset:-18px -14px;z-index:-1;border-radius:28px;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(0,0,0,.36) 0%,rgba(0,0,0,.29) 55%,rgba(0,0,0,0) 100%);pointer-events:none}
+.hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.9);margin-bottom:16px}
 .bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
 .float-deko{position:absolute;pointer-events:none;opacity:.6;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
 .float-deko.fd1{left:6%;top:38%;font-size:30px;animation-delay:.4s}
 .float-deko.fd2{right:7%;top:24%;font-size:24px;animation-delay:1.1s}
 .float-deko.fd3{right:14%;bottom:16%;font-size:22px;animation-delay:1.9s;animation-duration:4.2s}
-.hero-logo b{color:rgba(255,255,255,.9)}
+.hero-logo b{color:#fff}
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:bob 3s ease-in-out infinite}
 .hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
 .hero h1 .hname{background:linear-gradient(135deg,#fff 30%,${t.l});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-motto{font-size:16px;color:rgba(255,255,255,.8);font-weight:600}
-.hero-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px}
-.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
+.hero-motto{font-size:16px;color:#fff;font-weight:600}
+.hero-sub{font-size:13px;color:#fff;margin-top:8px}
+.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(0,0,0,.18);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
 .countdown-num{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff}
-.countdown-label{font-size:12px;color:rgba(255,255,255,.7);font-weight:600}
+.countdown-label{font-size:12px;color:#fff;font-weight:600}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
 .wave-divider svg{display:block;width:100%}
 .content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
+@media(min-width:900px){.hero-inner{max-width:760px}.content{max-width:760px}}/* 09.09.2026: dieselbe Grenze und dieselbe Breite wie in Block 15 fuer die Gastgeber-Seiten — zwei Zahlen fuer dieselbe Entscheidung waeren eine Dublette. Geprueft: 81 sichtbare Elemente, 0 laufen ueber; der einzige breite Knopf ist der Absende-Knopf des Zusage-Formulars. */
 .card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
@@ -2307,7 +2309,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="hero-emoji">${emoji}</div>
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
-  ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
+  ${invite?`<div class="hero-sub" style="font-size:16px;color:#fff;font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">${daysLeft===1?"Tag!":"Tage!"}</span></div>`:""}
 </div>
 </div>
@@ -2842,6 +2844,12 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   })()}
 
   <div class="card fade-up">
+    <h2 style="font-size:15px;color:${color};margin:0 0 8px">\u{1F4DD} Dein Ablaufplan</h2>
+    <p style="font-size:13px;color:var(--m);margin:0 0 12px">Spiele, Zeitplan und Einkaufsliste f\u00FCr den Tag. Hast du den Plan auf diesem Ger\u00E4t begonnen, geht es genau dort weiter.</p>
+    <a href="https://machsleicht.de/kindergeburtstag" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm" style="text-decoration:none">\u2192 Plan \u00F6ffnen</a>
+  </div>
+
+  <div class="card fade-up">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <h2 style="font-size:15px;color:${color};margin:0">\u{1F4CB} Party-Details</h2>
       <button class="btn btn-outline btn-sm" onclick="document.getElementById('editForm').classList.toggle('hidden');document.getElementById('detailsView').classList.toggle('hidden')">\u270F\uFE0F Bearbeiten</button>
@@ -3104,7 +3112,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 function notFoundPage() {
   return `${baseHead("Nicht gefunden \u2014 " + BRAND,"Party nicht gefunden")}
 <body>
-<div class="container" style="text-align:center;padding:60px 16px">
+<div class="container" style="text-align:center;padding:60px 16px;max-width:520px">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
   <div style="font-size:56px;margin-bottom:12px">\u{1F50D}</div>
   <h1 style="font-size:22px;margin-bottom:8px">Party nicht gefunden</h1>

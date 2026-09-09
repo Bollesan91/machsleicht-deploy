@@ -1420,3 +1420,146 @@ Sechs beim Autor, sechs beim Pruefstand. **Keiner waere an einem Exit-Code gesch
 - **Ein Werkzeug, das an seiner eigenen Erfolgsmeldung scheitert.** Das Commit-Skript stuerzte beim LESEN der Ausgabe seines Kindprozesses ab (cp1252 an einem Gedankenstrich); die Aenderung lag im Baum, der Commit fehlte. **Nach einem abgestuerzten Werkzeug prueft man den Zustand, nicht die Absicht.**
 
 **Und der einzige Fall, in dem die Kontrolle vorher kam statt hinterher:** bei der letzten Messung stand die Gegenprobe (`x{border-color:#FF6F00;color:#FF6F00}` muss genau einen Treffer geben) **vor** dem Zaehlen und schloss vier `border-color`-Treffer aus, bevor sie in eine Zahl geraten konnten. **Der Unterschied zwischen Pruefen und Aufraeumen kostet dasselbe, nur in der anderen Reihenfolge.**
+
+## Bolle sieht sich die Seite an (08.09., Bloecke 13 bis 15)
+
+Die drei letzten Bloecke des Tages kamen nicht aus einem Gutachten, sondern daraus, dass Bolle die
+Seite geoeffnet und gesagt hat, was er sieht. **Beide Befunde, die daraus wurden, hatte kein Reviewer
+gefunden — und einer davon war mein eigener Fix.**
+
+### Block 13 (`f33f4b56`) — der PayPal-Knopf erbte die dunkle Schrift
+
+Re-Check 14, zwei Befunde, beide fix-induziert:
+
+- **MAJOR.** Der PayPal-Knopf auf der Gaesteseite ueberschreibt per Inline-Stil nur den *Hintergrund*.
+  Seit Block 10 holt `.btn` seine Schriftfarbe aus `var(--at)` — bei den sechs Paletten mit dunkler
+  Schrift erbte der Knopf damit dunkle Schrift auf PayPal-Blau: **5,22 wurde 2,95.** Der Knopf war
+  vorher in Ordnung. Dieselbe Klasse wie in Block 8c: **eine Regel zentralisieren und die Ausnahme
+  uebersehen, die sich nur halb daran haelt.**
+- **MINOR.** `#studioCta` hatte `border:2px solid #D4812A`, der Knopf darin seit Block 11 `#A66521` —
+  ein dunkler Knopf in einem hellen Rahmen. Dasselbe in der Mailvorlage. Beide auf den neuen Ton; die
+  Mailtexte steigen dabei von 3,01 auf 4,66.
+
+Zwei Behauptungen aus meinem eigenen Pruefauftrag hielten der Nachrechnung nicht stand: „acht Stellen"
+ist woertlich falsch (zwoelf existieren, acht wurden behandelt), und „zwei Helligkeitspunkte" waren
+knapp drei — **eine Abschneidung, die als Messung auftrat.**
+
+### Block 14 (`7b82b51c`) — „fast alles hell", und der Grund stand in den Daten
+
+Bolles Wortlaut zur Baustelle-Seite: *„sah scheisse aus … fast alles hell … da war prinzessin viel
+schoener."* Gemessen ueber alle 16 Paletten: jede hat eine Leiter von der dunklen Ueberschriftfarbe
+`h1` ueber `m` und `a` zu den hellen Toenen; bei `baustelle` war `h1` genau so hell wie `a`, `m` sogar
+heller, `h2` noch heller. Die Palette hatte nirgends einen dunklen Ton. `zirkus` war der zweite,
+mildere Fall.
+
+Bolles Entscheidung: **Leiter nachziehen** — die drei dunkleren Felder auf das Mass der anderen
+vierzehn. Die Grundfarbe `a` und der helle Ton `h3` bleiben unangetastet.
+
+**Der Pruefstand hat den Block unabhaengig nachgemessen, und ich habe seine Zahlen selbst nachgerechnet.
+Drei meiner Saetze mussten daran dran glauben:**
+
+**1. „Farbton und Saettigung bleiben" stimmt fuer zwei von sechs Werten.** Nachgerechnet in HSL:
+
+| Wert | vorher → nachher | Farbton | Helligkeit |
+|---|---|---|---|
+| baustelle `h2` | `#FBC02D` → `#CD6509` | 42,8 → 28,2 (**−14,7°**) | 58 → 42 |
+| baustelle `m` | `#F9A825` → `#B05608` | 37,1 → 27,9 (**−9,2°**) | 56 → 36 |
+| zirkus `h1` | `#E65100` → `#994300` | 21,1 → 26,3 (**+5,1°**) | 45 → 30 |
+| zirkus `m` | `#E65100` → `#B85000` | 21,1 → 26,1 (**+5,0°**) | 45 → 36 |
+| baustelle `h1` | `#F57F17` → `#934806` | 28,1 → 28,1 (unveraendert) | 53 → 30 |
+| zirkus `h2` | `#FF6F00` → `#D65D00` | 26,1 → 26,1 (unveraendert) | 50 → 42 |
+
+**Das Baustellen-Gelb ist in den dunklen Toenen jetzt orange-braun.** Designerisch ist das der normale
+Weg — dunkles reines Gelb sieht oliv aus, jeder Farbwaehler dreht dort Richtung Orange —, und `a`, `l`,
+`bg`, `h3` sind unangetastet, der Gesamteindruck bleibt gelb. Aber **Gelb ist bei einem Bagger-Motto
+Identitaet**, und mein Satz hat behauptet, es bewege sich nur die Helligkeit. Das war falsch.
+
+**2. „Weisse Schrift auf `h1` und `m` wird normkonform" behauptet Flaechen, die es nicht gibt.**
+Nachgezaehlt: `--h1` und `--h2` existieren **gar nicht** als CSS-Variablen (0 Definitionen), `h1`/`h2`
+sind ausschliesslich Stops in Verlaeufen. Und `var(--m)` steht im Gastbereich **17-mal, davon 17-mal als
+`color:` und 0-mal als Flaeche.** Der echte Gewinn liegt darum in der anderen Richtung, und er ist
+groesser als der behauptete: **`m` als gedaempfte Schrift auf `bg`, baustelle 1,92 → 4,89, zirkus
+3,46 → 4,57** — an 17 Textstellen je Palette.
+
+**3. Zwei Maesse, dasselbe Ergebnis.** Ich rechnete HSL-Helligkeit, der Pruefstand wahrgenommene
+Helligkeit ueber die Luminanz; in meinem Mass waren zwei Paletten flach, in seinem eine. **Beide Maesse
+sagen: vorher flach, nachher keine.** Nur muss eine Zahl im Bericht sagen, welches Mass sie meint.
+
+### Die zweite Kontrast-Richtung ist groesser als das Ticket dachte — Entscheidung offen
+
+Die Tagesbilanz **„17 von 17 ueber der Schwelle" gilt weiter, aber nur fuer eine Richtung**: Schrift auf
+Akzentflaeche (17 Paletten geprueft, 0 unter 4,5 — mit dem echten Rueckfall `#fff` fuer die elf
+Paletten ohne eigenes `bt`). In der Gegenrichtung, `m` als Schrift auf dem hellen Seitengrund, liegen
+**fuenf von siebzehn** darunter:
+
+| Palette | `m` auf `bg` | |
+|---|---|---|
+| dino | 3,78 | |
+| dschungel | 3,78 | |
+| DEFAULT_THEME | 3,91 | steht in keiner Liste — der Pruefstand nannte vier, das ist die fuenfte |
+| meerjungfrau | 4,06 | |
+| safari | 4,48 | knapp |
+
+Das ist **dieselbe offene Frage wie „Markenfarbe als Schrift auf hellem Grund"**, nur auf der
+Gaesteseite und mit 17 Textstellen je Palette statt sechs im Planer. Nicht angefasst — Bolles
+Entscheidung.
+
+### Block 15 — die Gastgeber-Seiten hatten ueberhaupt kein Desktop-Layout
+
+Erst der zweite Bildschirmabzug („desktop sieht soo aus … PUH..") zeigte die eigentliche Ursache:
+`baseHead` setzt `.container{max-width:480px}`, und **der Worker hat keinen einzigen
+Breiten-Umbruchpunkt.** Auf jedem Bildschirm ueber 480 px stand eine Handy-Spalte in der Mitte und
+sonst nichts. Meine Block-14-Diagnose war **echt, aber falsch zugeordnet**: sie betrifft die
+Gaesteseite; die Editorseite zieht aus dem Motto genau **eine** Farbe (`--a`), alles andere ist fest.
+
+Bolles Entscheidung: **erst nur breiter machen**, kein Umbau, Reihenfolge bleibt. Ab 900 px waechst die
+Spalte auf 760 px. Am lebenden Editor gemessen: Behaelter 480 → 760, Seite 61 px kuerzer, **140
+Elemente geprueft, 0 laufen ueber**, kein Querbalken; die Grenze beisst genau (899 → 480, 900 → 760),
+auf dem Telefon aendert sich nichts (375 → 375).
+
+**Die Messung hat eine zweite Aenderung erzwungen.** `.btn` ist im Worker standardmaessig volle Breite
+(nur `.btn-sm` setzt `width:auto`). Auf der 404-Seite steht so ein Knopf allein im Behaelter — bei 760
+waere daraus ein **728 px breiter oranger Balken** geworden. Sie bekommt darum dieselbe Inline-Breite,
+die ihre Schwesterseite `doiPage` schon traegt (520). **Ohne das haette „nur breiter" eine Seite
+verbessert und eine verschlechtert.**
+
+Was `baseHead` sonst noch bedient — die Zaehlung stand vor der Aenderung:
+
+| Stelle | Seite | betroffen? |
+|---|---|---|
+| `:1503` | `creatorPage` | nein, seit 07.09. nicht mehr geroutet („/" leitet auf den Planer um) |
+| `:2015` | Editor-Zweig von `partyPage` | **ja** — Bolles Bildschirmabzug |
+| `:3107` | 404 | ja, bleibt aber per Inline-Breite schmal |
+| `:3131` | DOI-Bestaetigung | nein, trug die Inline-Breite schon |
+
+Die **Gaesteseite steht ausdruecklich nicht drin**: sie hat einen eigenen Kopf (`guestPageFull` ruft
+`baseHead` nicht auf) mit `.hero-inner`/`.content` bei je 480 px und ebenfalls keinem Umbruchpunkt. Sie
+wirkt auf dem Desktop trotzdem passabel, weil das Kopfbild ueber die volle Breite laeuft. Ticket, keine
+Aenderung.
+
+### Messfehler 13 bis 17 — und zum ersten Mal fangen Waechter statt Gutachter
+
+- **13 (Autor, vom Assert gefangen).** Im Fix-Skript stand `count('min-width') == 0`. Das Wort steht
+  **zwoelfmal** in der Datei — jedes Mal als CSS-Eigenschaft an einem Element (`flex:1;min-width:0`),
+  **nie** als Merkmal einer Medienabfrage. Der Assert lief vor dem Schreiben, nicht der Gutachter
+  danach.
+- **14 (Autor, von der eigenen Gegenprobe gefangen).** Beim Nachrechnen der Palettenwerte fing mein
+  Muster das Feld `bt` nicht ein — jede Palette fiel auf Weiss zurueck, und **genau die sechs mit
+  dunkler Knopfschrift kamen als Fehler heraus.** Die Kontrolle meldete „6 Paletten unter 4,5" und
+  haette die Block-10-Bilanz umgestossen. **Der Rueckfallwert hat die Messung gemacht, nicht die
+  Daten.** Dritter Fall derselben Klasse an einem Tag.
+- **15 (Autor, im Gespraech).** „Die Gaesteseite hat zwei Umbruchpunkte." Sie hat zwei `@media` —
+  `hover` und `print`. **Keine Breitenabfrage.** Der Planer hat vier (420, 720, 768 zweimal) plus zwei
+  fuer den Druck; der Worker hatte null.
+- **16 (Autor, Zuordnung statt Zahl).** Die flache Baustelle-Palette wurde Bolle als Erklaerung fuer
+  eine Seite gezeigt, auf der sie gar nicht ankommt. **Eine richtige Messung am falschen Gegenstand
+  ist kein halber Befund, sondern eine falsche Antwort.**
+- **17 (Pruefstand, und der lehrreichste).** Sein Schutz gegen eine Messfalle — `MSYS2_ARG_CONV_EXCL`
+  gegen die Pfadmangelung — hat Stufe 1b umgebracht: die Stufe reicht `node.exe` einen absoluten Pfad,
+  der ohne Konvertierung als `/c/Users/...` ankommt. Lauf 36 meldete drei Syntaxfehler in Dateien, die
+  seit Juli unveraendert sind. **Ein Werkzeug, das gegen eine Falle schuetzt, kann eine andere
+  aufmachen.** Gefunden, weil die Zahl nicht zur Aenderung passte und damit begruendungspflichtig war.
+
+**Und eine Reihenfolge, die nicht gestimmt hat:** meine Frage „Strom offen?" fuer Block 15 kam beim
+Pruefstand an, als Block 14 schon im Baum stand. Es lief kein Lauf, es ist nichts entwertet — aber die
+Frage gehoert **vor** die Aenderung, nicht danach.
