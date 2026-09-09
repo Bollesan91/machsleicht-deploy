@@ -2181,23 +2181,24 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:shimmer 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
 .hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
-.hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.6);margin-bottom:16px}
+.hero-inner::before{content:'';position:absolute;inset:-18px -14px;z-index:-1;border-radius:28px;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(0,0,0,.36) 0%,rgba(0,0,0,.29) 55%,rgba(0,0,0,0) 100%);pointer-events:none}
+.hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.9);margin-bottom:16px}
 .bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
 .float-deko{position:absolute;pointer-events:none;opacity:.6;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
 .float-deko.fd1{left:6%;top:38%;font-size:30px;animation-delay:.4s}
 .float-deko.fd2{right:7%;top:24%;font-size:24px;animation-delay:1.1s}
 .float-deko.fd3{right:14%;bottom:16%;font-size:22px;animation-delay:1.9s;animation-duration:4.2s}
-.hero-logo b{color:rgba(255,255,255,.9)}
+.hero-logo b{color:#fff}
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:bob 3s ease-in-out infinite}
 .hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
 .hero h1 .hname{background:linear-gradient(135deg,#fff 30%,${t.l});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-motto{font-size:16px;color:rgba(255,255,255,.8);font-weight:600}
-.hero-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px}
-.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
+.hero-motto{font-size:16px;color:#fff;font-weight:600}
+.hero-sub{font-size:13px;color:#fff;margin-top:8px}
+.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(0,0,0,.18);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
 .countdown-num{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff}
-.countdown-label{font-size:12px;color:rgba(255,255,255,.7);font-weight:600}
+.countdown-label{font-size:12px;color:#fff;font-weight:600}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
@@ -2307,7 +2308,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="hero-emoji">${emoji}</div>
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
-  ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
+  ${invite?`<div class="hero-sub" style="font-size:16px;color:#fff;font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">${daysLeft===1?"Tag!":"Tage!"}</span></div>`:""}
 </div>
 </div>
