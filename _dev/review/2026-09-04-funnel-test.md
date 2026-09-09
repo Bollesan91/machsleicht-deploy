@@ -2064,3 +2064,55 @@ nur die Abfrage** — ein kleineres Ticket als „der Loop ist kaputt", und ein 
 **Die Klasse dahinter, weil sie mir gehoert:** ich habe eine Null gemessen, die stimmt, und sie mit einer
 Ueberschrift versehen, die mehr behauptet. `party.ref` ist null, `ref` als Groesse nicht. **Ein
 Nullbefund braucht nicht nur seine Kontrollzahl, sondern auch seinen Gegenstand im Titel.**
+
+### Richtigstellung zu T1 — die Zahl war zu klein, die wirksame Menge ist viel kleiner, und reparieren waere falsch
+
+Drei Korrekturen an einer Zeile, alle nachgemessen.
+
+**Erstens: meine 388 waren unvollstaendig.** Mein Muster suchte relative Verweise
+(`"/kindergeburtstag…#planer"`). Zwei stehen **absolut** — `href="https://machsleicht.de/kindergeburtstag?motto=dino&alter=7#planer"`
+auf `kindergeburtstag/dino-forscherpass.html` und `dino-quiz.html`. **Meine eigene dritte Gegenprobe-Zeile,
+an mir selbst nicht gestellt: in welcher Form kann der Gegenstand sonst noch vorkommen.**
+
+```
+#planer, ALLE html inkl. _dev                     429
+#planer, nur auslieferbar (ohne _dev)             390   <- die Zahl fuer das Produkt
+  davon als relatives href                        388   <- meine alte Angabe
+  davon OHNE Parameter (die WIRKSAMEN)             33   in 17 Dateien
+id="planer" im Planer  0        (Kontrollzahl 139 id-Attribute, id="stage1" 1x)
+```
+
+**Zweitens: nur 33 der 390 sind ueberhaupt wirksam.** Die uebrigen 357 tragen `?motto=` oder `?alter=`;
+dort greift `__hasEntryParam` und der Planer springt per JavaScript selbst. **Der tote Anker faellt nur
+dort auf, wo sonst nichts passiert.**
+
+**Und die 17 Dateien sind fast genau die generische SEO-Spur:** `-5-jahre` · `-6-jahre` · `-bei-regen` ·
+`-checkliste` · `-essen` · `-kosten` · `-last-minute` · `-mitgebsel` · `-spiele-draussen` ·
+`-spiele-drinnen` · `-torte-einfach` · `-wenig-aufwand` · `-zeitplan` · `-zuhause` ·
+`kindergeburtstag/detektiv` · `/prinzessin` · `einladung/text`. **Das ist dieselbe Familie wie in T14:
+die meistgesuchte Ankunftsspur gibt keinen Kontext mit UND verspricht einen Sprung, den es nicht gibt.**
+Gross, nicht identisch — `/kindergeburtstag-spiele` steht in T14, traegt aber kein `#planer`.
+
+**Drittens, und das ist der eigentliche Befund: reparieren waere ein Rueckschritt.** Der Pruefstand hatte
+`id="planer"` an `#stage1` vorgeschlagen und den Vorschlag nach dieser Messung selbst zurueckgezogen:
+
+```
+Weitermachen-Banner  105 px      Kopfleiste 51 px      stage1 beginnt bei 168 px
+Seitenhoehe 10.494 px            der Sprung waere 1,6 % der Seite
+```
+
+**Der Anker spraenge 168 Pixel — und das „Weitermachen?"-Banner laege vollstaendig im uebersprungenen
+Bereich.** Fuer einen Rueckkehrer ist das das wichtigste Element der Seite. **Ein Anker, der genau das
+ueberspringt, wofuer er gebaut wurde, ist schlechter als ein toter.**
+
+**T1 ist damit ein Ticket mit einem AUSLOESER, kein Fehler mit einem Fix.** Der Ausloeser: *sobald ueber
+dem Planer etwas eingefuegt wird, werden 33 Links still falsch.* **Und der Satz, der dazugehoert, ist der
+wichtigere: nicht reparieren, sondern wissen, warum nicht.** Ohne diese Begruendung setzt in sechs Monaten
+jemand das `id="planer"` ein, weil 429 Links danach rufen — und niemand merkt, dass das Banner damit
+verschwindet. **Dieselbe Konstruktion wie beim Cloudflare-Ticket: eine Massnahme ohne ihre Begruendung
+wird beim naechsten Anlass falsch angewandt.**
+
+**Die Klasse, die beide Sitzungen heute je einmal produziert haben:** eine Reparatur, die auf die richtige
+Messung zeigt und in die falsche Richtung zieht. Beim Grundton-Vorschlag haette sie Block 10 umgedreht,
+hier haette sie das Banner genommen. **Die Messung stimmte beide Male, die Ableitung nicht — und beide
+Male hat es die jeweils andere Sitzung gesehen.**
