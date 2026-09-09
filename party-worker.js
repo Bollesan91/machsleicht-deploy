@@ -2210,11 +2210,20 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
 .card-title{font-size:18px;font-weight:800;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
 .game-card{padding:0;border:3px solid ${t.a}66;background:linear-gradient(180deg,${t.bg},#fff);box-shadow:0 6px 24px ${t.a}30}
-.game-header{background:linear-gradient(135deg,${t.h1},${t.h2});padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff}
+/* 09.09.2026 — Schleier auf der Spielkarte (Block 24). Ohne ihn fallen 14 von 17 Paletten
+   durch (Unterzeile, schlechtester 1,99); die 70% Deckkraft deckelte zusaetzlich, deshalb
+   faellt sie weg. ANDERS GEBAUT ALS DER HERO-SCHLEIER, mit Grund: .hero-inner hat keinen
+   eigenen Hintergrund (der Verlauf sitzt auf .hero), dort traegt z-index:-1. Hier traegt
+   .game-header den Verlauf SELBST — ein z-index:-1 laege dahinter und waere unsichtbar.
+   Deshalb: absolutes ::before (sonst wuerde es im Flex-Container ein Flex-Item) plus
+   z-index:1 auf den Kindern. Die beiden Schleier NICHT vereinheitlichen. */
+.game-header{background:linear-gradient(135deg,${t.h1},${t.h2});padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff;position:relative}
+.game-header::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.28);pointer-events:none}
+.game-header>*{position:relative;z-index:1}
 .game-header-icon{font-size:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.2))}
 .game-header-title{font-size:16px;font-weight:800;font-family:var(--fd)}
-.play-pill{margin-left:auto;background:#fff;color:${t.a};font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:pulse 2s ease-in-out infinite;white-space:nowrap}
-.game-header-sub{font-size:11px;opacity:.7;margin-top:1px}
+.play-pill{margin-left:auto;background:#fff;color:${t.d};font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:pulse 2s ease-in-out infinite;white-space:nowrap}
+.game-header-sub{font-size:11px;margin-top:1px}
 #gameFrame{width:100%;height:min(85vh,700px);border:none;display:block}
 .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:10px 14px;background:var(--bg);border-radius:12px}
 .info-row:last-child{margin-bottom:0}
