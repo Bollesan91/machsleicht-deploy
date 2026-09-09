@@ -109,7 +109,7 @@
   "founder": { "@type": "Person", "name": "Marie-Therese Bollweg", "url": "https://machsleicht.de/ueber-uns", "jobTitle": "Gründerin" }
 }
 </script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true" data-exclude-search="true"></script>
 <script>
 // Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
 // OHNE diesen Shim feuerte if(window.plausible) plausible('party_created',...) NIE -> Funnel-Conversion blind.
@@ -3798,6 +3798,16 @@ window.plausible.init=function(){};window.plausible.q=[];
         const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }
         const _pl = p.get('plan'); if(_pl && /^[A-Za-z0-9_-]{16,96}$/.test(_pl)){ window.__planToken = _pl; }   // 07.09.: Magic-Link, Wiederherstellung laeuft nach dem Init (s. restorePlanFromLink)   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
+        /* 09.09.2026: Den Plan-Token SOFORT aus der Adresszeile nehmen. Er ist ein
+           Bearer-Schluessel auf den ganzen Plan (Kindname, Adresse, Telefon) — GET /api/plan/
+           <token> prueft nur die Form. In der Leiste landet er im Browser-VERLAUF, in jeder
+           kopierten Adresse und in jedem Screenshot; data-exclude-search haelt ihn nur aus der
+           Statistik, nicht vom Geraet. Gefahrlos, weil ?plan genau einmal gelesen wird (oben)
+           und alles Weitere ueber window.__planToken laeuft. Die uebrigen Parameter bleiben.
+           Befund des Pruefstands zur Gegenprobe des Bruecken-Entwurfs. */
+        if(_pl){ try{ p.delete('plan'); const _q = p.toString();
+          history.replaceState(null, '', location.pathname + (_q ? '?' + _q : '') + location.hash);
+        }catch(eh){ console.warn('url-clean', eh); } }
       }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
       if(!state.age){ state.age = '6-8'; }
