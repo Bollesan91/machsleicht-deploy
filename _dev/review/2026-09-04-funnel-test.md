@@ -1910,3 +1910,125 @@ Nicht angefasst, mit Grund: der Rueckfallwert `#D4812A` in seinen uebrigen Rolle
 SCHRIFT-Stellen entschieden, nicht die Farbe) · `border-color:#FF6F00` im Hover (2,55, aber Rahmen haben
 Schwelle 3,0) · vier `color:#E64A00` (3,73 auf `#FFF8F0`), Hover-Zustaende im SEO-Fussbereich, dieselbe
 Klasse, gemessen — Ticket, keine stille Erweiterung.
+
+## Der Trichter, vollstaendig gemessen (09.09.2026)
+
+Bolle hat nach dem Stand des Trichters gefragt und dann nach dem **kompletten Bild, Zielbild gegen
+Stand**. Neun Messungen liefen unabhaengig voneinander gegen die ausgelieferten Seiten und den
+Quelltext, dazu eine Analyse der Uebergaenge. **Kein Schreibpfad wurde angefasst** — keine POSTs, keine
+Mails, keine KV-Aenderung; die Drosseln und die Zustellung bleiben damit ausdruecklich ungeprueft.
+
+Ergebnis: **drei Stufen gruen, sechs gelb, eine rot.** Das Ergebnis liegt Bolle als eigenes Dokument vor;
+hier stehen die Befunde, die neu sind, und die Tickets, die daraus folgen.
+
+### Die groesste Luecke: Stufe 10 existiert nicht
+
+```
+Bezahlvorgaenge im gesamten Repo          0     (Kontrollzahl: 4x api.resend.com im selben Lauf)
+Warteliste /api/waitlist                  1 POST-Route · 0 Leserouten · 0 Bestaetigungsmails
+gespeichert                               {email, product, created}, 365 Tage
+Zuordnung zu Plan, Motto oder Party       keine
+"14,90 EUR" im ausgelieferten Markup      2 Treffer — das Produkt existiert nicht
+```
+
+**Jede andere Luecke ist ein Schaden AN einem vorhandenen Weg und mit wenigen Zeilen zu schliessen. Hier
+fehlt der Weg selbst.** Und sie nimmt sich zusaetzlich die eigene Entscheidungsgrundlage: die Warteliste
+waere der Beleg, welches der zwei geplanten Produkte zuerst gebaut werden soll — ohne Leseweg und ohne
+Zuordnung wird die Nachfrage erhoben und nie ausgewertet. **Dieselbe Krankheit wie `ref`: erheben, nie
+lesen.**
+
+### Neue Befunde, gemessen
+
+| # | Befund | Zahl |
+|---|---|---|
+| T1 | `#planer` ist ein totes Sprungziel | **388** Links im Deploy-Baum, **0** Elemente mit dieser Kennung, `location.hash` **0x** ausgewertet (Kontrollzahl: 139 id-Attribute im Planer) |
+| T2 | Der zweite virale Loop fehlt ganz | **0 von 60** Spielseiten verlinken den Planer (Kontrollzahl: 74x `href=` auf denselben 60 Dateien) |
+| T3 | Die virale Herkunft wird nie gelesen | `ref` validiert, gespeichert (`:511`), im Public-GET destrukturiert — **0** Lesezugriffe repo-weit (Kontrollzahl: `party.date` 41x in derselben Datei) |
+| T4 | Keine Bild-Vorschau beim Teilen | der Worker kennt `body.photo` und `/api/ogimg`, der Planer sendet nur `photoRound` -> `hasPhoto=false` fuer **jede** ueber den Assistenten erzeugte Partyseite |
+| T5 | Keine Bruecke Plan <-> Partyseite | `planToken` **0x** im ganzen Worker (Kontrollzahl: `doiToken` 13x); in der Plan-Whitelist kein `partyseite`-Feld |
+| T6 | Der Schluessel laesst sich im Editor nicht sichern | `send-edit-link` **0x**, `email` **0x**, `edit=` **0x** im Rumpf von `editorView` (Kontrollzahlen im selben Abschnitt: `editToken` 16x, `Link` 19x) |
+| T7 | Das Namensgatter schuetzt nichts | `partyContent` nur `display:none`, der Name im Klartext im Quelltext, die Loesung im Seitentitel — der Fehlertext nennt sie ausdruecklich. Der Code sagt es selbst: „KEIN Zugriffsschutz" |
+| T8 | Fremde Geschenk-Reservierung aufhebbar | `unclaimWish()` sendet `{name, remove:true}` von jedem Geraet, der Server vergleicht nur den kleingeschriebenen Vornamen (`:862`) |
+| T9 | Verwaiste Plan-Eintraege moeglich | der KV-Put (`:938`) steht VOR dem Resend-Aufruf (`:945`); scheitert der Versand, liegen Plan und E-Mail-Adresse 90 Tage da, ohne dass je ein Link zugestellt wurde — und es gibt **kein** DELETE (3 Vorkommen `api/plan`: POST, GET, slice) |
+| T10 | `/api/plan` ohne Herkunftspruefung | im ganzen Worker nur **2x** `request.headers.get("Origin")`, die Plan-Route gehoert nicht dazu; einzige Bremse ist die IP-Drossel 5/h |
+| T11 | Drei stille Ausfaelle beim Erinnerungs-Cron | (1) haengt an `party.email`, die nur die separate, fehlschlagbare Anlege-Mail setzt · (2) `if (!env.RESEND_API_KEY) return;` ohne Log · (3) `MAX_READS=200` ohne Nachhol-Fenster |
+| T12 | Druckversprechen ohne Druckknopf | FAQ und JSON-LD sagen „laesst sich direkt aus dem Browser drucken"; `window.print` **0x**, `toBlob` **0x**, `download=` **0x**, `navigator.share` **0x** |
+| T13 | Leerer Anlege-Aufruf erzeugt eine Party | `POST /api/create` mit `{}` antwortet 200 und legt an; `childName` faellt auf „Geburtstagskind", `age` auf `null`. Gedrosselt auf 8/h je Anschluss |
+| T14 | Die generische Spur verliert den Kontext | `/kindergeburtstag/baustelle`: 11 Planer-Links, 6 mit `?motto=`. Die drei meistgesuchten Root-Seiten zusammen: **12 Links, 0 mit Parameter** |
+
+**T13 ist mein eigener Fund und mein eigener Eingriff:** die Sonde hat wirklich eine Party angelegt. Eine
+davon habe ich sofort geloescht (404 gegengeprueft), **eine zweite nicht — ihre Kennung stand nur in der
+verworfenen Ausgabe einer frueheren Sonde.** Sie laeuft ueber ihre Lebensdauer ab. **Wer einen
+Schreibpfad probeweise anfaesst, muss die Antwort aufheben, bevor er den naechsten Befehl schreibt.**
+
+### Was gebaut ist und nie erreicht wird
+
+`setInviteType()` (0 Aufrufer, 6 CSS-Regeln Unterhalt, ein verlorener Bezahleinstieg) · der Anker
+`#planer` · die virale Herkunft · der Vorschaubild-Pfad · die Bruecke Plan/Partyseite ·
+`paket/prinzessin/index.html` (auf der Platte, gitignored, live 404 — Gegenprobe `/paket/ritter/`
+HTTP 200, 87.221 Bytes) · 60 Spiel-Shells ohne `robots`-Meta (0 von 60; Kontrollzahl: 93 andere Dateien
+tragen eines).
+
+### Wo das Produkt mehr verspricht, als es haelt
+
+„Direkt aus dem Browser drucken" ohne Druckknopf · „auf jedem Geraet weiterbearbeiten", waehrend Foto,
+Einladungstext und Partyseite zurueckbleiben · „14,90 EUR" ohne Produkt · „Auf die Warteliste" ohne
+jeden Rueckkanal · ein Namensgatter, das wie ein Zugangsschutz aussieht · „der Verwaltungs-Link ist der
+einzige Schluessel", waehrend der Editor keinen Weg bietet, ihn zu sichern.
+
+### Was diese Messung NICHT wissen kann
+
+Rankings und Besucher · Zustellung der drei transaktionalen Mails · ob der Cron bei Cloudflare
+tatsaechlich registriert ist (belegt ist die Absicht in der Konfiguration und der ausgelieferte Code) ·
+saemtliche Schreibpfade und ihre Drosseln · der persoenliche Gaestelink mit Token · der Inhalt des KV ·
+Konversion und Umsatz. **Die gruenen Ampeln belegen Auslieferbarkeit, nicht Auffindbarkeit und nicht
+Wirkung.**
+
+### Bolles Frage: wo wird das digitale Paket ausgeliefert?
+
+Seine Formulierung: *„fuer mich waere die partyseite in einem tab oder eigenem bereich der logischste
+Ort. man passt die gaeste liste an … direkt aenderung des paket/portfolios?"*
+
+**Das ist dieselbe Entscheidung, die er am 05./06.08. schon dreimal getroffen hat** („alles abgeleitet
+aus fertigem Plan und Partyseite; handgepflegte Dubletten sind der Defekt"), nur auf den Ort angewandt.
+Die Begruendung traegt: die Partyseite ist die **einzige** Stelle, an der Gaestenamen, Rollen, Zusagen,
+Datum und Motto gemeinsam und aktuell liegen. Jeder andere Ort braeuchte eine Kopie der Gaesteliste.
+
+Drei Folgen, die daran haengen:
+
+1. **Das Paket braucht beide Haelften, und die Bruecke dazwischen gibt es nicht** (T5). Rollenkarten und
+   Urkunden kommen aus der Party, Ablauf, Spiele und Einkaufsliste aus dem Plan. **Die Ortsentscheidung
+   erzwingt damit den Bau der Bruecke** — bisher stand sie nur als Ticket.
+2. **„Direkt geaendert" heisst erzeugen, nicht speichern.** Sagt ein Kind ab, darf kein altes Paket
+   herumliegen. Dieselbe Regel wie oben, auf die Zeit angewandt statt auf den Ort.
+3. **Die Zeichenmaschine darf es nur einmal geben.** Laege das Paket im Editor, muesste der Worker
+   denselben Zeichencode tragen wie der Planer — wieder eine Dublette. Also: **eigener Bereich auf der
+   Hauptseite, als Tab aus dem Editor angeboten**, mit Party-Kennung und Schluessel. Ein Ort, ein Code,
+   beide Datenquellen.
+
+Dazu ein Vorschlag, der nicht von ihm kam: **der Kaufweg gehoert an dieselbe Stelle.** Das Paket zeigt
+sich mit den echten Namen der zugesagten Kinder und ist bis zum Kauf gesperrt — der Moment, in dem der
+Gastgeber sein fertiges Fest vor sich sieht, ist der mit der hoechsten Zahlungsbereitschaft im ganzen
+Trichter.
+
+### Die Machbarkeitsprobe fuer die Druckdateien
+
+Vorher eine Selbstkorrektur: ich hatte Bolle geschrieben, fuer den Druck „steht die Maschine schon".
+**Gemessen stimmt das nicht** — der Planer hat `fillText` 0x, `measureText` 0x, `document.fonts` 0x,
+`toBlob` 0x, `createObjectURL` 0x, `download` 0x. Er kann ein Foto zuschneiden und keinen Buchstaben auf
+eine Leinwand schreiben. **Eine Analogie als Aufwandsschaetzung ausgegeben.**
+
+Danach die Probe, und sie faellt guenstiger aus als die Korrektur: die vorhandene Gestaltung laesst sich
+**abfotografieren** statt neu zeichnen.
+
+```
+Quelle 392 x 264 px  ->  Leinwand 1568 x 1056 px   Faktor exakt 4
+Dauer 1,0 s · 195 KB als JPEG
+Schriftkontrolle:  Nunito geladen · Lilita One geladen · Fraunces FEHLT
+```
+
+**Die Schriftkontrolle hat sofort etwas gefunden:** eine der drei Schriften ist auf der Planerseite gar
+nicht geladen. Fuer die Karte folgenlos (sie benutzt Lilita One) — aber es beweist die Falle. **Vor dem
+ersten Strich wird geprueft, ob die Schrift da ist, und bei `false` wird nicht gezeichnet, sondern
+gemeldet.** Am 07.09. haben wir auf Ersatzschriften gemessen und es gemerkt; bei 300 dpi merkt es
+niemand, bis die Karte im Briefkasten liegt.
