@@ -2181,7 +2181,7 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:shimmer 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
 .hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
-.hero-inner::before{content:'';position:absolute;inset:-18px -14px;z-index:-1;border-radius:28px;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(0,0,0,.36) 0%,rgba(0,0,0,.29) 55%,rgba(0,0,0,0) 100%);pointer-events:none}
+.hero-inner::before{content:'';position:absolute;inset:-26px -28px;z-index:-1;border-radius:34px;background:radial-gradient(ellipse 150% 115% at 50% 50%,rgba(0,0,0,.36) 0%,rgba(0,0,0,.31) 60%,rgba(0,0,0,0) 100%);pointer-events:none}
 .hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.9);margin-bottom:16px}
 .bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
 .float-deko{position:absolute;pointer-events:none;opacity:.6;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
