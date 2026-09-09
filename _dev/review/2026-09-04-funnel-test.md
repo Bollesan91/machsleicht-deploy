@@ -2450,3 +2450,77 @@ eine Hoffnung die andere, und das war der Fehler der dritten Fassung.
 **Erster Einsatz, gemessen:** `LAUF 49 AKTIV seit 12:00:10 auf 057442eb`, Lauf 49 gruen
 (12:00:11 bis 12:06:07, 71 Stufen, 0 rot), Sperre danach entfernt, Status durchgehend 2 Zeilen.
 **5:56 Laufzeit gegen 20 Minuten Frist.**
+
+### Gecrawlt — zurzeit nicht indexiert: zwei Zeilen im selben Kasten, nur eine ist ein Problem
+
+Bolle hat `/kindergeburtstag/ritter` in der Search Console geprueft und die Zeile
+**„Keine verweisenden Sitemaps gefunden"** gemeldet. Direkt darueber stand aber
+**„Verweisende Seite: https://machsleicht.de/sitemap.xml"** — zwei Aussagen, die sich zu
+widersprechen scheinen.
+
+**Sie widersprechen sich nicht, sie sind verschieden alt.** Das entscheidende Feld steht drei Zeilen
+tiefer: **letztes Crawling 28.05.2026.** Die Sitemap wurde am **08.09.** eingereicht. Die URL-Pruefung
+zeigt den Zustand **zum letzten Crawling**, und damals war in dieser Property keine Sitemap
+angemeldet — gefunden hatte Google die Datei trotzdem, ueber `robots.txt`. **Die Zeile verschwindet
+beim naechsten Crawling von selbst.**
+
+**Nachgemessen, damit das keine Vermutung bleibt:**
+
+```
+in der Sitemap, exakt wie in GSC     1x   (ohne Schraegstrich; die Variante MIT ist ein 301)
+lastmod dieser URL                   2026-09-01
+live                                 200, Canonical identisch mit dem Sitemap-Eintrag
+sitemap.xml                          200, application/xml, 136 URLs, gueltiges XML
+```
+
+**Die Zeile, die wirklich etwas sagt, ist die andere: „Seite ist nicht indexiert: Gecrawlt —
+zurzeit nicht indexiert."** Google hat die Seite geholt und **entschieden, sie nicht aufzunehmen.**
+
+**Der erste Verdacht bei 14 Motto-Seiten ist Massenware — gemessen und widerlegt.** Und weil an
+diesem Tag vier Zahlen an einer fehlenden Definition gescheitert sind, **steht die Definition hier
+wieder ueber der Zahl:**
+
+> **Satz** = Text der gerenderten Seite, Tags entfernt, getrennt an `.!?`, **mindestens 6 Woerter**
+> (kuerzere Fragmente sind auf jeder Seite gleich und wuerden die Ueberschneidung aufblasen).
+> **Ueberschneidung** = woertlich identische Saetze, nicht Aehnlichkeit.
+
+```
+ritter x piraten      3 von 82        Kontrollzahlen: Saetze je Seite
+ritter x prinzessin   3 von 82          ritter 82 · piraten 114 · prinzessin 107
+ritter x dino         3 von 82          dino 113 · feuerwehr 97
+ritter x feuerwehr    3 von 82
+in ALLEN FUENF gleich: 3 Saetze  ->  3,7 % der Ritter-Seite
+```
+
+**Und die drei gemeinsamen Saetze sind der eigentliche Beleg, nicht die Prozentzahl:**
+
+```
+"Alle Altersgruppen 3-5 / 6-8 / 9-12 Jahre …"              Navigation
+"Der machsleicht-Planer berechnet automatisch Mengen …"    Produktsatz
+"Material & Vorbereitung — die komplette Einkaufsliste"    Ueberschrift
+```
+
+**Navigation, Produktsatz, Ueberschrift — keine einzige Inhaltsdopplung.** Die Motto-Seiten sind
+echte, verschiedene Texte; die naheliegendste Erklaerung faellt mit einer Zahl statt mit einem
+Eindruck.
+
+**Unabhaengig gegengezaehlt, mit leicht anderer Definition** (Text ohne `<script>`/`<style>`):
+**79 / 96 / 93 / 100 / 88** statt 82 / 114 / 107 / 113 / 97. **Der Versatz ist nicht konstant
+(3 · 18 · 14 · 13 · 9), also ein Definitionsunterschied und kein Fehler.** Beide Zaehlungen liefern
+**dieselben drei gemeinsamen Saetze** und dieselbe Reihenfolge; die Prozentzahl wandert von 3,7 auf
+3,8. **Genau deshalb steht die Definition oben: die Aussage haelt, die Zahl allein waere angreifbar.**
+
+**Was bleibt, ist das Datum.** `git log` auf `kindergeburtstag/ritter.html`: **16 Commits seit dem
+28.05.**, darunter am 01.09. der komplette Ablauf-Umbau nach vier Gutachten (54/46/42/58, alle NO-GO).
+**Google beurteilt eine Version, die es nicht mehr gibt.** Damit ist „Indexierung beantragen" keine
+Bittstellerei, sondern die vorgesehene Meldung „die Seite hat sich geaendert" — und sie ist hier
+sachlich begruendet.
+
+**Nebenbeobachtung ohne Handlungsempfehlung:** Ritter ist mit **82 Saetzen die kuerzeste der fuenf**
+(Piraten 114, Dino 113, Prinzessin 107, Feuerwehr 97). Kein Grund fuer sich; aber wenn eine
+Motto-Seite ausgebaut wird, ist das die Reihenfolge.
+
+**Und die Methodenlehre, die hier drinsteckt:** ein Screenshot ist ein **Zustand zu einem Zeitpunkt**.
+Zwei Zeilen im selben Kasten koennen aus zwei verschiedenen Zeitpunkten stammen, und **das Datum
+daneben zu lesen ist Teil des Befunds, nicht Beiwerk.** Dieselbe Form wie Falle 18 (die Datei ist
+nicht mehr die, die ich gelesen habe) — nur dass hier nicht der Baum, sondern der Bericht alt ist.
