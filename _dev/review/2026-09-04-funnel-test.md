@@ -2183,3 +2183,100 @@ Die Reparatur ist eine Regel, kein neues Wort:
 Erinnerung.** Und die Last liegt bei der Seite, die sie pruefen kann: der Pruefstand kann nie wissen, ob
 seine Ankuendigung gelesen wurde — der Autor kann immer wissen, ob seit seinem letzten Schreiben ein
 passendes „Strom frei" stand.
+
+### Wo das digitale Paket ausgeliefert wird — Bolles Frage, am Code beantwortet
+
+> *„wo soll das digitale paket ausgeliefert werden? fuer mich waere die partyseite in einem tab oder
+> eigenem bereich der logischste ort. man passt die gaesteliste an... direkt aenderung des
+> paket/portfolios?"*
+
+**Sein Instinkt ist richtig, und der Grund dafuer ist messbar — es ist nicht Geschmack.** Gemessen am
+Baum `3efbb936`:
+
+```
+Der PLANER weiss ueber Gaeste:   plan.guests = num(q.guests, 1, 30)      eine ZAHL
+Die PARTY weiss ueber Gaeste:    g.name  g.status  g.allergies
+                                 g.pickupTime  g.pickupPerson  g.id  g.inv  g.path
+```
+
+**Eine Urkunde traegt einen Namen. Der Planer kennt keine Namen, nur eine Anzahl.** Damit ist die Frage
+„Planer oder Partyseite" keine Abwaegung mehr: **nur die Partyseite kann ein Paket erzeugen, das
+Kindernamen enthaelt.** Alles, was ein Paket braucht, liegt bereits an der Party — `childName`, `age`,
+`date`, `time`, `address`, `mottoId`/`motto`/`mottoEmoji`/`mottoColor`, `wishes`, `hostName` und die
+Gaesteliste. **32 verschiedene Felder**, gezaehlt, nicht geschaetzt.
+
+**Tab oder eigener Bereich? Eigener Bereich, und zwar aus drei gemessenen Gruenden.**
+
+```
+role="tab"      0        class="tab      0
+aria-selected   0        data-tab        0        Karten in der Partyseite: 9
+```
+
+**Im ganzen Worker gibt es keine einzige Tab-Struktur.** Ein Tab waere also nicht „das vorhandene Muster
+weiterbenutzen", sondern ein neues Bedienmuster in einer Seite, die bisher aus gestapelten Karten
+besteht. Dazu zwei Sacheinwaende: das Paket ist **zum Drucken** da und braucht volle Breite und eigene
+Druckregeln, die mit dem mobil-schmalen Kartenlayout kollidieren — und ein **eigener Pfad ist
+verschickbar**. Der andere Elternteil bekommt einen Link, kein „scroll runter und klick auf den
+zweiten Reiter". **Empfehlung: eigene Route, erreicht ueber eine Karte auf der Partyseite** — genau die
+Stelle, an der heute schon die Ablaufplan-Karte steht.
+
+**Und der entscheidende Punkt, der Bolles Zusatzfrage aufloest: „Gaesteliste anpassen -> direkt Aenderung
+des Pakets" ist umsonst zu haben, wenn das Paket bei jedem Oeffnen NEU GERECHNET statt GESPEICHERT wird.**
+Es gibt dann keinen Abgleich, weil es keine zweite Kopie gibt. **Sobald wir fertige Dateien ablegen,
+kaufen wir uns ein Problem, das wir nie haben muessten:** jede Namensaenderung entwertet still eine
+gespeicherte Urkunde, und wir brauchen eine Regel, wann was neu erzeugt wird. **Das ist dieselbe Klasse
+wie [[paket_kommt_aus_dem_plan]]: handgepflegte Dubletten sind der Defekt, nicht die Loesung.**
+
+### Die Bruecke Plan <-> Party ist EIN FELD, kein System — und beide Haelften stehen schon
+
+**Ich habe angenommen, wir muessten den Plan erst serverfaehig machen. Das stimmt nicht.** Gemessen:
+
+```
+POST /api/plan        legt plan:<token> in KV ab, 90 Tage, und mailt
+                      https://machsleicht.de/kindergeburtstag?plan=<token>
+GET  /api/plan/<tok>  gibt den Plan zurueck, mit `created` fuer die Zeitregel
+```
+
+**Der Plan kann das Geraet also laengst verlassen.** Was fehlt, ist ausschliesslich die Referenz zwischen
+den beiden Datensaetzen:
+
+```
+party.planToken   0 Treffer        plan.partyId   0 Treffer
+party.plan        0 Treffer        plan.party     0 Treffer
+```
+
+**Zwei Speicher, zwei fertige Schnittstellen, null Verbindung.** Die Bruecke ist ein Feld und ein
+Schreibvorgang, nicht ein Umbau. Das aendert die Reihenfolge der Arbeit erheblich — und es beantwortet
+Bolles Frage von gestern („gibt es das nicht schon?") mit **ja, zur Haelfte, und wir haben es nicht
+benutzt.**
+
+**BEFUND GEGEN MEINE EIGENE ARBEIT VON GESTERN.** Die Karte aus Block 19, die ich selbst geschrieben und
+deployt habe, sagt:
+
+> *„Hast du den Plan auf diesem Geraet begonnen, geht es genau dort weiter."* und verlinkt auf
+> `https://machsleicht.de/kindergeburtstag` — **ohne Token.**
+
+**Ich habe die Einschraenkung ehrlich hingeschrieben, weil ich glaubte, es gaebe keinen anderen Weg. Den
+gab es, im selben Worker, 1900 Zeilen weiter oben.** Wer die Partyseite auf dem Handy oeffnet und den
+Plan auf dem Rechner begonnen hat, landet auf einem leeren Planer. **Die Karte ist nicht falsch, sie ist
+unter Wert.** Reparatur: `party.planToken` setzen, sobald jemand aus dem Planer eine Party anlegt, und
+die Karte auf `?plan=<token>` zeigen lassen. Dieselbe Klasse wie die 18 Seiten — **etwas weiss etwas und
+gibt es nicht weiter.**
+
+**NEUER BEFUND, unabhaengig von der Bruecke: die Haltbarkeiten gehen auseinander.**
+
+```
+Plan  : expirationTtl 90*24*60*60      absolut, ab Erstellung
+Party : calcTTL(party.date)            14 Tage NACH dem Partydatum (Bolle-Regel 13.07.)
+```
+
+**Wer eine Party mehr als 90 Tage im Voraus plant, verliert seinen gemailten Planlink, bevor die Party
+stattfindet.** Vier Monate Vorlauf sind bei einem Kindergeburtstag nicht exotisch. Der Plan-Link ist
+zudem pro Speichervorgang ein NEUER Token — die alte Mail stirbt also 90 Tage nach IHRER Erstellung, nicht
+nach der letzten Aenderung. **Ticket, kein Blocker: die Plan-TTL an dieselbe Regel haengen wie die Party
+(`Partydatum + 14 Tage`, Mindestwert 90 Tage), sobald die Bruecke steht und der Plan ein Datum kennt.**
+
+**Offen fuer Bolle — die Architekturentscheidung, nicht die Optik:** Paket bei jedem Aufruf neu rechnen
+(meine Empfehlung, keine zweite Kopie, keine Abgleichregel) oder einmal erzeugen und ablegen (schneller
+beim zweiten Oeffnen, dafuer Dubletten und eine Verfallsregel). **Alles Weitere — Karte, Route, Druckmasse —
+haengt daran und ist danach Handwerk.**
