@@ -1842,3 +1842,813 @@ Token auf eine Liste, die beide namentlich nennt.
    `DEFAULT_THEME.a`, auf der Block 10 steht).
 5. **Nur-Bolle**: Cloudflare Scrape Shield → E-Mail-Verschleierung aus (§5 DDG); Google Search Console
    (Sitemap, die zehn URLs); den `cfut_`-Token loeschen.
+
+### Zweiter Deploy 09.09. — `main = 2a48fff6`, Worker `083ce6e6`
+
+Bolle hat einen zweiten Token geschickt. Block 22 ist damit live; der Randstreifen ist weg. Am
+gerenderten Dokument nachgemessen, Fenster 360 px, Pixelreihe vom linken Rand nach innen:
+
+```
+            x=0              x=2             x=10            x=30
+vorher rgb(202,108,25)  rgb(142,76,18)  rgb(142,77,18)  rgb(137,75,18)     Sprung 60 Stufen auf 2 px
+jetzt  rgb(135, 72,17)  rgb(135,72,17)  rgb(134,73,17)  rgb(131,71,18)     glatt
+```
+
+Dazu die drei alten Regeln nachweislich raus und die vier neuen drin, mit Empfangsbeweis (50384 Bytes,
+md5 `65688a3c498a`, „machsleicht" 14×). **Wieder 0 HTML-Dateien im Merge — fuer die Search Console ist
+auch dieser Deploy leer.**
+
+### Block 23 (`f904f8bc`) — die Markenfarbe als Schrift, und drei falsche Gruende in unserer eigenen Tabelle
+
+Bolles Entscheidung: „Die sechs Stellen dunkler." **Beim Rechnen kam heraus, dass die Tabelle in diesem
+Doc an drei von sechs Stellen den falschen Grund nennt** — sie stammte aus dem Stylesheet, nicht aus dem
+gerenderten Dokument. Am lebenden Planer nachgemessen (Elternkette aufwaerts bis zur ersten deckenden
+Flaeche):
+
+| Stelle | dokumentierter Grund | **gemessener Grund** |
+|---|---|---|
+| `.topnav__brand em` | Seitengrund `#FFF8F0` (2,65) | **weiss, die Kopfleiste** (2,79) |
+| „✓ Gewaehlt" | Seitengrund `#FFF8F0` (2,86) | **weiss, `.ps-game`** (3,01) |
+| E-Mail aendern | Seitengrund `#FFF8F0` (2,86) | **`#FFF8EC`, der Mail-Kasten** (2,85) |
+
+`.pick__head` (`#FFF8F0`) und `.topnav__btn:hover` (`#FFF3E6`) stimmten. **Die Werte verschieben sich
+kaum — aber der haerteste Grund entscheidet ueber den Zielwert, und der stand falsch da.**
+
+**Und der Pruefstand hat den Fehler abgefangen, der daraus fast geworden waere.** Der am 08.09. gewaehlte
+Wert `#A66521` wurde auf **Weiss** gerechnet (4,66). An den echten Orten:
+
+```
+#A66521  auf #FFF8F0  4,43        auf #FFF3E6  4,27        beide UNTER 4,5
+```
+
+**Haette ich ihn uebertragen, waeren alle sechs Stellen unter der Schwelle gelandet — mit einer Farbe, die
+wir am Vortag als Reparatur eingefuehrt haben.** (Kein Live-Befund: `#A66521` steht heute nur als Rahmen,
+als Flaeche und als Mailschrift auf Weiss, nirgends als Schrift auf diesen Gruenden. Der Pruefstand war
+dabei, genau das als Live-Befund zu melden, und hat es vor dem Absenden selbst geprueft — **eine Zahl, die
+richtig ist und an einem Ort gilt, an dem der Wert nicht vorkommt.**)
+
+Gewaehlt wurde deshalb **mit Abstand**, je Farbe gegen ihren haertesten gemessenen Grund, **Ziel 4,70
+statt 4,50** — ein Grenzwert faellt beim naechsten Grundton-Wechsel still wieder durch:
+
+```
+#FF6F00 -> #B54F00    weiss 5,14 · #FFF8F0 4,88 · #FFF3E6 4,71    Ton +0,1 Grad, Saettigung gleich
+#D4812A -> #9F601F    weiss 5,04 · #FFF8EC 4,77 · #FFF3E6 4,61    Ton -0,2 Grad, Saettigung +0,5
+```
+
+**Eine eigene Fehlzaehlung, die als Assert im Skript steht:** `count('color:#FF6F00')` liefert **sieben**
+Treffer, aber nur **drei** sind Schriftfarben — die anderen vier sind `border-color:#FF6F00`.
+**`border-color:` endet auf `color:`.** Dieselbe Adjazenzfalle wie am 07.09.; ohne negativen Vorblick
+haette sie vier Rahmen mitgefaerbt.
+
+**RICHTIGSTELLUNG ZUR COMMIT-NACHRICHT VON `f904f8bc`.** Sie nennt die **verworfene erste Wertfassung**
+(`#BD5200`, `#B95100`, `#A46420`, gerechnet auf 4,50 gegen teils falsche Gruende). **Gueltig sind die
+Werte oben: `#B54F00` und `#9F601F`**, je dreimal, und genau die stehen im Baum — nachgezaehlt. Die
+Nachricht ist nicht nachtraeglich geaendert worden, weil der Commit bereits gepusht war und der SHA in
+der anderen Sitzung als Bezug dient; **eine falsche Nachricht wird richtiggestellt, nicht ueberschrieben.**
+
+Nicht angefasst, mit Grund: der Rueckfallwert `#D4812A` in seinen uebrigen Rollen (Bolle hat die sechs
+SCHRIFT-Stellen entschieden, nicht die Farbe) · `border-color:#FF6F00` im Hover (2,55, aber Rahmen haben
+Schwelle 3,0) · vier `color:#E64A00` (3,73 auf `#FFF8F0`), Hover-Zustaende im SEO-Fussbereich, dieselbe
+Klasse, gemessen — Ticket, keine stille Erweiterung.
+
+## Der Trichter, vollstaendig gemessen (09.09.2026)
+
+Bolle hat nach dem Stand des Trichters gefragt und dann nach dem **kompletten Bild, Zielbild gegen
+Stand**. Neun Messungen liefen unabhaengig voneinander gegen die ausgelieferten Seiten und den
+Quelltext, dazu eine Analyse der Uebergaenge. **Kein Schreibpfad wurde angefasst** — keine POSTs, keine
+Mails, keine KV-Aenderung; die Drosseln und die Zustellung bleiben damit ausdruecklich ungeprueft.
+
+Ergebnis: **drei Stufen gruen, sechs gelb, eine rot.** Das Ergebnis liegt Bolle als eigenes Dokument vor;
+hier stehen die Befunde, die neu sind, und die Tickets, die daraus folgen.
+
+### Die groesste Luecke: Stufe 10 existiert nicht
+
+```
+Bezahlvorgaenge im gesamten Repo          0     (Kontrollzahl: 4x api.resend.com im selben Lauf)
+Warteliste /api/waitlist                  1 POST-Route · 0 Leserouten · 0 Bestaetigungsmails
+gespeichert                               {email, product, created}, 365 Tage
+Zuordnung zu Plan, Motto oder Party       keine
+"14,90 EUR" im ausgelieferten Markup      2 Treffer — das Produkt existiert nicht
+```
+
+**Jede andere Luecke ist ein Schaden AN einem vorhandenen Weg und mit wenigen Zeilen zu schliessen. Hier
+fehlt der Weg selbst.** Und sie nimmt sich zusaetzlich die eigene Entscheidungsgrundlage: die Warteliste
+waere der Beleg, welches der zwei geplanten Produkte zuerst gebaut werden soll — ohne Leseweg und ohne
+Zuordnung wird die Nachfrage erhoben und nie ausgewertet. **Dieselbe Krankheit wie `ref`: erheben, nie
+lesen.**
+
+### Neue Befunde, gemessen
+
+| # | Befund | Zahl |
+|---|---|---|
+| T1 | `#planer` ist ein totes Sprungziel | **388** Links im Deploy-Baum, **0** Elemente mit dieser Kennung, `location.hash` **0x** ausgewertet (Kontrollzahl: 139 id-Attribute im Planer) |
+| T2 | Der zweite virale Loop fehlt ganz | **0 von 60** Spielseiten verlinken den Planer (Kontrollzahl: 74x `href=` auf denselben 60 Dateien) |
+| T3 | Die virale Herkunft wird nie gelesen | `ref` validiert, gespeichert (`:511`), im Public-GET destrukturiert — **0** Lesezugriffe repo-weit (Kontrollzahl: `party.date` 41x in derselben Datei) |
+| T4 | Keine Bild-Vorschau beim Teilen | der Worker kennt `body.photo` und `/api/ogimg`, der Planer sendet nur `photoRound` -> `hasPhoto=false` fuer **jede** ueber den Assistenten erzeugte Partyseite |
+| T5 | Keine Bruecke Plan <-> Partyseite | `planToken` **0x** im ganzen Worker (Kontrollzahl: `doiToken` 13x); in der Plan-Whitelist kein `partyseite`-Feld |
+| T6 | Der Schluessel laesst sich im Editor nicht sichern | `send-edit-link` **0x**, `email` **0x**, `edit=` **0x** im Rumpf von `editorView` (Kontrollzahlen im selben Abschnitt: `editToken` 16x, `Link` 19x) |
+| T7 | Das Namensgatter schuetzt nichts | `partyContent` nur `display:none`, der Name im Klartext im Quelltext, die Loesung im Seitentitel — der Fehlertext nennt sie ausdruecklich. Der Code sagt es selbst: „KEIN Zugriffsschutz" |
+| T8 | Fremde Geschenk-Reservierung aufhebbar | `unclaimWish()` sendet `{name, remove:true}` von jedem Geraet, der Server vergleicht nur den kleingeschriebenen Vornamen (`:862`) |
+| T9 | Verwaiste Plan-Eintraege moeglich | der KV-Put (`:938`) steht VOR dem Resend-Aufruf (`:945`); scheitert der Versand, liegen Plan und E-Mail-Adresse 90 Tage da, ohne dass je ein Link zugestellt wurde — und es gibt **kein** DELETE (3 Vorkommen `api/plan`: POST, GET, slice) |
+| T10 | `/api/plan` ohne Herkunftspruefung | im ganzen Worker nur **2x** `request.headers.get("Origin")`, die Plan-Route gehoert nicht dazu; einzige Bremse ist die IP-Drossel 5/h |
+| T11 | Drei stille Ausfaelle beim Erinnerungs-Cron | (1) haengt an `party.email`, die nur die separate, fehlschlagbare Anlege-Mail setzt · (2) `if (!env.RESEND_API_KEY) return;` ohne Log · (3) `MAX_READS=200` ohne Nachhol-Fenster |
+| T12 | Druckversprechen ohne Druckknopf | FAQ und JSON-LD sagen „laesst sich direkt aus dem Browser drucken"; `window.print` **0x**, `toBlob` **0x**, `download=` **0x**, `navigator.share` **0x** |
+| T13 | Leerer Anlege-Aufruf erzeugt eine Party | `POST /api/create` mit `{}` antwortet 200 und legt an; `childName` faellt auf „Geburtstagskind", `age` auf `null`. Gedrosselt auf 8/h je Anschluss |
+| T14 | Die generische Spur verliert den Kontext | `/kindergeburtstag/baustelle`: 11 Planer-Links, 6 mit `?motto=`. Die drei meistgesuchten Root-Seiten zusammen: **12 Links, 0 mit Parameter** |
+
+**T13 ist mein eigener Fund und mein eigener Eingriff:** die Sonde hat wirklich eine Party angelegt. Eine
+davon habe ich sofort geloescht (404 gegengeprueft), **eine zweite nicht — ihre Kennung stand nur in der
+verworfenen Ausgabe einer frueheren Sonde.** Sie laeuft ueber ihre Lebensdauer ab. **Wer einen
+Schreibpfad probeweise anfaesst, muss die Antwort aufheben, bevor er den naechsten Befehl schreibt.**
+
+### Was gebaut ist und nie erreicht wird
+
+`setInviteType()` (0 Aufrufer, 6 CSS-Regeln Unterhalt, ein verlorener Bezahleinstieg) · der Anker
+`#planer` · die virale Herkunft · der Vorschaubild-Pfad · die Bruecke Plan/Partyseite ·
+`paket/prinzessin/index.html` (auf der Platte, gitignored, live 404 — Gegenprobe `/paket/ritter/`
+HTTP 200, 87.221 Bytes) · 60 Spiel-Shells ohne `robots`-Meta (0 von 60; Kontrollzahl: 93 andere Dateien
+tragen eines).
+
+### Wo das Produkt mehr verspricht, als es haelt
+
+„Direkt aus dem Browser drucken" ohne Druckknopf · „auf jedem Geraet weiterbearbeiten", waehrend Foto,
+Einladungstext und Partyseite zurueckbleiben · „14,90 EUR" ohne Produkt · „Auf die Warteliste" ohne
+jeden Rueckkanal · ein Namensgatter, das wie ein Zugangsschutz aussieht · „der Verwaltungs-Link ist der
+einzige Schluessel", waehrend der Editor keinen Weg bietet, ihn zu sichern.
+
+### Was diese Messung NICHT wissen kann
+
+Rankings und Besucher · Zustellung der drei transaktionalen Mails · ob der Cron bei Cloudflare
+tatsaechlich registriert ist (belegt ist die Absicht in der Konfiguration und der ausgelieferte Code) ·
+saemtliche Schreibpfade und ihre Drosseln · der persoenliche Gaestelink mit Token · der Inhalt des KV ·
+Konversion und Umsatz. **Die gruenen Ampeln belegen Auslieferbarkeit, nicht Auffindbarkeit und nicht
+Wirkung.**
+
+### Bolles Frage: wo wird das digitale Paket ausgeliefert?
+
+Seine Formulierung: *„fuer mich waere die partyseite in einem tab oder eigenem bereich der logischste
+Ort. man passt die gaeste liste an … direkt aenderung des paket/portfolios?"*
+
+**Das ist dieselbe Entscheidung, die er am 05./06.08. schon dreimal getroffen hat** („alles abgeleitet
+aus fertigem Plan und Partyseite; handgepflegte Dubletten sind der Defekt"), nur auf den Ort angewandt.
+Die Begruendung traegt: die Partyseite ist die **einzige** Stelle, an der Gaestenamen, Rollen, Zusagen,
+Datum und Motto gemeinsam und aktuell liegen. Jeder andere Ort braeuchte eine Kopie der Gaesteliste.
+
+Drei Folgen, die daran haengen:
+
+1. **Das Paket braucht beide Haelften, und die Bruecke dazwischen gibt es nicht** (T5). Rollenkarten und
+   Urkunden kommen aus der Party, Ablauf, Spiele und Einkaufsliste aus dem Plan. **Die Ortsentscheidung
+   erzwingt damit den Bau der Bruecke** — bisher stand sie nur als Ticket.
+2. **„Direkt geaendert" heisst erzeugen, nicht speichern.** Sagt ein Kind ab, darf kein altes Paket
+   herumliegen. Dieselbe Regel wie oben, auf die Zeit angewandt statt auf den Ort.
+3. **Die Zeichenmaschine darf es nur einmal geben.** Laege das Paket im Editor, muesste der Worker
+   denselben Zeichencode tragen wie der Planer — wieder eine Dublette. Also: **eigener Bereich auf der
+   Hauptseite, als Tab aus dem Editor angeboten**, mit Party-Kennung und Schluessel. Ein Ort, ein Code,
+   beide Datenquellen.
+
+Dazu ein Vorschlag, der nicht von ihm kam: **der Kaufweg gehoert an dieselbe Stelle.** Das Paket zeigt
+sich mit den echten Namen der zugesagten Kinder und ist bis zum Kauf gesperrt — der Moment, in dem der
+Gastgeber sein fertiges Fest vor sich sieht, ist der mit der hoechsten Zahlungsbereitschaft im ganzen
+Trichter.
+
+### Die Machbarkeitsprobe fuer die Druckdateien
+
+Vorher eine Selbstkorrektur: ich hatte Bolle geschrieben, fuer den Druck „steht die Maschine schon".
+**Gemessen stimmt das nicht** — der Planer hat `fillText` 0x, `measureText` 0x, `document.fonts` 0x,
+`toBlob` 0x, `createObjectURL` 0x, `download` 0x. Er kann ein Foto zuschneiden und keinen Buchstaben auf
+eine Leinwand schreiben. **Eine Analogie als Aufwandsschaetzung ausgegeben.**
+
+Danach die Probe, und sie faellt guenstiger aus als die Korrektur: die vorhandene Gestaltung laesst sich
+**abfotografieren** statt neu zeichnen.
+
+```
+Quelle 392 x 264 px  ->  Leinwand 1568 x 1056 px   Faktor exakt 4
+Dauer 1,0 s · 195 KB als JPEG
+Schriftkontrolle:  Nunito geladen · Lilita One geladen · Fraunces FEHLT
+```
+
+**Die Schriftkontrolle hat sofort etwas gefunden:** eine der drei Schriften ist auf der Planerseite gar
+nicht geladen. Fuer die Karte folgenlos (sie benutzt Lilita One) — aber es beweist die Falle. **Vor dem
+ersten Strich wird geprueft, ob die Schrift da ist, und bei `false` wird nicht gezeichnet, sondern
+gemeldet.** Am 07.09. haben wir auf Ersatzschriften gemessen und es gemerkt; bei 300 dpi merkt es
+niemand, bis die Karte im Briefkasten liegt.
+
+### Richtigstellung zu T3 — „nie gelesen" war zu stark
+
+Meine Tabellenzeile sagt: *„`ref` validiert, gespeichert, **0 Lesezugriffe repo-weit**".* **Das gilt fuer
+das gespeicherte Feld, nicht fuer die Herkunft insgesamt.** Der Pruefstand hat den Unterschied gemessen,
+ich habe ihn an der Quelle nachgeprueft:
+
+```
+Planer   state.ref  3 Vorkommen
+           :3798  gesetzt aus ?ref=, geprueft gegen /^[a-z0-9]{6,12}$/
+           :3278  im Anlege-Aufruf mitgeschickt   ref: state.ref || ''
+           :3288  AUSGEWERTET:  plausible('party_created', {props:{ ..., referred: state.ref ? '1':'0' }})
+Worker   party.ref  0 Lesezugriffe        body.ref 2 (einmal schreiben, einmal herausschneiden)
+         Kontrollzahlen: party.date 41 · party.editToken 13 · party.email 5  -> das Muster arbeitet
+```
+
+**Richtig ist also: WIE VIELE Partys aus einer Empfehlung kamen, ist heute zaehlbar — aus WELCHER nicht.**
+Die Kennung wird gespeichert und nie wieder angesehen.
+
+**Und die Pointe steht eine Zeile ueber dem Nullbefund:** der Worker schneidet `ref` ausdruecklich aus
+jeder oeffentlichen Antwort heraus (`const {editToken,email,doiToken,ref,address,invites,...safe}`). **Ein
+Feld, das sorgfaeltig geschuetzt wird, obwohl es niemand liest — der Schutzaufwand laeuft mit, der Nutzen
+nie an.** Damit ist `ref` der schaerfste der drei Faelle von „erheben, nie lesen": bei der Warteliste
+fehlt die Leseroute, hier gibt es eine bewusste Nicht-Leseroute.
+
+**Fuer Bolle wird daraus eine Frage statt eines Befunds:** die virale Kette funktioniert, sie ist nur nicht
+aufloesbar. Er kann sehen, DASS Empfehlungen wirken, nicht WELCHE. **Die Daten liegen seit je da, es fehlt
+nur die Abfrage** — ein kleineres Ticket als „der Loop ist kaputt", und ein ehrlicheres.
+
+**Die Klasse dahinter, weil sie mir gehoert:** ich habe eine Null gemessen, die stimmt, und sie mit einer
+Ueberschrift versehen, die mehr behauptet. `party.ref` ist null, `ref` als Groesse nicht. **Ein
+Nullbefund braucht nicht nur seine Kontrollzahl, sondern auch seinen Gegenstand im Titel.**
+
+### Richtigstellung zu T1 — die Zahl war zu klein, die wirksame Menge ist viel kleiner, und reparieren waere falsch
+
+Drei Korrekturen an einer Zeile, alle nachgemessen.
+
+**Erstens: meine 388 waren unvollstaendig.** Mein Muster suchte relative Verweise
+(`"/kindergeburtstag…#planer"`). Zwei stehen **absolut** — `href="https://machsleicht.de/kindergeburtstag?motto=dino&alter=7#planer"`
+auf `kindergeburtstag/dino-forscherpass.html` und `dino-quiz.html`. **Meine eigene dritte Gegenprobe-Zeile,
+an mir selbst nicht gestellt: in welcher Form kann der Gegenstand sonst noch vorkommen.**
+
+```
+#planer, ALLE html inkl. _dev                     429
+#planer, nur auslieferbar (ohne _dev)             390   <- die Zahl fuer das Produkt
+  davon als relatives href                        388   <- meine alte Angabe
+  davon OHNE Parameter (die WIRKSAMEN)             33   in 17 Dateien
+id="planer" im Planer  0        (Kontrollzahl 139 id-Attribute, id="stage1" 1x)
+```
+
+**Zweitens: nur 33 der 390 sind ueberhaupt wirksam.** Die uebrigen 357 tragen `?motto=` oder `?alter=`;
+dort greift `__hasEntryParam` und der Planer springt per JavaScript selbst. **Der tote Anker faellt nur
+dort auf, wo sonst nichts passiert.**
+
+**Und die 17 Dateien sind fast genau die generische SEO-Spur:** `-5-jahre` · `-6-jahre` · `-bei-regen` ·
+`-checkliste` · `-essen` · `-kosten` · `-last-minute` · `-mitgebsel` · `-spiele-draussen` ·
+`-spiele-drinnen` · `-torte-einfach` · `-wenig-aufwand` · `-zeitplan` · `-zuhause` ·
+`kindergeburtstag/detektiv` · `/prinzessin` · `einladung/text`. **Das ist dieselbe Familie wie in T14:
+die meistgesuchte Ankunftsspur gibt keinen Kontext mit UND verspricht einen Sprung, den es nicht gibt.**
+Gross, nicht identisch — `/kindergeburtstag-spiele` steht in T14, traegt aber kein `#planer`.
+
+**Drittens, und das ist der eigentliche Befund: reparieren waere ein Rueckschritt.** Der Pruefstand hatte
+`id="planer"` an `#stage1` vorgeschlagen und den Vorschlag nach dieser Messung selbst zurueckgezogen:
+
+```
+Weitermachen-Banner  105 px      Kopfleiste 51 px      stage1 beginnt bei 168 px
+Seitenhoehe 10.494 px            der Sprung waere 1,6 % der Seite
+```
+
+**Der Anker spraenge 168 Pixel — und das „Weitermachen?"-Banner laege vollstaendig im uebersprungenen
+Bereich.** Fuer einen Rueckkehrer ist das das wichtigste Element der Seite. **Ein Anker, der genau das
+ueberspringt, wofuer er gebaut wurde, ist schlechter als ein toter.**
+
+**T1 ist damit ein Ticket mit einem AUSLOESER, kein Fehler mit einem Fix.** Der Ausloeser: *sobald ueber
+dem Planer etwas eingefuegt wird, werden 33 Links still falsch.* **Und der Satz, der dazugehoert, ist der
+wichtigere: nicht reparieren, sondern wissen, warum nicht.** Ohne diese Begruendung setzt in sechs Monaten
+jemand das `id="planer"` ein, weil 429 Links danach rufen — und niemand merkt, dass das Banner damit
+verschwindet. **Dieselbe Konstruktion wie beim Cloudflare-Ticket: eine Massnahme ohne ihre Begruendung
+wird beim naechsten Anlass falsch angewandt.**
+
+**Die Klasse, die beide Sitzungen heute je einmal produziert haben:** eine Reparatur, die auf die richtige
+Messung zeigt und in die falsche Richtung zieht. Beim Grundton-Vorschlag haette sie Block 10 umgedreht,
+hier haette sie das Banner genommen. **Die Messung stimmte beide Male, die Ableitung nicht — und beide
+Male hat es die jeweils andere Sitzung gesehen.**
+
+### Richtigstellung zu T14 — vier Fassungen einer Zahl, und was daraus zu lernen ist
+
+Meine Zeile nannte drei Seiten als Beispiel und las sich wie eine Menge. **Sie war eine Stichprobe.**
+Beim Nachziehen sind an einem Vormittag **vier Fassungen derselben Zahl** entstanden — 156, 44, 23, 18 —,
+und die ersten drei standen auf einer Definition, die im Kopf stand statt in der Datei.
+
+**Deshalb steht die Definition hier ueber der Zahl und nicht daneben.**
+
+> **Grundmenge:** getrackte HTML ohne `_dev/`, `_build/`, `_src/` — **245**.
+> Beleg fuer die Abgrenzung: `/paket/prinzessin/` antwortet mit **404** (gitignored),
+> `/paket/ritter/` mit **200** (getrackt) — zwei Nachbarpfade, ein Ordner.
+> **Planer-Link:** `/kindergeburtstag`, optional mit `?` oder `#`, **nicht** gefolgt von `/`, `-` oder
+> Wortzeichen — **695 echte gegen 732 Fehltreffer** des lockeren Musters.
+> **Mottos:** die **15** Ids aus `kindergeburtstag.html`, nicht aus Ordnernamen.
+
+```
+Seiten mit echtem Planer-Link                140
+   mindestens einer MIT Parameter             87
+   KEINER mit Parameter                       53
+davon: Seite kennt Motto oder Alter           18   <- die handlungsfaehige Menge
+   15x einladung/<motto>/index.html           kennt ihr Motto
+    3x kindergeburtstag-5/-6/-7-jahre         kennt ihr Alter
+```
+
+**Ergebnis: 18 Seiten kennen etwas, das der Planer lesen kann, und geben es nicht mit.** Alle achtzehn
+sind generiert — die Reparatur ist eine Generatorzeile, keine achtzehn Handgriffe. Wer von der
+Piraten-Einladungsseite in den Planer geht, kaeme dann mit Piraten an statt bei null.
+
+**Die Kontrollzahl, die alles entschieden hat: 732 Fehltreffer gegen 695 Treffer.** Das lockere Muster
+`/kindergeburtstag[^"]*` zaehlt `/kindergeburtstag/<motto>` (die Motto-Seite) und
+`/kindergeburtstag-<ratgeber>` (die Ratgeberseiten) mit — **mehr Fehltreffer als Treffer.** Jede Zahl auf
+diesem Muster misst zwei verschiedene Dinge zusammen. Beide Sitzungen kamen unabhaengig auf **exakt 732**.
+
+**Und die vier Fassungen haben zwei verschiedene Ursachen, die zusammengehoeren:**
+
+- **Das Muster geraten** (Autor): `/kindergeburtstag/baustelle` als Planer-Link gezaehlt. Reparatur: ein
+  negativer Vorblick. Aufgefallen an einem Widerspruch in der eigenen Zahl — eine Datei stand auf der
+  Liste „gibt kein Motto mit" und enthielt `motto=`.
+- **Die Menge geraten** (Pruefstand): Mottos aus dem Ordnernamen abgeleitet, damit zaehlten `erstellen`,
+  `studio`, `text`, `whatsapp` und die Uebersichtsseite als Mottos mit — 23 statt 18. Reparatur: die Ids
+  aus der Quelle.
+
+**Beide Male stand die Definition im Kopf statt in der Datei, und beide Male war die Reparatur dieselbe:
+aus der Quelle ableiten.** Die Klasse dahinter ist die schaerfste des Tages: **eine Mengenaussage ohne
+Definition ist keine Messung, sondern eine Formulierung.** „Die generische Spur", „die Ueberschneidung ist
+gross", „156 Seiten ohne Parameter" — dreimal wie ein Befund geklungen, dreimal eine Formulierung.
+
+**Damit faellt auch meine Behauptung, T1 und T14 seien dieselbe Familie.** Gemessen: 3 von 18 und 3 von 17.
+**Klein, nicht gross — zwei Baustellen, nicht eine.** Zurueckgenommen.
+
+### Protokoll zwischen den Sitzungen, dritte Haelfte
+
+Ein Prueflauf ist an diesem Vormittag verlorengegangen, weil ein Doku-Commit 94 Sekunden nach der
+Lauf-Ankuendigung kam. Anders als beim Fall vom Vortag war diesmal der **Arbeitsbaum** betroffen, und zwar
+eine Datei, die zwei Stufen lesen — das Ergebnis war keinem SHA mehr zuzuordnen. **„Wahrscheinlich gruen"
+ist kein Gate.**
+
+Die Reparatur ist eine Regel, kein neues Wort:
+
+> **Eine Lauf-Ankuendigung hebt das stehende „Strom frei" auf. Nach dem Lauf kommt ein neues
+> „Strom frei \<SHA\>".**
+
+**Begruendung: eine Freigabe, die man nicht widerrufen kann, ist keine Freigabe, sondern eine
+Erinnerung.** Und die Last liegt bei der Seite, die sie pruefen kann: der Pruefstand kann nie wissen, ob
+seine Ankuendigung gelesen wurde — der Autor kann immer wissen, ob seit seinem letzten Schreiben ein
+passendes „Strom frei" stand.
+
+### Wo das digitale Paket ausgeliefert wird — Bolles Frage, am Code beantwortet
+
+> *„wo soll das digitale paket ausgeliefert werden? fuer mich waere die partyseite in einem tab oder
+> eigenem bereich der logischste ort. man passt die gaesteliste an... direkt aenderung des
+> paket/portfolios?"*
+
+**Sein Instinkt ist richtig, und der Grund dafuer ist messbar — es ist nicht Geschmack.** Gemessen am
+Baum `3efbb936`:
+
+```
+Der PLANER weiss ueber Gaeste:   plan.guests = num(q.guests, 1, 30)      eine ZAHL
+Die PARTY weiss ueber Gaeste:    g.name  g.status  g.allergies
+                                 g.pickupTime  g.pickupPerson  g.id  g.inv  g.path
+```
+
+**Eine Urkunde traegt einen Namen. Der Planer kennt keine Namen, nur eine Anzahl.** Damit ist die Frage
+„Planer oder Partyseite" keine Abwaegung mehr: **nur die Partyseite kann ein Paket erzeugen, das
+Kindernamen enthaelt.** Alles, was ein Paket braucht, liegt bereits an der Party — `childName`, `age`,
+`date`, `time`, `address`, `mottoId`/`motto`/`mottoEmoji`/`mottoColor`, `wishes`, `hostName` und die
+Gaesteliste. **32 verschiedene Felder**, gezaehlt, nicht geschaetzt.
+
+**Tab oder eigener Bereich? Eigener Bereich, und zwar aus drei gemessenen Gruenden.**
+
+```
+role="tab"      0        class="tab      0
+aria-selected   0        data-tab        0        Karten in der Partyseite: 9
+```
+
+**Im ganzen Worker gibt es keine einzige Tab-Struktur.** Ein Tab waere also nicht „das vorhandene Muster
+weiterbenutzen", sondern ein neues Bedienmuster in einer Seite, die bisher aus gestapelten Karten
+besteht. Dazu zwei Sacheinwaende: das Paket ist **zum Drucken** da und braucht volle Breite und eigene
+Druckregeln, die mit dem mobil-schmalen Kartenlayout kollidieren — und ein **eigener Pfad ist
+verschickbar**. Der andere Elternteil bekommt einen Link, kein „scroll runter und klick auf den
+zweiten Reiter". **Empfehlung: eigene Route, erreicht ueber eine Karte auf der Partyseite** — genau die
+Stelle, an der heute schon die Ablaufplan-Karte steht.
+
+**Und der entscheidende Punkt, der Bolles Zusatzfrage aufloest: „Gaesteliste anpassen -> direkt Aenderung
+des Pakets" ist umsonst zu haben, wenn das Paket bei jedem Oeffnen NEU GERECHNET statt GESPEICHERT wird.**
+Es gibt dann keinen Abgleich, weil es keine zweite Kopie gibt. **Sobald wir fertige Dateien ablegen,
+kaufen wir uns ein Problem, das wir nie haben muessten:** jede Namensaenderung entwertet still eine
+gespeicherte Urkunde, und wir brauchen eine Regel, wann was neu erzeugt wird. **Das ist dieselbe Klasse
+wie [[paket_kommt_aus_dem_plan]]: handgepflegte Dubletten sind der Defekt, nicht die Loesung.**
+
+### Die Bruecke Plan <-> Party ist EIN FELD, kein System — und beide Haelften stehen schon
+
+**Ich habe angenommen, wir muessten den Plan erst serverfaehig machen. Das stimmt nicht.** Gemessen:
+
+```
+POST /api/plan        legt plan:<token> in KV ab, 90 Tage, und mailt
+                      https://machsleicht.de/kindergeburtstag?plan=<token>
+GET  /api/plan/<tok>  gibt den Plan zurueck, mit `created` fuer die Zeitregel
+```
+
+**Der Plan kann das Geraet also laengst verlassen.** Was fehlt, ist ausschliesslich die Referenz zwischen
+den beiden Datensaetzen:
+
+```
+party.planToken   0 Treffer        plan.partyId   0 Treffer
+party.plan        0 Treffer        plan.party     0 Treffer
+```
+
+**Zwei Speicher, zwei fertige Schnittstellen, null Verbindung.** Die Bruecke ist ein Feld und ein
+Schreibvorgang, nicht ein Umbau. Das aendert die Reihenfolge der Arbeit erheblich — und es beantwortet
+Bolles Frage von gestern („gibt es das nicht schon?") mit **ja, zur Haelfte, und wir haben es nicht
+benutzt.**
+
+**BEFUND GEGEN MEINE EIGENE ARBEIT VON GESTERN.** Die Karte aus Block 19, die ich selbst geschrieben und
+deployt habe, sagt:
+
+> *„Hast du den Plan auf diesem Geraet begonnen, geht es genau dort weiter."* und verlinkt auf
+> `https://machsleicht.de/kindergeburtstag` — **ohne Token.**
+
+**Ich habe die Einschraenkung ehrlich hingeschrieben, weil ich glaubte, es gaebe keinen anderen Weg. Den
+gab es, im selben Worker, 1900 Zeilen weiter oben.** Wer die Partyseite auf dem Handy oeffnet und den
+Plan auf dem Rechner begonnen hat, landet auf einem leeren Planer. **Die Karte ist nicht falsch, sie ist
+unter Wert.** Reparatur: `party.planToken` setzen, sobald jemand aus dem Planer eine Party anlegt, und
+die Karte auf `?plan=<token>` zeigen lassen. Dieselbe Klasse wie die 18 Seiten — **etwas weiss etwas und
+gibt es nicht weiter.**
+
+**NEUER BEFUND, unabhaengig von der Bruecke: die Haltbarkeiten gehen auseinander.**
+
+```
+Plan  : expirationTtl 90*24*60*60      absolut, ab Erstellung
+Party : calcTTL(party.date)            14 Tage NACH dem Partydatum (Bolle-Regel 13.07.)
+```
+
+**Wer eine Party mehr als 90 Tage im Voraus plant, verliert seinen gemailten Planlink, bevor die Party
+stattfindet.** Vier Monate Vorlauf sind bei einem Kindergeburtstag nicht exotisch. Der Plan-Link ist
+zudem pro Speichervorgang ein NEUER Token — die alte Mail stirbt also 90 Tage nach IHRER Erstellung, nicht
+nach der letzten Aenderung. **Ticket, kein Blocker: die Plan-TTL an dieselbe Regel haengen wie die Party
+(`Partydatum + 14 Tage`, Mindestwert 90 Tage), sobald die Bruecke steht und der Plan ein Datum kennt.**
+
+**Offen fuer Bolle — die Architekturentscheidung, nicht die Optik:** Paket bei jedem Aufruf neu rechnen
+(meine Empfehlung, keine zweite Kopie, keine Abgleichregel) oder einmal erzeugen und ablegen (schneller
+beim zweiten Oeffnen, dafuer Dubletten und eine Verfallsregel). **Alles Weitere — Karte, Route, Druckmasse —
+haengt daran und ist danach Handwerk.**
+
+### Search Console, zweite Zehnerliste (09.09.) — und warum sie ins Dokument gehoert
+
+Bolle hat die Sitemap und die erste Zehnerliste am 08.09. eingereicht und heute nach zehn weiteren
+gefragt — **ausdruecklich „nicht die gleichen".** Er musste fragen, weil die erste Liste nur im Chat
+stand. **Eine Liste, die man nicht wiederfindet, ist eine Liste, die man doppelt einreicht.** Deshalb
+steht diese hier, mit dem Verfahren daneben.
+
+**Verfahren statt Gedaechtnis:** aus dem Sitzungsprotokoll (15.662 Zeilen) wurden die **85 Zeilen mit
+Search-Console- oder Indexierungs-Bezug** gefiltert und daraus **39 verschiedene URLs** gezogen — die
+Tabu-Menge. Gegen die 136 Sitemap-URLs gerechnet: **24 Ueberschneidungen fallen weg, 112 bleiben.**
+Aus denen die zehn. Jede live geprueft, alle drei Bedingungen erfuellt (**200 · Titel vorhanden ·
+mehr als 300 Woerter**), Spanne 650 bis 2379 Woerter.
+
+```
+1  /einladung/text/                   2078 W   staerkste Suchabsicht, die wir bedienen
+2  /kindergeburtstag-last-minute      1906 W   dringliche Suche, wenig Konkurrenz
+3  /kindergeburtstag-zuhause          1798 W   eigene Absicht, nicht "drinnen" von Runde 1
+4  /kindergeburtstag-5-jahre          2379 W   die fehlende Altersseite (6 und 7 sind eingereicht)
+5  /adventskalender-fuellen           1529 W   ZEITKRITISCH: Welle ab Oktober, Indexierung braucht Vorlauf
+6  /einladung/                        1556 W   Hub ueber 14 Motto-Vorlagen
+7  /kindergeburtstag/feuerwehr        2075 W   ein Motto-Hub als Fuehler fuer die anderen 13
+8  /kliniktasche-packen               1255 W   anderer Themenkreis, ganzjaehrig
+9  /baby-erstausstattung-checkliste   1419 W   dito
+10 /ueber-uns                          650 W   Vertrauenssignal, kuerzeste der zehn
+```
+
+**Bewusst NICHT drin: die rund 60 Motto-mal-Alter-Seiten** (`…/piraten-6-8-jahre` und Geschwister).
+Sie sind untereinander sehr aehnlich; zehn davon einzureichen sieht nach duenner Massenware aus.
+Stattdessen steht ein einziger Motto-Hub als Fuehler — zieht der, ziehen die anderen nach.
+
+**Anlass war eine andere Frage, und die Antwort gehoert dazu:** *„koennten wir Google austricksen,
+indem wir Ads kaufen? Dann muessten sie uns indexieren."* **Nein.** Anzeigenziele besucht
+**AdsBot-Google** fuer den Quality Score; **AdsBot schreibt nichts in den Suchindex.** Der Index wird
+von **Googlebot** gefuellt, der unabhaengig davon entscheidet, ob Geld fliesst — deshalb kann man auch
+eine Seite bewerben, die per `noindex` gar nicht in der Suche steht. Fuer Geld gibt es Traffic, nicht
+Indexierung.
+
+**Die technische Seite ist dabei gemessen worden, und sie ist frei:** `robots.txt` erlaubt alles
+Wesentliche, Sitemap eingetragen, `lastmod` bis 08.09. — **136 von 136 Sitemap-URLs abgerufen, 0 mit
+`meta robots noindex`**, jede Antwort mit Empfangsbeweis (`</html>` vorhanden).
+
+**Zwei eigene Fehlbefunde auf dem Weg dahin, beide vor dem Melden gefangen:** `/spiele` schien ein
+`noindex` zu tragen — es ist ein **404**, und das `noindex` gehoert der Fehlerseite. `/einladung` schien
+kein Canonical zu haben — es ist ein **301**, mein Grep las die Weiterleitung statt des Ziels.
+**Beide Male hat derselbe Schritt geholfen: erst den Statuscode holen, dann den Inhalt bewerten.**
+Eine Seite, mit der man gar nicht spricht, kann jede Eigenschaft zu haben scheinen.
+
+### Die Haltbarkeitsschere — und warum sie die Paket-Empfehlung korrigiert
+
+Meine Empfehlung „Paket bei jedem Oeffnen neu rechnen, nichts speichern" beantwortet **wie das Paket
+aktuell bleibt** und laesst **wie lange es ueberhaupt bleibt** offen. Der Pruefstand hat das eingewandt,
+und der Einwand traegt. Beide Haltbarkeiten, am Quelltext gelesen:
+
+```
+Plan  : expirationTtl 90*24*60*60        absolut, ab Erstellung des Links
+Party : calcTTL(party.date)              Partydatum + 14 Tage
+        Klammern derselben Funktion:     min 1 Tag, max 2 Jahre (W9-8, gegen ein
+                                         per Direkt-API praepariertes Datum 9999-12-31)
+```
+
+**Die Umschlagschwelle wird abgeleitet, nicht abgelesen:** Gleichstand heisst
+`Partydatum + 14 = Erstellung + 90`, also **Vorlauf = 90 - 14 = 76 Tage.**
+
+```
++75 Tage Vorlauf   Party stirbt 07.12.   Plan 08.12.   Party zuerst
++76 Tage           Party stirbt 08.12.   Plan 08.12.   GLEICH
++77 Tage           Party stirbt 09.12.   Plan 08.12.   Plan zuerst
+```
+
+**Beide Befunde stimmen, sie gelten nur in verschiedenen Bereichen:** ueber 76 Tagen Vorlauf stirbt der
+gemailte Plan-Link vor der Party (mein Befund), darunter — **also im Normalfall** — stirbt die Party
+zuerst und der Plan ueberlebt sie um Wochen (sein Befund). Die erste Fassung der Gegenrechnung sprang
+von 60 auf 90 und **uebersprang die Schwelle**; dieselbe Klasse wie die getippten Kontrollzahlen des
+Tages, angewandt auf eine Schwelle statt auf eine Zahl.
+
+**Was daraus folgt: „aus der Party rechnen" bindet das Paket an die KUERZERE Haltbarkeit.** 14 Tage nach
+der Feier ist die Party weg, mit ihr die Gaesteliste, mit ihr jede neu gerechnete Urkunde.
+
+**Was daraus NICHT folgt — und der Vorschlag, die Namen beim Erzeugen in den Plan zu schreiben, ist
+zurueckgenommen worden.** Der Grund steht drei Zeilen ueber der Zahl, die beide Sitzungen gelesen haben:
+
+> `Bolle-Regel 13.07.2026: Party + alle Daten (Fotos, Gaeste) verfallen automatisch`
+> `14 TAGE NACH DEM PARTYDATUM.`
+
+**Die Regel nennt die Gaeste ausdruecklich.** Kindernamen in einen zweiten Datensatz zu kopieren, der
+90 Tage lebt, verlaengert die Speicherung ueber die Zusage hinaus — **das ist keine Architekturfrage,
+sondern das stille Aushebeln einer Loeschregel.**
+
+**Der Rahmen, auf den sich beide Sitzungen geeinigt haben:** das Andenken lebt **auf Papier** — Bolles
+eigene Produktentscheidung, CEWE oder dm auf Fotopapier, ein Ausdruck hat keine Verfallszeit. In KV
+steht **Arbeitsmaterial**, und Arbeitsmaterial darf mit der Party sterben. Damit schrumpft die ganze
+Sorge auf eine schmale, benennbare Luecke: **wer nicht rechtzeitig druckt und drei Wochen spaeter noch
+einmal will, findet nichts mehr.**
+
+**Drei Wege, keiner braucht eine zweite Kopie der Namen — Entscheidung Bolle:**
+
+```
+1  Nichts tun            Luecke echt aber schmal, Loeschregel unangetastet
+2  Party-TTL verlaengern, wenn ein Paket erzeugt wurde   dieselbe Regel, anderer Wert,
+                         aber SICHTBAR entschieden statt nebenbei
+3  Vor dem Verfall erinnern   der Cron laeuft ohnehin taeglich, Bedingung ist dieselbe wie
+                         beim Erinnern (party.date, party.email)
+```
+
+**Empfehlung beider Sitzungen: Weg 3.** Er ist der einzige, der das Loeschen **sichtbar macht statt es
+zu umgehen**, und er nutzt einen Mechanismus, der schon existiert.
+
+**Offen und ausdruecklich keine Messung:** soll sich eine Urkunde noch aendern, nachdem sie gedruckt
+ist? Bis zum Druck ist „Gaesteliste aendern -> Paket aendert sich" genau der Wunsch. Danach erwartet man
+von einem Andenken das Gegenteil. **Das ist eine Frage an Bolle.**
+
+### Eine zitierte Norm gilt als geprueft — die Fehlerklasse des Tages
+
+Der Kommentar mit der Loeschregel wurde in derselben Nachricht **woertlich zitiert**, in der der
+Vorschlag stand, die Namen zu kopieren. Gelesen, zitiert, nicht angewandt.
+
+**Das ist keine Nachlaessigkeit, sondern eine Form: wer einen Kommentar zitiert, um seinen Vorschlag zu
+begruenden, hat ihn damit als geltend anerkannt — und prueft ihn danach nicht mehr, weil er sich ja
+schon mit ihm befasst hat. Das Zitieren erzeugt das Gefuehl der Pruefung und ersetzt sie.**
+
+**Und der Satz, der diese Klasse von allen Messfallen trennt: bei einer Zahl schlaegt die Gegenprobe an,
+bei einer Zusage merkt es niemand ausser dem, der sie ebenfalls gelesen hat.** Gegen eine Norm gibt es
+keine Gegenprobe — es gibt nur einen zweiten Leser. **Deshalb ist die Zwei-Sitzungen-Arbeit bei Normen
+wertvoller als bei Zahlen, nicht weniger wertvoll.**
+
+**Sie hat an zwei Tagen in beide Richtungen zugeschlagen:** am 08.09. wurde eine offene Rechtsfrage
+(Cloudflare-Verschleierung) als **Pflicht** ausgegeben — eine Norm zu gross gemacht; am 09.09. waere
+eine echte Zusage beinahe **aufgeweicht** worden — eine Norm zu klein gemacht. **Beide Male war die
+Messung richtig und der Umgang mit der Norm falsch.** Kein Namensschild: die eine ist der einen Sitzung
+passiert, die andere der anderen, und keine haette den eigenen Fall gesehen.
+
+### Protokoll zwischen den Sitzungen, vierte Haelfte — die Sperre liegt im BAUM
+
+Die dritte Haelfte („eine Lauf-Ankuendigung hebt das stehende Strom frei auf") hat **am selben Vormittag
+Lauf 48 nicht retten koennen.** Ursache: die Ankuendigung stand in einer Nachricht, die zum
+Commit-Zeitpunkt noch in der Zustellung hing.
+
+```
+Lauf 48  HEAD-Start 30d27699  11:53:22
+Commit   057442eb             11:56:16      174 s spaeter, mitten im Lauf
+geaendert: _dev/review/…      die Datei, die Stufe 45 und Stufe 69 lesen
+```
+
+**Zwei verlorene Laeufe an einem Vormittag (45 und 48), beide durch denselben Commit-Typ, und beim
+zweiten galt die neue Regel schon.** Der Konstruktionsfehler: **eine Regel, deren Wirkung an der
+Zustellung haengt, ist gegen genau den Fall wirkungslos, fuer den sie gebaut wurde** — und wenn sich
+Nachrichten im Minutentakt kreuzen, ist das der Normalfall.
+
+**Die Reparatur kommt ohne Zustellung aus:**
+
+> Der Pruefstand legt bei Laufbeginn **`_dev/.lintlogs/AKTIV`** an und loescht sie am Ende. Die
+> Bau-Session prueft `test -f _dev/.lintlogs/AKTIV` **unmittelbar vor jedem `git add`**.
+
+Vor der Uebernahme nachgeprueft, nicht geglaubt: **`.gitignore:41` enthaelt `_dev/.lintlogs/`, und
+`git check-ignore -v _dev/.lintlogs/AKTIV` bestaetigt es an der Maschine** — dort liegen bereits 60
+Lauf-Verzeichnisse, `git status --porcelain` zeigt 0 Zeilen davon. Die Sperre taucht weder im Status
+noch in einem Commit auf.
+
+**Der Grund, warum diese Fassung traegt und die drei davor nicht: der Baum ist das Einzige, was beide
+Sitzungen garantiert gleichzeitig sehen. Nachrichten haben eine Laufzeit, ein `test -f` nicht.**
+
+Zwei Zusaetze: die Sperrdatei traegt **Startzeit und Start-SHA**; und **aelter als 20 Minuten = verwaist**
+— abgeleitet aus knapp 6 Minuten echter Laufzeit (Lauf 46: 11:37:59 bis 11:43:57), also gut das
+Dreifache. **Eine verwaiste Sperre wird gemeldet, nicht stillschweigend uebergangen** — sonst ersetzt
+eine Hoffnung die andere, und das war der Fehler der dritten Fassung.
+
+**Erster Einsatz, gemessen:** `LAUF 49 AKTIV seit 12:00:10 auf 057442eb`, Lauf 49 gruen
+(12:00:11 bis 12:06:07, 71 Stufen, 0 rot), Sperre danach entfernt, Status durchgehend 2 Zeilen.
+**5:56 Laufzeit gegen 20 Minuten Frist.**
+
+### Gecrawlt — zurzeit nicht indexiert: zwei Zeilen im selben Kasten, nur eine ist ein Problem
+
+Bolle hat `/kindergeburtstag/ritter` in der Search Console geprueft und die Zeile
+**„Keine verweisenden Sitemaps gefunden"** gemeldet. Direkt darueber stand aber
+**„Verweisende Seite: https://machsleicht.de/sitemap.xml"** — zwei Aussagen, die sich zu
+widersprechen scheinen.
+
+**Sie widersprechen sich nicht, sie sind verschieden alt.** Das entscheidende Feld steht drei Zeilen
+tiefer: **letztes Crawling 28.05.2026.** Die Sitemap wurde am **08.09.** eingereicht. Die URL-Pruefung
+zeigt den Zustand **zum letzten Crawling**, und damals war in dieser Property keine Sitemap
+angemeldet — gefunden hatte Google die Datei trotzdem, ueber `robots.txt`. **Die Zeile verschwindet
+beim naechsten Crawling von selbst.**
+
+**Nachgemessen, damit das keine Vermutung bleibt:**
+
+```
+in der Sitemap, exakt wie in GSC     1x   (ohne Schraegstrich; die Variante MIT ist ein 301)
+lastmod dieser URL                   2026-09-01
+live                                 200, Canonical identisch mit dem Sitemap-Eintrag
+sitemap.xml                          200, application/xml, 136 URLs, gueltiges XML
+```
+
+**Die Zeile, die wirklich etwas sagt, ist die andere: „Seite ist nicht indexiert: Gecrawlt —
+zurzeit nicht indexiert."** Google hat die Seite geholt und **entschieden, sie nicht aufzunehmen.**
+
+**Der erste Verdacht bei 14 Motto-Seiten ist Massenware — gemessen und widerlegt.** Und weil an
+diesem Tag vier Zahlen an einer fehlenden Definition gescheitert sind, **steht die Definition hier
+wieder ueber der Zahl:**
+
+> **Satz** = Text der gerenderten Seite, Tags entfernt, getrennt an `.!?`, **mindestens 6 Woerter**
+> (kuerzere Fragmente sind auf jeder Seite gleich und wuerden die Ueberschneidung aufblasen).
+> **Ueberschneidung** = woertlich identische Saetze, nicht Aehnlichkeit.
+
+```
+ritter x piraten      3 von 82        Kontrollzahlen: Saetze je Seite
+ritter x prinzessin   3 von 82          ritter 82 · piraten 114 · prinzessin 107
+ritter x dino         3 von 82          dino 113 · feuerwehr 97
+ritter x feuerwehr    3 von 82
+in ALLEN FUENF gleich: 3 Saetze  ->  3,7 % der Ritter-Seite
+```
+
+**Und die drei gemeinsamen Saetze sind der eigentliche Beleg, nicht die Prozentzahl:**
+
+```
+"Alle Altersgruppen 3-5 / 6-8 / 9-12 Jahre …"              Navigation
+"Der machsleicht-Planer berechnet automatisch Mengen …"    Produktsatz
+"Material & Vorbereitung — die komplette Einkaufsliste"    Ueberschrift
+```
+
+**Navigation, Produktsatz, Ueberschrift — keine einzige Inhaltsdopplung.** Die Motto-Seiten sind
+echte, verschiedene Texte; die naheliegendste Erklaerung faellt mit einer Zahl statt mit einem
+Eindruck.
+
+**Unabhaengig gegengezaehlt, mit leicht anderer Definition** (Text ohne `<script>`/`<style>`):
+**79 / 96 / 93 / 100 / 88** statt 82 / 114 / 107 / 113 / 97. **Der Versatz ist nicht konstant
+(3 · 18 · 14 · 13 · 9), also ein Definitionsunterschied und kein Fehler.** Beide Zaehlungen liefern
+**dieselben drei gemeinsamen Saetze** und dieselbe Reihenfolge; die Prozentzahl wandert von 3,7 auf
+3,8. **Genau deshalb steht die Definition oben: die Aussage haelt, die Zahl allein waere angreifbar.**
+
+**Was bleibt, ist das Datum.** `git log` auf `kindergeburtstag/ritter.html`: **16 Commits seit dem
+28.05.**, darunter am 01.09. der komplette Ablauf-Umbau nach vier Gutachten (54/46/42/58, alle NO-GO).
+**Google beurteilt eine Version, die es nicht mehr gibt.** Damit ist „Indexierung beantragen" keine
+Bittstellerei, sondern die vorgesehene Meldung „die Seite hat sich geaendert" — und sie ist hier
+sachlich begruendet.
+
+**Nebenbeobachtung ohne Handlungsempfehlung:** Ritter ist mit **82 Saetzen die kuerzeste der fuenf**
+(Piraten 114, Dino 113, Prinzessin 107, Feuerwehr 97). Kein Grund fuer sich; aber wenn eine
+Motto-Seite ausgebaut wird, ist das die Reihenfolge.
+
+**Und die Methodenlehre, die hier drinsteckt:** ein Screenshot ist ein **Zustand zu einem Zeitpunkt**.
+Zwei Zeilen im selben Kasten koennen aus zwei verschiedenen Zeitpunkten stammen, und **das Datum
+daneben zu lesen ist Teil des Befunds, nicht Beiwerk.** Dieselbe Form wie Falle 18 (die Datei ist
+nicht mehr die, die ich gelesen habe) — nur dass hier nicht der Baum, sondern der Bericht alt ist.
+
+### Der Plan-Token in der Adresszeile — zwei Tage live, vier Senken, eine Wortsuche entfernt
+
+Gefunden **nicht durch Suchen, sondern beim Gegenlesen eines Entwurfs.** Der Magic-Link
+`machsleicht.de/kindergeburtstag?plan=<token>` (seit 07.09.) traegt einen **Bearer-Schluessel**:
+
+```
+GET /api/plan/<token>   prueft NUR /^[A-Za-z0-9_-]{16,96}$/ — keine Authentifizierung
+plan:<token> enthaelt   email · Kindname · adresse (200 Zeichen) · hostPhone · Datum
+                        · exactAge · crewText
+```
+
+**Vier Senken, und der erste Fix deckte genau eine:**
+
+```
+1  Statistik-Dienst   umami meldet Pfad UND Query     -> data-exclude-search fehlte im Planer
+2  Browser-Verlauf    bleibt auf dem Geraet           \
+3  kopierte Adresse   "schau mal, mein Plan"           |-> replaceState 0x, pushState 0x, history. 0x
+4  Screenshot         der Token steht in der Leiste   /
+```
+
+**Zur ersten Senke: der Worker macht es an beiden Render-Stellen richtig** (`data-exclude-search`
+2x), **genau weil seine URLs `?edit=` und `?g=` tragen.** Der Planer hat den Schalter nicht — und
+seine URL traegt den Token. `data-do-not-track` hilft nicht: es steuert, ob der Dienst ein
+DNT-Signal **beachtet**, nicht was er **sendet**.
+
+**Und die haerteste Zeile des Befunds steht im eigenen Repo, datiert auf denselben Tag, an dem der
+Magic-Link gebaut wurde:**
+
+> `// P0-Security: Token NUR aus Body — Query-Parameter waere in CF-Logs persistiert` (Zeile 699)
+
+**Dieselbe Sorge, woertlich aufgeschrieben, zwei Dateien weiter — und beim Bauen nicht gelesen.**
+Das ist die Normen-Klasse dieses Tages in ihrer teuersten Form. Die Reparatur dagegen ist keine
+Regel, sondern eine Frage: **wenn ich einen Token in eine URL schreibe, wo steht in diesem Repo
+schon etwas ueber Tokens in URLs?** Die Antwort stand da. Sie wurde nicht gesucht.
+
+**Zur zweiten Senke, die der Pruefstand ergaenzt hat:** mein Fix haette die Senke geschlossen und
+die Quelle offen gelassen. **Auf einem geteilten Familienrechner ist der Verlauf die schlechteste
+Senke von allen — sie braucht keinen Dritten und kein Netz.** Beides wurde in EINEM Block gebaut,
+aus einem Grund, der die Reihenfolge betrifft: **getrennt gebaut haette nach dem ersten Commit ein
+halb geschlossenes Leck im Baum gestanden, und der zweite Teil haette wie Kosmetik ausgesehen.**
+
+Drei Gegenmessungen **vor** dem Bauen, die den Eingriff erst gefahrlos gemacht haben:
+`p.get('plan')` genau **1x** (also ist Loeschen sicher), `URLSearchParams` **2x** — wovon die zweite
+(`buildAutopilotHref`) eine URL **baut** statt die eigene zu lesen —, und `history.` vorher **0x**.
+
+### Die Bruecke, verworfen — und sechs Befunde, die dabei ersatzlos verschwanden
+
+Der Entwurf „Plan-Token an die Party haengen, Karte verlinkt in den Planer" wurde von einer
+adversarischen Gegenprobe zurueckgewiesen. **Drei Gruende, alle am Quelltext nachgelesen:**
+
+1. **Sie haette bei den meisten nichts getan — wegen der eigenen Benutzerfuehrung.** Ein Plan-Token
+   entsteht nur ueber „Spaeter -> E-Mail". Der Planer empfiehlt das **nach** dem Aktivieren der
+   Partyseite (Knopf in stage4, Mail in stage5, Abschlusstext 3377). Beim `/api/create` gibt es
+   also meist keinen Token — **und der Ausfall haette ausgesehen wie „hat halt keinen Link geholt".**
+2. **Sie haette eine Gefahr geschaffen.** Die Karte oeffnet den Planer mit wiederhergestelltem Plan,
+   aber ohne Kenntnis der bestehenden Partyseite (`planEingaben()` traegt `partyseite` nicht). Zwei
+   Klicks weiter steht der Aktivieren-Knopf scharf: **zweite Partyseite, zweiter editToken, Gaeste
+   auf zwei URLs.** Heute unmoeglich, weil die Karte in einen leeren Planer fuehrt.
+3. **`plan:<token>` ist ein eingefrorener Schnappschuss** — put 938, get 965, kein PUT. Die Karte
+   haette „Spiele, Zeitplan und Einkaufsliste" versprochen und den Stand vom Klick auf „Spaeter"
+   geliefert.
+
+**Bolle hat es kuerzer gesagt: „das klingt alles ziemlich scheisse."** Und er hatte recht — nicht an
+einem Detail, sondern an der Form. **Jede Pruefrunde machte den Umbau groesser statt kleiner. Das
+war das Signal, und es wurde nicht gelesen, sondern immer feiner geplant.**
+
+**Die neue Form ist kleiner, weil sie die Frage anders stellt: der Plan gehoert AUF die Partyseite,
+nicht daneben.** Der Planer schickt den fertig gerechneten Ablauf beim Anlegen mit
+(`_planTimes(state.plan.acts)` — die Liste, die er ohnehin rendert), der Worker legt sie unter
+`ablauf:<id>` mit `partyOpts` ab, die Editor-Seite zeigt sie als Karte. **Ein Gast-Aufruf liest den
+Schluessel nicht einmal; DELETE raeumt ihn mit ab.**
+
+**Und das ist der eigentliche Ertrag des Tages, den keine Befundtabelle zeigt:**
+
+```
+Token, der lecken kann      weg — es gibt keinen
+Sprung in den Planer        weg — man verlaesst die Partyseite nicht
+TTL-Schere                  weg — eine Frist statt zwei
+Anker, der das Banner nahm  zurueckgenommen
+Namen im 90-Tage-Satz       zurueckgenommen
+Sechserliste am falschen Stop  zurueckgenommen
+```
+
+**Sechs Befunde, keiner repariert, alle sechs gibt es nicht mehr.** Eine Tabelle zaehlt nur, was
+behandelt wurde — **das Beste an diesem Nachmittag war, was nicht mehr behandelt werden musste.**
+
+### Klasse: eine Regel, die Vorwissen verlangt, das erst hinterher entsteht
+
+Zweimal an einem Nachmittag war die Vorab-Anmeldung der Kennzahlen unvollstaendig — beim
+Statistik-Fix fehlten drei (`data_attribute`, `const_deklarationen`, `try_bloecke`), beim
+Ablauf-Bau wieder drei (`function_schluesselwort` +2, `try_bloecke` +1, `zeilen_ueber_300` +1).
+**Keine davon war ein Fehler; alle waren direkte Folgen der eigenen Zeile.**
+
+**Der Befund ist nicht die Nachlaessigkeit, sondern die Bauart der Regel: sie verlangt, VOR dem
+Schreiben zu wissen, welche von 60 Kennzahlen eine Zeile beruehrt — und das weiss man erst, wenn
+man die Zeile geschrieben hat.** Zweimal in Folge unvollstaendig ist kein Ausrutscher, das ist die
+Form.
+
+**Die Reparatur ist dieselbe wie bei der dritten Protokollfassung heute Vormittag: die Last dorthin
+legen, wo die Information tatsaechlich vorliegt.** Dort war es der Baum statt die Nachricht, hier
+ist es die Messung statt die Vorhersage:
+
+> **Angemeldet wird nur, was sich NICHT bewegen darf** (die neun stehen fest). **Der Pruefstand misst
+> alles; jede Bewegung ausserhalb der neun ist eine Frage an den Autor, kein Befund.**
+
+Dieselbe Diagnose in einem Satz: **eine Regel, die funktioniert, solange nichts Ungeplantes
+passiert, ist gegen genau den Fall wirkungslos, fuer den sie gebaut wurde.**
+
+### Zwei Tickets, ausdruecklich nicht nebenbei mitgenommen
+
+**1. Die Verbotsliste ist die falsche Richtung.** Der oeffentliche Party-GET filtert per
+DENY-Liste: `const {editToken,email,doiToken,ref,address,invites,...safe} = party;` — **sechs
+Felder geheim, 27 von 32 automatisch oeffentlich.** Der Fehler passiert damit **durch Vergessen,
+nicht durch Handeln**, und er ist schon passiert: **`party.reminded7` wird gesetzt und geht heute
+oeffentlich raus**, ohne dass es jemand entschieden haette. Eine Erlaubnisliste kehrt das um: dort
+ist ein vergessenes Feld unsichtbar statt oeffentlich. **27 betroffene Felder und fuenf Anker eines
+Gegenprobe-Skripts haengen an der Zeile — ein eigener Block, keine Beigabe.**
+
+**2. Worker und Planer sind bei der Statistik auseinandergelaufen.** Der Worker hat
+`data-exclude-search` ohne `data-do-not-track`, der Planer hatte es umgekehrt (jetzt beides).
+**Ob die Partyseiten zusaetzlich DNT beachten sollen, ist eine Verhaltensaenderung auf allen
+Seiten** — Bolles Entscheidung.
+
+**Und zwei, die zum Ablauf-Bau gehoeren:** die **Einkaufsliste** (wird vor der Party zuhause
+gebraucht, nicht am Partytag auf dem Handy) und das **Aktualisieren des Ablaufs** nach dem Anlegen.
+Der bestehende PATCH kann es; wann er feuern darf, haengt an **1.000 KV-Writes pro Tag im
+Gratis-Tarif** — nachgelesen im Kommentar Zeile 381, nicht geschaetzt.

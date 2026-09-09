@@ -109,7 +109,7 @@
   "founder": { "@type": "Person", "name": "Marie-Therese Bollweg", "url": "https://machsleicht.de/ueber-uns", "jobTitle": "Gründerin" }
 }
 </script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true" data-exclude-search="true"></script>
 <script>
 // Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
 // OHNE diesen Shim feuerte if(window.plausible) plausible('party_created',...) NIE -> Funnel-Conversion blind.
@@ -164,7 +164,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   /* TOP NAV */
   .topnav{background:#fff;border-bottom:1px solid #F0E6D8;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30;gap:14px}
   .topnav__brand{font-family:'Lilita One';font-size:18px;color:#1A1A1A;text-decoration:none;display:flex;align-items:center;gap:8px}
-  .topnav__brand em{font-style:normal;color:#FF6F00}
+  .topnav__brand em{font-style:normal;color:#B54F00}
   .topnav__center{display:flex;align-items:center;gap:14px;flex:1;justify-content:center}
   .topnav__progress{display:flex;align-items:center;gap:5px}
   .topnav__dot{position:relative;width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
@@ -179,13 +179,13 @@ window.plausible.init=function(){};window.plausible.q=[];
   .topnav__save::before{content:'✓';font-size:14px}
   .topnav__right{display:flex;gap:8px;align-items:center}
   .topnav__btn{background:none;border:1px solid #F0E6D8;color:#666;font-family:'Nunito';font-weight:700;font-size:12px;cursor:pointer;padding:7px 12px;border-radius:8px;transition:all .15s;white-space:nowrap}
-  .topnav__btn:hover{background:#FFF3E6;color:#FF6F00;border-color:#FF6F00}
+  .topnav__btn:hover{background:#FFF3E6;color:#B54F00;border-color:#FF6F00}
 
   /* STAGE 1: MOTTO */
   .pick{max-width:1080px;margin:0 auto;padding:48px 20px 80px}
   .pick__head{text-align:center;margin-bottom:36px}
   .pick__head h1{font-size:clamp(30px,4.5vw,46px)}
-  .pick__head h1 em,h2 em{font-style:normal;color:#FF6F00}
+  .pick__head h1 em,h2 em{font-style:normal;color:#B54F00}
   .pick__head p{color:#666;font-size:17px;max-width:580px;margin:14px auto 0}
   .social-proof{display:inline-flex;align-items:center;gap:8px;background:#F0FDF4;border:1px solid #C8E6C9;color:#1A1A1A;padding:10px 16px;border-radius:999px;font-size:13px;margin-top:18px;font-weight:600}
   .motto-card--custom{border-style:dashed !important;background:#FFF8F0 !important}
@@ -1010,7 +1010,7 @@ window.plausible.init=function(){};window.plausible.q=[];
             <p style="margin:0 0 3px;font-size:13px;font-weight:800;color:#8a6d3b">🔑 Dein Verwaltungs-Link — nur für dich</p>
             <p style="margin:0 0 7px;font-size:12px;color:#7a6a50;line-height:1.4">Damit siehst du Zusagen und pflegst Wunschliste &amp; Nachricht. <strong>Nicht an die Gäste geben.</strong></p>
             <a id="psEditLink" href="#" target="_blank" rel="noopener" style="font-size:11px;word-break:break-all;color:#5A6473;display:block;margin-bottom:9px">…</a>
-            <p id="psEmailSent" style="display:none;margin:0;font-size:12px;color:#2E7D32;font-weight:700">📧 Verwaltungs-Link ist unterwegs an <span id="psEmailSentTo"></span> — schau ggf. im Spam-Ordner. <button type="button" onclick="autoSendEditLink((state.partyseite&amp;&amp;state.partyseite.email)||'')" style="border:none;background:none;color:#D4812A;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Nochmal senden</button></p>
+            <p id="psEmailSent" style="display:none;margin:0;font-size:12px;color:#2E7D32;font-weight:700">📧 Verwaltungs-Link ist unterwegs an <span id="psEmailSentTo"></span> — schau ggf. im Spam-Ordner. <button type="button" onclick="autoSendEditLink((state.partyseite&amp;&amp;state.partyseite.email)||'')" style="border:none;background:none;color:#9F601F;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Nochmal senden</button></p>
           </div>
         </div>
       </div>
@@ -2953,7 +2953,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       +'<strong style="font-size:13px;display:block;margin:2px 0">'+g.n+'</strong>'
       +'<small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">'+g.s+'</small>'
       +'<button type="button" onclick="event.stopPropagation();tryPsGame(\''+g.id+'\')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>'
-      +'<span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A;display:'+(g.id===state.gameChoice?'':'none')+'">✓ Gewählt</span>'
+      +'<span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#9F601F;display:'+(g.id===state.gameChoice?'':'none')+'">✓ Gewählt</span>'
       +'</div>').join('');
   }
   function pickPsGame(el){
@@ -3144,7 +3144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(crew.some(function(n){ return n.length > CREW_NAME_MAX; })) warn.push('Ein Name ist länger als ' + CREW_NAME_MAX + ' Zeichen und wird gekürzt — kürze ihn lieber selbst.');
     const g = state.guests;
     const syncBtn = (crew.length >= 2 && crew.length <= 20 && crew.length !== g)
-      ? ' <button type="button" onclick="syncGuestsToCrew()" style="border:none;background:none;color:#D4812A;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Plan auf ' + crew.length + ' anpassen</button>'
+      ? ' <button type="button" onclick="syncGuestsToCrew()" style="border:none;background:none;color:#9F601F;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Plan auf ' + crew.length + ' anpassen</button>'
       : '';
     const planNote = (crew.length !== g)
       ? '<br><span style="color:#8a6d3b">Dein Plan (Einkauf, Mengen) rechnet mit ' + g + ' Kindern.' + syncBtn + '</span>'
@@ -3271,7 +3271,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       // M11: geprueft wird der DOM-Wert, gesendet wurde bisher der State — bei Autofill laufen
       // beide auseinander (Pflichtfeld bestanden, Payload leer). Jetzt dieselbe Quelle fuer beides.
       hostName: _psHost.slice(0,60), hostPhone: _psPhone.slice(0,30), areaHint: _psArea.slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
-      notes: _psNotes.slice(0,300), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
+      notes: _psNotes.slice(0,300), askAllergies: true, askPickup: true, ablauf: (function(){ try{ var _a = (state.plan && Array.isArray(state.plan.acts)) ? _planTimes(state.plan.acts) : []; return _a.slice(0,24).map(function(x){ return {t:x.time||'', e:x.emoji||'', n:x.title||'', d:+x.durationMin||0}; }); }catch(e){ return []; } })(), wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
     };
     try{
@@ -3798,6 +3798,16 @@ window.plausible.init=function(){};window.plausible.q=[];
         const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }
         const _pl = p.get('plan'); if(_pl && /^[A-Za-z0-9_-]{16,96}$/.test(_pl)){ window.__planToken = _pl; }   // 07.09.: Magic-Link, Wiederherstellung laeuft nach dem Init (s. restorePlanFromLink)   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
+        /* 09.09.2026: Den Plan-Token SOFORT aus der Adresszeile nehmen. Er ist ein
+           Bearer-Schluessel auf den ganzen Plan (Kindname, Adresse, Telefon) — GET /api/plan/
+           <token> prueft nur die Form. In der Leiste landet er im Browser-VERLAUF, in jeder
+           kopierten Adresse und in jedem Screenshot; data-exclude-search haelt ihn nur aus der
+           Statistik, nicht vom Geraet. Gefahrlos, weil ?plan genau einmal gelesen wird (oben)
+           und alles Weitere ueber window.__planToken laeuft. Die uebrigen Parameter bleiben.
+           Befund des Pruefstands zur Gegenprobe des Bruecken-Entwurfs. */
+        if(_pl){ try{ p.delete('plan'); const _q = p.toString();
+          history.replaceState(null, '', location.pathname + (_q ? '?' + _q : '') + location.hash);
+        }catch(eh){ console.warn('url-clean', eh); } }
       }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
       if(!state.age){ state.age = '6-8'; }
