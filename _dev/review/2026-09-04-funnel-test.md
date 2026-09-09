@@ -2032,3 +2032,35 @@ nicht geladen. Fuer die Karte folgenlos (sie benutzt Lilita One) — aber es bew
 ersten Strich wird geprueft, ob die Schrift da ist, und bei `false` wird nicht gezeichnet, sondern
 gemeldet.** Am 07.09. haben wir auf Ersatzschriften gemessen und es gemerkt; bei 300 dpi merkt es
 niemand, bis die Karte im Briefkasten liegt.
+
+### Richtigstellung zu T3 — „nie gelesen" war zu stark
+
+Meine Tabellenzeile sagt: *„`ref` validiert, gespeichert, **0 Lesezugriffe repo-weit**".* **Das gilt fuer
+das gespeicherte Feld, nicht fuer die Herkunft insgesamt.** Der Pruefstand hat den Unterschied gemessen,
+ich habe ihn an der Quelle nachgeprueft:
+
+```
+Planer   state.ref  3 Vorkommen
+           :3798  gesetzt aus ?ref=, geprueft gegen /^[a-z0-9]{6,12}$/
+           :3278  im Anlege-Aufruf mitgeschickt   ref: state.ref || ''
+           :3288  AUSGEWERTET:  plausible('party_created', {props:{ ..., referred: state.ref ? '1':'0' }})
+Worker   party.ref  0 Lesezugriffe        body.ref 2 (einmal schreiben, einmal herausschneiden)
+         Kontrollzahlen: party.date 41 · party.editToken 13 · party.email 5  -> das Muster arbeitet
+```
+
+**Richtig ist also: WIE VIELE Partys aus einer Empfehlung kamen, ist heute zaehlbar — aus WELCHER nicht.**
+Die Kennung wird gespeichert und nie wieder angesehen.
+
+**Und die Pointe steht eine Zeile ueber dem Nullbefund:** der Worker schneidet `ref` ausdruecklich aus
+jeder oeffentlichen Antwort heraus (`const {editToken,email,doiToken,ref,address,invites,...safe}`). **Ein
+Feld, das sorgfaeltig geschuetzt wird, obwohl es niemand liest — der Schutzaufwand laeuft mit, der Nutzen
+nie an.** Damit ist `ref` der schaerfste der drei Faelle von „erheben, nie lesen": bei der Warteliste
+fehlt die Leseroute, hier gibt es eine bewusste Nicht-Leseroute.
+
+**Fuer Bolle wird daraus eine Frage statt eines Befunds:** die virale Kette funktioniert, sie ist nur nicht
+aufloesbar. Er kann sehen, DASS Empfehlungen wirken, nicht WELCHE. **Die Daten liegen seit je da, es fehlt
+nur die Abfrage** — ein kleineres Ticket als „der Loop ist kaputt", und ein ehrlicheres.
+
+**Die Klasse dahinter, weil sie mir gehoert:** ich habe eine Null gemessen, die stimmt, und sie mit einer
+Ueberschrift versehen, die mehr behauptet. `party.ref` ist null, `ref` als Groesse nicht. **Ein
+Nullbefund braucht nicht nur seine Kontrollzahl, sondern auch seinen Gegenstand im Titel.**
