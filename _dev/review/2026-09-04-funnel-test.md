@@ -1563,3 +1563,282 @@ Aenderung.
 **Und eine Reihenfolge, die nicht gestimmt hat:** meine Frage „Strom offen?" fuer Block 15 kam beim
 Pruefstand an, als Block 14 schon im Baum stand. Es lief kein Lauf, es ist nichts entwertet — aber die
 Frage gehoert **vor** die Aenderung, nicht danach.
+
+## 09.09.2026 — der Trichter, der Deploy, und ein Nachweis, der seine eigenen Luecken gefunden hat
+
+### Bolles Bremse, und sie war berechtigt
+
+Woertlich: *„Ihr solltet auch den Funnel perfektionieren. Jetzt haengen wir stundenlang am Design. Seid
+ihr falsch abgebogen?"*
+
+**Ja, teilweise — und der Abzweig gehoert dem Autor.** Eine Randnotiz aus einem Gutachten („weisse Schrift
+auf der orangen Marke erreicht 2,79") ist zur Tagesordnung geworden, weil jede Messung eine naechste
+erzwang. Jeder Fund war echt. **Aber kein einziges Mal stand die Frage daneben, ob das den Trichter
+bewegt.** Der Pruefstand hat sich der Bremse ausdruecklich angeschlossen: er ist mitgelaufen, nicht
+mitgezogen worden.
+
+### Block 19 (`051b7ab1`) — der Editor hatte keinen Weg zum Plan
+
+Gemessen statt vermutet: `editorView` (Z. 2780–3103, **33.123 Zeichen**) enthielt **null** Vorkommen von
+„Plan", „Planer", „kindergeburtstag" oder „/plan". **Wer eine Partyseite angelegt hat, sah auf der Seite,
+die er danach immer wieder oeffnet, keinen einzigen Hinweis auf das, was das Produkt verspricht** — genau
+die Sorge, die Bolle am 08.09. selbst formuliert hatte.
+
+Gebaut ist der kleine Weg: eine Karte mit einem **blanken** Link auf den Planer. Die drei Verzichte sind
+der eigentliche Inhalt des Blocks:
+
+- **kein `?motto`/`?alter`/`?gaeste`** — die setzen `state` beim Init und koennen einem Gastgeber den
+  eigenen gespeicherten Plan ueberschreiben. Beleg im Code selbst (`kindergeburtstag.html:1637`):
+  *„Snapshot festhalten: Deep-Link-Eintritt (?motto/?alter) kann STATE_KEY via autoSave ueberschreiben"*,
+  dazu `initFunnel:3815` mit `goStage(2)` — ein Rueckkehrer landete auf Stufe 2 statt dort, wo er aufhoerte.
+- **kein `?ref`** — die Markierung bedeutet „von Party X kam ein NEUER Gastgeber". Der Gastgeber von
+  Party X ist nicht sein eigener Empfehlungsfall; **eine Kennzahl, die Rueckkehrer als Neuzugaenge zaehlt,
+  ist schlimmer als keine.**
+- **kein Versprechen, das der Link nicht haelt** — „Hast du den Plan auf diesem Geraet begonnen, geht es
+  genau dort weiter", nicht „dein Plan wartet".
+
+**Daraus die Regel, die in eine kuenftige Trichter-Pruefstufe gehoert: Eintrittskanten sollen Daten
+tragen, Rueckkehrkanten duerfen es nicht.** An der Eintrittskante weiss der Planer nichts, jeder Parameter
+ist ein Gewinn; an der Rueckkehrkante weiss er alles, jeder Parameter ist ein Angriff auf den
+gespeicherten Stand. Eine Stufe, die stumpf „traegt Daten mit" belohnt, haette hier eine Regression
+gebaut und gruen gemeldet.
+
+Ticket fuer den grossen Weg: den Plan-Schnappschuss beim Anlegen mitschicken, als `plan:<token>` ablegen
+(Endpunkt und 90-Tage-Form gibt es schon) und den Token an der Party speichern — dann fuehrt der Knopf zu
+GENAU diesem Plan, auf jedem Geraet. Drei Aenderungen und ein unabhaengiger Review; die Sanitisierung
+waere **eine** Funktion fuer beide Endpunkte, nicht zwei getippte Kopien.
+
+### Block 16 (`2bf3465a`) — die gedaempfte Nebenschrift, sieben Stellen
+
+Die zweite Kontrastrichtung, gefunden vom Pruefstand beim Gegenmessen von Block 14: nicht Schrift AUF der
+Mottofarbe, sondern die graue Nebenschrift auf hellem Grund. Im Gastbereich ist `var(--m)` **17-mal
+Schriftfarbe und 0-mal Flaeche**.
+
+| Stelle | vorher | nachher |
+|---|---|---|
+| dino / dschungel | `#558B2F` 3,78 | `#4C7C2A` 4,58 |
+| DEFAULT_THEME | `#8B7D6B` 3,91 | `#807362` 4,51 |
+| meerjungfrau | `#00838F` 4,06 | `#007A85` 4,57 |
+| safari | `#8D6E35` 4,48 | `#8C6D34` 4,54 |
+
+**Zwei Stellen mehr, als Bolle genannt hatte, und beide ausdruecklich angesagt statt mitlaufen gelassen:**
+`baseHead --m` (die feste graue Schrift der Gastgeber-Seiten, **59 Vorkommen, davon 56 als `color:`**) und
+die Markenzeile der Edit-Link-Mail (4,00 → 4,62; bei Mails kann niemand nachtraeglich etwas aendern).
+Groesste Farbton-Drift **0,3 Grad** — anders als in Block 14, wo der Satz „Farbton bleibt" nicht trug.
+
+### Bloecke 20, 21, 22 — der Kopf der Gaesteseite
+
+**Block 20 (`ee264257`).** Der Hero-Befund, mit zwei unabhaengigen Verfahren gemessen (Pixelmessung am
+gerenderten Dokument gegen Rechnung aus der Verlaufsformel, **gleiche Zahl**): der Kindername (42 px/800,
+Schwelle 3,0) war ueberall in Ordnung, alles darunter nicht — `.hero-logo` 12 von 17 Paletten darunter,
+`.hero-motto` 14 von 17, `.hero-sub` **17 von 17**.
+
+**Der Schleier allein reicht nicht, und das ist der Kern:** bei 45 % Schleier blieben mit den alten
+Deckkraften noch 8 von 30 Stellen rot, weil **50 % Weiss selbst auf reinem Schwarz nur 5,32:1 erreicht**.
+Die Deckkraft deckelt oben, der Grund deckelt unten. Also beides: Schleier 36 % plus Deckkraft
+90/100/100/100 statt 60/90/80/50.
+
+**Eine sechste Stelle stand in keiner der beiden Messungen:** `.countdown-label`. Die Zaehl-Pille trug
+`background:rgba(255,255,255,.15)` — **sie hellt ihren eigenen Grund auf** und stand auch mit Schleier und
+voller Deckkraft noch bei 3,02. Weisse Schrift auf einer weissen Aufhellung, dieselbe Klasse wie der
+PayPal-Knopf in Block 13.
+
+**Block 21 (`1de5a9d9`).** Der Klassenbefund des Pruefstands: das fehlende Desktop-Layout hat zwei
+Mitglieder. Bolle sah die Editorseite, gemessen war auch die Gaesteseite betroffen. Vorgelegt als
+Entscheidungsfrage, seine Wahl: „Auch breiter machen". Vor dem Bauen gemessen: 81 sichtbare Elemente, 0
+laufen ueber; der einzige breite Knopf ist der Absende-Knopf des Zusage-Formulars, wo volle
+Formularbreite die richtige Form ist.
+
+**Block 22 (`d5a5bde0`).** Entstanden aus einer **Frage** des Pruefstands, nicht aus einer Zahl: *„Hast du
+am Text-SCHWERPUNKT oder an den Text-ENDEN gemessen?"* Am Schwerpunkt — und beim radialen Schleier ist
+das der guenstigste Punkt jeder Zeile. Nachgemessen mit langem Namen und langem Motto an den echten
+Textgrenzen je Zeile (`Range.getClientRects()`, nicht die Elementbox: **bei zentriertem Text ist die Box
+so breit wie der Behaelter und meldet Raender, an denen gar kein Text steht**):
+
+```
+714 Messpunkte, 2 unter der Schwelle:  safari .hero-sub links 4,40 · rechts 4,45
+```
+
+Reparatur: Ellipse 150 %/115 % statt 100 %/100 %, Rand 26/28 statt 18/14, **Deckung im Zentrum
+unveraendert**. Gegenprobe zur Variantenwahl: nur den Rand vergroessern reicht NICHT (4,45/4,48) — es ist
+die Ellipsengroesse. Abnahme ueber sechs Breiten (360/420/560/700/899/1200): **3876 Messpunkte, 0 unter
+der Schwelle, schlechtester Wert 4,70.**
+
+**Und ein zweiter Fund aus derselben Frage, der die Richtung umdreht.** Der Pruefstand vermutete, die
+groessere Schleier-Box werde von `.hero{overflow:hidden}` abgeschnitten und ergebe eine sichtbare Kante.
+Gemessen bei 360 px hat die **alte** Fassung die Kante:
+
+```
+            x=0              x=2             x=30
+alt   rgb(202,108,25)  rgb(142,76,18)  rgb(137,75,18)     Sprung von 60 Stufen auf 2 px
+neu   rgb(135, 72,17)  rgb(135,72,17)  rgb(131,71,18)     glatt
+```
+
+Der alte Schleier endete **zwei Pixel vor dem Bildschirmrand** (Box 328 + 2×14 = 356 in 360). **Nicht der
+Schnitt macht die Kante, sondern das Aufhoeren vor dem Schnitt.** Ein heller Zweipixelstreifen an beiden
+Raendern, seit dem Deploy dieses Morgens ausgeliefert — **der einzige bekannte offene Live-Fehler**, und
+die Zeile dagegen liegt fertig auf `draft`.
+
+### Deploy 09.09. — `main = 2e2080de`, Worker `ac87e60e`
+
+Bolle hat den Token geschickt. Merge per Plumbing (Baum identisch zu `draft`, **0 HTML-Dateien im Diff**,
+also nichts fuer die Sitemap), Worker 184,70 KiB, Cron `0 8 * * *` weiterhin registriert. Ausgeliefert
+sind damit die Bloecke 15, 16, 19, 20 und 21; Block 22 nicht.
+
+### Der Live-Nachweis — 72 von 72, und 19 Luecken
+
+Acht Dimensionen, jede mit eigener Abfrage, Kontrollzahl und Positivprobe, dazu eine unabhaengige
+Gegenpruefung je Fehlschlag und eine Vollstaendigkeitskontrolle. **72 Pruefungen, 72 bestanden, 0
+Fehlschlaege — und die Vollstaendigkeitskontrolle war wertvoller als alle Haekchen zusammen.**
+
+- **Drei Dimensionen prueften die VORSCHAU, nicht die Gaesteseite.** Alle Artefakte trugen das
+  Vorschau-Banner und `partyContent:display:block`; die echte Gaesteseite liefert 50384 statt 49793 Bytes
+  und ein Namensgatter ueber die volle Hoehe. Das CSS uebertraegt sich, **der Zustand nicht.**
+- **Die Bytezahl ist gegen genau diesen Deploy blind.** Im Scratchpad lagen zwei Dateien mit exakt 49793
+  Bytes, inhaltlich vermischt: die eine mit `--m:#8B7D6B` (alt) UND `#CD6509` (neu), die andere umgekehrt.
+  **Alle geaenderten Hexwerte sind sieben Zeichen lang.** Konsequenz: md5 neben jeder Zaehlung, im selben
+  Kommando.
+- **Die „9277-Byte-Trunkierung", die vier Dimensionen dreimal verschieden erklaerten, war keine.** 9277 ist
+  exakt die Laenge der Live-404-Seite — es war eine **fremde Seite im erwarteten Dateinamen.**
+- Nie geprueft, weil das Verfahren es nicht sehen kann: die Edit-Link-Mail, die DOI-Seite, vier der sechs
+  geaenderten Paletten. **Ein curl-und-grep-Nachweis endet an der Grenze des ausgelieferten HTML** — das
+  ist eine Methodengrenze, keine Nachlaessigkeit, aber sie muss dastehen, sonst liest sich „acht
+  Dimensionen, alles gruen" als Vollabdeckung.
+
+### Neuer Befund: die Karte des Einladungsspiels
+
+Weisse Schrift auf dem `h1→h2`-Verlauf plus die `.play-pill` (`t.a` auf Weiss). Gerendert gemessen bzw.
+aus der Quelle gerechnet:
+
+| Stelle | unter 4,5 bei |
+|---|---|
+| `.game-header-title` (16 px/800, weiss) | safari 3,19 · dino 3,73 · DEFAULT 4,08 · meerjungfrau 4,40 |
+| `.game-header-sub` (11 px/400, weiss) | safari 3,13 · dino 3,64 · DEFAULT 3,98 · meerjungfrau 4,18 |
+| `.play-pill` (12 px/800, `t.a`) | baustelle 2,65 · safari 2,65 · meerjungfrau 2,74 · dino 2,78 · zirkus 2,79 · DEFAULT 3,01 |
+
+**Es sind viermal dieselben vier Paletten** — und das ist keine Sammlung von Einzelfaellen, sondern eine
+Eigenschaft: **ihr `a` und ihr `h2` sind zu hell fuer beides — fuer weisse Schrift darauf und fuer sie
+selbst als Schrift auf Weiss.** Dieselbe Groesse, beide Richtungen, die Verallgemeinerung dessen, was bei
+`m` aufgemacht wurde.
+
+**Und die Pointe, die keiner gesucht hat: Block 14 hat die Spielkarte repariert, ohne dass es im Auftrag
+stand.** Aus `git show f33f4b56` nachgerechnet:
+
+```
+baustelle VORHER  weiss auf h1 2,65   auf h2 1,66        NACHHER 6,62 / 3,85
+zirkus    VORHER  weiss auf h1 3,79   auf h2 2,79        NACHHER 6,65 / 3,87
+```
+
+**1,66 ist der zweitschlechteste Wert dieser zwei Tage** — nur der Verlaufsknopf mit 1,16 war schlimmer,
+und beide sassen auf dem Element, mit dem sich das Produkt verbreitet. **Die vier, die heute durchfallen,
+sind die vier, deren Verlaufsfarben noch nie jemand angefasst hat.** Baustelle und zirkus sind draussen,
+weil Bolle hingesehen hat.
+
+**Die Reparatur ist klein, und ein Vorschlag musste dafuer zurueckgezogen werden.** Der Autor hatte „vier
+Mottos brauchen einen dunkleren Grundton" vorgeschlagen — **das haette Block 10 rueckgaengig gemacht:** die
+sechs Paletten mit dunkler Knopfschrift sind exakt die sechs mit der zu blassen Pille. **Eine Reparatur,
+die auf die richtige Messung zeigt und in die falsche Richtung zieht** — die gefaehrlichste Form des
+Tages. Richtig ist:
+
+```
+.play-pill   t.a -> t.d auf Weiss:   6 von 17 unter 4,5   ->   0 von 17, schlechtester 7,87
+.game-header derselbe Schleier wie im Seitenkopf, eine Regel, keine Farbe angefasst
+```
+
+Offen: die Pille **pulsiert**. Dunkle Schrift auf weissem Grund pulsiert anders als helle — das Auge folgt
+dann der Flaeche statt der Schrift. Gestaltung, keine Norm; Bolle entscheidet.
+
+### Befund 07 aufgeloest — es war nie eine Preisfrage
+
+Gemessen: `setInviteType()` wird nirgends aufgerufen, es gibt kein Markup mit `invite-type-btn` (6
+CSS-Regeln, 0 Knoepfe), `state.invite.type` steht dauerhaft auf `minispiel`. Die Variante **Karte** ist
+fertig gebaut — ein einziger Fehler drin, der fest verdrahtete Ort `Bei uns zuhause`, waehrend die
+richtige Fassung fuenf Zeilen darunter im WhatsApp-Text schon steht. Und die Variante **Druck** rendert
+eine A6-Vorschau, waehrend **`window.print` im ganzen Planer null mal vorkommt.** Es gab keinen Weg, die
+Karten zu bekommen.
+
+**Wir haben monatelang eine Entscheidung fuer teuer gehalten, die gar nicht existierte, weil niemand die
+eine Null gemessen hat.**
+
+Bolles Antwort loest den Rest: **CEWE oder dm, auf Fotopapier, der Gastgeber laedt selbst hoch.** Kein
+Partner, kein Versand, keine Bezahlung — wir liefern eine Bilddatei.
+
+### Sofortdruck: was es wirklich gibt (recherchiert, 09.09.2026)
+
+| Zweck | Format | Preis | Verfuegbarkeit |
+|---|---|---|---|
+| Einladung | 10 × 15 cm | 0,27 € | ueberall |
+| Urkunde, Standard | 15 × 20 cm | 0,49 € | **von CEWE fuer ALLE Stationen zugesagt** |
+| Urkunde, gross | 20 × 30 cm | 2,95 € (ab 2 St. 1,95 €) | nur an ausgewaehlten Stationen |
+| darueber | 30 × 40 / 30 × 45 cm | 6,95 € | vom Mitarbeiter gefertigt, keine Zeitangabe belegt |
+
+**A4 auf Fotopapier gibt es im Sofortdruck nirgends.** Ein Durchlauf ueber 15.001 Produkt-IDs des
+dm/CEWE-Preisdienstes fand 94 Sofortdruck-Produkte, davon 14 Fotoabzuege; das groesste ist 20 × 30.
+
+**Der Punkt, der die Arbeit verdoppelt, wenn man ihn uebersieht: 15 × 20 ist 3:4, 20 × 30 ist 2:3.** Bei
+20 cm Breite ist das eine 26,7 cm lang, das andere 30 — **zwei eigenstaendige Layouts, keine Datei mit
+zwei Exporten.** A4-Vorlagen aus dem Papierhandel (dort 84 % aller Urkundenformate) passen auf keines von
+beiden: A4 ist 1:1,414, die Fotoformate liegen 6 % darueber oder 5,7 % darunter.
+
+Kein Anbieter nennt einen Sicherheitsabstand in mm (Negativbefund ueber 6 geprueften Seiten). Aus dem
+Akzidenzdruck uebertragen: Text mindestens 6 mm, besser 10 mm vom Rand — bei 300 dpi 71 bzw. 118 px.
+**Vor dem Ausliefern ein echter Testdruck fuer 0,49 €**, weil keine Quelle sagt, wie feine Schrift auf
+Fotobelichtung herauskommt und eine Urkunde fast nur Schrift ist.
+
+### Messfehler 18 bis 22 — und was diesen Tag von gestern unterscheidet
+
+Gestern fingen Waechter, heute fing **die jeweils andere Sitzung**. Beide Male stand die falsche Fassung
+kurz davor, eine Entscheidung von Bolle zu formen.
+
+- **18 (Pruefstand).** „Fuer Block 21 liegt gar keine Freigabe vor." Falsch — sie war die ausdruecklichste
+  von allen; der Befund war bereits an Bolle berichtet und wurde zurueckgenommen. **Aus einer Luecke im
+  eigenen Wissen eine Aussage ueber die Welt gemacht.**
+- **19 (Autor, drei Anlaeufe in EINER Messung).** Erst den Verlauf getauscht ohne die Schriftfarbe (Text
+  und Grund waren dieselbe Farbe, 1,06). Dann `visibility:hidden` statt `color:transparent` — **das
+  entfernt auch die Flaeche, die man messen will**, die weisse Pille verschwand mit ihrem Text.
+  Entschieden hat es ein vorher hingeschriebener Satz: *„unter der weissen Pille MUSS rgb(255,255,255)
+  liegen."*
+- **20 (Autor).** Die Akzentspalte der Messung war **getippt** statt abgeleitet — safari bekam `h1`,
+  pferde `h2`, dino gar nichts. **Drei von sechs Werten falsch, die Gesamtzahl trotzdem richtig.** Der
+  Beweisschritt kam vom Pruefstand: *waere es eine Methodendifferenz, muessten alle sechs verschoben sein.*
+- **21 (Autor).** Der Vorschlag „vier Mottos brauchen einen dunkleren Grundton" — siehe oben, er haette
+  Block 10 mit dessen eigener Begruendung umgedreht.
+- **22 (Pruefstand, vor dem Absenden gefangen).** Eine Sechserliste, gerechnet auf `h2`, dem hellsten Ende
+  des Verlaufs, **wo der Text nicht steht.** Fuenfte Instanz von „richtig gerechnet, am falschen Ort" —
+  und die erste, die ihre Sitzung nicht verlassen hat.
+
+**Die zwei Saetze, die aus diesem Tag bleiben:**
+
+**„Eine falsche Zahl kostet zwei Pruefungen und schliesst die Frage; eine Frage ohne Zahl kostet eine
+Messung und oeffnet sie."** Beide echten Funde in Block 22 — die Zeilenenden und der Randstreifen — kamen
+aus Fragen, die der Pruefstand ausdruecklich **nicht** als Befund formuliert hat, weil ihm der Ort fehlte.
+Als Befund waeren beide widerlegt worden und die Fehler waeren geblieben.
+
+**„Du hast die Spanne, ich habe den Punkt."** Die Rechnung aus dem Quelltext liefert das Intervall
+zwischen zwei Verlaufsenden, die Pixelmessung den Wert an der Stelle, an der der Text wirklich steht.
+Jeder gemessene Wert lag zwischen den gerechneten Enden. **Keines der beiden Verfahren haette den Tag
+allein getragen.**
+
+### Protokoll zwischen den Sitzungen — jetzt mit Zeitbezug
+
+Dreimal an einem Tag ist eine Nachricht ueberholt worden. Die Reparatur laeuft in beide Richtungen:
+**jedes „Strom offen?" traegt den SHA, von dem aus geaendert werden soll; jedes „Strom frei" traegt den
+SHA, auf den es sich bezieht; stimmen sie nicht ueberein, ist die Freigabe abgelaufen.** Dazu die
+Trennung, auf der der Pruefstand zu Recht besteht: **„Strom frei" ist eine Aussage ueber den Baum, nicht
+ueber einen Auftrag.**
+
+Und dieselbe Konstruktion gilt fuer Bolles Freigaben: **eine Freigabe gilt fuer den Stand, auf dem sie
+erteilt wurde; eine spaetere Richtungsansage hebt sie auf, bis sie neu vorgelegt ist.** Genau so ist es
+mit den zwei Design-Bloecken nach der Bremse gelaufen — neu vorgelegt, nicht widersprochen, dann der
+Token auf eine Liste, die beide namentlich nennt.
+
+### Offen bei Bolle (Stand 09.09.2026, nach dem Deploy)
+
+1. **Token fuer den zweiten Deploy** — Block 22 repariert einen Live-Fehler von heute frueh.
+2. **Druckgroessen**: 15 × 20 als Standard, 20 × 30 als grosse Variante? Danach zwei Layouts bauen.
+3. **Die Spielkarte**: `.play-pill` auf `t.d` (0 von 17 rot) und derselbe Schleier auf `.game-header`.
+4. **Markenfarbe als Schrift auf hellem Grund** — sechs Stellen im Planer, plus die Frage, ob der
+   Neutral-Rueckfall `#D4812A` dieselbe Farbe sein soll wie die Markenfarbe (20 Fundstellen, davon eine
+   `DEFAULT_THEME.a`, auf der Block 10 steht).
+5. **Nur-Bolle**: Cloudflare Scrape Shield → E-Mail-Verschleierung aus (§5 DDG); Google Search Console
+   (Sitemap, die zehn URLs); den `cfut_`-Token loeschen.
