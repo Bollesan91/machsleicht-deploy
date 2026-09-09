@@ -2204,6 +2204,7 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
 .wave-divider svg{display:block;width:100%}
 .content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
+@media(min-width:900px){.hero-inner{max-width:760px}.content{max-width:760px}}/* 09.09.2026: dieselbe Grenze und dieselbe Breite wie in Block 15 fuer die Gastgeber-Seiten — zwei Zahlen fuer dieselbe Entscheidung waeren eine Dublette. Geprueft: 81 sichtbare Elemente, 0 laufen ueber; der einzige breite Knopf ist der Absende-Knopf des Zusage-Formulars. */
 .card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
