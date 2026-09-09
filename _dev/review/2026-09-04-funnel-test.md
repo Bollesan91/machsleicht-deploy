@@ -2327,3 +2327,126 @@ Wesentliche, Sitemap eingetragen, `lastmod` bis 08.09. — **136 von 136 Sitemap
 kein Canonical zu haben — es ist ein **301**, mein Grep las die Weiterleitung statt des Ziels.
 **Beide Male hat derselbe Schritt geholfen: erst den Statuscode holen, dann den Inhalt bewerten.**
 Eine Seite, mit der man gar nicht spricht, kann jede Eigenschaft zu haben scheinen.
+
+### Die Haltbarkeitsschere — und warum sie die Paket-Empfehlung korrigiert
+
+Meine Empfehlung „Paket bei jedem Oeffnen neu rechnen, nichts speichern" beantwortet **wie das Paket
+aktuell bleibt** und laesst **wie lange es ueberhaupt bleibt** offen. Der Pruefstand hat das eingewandt,
+und der Einwand traegt. Beide Haltbarkeiten, am Quelltext gelesen:
+
+```
+Plan  : expirationTtl 90*24*60*60        absolut, ab Erstellung des Links
+Party : calcTTL(party.date)              Partydatum + 14 Tage
+        Klammern derselben Funktion:     min 1 Tag, max 2 Jahre (W9-8, gegen ein
+                                         per Direkt-API praepariertes Datum 9999-12-31)
+```
+
+**Die Umschlagschwelle wird abgeleitet, nicht abgelesen:** Gleichstand heisst
+`Partydatum + 14 = Erstellung + 90`, also **Vorlauf = 90 - 14 = 76 Tage.**
+
+```
++75 Tage Vorlauf   Party stirbt 07.12.   Plan 08.12.   Party zuerst
++76 Tage           Party stirbt 08.12.   Plan 08.12.   GLEICH
++77 Tage           Party stirbt 09.12.   Plan 08.12.   Plan zuerst
+```
+
+**Beide Befunde stimmen, sie gelten nur in verschiedenen Bereichen:** ueber 76 Tagen Vorlauf stirbt der
+gemailte Plan-Link vor der Party (mein Befund), darunter — **also im Normalfall** — stirbt die Party
+zuerst und der Plan ueberlebt sie um Wochen (sein Befund). Die erste Fassung der Gegenrechnung sprang
+von 60 auf 90 und **uebersprang die Schwelle**; dieselbe Klasse wie die getippten Kontrollzahlen des
+Tages, angewandt auf eine Schwelle statt auf eine Zahl.
+
+**Was daraus folgt: „aus der Party rechnen" bindet das Paket an die KUERZERE Haltbarkeit.** 14 Tage nach
+der Feier ist die Party weg, mit ihr die Gaesteliste, mit ihr jede neu gerechnete Urkunde.
+
+**Was daraus NICHT folgt — und der Vorschlag, die Namen beim Erzeugen in den Plan zu schreiben, ist
+zurueckgenommen worden.** Der Grund steht drei Zeilen ueber der Zahl, die beide Sitzungen gelesen haben:
+
+> `Bolle-Regel 13.07.2026: Party + alle Daten (Fotos, Gaeste) verfallen automatisch`
+> `14 TAGE NACH DEM PARTYDATUM.`
+
+**Die Regel nennt die Gaeste ausdruecklich.** Kindernamen in einen zweiten Datensatz zu kopieren, der
+90 Tage lebt, verlaengert die Speicherung ueber die Zusage hinaus — **das ist keine Architekturfrage,
+sondern das stille Aushebeln einer Loeschregel.**
+
+**Der Rahmen, auf den sich beide Sitzungen geeinigt haben:** das Andenken lebt **auf Papier** — Bolles
+eigene Produktentscheidung, CEWE oder dm auf Fotopapier, ein Ausdruck hat keine Verfallszeit. In KV
+steht **Arbeitsmaterial**, und Arbeitsmaterial darf mit der Party sterben. Damit schrumpft die ganze
+Sorge auf eine schmale, benennbare Luecke: **wer nicht rechtzeitig druckt und drei Wochen spaeter noch
+einmal will, findet nichts mehr.**
+
+**Drei Wege, keiner braucht eine zweite Kopie der Namen — Entscheidung Bolle:**
+
+```
+1  Nichts tun            Luecke echt aber schmal, Loeschregel unangetastet
+2  Party-TTL verlaengern, wenn ein Paket erzeugt wurde   dieselbe Regel, anderer Wert,
+                         aber SICHTBAR entschieden statt nebenbei
+3  Vor dem Verfall erinnern   der Cron laeuft ohnehin taeglich, Bedingung ist dieselbe wie
+                         beim Erinnern (party.date, party.email)
+```
+
+**Empfehlung beider Sitzungen: Weg 3.** Er ist der einzige, der das Loeschen **sichtbar macht statt es
+zu umgehen**, und er nutzt einen Mechanismus, der schon existiert.
+
+**Offen und ausdruecklich keine Messung:** soll sich eine Urkunde noch aendern, nachdem sie gedruckt
+ist? Bis zum Druck ist „Gaesteliste aendern -> Paket aendert sich" genau der Wunsch. Danach erwartet man
+von einem Andenken das Gegenteil. **Das ist eine Frage an Bolle.**
+
+### Eine zitierte Norm gilt als geprueft — die Fehlerklasse des Tages
+
+Der Kommentar mit der Loeschregel wurde in derselben Nachricht **woertlich zitiert**, in der der
+Vorschlag stand, die Namen zu kopieren. Gelesen, zitiert, nicht angewandt.
+
+**Das ist keine Nachlaessigkeit, sondern eine Form: wer einen Kommentar zitiert, um seinen Vorschlag zu
+begruenden, hat ihn damit als geltend anerkannt — und prueft ihn danach nicht mehr, weil er sich ja
+schon mit ihm befasst hat. Das Zitieren erzeugt das Gefuehl der Pruefung und ersetzt sie.**
+
+**Und der Satz, der diese Klasse von allen Messfallen trennt: bei einer Zahl schlaegt die Gegenprobe an,
+bei einer Zusage merkt es niemand ausser dem, der sie ebenfalls gelesen hat.** Gegen eine Norm gibt es
+keine Gegenprobe — es gibt nur einen zweiten Leser. **Deshalb ist die Zwei-Sitzungen-Arbeit bei Normen
+wertvoller als bei Zahlen, nicht weniger wertvoll.**
+
+**Sie hat an zwei Tagen in beide Richtungen zugeschlagen:** am 08.09. wurde eine offene Rechtsfrage
+(Cloudflare-Verschleierung) als **Pflicht** ausgegeben — eine Norm zu gross gemacht; am 09.09. waere
+eine echte Zusage beinahe **aufgeweicht** worden — eine Norm zu klein gemacht. **Beide Male war die
+Messung richtig und der Umgang mit der Norm falsch.** Kein Namensschild: die eine ist der einen Sitzung
+passiert, die andere der anderen, und keine haette den eigenen Fall gesehen.
+
+### Protokoll zwischen den Sitzungen, vierte Haelfte — die Sperre liegt im BAUM
+
+Die dritte Haelfte („eine Lauf-Ankuendigung hebt das stehende Strom frei auf") hat **am selben Vormittag
+Lauf 48 nicht retten koennen.** Ursache: die Ankuendigung stand in einer Nachricht, die zum
+Commit-Zeitpunkt noch in der Zustellung hing.
+
+```
+Lauf 48  HEAD-Start 30d27699  11:53:22
+Commit   057442eb             11:56:16      174 s spaeter, mitten im Lauf
+geaendert: _dev/review/…      die Datei, die Stufe 45 und Stufe 69 lesen
+```
+
+**Zwei verlorene Laeufe an einem Vormittag (45 und 48), beide durch denselben Commit-Typ, und beim
+zweiten galt die neue Regel schon.** Der Konstruktionsfehler: **eine Regel, deren Wirkung an der
+Zustellung haengt, ist gegen genau den Fall wirkungslos, fuer den sie gebaut wurde** — und wenn sich
+Nachrichten im Minutentakt kreuzen, ist das der Normalfall.
+
+**Die Reparatur kommt ohne Zustellung aus:**
+
+> Der Pruefstand legt bei Laufbeginn **`_dev/.lintlogs/AKTIV`** an und loescht sie am Ende. Die
+> Bau-Session prueft `test -f _dev/.lintlogs/AKTIV` **unmittelbar vor jedem `git add`**.
+
+Vor der Uebernahme nachgeprueft, nicht geglaubt: **`.gitignore:41` enthaelt `_dev/.lintlogs/`, und
+`git check-ignore -v _dev/.lintlogs/AKTIV` bestaetigt es an der Maschine** — dort liegen bereits 60
+Lauf-Verzeichnisse, `git status --porcelain` zeigt 0 Zeilen davon. Die Sperre taucht weder im Status
+noch in einem Commit auf.
+
+**Der Grund, warum diese Fassung traegt und die drei davor nicht: der Baum ist das Einzige, was beide
+Sitzungen garantiert gleichzeitig sehen. Nachrichten haben eine Laufzeit, ein `test -f` nicht.**
+
+Zwei Zusaetze: die Sperrdatei traegt **Startzeit und Start-SHA**; und **aelter als 20 Minuten = verwaist**
+— abgeleitet aus knapp 6 Minuten echter Laufzeit (Lauf 46: 11:37:59 bis 11:43:57), also gut das
+Dreifache. **Eine verwaiste Sperre wird gemeldet, nicht stillschweigend uebergangen** — sonst ersetzt
+eine Hoffnung die andere, und das war der Fehler der dritten Fassung.
+
+**Erster Einsatz, gemessen:** `LAUF 49 AKTIV seit 12:00:10 auf 057442eb`, Lauf 49 gruen
+(12:00:11 bis 12:06:07, 71 Stufen, 0 rot), Sperre danach entfernt, Status durchgehend 2 Zeilen.
+**5:56 Laufzeit gegen 20 Minuten Frist.**
