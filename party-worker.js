@@ -2842,6 +2842,12 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   })()}
 
   <div class="card fade-up">
+    <h2 style="font-size:15px;color:${color};margin:0 0 8px">\u{1F4DD} Dein Ablaufplan</h2>
+    <p style="font-size:13px;color:var(--m);margin:0 0 12px">Spiele, Zeitplan und Einkaufsliste f\u00FCr den Tag. Hast du den Plan auf diesem Ger\u00E4t begonnen, geht es genau dort weiter.</p>
+    <a href="https://machsleicht.de/kindergeburtstag" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm" style="text-decoration:none">\u2192 Plan \u00F6ffnen</a>
+  </div>
+
+  <div class="card fade-up">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <h2 style="font-size:15px;color:${color};margin:0">\u{1F4CB} Party-Details</h2>
       <button class="btn btn-outline btn-sm" onclick="document.getElementById('editForm').classList.toggle('hidden');document.getElementById('detailsView').classList.toggle('hidden')">\u270F\uFE0F Bearbeiten</button>
