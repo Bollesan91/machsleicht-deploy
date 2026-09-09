@@ -1842,3 +1842,71 @@ Token auf eine Liste, die beide namentlich nennt.
    `DEFAULT_THEME.a`, auf der Block 10 steht).
 5. **Nur-Bolle**: Cloudflare Scrape Shield → E-Mail-Verschleierung aus (§5 DDG); Google Search Console
    (Sitemap, die zehn URLs); den `cfut_`-Token loeschen.
+
+### Zweiter Deploy 09.09. — `main = 2a48fff6`, Worker `083ce6e6`
+
+Bolle hat einen zweiten Token geschickt. Block 22 ist damit live; der Randstreifen ist weg. Am
+gerenderten Dokument nachgemessen, Fenster 360 px, Pixelreihe vom linken Rand nach innen:
+
+```
+            x=0              x=2             x=10            x=30
+vorher rgb(202,108,25)  rgb(142,76,18)  rgb(142,77,18)  rgb(137,75,18)     Sprung 60 Stufen auf 2 px
+jetzt  rgb(135, 72,17)  rgb(135,72,17)  rgb(134,73,17)  rgb(131,71,18)     glatt
+```
+
+Dazu die drei alten Regeln nachweislich raus und die vier neuen drin, mit Empfangsbeweis (50384 Bytes,
+md5 `65688a3c498a`, „machsleicht" 14×). **Wieder 0 HTML-Dateien im Merge — fuer die Search Console ist
+auch dieser Deploy leer.**
+
+### Block 23 (`f904f8bc`) — die Markenfarbe als Schrift, und drei falsche Gruende in unserer eigenen Tabelle
+
+Bolles Entscheidung: „Die sechs Stellen dunkler." **Beim Rechnen kam heraus, dass die Tabelle in diesem
+Doc an drei von sechs Stellen den falschen Grund nennt** — sie stammte aus dem Stylesheet, nicht aus dem
+gerenderten Dokument. Am lebenden Planer nachgemessen (Elternkette aufwaerts bis zur ersten deckenden
+Flaeche):
+
+| Stelle | dokumentierter Grund | **gemessener Grund** |
+|---|---|---|
+| `.topnav__brand em` | Seitengrund `#FFF8F0` (2,65) | **weiss, die Kopfleiste** (2,79) |
+| „✓ Gewaehlt" | Seitengrund `#FFF8F0` (2,86) | **weiss, `.ps-game`** (3,01) |
+| E-Mail aendern | Seitengrund `#FFF8F0` (2,86) | **`#FFF8EC`, der Mail-Kasten** (2,85) |
+
+`.pick__head` (`#FFF8F0`) und `.topnav__btn:hover` (`#FFF3E6`) stimmten. **Die Werte verschieben sich
+kaum — aber der haerteste Grund entscheidet ueber den Zielwert, und der stand falsch da.**
+
+**Und der Pruefstand hat den Fehler abgefangen, der daraus fast geworden waere.** Der am 08.09. gewaehlte
+Wert `#A66521` wurde auf **Weiss** gerechnet (4,66). An den echten Orten:
+
+```
+#A66521  auf #FFF8F0  4,43        auf #FFF3E6  4,27        beide UNTER 4,5
+```
+
+**Haette ich ihn uebertragen, waeren alle sechs Stellen unter der Schwelle gelandet — mit einer Farbe, die
+wir am Vortag als Reparatur eingefuehrt haben.** (Kein Live-Befund: `#A66521` steht heute nur als Rahmen,
+als Flaeche und als Mailschrift auf Weiss, nirgends als Schrift auf diesen Gruenden. Der Pruefstand war
+dabei, genau das als Live-Befund zu melden, und hat es vor dem Absenden selbst geprueft — **eine Zahl, die
+richtig ist und an einem Ort gilt, an dem der Wert nicht vorkommt.**)
+
+Gewaehlt wurde deshalb **mit Abstand**, je Farbe gegen ihren haertesten gemessenen Grund, **Ziel 4,70
+statt 4,50** — ein Grenzwert faellt beim naechsten Grundton-Wechsel still wieder durch:
+
+```
+#FF6F00 -> #B54F00    weiss 5,14 · #FFF8F0 4,88 · #FFF3E6 4,71    Ton +0,1 Grad, Saettigung gleich
+#D4812A -> #9F601F    weiss 5,04 · #FFF8EC 4,77 · #FFF3E6 4,61    Ton -0,2 Grad, Saettigung +0,5
+```
+
+**Eine eigene Fehlzaehlung, die als Assert im Skript steht:** `count('color:#FF6F00')` liefert **sieben**
+Treffer, aber nur **drei** sind Schriftfarben — die anderen vier sind `border-color:#FF6F00`.
+**`border-color:` endet auf `color:`.** Dieselbe Adjazenzfalle wie am 07.09.; ohne negativen Vorblick
+haette sie vier Rahmen mitgefaerbt.
+
+**RICHTIGSTELLUNG ZUR COMMIT-NACHRICHT VON `f904f8bc`.** Sie nennt die **verworfene erste Wertfassung**
+(`#BD5200`, `#B95100`, `#A46420`, gerechnet auf 4,50 gegen teils falsche Gruende). **Gueltig sind die
+Werte oben: `#B54F00` und `#9F601F`**, je dreimal, und genau die stehen im Baum — nachgezaehlt. Die
+Nachricht ist nicht nachtraeglich geaendert worden, weil der Commit bereits gepusht war und der SHA in
+der anderen Sitzung als Bezug dient; **eine falsche Nachricht wird richtiggestellt, nicht ueberschrieben.**
+
+Nicht angefasst, mit Grund: der Rueckfallwert `#D4812A` in seinen uebrigen Rollen (Bolle hat die sechs
+SCHRIFT-Stellen entschieden, nicht die Farbe) · `border-color:#FF6F00` im Hover (2,55, aber Rahmen haben
+Schwelle 3,0) · vier `color:#E64A00` (3,73 auf `#FFF8F0`), Hover-Zustaende im SEO-Fussbereich, dieselbe
+Klasse, gemessen — Ticket, keine stille Erweiterung.
