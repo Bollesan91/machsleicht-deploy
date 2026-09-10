@@ -2885,3 +2885,63 @@ Tickets: Stufe 71 prueft nur `https://machsleicht.de/`-Bilder — Wurzelpfade si
 Tracking-Event fuer den CTA der Animation (`plausible(...)`-Konvention, heute 0 Events); Browser ohne
 `@scope` zeigen das Telefon ungestylt (Firefox < 145); Bolles Entscheidung zu „ein Bild oder zwei"
 (Pruefstand: Bild 2 traegt die Aussage, Bild 1 ist im oberen Drittel leer).
+
+### Das externe Gutachten (Fable 5.1 Maximal, fbd6c800) — und was davon hielt
+
+Zwei Gutachten parallel, mit Absicht getrennt gehalten: der externe claude.ai-Tab (target-blind, Chromium
+headless, 49 Befehle, Rohtext in `2026-09-10-gutachten-gaeste-weg-fable.md`) und der Pruefstand mit acht
+Straengen, die den Tag nicht kannten. **Der Tab lieferte 2 MAJOR und 17 MINOR — und ich konnte keinen davon
+widerlegen.** Jeder wurde vor der Umsetzung selbst gemessen oder im Code gelesen; die Einschaetzung ging
+getrennt von den Rohbefunden an den Pruefstand, damit er sie nicht durch meine Brille liest.
+
+**M1 — meine Vorschau hat den Fehler verdeckt.** Die Wirte setzen `*{box-sizing:border-box}`, die
+Vorschaudatei nicht. Live: Telefon 326 px mit 11 px Polster → Bildschirm **304**, Seite darin **326** →
+jede Karte 6 px rechts abgeschnitten, Hero 11 px aussermittig. In der Vorschau 326 = 326. Alle
+„gemessen"-Kommentare vom Vormittag stammen aus der Vorschau — **Messung am falschen Ort, dieselbe Klasse
+wie die 200er gegen die Repo-Wurzel.** Fix: `.gw__page{width:100%}`, `box-sizing` am Telefon explizit,
+und die Vorschau bekommt die `*`-Regel der Wirte. Nachgemessen: Seite 304 = Bildschirm 304, Karte −16 px, Hero 0.
+
+**M2 — der CTA zeigte im Planer auf den Planer.** `href="/kindergeburtstag"` in beiden Wirten; im Planer
+ist das die Seite selbst, ein Tipp laedt neu und landet auf Stage 1 — direkt neben „Kinder einladen". Im
+Planer jetzt verborgen. Nebenbefund: dasselbe Label fuehrte auf der Startseite einmal zu
+party.machsleicht.de (statische Karte), einmal zu /kindergeburtstag (Animation). Bolle: „mach es richtig" —
+Ziel bleibt der Planer (die Partyseite entsteht dort aus dem Plan), das Label sagt es jetzt:
+**„Jetzt planen — Partyseite inklusive →"**.
+
+**Der Gaestezaehler zaehlte hoch.** `zusage()` erhoeht per Regex; der Reset in `lauf()` stellte nur den
+Knopf zurueck, `stopp()` setzte `fertig` nicht → jeder Wiedereintritt vor 31,8 s: +1 (Gutachter: „Schon 8
+Kinder dabei!"). Jetzt Schnappschuss beider Karten beim Start, Wiederherstellung im Reset, manuelle Wahl
+beendet den Automatiklauf. **Gemessen:** Start „Schon 6", nach 29 s „Schon 7" (Knopf aktiv, 2 vergeben),
+weg und zurueck → „Schon 6", 1 vergeben, Knopf aus.
+
+**Ein Generator-Fehler seit dem ersten Lauf:** das Namenstor heisst `id="codeGate"`, der Regex suchte
+`id="gate"`, meldete „Namenstor im Markup: nein" — und Tor, eigenes `<h1>`, Eingabefeld und
+`onclick="checkCode()"` gingen in jedes Fragment. Jetzt per Tag-Zaehler herausgeschnitten (923 Zeichen),
+`<h1` im Fragment 1, Startseite gesamt 2 statt 3.
+
+**Weiter uebernommen (Patch 8, ein Lauf):** aria-hidden auf der Buehne (Screenreader lasen die Chat-Szene);
+Druckblock der Startseite kennt `#gaesteWeg`; beide Wirte verstecken gleich (`hidden`, Planer gibt per CSS
+bei `.revealed` frei); Endlosanimationen pausieren bei unsichtbarem Telefon und nach dem Ende;
+Party-Kennung aus dem Kopfkommentar; `tel:`-Links entschaerft wie `/go/`; `:scope` setzt line-height und
+letter-spacing selbst (der Planer vererbte 1.5 → Seite 149 px laenger); `body::after` → `:scope::after`
+(die Punktetapete fehlte still); der falsche „verschluckt"-Kommentar korrigiert; ohne `@scope` keine Buehne
+(iOS < 17.4, Firefox < 128); DRUCK-Regex durch Klammerzaehler ersetzt (der alte fing nur `@media print{`
+mit einer Ebene, sein Assert war vakuum-wahr).
+
+**Bolles vier Entscheidungen (Wortlaut: „1. ja 2. ja 3. mach es richtig 4. ich will sie"):**
+1. **Datum** — neue Demo-Party `8sp7bpf4s55q`: **Samstag, 6. November 2027**, 14 Monate voraus; die alte laeuft per TTL aus,
+   ihre Kennung steht nirgends mehr im Fragment.
+2. **Gastgeber** — „Familie Sommer", ohne Telefonnummer (die Karte „Ruf an" entfaellt), fiktive Strasse.
+3. **CTA** — Planer als Ziel, Label eindeutig (s. M2).
+4. **Chat-Szene bleibt** — der Gutachter hielt sie fuer den einzigen nachgezeichneten Teil; Bolles Wunsch.
+
+**Stand:** Fragment 47223 B, `<div` 104/104; index.html 85558 B; kindergeburtstag.html 380914 B;
+Bewegungs-Abdeckung 32/32; Idempotenz byteidentisch. Die Standbilder sind das einzig Handgepflegte —
+ihr Weg steht in `standbilder_aufnehmen.md` (Pruefstand: „abgeleitet ist gut, handgepflegt ist der Defekt").
+
+**Offen:** Bildgroesse 1260 vs. ~900 px und ein/zwei Bilder (Bolle); Stufe 71 sieht Wurzelpfad-Bilder nicht
+(Pruefstand baut sie auf Bolles Wort, mein Regex-Vorschlag war kaputt — kein Anker, vier Artefakte als
+Sollwert); Winkel 11 des Gutachters: unter einem Piraten-Plan ist das lila Einhorn-Telefon fuer 14 von 15
+Mottos woertlich „nicht so erleben es deine Gaeste" — Beobachtung, kein Fix; Lizenz von demo-kid.jpg
+(ausserhalb jeder Sicht). Dann: Diff-Re-Check des Gutachters in frischem Tab, `lastmod` fuer `/` und
+`/kindergeburtstag`, Bolles Wort zum Deploy, Search Console.

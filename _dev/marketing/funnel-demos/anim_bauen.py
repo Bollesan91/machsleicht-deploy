@@ -36,7 +36,7 @@ if os.path.exists('_dev/.lintlogs/AKTIV'):
              + ') — Generator schreibt nichts. Spaeter neu starten.')
 
 API  = 'https://party.machsleicht.de'
-PID  = 'rmveztmvvarx'
+PID  = '8sp7bpf4s55q'                       # Demo-Party, neu angelegt 10.09.2026: 06.11.2027, Familie Sommer (fiktiv), ohne Telefon
 # WURZELPFADE, bewusst nicht absolut. Alles, was das Fragment braucht — Standbilder, Foto,
 # Schriften — liegt in DIESEM Repo, und das Fragment wird auf machsleicht.de eingebettet. Ein
 # Wurzelpfad ist damit ueberall gleiche Herkunft: live, auf localhost:8766, in einer Netlify-
@@ -47,7 +47,7 @@ PID  = 'rmveztmvvarx'
 # lokalen Server geoeffnet, siehe Hinweis in ihrem Kopf.
 DEMOBILD = '/bilder/demo'
 FOTO     = DEMOBILD + '/ida.jpg'          # Kopie von spiele/core/demo-kid.jpg, Begruendung beim Foto-Einsatz
-GAST = 'uqk68mg6hz38tnjk'      # Ben — eingeladen, noch ohne Antwort
+GAST = 'kzdw3yhge6smdreb'      # Ben — eingeladen, noch ohne Antwort
 H    = {'User-Agent': 'Mozilla/5.0 (compatible; demo/1.0)'}
 NL   = chr(10)
 
@@ -73,10 +73,24 @@ print(f'  Koerper: {vor} -> {len(body)} Zeichen (Skripte raus)')
 
 # Das Namenstor ist auf Bens Link ohnehin uebersprungen — aber falls die Huelle im Markup
 # steht, muss sie weg, sonst liegt eine unsichtbare Sperrschicht ueber der Animation.
-tor = re.search(r'<div[^>]*id="gate"[^>]*>', body)
-print('  Namenstor im Markup:', 'ja -> wird entfernt' if tor else 'nein')
-if tor:
-    body = re.sub(r'<div[^>]*id="gate"[^>]*>.*?</div>\s*(?=<div|$)', '', body, flags=re.S)
+# Das Tor heisst id="codeGate", nicht "gate" — der Regex fand nichts, meldete 'nein', und das Tor mit
+# eigenem <h1>, Eingabefeld und onclick="checkCode()" ging seit dem ersten Lauf ins Fragment (Gutachten
+# W17c). Jetzt: das Element samt Nachfahren per Tag-Zaehler herausschneiden — ein `.*?</div>` traefe bei
+# geschachtelten divs zu frueh und liesse Reste plus eine kaputte Bilanz zurueck.
+def schneide_element(s, start):
+    tiefe = 0
+    for m in re.finditer(r'<div\b|</div>', s[start:]):
+        tiefe += 1 if m.group(0) == '<div' else -1
+        if tiefe == 0:
+            ende = start + m.end(); return s[:start] + s[ende:], ende - start
+    raise AssertionError('Namenstor: kein schliessendes </div>')
+tor = re.search(r'<div[^>]*id="codeGate"[^>]*>', body)
+assert tor, 'Namenstor id="codeGate" nicht im Markup — hat sich die Partyseite geaendert?'
+h1_vor = body.count('<h1')
+body, weg = schneide_element(body, tor.start())
+assert 'checkCode' not in body and 'id="codeGate"' not in body
+assert body.count('<h1') == h1_vor - 1, (h1_vor, body.count('<h1'))
+print(f'  Namenstor entfernt: {weg} Zeichen, <h1> {h1_vor} -> {body.count(chr(60) + "h1")}')
 
 # --- Was die echte Seite per JS nachlaedt, muss hier fest stehen ---
 # 1) Das Foto
@@ -157,12 +171,22 @@ print(f"  Schriften als Wurzelpfad belassen: {css.count('url(/fonts/')}")
 # oben links. Die Regel steht ZWEIMAL, einmal in einem <style> mitten im Markup, einmal im CSS,
 # und beide Male landet sie AUSSERHALB des @scope (gemessen: die einzige nicht-.gw-Regel dort).
 # Also raus, aus beiden Quellen. Das war der offene Pruefstand-Punkt zum Druckmodus.
-DRUCK = re.compile(r'@media\s+print\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}')
-vor_druck = len(DRUCK.findall(body)) + len(DRUCK.findall(css))
-body = DRUCK.sub('', body)
-css  = DRUCK.sub('', css)
+def ohne_print(s):
+    """Entfernt jede @media-Regel, deren Vorspann 'print' enthaelt — auch `print and (...)` und
+    `screen, print` — per Klammerzaehler, beliebig tief. Der fruehere Regex fing nur `@media print{`
+    mit einer Klammerebene; sein Assert war fuer alles andere vakuum-wahr (Gutachten W17a)."""
+    n = 0
+    while True:
+        m = re.search(r'@media[^{;]*\bprint\b[^{;]*\{', s)
+        if not m: return s, n
+        i, t = m.end(), 1
+        while t and i < len(s):
+            t += (s[i] == '{') - (s[i] == '}'); i += 1
+        assert t == 0, 'Klammern in @media print gehen nicht auf'
+        s = s[:m.start()] + s[i:]; n += 1
+body, n_b = ohne_print(body); css, n_c = ohne_print(css); vor_druck = n_b + n_c
 body = re.sub(r'<style>\s*</style>', '', body)          # was nur die Druckregel trug, ist jetzt leer
-assert not DRUCK.search(body) and not DRUCK.search(css)
+assert not re.search(r'@media[^{;]*\bprint\b', body) and not re.search(r'@media[^{;]*\bprint\b', css)
 assert 'visibility:hidden' not in body and 'visibility:hidden' not in css, 'Druck-Sperre lebt noch'
 print(f'  Druckregeln entfernt: {vor_druck}')
 
@@ -240,6 +264,13 @@ vor_href = len(re.findall(r'href="https://party\.machsleicht\.de/go/', body))
 body = re.sub(r'href="https://party\.machsleicht\.de/go/[^"]*"', 'data-demo-link', body)
 assert 'party.machsleicht.de/go/' not in body
 print(f'  Affiliate-Weiterleitungen entschaerft: {vor_href}')
+# Die Telefonnummer der Demo-Gastgeber ist ein tel:-Link. Im inerten Telefon klickt ihn niemand, aber
+# eingebettet auf der Startseite ist ein waehlbarer Link zu einer Nummer, die vergeben sein kann, das
+# Falsche. Entschaerft wie die /go/-Links; Nummer und Name selbst sind Bolles Entscheidung (Gutachten MINOR 11).
+vor_tel = len(re.findall(r'href="tel:[^"]*"', body))
+body = re.sub(r'href="tel:[^"]*"', 'data-demo-link', body)
+assert 'href="tel:' not in body
+print(f'  tel:-Links entschaerft: {vor_tel}')
 
 # Der Planer-Knopf am Fuss der Partyseite traegt ?ref=<party-id> — eine Empfehlungsspur,
 # die auf die Demo-Party zeigt. Im Telefon ist er ohnehin tot (inert + pointer-events:none),
@@ -298,7 +329,16 @@ for f in schriften:
     css_in = css_in.replace(f, '')
 vor_root, vor_body = len(re.findall(r':root\s*\{', css_in)), len(re.findall(r'(?<![\w.#>\-])body\s*\{', css_in))
 css_in = re.sub(r':root\s*\{', ':scope{', css_in)
-css_in = re.sub(r'(?<![\w.#>\-])body\s*\{', ':scope{', css_in)
+# ALLE body-Selektoren, nicht nur `body{`: body::after (die Punktetapete der echten Seite) matchte im
+# @scope nie und fehlte still (Gutachten MINOR 14). Lookbehind haelt .card-body & Co. heraus.
+vor_body = len(re.findall(r'(?<![\w.#>\-])body(?![\w-])', css_in))
+css_in = re.sub(r'(?<![\w.#>\-])body(?![\w-])', ':scope', css_in)
+assert not re.search(r'(?<![\w.#>\-])body(?![\w-])', css_in)
+# Und was das Telefon vom Wirt erben wuerde, setzt der Scope selbst: der Planer gibt line-height 1.5
+# und letter-spacing .4px an Ueberschriften mit — die Seite im Telefon war dort 149 px laenger als auf
+# der Startseite (Gutachten MINOR 13). normal = der Wert der echten Partyseite.
+css_in += '\n:scope{line-height:normal;letter-spacing:normal}\n:scope :is(h1,h2,h3,h4){letter-spacing:normal}\n'
+print(f'  body-Selektoren -> :scope: {vor_body}')
 print(f'  CSS: {len(schriften)} @font-face herausgehoben, '
       f'{vor_root}x :root und {vor_body}x body -> :scope')
 assert vor_root >= 1 and vor_body >= 1, (vor_root, vor_body)
@@ -320,7 +360,7 @@ print('  gewaehlter Antwort-Knopf traegt Klasse:', WAHL, f'(aus {len(set(kand))}
 
 schriften_aus = NL.join(schriften)
 
-BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
+BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung steht in anim_bauen.py, nicht hier).
      Neu erzeugen: python _dev/marketing/funnel-demos/anim_bauen.py
      Nichts hier ist nachgezeichnet: Markup und Stylesheet sind die der echten Seite,
      die Zustandswechsel fassen ihre echten Klassen an. -->
@@ -338,10 +378,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
         <span>Kein Anruf, kein Zettel, keine doppelten Geschenke.</span></button></li>
     </ol>
     <p class="gw__note">Das ist eine echte Partyseite \u2014 kein Bild davon.</p>
-    <a class="gw__cta" href="/kindergeburtstag">Eigene Partyseite erstellen \u2192</a>
+    <a class="gw__cta" href="/kindergeburtstag">Jetzt planen \u2014 Partyseite inklusive \u2192</a>
   </div>
 
-  <div class="gw__stage">
+  <div class="gw__stage" aria-hidden="true">
     <div class="gw__phone">
       <div class="gw__screen">
         <div class="gw__chat" data-sc="chat">
@@ -382,8 +422,9 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 </section>
 
 <style>
-/* @font-face MUSS ausserhalb von @scope stehen — drin wird es verschluckt und die Schriften
-   werden nie angefordert (gemessen: document.fonts meldete beide als "unloaded"). */
+/* @font-face steht ausserhalb von @scope aus Spezifikationstreue: @scope kapselt Selektoren,
+   @font-face hat keinen. Gemessen (09.09.): Chrome parst es auch innerhalb und laedt die Schriften —
+   ein frueherer Kommentar hier behauptete das Gegenteil und ging so an jeden Besucher (Gutachten MINOR 15). */
 {schriften_aus}
 
 @scope (.gw__page) {{
@@ -425,13 +466,20 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
   text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}}
 
 .gw__stage{{justify-self:center}}
-.gw__phone{{position:relative;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
+/* box-sizing EXPLIZIT, und die Seite folgt dem Bildschirm: die Wirte setzen *{{box-sizing:border-box}},
+   die Vorschau setzte es nicht — dort war der Bildschirm 326 px, live 304, die Seite darin 326 →
+   6 px jeder Karte abgeschnitten, Hero schief. Gefunden vom externen Gutachten (M1), gemessen. */
+.gw__phone{{position:relative;box-sizing:border-box;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
   background:linear-gradient(160deg,#2b2b33,#141419);
   box-shadow:0 26px 64px rgba(0,0,0,.3),0 2px 0 rgba(255,255,255,.15) inset}}
 .gw__screen{{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff}}
 .gw__viewport{{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .5s}}
+/* Die Endlosanimationen der Partyseite (Schimmer, Bob, Pulse) laufen nur, solange das Telefon sichtbar
+   ist und die Sequenz laeuft — nicht bei opacity:0, nicht nach dem Ende (Gutachten MINOR 8, Akku). */
+.gw__viewport:not(.on) .gw__page *,.gw__viewport:not(.on) .gw__page *::before,.gw__viewport:not(.on) .gw__page *::after,
+.gw--fertig .gw__page *,.gw--fertig .gw__page *::before,.gw--fertig .gw__page *::after{{animation-play-state:paused!important}}
 .gw__viewport.on{{opacity:1}}
-.gw__page{{position:absolute;top:0;left:0;width:326px;transform-origin:top left;will-change:transform}}
+.gw__page{{position:absolute;top:0;left:0;width:100%;transform-origin:top left;will-change:transform}}
 
 /* Chat-Szene: Nachrichtenfenster-Optik (heller Klassiker), ohne fremdes Logo und ohne
    Wortmarke — nur Anordnung und Farbwelt. Absenderin ist Idas Mama, der Text verkauft
@@ -496,6 +544,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 <script>
 (function(){{
   var wrap = document.querySelector('.gw'); if (!wrap) return;
+  // Ohne @scope (Safari/iOS < 17.4, Firefox < 128) faellt der ganze Partyseiten-Stil weg, und das
+  // Telefon zeigte rohes HTML in Wirtsschrift. Dann lieber kein Telefon: die Schrittliste traegt den
+  // Text allein. (Gutachten MINOR 16)
+  if (!('CSSScopeRule' in window)) {{ var st = wrap.querySelector('.gw__stage'); if (st) st.style.display = 'none'; return; }}
   var chat  = wrap.querySelector('.gw__chat'),
       bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
       bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
@@ -614,6 +666,12 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     }});
   }}
 
+  // Ausgangszustand der zwei Karten, die die Sequenz veraendert — fuer den Reset. Ohne ihn zaehlte jeder
+  // Wiedereintritt vor 31,8 s den Gaestezaehler um eins hoch (Gutachten MINOR 1, gemessen "Schon 8 Kinder
+  // dabei!"): zusage() erhoeht per Regex, der Reset stellte nur den Knopf zurueck.
+  var startZaehler = el('#guestCounter') ? el('#guestCounter').innerHTML : null;
+  var startWunsch  = wunschkarte() ? wunschkarte().innerHTML : null;
+
   // --- Ablauf ---
   var T = [], laufend = false, fertig = false;
   function nach(ms, fn){{ T.push(setTimeout(fn, ms)); }}
@@ -627,7 +685,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     page.style.transition = 'none';
     var w = wunschkarte();
     if (w) page.style.transform = 'translateY(' + (-Math.max(0, y(w) - 12)) + 'px)';
-    tap.hidden = true; fertig = true;
+    tap.hidden = true; fertig = true; wrap.classList.add('gw--fertig');
   }}
 
   function lauf(){{
@@ -635,7 +693,9 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     // Zuruecksetzen
     chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
-    tap.hidden = true; schritt(0); bilderHolen(); spielbild(1);
+    tap.hidden = true; schritt(0); bilderHolen(); spielbild(1); wrap.classList.remove('gw--fertig');
+    if (startZaehler !== null) el('#guestCounter').innerHTML = startZaehler;
+    if (startWunsch  !== null) wunschkarte().innerHTML = startWunsch;
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
 
     // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
@@ -658,7 +718,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     nach(24800, zusage);
     nach(26800, function(){{ scrollTo(wunschkarte(), 1800); }});
     nach(28800, wunsch);
-    nach(31800, function(){{ fertig = true; laufend = false; }});
+    nach(31800, function(){{ fertig = true; laufend = false; wrap.classList.add('gw--fertig'); }});
   }}
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -677,7 +737,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
   btns.forEach(function(b){{
     b.addEventListener('click', function(){{
       var n = +b.dataset.s;
-      stopp(); schritt(n);
+      stopp(); fertig = true; schritt(n);   // eine manuelle Wahl beendet den Automatiklauf (Gutachten MINOR 2)
       chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
       if (n>0) {{
         bub1.classList.add('in','said'); bub2.classList.add('in','said');
@@ -702,7 +762,7 @@ for m_, soll in [('gw__steps button', 4), ('data-sc=', 2), ('rsvp-btn', 1), ('wi
 io.open('_dev/marketing/funnel-demos/gaeste-weg-vorschau.html', 'w', encoding='utf-8', newline='\n').write(
     '<!doctype html><html lang="de"><head><meta charset="utf-8">'
     '<meta name="viewport" content="width=device-width,initial-scale=1">'
-    '<!-- Diese Vorschau ueber den lokalen Server oeffnen: http://localhost:8766/_dev/marketing/funnel-demos/gaeste-weg-vorschau.html (Startkonfiguration wizard-live). Per Doppelklick (file://) laden Bilder und Schriften NICHT: das Fragment nutzt Wurzelpfade, damit es auf machsleicht.de gleiche Herkunft ist. -->\n<title>G\u00e4ste-Weg</title><style>body{margin:0;padding:40px 16px;background:#FFF8F0;'
+    '<!-- Diese Vorschau ueber den lokalen Server oeffnen: http://localhost:8766/_dev/marketing/funnel-demos/gaeste-weg-vorschau.html (Startkonfiguration wizard-live). Per Doppelklick (file://) laden Bilder und Schriften NICHT: das Fragment nutzt Wurzelpfade, damit es auf machsleicht.de gleiche Herkunft ist. -->\n<title>G\u00e4ste-Weg</title><style>*{box-sizing:border-box}body{margin:0;padding:40px 16px;background:#FFF8F0;'
     'font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:#1A1A1A}</style>'
     '</head><body>' + BAU + '</body></html>')
 print('  Vorschau: gaeste-weg-vorschau.html')
