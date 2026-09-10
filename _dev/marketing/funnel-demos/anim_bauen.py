@@ -9,9 +9,16 @@
 #   - Das Stylesheet ist ihres.
 #   - Die Zustandswechsel fassen die ECHTEN Klassen und Texte an (rsvp-btn, wishBadge,
 #     wishProgressFill) — sie werden angetastet, nicht gemalt.
-#   - Die WhatsApp-Attrappe der ersten Fassung ist RAUS. Eine fremde Oberflaeche nachzubauen
-#     war der einzige gezeichnete Teil und markenrechtlich obendrein fragwuerdig. Die Chat-Szene
-#     ist jetzt neutral in der eigenen Markenfarbe.
+#   - EINE AUSNAHME, und sie ist BOLLES ENTSCHEIDUNG, nicht meine: die Chat-Szene ist gezeichnet.
+#     Er hat sie ausdruecklich so bestellt ("soll aussehen wie ein echtes WhatsApp Fenster,
+#     Name des Kontakts... Idas Mama"). Sie traegt die bekannten Farben — #075E54 Kopfleiste,
+#     #ECE5DD Grund, #027EB5 Links, die zwei Haken. KEIN Logo, KEINE Wortmarke.
+#     Mein frueherer Kommentar an dieser Stelle behauptete "neutral in der eigenen Markenfarbe" —
+#     das war falsch und stand schon in der Datei. Die Marke ist #B5468C, davon steht im Chat
+#     nichts. Ein Kommentar, der eine Zusage behauptet, die der Code nicht haelt, ist schlimmer
+#     als keiner: er wird beim naechsten Lesen geglaubt. Gefunden vom Pruefstand durch Nachmessen
+#     der berechneten Farben.
+#     Die INHALTE der Vorschau sind echt: og:title und og:image der laufenden Partyseite.
 #
 # WARUM BENS LINK: die Zusage-Karte zeigt nur dann das frische Formular mit "Dabei!", wenn der
 # Gast noch nicht geantwortet hat. Die acht anderen haben. Ben ist der neunte, ohne Antwort.
@@ -120,16 +127,24 @@ body = re.sub(r'href="https://party\.machsleicht\.de/go/[^"]*"', 'data-demo-link
 assert 'party.machsleicht.de/go/' not in body
 print(f'  Affiliate-Weiterleitungen entschaerft: {vor_href}')
 
-# --- CSS fuer @scope aufbereiten. DREI Fehler der ersten Fassungen, alle im Browser gemessen:
+# --- CSS fuer @scope aufbereiten.
 #
-# (1) @font-face darf NICHT in @scope stehen — es ist eine Regel auf oberster Ebene. Drin
-#     verschluckt, also wurden die Schriften NIE angefordert: document.fonts meldete
-#     "Baloo 2:unloaded" und "DM Sans:unloaded", der Hero lief auf system-ui.
-# (2) :root matcht nie, weil der Scope-Wurzel .gw__page ist und <html> DARUEBER liegt.
-#     Folge: alle 8 Variablen undefiniert bei 97 var(--…)-Verwendungen.
-# (3) body{} matcht aus demselben Grund nie — dort steht die Grundschrift.
+# DIE URSACHE, gemessen: :root und body matchen im @scope NIE, weil der Scope-Wurzel .gw__page
+# ist und <html>/<body> DARUEBER liegen. Folge war: alle 8 Variablen undefiniert bei 97
+# var(--…)-Verwendungen, und die Grundschrift (steht in body{}) griff nicht — der Hero lief auf
+# system-ui, die Seite sah aus wie Times New Roman.
 #
-# Reparatur: @font-face herausheben, :root und body auf :scope umschreiben.
+# RICHTIGSTELLUNG einer frueheren Behauptung an dieser Stelle: hier stand, @font-face werde im
+# @scope "verschluckt" und die Schriften deshalb nie angefordert. DAS STIMMT NICHT. Der Pruefstand
+# hat widersprochen (document.fonts kannte beide Familien als "unloaded" — verschluckte Regeln
+# waeren gar nicht registriert), und der Gegenversuch bestaetigt ihn: mit @font-face IM @scope
+# meldet der Browser 2 CSSFontFaceRule INNERHALB der Scope-Regel, 0 auf oberster Ebene, und
+# beide Schriften laden ("Baloo 2:loaded", "DM Sans:loaded"), Hero in "Baloo 2".
+# `unloaded` heisst "registriert, aber von niemandem angefordert" — nicht "unbekannt".
+#
+# @font-face wird trotzdem herausgehoben, aber aus einem anderen Grund: nach Spezifikation
+# gehoert es auf die oberste Ebene, und was Chrome toleriert, muss keine andere Engine tun.
+# Das ist Vorsicht, keine Fehlerbehebung — und der Unterschied gehoert hier hin.
 schriften = re.findall(r'@font-face\s*\{[^}]*\}', css)
 assert len(schriften) == 2, len(schriften)
 css_in = css
@@ -390,8 +405,17 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (!ja) return;
     tippe(ja, function(){{
       ja.classList.add('{WAHL}');
-      var z = el('#guestCount');
-      if (z) z.textContent = z.textContent.replace(/\\d+/, function(d){{ return (+d)+1; }});
+      // #guestCounterText, NICHT #guestCount — den gibt es nicht. Das if(z) verschluckte den
+      // Fehlgriff still, und von den drei Zustandswechseln, die diesen Umbau begruenden,
+      // passierte dieser NIE. Gefunden vom Pruefstand in der zeitlichen Abnahme; meine 12 von 12
+      // konnten es nicht fangen, weil sie das Ergebnis pruefen und nicht den Ablauf.
+      var z = el('#guestCounterText');
+      if (!z) return;
+      z.textContent = z.textContent.replace(/\\d+/, function(d){{ return (+d)+1; }});
+      // Und ein Punkt mehr in der Reihe, damit die Zahl nicht allein springt.
+      var dots = el('#guestDots'), letzter = dots && dots.lastElementChild;
+      if (letzter && /^\\+\\d+$/.test(letzter.textContent))
+        letzter.textContent = '+' + (parseInt(letzter.textContent.slice(1), 10) + 1);
     }});
   }}
   function wunsch(){{
@@ -432,28 +456,25 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     tap.hidden = true; schritt(0);
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
 
-    nach(250,  function(){{ bub1.classList.add('in'); }});
-    nach(1400, function(){{ bub1.classList.add('said'); }});
-    nach(2100, function(){{ bub2.classList.add('in','said'); }});
-    nach(3100, function(){{ tippe(wrap.querySelector('.gw__prev')); }});
-    nach(3900, function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
-    // Ziel ist der PASS, nicht die erste Karte: die erste ist der Absender-Kasten.
-    // Gesucht wird ueber "Deine Rolle" — das steht in jedem Motto, der Passname nicht.
-    nach(5000, function(){{ scrollTo(pass(), 1500); }});
-    nach(7200, function(){{ scrollTo(el('.game-card'), 1500); }});
-    nach(8000, function(){{ schritt(2); }});   // Marke folgt der Bewegung, nicht umgekehrt
-    nach(8900, function(){{ tippe(el('.play-pill')); }});
-    nach(11400, function(){{ scrollTo(el('#rsvpCard'), 1500); }});   // Spiel steht 4,2 s
-    nach(12200, function(){{ schritt(3); }});
-    nach(13100, zusage);
-    nach(14600, function(){{ scrollTo(wunschkarte(), 1500); }});
-    nach(16400, wunsch);
-    // KEINE Endlosschleife. Vorschlag des Pruefstands, und er verkleinert den Entwurf zum ersten
-    // Mal heute statt ihn zu vergroessern: einmal abspielen, dann auf dem Endzustand stehen.
-    // Damit entfallen ERSATZLOS: das Zuruecksetzen der sechs Wunsch-Aenderungen (fehlte, also
-    // war ab dem zweiten Durchlauf der Hoehepunkt kaputt — ein Finger tippt auf "Vergeben" und
-    // nichts passiert), die Dauerbewegung neben dem Fliesstext, und die halbe reduced-motion-Frage.
-    nach(19400, function(){{ fertig = true; laufend = false; }});
+    // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
+    // nicht eilig". Die Chat-Szene allein steht jetzt 7,5 s statt 3,9 s; wer den Text von Idas
+    // Mama lesen will, schafft ihn zweimal. Insgesamt 27 s, EINMAL — keine Schleife, also
+    // kostet die Laenge niemanden etwas, der weiterliest.
+    nach(400,   function(){{ bub1.classList.add('in'); }});          // tippt...
+    nach(2100,  function(){{ bub1.classList.add('said'); }});        // Text da
+    nach(4200,  function(){{ bub2.classList.add('in','said'); }});   // Link-Vorschau
+    nach(6600,  function(){{ tippe(wrap.querySelector('.gw__prev')); }});
+    nach(7500,  function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
+    nach(9200,  function(){{ scrollTo(pass(), 1800); }});             // Hero steht 1,7 s
+    nach(12600, function(){{ scrollTo(el('.game-card'), 1800); }});   // Pass steht 3,4 s
+    nach(13600, function(){{ schritt(2); }});
+    nach(18400, function(){{ tippe(el('.play-pill')); }});            // Spiel steht 5,8 s
+    nach(20200, function(){{ scrollTo(el('#rsvpCard'), 1800); }});
+    nach(21200, function(){{ schritt(3); }});
+    nach(23000, zusage);
+    nach(25000, function(){{ scrollTo(wunschkarte(), 1800); }});
+    nach(27000, wunsch);
+    nach(30000, function(){{ fertig = true; laufend = false; }});
   }}
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem

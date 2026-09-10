@@ -514,8 +514,17 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (!ja) return;
     tippe(ja, function(){
       ja.classList.add('active');
-      var z = el('#guestCount');
-      if (z) z.textContent = z.textContent.replace(/\d+/, function(d){ return (+d)+1; });
+      // #guestCounterText, NICHT #guestCount — den gibt es nicht. Das if(z) verschluckte den
+      // Fehlgriff still, und von den drei Zustandswechseln, die diesen Umbau begruenden,
+      // passierte dieser NIE. Gefunden vom Pruefstand in der zeitlichen Abnahme; meine 12 von 12
+      // konnten es nicht fangen, weil sie das Ergebnis pruefen und nicht den Ablauf.
+      var z = el('#guestCounterText');
+      if (!z) return;
+      z.textContent = z.textContent.replace(/\d+/, function(d){ return (+d)+1; });
+      // Und ein Punkt mehr in der Reihe, damit die Zahl nicht allein springt.
+      var dots = el('#guestDots'), letzter = dots && dots.lastElementChild;
+      if (letzter && /^\+\d+$/.test(letzter.textContent))
+        letzter.textContent = '+' + (parseInt(letzter.textContent.slice(1), 10) + 1);
     });
   }
   function wunsch(){
@@ -556,28 +565,25 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     tap.hidden = true; schritt(0);
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('active');
 
-    nach(250,  function(){ bub1.classList.add('in'); });
-    nach(1400, function(){ bub1.classList.add('said'); });
-    nach(2100, function(){ bub2.classList.add('in','said'); });
-    nach(3100, function(){ tippe(wrap.querySelector('.gw__prev')); });
-    nach(3900, function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
-    // Ziel ist der PASS, nicht die erste Karte: die erste ist der Absender-Kasten.
-    // Gesucht wird ueber "Deine Rolle" — das steht in jedem Motto, der Passname nicht.
-    nach(5000, function(){ scrollTo(pass(), 1500); });
-    nach(7200, function(){ scrollTo(el('.game-card'), 1500); });
-    nach(8000, function(){ schritt(2); });   // Marke folgt der Bewegung, nicht umgekehrt
-    nach(8900, function(){ tippe(el('.play-pill')); });
-    nach(11400, function(){ scrollTo(el('#rsvpCard'), 1500); });   // Spiel steht 4,2 s
-    nach(12200, function(){ schritt(3); });
-    nach(13100, zusage);
-    nach(14600, function(){ scrollTo(wunschkarte(), 1500); });
-    nach(16400, wunsch);
-    // KEINE Endlosschleife. Vorschlag des Pruefstands, und er verkleinert den Entwurf zum ersten
-    // Mal heute statt ihn zu vergroessern: einmal abspielen, dann auf dem Endzustand stehen.
-    // Damit entfallen ERSATZLOS: das Zuruecksetzen der sechs Wunsch-Aenderungen (fehlte, also
-    // war ab dem zweiten Durchlauf der Hoehepunkt kaputt — ein Finger tippt auf "Vergeben" und
-    // nichts passiert), die Dauerbewegung neben dem Fliesstext, und die halbe reduced-motion-Frage.
-    nach(19400, function(){ fertig = true; laufend = false; });
+    // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
+    // nicht eilig". Die Chat-Szene allein steht jetzt 7,5 s statt 3,9 s; wer den Text von Idas
+    // Mama lesen will, schafft ihn zweimal. Insgesamt 27 s, EINMAL — keine Schleife, also
+    // kostet die Laenge niemanden etwas, der weiterliest.
+    nach(400,   function(){ bub1.classList.add('in'); });          // tippt...
+    nach(2100,  function(){ bub1.classList.add('said'); });        // Text da
+    nach(4200,  function(){ bub2.classList.add('in','said'); });   // Link-Vorschau
+    nach(6600,  function(){ tippe(wrap.querySelector('.gw__prev')); });
+    nach(7500,  function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
+    nach(9200,  function(){ scrollTo(pass(), 1800); });             // Hero steht 1,7 s
+    nach(12600, function(){ scrollTo(el('.game-card'), 1800); });   // Pass steht 3,4 s
+    nach(13600, function(){ schritt(2); });
+    nach(18400, function(){ tippe(el('.play-pill')); });            // Spiel steht 5,8 s
+    nach(20200, function(){ scrollTo(el('#rsvpCard'), 1800); });
+    nach(21200, function(){ schritt(3); });
+    nach(23000, zusage);
+    nach(25000, function(){ scrollTo(wunschkarte(), 1800); });
+    nach(27000, wunsch);
+    nach(30000, function(){ fertig = true; laufend = false; });
   }
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
