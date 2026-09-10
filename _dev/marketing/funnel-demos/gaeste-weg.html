@@ -132,7 +132,7 @@
          allow-popups-to-escape-sandbox erbt der neue Tab die Sandbox-Restriktionen.
          Wer hier je sandbox setzt, muss beide Tokens mitgeben, sonst bricht die
          gesetzliche Pflichtangabe im eingebetteten Kontext unsichtbar weg. -->
-    <iframe loading="lazy" id="gameFrame" src="https://machsleicht.de/einladung/einhorn/whatsapp/?name=Ida&amp;date=Freitag%2C%2016.%20Oktober%202026&amp;time=15%3A00&amp;ort=Bei%20uns%20zuhause%20in%20Hamburg-Rahlstedt%20%E2%80%94%20Garten%20ist%20dabei&amp;age=6&amp;foto=https%3A%2F%2Fparty.machsleicht.de%2Fapi%2Finvimg%2Frmveztmvvarx" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
+    <iframe id="gameFrame" src="https://machsleicht.de/einladung/einhorn/whatsapp/?name=Ida&amp;date=Freitag%2C%2016.%20Oktober%202026&amp;time=15%3A00&amp;ort=Bei%20uns%20zuhause%20in%20Hamburg-Rahlstedt%20%E2%80%94%20Garten%20ist%20dabei&amp;age=6&amp;foto=https%3A%2F%2Fparty.machsleicht.de%2Fapi%2Finvimg%2Frmveztmvvarx" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>
 
   <div class="card fade-up fade-up-d1">
@@ -486,6 +486,10 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     tap.style.top  = (r.top  - s.top  + r.height/2) + 'px';
     tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
     setTimeout(function(){ if (cb) cb(); }, 380);
+    // Punkt wieder wegnehmen: .gw__tap hat auch ohne .go eine sichtbare Fuellung, und tippe()
+    // setzte hidden nur auf false. Gemessen (Pruefstand): ein weisser Kreis stand 13 s an der
+    // letzten Tippstelle.
+    setTimeout(function(){ tap.hidden = true; }, 600);
   }
   // Karten ueber ihren INHALT finden, nicht ueber die Reihenfolge — Reihenfolge aendert sich,
   // "Deine Rolle" und die Wunschliste nicht.
@@ -529,9 +533,20 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   }
 
   // --- Ablauf ---
-  var T = [], laufend = false;
+  var T = [], laufend = false, fertig = false;
   function nach(ms, fn){ T.push(setTimeout(fn, ms)); }
   function stopp(){ T.forEach(clearTimeout); T = []; laufend = false; }
+
+  // Wer Bewegung reduziert haben will, bekommt den ENDZUSTAND — nicht eine angehaltene Mitte.
+  // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
+  function endzustand(){
+    chat.classList.add('off'); vp.classList.add('on'); schritt(3);
+    zusage(); wunsch();
+    page.style.transition = 'none';
+    var w = wunschkarte();
+    if (w) page.style.transform = 'translateY(' + (-Math.max(0, y(w) - 12)) + 'px)';
+    tap.hidden = true; fertig = true;
+  }
 
   function lauf(){
     stopp(); laufend = true;
@@ -549,13 +564,20 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     // Ziel ist der PASS, nicht die erste Karte: die erste ist der Absender-Kasten.
     // Gesucht wird ueber "Deine Rolle" — das steht in jedem Motto, der Passname nicht.
     nach(5000, function(){ scrollTo(pass(), 1500); });
-    nach(7200, function(){ schritt(2); scrollTo(el('.game-card'), 1500); });
+    nach(7200, function(){ scrollTo(el('.game-card'), 1500); });
+    nach(8000, function(){ schritt(2); });   // Marke folgt der Bewegung, nicht umgekehrt
     nach(8900, function(){ tippe(el('.play-pill')); });
-    nach(11400, function(){ schritt(3); scrollTo(el('#rsvpCard'), 1500); });   // Spiel steht 4,2 s
+    nach(11400, function(){ scrollTo(el('#rsvpCard'), 1500); });   // Spiel steht 4,2 s
+    nach(12200, function(){ schritt(3); });
     nach(13100, zusage);
     nach(14600, function(){ scrollTo(wunschkarte(), 1500); });
     nach(16400, wunsch);
-    nach(19400, lauf);                                                           // Wunsch steht 3 s
+    // KEINE Endlosschleife. Vorschlag des Pruefstands, und er verkleinert den Entwurf zum ersten
+    // Mal heute statt ihn zu vergroessern: einmal abspielen, dann auf dem Endzustand stehen.
+    // Damit entfallen ERSATZLOS: das Zuruecksetzen der sechs Wunsch-Aenderungen (fehlte, also
+    // war ab dem zweiten Durchlauf der Hoehepunkt kaputt — ein Finger tippt auf "Vergeben" und
+    // nichts passiert), die Dauerbewegung neben dem Fliesstext, und die halbe reduced-motion-Frage.
+    nach(19400, function(){ fertig = true; laufend = false; });
   }
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -565,7 +587,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   // Stueck davon zu sehen ist.
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){
-      if (e.isIntersecting && !laufend) lauf();
+      if (e.isIntersecting && !laufend && !fertig) { if (ruhig) endzustand(); else lauf(); }
       else if (!e.isIntersecting && laufend) stopp();
     });
   }, {threshold:0, rootMargin:'0px 0px -80px 0px'});
