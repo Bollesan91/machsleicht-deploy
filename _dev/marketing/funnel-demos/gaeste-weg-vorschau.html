@@ -408,11 +408,20 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   // Die Seite im Rahmen ist 326 px breit gebaut; passt sie in der Hoehe nicht, wird nur
   // gescrollt — nicht skaliert. Skalieren macht Schrift unlesbar klein.
   function el(sel){ return page.querySelector(sel); }
-  function y(node){ return node ? node.offsetTop : 0; }
+  // Abstand zur Seitenoberkante ueber die RECHTECKE, nicht ueber offsetTop: offsetTop misst gegen
+  // den naechsten positionierten Vorfahren. Der Hero ist positioniert, also zaehlten seine 672 px
+  // nicht mit — gemessen: .game-card meldete 591 statt 1263, jeder Sprung landete zu frueh und
+  // Spiel wie Wunschliste rutschten unten aus dem Bild. Genau das hat Bolle gesehen.
+  function y(node){
+    if (!node) return 0;
+    var jetzt = 0, m = /translateY\((-?[\d.]+)px\)/.exec(page.style.transform || '');
+    if (m) jetzt = -parseFloat(m[1]);
+    return node.getBoundingClientRect().top - page.getBoundingClientRect().top;
+  }
 
-  function scrollTo(node, ms){
+  function scrollTo(node, ms, oben){
     if (!node) return;
-    var frei = vp.clientHeight, ziel = Math.max(0, y(node) - 12);
+    var frei = vp.clientHeight, ziel = Math.max(0, y(node) - (oben == null ? 12 : oben));
     var max = Math.max(0, page.scrollHeight - frei);
     ziel = Math.min(ziel, max);
     page.style.transition = ruhig ? 'none' : 'transform ' + (ms||1400) + 'ms cubic-bezier(.4,0,.2,1)';
@@ -431,6 +440,18 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     tap.style.top  = (r.top  - s.top  + r.height/2) + 'px';
     tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
     setTimeout(function(){ if (cb) cb(); }, 380);
+  }
+  // Karten ueber ihren INHALT finden, nicht ueber die Reihenfolge — Reihenfolge aendert sich,
+  // "Deine Rolle" und die Wunschliste nicht.
+  function karteMit(text){
+    var alle = page.querySelectorAll('.card');
+    for (var i=0;i<alle.length;i++) if (alle[i].textContent.indexOf(text) >= 0) return alle[i];
+    return null;
+  }
+  function pass(){ return karteMit('Deine Rolle'); }
+  function wunschkarte(){
+    var l = el('#wishListGuest');
+    return l ? l.closest('.card') : karteMit('Wunschliste');
   }
   function schritt(n){
     btns.forEach(function(b,k){
@@ -478,14 +499,16 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     nach(1500, function(){ bub.classList.add('said'); });
     nach(2600, function(){ tippe(wrap.querySelector('.gw__link')); });
     nach(3100, function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
-    nach(4400, function(){ scrollTo(el('.card'), 1600); });                 // Absender/Pass
-    nach(6600, function(){ schritt(2); scrollTo(el('.game-card'), 1600); });
-    nach(8600, function(){ tippe(el('.play-pill')); });
-    nach(9600, function(){ schritt(3); scrollTo(el('#rsvpCard'), 1600); });
-    nach(11200, zusage);
-    nach(12600, function(){ scrollTo(el('#wishListGuest') && el('#wishListGuest').closest('.card'), 1600); });
-    nach(14200, wunsch);
-    nach(17000, lauf);
+    // Ziel ist der PASS, nicht die erste Karte: die erste ist der Absender-Kasten.
+    // Gesucht wird ueber "Deine Rolle" — das steht in jedem Motto, der Passname nicht.
+    nach(4200, function(){ scrollTo(pass(), 1500); });
+    nach(6400, function(){ schritt(2); scrollTo(el('.game-card'), 1500); });
+    nach(8100, function(){ tippe(el('.play-pill')); });
+    nach(10600, function(){ schritt(3); scrollTo(el('#rsvpCard'), 1500); });   // Spiel steht 4,2 s
+    nach(12300, zusage);
+    nach(13800, function(){ scrollTo(wunschkarte(), 1500); });
+    nach(15600, wunsch);
+    nach(18600, lauf);                                                           // Wunsch steht 3 s
   }
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -508,7 +531,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
       chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
       if (n>0) {
         bub.classList.add('in','said');
-        scrollTo(n===1 ? el('.card') : n===2 ? el('.game-card') : el('#rsvpCard'), 600);
+        scrollTo(n===1 ? pass() : n===2 ? el('.game-card') : el('#rsvpCard'), 600);
       }
     });
   });
