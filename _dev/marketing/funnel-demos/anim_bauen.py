@@ -97,13 +97,60 @@ def absolut(s):
 body, css = absolut(body), absolut(css)
 
 # Das Spiel bleibt drin (echtes Spiel, gleiche Herkunft wie die Startseite), laedt aber traege.
+# Attribut nur setzen, wenn es fehlt — der erste Anlauf haengte es blind an und schrieb
+# loading="lazy" ZWEIMAL in denselben Tag. Hier harmlos (der Parser nimmt das erste), aber
+# dieselbe Zeile setzt spaeter vielleicht sandbox oder src. Vom Pruefstand gefunden.
 if '<iframe ' in body:
-    body = body.replace('<iframe ', '<iframe loading="lazy" ', 1)
+    i = body.index('<iframe ')
+    if 'loading=' not in body[i:i+300]:
+        body = body[:i] + '<iframe loading="lazy" ' + body[i+len('<iframe '):]
+
+# Keine echten Weiterleitungen aus einer Werbeanimation: die vier Wunsch-Links der Demo zeigen
+# auf /go/<party>/<wunsch> und wuerden die Klickstatistik einer ECHTEN Party fuellen, wenn jemand
+# per Tastatur hineinkommt. Vom Pruefstand gefunden.
+vor_href = len(re.findall(r'href="https://party\.machsleicht\.de/go/', body))
+body = re.sub(r'href="https://party\.machsleicht\.de/go/[^"]*"', 'data-demo-link', body)
+assert 'party.machsleicht.de/go/' not in body
+print(f'  Affiliate-Weiterleitungen entschaerft: {vor_href}')
+
+# --- CSS fuer @scope aufbereiten. DREI Fehler der ersten Fassungen, alle im Browser gemessen:
+#
+# (1) @font-face darf NICHT in @scope stehen — es ist eine Regel auf oberster Ebene. Drin
+#     verschluckt, also wurden die Schriften NIE angefordert: document.fonts meldete
+#     "Baloo 2:unloaded" und "DM Sans:unloaded", der Hero lief auf system-ui.
+# (2) :root matcht nie, weil der Scope-Wurzel .gw__page ist und <html> DARUEBER liegt.
+#     Folge: alle 8 Variablen undefiniert bei 97 var(--…)-Verwendungen.
+# (3) body{} matcht aus demselben Grund nie — dort steht die Grundschrift.
+#
+# Reparatur: @font-face herausheben, :root und body auf :scope umschreiben.
+schriften = re.findall(r'@font-face\s*\{[^}]*\}', css)
+assert len(schriften) == 2, len(schriften)
+css_in = css
+for f in schriften:
+    css_in = css_in.replace(f, '')
+vor_root, vor_body = len(re.findall(r':root\s*\{', css_in)), len(re.findall(r'(?<![\w.#>\-])body\s*\{', css_in))
+css_in = re.sub(r':root\s*\{', ':scope{', css_in)
+css_in = re.sub(r'(?<![\w.#>\-])body\s*\{', ':scope{', css_in)
+print(f'  CSS: {len(schriften)} @font-face herausgehoben, '
+      f'{vor_root}x :root und {vor_body}x body -> :scope')
+assert vor_root >= 1 and vor_body >= 1, (vor_root, vor_body)
+assert ':root' not in css_in and '@font-face' not in css_in
+
+# --- Die Link-Vorschau der Chat-Szene kommt aus den ECHTEN og:-Angaben der Partyseite ---
+def og(prop):
+    m = re.search(r'<meta property="og:' + prop + r'" content="([^"]*)"', seite)
+    return m.group(1) if m else ''
+og_titel, og_beschr = og('title'), og('description')
+assert og_titel, 'kein og:title'
+print(f'  og:title  {og_titel[:48]!r}')
+print(f'  og:descr  {og_beschr[:48]!r}')
 
 # --- Welche Klasse markiert einen gewaehlten Antwort-Knopf? Aus dem CSS ABLEITEN, nicht tippen.
 kand = re.findall(r'\.rsvp-btn\.([a-z-]+)', css)
 WAHL = kand[0] if kand else 'selected'
 print('  gewaehlter Antwort-Knopf traegt Klasse:', WAHL, f'(aus {len(set(kand))} Kandidaten im CSS)')
+
+schriften_aus = NL.join(schriften)
 
 BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
      Neu erzeugen: python _dev/marketing/funnel-demos/anim_bauen.py
@@ -130,14 +177,33 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     <div class="gw__phone">
       <div class="gw__screen">
         <div class="gw__chat" data-sc="chat">
-          <div class="gw__chat-head">Elterngruppe</div>
-          <div class="gw__bubble gw__bubble--in">
+          <div class="gw__chat-head">
+            <span class="gw__ava">\U0001F49C</span>
+            <span><b>Idas Mama</b><span class="gw__on">online</span></span>
+          </div>
+          <div class="gw__bubble" data-b="1">
             <span class="gw__dots"><i></i><i></i><i></i></span>
-            <span class="gw__msg">\U0001F984 <b>Ida's Einhorn!</b><br>Alle Infos &amp; Zusage hier:<br>
-              <span class="gw__link">party.machsleicht.de/\u2026</span></span>
+            <span class="gw__msg">Ihr Lieben \U0001F49C Ida wird sechs \u2014 und w\u00fcnscht sich
+              nur eins: Einh\u00f6rner. \u00dcberall.<br><br>Ich hab alles auf eine Seite gepackt \u2014
+              Infos, Zusage und die Wunschliste. Und die Kinder d\u00fcrfen dort was spielen \U0001F984
+              <span class="gw__t">14:32 <span class="gw__hk">\u2713\u2713</span></span></span>
+          </div>
+          <div class="gw__bubble gw__bubble--link" data-b="2">
+            <span class="gw__msg">
+              <span class="gw__prev">
+                <img src="{API}/api/ogimg/{PID}" alt="" loading="lazy">
+                <span class="gw__prev-txt">
+                  <b>{og_titel}</b>
+                  <i>{og_beschr}</i>
+                  <em>party.machsleicht.de</em>
+                </span>
+              </span>
+              <span class="gw__link">party.machsleicht.de/\u2026</span>
+              <span class="gw__t">14:32 <span class="gw__hk">\u2713\u2713</span></span>
+            </span>
           </div>
         </div>
-        <div class="gw__viewport" data-sc="page" aria-hidden="true">
+        <div class="gw__viewport" data-sc="page" aria-hidden="true" inert>
           <div class="gw__page">{body}</div>
         </div>
       </div>
@@ -147,8 +213,12 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 </section>
 
 <style>
+/* @font-face MUSS ausserhalb von @scope stehen — drin wird es verschluckt und die Schriften
+   werden nie angefordert (gemessen: document.fonts meldete beide als "unloaded"). */
+{schriften_aus}
+
 @scope (.gw__page) {{
-{css}
+{css_in}
   /* Die Karten der echten Seite starten opacity:0 + translateY(20px) und werden dort von einem
      Einblend-Beobachter aufgedeckt. Den gibt es hier nicht \u2014 ohne diese Zeile bleibt die
      halbe Seite wei\u00df (gemessen: zwei von vier Bildern der ersten Fassung). */
@@ -183,23 +253,44 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 .gw__viewport.on{{opacity:1}}
 .gw__page{{position:absolute;top:0;left:0;width:326px;transform-origin:top left;will-change:transform}}
 
-.gw__chat{{position:absolute;inset:0;background:#EDE3F2;padding:52px 12px 12px;
-  font:14px/1.45 system-ui,-apple-system,sans-serif;opacity:1;transition:opacity .5s}}
+/* Chat-Szene: Nachrichtenfenster-Optik (heller Klassiker), ohne fremdes Logo und ohne
+   Wortmarke — nur Anordnung und Farbwelt. Absenderin ist Idas Mama, der Text verkauft
+   nebenbei mit, und die Link-Vorschau zeigt die ECHTEN og:-Angaben der Partyseite. */
+.gw__chat{{position:absolute;inset:0;background:#ECE5DD;padding:58px 10px 12px;overflow:hidden;
+  font:14.5px/1.42 system-ui,-apple-system,"Segoe UI",sans-serif;color:#111b21;
+  opacity:1;transition:opacity .5s}}
 .gw__chat.off{{opacity:0}}
-.gw__chat-head{{position:absolute;top:0;left:0;right:0;height:44px;background:var(--gw-a);color:#fff;
-  display:flex;align-items:center;padding:0 14px;font-size:13.5px;font-weight:700}}
-.gw__bubble{{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 12px;max-width:90%;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);opacity:0;transform:translateY(14px);
-  transition:opacity .45s,transform .45s}}
+.gw__chat-head{{position:absolute;top:0;left:0;right:0;height:50px;background:#075E54;color:#fff;
+  display:flex;align-items:center;gap:10px;padding:0 12px;font-size:14px}}
+.gw__ava{{width:31px;height:31px;border-radius:50%;background:#0b7a6d;display:grid;place-items:center;
+  font-size:15px;flex:none}}
+.gw__chat-head b{{display:block;font-size:14px;font-weight:600;line-height:1.15}}
+.gw__on{{display:block;font-size:11.5px;opacity:.75}}
+.gw__bubble{{position:relative;background:#fff;border-radius:8px;padding:7px 9px 5px;max-width:88%;
+  margin-bottom:8px;box-shadow:0 1px 1px rgba(0,0,0,.13);opacity:0;transform:translateY(10px);
+  transition:opacity .4s,transform .4s}}
+.gw__bubble::before{{content:'';position:absolute;left:-7px;top:0;border:7px solid transparent;
+  border-top-color:#fff;border-right:0}}
 .gw__bubble.in{{opacity:1;transform:none}}
-.gw__msg{{display:none}}
+.gw__bubble--link{{padding-top:5px}}
+.gw__msg{{display:none;font-size:13.8px}}
 .gw__bubble.said .gw__msg{{display:block}}
 .gw__bubble.said .gw__dots{{display:none}}
-.gw__dots{{display:inline-flex;gap:4px;padding:3px 2px}}
-.gw__dots i{{width:6px;height:6px;border-radius:50%;background:#b9b9c4;animation:gwdot 1.1s infinite}}
+.gw__dots{{display:inline-flex;gap:4px;padding:4px 2px}}
+.gw__dots i{{width:6px;height:6px;border-radius:50%;background:#b3bcc2;animation:gwdot 1.1s infinite}}
 .gw__dots i:nth-child(2){{animation-delay:.18s}} .gw__dots i:nth-child(3){{animation-delay:.36s}}
 @keyframes gwdot{{0%,60%,100%{{opacity:.3}}30%{{opacity:1}}}}
-.gw__link{{color:var(--gw-a);font-weight:600;word-break:break-all}}
+.gw__link{{display:block;margin-top:5px;color:#027eb5;word-break:break-all;font-size:13px}}
+.gw__t{{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:2px}}
+.gw__hk{{color:#53bdeb;letter-spacing:-1px}}
+/* Link-Vorschau, wie sie ein Messenger baut — Bild und Text aus den echten og:-Angaben */
+.gw__prev{{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}}
+.gw__prev img{{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}}
+.gw__prev-txt{{display:block;padding:7px 9px 8px}}
+.gw__prev-txt b{{display:block;font-size:13px;line-height:1.25;margin-bottom:2px}}
+.gw__prev-txt i{{display:block;font-style:normal;font-size:11.5px;color:#667781;line-height:1.3;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
+.gw__prev-txt em{{display:block;font-style:normal;font-size:11px;color:#8696a0;margin-top:3px}}
 
 .gw__tap{{position:absolute;width:34px;height:34px;border-radius:50%;pointer-events:none;
   background:rgba(255,255,255,.34);border:2px solid rgba(255,255,255,.9);
@@ -220,7 +311,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 (function(){{
   var wrap = document.querySelector('.gw'); if (!wrap) return;
   var chat  = wrap.querySelector('.gw__chat'),
-      bub   = wrap.querySelector('.gw__bubble'),
+      bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
+      bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
       vp    = wrap.querySelector('.gw__viewport'),
       phone = wrap.querySelector('.gw__phone'),
       page  = wrap.querySelector('.gw__page'),
@@ -313,25 +405,26 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
   function lauf(){{
     stopp(); laufend = true;
     // Zuruecksetzen
-    chat.classList.remove('off'); bub.classList.remove('in','said');
+    chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
     tap.hidden = true; schritt(0);
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
 
-    nach(300,  function(){{ bub.classList.add('in'); }});
-    nach(1500, function(){{ bub.classList.add('said'); }});
-    nach(2600, function(){{ tippe(wrap.querySelector('.gw__link')); }});
-    nach(3100, function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
+    nach(250,  function(){{ bub1.classList.add('in'); }});
+    nach(1400, function(){{ bub1.classList.add('said'); }});
+    nach(2100, function(){{ bub2.classList.add('in','said'); }});
+    nach(3100, function(){{ tippe(wrap.querySelector('.gw__prev')); }});
+    nach(3900, function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
     // Ziel ist der PASS, nicht die erste Karte: die erste ist der Absender-Kasten.
     // Gesucht wird ueber "Deine Rolle" — das steht in jedem Motto, der Passname nicht.
-    nach(4200, function(){{ scrollTo(pass(), 1500); }});
-    nach(6400, function(){{ schritt(2); scrollTo(el('.game-card'), 1500); }});
-    nach(8100, function(){{ tippe(el('.play-pill')); }});
-    nach(10600, function(){{ schritt(3); scrollTo(el('#rsvpCard'), 1500); }});   // Spiel steht 4,2 s
-    nach(12300, zusage);
-    nach(13800, function(){{ scrollTo(wunschkarte(), 1500); }});
-    nach(15600, wunsch);
-    nach(18600, lauf);                                                           // Wunsch steht 3 s
+    nach(5000, function(){{ scrollTo(pass(), 1500); }});
+    nach(7200, function(){{ schritt(2); scrollTo(el('.game-card'), 1500); }});
+    nach(8900, function(){{ tippe(el('.play-pill')); }});
+    nach(11400, function(){{ schritt(3); scrollTo(el('#rsvpCard'), 1500); }});   // Spiel steht 4,2 s
+    nach(13100, zusage);
+    nach(14600, function(){{ scrollTo(wunschkarte(), 1500); }});
+    nach(16400, wunsch);
+    nach(19400, lauf);                                                           // Wunsch steht 3 s
   }}
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -353,7 +446,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
       stopp(); schritt(n);
       chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
       if (n>0) {{
-        bub.classList.add('in','said');
+        bub1.classList.add('in','said'); bub2.classList.add('in','said');
         scrollTo(n===1 ? pass() : n===2 ? el('.game-card') : el('#rsvpCard'), 600);
       }}
     }});
