@@ -3045,6 +3045,19 @@ Durchsuchung aller 1.099 getrackten Dateien nach Token-Mustern: dieser eine Tref
 Commit raus; **der Token bleibt in der Historie und muss von Bolle im Netlify-Dashboard widerrufen werden** —
 ein Entfernen veroeffentlicht nichts zurueck. Ich habe ihn nicht benutzt.
 
+**Der Pruefstand hat den Sweep zu Recht als unvollstaendig markiert:** er lief ueber den Baum, der Token stand aber
+seit Maerz in der Historie. Also derselbe Sweep ueber **alle 14,487 Blobs aus 2,166 Commits aller Refs** (14,366
+Textblobs, 990 MB; 121 binaere uebersprungen; keine Groessengrenze), 15 Schluesselformate (Netlify, Cloudflare,
+GitHub, OpenAI/Anthropic, AWS, Slack, Google, Stripe, SendGrid, Resend, Mailgun, Private-Key-Bloecke, `Bearer`,
+ENV-Zuweisungen, `token/secret/password: "…"`), Positivkontrolle = der bekannte Blob muss vom `nfp_`-Muster
+getroffen werden (traf). Ergebnis: **ein einziger Token-Wert** (per SHA-256 verglichen, nie ausgegeben) in
+**4 Dateien**, alle aus demselben Commit c941d2b7 vom 2026-03-26: `_dev/deploy-v12-schatzsuche.html`, `_dev/motto-seiten/deploy-helper-motto.html`, `_dev/motto-seiten/deploy-helper.html`, `_dev/scripts/deploy.sh` — die drei
+Deploy-Helfer verschwanden am 2026-04-16 im Repo-Cleanup (0c816fb7), `deploy.sh` erst heute. Der `Bearer`-Treffer ist derselbe
+Wert im Authorization-Header des Schatzsuche-Helfers. Kein anderes Format, kein zweiter Wert, in 2,166 Commits.
+Der Schluessel gilt trotzdem als kompromittiert, bis er widerrufen ist; eine Historie umschreiben aendert daran
+nichts und jeden SHA. Skript: `history_sweep.py` (Scratchpad) — beim naechsten Mal als Linter-Stufe ueber
+`git rev-list --all --objects`, nicht als Nebenbei.
+
 **Gate nach Patch 11/12:** Generator idempotent (4/4 Dateien byte-identisch im zweiten Lauf), `node --check` am
 Fragment-Skript gruen, Bewegungsregeln 31/31 vom Reduced-Motion-Block erreicht, `<!--` 1x (Kopf), `CODE GATE`
 0x, `:is(h1` 0x, `:where(` 1x, `nach(14000` 0x, `gw--ohne-scope` 5x, Eigen-URL 0x, alte Party 0x (Kennung,
