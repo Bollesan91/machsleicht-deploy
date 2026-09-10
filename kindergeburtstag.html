@@ -724,7 +724,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   @media print{
     .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout-section,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev,.plan-edit-toggle,.plan-edit-hint{display:none!important}
     .stage{display:none!important}
-    #stage3.revealed{display:block!important}   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
+    #stage3.revealed{display:block!important}
+    #gaesteWeg{display:none!important}         /* Gaeste-Weg-Animation druckt nicht mit — nur der Plan */   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
     .plan__edit-btn,.timeline-add,.game-tag{display:none!important}
     body:has(#stage3.revealed) .seo-base,body:has(#stage3.revealed) .site-footer,body:has(#stage3.revealed) footer{display:none!important}
   }   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
@@ -880,6 +881,662 @@ window.plausible.init=function(){};window.plausible.q=[];
     </header>
     <div class="plan__body" id="planBody"></div>
   </div>
+
+  <!-- GW:START — Gaeste-Weg-Animation ("So erleben es deine Gaeste"), Ende von Stage 3.
+       Steht direkt vor der Entscheidung "Kinder einladen": die Animation zeigt, was der Knopf
+       ausloest. Stage 3 ist bis .revealed display:none, also startet sie erst mit fertigem Plan.
+       Druck: #gaesteWeg ist im @media-print-Block ausgenommen — es druckt nur der Plan.
+       Der Inhalt zwischen GW:FRAGMENT und /GW:FRAGMENT gehoert der Maschine:
+       python _dev/marketing/funnel-demos/anim_bauen.py — von Hand hier nichts aendern. -->
+  <div id="gaesteWeg">
+<!-- GW:FRAGMENT -->
+<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite rmveztmvvarx.
+     Neu erzeugen: python _dev/marketing/funnel-demos/anim_bauen.py
+     Nichts hier ist nachgezeichnet: Markup und Stylesheet sind die der echten Seite,
+     die Zustandswechsel fassen ihre echten Klassen an. -->
+<section class="gw" aria-labelledby="gw-h">
+  <div class="gw__txt">
+    <h2 class="gw__h" id="gw-h">So erleben es deine Gäste</h2>
+    <ol class="gw__steps">
+      <li><button type="button" data-s="0"><b>Die Nachricht kommt</b>
+        <span>Ein Link in der Elterngruppe — mehr braucht es nicht.</span></button></li>
+      <li><button type="button" data-s="1"><b>Jedes Kind wird persönlich begrüßt</b>
+        <span>Mit eigenem Namen, eigener Rolle, eigener Mission.</span></button></li>
+      <li><button type="button" data-s="2"><b>Und darf sofort spielen</b>
+        <span>Das Einladungsspiel — mit dem Gesicht des Geburtstagskindes.</span></button></li>
+      <li><button type="button" data-s="3"><b>Zusage und Geschenk: ein Tipp</b>
+        <span>Kein Anruf, kein Zettel, keine doppelten Geschenke.</span></button></li>
+    </ol>
+    <p class="gw__note">Das ist eine echte Partyseite — kein Bild davon.</p>
+    <a class="gw__cta" href="/kindergeburtstag">Eigene Partyseite erstellen →</a>
+  </div>
+
+  <div class="gw__stage">
+    <div class="gw__phone">
+      <div class="gw__screen">
+        <div class="gw__chat" data-sc="chat">
+          <div class="gw__chat-head">
+            <span class="gw__ava">💜</span>
+            <span><b>Idas Mama</b><span class="gw__on">online</span></span>
+          </div>
+          <div class="gw__bubble" data-b="1">
+            <span class="gw__dots"><i></i><i></i><i></i></span>
+            <span class="gw__msg">Ihr Lieben 💜 Ida wird sechs — und wünscht sich
+              nur eins: Einhörner. Überall.<br><br>Ich hab alles auf eine Seite gepackt —
+              Infos, Zusage und die Wunschliste. Und die Kinder dürfen dort was spielen 🦄
+              <span class="gw__t">14:32 <span class="gw__hk">✓✓</span></span></span>
+          </div>
+          <div class="gw__bubble gw__bubble--link" data-b="2">
+            <span class="gw__msg">
+              <span class="gw__prev">
+                <img src="/bilder/demo/ida.jpg" alt="" loading="lazy"
+                     width="400" height="400" decoding="async">
+                <span class="gw__prev-txt">
+                  <b>Ida wird 6! 🦄</b>
+                  <i>Einhorn — Zu-/Absage, Infos &amp; Wunschliste · Fr., 16.10., 15:00 Uhr</i>
+                  <em>party.machsleicht.de</em>
+                </span>
+              </span>
+              <span class="gw__link">party.machsleicht.de/…</span>
+              <span class="gw__t">14:32 <span class="gw__hk">✓✓</span></span>
+            </span>
+          </div>
+        </div>
+        <div class="gw__viewport" data-sc="page" aria-hidden="true" inert>
+          <div class="gw__page">
+
+<!-- CODE GATE: client-seitiger Sichtschutz, KEIN Zugriffsschutz (CNL steht im Quelltext, Content ist nur display:none). Schuetzenswertes IMMER server-gaten wie die Adresse. -->
+<div id="codeGate" style="min-height:100dvh;display:none;align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,#6A1B9A,#9C27B0)">
+  <div class="gate-card">
+    <div style="font-size:56px;margin-bottom:12px">🦄</div>
+    <h1 style="font-family:var(--fd);font-size:22px;color:var(--d);margin-bottom:4px">Du bist eingeladen!</h1>
+    <p style="color:var(--m);font-size:14px;margin-bottom:20px">Wie heißt das Geburtstagskind?</p>
+    <div class="field"><input type="text" id="codeInput" placeholder="Vorname eingeben" autocomplete="off" style="text-align:center;font-size:18px"></div>
+    <button class="btn" onclick="checkCode()">🔓 Öffnen</button>
+    <p id="codeError" class="hidden" style="color:#C62828;font-size:13px;margin-top:10px">Hmm, das stimmt nicht. Frag am besten bei dem zurück, der dir den Link geschickt hat — der Vorname steht auch im Titel dieser Seite. 😊</p>
+  </div>
+</div>
+
+<!-- PARTY CONTENT (hidden until code entered) -->
+<div id="partyContent" style="display:block">
+
+<div class="hero">
+<div class="hero-inner">
+  <svg class="bunting" viewBox="0 0 420 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0,0 L420,0" stroke="rgba(255,255,255,.55)" stroke-width="2"/><polygon points="10,2 40,2 25,24" fill="rgba(255,255,255,.9)"/><polygon points="70,2 100,2 85,24" fill="#E1BEE7"/><polygon points="130,2 160,2 145,24" fill="rgba(255,255,255,.75)"/><polygon points="190,2 220,2 205,24" fill="#E1BEE7"/><polygon points="250,2 280,2 265,24" fill="rgba(255,255,255,.9)"/><polygon points="310,2 340,2 325,24" fill="#E1BEE7"/><polygon points="370,2 400,2 385,24" fill="rgba(255,255,255,.75)"/></svg>
+  <span class="float-deko fd1" aria-hidden="true">🎈</span><span class="float-deko fd2" aria-hidden="true">🦄</span><span class="float-deko fd3" aria-hidden="true">✨</span>
+  <div class="hero-logo"><b>mach's</b> leicht</div>
+  <div class="hero-photo-wrap" style="display:block"><img src="/bilder/demo/ida.jpg" alt="Ida" width="400" height="400" loading="lazy" decoding="async"></div>
+  <div class="hero-emoji">🦄</div>
+  <h1><span class="hname">Ida</span> wird 6!</h1>
+  <div class="hero-motto">Einhorn</div>
+  <div class="hero-sub" style="font-size:16px;color:#fff;font-weight:800">Ben, deine Mission wartet!</div>
+  
+</div>
+</div>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="height:50px">
+    <path d="M0,0 L0,60 C240,120 480,20 720,60 C960,100 1200,30 1440,60 L1440,0 Z" fill="#BA68C8"/>
+    <path d="M0,60 C240,120 480,20 720,60 C960,100 1200,30 1440,60 L1440,120 L0,120 Z" fill="#F3E5F5"/>
+  </svg>
+</div>
+
+<div class="content">
+
+  
+
+  <div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
+    <span style="font-size:20px;line-height:1.3" aria-hidden="true">💌</span>
+    <div style="font-size:14px;line-height:1.5;color:var(--d)">Es lädt ein: <strong>Familie Bollweg</strong> · <a href="tel:01761234567" style="color:var(--a);font-weight:700;text-decoration:none">0176 1234567</a>
+      <div style="font-size:12px;color:var(--m);margin-top:2px">Fragen? Ruf an oder schreib kurz — die Nummer gehört der Gastgeber-Familie.</div>
+    </div>
+  </div>
+
+  
+  <div class="card fade-up" id="partyPass" style="border:3px solid #AB47BC;background:linear-gradient(180deg,#fff,#F3E5F5);box-shadow:0 6px 24px #AB47BC35">
+    <div style="position:absolute;top:10px;right:14px;font-size:26px;transform:rotate(12deg)" aria-hidden="true">🎟️</div>
+    <div style="text-align:center;padding:2px 0 12px;border-bottom:3px dashed #AB47BC50;margin-bottom:12px">
+      <div style="font-size:12px;letter-spacing:.22em;font-weight:800;color:var(--a)">⭐ REGENBOGEN-PASS ⭐</div>
+      <div style="font-family:var(--fd);font-size:32px;font-weight:800;color:var(--d);margin-top:2px">Ben</div>
+    </div>
+    <div style="display:grid;gap:8px;font-size:14px">
+      <div><span style="color:var(--m)">Deine Rolle:</span> <strong style="color:var(--a)">Glitzer-Wächter</strong></div>
+      <div><span style="color:var(--m)">Deine Mission:</span> Der Glitzervorrat ist bei dir sicher.</div>
+      <div><span style="color:var(--m)">Status:</span> <strong id="passStatus">Zusage offen</strong></div>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="window.print()" style="margin-top:14px">🖨️ Pass drucken</button>
+  </div>
+
+  <div class="card fade-up" style="text-align:center"><div style="font-size:15px;line-height:1.55;color:var(--d);white-space:pre-line">💌 Zieht was an, das dreckig werden darf — wir suchen den Schatz im Garten. Und wer mag, kommt als Einhorn, Fee oder Drache verkleidet!</div></div>
+
+  <div class="card game-card fade-up" id="gameSection">
+    <div class="game-header">
+      <span class="game-header-icon">🎮</span>
+      <div>
+        <div class="game-header-title">Ida's Einhorn-Einladung</div>
+        <div class="game-header-sub">Spiel das Einladungsspiel!</div>
+      </div>
+      <span class="play-pill">▶ Jetzt spielen!</span>
+    </div>
+    <div class="game-stills" id="gameStills"><img class="game-still an" id="gameStill1" src="/bilder/demo/spiel-1-suche.jpg" width="1260" height="1836" loading="lazy" decoding="async" alt="Ida sucht im Einhorn-Spiel die verzauberten Schaetze — zwei von drei gefunden"><img class="game-still" id="gameStill2" src="/bilder/demo/spiel-2-jagd.jpg" width="1260" height="1836" loading="lazy" decoding="async" alt="Ida fluechtet mit dem geklauten Stern — ihr Foto in der Einhorn-Blase"></div>
+  </div>
+
+  <div class="card fade-up fade-up-d1">
+    <div class="card-title">🦄 Party-Details</div>
+    <div class="info-row"><div class="info-icon">📅</div><div><div class="info-label">Freitag, 16. Oktober 2026</div><div class="info-sub">15:00 Uhr — 17:20 Uhr</div></div></div>
+    <div class="info-row" id="addrRow"><div class="info-icon">📍</div><div><div class="info-label" id="addrLabel" style="">Bei uns zuhause in Hamburg-Rahlstedt — Garten ist dabei</div><div class="info-sub" id="addrHint">Die genaue Adresse bekommst du mit deiner Zusage — so wandert sie nicht durch Weiterleitungen.</div><div id="addrLink"></div></div></div>
+  </div>
+
+  <div id="rsvpAnchor"></div>
+  <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
+    <div class="card-title">🎉 Zu- oder Absage</div>
+    
+    <div class="guest-counter" id="guestCounter">
+      <div class="guest-dots" id="guestDots"><div class="guest-dot">A</div><div class="guest-dot">B</div><div class="guest-dot">C</div><div class="guest-dot">+3</div></div>
+      <span class="guest-counter-text" id="guestCounterText">Schon 6 Kinder dabei!</span>
+    </div>
+    <div id="alreadyRsvp" class="hidden" style="text-align:center;padding:8px 0 12px">
+      <p style="font-size:14px;color:var(--m)">Du hast bereits für <strong id="prevName"></strong> geantwortet.</p>
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('alreadyRsvp').classList.add('hidden');document.getElementById('rsvpFields').classList.remove('hidden')" style="margin-top:8px">Antwort ändern</button>
+    </div>
+    <div class="rsvp-form" id="rsvpFields">
+      <div class="field"><label>Name deines Kindes</label><input type="text" id="rsvpName" placeholder="z.B. Lina" maxlength="50"></div>
+      <div class="rsvp-buttons">
+        <button class="rsvp-btn" data-rsvp="ja" onclick="pickStatus('ja',this)"><span class="rsvp-emoji">✅</span>Dabei!</button>
+        <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">🤔</span>Vielleicht</button>
+        <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">❌</span>Nein</button>
+      </div>
+      <div class="field"><label>Allergien / Unverträglichkeiten</label><input type="text" id="rsvpAllergies" value="" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig — das sieht nur die Gastgeber-Familie und wird spätestens 14 Tage nach der Party gelöscht.</span></div>
+      <div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" value="" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" value="" style="width:110px"></div></div>
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">📨 Absenden</button>
+      <p class="dsgvo">Deine Angaben werden nur für diese Party gespeichert und spätestens 14 Tage nach der Party automatisch gelöscht — die Kopie auf diesem Gerät löscht sich beim nächsten Öffnen der Seite.</p>
+    </div>
+    <div class="rsvp-success" id="rsvpSuccess">
+      <div class="rsvp-success-emoji">🎉</div>
+      <h3 id="rsvpMsg">Wir freuen uns auf euch!</h3>
+      <p id="rsvpSub">Deine Antwort ist angekommen.</p>
+      <a href="javascript:downloadIcs()" class="cal-btn" style="margin-top:16px;display:inline-flex">📅 Termin speichern</a>
+    </div>
+  </div>
+
+  <div class="card fade-up fade-up-d3">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="margin:0">🎁 Wunschliste</div>
+      <span class="badge badge-warn" id="wishBadge">Noch 4 frei!</span>
+    </div>
+    <p style="font-size:12px;color:var(--m);margin-bottom:14px">Reserviere ein Geschenk — andere Gäste sehen nur, dass es vergeben ist.</p>
+    <div class="wish-progress" id="wishProgress">
+      <div class="wish-progress-header">
+        <span class="wish-progress-label">Reserviert</span>
+        <span class="wish-progress-count" id="wishProgressCount">1 von 5</span>
+      </div>
+      <div class="wish-progress-bar"><div class="wish-progress-fill" id="wishProgressFill" style="width: 20%;"></div></div>
+    </div>
+    <div id="wishListGuest"><div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">Regenbogen-Einhorn Kuscheltier</div><div style="font-size:12px;color:var(--m)">ca. 25 € · ✅ Vergeben</div><a data-demo-link target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">→ bei Amazon</a></div><button class="wish-btn taken">Vergeben</button></div><div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">Schleich bayala Einhorn-Figur</div><div style="font-size:12px;color:var(--m)">ca. 15 € · </div><a data-demo-link target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">→ bei Amazon</a></div><button class="wish-btn">Schenke ich!</button></div><div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">Einhorn-Malbuch + dicke Buntstifte</div><div style="font-size:12px;color:var(--m)">ca. 12 € · </div><a data-demo-link target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">→ bei Thalia</a></div><button class="wish-btn">Schenke ich!</button></div><div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">Nachtlicht mit Sternenhimmel</div><div style="font-size:12px;color:var(--m)">ca. 20 € · </div><a data-demo-link target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">→ bei myToys</a></div><button class="wish-btn">Schenke ich!</button></div><div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">Gemeinsam: das grüne Laufrad</div><div style="font-size:12px;color:var(--m)">89 € · Gemeinsam schenken (2 dabei, 35 € gesammelt)</div><div style="font-size:12px;color:var(--a);font-weight:600">💸 Noch offen: 54€ · Vorschlag: 18€</div><a data-demo-link target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">→ bei Otto</a></div><button class="wish-btn">Beteiligen</button></div></div>
+    <p style="font-size:10px;color:var(--m);margin-top:12px;text-align:center;opacity:.6">Links enthalten ggf. Affiliate-Links. Für dich ändert sich nichts am Preis.</p>
+  </div>
+
+
+  <div style="text-align:center;margin:8px 0"><a href="javascript:downloadIcs()" class="cal-btn">📅 Termin im Kalender speichern</a></div>
+
+</div>
+
+<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px;border-radius:16px;background:#FFF6EC;border:1px solid #F0DEC8;text-align:center">
+  <div style="font-size:26px;line-height:1;margin-bottom:6px">🎈</div>
+  <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
+  <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan — kostenlos, in 10 Minuten, ohne Anmeldung.</p>
+  <a href="/kindergeburtstag" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#C25400;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen →</a>
+</div>
+
+<div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></div>
+
+</div><!-- /partyContent -->
+
+<canvas id="confettiCanvas"></canvas>
+
+
+</div>
+        </div>
+      </div>
+      <span class="gw__tap" hidden></span>
+    </div>
+  </div>
+</section>
+
+<style>
+/* @font-face MUSS ausserhalb von @scope stehen — drin wird es verschluckt und die Schriften
+   werden nie angefordert (gemessen: document.fonts meldete beide als "unloaded"). */
+@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}
+
+@scope (.gw__page) {
+
+
+*{margin:0;padding:0;box-sizing:border-box}
+:scope{
+  --a:#AB47BC;--at:#fff;--al:#AB47BC18;--ag:linear-gradient(135deg,#AB47BC,#BA68C8);
+  --bg:#F3E5F5;--card:#fff;--d:#4A148C;--m:#7B1FA2;--l:#E1BEE7;
+  --f:'DM Sans',system-ui,sans-serif;--fd:'Baloo 2','Comic Sans MS',cursive;--r:16px;
+}
+:scope{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(#AB47BC1f 2.5px,transparent 3px),radial-gradient(#BA68C826 2px,transparent 2.5px);background-size:44px 44px,44px 44px;background-position:0 0,22px 22px;pointer-events:none;z-index:0}
+.hero{background:linear-gradient(180deg,#6A1B9A 0%,#9C27B0 55%,#BA68C8 100%);padding:20px 16px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'🦄';position:absolute;top:50%;left:50%;font-size:220px;transform:translate(-50%,-50%) rotate(-12deg);opacity:0.11;pointer-events:none}
+.hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:gw-shimmer 8s ease-in-out infinite alternate;pointer-events:none}
+@keyframes gw-shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
+.hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
+.hero-inner::before{content:'';position:absolute;inset:-26px -28px;z-index:-1;border-radius:34px;background:radial-gradient(ellipse 150% 115% at 50% 50%,rgba(0,0,0,.36) 0%,rgba(0,0,0,.31) 60%,rgba(0,0,0,0) 100%);pointer-events:none}
+.hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.9);margin-bottom:16px}
+.bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
+.float-deko{position:absolute;pointer-events:none;opacity:.6;animation:gw-bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.float-deko.fd1{left:6%;top:38%;font-size:30px;animation-delay:.4s}
+.float-deko.fd2{right:7%;top:24%;font-size:24px;animation-delay:1.1s}
+.float-deko.fd3{right:14%;bottom:16%;font-size:22px;animation-delay:1.9s;animation-duration:4.2s}
+.hero-logo b{color:#fff}
+.hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
+.hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:gw-bob 3s ease-in-out infinite}
+.hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
+.hero h1 .hname{background:linear-gradient(135deg,#fff 30%,#E1BEE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-motto{font-size:16px;color:#fff;font-weight:600}
+.hero-sub{font-size:13px;color:#fff;margin-top:8px}
+.countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(0,0,0,.18);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:gw-pulse 2s ease-in-out infinite}
+.countdown-num{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff}
+.countdown-label{font-size:12px;color:#fff;font-weight:600}
+@keyframes gw-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes gw-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wave-divider{position:relative;margin-top:-40px;z-index:0}
+.wave-divider svg{display:block;width:100%}
+.content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
+@media(min-width:900px){.hero-inner{max-width:760px}.content{max-width:760px}}/* 09.09.2026: dieselbe Grenze und dieselbe Breite wie in Block 15 fuer die Gastgeber-Seiten — zwei Zahlen fuer dieselbe Entscheidung waeren eine Dublette. Geprueft: 81 sichtbare Elemente, 0 laufen ueber; der einzige breite Knopf ist der Absende-Knopf des Zusage-Formulars. */
+.card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
+@media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
+.card-title{font-size:18px;font-weight:800;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
+.game-card{padding:0;border:3px solid #AB47BC66;background:linear-gradient(180deg,#F3E5F5,#fff);box-shadow:0 6px 24px #AB47BC30}
+/* 09.09.2026 — Schleier auf der Spielkarte (Block 24). Ohne ihn fallen 14 von 17 Paletten
+   durch (Unterzeile, schlechtester 1,99); die 70% Deckkraft deckelte zusaetzlich, deshalb
+   faellt sie weg. ANDERS GEBAUT ALS DER HERO-SCHLEIER, mit Grund: .hero-inner hat keinen
+   eigenen Hintergrund (der Verlauf sitzt auf .hero), dort traegt z-index:-1. Hier traegt
+   .game-header den Verlauf SELBST — ein z-index:-1 laege dahinter und waere unsichtbar.
+   Deshalb: absolutes ::before (sonst wuerde es im Flex-Container ein Flex-Item) plus
+   z-index:1 auf den Kindern. Die beiden Schleier NICHT vereinheitlichen. */
+.game-header{background:linear-gradient(135deg,#6A1B9A,#9C27B0);padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff;position:relative}
+.game-header::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.28);pointer-events:none}
+.game-header>*{position:relative;z-index:1}
+.game-header-icon{font-size:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.2))}
+.game-header-title{font-size:16px;font-weight:800;font-family:var(--fd)}
+.play-pill{margin-left:auto;background:#fff;color:#4A148C;font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:gw-pulse 2s ease-in-out infinite;white-space:nowrap}
+.game-header-sub{font-size:11px;margin-top:1px}
+#gameFrame{width:100%;height:min(85vh,700px);border:none;display:block}
+.info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:10px 14px;background:var(--bg);border-radius:12px}
+.info-row:last-child{margin-bottom:0}
+.info-icon{font-size:22px;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--al);border-radius:10px}
+.info-label{font-weight:700;font-size:14px;color:var(--d)}
+.info-sub{font-size:13px;color:var(--m);margin-top:1px}
+.info-link{font-size:12px;color:var(--a);font-weight:600;text-decoration:none}
+.rsvp-card{border:2px solid var(--l);background:linear-gradient(180deg,#fff,#F3E5F5)}
+.rsvp-card::before{height:4px}
+.guest-counter{display:flex;align-items:center;gap:8px;justify-content:center;padding:10px 16px;background:linear-gradient(135deg,#AB47BC08,#AB47BC18);border-radius:12px;margin-bottom:14px;border:1px solid #AB47BC30}
+.guest-dots{display:flex}
+.guest-dot{width:24px;height:24px;border-radius:50%;background:var(--a);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--at);font-weight:700;margin-left:-6px}
+.guest-dot:first-child{margin-left:0}
+.guest-counter-text{font-size:13px;font-weight:700;color:var(--a)}
+.rsvp-buttons{display:flex;gap:8px;margin-bottom:14px}
+.rsvp-btn{flex:1;padding:16px 8px;border-radius:20px;border:3px solid var(--l);background:var(--card);cursor:pointer;font:700 15px var(--f);color:var(--d);transition:all .2s;text-align:center}
+.rsvp-btn:active{transform:scale(.93)}
+.rsvp-btn.active{border-color:var(--a);background:var(--al);box-shadow:0 2px 12px #AB47BC25}
+.rsvp-btn.pop{animation:gw-popBounce .5s cubic-bezier(.18,.89,.32,1.28)}
+@keyframes gw-popBounce{0%{transform:scale(.85)}40%{transform:scale(1.08)}70%{transform:scale(.96)}100%{transform:scale(1)}}
+.rsvp-emoji{font-size:24px;display:block;margin-bottom:4px}
+.rsvp-form{max-height:600px;transition:opacity .4s ease,max-height .5s ease;overflow:hidden}
+.rsvp-form.slide-hidden{opacity:0;max-height:0;padding:0;margin:0;pointer-events:none}
+.rsvp-success{display:none;text-align:center;padding:24px 16px}
+.rsvp-success.show{display:block;animation:gw-fadeUp .5s ease both}
+.rsvp-success-emoji{font-size:56px;animation:gw-bob 2.5s ease-in-out infinite}
+.rsvp-success h3{font-family:var(--fd);font-size:22px;color:var(--a);margin:8px 0 4px}
+.rsvp-success p{font-size:14px;color:var(--m);line-height:1.5}
+.wish-progress{margin-bottom:14px}
+.wish-progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.wish-progress-label{font-size:12px;font-weight:700;color:var(--m)}
+.wish-progress-count{font-size:12px;font-weight:800;color:var(--a)}
+.wish-progress-bar{height:6px;background:var(--bg);border-radius:100px;overflow:hidden}
+.wish-progress-fill{height:100%;border-radius:100px;background:var(--ag);transition:width .8s cubic-bezier(.22,1,.36,1)}
+.wish-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg);border-radius:12px;margin-bottom:8px}
+.wish-item:last-child{margin-bottom:0}
+.wish-btn{padding:8px 16px;border-radius:12px;border:2px solid var(--a);background:transparent;color:var(--a);font:700 12px var(--f);cursor:pointer;white-space:nowrap;transition:all .2s}
+.wish-btn:hover{background:var(--al)}
+.wish-btn.taken{background:var(--l);color:var(--m);border-color:var(--l);cursor:default}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:var(--a);color:var(--at);border:none;border-radius:var(--r);font:700 15px var(--f);cursor:pointer;transition:all .2s;width:100%;text-decoration:none;box-shadow:0 4px 16px #AB47BC40}
+.btn:active{transform:scale(.97)}
+.btn-outline{background:transparent;border:2px solid var(--a);color:var(--a);box-shadow:none}
+.btn-sm{padding:10px 16px;font-size:13px;width:auto}
+input,textarea{width:100%;padding:12px 14px;border:2px solid var(--l);border-radius:14px;font:400 15px var(--f);color:var(--d);background:#fff;outline:none;transition:border .2s}
+input:focus,textarea:focus{border-color:var(--a)}
+label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+.field{margin-bottom:14px}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:700}
+.badge-warn{background:#FFF3E0;color:#E65100;border:1px solid #FFE0B2}
+.cal-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#AB47BC10;border:1px solid var(--l);border-radius:12px;color:var(--a);font:600 13px var(--f);cursor:pointer;text-decoration:none;transition:all .2s}
+.cal-btn:hover{background:var(--al)}
+.dsgvo{font-size:11px;color:var(--m);text-align:center;margin-top:8px;line-height:1.5;opacity:.7}
+.footer{text-align:center;padding:20px 16px;font-size:11px;color:var(--m);opacity:.5}
+.footer a{color:var(--m);text-decoration:none}
+@keyframes gw-fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+.fade-up-d1{transition-delay:.1s}
+.fade-up-d2{transition-delay:.15s}
+.fade-up-d3{transition-delay:.2s}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
+.hidden{display:none!important}
+/* code gate */
+.gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
+
+
+  /* Die Karten der echten Seite starten opacity:0 + translateY(20px) und werden dort von einem
+     Einblend-Beobachter aufgedeckt. Den gibt es hier nicht — ohne diese Zeile bleibt die
+     halbe Seite weiß (gemessen: zwei von vier Bildern der ersten Fassung). */
+  .fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3{opacity:1!important;transform:none!important;animation:none!important}
+  /* Die zwei Spielbilder liegen deckungsgleich uebereinander, nur die Deckkraft wechselt.
+     aspect-ratio statt fester Hoehe: die Aufnahmen haben exakt das Verhaeltnis des
+     Spielfensters, also bleibt die Karte so hoch wie mit dem echten Spiel darin. */
+  .game-stills{position:relative;display:block;width:100%;aspect-ratio:1260/1836;
+    background:#2A1B4A;overflow:hidden}
+  .game-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    display:block;opacity:0;transition:opacity .55s ease}
+  .game-still.an{opacity:1}
+  /* Nichts im Standbild soll anklickbar aussehen oder Fokus fangen. */
+  a,button,input,textarea,select{pointer-events:none!important}
+}
+
+.gw{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
+  max-width:1060px;margin:0 auto;padding:32px 20px}
+@media(min-width:920px){.gw{grid-template-columns:1fr 360px;gap:64px}}
+.gw__h{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}
+.gw__steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:gw}
+.gw__steps button{all:unset;display:block;width:100%;box-sizing:border-box;cursor:pointer;
+  padding:13px 15px;border-radius:12px;border-left:3px solid transparent;opacity:.61;
+  transition:opacity .4s,background .4s,border-color .4s}
+.gw__steps button:focus-visible{outline:2px solid var(--gw-a);outline-offset:2px;opacity:1}
+.gw__steps b{display:block;font-size:15.5px;margin-bottom:2px}
+/* Deckkraft der inaktiven Schritte: berechnet, nicht geschaetzt. .45/.78 (gestapelt .351) ergaben
+   2,86:1 und 2,19:1 gegen #fdfcf9 — unter 4,5:1 fuer echte <button> (Pruefstand, WCAG-Rechnung).
+   Die Werte hier stammen aus stills_einbauen5.py, das die Schwelle gegen beide Wirtsfarben prueft. */
+.gw__steps span{display:block;font-size:13.5px;opacity:1.0}
+.gw__steps button[aria-current="step"]{opacity:1;background:color-mix(in srgb,var(--gw-a) 7%,transparent);
+  border-left-color:var(--gw-a)}
+.gw__note{font-size:13px;opacity:.62;margin:18px 0 0}
+.gw__cta{display:inline-block;margin-top:10px;font-weight:700;font-size:15.5px;color:var(--gw-a);
+  text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+
+.gw__stage{justify-self:center}
+.gw__phone{position:relative;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
+  background:linear-gradient(160deg,#2b2b33,#141419);
+  box-shadow:0 26px 64px rgba(0,0,0,.3),0 2px 0 rgba(255,255,255,.15) inset}
+.gw__screen{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff}
+.gw__viewport{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .5s}
+.gw__viewport.on{opacity:1}
+.gw__page{position:absolute;top:0;left:0;width:326px;transform-origin:top left;will-change:transform}
+
+/* Chat-Szene: Nachrichtenfenster-Optik (heller Klassiker), ohne fremdes Logo und ohne
+   Wortmarke — nur Anordnung und Farbwelt. Absenderin ist Idas Mama, der Text verkauft
+   nebenbei mit, und die Link-Vorschau zeigt die ECHTEN og:-Angaben der Partyseite. */
+.gw__chat{position:absolute;inset:0;background:#ECE5DD;padding:58px 10px 12px;overflow:hidden;
+  font:14.5px/1.42 system-ui,-apple-system,"Segoe UI",sans-serif;color:#111b21;
+  opacity:1;transition:opacity .5s}
+.gw__chat.off{opacity:0}
+.gw__chat-head{position:absolute;top:0;left:0;right:0;height:50px;background:#075E54;color:#fff;
+  display:flex;align-items:center;gap:10px;padding:0 12px;font-size:14px}
+.gw__ava{width:31px;height:31px;border-radius:50%;background:#0b7a6d;display:grid;place-items:center;
+  font-size:15px;flex:none}
+.gw__chat-head b{display:block;font-size:14px;font-weight:600;line-height:1.15}
+.gw__on{display:block;font-size:11.5px;opacity:.75}
+.gw__bubble{position:relative;background:#fff;border-radius:8px;padding:7px 9px 5px;max-width:88%;
+  margin-bottom:8px;box-shadow:0 1px 1px rgba(0,0,0,.13);opacity:0;transform:translateY(10px);
+  transition:opacity .4s,transform .4s}
+.gw__bubble::before{content:'';position:absolute;left:-7px;top:0;border:7px solid transparent;
+  border-top-color:#fff;border-right:0}
+.gw__bubble.in{opacity:1;transform:none}
+.gw__bubble--link{padding-top:5px}
+.gw__msg{display:none;font-size:13.8px}
+.gw__bubble.said .gw__msg{display:block}
+.gw__bubble.said .gw__dots{display:none}
+.gw__dots{display:inline-flex;gap:4px;padding:4px 2px}
+.gw__dots i{width:6px;height:6px;border-radius:50%;background:#b3bcc2;animation:gwdot 1.1s infinite}
+.gw__dots i:nth-child(2){animation-delay:.18s} .gw__dots i:nth-child(3){animation-delay:.36s}
+@keyframes gwdot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.gw__link{display:block;margin-top:5px;color:#027eb5;word-break:break-all;font-size:13px}
+.gw__t{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:2px}
+.gw__hk{color:#53bdeb;letter-spacing:-1px}
+/* Link-Vorschau, wie sie ein Messenger baut — Bild und Text aus den echten og:-Angaben */
+.gw__prev{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}
+.gw__prev img{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}
+.gw__prev-txt{display:block;padding:7px 9px 8px}
+.gw__prev-txt b{display:block;font-size:13px;line-height:1.25;margin-bottom:2px}
+.gw__prev-txt i{display:block;font-style:normal;font-size:11.5px;color:#667781;line-height:1.3;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.gw__prev-txt em{display:block;font-style:normal;font-size:11px;color:#8696a0;margin-top:3px}
+
+.gw__tap{position:absolute;width:34px;height:34px;border-radius:50%;pointer-events:none;
+  background:rgba(255,255,255,.34);border:2px solid rgba(255,255,255,.9);
+  box-shadow:0 0 0 0 rgba(255,255,255,.55);transform:translate(-50%,-50%) scale(.75);z-index:5}
+.gw__tap.go{animation:gwtap .55s ease-out}
+@keyframes gwtap{0%{transform:translate(-50%,-50%) scale(.75);opacity:0}
+  35%{transform:translate(-50%,-50%) scale(1);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(1.5);opacity:0;box-shadow:0 0 0 16px rgba(255,255,255,0)}}
+
+@media(prefers-reduced-motion:reduce){
+  /* Das GANZE Fragment, nicht nur das Telefon: Schrittliste, Punktreihe, Chat- und Viewport-
+     Blende liegen ausserhalb von .gw__page und liefen sonst weiter; im Telefon lief der
+     Wunsch-Balken (transition:width .8s) sichtbar nach. Unter reduced-motion steht der
+     ENDZUSTAND, keine angehaltene Mitte — dafuer darf nichts mehr blenden. */
+  /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht, und genau dort sass die
+     einzige endlose Animation (.hero::after, gw-shimmer). */
+  .gw,.gw *,.gw::before,.gw::after,.gw *::before,.gw *::after{transition:none!important;animation:none!important}
+  .gw__tap{display:none}
+  .gw__dots i{animation:none}
+}
+</style>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.gw'); if (!wrap) return;
+  var chat  = wrap.querySelector('.gw__chat'),
+      bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
+      bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
+      vp    = wrap.querySelector('.gw__viewport'),
+      phone = wrap.querySelector('.gw__phone'),
+      page  = wrap.querySelector('.gw__page'),
+      tap   = wrap.querySelector('.gw__tap'),
+      btns  = wrap.querySelectorAll('.gw__steps button');
+  var ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Die Seite im Rahmen ist 326 px breit gebaut; passt sie in der Hoehe nicht, wird nur
+  // gescrollt — nicht skaliert. Skalieren macht Schrift unlesbar klein.
+  function el(sel){ return page.querySelector(sel); }
+  // Abstand zur Seitenoberkante ueber die RECHTECKE, nicht ueber offsetTop: offsetTop misst gegen
+  // den naechsten positionierten Vorfahren. Der Hero ist positioniert, also zaehlten seine 672 px
+  // nicht mit — gemessen: .game-card meldete 591 statt 1263, jeder Sprung landete zu frueh und
+  // Spiel wie Wunschliste rutschten unten aus dem Bild. Genau das hat Bolle gesehen.
+  function y(node){
+    if (!node) return 0;
+    var jetzt = 0, m = /translateY\((-?[\d.]+)px\)/.exec(page.style.transform || '');
+    if (m) jetzt = -parseFloat(m[1]);
+    return node.getBoundingClientRect().top - page.getBoundingClientRect().top;
+  }
+
+  function scrollTo(node, ms, oben){
+    if (!node) return;
+    var frei = vp.clientHeight, ziel = Math.max(0, y(node) - (oben == null ? 12 : oben));
+    var max = Math.max(0, page.scrollHeight - frei);
+    ziel = Math.min(ziel, max);
+    page.style.transition = ruhig ? 'none' : 'transform ' + (ms||1400) + 'ms cubic-bezier(.4,0,.2,1)';
+    page.style.transform = 'translateY(' + (-ziel) + 'px)';
+  }
+  function tippe(node, cb){
+    if (!node || ruhig) { if (cb) cb(); return; }
+    // Bezug ist der TELEFONRAHMEN, nicht das Sichtfenster: .gw__tap liegt in .gw__phone
+    // (position:relative). Gegen vp gerechnet sass der Punkt um die Rahmenbreite daneben.
+    var r = node.getBoundingClientRect(), s = phone.getBoundingClientRect(),
+        f = vp.getBoundingClientRect();
+    // Liegt das Ziel gar nicht im Sichtfenster (Scroll noch unterwegs), lieber nicht tippen.
+    if (r.bottom < f.top || r.top > f.bottom) { if (cb) cb(); return; }
+    tap.hidden = false;
+    tap.style.left = (r.left - s.left + r.width/2) + 'px';
+    tap.style.top  = (r.top  - s.top  + r.height/2) + 'px';
+    tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
+    setTimeout(function(){ if (cb) cb(); }, 380);
+    // Punkt wieder wegnehmen: .gw__tap hat auch ohne .go eine sichtbare Fuellung, und tippe()
+    // setzte hidden nur auf false. Gemessen (Pruefstand): ein weisser Kreis stand 13 s an der
+    // letzten Tippstelle.
+    setTimeout(function(){ tap.hidden = true; }, 600);
+  }
+  // Karten ueber ihren INHALT finden, nicht ueber die Reihenfolge — Reihenfolge aendert sich,
+  // "Deine Rolle" und die Wunschliste nicht.
+  function karteMit(text){
+    var alle = page.querySelectorAll('.card');
+    for (var i=0;i<alle.length;i++) if (alle[i].textContent.indexOf(text) >= 0) return alle[i];
+    return null;
+  }
+  function pass(){ return karteMit('Deine Rolle'); }
+  function wunschkarte(){
+    var l = el('#wishListGuest');
+    return l ? l.closest('.card') : karteMit('Wunschliste');
+  }
+  function schritt(n){
+    btns.forEach(function(b,k){
+      if (k===n) b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // --- Zustandswechsel auf dem ECHTEN Markup ---
+  function zusage(){
+    var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (!ja) return;
+    tippe(ja, function(){
+      ja.classList.add('active');
+      // #guestCounterText, NICHT #guestCount — den gibt es nicht. Das if(z) verschluckte den
+      // Fehlgriff still, und von den drei Zustandswechseln, die diesen Umbau begruenden,
+      // passierte dieser NIE. Gefunden vom Pruefstand in der zeitlichen Abnahme; meine 12 von 12
+      // konnten es nicht fangen, weil sie das Ergebnis pruefen und nicht den Ablauf.
+      var z = el('#guestCounterText');
+      if (!z) return;
+      z.textContent = z.textContent.replace(/\d+/, function(d){ return (+d)+1; });
+      // Und ein Punkt mehr in der Reihe, damit die Zahl nicht allein springt.
+      var dots = el('#guestDots'), letzter = dots && dots.lastElementChild;
+      if (letzter && /^\+\d+$/.test(letzter.textContent))
+        letzter.textContent = '+' + (parseInt(letzter.textContent.slice(1), 10) + 1);
+    });
+  }
+  function wunsch(){
+    var knoepfe = page.querySelectorAll('.wish-btn');
+    var b = knoepfe[1]; if (!b) return;              // der zweite: noch frei
+    tippe(b, function(){
+      b.textContent = 'Vergeben'; b.classList.add('taken');
+      var zeile = b.closest('.wish-item');
+      var preis = zeile && zeile.querySelector('div > div:nth-child(2)');
+      if (preis && !/Vergeben/.test(preis.textContent)) preis.textContent = preis.textContent.replace(/\s*·\s*$/,'') + ' · ✅ Vergeben';
+      var f = el('#wishProgressFill'); if (f) f.style.width = '40%';
+      var c = el('#wishProgressCount'); if (c) c.textContent = '2 von 5';
+      var ab = el('#wishBadge'); if (ab) ab.textContent = 'Noch 3 frei!';
+    });
+  }
+
+  // Suche (1) oder Jagd (2). Der Wechsel IST der Moment, den Bolle sehen wollte:
+  // "vllt den runner momment und foto revelal kurz zeigen".
+  function spielbild(n){
+    var a = el('#gameStill1'), b = el('#gameStill2');
+    if (a) a.classList.toggle('an', n === 1);
+    if (b) b.classList.toggle('an', n === 2);
+  }
+
+  // Beide Bilder haengen tief in der verschobenen Seite. Ein traeges Bild laedt erst, wenn
+  // sein Kasten den Bildschirm schneidet — der Kasten steht aber weit unterhalb, bis die
+  // Seite hochgeschoben wird. Der Wechsel bei 18,9 s haette ein Loch gezeigt. Deshalb beim
+  // START des Ablaufs auf 'eager' stellen: das stoesst den Ladevorgang sofort an.
+  function bilderHolen(nur){
+    (nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){
+      var im = el(sel); if (im) im.loading = 'eager';
+    });
+  }
+
+  // --- Ablauf ---
+  var T = [], laufend = false, fertig = false;
+  function nach(ms, fn){ T.push(setTimeout(fn, ms)); }
+  function stopp(){ T.forEach(clearTimeout); T = []; laufend = false; }
+
+  // Wer Bewegung reduziert haben will, bekommt den ENDZUSTAND — nicht eine angehaltene Mitte.
+  // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
+  function endzustand(){
+    chat.classList.add('off'); vp.classList.add('on'); schritt(3);
+    zusage(); wunsch(); bilderHolen(2); spielbild(2);   // im Ruhig-Pfad nur das Bild, das man sieht
+    page.style.transition = 'none';
+    var w = wunschkarte();
+    if (w) page.style.transform = 'translateY(' + (-Math.max(0, y(w) - 12)) + 'px)';
+    tap.hidden = true; fertig = true;
+  }
+
+  function lauf(){
+    stopp(); laufend = true;
+    // Zuruecksetzen
+    chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
+    vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
+    tap.hidden = true; schritt(0); bilderHolen(); spielbild(1);
+    var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('active');
+
+    // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
+    // nicht eilig". Die Chat-Szene allein steht jetzt 7,5 s statt 3,9 s; wer den Text von Idas
+    // Mama lesen will, schafft ihn zweimal. Insgesamt 31,8 s bis zum Endzustand, EINMAL —
+    // keine Schleife, also
+    // kostet die Laenge niemanden etwas, der weiterliest.
+    nach(400,   function(){ bub1.classList.add('in'); });          // tippt...
+    nach(2100,  function(){ bub1.classList.add('said'); });        // Text da
+    nach(4200,  function(){ bub2.classList.add('in','said'); });   // Link-Vorschau
+    nach(6600,  function(){ tippe(wrap.querySelector('.gw__prev')); });
+    nach(7500,  function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
+    nach(9200,  function(){ scrollTo(pass(), 1800); });             // Hero steht 1,7 s
+    nach(12600, function(){ scrollTo(el('.game-card'), 1800); });   // Pass steht 3,4 s
+    nach(13600, function(){ schritt(2); });
+    nach(18400, function(){ tippe(el('.play-pill')); });            // Spiel steht 5,8 s
+    nach(18900, function(){ spielbild(2); });                       // Ida fluechtet
+    nach(22000, function(){ scrollTo(el('#rsvpCard'), 1800); });    // Jagd steht 3,1 s
+    nach(23000, function(){ schritt(3); });
+    nach(24800, zusage);
+    nach(26800, function(){ scrollTo(wunschkarte(), 1800); });
+    nach(28800, wunsch);
+    nach(31800, function(){ fertig = true; laufend = false; });
+  }
+
+  // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
+  // schmalen Fenster hoeher als der Bildschirm, dann sind nie 30 % gleichzeitig sichtbar und
+  // die Animation startet NIE. Gemessen: nach 10 Sekunden stand alles im Ausgangszustand.
+  // Beobachtet wird deshalb das TELEFON (kleiner als das Fenster), und es reicht, dass ein
+  // Stueck davon zu sehen ist.
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting && !laufend && !fertig) { if (ruhig) endzustand(); else lauf(); }
+      else if (!e.isIntersecting && laufend) stopp();
+    });
+  }, {threshold:0, rootMargin:'0px 0px -80px 0px'});
+  io.observe(phone);
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = +b.dataset.s;
+      stopp(); schritt(n);
+      chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
+      if (n>0) {
+        bub1.classList.add('in','said'); bub2.classList.add('in','said');
+        scrollTo(n===1 ? pass() : n===2 ? el('.game-card') : el('#rsvpCard'), 600);
+      }
+    });
+  });
+})();
+</script>
+
+<!-- /GW:FRAGMENT -->
+  </div>
+  <!-- GW:END -->
 
   <div class="stage-advance">
     <p class="stage-advance__hint" id="planAdvanceHint">Dein Plan steht. Willst du die Kinder gleich einladen?</p>

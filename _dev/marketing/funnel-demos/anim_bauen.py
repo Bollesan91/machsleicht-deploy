@@ -26,8 +26,27 @@ import io, os, re, sys, json, urllib.request
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 os.chdir(r"C:\Users\Bolle\OneDrive - ADVERGY GmbH\Dokumente\Claude\Projects\machsleicht\machsleicht-deploy")
 
+# GATE gegen die zweite Sitzung. Steht NACH dem chdir, weil der Sperrpfad relativ zur Repo-Wurzel ist. Dieses Skript schreibt vier Dateien im Baum. Der Pruefstand
+# sperrt den Baum mit _dev/.lintlogs/AKTIV, solange seine Subagenten den unkommittierten Stand
+# lesen — ein Schreibzugriff waehrenddessen macht die Lesung wertlos (passiert am 10.09. um
+# 15:23, weil die Sperre nur ANGEZEIGT wurde und die Kette weiterlief). Also: Datei da -> Ende,
+# bevor irgendetwas geschrieben wird. Nicht als Warnung, als Abbruch.
+if os.path.exists('_dev/.lintlogs/AKTIV'):
+    sys.exit('SPERRE STEHT (' + io.open('_dev/.lintlogs/AKTIV', encoding='utf-8').read().split(chr(10))[0]
+             + ') — Generator schreibt nichts. Spaeter neu starten.')
+
 API  = 'https://party.machsleicht.de'
 PID  = 'rmveztmvvarx'
+# WURZELPFADE, bewusst nicht absolut. Alles, was das Fragment braucht — Standbilder, Foto,
+# Schriften — liegt in DIESEM Repo, und das Fragment wird auf machsleicht.de eingebettet. Ein
+# Wurzelpfad ist damit ueberall gleiche Herkunft: live, auf localhost:8766, in einer Netlify-
+# Branch-Vorschau. Die absolute https://machsleicht.de/-Fassung vom Vormittag brauchte CORS fuer
+# die Schriften (die Hauptseite schickt keins), scheiterte in jeder lokalen Vorschau und haette
+# einer Branch-Vorschau still Produktionsbilder untergeschoben (Pruefstand, 10.09.).
+# Preis: die Vorschaudatei per Doppelklick (file://) laedt keine Bilder — sie gehoert ueber den
+# lokalen Server geoeffnet, siehe Hinweis in ihrem Kopf.
+DEMOBILD = '/bilder/demo'
+FOTO     = DEMOBILD + '/ida.jpg'          # Kopie von spiele/core/demo-kid.jpg, Begruendung beim Foto-Einsatz
 GAST = 'uqk68mg6hz38tnjk'      # Ben — eingeladen, noch ohne Antwort
 H    = {'User-Agent': 'Mozilla/5.0 (compatible; demo/1.0)'}
 NL   = chr(10)
@@ -61,22 +80,37 @@ if tor:
 
 # --- Was die echte Seite per JS nachlaedt, muss hier fest stehen ---
 # 1) Das Foto
-foto = json.loads(hol(f'/api/photo/{PID}')).get('photo', '')
-assert foto.startswith('data:image/'), foto[:40]
+# Frueher kam es als data-URL von /api/photo — 40.035 Zeichen base64, 46 % des Fragments, auf
+# JEDER Seite mitgeladen, in die es eingebettet ist. Jetzt EINE Datei fuer Hero und Chat-Vorschau:
+# bilder/demo/ida.jpg, eine Kopie von spiele/core/demo-kid.jpg (md5 4c89dea5faf6; demo_bauen.py
+# hat genau diese Datei als Party-Foto hochgeladen, daher liefern /api/photo und /api/ogimg
+# dieselben Bytes). Warum Kopie und nicht Verweis: /spiele/* traegt `X-Robots-Tag: noindex`
+# (_headers) — gesetzt fuer die Spiel-Huellen, nicht fuer die Startseite. Ein Verweis dorthin
+# haette die Startseite an eine Regel gekoppelt, die jemand aus einem anderen Grund aendert.
+# 30 KB gegen eine unsichtbare Kopplung. (Pruefstand, 10.09.2026)
+IDA = FOTO
+assert os.path.exists(FOTO.lstrip('/')), FOTO + ' fehlt'
 LOCH = '<div class="hero-photo-wrap" id="heroPhoto" style="display:none">'
 assert body.count(LOCH) == 1, body.count(LOCH)
 body = body.replace(LOCH, '<div class="hero-photo-wrap" style="display:block">'
-                          f'<img src="{foto}" alt="">')
-print('  Foto eingesetzt:', len(foto), 'Zeichen')
+                          f'<img src="{IDA}" alt="Ida" width="400" height="400" loading="lazy" decoding="async">')
+print('  Foto eingesetzt: Datei', IDA, os.path.getsize(FOTO.lstrip('/')), 'Bytes')
 
 # 2) Die Wunsch-Eintraege (entstehen sonst erst im Browser)
 SNAP = '_dev/marketing/funnel-demos/_wunschkarte-schnappschuss.html'
 wunsch = io.open(SNAP, encoding='utf-8', newline='').read()
 assert 'Kuscheltier' in wunsch and 'Vergeben' in wunsch
-alt_karte = re.search(r'<div class="card fade-up fade-up-d3">.*?<div id="wishListGuest">.*?</div>', body, re.S)
+# Bis zum ECHTEN Kartenende matchen — dem Affiliate-Hinweis und seinem </div>. Die erste Fassung
+# endete am ersten </div> nach wishListGuest; der Rest der alten Karte (Hinweis-Absatz plus
+# </div>) blieb stehen. Folge: ein </div> zu viel, das auf der Wirtsseite den naechsten
+# Container schliesst (gemessen: der Absatz danach landete im body). Der Kommentar darunter
+# sagte 'Kontrolle unten' — die gab es nicht. Jetzt: Bilanz-Assert direkt hier.
+alt_karte = re.search(r'<div class="card fade-up fade-up-d3">.*?<div id="wishListGuest">.*?Affiliate-Links[^<]*</p>\s*</div>', body, re.S)
 assert alt_karte, 'Wunschkarte im Koerper nicht gefunden'
+bilanz_vor = len(re.findall(r'<div\b', body)) - body.count('</div>')
 body = body[:alt_karte.start()] + wunsch + body[alt_karte.end():]
-# Die alte Huelle hinterliess evtl. einen Rest bis zum schliessenden </div> — Kontrolle unten.
+assert body.count('Links enthalten ggf. Affiliate-Links') == 1, body.count('Links enthalten ggf. Affiliate-Links')
+assert len(re.findall(r'<div\b', body)) - body.count('</div>') == bilanz_vor, 'Wunschkarte verschiebt die Div-Bilanz'
 print('  Wunschliste eingesetzt:', len(wunsch), 'Zeichen')
 
 # 3) Der Gaestezaehler — die Huelle steht im Markup, aber leer und mit .hidden; gefuellt wird sie
@@ -98,26 +132,106 @@ assert 'guest-counter hidden' not in body
 print(f'  Gaestezaehler gefuellt: {anzahl} Zusagen, {punkte.count("guest-dot")} Punkte')
 
 # --- Pfade absolut, sonst zeigt die Animation Loecher ---
+# ERLAUBNISLISTE: absolut wird nur, was der Worker wirklich bedient — /api/ und /go/. Alles
+# andere (Schriften, Bilder, Rechtslinks) bleibt Wurzelpfad und ist auf machsleicht.de gleiche
+# Herkunft. Die erste Fassung war eine Verbotsliste (?!fonts/|spiele/|bilder/): was spaeter
+# im Hauptrepo dazukaeme (/assets/, /media/), waere stillschweigend auf den Worker gewandert —
+# dieselbe Bauart wie die Feldliste in party-worker.js:543. (Pruefstand, 10.09.2026)
+# Gemessen am Ergebnis: heute erreicht KEINE Worker-URL das fertige Fragment, weil /api/ und
+# /go/ in spaeteren Schritten ersetzt werden — die Zaehlung unten macht das sichtbar.
+WORKER = r'(?=(?:api|go)/)'
 def absolut(s):
-    s = re.sub(r'(src|href)="/(?!/)', r'\1="' + API + '/', s)
-    return re.sub(r'url\(/(?!/)', 'url(' + API + '/', s)
+    s = re.sub(r'(src|href)="/' + WORKER, r'\1="' + API + '/', s)
+    return re.sub(r'url\(/' + WORKER, 'url(' + API + '/', s)
 body, css = absolut(body), absolut(css)
+print(f"  auf den Worker gelegt (Zwischenstand): {body.count(API + '/') + css.count(API + '/')}")
 
-# Das Spiel bleibt drin (echtes Spiel, gleiche Herkunft wie die Startseite), laedt aber traege.
-# Attribut nur setzen, wenn es fehlt — der erste Anlauf haengte es blind an und schrieb
-# loading="lazy" ZWEIMAL in denselben Tag. Hier harmlos (der Parser nimmt das erste), aber
-# dieselbe Zeile setzt spaeter vielleicht sandbox oder src. Vom Pruefstand gefunden.
-# Im GANZEN Tag suchen, nicht in einem Fenster fester Groesse: der erste Schutz sah nur 300
-# Zeichen ab "<iframe ", der Tag hat aber 12 Attribute und eine sehr lange src — das vorhandene
-# loading stand dahinter, also wurde ein zweites gesetzt. Zweimal derselbe Fehler in derselben
-# Zeile: einmal ohne Pruefung, einmal mit zu kurzer.
+# Kontrolle statt Umbiegen: absolut() laesst /fonts/ in Ruhe, die Schriften bleiben Wurzelpfade.
+assert css.count(API + '/fonts/') == 0, 'absolut() hat die Schriften auf den Worker gelegt'
+assert css.count('url(/fonts/') >= 2, css.count('url(/fonts/')
+print(f"  Schriften als Wurzelpfad belassen: {css.count('url(/fonts/')}")
+
+# Die Partyseite hat einen Druckmodus: "body *{visibility:hidden}" und "#partyPass{position:
+# fixed}" — sinnvoll, wenn die Partyseite selbst gedruckt wird. Eingebettet ist es ein Angriff
+# auf die Wirtsseite: wer die Startseite druckt, bekaeme ein leeres Blatt mit dem Demo-Partypass
+# oben links. Die Regel steht ZWEIMAL, einmal in einem <style> mitten im Markup, einmal im CSS,
+# und beide Male landet sie AUSSERHALB des @scope (gemessen: die einzige nicht-.gw-Regel dort).
+# Also raus, aus beiden Quellen. Das war der offene Pruefstand-Punkt zum Druckmodus.
+DRUCK = re.compile(r'@media\s+print\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}')
+vor_druck = len(DRUCK.findall(body)) + len(DRUCK.findall(css))
+body = DRUCK.sub('', body)
+css  = DRUCK.sub('', css)
+body = re.sub(r'<style>\s*</style>', '', body)          # was nur die Druckregel trug, ist jetzt leer
+assert not DRUCK.search(body) and not DRUCK.search(css)
+assert 'visibility:hidden' not in body and 'visibility:hidden' not in css, 'Druck-Sperre lebt noch'
+print(f'  Druckregeln entfernt: {vor_druck}')
+
+# @keyframes-NAMEN SIND NICHT GESCOPT. @scope kapselt Selektoren, keine Keyframe-Namen. Die
+# Partyseite definiert fadeUp und pulse — beide Wirtsseiten auch (Planer, Startseite), und es
+# gewinnt, wer zuletzt deklariert: die Wirtsseite animiert dann mit den Keyframes der Partyseite.
+# Deshalb jeder Party-Keyframe mit gw-Praefix, Definition UND Verwendung, in CSS und Koerper.
+# (Workflow-Leser 'fragment', 10.09.2026; Gegenlesung bestaetigt.)
+KF = sorted(k for k in set(re.findall(r'@keyframes\s+([A-Za-z][\w-]*)', css)) if not k.startswith('gw'))
+for k in KF:
+    css = re.sub(r'@keyframes\s+' + re.escape(k) + r'(?![\w-])', '@keyframes gw-' + k, css)
+    muster = re.compile(r'(animation(?:-name)?\s*:[^;{}]*?)(?<![\w-])' + re.escape(k) + r'(?![\w-])')
+    for ziel in ('css', 'body'):
+        t = css if ziel == 'css' else body
+        while True:
+            neu = muster.sub(r'\1gw-' + k, t)
+            if neu == t: break
+            t = neu
+        if ziel == 'css': css = t
+        else: body = t
+assert not re.search(r'@keyframes\s+(?!gw)', css), re.findall(r'@keyframes\s+(\w+)', css)
+for k in KF:
+    assert re.search(r'animation[^;{}]*(?<![\w-])gw-' + re.escape(k) + r'(?![\w-])', css + body), 'gw-' + k + ' ohne Verwendung'
+print(f'  Keyframes praefixiert: {len(KF)} ({", ".join(KF)})')
+
+# DAS SPIEL IST JETZT EIN BILD. Vorher lief hier das echte Einladungsspiel als <iframe> von
+# machsleicht.de/einladung/einhorn/... — eine Live-Abhaengigkeit mitten in einer Werbeanimation,
+# die auf der Startseite steht. Bolles Entscheidung: alles eingebacken.
+#
+# An seine Stelle treten ZWEI ECHTE STANDBILDER aus demselben Spiel, nichts nachgezeichnet:
+#   spiel-1-suche.jpg   die Suche, 2 von 3 Schaetzen, "Fast geschafft! Noch einer!"
+#   spiel-2-jagd.jpg    Ida fluechtet mit dem geklauten Stern, ihr Foto in der Einhorn-Blase
+#                       — Renner-Moment und Foto-Enthuellung in EINEM Bild.
+# Aufgenommen mit html2canvas bei Faktor 3 (1260x1836). Die erste Fassung stand bei Faktor 0,8
+# und war bei 326 px Anzeigebreite sichtbar verpixelt — Bolle: "ekelhaft verpixelt".
+#
+# Das Seitenverhaeltnis der Aufnahmen ist exakt das des Spielfensters (1260/1836 = 420/612
+# = 0,6863), deshalb steht im CSS aspect-ratio statt einer geratenen Hoehe: die Karte behaelt
+# ihre Groesse, ohne dass hier eine Zahl gepflegt werden muss.
+#
+# Die Lehre vom iframe-Attribut bleibt gueltig, auch wenn der iframe weg ist: wer ein Attribut
+# blind anhaengt, statt im GANZEN Tag nachzusehen, schreibt es zweimal (der Tag hatte 12
+# Attribute und eine sehr lange src — das vorhandene loading stand hinter dem 300-Zeichen-
+# Fenster des ersten Schutzes). Vom Pruefstand gefunden.
+STILLS = (
+    '<div class="game-stills" id="gameStills">'
+    f'<img class="game-still an" id="gameStill1" src="{DEMOBILD}/spiel-1-suche.jpg"'
+    ' width="1260" height="1836" loading="lazy" decoding="async"'
+    ' alt="Ida sucht im Einhorn-Spiel die verzauberten Schaetze — zwei von drei gefunden">'
+    f'<img class="game-still" id="gameStill2" src="{DEMOBILD}/spiel-2-jagd.jpg"'
+    ' width="1260" height="1836" loading="lazy" decoding="async"'
+    ' alt="Ida fluechtet mit dem geklauten Stern — ihr Foto in der Einhorn-Blase">'
+    '</div>'
+)
 i = body.find('<iframe ')
-if i >= 0:
-    ende = body.index('>', i)
-    tag = body[i:ende + 1]
-    if 'loading=' not in tag:
-        body = body[:i] + '<iframe loading="lazy" ' + body[i + len('<iframe '):]
-    print(f'  iframe: loading= im Tag {tag.count("loading=")}x vorgefunden ({len(tag)} Zeichen)')
+assert i >= 0, 'kein <iframe im Markup — Spielkarte schon ersetzt?'
+schluss = body.index('</iframe>') + len('</iframe>')
+body = body[:i] + STILLS + body[schluss:]
+assert '<iframe' not in body, 'es steht noch ein iframe im Fragment'
+assert body.count('game-still') == 3, body.count('game-still')
+print(f'  Spiel-iframe ersetzt durch 2 Standbilder ({schluss - i} Zeichen raus, {len(STILLS)} rein)')
+
+# Der Kommentar "INVARIANTE: KEIN sandbox-Attribut ohne ..." schuetzt den iframe der Partyseite
+# (§ 5 DDG, Rechtslinks im eingebetteten Spiel). Hier gibt es den iframe nicht mehr — ein Waechter
+# ohne Tor, der den naechsten Leser auf eine falsche Faehrte setzt. Er bleibt dort, wo der iframe
+# lebt (party-worker.js). (Pruefstand, 10.09.2026)
+body, n_inv = re.subn(r'\s*<!--\s*INVARIANTE: KEIN sandbox.*?-->', '', body, flags=re.S)
+assert n_inv == 1, n_inv
+print('  Waechter-Kommentar ohne Tor entfernt:', n_inv)
 
 # Keine echten Weiterleitungen aus einer Werbeanimation: die vier Wunsch-Links der Demo zeigen
 # auf /go/<party>/<wunsch> und wuerden die Klickstatistik einer ECHTEN Party fuellen, wenn jemand
@@ -126,6 +240,38 @@ vor_href = len(re.findall(r'href="https://party\.machsleicht\.de/go/', body))
 body = re.sub(r'href="https://party\.machsleicht\.de/go/[^"]*"', 'data-demo-link', body)
 assert 'party.machsleicht.de/go/' not in body
 print(f'  Affiliate-Weiterleitungen entschaerft: {vor_href}')
+
+# Der Planer-Knopf am Fuss der Partyseite traegt ?ref=<party-id> — eine Empfehlungsspur,
+# die auf die Demo-Party zeigt. Im Telefon ist er ohnehin tot (inert + pointer-events:none),
+# aber eingebacken heisst eingebacken: die Spur kommt raus, der Link bleibt sichtbar und
+# wahr. Danach steht die Party-Kennung nur noch im Kopfkommentar der Datei, als Herkunfts-
+# nachweis — dort gehoert sie hin, denn ohne sie weiss niemand mehr, woraus das gebaut ist.
+vor_ref = len(re.findall(r'\?ref=' + PID, body))
+body = body.replace('?ref=' + PID, '')
+assert PID not in body, 'die Party-Kennung steht noch im Markup'
+print(f'  Empfehlungsspur der Demo-Party entfernt: {vor_ref}')
+
+# Die Partyseite verlinkt die Hauptseite absolut (Impressum, Datenschutz, Planer). Im inerten
+# Telefon klickt das niemand — aber eingebettet auf machsleicht.de ist ein Wurzelpfad dasselbe,
+# und in einer Branch-Vorschau zeigt er nicht still auf die Produktion. Damit gilt die Invariante
+# vor dem Write ohne Ausnahme: KEINE absolute Eigen-URL im Fragment.
+vor_abs = body.count('href="https://machsleicht.de/')
+body = body.replace('href="https://machsleicht.de/', 'href="/')
+assert 'https://machsleicht.de/' not in body, 'absolute Eigen-URL im Koerper'
+print(f'  Eigen-Links im Telefon wurzelrelativ: {vor_abs}')
+
+# Der Countdown der Partyseite ("Noch 36 Tage!") ist eine Live-Zahl. Eingebacken steht sie in
+# einem Jahr noch da — und ist dann falsch. Ein Standbild darf nichts zeigen, was nur stimmt,
+# solange es lebt. Also raus, samt Huelle. (Workflow-Leser 'gates', 10.09.2026.)
+vor_cd = body.count('countdown-num')
+body, n_cd = re.subn(r'<div class="countdown[^"]*"[^>]*>(?:(?!</div>).)*?countdown-num(?:(?!</div>).)*?</div>', '', body, flags=re.S)
+assert vor_cd == 1 and n_cd == 1 and 'countdown-num' not in body, (vor_cd, n_cd)
+print('  Countdown entfernt:', n_cd)
+
+# Letzte Koerper-Aenderung: die Div-Bilanz muss aufgehen. Ein </div> zu viel schliesst auf der
+# Wirtsseite den Container, in dem das Fragment steht — auf der Startseite bliebe der Schwanz
+# des Fragments beim Umhaengen unter dem Footer zurueck.
+assert len(re.findall(r'<div\b', body)) == body.count('</div>'), (len(re.findall(r'<div\b', body)), body.count('</div>'))
 
 # --- CSS fuer @scope aufbereiten.
 #
@@ -192,7 +338,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
         <span>Kein Anruf, kein Zettel, keine doppelten Geschenke.</span></button></li>
     </ol>
     <p class="gw__note">Das ist eine echte Partyseite \u2014 kein Bild davon.</p>
-    <a class="gw__cta" href="https://machsleicht.de/kindergeburtstag">Eigene Partyseite erstellen \u2192</a>
+    <a class="gw__cta" href="/kindergeburtstag">Eigene Partyseite erstellen \u2192</a>
   </div>
 
   <div class="gw__stage">
@@ -213,7 +359,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
           <div class="gw__bubble gw__bubble--link" data-b="2">
             <span class="gw__msg">
               <span class="gw__prev">
-                <img src="{API}/api/ogimg/{PID}" alt="" loading="lazy">
+                <img src="{IDA}" alt="" loading="lazy"
+                     width="400" height="400" decoding="async">
                 <span class="gw__prev-txt">
                   <b>{og_titel}</b>
                   <i>{og_beschr}</i>
@@ -245,6 +392,14 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
      Einblend-Beobachter aufgedeckt. Den gibt es hier nicht \u2014 ohne diese Zeile bleibt die
      halbe Seite wei\u00df (gemessen: zwei von vier Bildern der ersten Fassung). */
   .fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3{{opacity:1!important;transform:none!important;animation:none!important}}
+  /* Die zwei Spielbilder liegen deckungsgleich uebereinander, nur die Deckkraft wechselt.
+     aspect-ratio statt fester Hoehe: die Aufnahmen haben exakt das Verhaeltnis des
+     Spielfensters, also bleibt die Karte so hoch wie mit dem echten Spiel darin. */
+  .game-stills{{position:relative;display:block;width:100%;aspect-ratio:1260/1836;
+    background:#2A1B4A;overflow:hidden}}
+  .game-still{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    display:block;opacity:0;transition:opacity .55s ease}}
+  .game-still.an{{opacity:1}}
   /* Nichts im Standbild soll anklickbar aussehen oder Fokus fangen. */
   a,button,input,textarea,select{{pointer-events:none!important}}
 }}
@@ -255,11 +410,14 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 .gw__h{{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}}
 .gw__steps{{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:gw}}
 .gw__steps button{{all:unset;display:block;width:100%;box-sizing:border-box;cursor:pointer;
-  padding:13px 15px;border-radius:12px;border-left:3px solid transparent;opacity:.45;
+  padding:13px 15px;border-radius:12px;border-left:3px solid transparent;opacity:.61;
   transition:opacity .4s,background .4s,border-color .4s}}
 .gw__steps button:focus-visible{{outline:2px solid var(--gw-a);outline-offset:2px;opacity:1}}
 .gw__steps b{{display:block;font-size:15.5px;margin-bottom:2px}}
-.gw__steps span{{display:block;font-size:13.5px;opacity:.78}}
+/* Deckkraft der inaktiven Schritte: berechnet, nicht geschaetzt. .45/.78 (gestapelt .351) ergaben
+   2,86:1 und 2,19:1 gegen #fdfcf9 — unter 4,5:1 fuer echte <button> (Pruefstand, WCAG-Rechnung).
+   Die Werte hier stammen aus stills_einbauen5.py, das die Schwelle gegen beide Wirtsfarben prueft. */
+.gw__steps span{{display:block;font-size:13.5px;opacity:1.0}}
 .gw__steps button[aria-current="step"]{{opacity:1;background:color-mix(in srgb,var(--gw-a) 7%,transparent);
   border-left-color:var(--gw-a)}}
 .gw__note{{font-size:13px;opacity:.62;margin:18px 0 0}}
@@ -323,7 +481,13 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
   100%{{transform:translate(-50%,-50%) scale(1.5);opacity:0;box-shadow:0 0 0 16px rgba(255,255,255,0)}}}}
 
 @media(prefers-reduced-motion:reduce){{
-  .gw__page{{transition:none!important}}
+  /* Das GANZE Fragment, nicht nur das Telefon: Schrittliste, Punktreihe, Chat- und Viewport-
+     Blende liegen ausserhalb von .gw__page und liefen sonst weiter; im Telefon lief der
+     Wunsch-Balken (transition:width .8s) sichtbar nach. Unter reduced-motion steht der
+     ENDZUSTAND, keine angehaltene Mitte — dafuer darf nichts mehr blenden. */
+  /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht, und genau dort sass die
+     einzige endlose Animation (.hero::after, gw-shimmer). */
+  .gw,.gw *,.gw::before,.gw::after,.gw *::before,.gw *::after{{transition:none!important;animation:none!important}}
   .gw__tap{{display:none}}
   .gw__dots i{{animation:none}}
 }}
@@ -432,6 +596,24 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     }});
   }}
 
+  // Suche (1) oder Jagd (2). Der Wechsel IST der Moment, den Bolle sehen wollte:
+  // "vllt den runner momment und foto revelal kurz zeigen".
+  function spielbild(n){{
+    var a = el('#gameStill1'), b = el('#gameStill2');
+    if (a) a.classList.toggle('an', n === 1);
+    if (b) b.classList.toggle('an', n === 2);
+  }}
+
+  // Beide Bilder haengen tief in der verschobenen Seite. Ein traeges Bild laedt erst, wenn
+  // sein Kasten den Bildschirm schneidet — der Kasten steht aber weit unterhalb, bis die
+  // Seite hochgeschoben wird. Der Wechsel bei 18,9 s haette ein Loch gezeigt. Deshalb beim
+  // START des Ablaufs auf 'eager' stellen: das stoesst den Ladevorgang sofort an.
+  function bilderHolen(nur){{
+    (nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){{
+      var im = el(sel); if (im) im.loading = 'eager';
+    }});
+  }}
+
   // --- Ablauf ---
   var T = [], laufend = false, fertig = false;
   function nach(ms, fn){{ T.push(setTimeout(fn, ms)); }}
@@ -441,7 +623,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
   // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
   function endzustand(){{
     chat.classList.add('off'); vp.classList.add('on'); schritt(3);
-    zusage(); wunsch();
+    zusage(); wunsch(); bilderHolen(2); spielbild(2);   // im Ruhig-Pfad nur das Bild, das man sieht
     page.style.transition = 'none';
     var w = wunschkarte();
     if (w) page.style.transform = 'translateY(' + (-Math.max(0, y(w) - 12)) + 'px)';
@@ -453,12 +635,13 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     // Zuruecksetzen
     chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
-    tap.hidden = true; schritt(0);
+    tap.hidden = true; schritt(0); bilderHolen(); spielbild(1);
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
 
     // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
     // nicht eilig". Die Chat-Szene allein steht jetzt 7,5 s statt 3,9 s; wer den Text von Idas
-    // Mama lesen will, schafft ihn zweimal. Insgesamt 27 s, EINMAL — keine Schleife, also
+    // Mama lesen will, schafft ihn zweimal. Insgesamt 31,8 s bis zum Endzustand, EINMAL —
+    // keine Schleife, also
     // kostet die Laenge niemanden etwas, der weiterliest.
     nach(400,   function(){{ bub1.classList.add('in'); }});          // tippt...
     nach(2100,  function(){{ bub1.classList.add('said'); }});        // Text da
@@ -469,12 +652,13 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
     nach(12600, function(){{ scrollTo(el('.game-card'), 1800); }});   // Pass steht 3,4 s
     nach(13600, function(){{ schritt(2); }});
     nach(18400, function(){{ tippe(el('.play-pill')); }});            // Spiel steht 5,8 s
-    nach(20200, function(){{ scrollTo(el('#rsvpCard'), 1800); }});
-    nach(21200, function(){{ schritt(3); }});
-    nach(23000, zusage);
-    nach(25000, function(){{ scrollTo(wunschkarte(), 1800); }});
-    nach(27000, wunsch);
-    nach(30000, function(){{ fertig = true; laufend = false; }});
+    nach(18900, function(){{ spielbild(2); }});                       // Ida fluechtet
+    nach(22000, function(){{ scrollTo(el('#rsvpCard'), 1800); }});    // Jagd steht 3,1 s
+    nach(23000, function(){{ schritt(3); }});
+    nach(24800, zusage);
+    nach(26800, function(){{ scrollTo(wunschkarte(), 1800); }});
+    nach(28800, wunsch);
+    nach(31800, function(){{ fertig = true; laufend = false; }});
   }}
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -506,6 +690,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der laufenden Partyseite {PID}.
 """
 
 ZIEL = '_dev/marketing/funnel-demos/gaeste-weg.html'
+assert len(re.findall(r'<div\b', BAU)) == BAU.count('</div>'), (len(re.findall(r'<div\b', BAU)), BAU.count('</div>'))
+assert 'https://machsleicht.de/' not in BAU, 'absolute Eigen-URL im Fragment'
 io.open(ZIEL, 'w', encoding='utf-8', newline='\n').write(BAU)
 print()
 print('geschrieben:', ZIEL, '·', len(BAU), 'Zeichen')
@@ -516,7 +702,24 @@ for m_, soll in [('gw__steps button', 4), ('data-sc=', 2), ('rsvp-btn', 1), ('wi
 io.open('_dev/marketing/funnel-demos/gaeste-weg-vorschau.html', 'w', encoding='utf-8', newline='\n').write(
     '<!doctype html><html lang="de"><head><meta charset="utf-8">'
     '<meta name="viewport" content="width=device-width,initial-scale=1">'
-    '<title>G\u00e4ste-Weg</title><style>body{margin:0;padding:40px 16px;background:#FFF8F0;'
+    '<!-- Diese Vorschau ueber den lokalen Server oeffnen: http://localhost:8766/_dev/marketing/funnel-demos/gaeste-weg-vorschau.html (Startkonfiguration wizard-live). Per Doppelklick (file://) laden Bilder und Schriften NICHT: das Fragment nutzt Wurzelpfade, damit es auf machsleicht.de gleiche Herkunft ist. -->\n<title>G\u00e4ste-Weg</title><style>body{margin:0;padding:40px 16px;background:#FFF8F0;'
     'font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:#1A1A1A}</style>'
     '</head><body>' + BAU + '</body></html>')
 print('  Vorschau: gaeste-weg-vorschau.html')
+
+# --- Einbetten: der Generator schreibt das Fragment selbst in die Zielseiten. ---
+# Die Seiten tragen je ein Paar Marker; alles dazwischen gehoert dieser Maschine. Von Hand dort
+# etwas zu aendern ist zwecklos — der naechste Lauf ueberschreibt es (Helfer V5: kein Review auf
+# Handarbeit, die die Maschine ueberschreibt). Idempotent: zweiter Lauf, leerer Diff.
+M_AUF, M_ZU = '<!-- GW:FRAGMENT -->', '<!-- /GW:FRAGMENT -->'
+for seite in ('index.html', 'kindergeburtstag.html'):
+    alt = io.open(seite, encoding='utf-8', newline='').read()
+    assert alt.count(M_AUF) == 1 and alt.count(M_ZU) == 1, f'{seite}: Marker {alt.count(M_AUF)}/{alt.count(M_ZU)}x'
+    a, z = alt.index(M_AUF) + len(M_AUF), alt.index(M_ZU)
+    assert a <= z, f'{seite}: Marker in falscher Reihenfolge'
+    neu = alt[:a] + '\n' + BAU + '\n' + alt[z:]
+    assert neu.count(M_AUF) == 1 and neu.count(M_ZU) == 1
+    assert neu.count('<!-- Gaeste-Weg, ANIMIERT.') == 1, 'Fragment steht nicht genau einmal in der Seite'
+    if neu != alt:
+        io.open(seite, 'w', encoding='utf-8', newline='').write(neu)
+    print(f'  eingebettet: {seite} {len(alt)} -> {len(neu)} Zeichen' + ('' if neu != alt else ' (unveraendert)'))
