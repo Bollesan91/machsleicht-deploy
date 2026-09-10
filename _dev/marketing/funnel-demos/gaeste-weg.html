@@ -52,11 +52,6 @@
         </div>
         <div class="gw__viewport" data-sc="page" aria-hidden="true" inert>
           <div class="gw__page">
-
-<!-- CODE GATE: client-seitiger Sichtschutz, KEIN Zugriffsschutz (CNL steht im Quelltext, Content ist nur display:none). Schuetzenswertes IMMER server-gaten wie die Adresse. -->
-
-
-<!-- PARTY CONTENT (hidden until code entered) -->
 <div id="partyContent" style="display:block">
 
 <div class="hero">
@@ -82,8 +77,6 @@
 
 <div class="content">
 
-  
-
   <div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
     <span style="font-size:20px;line-height:1.3" aria-hidden="true">💌</span>
     <div style="font-size:14px;line-height:1.5;color:var(--d)">Es lädt ein: <strong>Familie Sommer</strong>
@@ -91,7 +84,6 @@
     </div>
   </div>
 
-  
   <div class="card fade-up" id="partyPass" style="border:3px solid #AB47BC;background:linear-gradient(180deg,#fff,#F3E5F5);box-shadow:0 6px 24px #AB47BC35">
     <div style="position:absolute;top:10px;right:14px;font-size:26px;transform:rotate(12deg)" aria-hidden="true">🎟️</div>
     <div style="text-align:center;padding:2px 0 12px;border-bottom:3px dashed #AB47BC50;margin-bottom:12px">
@@ -175,7 +167,6 @@
     <p style="font-size:10px;color:var(--m);margin-top:12px;text-align:center;opacity:.6">Links enthalten ggf. Affiliate-Links. Für dich ändert sich nichts am Preis.</p>
   </div>
 
-
   <div style="text-align:center;margin:8px 0"><a href="javascript:downloadIcs()" class="cal-btn">📅 Termin im Kalender speichern</a></div>
 
 </div>
@@ -189,10 +180,9 @@
 
 <div class="footer"><a href="/">machsleicht.de</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></div>
 
-</div><!-- /partyContent -->
+</div>
 
 <canvas id="confettiCanvas"></canvas>
-
 
 </div>
         </div>
@@ -203,14 +193,11 @@
 </section>
 
 <style>
-/* @font-face steht ausserhalb von @scope aus Spezifikationstreue: @scope kapselt Selektoren,
-   @font-face hat keinen. Gemessen (09.09.): Chrome parst es auch innerhalb und laedt die Schriften —
-   ein frueherer Kommentar hier behauptete das Gegenteil und ging so an jeden Besucher (Gutachten MINOR 15). */
+
 @font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}
 @font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}
 
 @scope (.gw__page) {
-
 
 *{margin:0;padding:0;box-sizing:border-box}
 :scope{
@@ -241,26 +228,18 @@
 .hero-motto{font-size:16px;color:#fff;font-weight:600}
 .hero-sub{font-size:13px;color:#fff;margin-top:8px}
 
-
-
 @keyframes gw-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes gw-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
 .wave-divider svg{display:block;width:100%}
 .content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
-@media(min-width:900px){.hero-inner{max-width:760px}.content{max-width:760px}}/* 09.09.2026: dieselbe Grenze und dieselbe Breite wie in Block 15 fuer die Gastgeber-Seiten — zwei Zahlen fuer dieselbe Entscheidung waeren eine Dublette. Geprueft: 81 sichtbare Elemente, 0 laufen ueber; der einzige breite Knopf ist der Absende-Knopf des Zusage-Formulars. */
+@media(min-width:900px){.hero-inner{max-width:760px}.content{max-width:760px}}
 .card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
 .card-title{font-size:18px;font-weight:800;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
 .game-card{padding:0;border:3px solid #AB47BC66;background:linear-gradient(180deg,#F3E5F5,#fff);box-shadow:0 6px 24px #AB47BC30}
-/* 09.09.2026 — Schleier auf der Spielkarte (Block 24). Ohne ihn fallen 14 von 17 Paletten
-   durch (Unterzeile, schlechtester 1,99); die 70% Deckkraft deckelte zusaetzlich, deshalb
-   faellt sie weg. ANDERS GEBAUT ALS DER HERO-SCHLEIER, mit Grund: .hero-inner hat keinen
-   eigenen Hintergrund (der Verlauf sitzt auf .hero), dort traegt z-index:-1. Hier traegt
-   .game-header den Verlauf SELBST — ein z-index:-1 laege dahinter und waere unsichtbar.
-   Deshalb: absolutes ::before (sonst wuerde es im Flex-Container ein Flex-Item) plus
-   z-index:1 auf den Kindern. Die beiden Schleier NICHT vereinheitlichen. */
+
 .game-header{background:linear-gradient(135deg,#6A1B9A,#9C27B0);padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff;position:relative}
 .game-header::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.28);pointer-events:none}
 .game-header>*{position:relative;z-index:1}
@@ -268,7 +247,6 @@
 .game-header-title{font-size:16px;font-weight:800;font-family:var(--fd)}
 .play-pill{margin-left:auto;background:#fff;color:#4A148C;font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:gw-pulse 2s ease-in-out infinite;white-space:nowrap}
 .game-header-sub{font-size:11px;margin-top:1px}
-#gameFrame{width:100%;height:min(85vh,700px);border:none;display:block}
 .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:10px 14px;background:var(--bg);border-radius:12px}
 .info-row:last-child{margin-bottom:0}
 .info-icon{font-size:22px;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--al);border-radius:10px}
@@ -330,32 +308,28 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .fade-up-d3{transition-delay:.2s}
 #confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
 .hidden{display:none!important}
-/* code gate */
-.gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
-
 
 :scope{line-height:normal;letter-spacing:normal}
-:scope :is(h1,h2,h3,h4){letter-spacing:normal}
+:scope :where(h1,h2,h3,h4){font:revert;letter-spacing:revert;line-height:revert}
 
-  /* Die Karten der echten Seite starten opacity:0 + translateY(20px) und werden dort von einem
-     Einblend-Beobachter aufgedeckt. Den gibt es hier nicht — ohne diese Zeile bleibt die
-     halbe Seite weiß (gemessen: zwei von vier Bildern der ersten Fassung). */
   .fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3{opacity:1!important;transform:none!important;animation:none!important}
-  /* Die zwei Spielbilder liegen deckungsgleich uebereinander, nur die Deckkraft wechselt.
-     aspect-ratio statt fester Hoehe: die Aufnahmen haben exakt das Verhaeltnis des
-     Spielfensters, also bleibt die Karte so hoch wie mit dem echten Spiel darin. */
+  
   .game-stills{position:relative;display:block;width:100%;aspect-ratio:1260/1836;
     background:#2A1B4A;overflow:hidden}
   .game-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
     display:block;opacity:0;transition:opacity .55s ease}
   .game-still.an{opacity:1}
-  /* Nichts im Standbild soll anklickbar aussehen oder Fokus fangen. */
+  
   a,button,input,textarea,select{pointer-events:none!important}
 }
 
 .gw{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
-  max-width:960px;margin:0 auto;padding:32px 20px}   /* wie die Nachbarsektionen (960/900), nicht 1060 */
+  max-width:960px;margin:0 auto;padding:32px 20px}   
 @media(min-width:920px){.gw{grid-template-columns:1fr 360px;gap:64px}}
+
+.gw--ohne-scope{grid-template-columns:1fr!important}
+.gw--ohne-scope .gw__stage,.gw--ohne-scope .gw__note{display:none}
+.gw--ohne-scope .gw__steps button{cursor:default;pointer-events:none;opacity:1}
 .gw__h{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}
 .gw__steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:gw}
 .gw__steps button{all:unset;display:block;width:100%;box-sizing:border-box;cursor:pointer;
@@ -363,9 +337,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   transition:opacity .4s,background .4s,border-color .4s}
 .gw__steps button:focus-visible{outline:2px solid var(--gw-a);outline-offset:2px;opacity:1}
 .gw__steps b{display:block;font-size:15.5px;margin-bottom:2px}
-/* Deckkraft der inaktiven Schritte: berechnet, nicht geschaetzt. .45/.78 (gestapelt .351) ergaben
-   2,86:1 und 2,19:1 gegen #fdfcf9 — unter 4,5:1 fuer echte <button> (Pruefstand, WCAG-Rechnung).
-   Die Werte hier stammen aus stills_einbauen5.py, das die Schwelle gegen beide Wirtsfarben prueft. */
+
 .gw__steps span{display:block;font-size:13.5px;opacity:1.0}
 .gw__steps button[aria-current="step"]{opacity:1;background:color-mix(in srgb,var(--gw-a) 7%,transparent);
   border-left-color:var(--gw-a)}
@@ -374,24 +346,18 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
 
 .gw__stage{justify-self:center}
-/* box-sizing EXPLIZIT, und die Seite folgt dem Bildschirm: die Wirte setzen *{box-sizing:border-box},
-   die Vorschau setzte es nicht — dort war der Bildschirm 326 px, live 304, die Seite darin 326 →
-   6 px jeder Karte abgeschnitten, Hero schief. Gefunden vom externen Gutachten (M1), gemessen. */
+
 .gw__phone{position:relative;box-sizing:border-box;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
   background:linear-gradient(160deg,#2b2b33,#141419);
   box-shadow:0 26px 64px rgba(0,0,0,.3),0 2px 0 rgba(255,255,255,.15) inset}
 .gw__screen{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff}
 .gw__viewport{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .5s}
-/* Die Endlosanimationen der Partyseite (Schimmer, Bob, Pulse) laufen nur, solange das Telefon sichtbar
-   ist und die Sequenz laeuft — nicht bei opacity:0, nicht nach dem Ende (Gutachten MINOR 8, Akku). */
+
 .gw__viewport:not(.on) .gw__page *,.gw__viewport:not(.on) .gw__page *::before,.gw__viewport:not(.on) .gw__page *::after,
 .gw--fertig .gw__page *,.gw--fertig .gw__page *::before,.gw--fertig .gw__page *::after{animation-play-state:paused!important}
 .gw__viewport.on{opacity:1}
 .gw__page{position:absolute;top:0;left:0;width:100%;transform-origin:top left;will-change:transform}
 
-/* Chat-Szene: Nachrichtenfenster-Optik (heller Klassiker), ohne fremdes Logo und ohne
-   Wortmarke — nur Anordnung und Farbwelt. Absenderin ist Idas Mama, der Text verkauft
-   nebenbei mit, und die Link-Vorschau zeigt die ECHTEN og:-Angaben der Partyseite. */
 .gw__chat{position:absolute;inset:0;background:#ECE5DD;padding:58px 10px 12px;overflow:hidden;
   font:14.5px/1.42 system-ui,-apple-system,"Segoe UI",sans-serif;color:#111b21;
   opacity:1;transition:opacity .5s}
@@ -419,7 +385,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .gw__link{display:block;margin-top:5px;color:#027eb5;word-break:break-all;font-size:13px}
 .gw__t{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:2px}
 .gw__hk{color:#53bdeb;letter-spacing:-1px}
-/* Link-Vorschau, wie sie ein Messenger baut — Bild und Text aus den echten og:-Angaben */
+
 .gw__prev{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}
 .gw__prev img{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}
 .gw__prev-txt{display:block;padding:7px 9px 8px}
@@ -437,12 +403,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   100%{transform:translate(-50%,-50%) scale(1.5);opacity:0;box-shadow:0 0 0 16px rgba(255,255,255,0)}}
 
 @media(prefers-reduced-motion:reduce){
-  /* Das GANZE Fragment, nicht nur das Telefon: Schrittliste, Punktreihe, Chat- und Viewport-
-     Blende liegen ausserhalb von .gw__page und liefen sonst weiter; im Telefon lief der
-     Wunsch-Balken (transition:width .8s) sichtbar nach. Unter reduced-motion steht der
-     ENDZUSTAND, keine angehaltene Mitte — dafuer darf nichts mehr blenden. */
-  /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht — .hero::after (gw-shimmer) ist die
-     eine der sieben Endlosanimationen, die an einem Pseudo-Element haengt. */
+
   .gw,.gw *,.gw::before,.gw::after,.gw *::before,.gw *::after{transition:none!important;animation:none!important}
   .gw__tap{display:none}
   .gw__dots i{animation:none}
@@ -452,10 +413,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 <script>
 (function(){
   var wrap = document.querySelector('.gw'); if (!wrap) return;
-  // Ohne @scope (Safari/iOS < 17.4, Firefox < 128) faellt der ganze Partyseiten-Stil weg, und das
-  // Telefon zeigte rohes HTML in Wirtsschrift. Dann lieber kein Telefon: die Schrittliste traegt den
-  // Text allein. (Gutachten MINOR 16)
-  if (!('CSSScopeRule' in window)) { var st = wrap.querySelector('.gw__stage'); if (st) st.style.display = 'none'; return; }
+  if (!('CSSScopeRule' in window)) { wrap.classList.add('gw--ohne-scope'); return; }   // eine Spalte, Buehne und Notiz weg, Knoepfe tot (CSS)
   var chat  = wrap.querySelector('.gw__chat'),
       bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
       bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
@@ -466,13 +424,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
       btns  = wrap.querySelectorAll('.gw__steps button');
   var ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Die Seite im Rahmen ist 326 px breit gebaut; passt sie in der Hoehe nicht, wird nur
-  // gescrollt — nicht skaliert. Skalieren macht Schrift unlesbar klein.
   function el(sel){ return page.querySelector(sel); }
-  // Abstand zur Seitenoberkante ueber die RECHTECKE, nicht ueber offsetTop: offsetTop misst gegen
-  // den naechsten positionierten Vorfahren. Der Hero ist positioniert, also zaehlten seine 672 px
-  // nicht mit — gemessen: .game-card meldete 591 statt 1263, jeder Sprung landete zu frueh und
-  // Spiel wie Wunschliste rutschten unten aus dem Bild. Genau das hat Bolle gesehen.
   function y(node){
     if (!node) return 0;
     var jetzt = 0, m = /translateY\((-?[\d.]+)px\)/.exec(page.style.transform || '');
@@ -490,24 +442,16 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   }
   function tippe(node, cb){
     if (!node || ruhig) { if (cb) cb(); return; }
-    // Bezug ist der TELEFONRAHMEN, nicht das Sichtfenster: .gw__tap liegt in .gw__phone
-    // (position:relative). Gegen vp gerechnet sass der Punkt um die Rahmenbreite daneben.
     var r = node.getBoundingClientRect(), s = phone.getBoundingClientRect(),
         f = vp.getBoundingClientRect();
-    // Liegt das Ziel gar nicht im Sichtfenster (Scroll noch unterwegs), lieber nicht tippen.
     if (r.bottom < f.top || r.top > f.bottom) { if (cb) cb(); return; }
     tap.hidden = false;
     tap.style.left = (r.left - s.left + r.width/2) + 'px';
     tap.style.top  = (r.top  - s.top  + r.height/2) + 'px';
     tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
-    setTimeout(function(){ if (cb) cb(); }, 380);
-    // Punkt wieder wegnehmen: .gw__tap hat auch ohne .go eine sichtbare Fuellung, und tippe()
-    // setzte hidden nur auf false. Gemessen (Pruefstand): ein weisser Kreis stand 13 s an der
-    // letzten Tippstelle.
+    nach(380, function(){ if (cb) cb(); });   // ueber T: stopp() nimmt den Rueckruf mit, sonst tippt ein alter Lauf in den neuen
     setTimeout(function(){ tap.hidden = true; }, 600);
   }
-  // Karten ueber ihren INHALT finden, nicht ueber die Reihenfolge — Reihenfolge aendert sich,
-  // "Deine Rolle" und die Wunschliste nicht.
   function karteMit(text){
     var alle = page.querySelectorAll('.card');
     for (var i=0;i<alle.length;i++) if (alle[i].textContent.indexOf(text) >= 0) return alle[i];
@@ -524,19 +468,13 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     });
   }
 
-  // --- Zustandswechsel auf dem ECHTEN Markup ---
   function zusage(){
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (!ja) return;
     tippe(ja, function(){
       ja.classList.add('active');
-      // #guestCounterText, NICHT #guestCount — den gibt es nicht. Das if(z) verschluckte den
-      // Fehlgriff still, und von den drei Zustandswechseln, die diesen Umbau begruenden,
-      // passierte dieser NIE. Gefunden vom Pruefstand in der zeitlichen Abnahme; meine 12 von 12
-      // konnten es nicht fangen, weil sie das Ergebnis pruefen und nicht den Ablauf.
       var z = el('#guestCounterText');
       if (!z) return;
       z.textContent = z.textContent.replace(/\d+/, function(d){ return (+d)+1; });
-      // Und ein Punkt mehr in der Reihe, damit die Zahl nicht allein springt.
       var dots = el('#guestDots'), letzter = dots && dots.lastElementChild;
       if (letzter && /^\+\d+$/.test(letzter.textContent))
         letzter.textContent = '+' + (parseInt(letzter.textContent.slice(1), 10) + 1);
@@ -556,40 +494,25 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     });
   }
 
-  // Suche (1) oder Jagd (2). Der Wechsel IST der Moment, den Bolle sehen wollte:
-  // "vllt den runner momment und foto revelal kurz zeigen".
   function spielbild(n){
     var a = el('#gameStill1'), b = el('#gameStill2');
     if (a) a.classList.toggle('an', n === 1);
     if (b) b.classList.toggle('an', n === 2);
   }
 
-  // Beide Bilder haengen tief in der verschobenen Seite. Ein traeges Bild laedt erst, wenn
-  // sein Kasten den Bildschirm schneidet — der Kasten steht aber weit unterhalb, bis die
-  // Seite hochgeschoben wird. Der Wechsel bei 18,9 s haette ein Loch gezeigt. Deshalb beim
-  // START des Ablaufs auf 'eager' stellen: das stoesst den Ladevorgang sofort an.
-  // Gestaffelt, nicht gleichzeitig: zwei Bilder ab demselben Moment teilen sich die Leitung, und
-  // ausgerechnet Bild 1 (zuerst gebraucht, 12,6 s) wuerde von Bild 2 gebremst — bei 50 KB/s fehlt es
-  // dann genau im Moment des Zeigens. Bild 1 bei 9,2 s (3,4 s Vorlauf), Bild 2 bei 14 s (4,9 s). (Pruefstand)
   function bilderHolen(nur){
     (nur === 1 ? ['#gameStill1'] : nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){
       var im = el(sel); if (im) im.loading = 'eager';
     });
   }
 
-  // Ausgangszustand der zwei Karten, die die Sequenz veraendert — fuer den Reset. Ohne ihn zaehlte jeder
-  // Wiedereintritt vor 31,8 s den Gaestezaehler um eins hoch (Gutachten MINOR 1, gemessen "Schon 8 Kinder
-  // dabei!"): zusage() erhoeht per Regex, der Reset stellte nur den Knopf zurueck.
   var startZaehler = el('#guestCounter') ? el('#guestCounter').innerHTML : null;
   var startWunsch  = wunschkarte() ? wunschkarte().innerHTML : null;
 
-  // --- Ablauf ---
   var T = [], laufend = false, fertig = false;
   function nach(ms, fn){ T.push(setTimeout(fn, ms)); }
-  function stopp(){ T.forEach(clearTimeout); T = []; laufend = false; }
+  function stopp(){ T.forEach(clearTimeout); T = []; laufend = false; tap.hidden = true; wrap.classList.add('gw--fertig'); }   // pausiert die Endlosanimationen; lauf() hebt es auf
 
-  // Wer Bewegung reduziert haben will, bekommt den ENDZUSTAND — nicht eine angehaltene Mitte.
-  // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
   function endzustand(){
     chat.classList.add('off'); vp.classList.add('on'); schritt(3);
     bub1.classList.add('in','said'); bub2.classList.add('in','said');   // sonst zeigt Schritt 1 ein leeres Telefon (Pruefstand)
@@ -602,7 +525,6 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 
   function lauf(){
     stopp(); laufend = true;
-    // Zuruecksetzen
     chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
     tap.hidden = true; schritt(0); spielbild(1); wrap.classList.remove('gw--fertig');
@@ -610,20 +532,14 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     if (startWunsch  !== null) wunschkarte().innerHTML = startWunsch;
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('active');
 
-    // ZEITACHSE — bewusst langsam. Bolle: "nachricht ist zu kurz sichtbar... wir haben es
-    // nicht eilig". Die Chat-Szene allein steht jetzt 7,5 s statt 3,9 s; wer den Text von Idas
-    // Mama lesen will, schafft ihn zweimal. Insgesamt 31,8 s bis zum Endzustand, EINMAL —
-    // keine Schleife, also
-    // kostet die Laenge niemanden etwas, der weiterliest.
     nach(400,   function(){ bub1.classList.add('in'); });          // tippt...
     nach(2100,  function(){ bub1.classList.add('said'); });        // Text da
-    nach(4200,  function(){ bub2.classList.add('in','said'); });   // Link-Vorschau
+    nach(4200,  function(){ bub2.classList.add('in','said'); bilderHolen(1); });   // Link-Vorschau; Bild 1 jetzt (8,4 s Vorlauf) — wer 4 s bleibt, schaut
     nach(6600,  function(){ tippe(wrap.querySelector('.gw__prev')); });
     nach(7500,  function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
-    nach(9200,  function(){ scrollTo(pass(), 1800); bilderHolen(1); });  // Hero steht 1,7 s; Bild 1 jetzt — wer vorbeiscrollt, laedt nichts
+    nach(9200,  function(){ scrollTo(pass(), 1800); bilderHolen(2); });  // Hero steht 1,7 s; Bild 2 jetzt (9,7 s Vorlauf)
     nach(12600, function(){ scrollTo(el('.game-card'), 1800); });   // Pass steht 3,4 s
     nach(13600, function(){ schritt(2); });
-    nach(14000, function(){ bilderHolen(2); });                      // Bild 2 gestaffelt, 4,9 s vor dem Wechsel
     nach(18400, function(){ tippe(el('.play-pill')); });            // Spiel steht 5,8 s
     nach(18900, function(){ spielbild(2); });                       // Ida fluechtet
     nach(22000, function(){ scrollTo(el('#rsvpCard'), 1800); });    // Jagd steht 3,1 s
@@ -634,11 +550,6 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     nach(31800, function(){ fertig = true; laufend = false; wrap.classList.add('gw--fertig'); });
   }
 
-  // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
-  // schmalen Fenster hoeher als der Bildschirm, dann sind nie 30 % gleichzeitig sichtbar und
-  // die Animation startet NIE. Gemessen: nach 10 Sekunden stand alles im Ausgangszustand.
-  // Beobachtet wird deshalb das TELEFON (kleiner als das Fenster), und es reicht, dass ein
-  // Stueck davon zu sehen ist.
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){
       if (e.isIntersecting && !laufend && !fertig) { if (ruhig) endzustand(); else lauf(); }
@@ -650,7 +561,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   btns.forEach(function(b){
     b.addEventListener('click', function(){
       var n = +b.dataset.s;
-      stopp(); fertig = true; schritt(n);   // eine manuelle Wahl beendet den Automatiklauf (Gutachten MINOR 2)
+      stopp(); fertig = true; schritt(n); bilderHolen(); wrap.classList.add('gw--fertig');   // manuelle Wahl beendet den Automatiklauf; Bilder jetzt, Animationen pausiert
       chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
       if (n>0) {
         bub1.classList.add('in','said'); bub2.classList.add('in','said');

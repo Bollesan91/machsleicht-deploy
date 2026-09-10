@@ -21,7 +21,7 @@ Fassung (Faktor 0,8, 336 × 489): „ekelhaft verpixelt" — und danach „mach 
 
 1. **Spiel oeffnen**, Viewport 1280 × 720 (bei kleineren Fenstern skaliert das Spiel, die Geometrie unten
    stimmt dann nicht mehr):
-   `https://machsleicht.de/einladung/einhorn/whatsapp/?name=Ida&date=Freitag%2C%2016.%20Oktober%202026&time=15%3A00&ort=Bei%20uns%20zuhause%20in%20Hamburg-Rahlstedt&age=6&foto=https%3A%2F%2Fparty.machsleicht.de%2Fapi%2Finvimg%2F8sp7bpf4s55q`
+   `https://machsleicht.de/einladung/einhorn/whatsapp/?name=Ida&date=Samstag%2C%206.%20November%202027&time=15%3A00&ort=Bei%20uns%20zuhause%20in%20Hamburg-Rahlstedt&age=6&foto=https%3A%2F%2Fparty.machsleicht.de%2Fapi%2Finvimg%2F8sp7bpf4s55q`
    Das `foto=` zeigt auf das Party-Foto; faellt die Demo-Party weg, tut es jede Bild-URL mit dem
    Demo-Kind (`/bilder/demo/ida.jpg`), wenn der Worker sie als Foto akzeptiert.
 2. **html2canvas laden** (cdnjs, 1.4.1) und den Spielcontainer bestimmen — das groesste Element mit

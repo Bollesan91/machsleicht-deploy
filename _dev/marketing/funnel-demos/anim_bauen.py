@@ -93,6 +93,10 @@ tor = re.search(r'<div[^>]*id="codeGate"[^>]*>', body)
 assert tor, 'Namenstor id="codeGate" nicht im Markup — hat sich die Partyseite geaendert?'
 h1_vor = body.count('<h1')
 body, weg = schneide_element(body, tor.start())
+# ... und die zwei Kommentare, die das Tor ankuendigen bzw. abschliessen — sie gingen sonst an jeden Besucher
+# und verweisen auf ein Element, das es nicht mehr gibt (Re-Check).
+body, n_k = re.subn(r'\s*<!--\s*(?:CODE GATE|PARTY CONTENT)\b.*?-->', '', body, flags=re.S)
+assert n_k == 2, n_k
 assert 'checkCode' not in body and 'id="codeGate"' not in body
 assert body.count('<h1') == h1_vor - 1, (h1_vor, body.count('<h1'))
 print(f'  Namenstor entfernt: {weg} Zeichen, <h1> {h1_vor} -> {body.count(chr(60) + "h1")}')
@@ -253,6 +257,11 @@ body = body[:i] + STILLS + body[schluss:]
 assert '<iframe' not in body, 'es steht noch ein iframe im Fragment'
 assert body.count('game-still') == 3, body.count('game-still')
 print(f'  Spiel-iframe ersetzt durch 2 Standbilder ({schluss - i} Zeichen raus, {len(STILLS)} rein)')
+# Tote Regeln fuer Elemente, die es im Fragment nicht mehr gibt (Tor, iframe).
+vor_tot = len(re.findall(r'(?:^|})\s*(?:\.gate-card|#gameFrame)\b[^{}]*\{[^{}]*\}', css))
+css = re.sub(r'(?<=[}\n])\s*(?:\.gate-card|#gameFrame)\b[^{}]*\{[^{}]*\}', '', css)
+assert not re.search(r'(?:\.gate-card|#gameFrame)\b[^{}]*\{', css)
+print(f'  tote Regeln entfernt: {vor_tot}')
 
 # Der Kommentar "INVARIANTE: KEIN sandbox-Attribut ohne ..." schuetzt den iframe der Partyseite
 # (§ 5 DDG, Rechtslinks im eingebetteten Spiel). Hier gibt es den iframe nicht mehr — ein Waechter
@@ -293,6 +302,9 @@ print(f'  Empfehlungsspur der Demo-Party entfernt: {vor_ref}')
 # vor dem Write ohne Ausnahme: KEINE absolute Eigen-URL im Fragment.
 # OHNE Schraegstrich pruefen: der Footer der Partyseite verlinkt `https://machsleicht.de` nackt, und ein
 # Waechter mit `https://machsleicht.de/` bescheinigte Freiheit von etwas, das da war (Pruefstand, 10.09.).
+# POSITIVKONTROLLE mit echtem Material: die rohe Partyseite traegt im Footer `href="https://machsleicht.de"`.
+# Findet der Waechter diese echte Zeile nicht, ist er kaputt — dann bricht der Bau, statt gruen zu melden.
+assert re.search(r'href="https://machsleicht\.de"', body), 'Positivkontrolle: Footer-Link der Partyseite nicht gefunden — Waechter oder Quelle geaendert'
 vor_abs = len(re.findall(r'href="https://machsleicht\.de(?=[/"])', body))
 body = re.sub(r'href="https://machsleicht\.de/', 'href="/', body)
 body = re.sub(r'href="https://machsleicht\.de"', 'href="/"', body)
@@ -350,7 +362,11 @@ assert not re.search(r'(?<![\w.#>\-])body(?![\w-])', css_in)
 # Und was das Telefon vom Wirt erben wuerde, setzt der Scope selbst: der Planer gibt line-height 1.5
 # und letter-spacing .4px an Ueberschriften mit — die Seite im Telefon war dort 149 px laenger als auf
 # der Startseite (Gutachten MINOR 13). normal = der Wert der echten Partyseite.
-css_in += '\n:scope{line-height:normal;letter-spacing:normal}\n:scope :is(h1,h2,h3,h4){letter-spacing:normal}\n'
+# :where() statt :is(): (0,1,0) schlaegt die Wirts-Elementregeln h1..h4 (0,0,1), verliert aber gegen jede
+# Party-Regel wie .hero h1 (0,1,1) — die :is()-Fassung hatte deren letter-spacing:-0.5px ueberschrieben
+# (Re-Check). `revert` rollt die Wirtsregel auf den UA-Wert zurueck: exakt der Zustand der echten Seite.
+css_in += ('\n:scope{line-height:normal;letter-spacing:normal}'
+           '\n:scope :where(h1,h2,h3,h4){font:revert;letter-spacing:revert;line-height:revert}\n')
 print(f'  body-Selektoren -> :scope: {vor_body}')
 print(f'  CSS: {len(schriften)} @font-face herausgehoben, '
       f'{vor_root}x :root und {vor_body}x body -> :scope')
@@ -461,6 +477,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw{{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
   max-width:960px;margin:0 auto;padding:32px 20px}}   /* wie die Nachbarsektionen (960/900), nicht 1060 */
 @media(min-width:920px){{.gw{{grid-template-columns:1fr 360px;gap:64px}}}}
+/* Ohne @scope (Safari/iOS < 17.4, Firefox < 128): kein Telefon, keine leere Spalte, keine toten Knoepfe. */
+.gw--ohne-scope{{grid-template-columns:1fr!important}}
+.gw--ohne-scope .gw__stage,.gw--ohne-scope .gw__note{{display:none}}
+.gw--ohne-scope .gw__steps button{{cursor:default;pointer-events:none;opacity:1}}
 .gw__h{{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}}
 .gw__steps{{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:gw}}
 .gw__steps button{{all:unset;display:block;width:100%;box-sizing:border-box;cursor:pointer;
@@ -547,7 +567,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
      Wunsch-Balken (transition:width .8s) sichtbar nach. Unter reduced-motion steht der
      ENDZUSTAND, keine angehaltene Mitte — dafuer darf nichts mehr blenden. */
   /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht — .hero::after (gw-shimmer) ist die
-     eine der sieben Endlosanimationen, die an einem Pseudo-Element haengt. */
+     Endlosanimation, die an einem Pseudo-Element haengt. */
   .gw,.gw *,.gw::before,.gw::after,.gw *::before,.gw *::after{{transition:none!important;animation:none!important}}
   .gw__tap{{display:none}}
   .gw__dots i{{animation:none}}
@@ -560,7 +580,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   // Ohne @scope (Safari/iOS < 17.4, Firefox < 128) faellt der ganze Partyseiten-Stil weg, und das
   // Telefon zeigte rohes HTML in Wirtsschrift. Dann lieber kein Telefon: die Schrittliste traegt den
   // Text allein. (Gutachten MINOR 16)
-  if (!('CSSScopeRule' in window)) {{ var st = wrap.querySelector('.gw__stage'); if (st) st.style.display = 'none'; return; }}
+  if (!('CSSScopeRule' in window)) {{ wrap.classList.add('gw--ohne-scope'); return; }}   // eine Spalte, Buehne und Notiz weg, Knoepfe tot (CSS)
   var chat  = wrap.querySelector('.gw__chat'),
       bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
       bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
@@ -571,7 +591,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
       btns  = wrap.querySelectorAll('.gw__steps button');
   var ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Die Seite im Rahmen ist 326 px breit gebaut; passt sie in der Hoehe nicht, wird nur
+  // Die Seite im Rahmen ist so breit wie der Bildschirm des Telefons (304 px bei 326er Rahmen); passt sie in der Hoehe nicht, wird nur
   // gescrollt \u2014 nicht skaliert. Skalieren macht Schrift unlesbar klein.
   function el(sel){{ return page.querySelector(sel); }}
   // Abstand zur Seitenoberkante ueber die RECHTECKE, nicht ueber offsetTop: offsetTop misst gegen
@@ -605,7 +625,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     tap.style.left = (r.left - s.left + r.width/2) + 'px';
     tap.style.top  = (r.top  - s.top  + r.height/2) + 'px';
     tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
-    setTimeout(function(){{ if (cb) cb(); }}, 380);
+    nach(380, function(){{ if (cb) cb(); }});   // ueber T: stopp() nimmt den Rueckruf mit, sonst tippt ein alter Lauf in den neuen
     // Punkt wieder wegnehmen: .gw__tap hat auch ohne .go eine sichtbare Fuellung, und tippe()
     // setzte hidden nur auf false. Gemessen (Pruefstand): ein weisser Kreis stand 13 s an der
     // letzten Tippstelle.
@@ -673,9 +693,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   // sein Kasten den Bildschirm schneidet — der Kasten steht aber weit unterhalb, bis die
   // Seite hochgeschoben wird. Der Wechsel bei 18,9 s haette ein Loch gezeigt. Deshalb beim
   // START des Ablaufs auf 'eager' stellen: das stoesst den Ladevorgang sofort an.
-  // Gestaffelt, nicht gleichzeitig: zwei Bilder ab demselben Moment teilen sich die Leitung, und
-  // ausgerechnet Bild 1 (zuerst gebraucht, 12,6 s) wuerde von Bild 2 gebremst — bei 50 KB/s fehlt es
-  // dann genau im Moment des Zeigens. Bild 1 bei 9,2 s (3,4 s Vorlauf), Bild 2 bei 14 s (4,9 s). (Pruefstand)
+  // Gestaffelt UND frueh: Bild 1 bei 4,2 s (8,4 s Vorlauf bis 12,6 s → 16,9 kB/s Mindestrate), Bild 2 bei
+  // 9,2 s (9,7 s bis 18,9 s → 15,6 kB/s). Die erste Staffelung (9,2/14 s) hatte die Toleranz fuer Bild 1
+  // halbiert — 41,8 statt 23 kB/s — weil sie den Start nach hinten schob (Re-Check, nachgerechnet).
+  // Wer vor 4,2 s weiterscrollt, laedt nichts: stopp() loescht die Timer.
   function bilderHolen(nur){{
     (nur === 1 ? ['#gameStill1'] : nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){{
       var im = el(sel); if (im) im.loading = 'eager';
@@ -691,7 +712,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   // --- Ablauf ---
   var T = [], laufend = false, fertig = false;
   function nach(ms, fn){{ T.push(setTimeout(fn, ms)); }}
-  function stopp(){{ T.forEach(clearTimeout); T = []; laufend = false; }}
+  function stopp(){{ T.forEach(clearTimeout); T = []; laufend = false; tap.hidden = true; wrap.classList.add('gw--fertig'); }}   // pausiert die Endlosanimationen; lauf() hebt es auf
 
   // Wer Bewegung reduziert haben will, bekommt den ENDZUSTAND — nicht eine angehaltene Mitte.
   // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
@@ -722,13 +743,12 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     // kostet die Laenge niemanden etwas, der weiterliest.
     nach(400,   function(){{ bub1.classList.add('in'); }});          // tippt...
     nach(2100,  function(){{ bub1.classList.add('said'); }});        // Text da
-    nach(4200,  function(){{ bub2.classList.add('in','said'); }});   // Link-Vorschau
+    nach(4200,  function(){{ bub2.classList.add('in','said'); bilderHolen(1); }});   // Link-Vorschau; Bild 1 jetzt (8,4 s Vorlauf) — wer 4 s bleibt, schaut
     nach(6600,  function(){{ tippe(wrap.querySelector('.gw__prev')); }});
     nach(7500,  function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
-    nach(9200,  function(){{ scrollTo(pass(), 1800); bilderHolen(1); }});  // Hero steht 1,7 s; Bild 1 jetzt — wer vorbeiscrollt, laedt nichts
+    nach(9200,  function(){{ scrollTo(pass(), 1800); bilderHolen(2); }});  // Hero steht 1,7 s; Bild 2 jetzt (9,7 s Vorlauf)
     nach(12600, function(){{ scrollTo(el('.game-card'), 1800); }});   // Pass steht 3,4 s
     nach(13600, function(){{ schritt(2); }});
-    nach(14000, function(){{ bilderHolen(2); }});                      // Bild 2 gestaffelt, 4,9 s vor dem Wechsel
     nach(18400, function(){{ tippe(el('.play-pill')); }});            // Spiel steht 5,8 s
     nach(18900, function(){{ spielbild(2); }});                       // Ida fluechtet
     nach(22000, function(){{ scrollTo(el('#rsvpCard'), 1800); }});    // Jagd steht 3,1 s
@@ -755,7 +775,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   btns.forEach(function(b){{
     b.addEventListener('click', function(){{
       var n = +b.dataset.s;
-      stopp(); fertig = true; schritt(n);   // eine manuelle Wahl beendet den Automatiklauf (Gutachten MINOR 2)
+      stopp(); fertig = true; schritt(n); bilderHolen(); wrap.classList.add('gw--fertig');   // manuelle Wahl beendet den Automatiklauf; Bilder jetzt, Animationen pausiert
       chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
       if (n>0) {{
         bub1.classList.add('in','said'); bub2.classList.add('in','said');
@@ -768,6 +788,22 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 """
 
 ZIEL = '_dev/marketing/funnel-demos/gaeste-weg.html'
+# Das ausgelieferte Fragment ohne Kommentare: 2,7 KB Fix-Chronik gingen an jeden Besucher (Re-Check, Winkel 1).
+# CSS-Blockkommentare, HTML-Kommentare (ausser dem Herkunftskommentar ganz oben) und JS-Zeilen, die mit //
+# beginnen. Nicht angefasst: `//` mitten in Zeilen (URLs), Strings, alles im Generator selbst.
+def entkommentieren(t):
+    kopf_ende = t.index('-->') + 3
+    kopf, rest = t[:kopf_ende], t[kopf_ende:]
+    rest = re.sub(r'/\*.*?\*/', '', rest, flags=re.S)
+    rest = re.sub(r'<!--.*?-->', '', rest, flags=re.S)
+    rest = re.sub(r'(?m)^[ \t]*//[^\n]*\n', '', rest)
+    rest = re.sub(r'(?m)^[ \t]*\n(?:[ \t]*\n)+', '\n', rest)
+    return kopf + rest
+vor_bytes = len(BAU.encode('utf-8'))
+BAU = entkommentieren(BAU)
+assert BAU.startswith('<!-- Gaeste-Weg, ANIMIERT.') and BAU.count('<!--') == 1, BAU.count('<!--')
+assert '/*' not in BAU.split('-->', 1)[1] and not re.search(r'(?m)^[ \t]*//', BAU.split('-->', 1)[1])
+print(f'  entkommentiert: {vor_bytes} -> {len(BAU.encode(chr(117)+chr(116)+chr(102)+chr(45)+chr(56)))} Bytes')
 assert len(re.findall(r'<div\b', BAU)) == BAU.count('</div>'), (len(re.findall(r'<div\b', BAU)), BAU.count('</div>'))
 assert 'https://machsleicht.de' not in BAU, 'absolute Eigen-URL im Fragment (auch ohne Schraegstrich)'
 sperre_pruefen()
@@ -778,6 +814,7 @@ for m_, soll in [('gw__steps button', 4), ('data-sc=', 2), ('rsvp-btn', 1), ('wi
     print(f'  {m_:20s} {BAU.count(m_)}x (mind. {soll})')
 
 # Vorschau daneben, damit man sie ohne Startseite ansehen kann.
+sperre_pruefen()
 io.open('_dev/marketing/funnel-demos/gaeste-weg-vorschau.html', 'w', encoding='utf-8', newline='\n').write(
     '<!doctype html><html lang="de"><head><meta charset="utf-8">'
     '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -791,6 +828,7 @@ print('  Vorschau: gaeste-weg-vorschau.html')
 # etwas zu aendern ist zwecklos — der naechste Lauf ueberschreibt es (Helfer V5: kein Review auf
 # Handarbeit, die die Maschine ueberschreibt). Idempotent: zweiter Lauf, leerer Diff.
 M_AUF, M_ZU = '<!-- GW:FRAGMENT -->', '<!-- /GW:FRAGMENT -->'
+sperre_pruefen()   # EINMAL vor beiden Wirtsseiten — ein Check zwischen ihnen wuerde den Halbschrieb erzeugen, den er verhindern soll (Re-Check)
 for seite in ('index.html', 'kindergeburtstag.html'):
     alt = io.open(seite, encoding='utf-8', newline='').read()
     assert alt.count(M_AUF) == 1 and alt.count(M_ZU) == 1, f'{seite}: Marker {alt.count(M_AUF)}/{alt.count(M_ZU)}x'
@@ -800,6 +838,5 @@ for seite in ('index.html', 'kindergeburtstag.html'):
     assert neu.count(M_AUF) == 1 and neu.count(M_ZU) == 1
     assert neu.count('<!-- Gaeste-Weg, ANIMIERT.') == 1, 'Fragment steht nicht genau einmal in der Seite'
     if neu != alt:
-        sperre_pruefen()
         io.open(seite, 'w', encoding='utf-8', newline='').write(neu)
     print(f'  eingebettet: {seite} {len(alt)} -> {len(neu)} Zeichen' + ('' if neu != alt else ' (unveraendert)'))

@@ -2972,3 +2972,84 @@ Fragment 47.093 B, `<div` 104/104, index.html 85.428 B, kindergeburtstag.html 38
 
 **Naechster Schritt:** Diff-Re-Check `fbd6c800…33c9122b` in einem FRISCHEN Tab (11 Behauptungen, darunter der
 Ausfallstrang des Pruefstands als Winkel), dann Bolles Wort.
+
+### Blinder Diff-Re-Check, 20 Agenten — und Patch 11/12
+
+Chrome-MCP war nicht verbunden, der frische Tab damit nicht erreichbar; Bolle: „Versuch es selbst?" Also
+der Diff-Re-Check `fbd6c800…5d79d59e` als blinder Workflow statt als Tab — und das ist eine Stufe unter der
+Regel (Reviewer = frischer Tab), nicht ihr Ersatz: **5 Pruefer** bekamen je einen Teil der 11 Behauptungen
+plus die zwei Kontrollfragen, jeder mit der Pflicht, jede Null an einer echten Zeile zu belegen; **15
+Widerleger** bekamen anschliessend je einen „haelt nicht"-Befund mit dem Auftrag, ihn zu kippen. 20 Agenten,
+0 gestorben (der Ausfallstrang des Pruefstands von gestern war der Grund fuer diese Zaehlung). Ergebnis:
+**64 Einzelurteile, 23x „haelt nicht", davon 22 MINOR, 0 MAJOR.** Widerleger:
+bestaetigt 12, teilweise 3 — kein Befund fiel.
+
+**Was hielt nicht, und was daraus wurde (Patch 11, alles im Generator):**
+- **Die Ueberschriften-Regel hat die Partyseite selbst ueberschrieben.** `:scope :is(h1,h2,h3,h4){letter-spacing:normal}`
+  hat (0,1,1) — dasselbe wie `.hero h1{…letter-spacing:-0.5px}` der Partyseite, und stand dahinter. Der Fix
+  gegen den Planer-Bleed (`h1,h2,h3,h4{font-family:'Lilita One';letter-spacing:.4px;line-height:1.15}`) hat
+  also die eigene Hero-Zeile um 0,5 px je Glyphe verbreitert, auf beiden Wirten, und `line-height:1.15` des
+  Planers liess er durch (zweiter Pruefer, unabhaengig). Jetzt `:scope :where(h1,h2,h3,h4){font:revert;
+  letter-spacing:revert;line-height:revert}`: (0,1,0) verliert gegen jede Regel der Partyseite, `revert`
+  rollt den Wirt auf den UA-Wert zurueck statt auf einen getippten. **Gemessen** (localhost:8766, beide Wirte,
+  `getComputedStyle` am `.gw__page .hero h1`): Startseite und Planer je `"Baloo 2"`, `-0.5px`, 800, 42 px,
+  `line-height: normal`; das Wirts-h1 daneben unveraendert (Startseite Fraunces −0,72 px, Planer Lilita One
+  0,4 px / 34,5 px). Die Planer-Regel steht in derselben Messung als einzige nackte `h1,h2,h3,h4`-Regel im
+  Wirts-CSS — sie erreicht das Telefon nicht mehr.
+- **Die Staffelung der Bilder hat die Bandbreiten-Toleranz halbiert.** Bild 1 bei 9,2 s fuer den Blick bei
+  12,6 s = 3,4 s Vorlauf statt 12,6; und wer vor 9,2 s manuell auf Schritt 2 klickte, bekam gar kein Vorladen
+  mehr. Jetzt Bild 1 bei 4,2 s (mit der Link-Vorschau: wer 4 s bleibt, schaut), Bild 2 bei 9,2 s (mit dem
+  Pass-Scroll), und der Klick auf einen Schritt laedt beide sofort. Vorbeiscroller unter 4 s laden weiterhin nichts.
+- **Klick auf einen Schritt hat die Endlosanimationen nicht pausiert** — `gw--fertig` setzte nur der
+  Automatiklauf am Ende, `lauf()` entfernte es wirkungslos. Jetzt setzen `stopp()` und der Klick die Klasse.
+- **Reste des Namenstors:** `<!-- CODE GATE … -->` und `<!-- PARTY CONTENT … -->` beschrieben ein Element, das
+  der Schnitt entfernt hatte; `.gate-card` und `#gameFrame` waren tote Regeln. Alles raus.
+- **`sperre_pruefen()` stand nicht vor jedem Write** (nicht vor der Vorschau, in der Einbett-Schleife nur einmal
+  vor beiden Seiten). Jetzt vor jedem der drei Writes.
+- **Der `@scope`-Fallback liess Halbgares stehen:** Schrittknoepfe ohne Ziel neben einer leeren Buehne. Jetzt
+  traegt der Wirt in dem Fall `gw--ohne-scope`, die Knoepfe verschwinden mit, die Textliste bleibt.
+- **Zwei Kommentare logen nach dem Fix:** „eine der sieben Endlosanimationen" (es sind sechs, seit die
+  Countdown-Regeln weg sind) und „326 px breit gebaut" (die Seite ist so breit wie der Bildschirm, 304 bei 326).
+- **Die Anleitung fuer die Standbilder trug noch das alte Datum** (16. Oktober 2026) — jetzt der 6. November 2027.
+- **Und der Befund gegen dieses Dokument selbst:** „vier bekannte Treffer machen ihn rot" (Patch-9-Abschnitt)
+  beschrieb eine Positivkontrolle, die in keinem Repo-Artefakt existiert — der Generator druckte `vor_abs`,
+  assertierte es aber nie. Ein Widerleger baute die Messung nach (die Live-Party traegt heute 4 Treffer, der
+  Waechter wird am un-umgeschriebenen Koerper rot) und schrieb dazu: eine Kontrolle, die es nur gibt, weil der
+  Pruefer sie gerade gebaut hat, ist keine. Jetzt steht **vor** dem Umschreiben
+  `assert re.search(r'href="https://machsleicht\.de"', body)` — die echte Footer-Zeile der Partyseite; faellt
+  sie irgendwann weg, bricht der Lauf, und genau dann muss die Positivkontrolle neu gesucht werden.
+
+**Kontrollfrage 1 (schlanker oder dicker?) — die ehrliche Antwort war „dicker":** das Fragment wuchs von Patch
+zu Patch, und ein Drittel davon waren Kommentare, die an jeden Besucher ausgeliefert wurden. Jetzt streift der
+Generator nach dem letzten Umbau alle Kommentare bis auf den Kopf (CSS-Bloecke, HTML, ganze `//`-Zeilen;
+`<div`/`</div>` und `://` werden davor und danach gezaehlt): Fragment 47,528 → 39,855 B,
+index.html 85,863 → 78,190 B, kindergeburtstag.html 381,219 → 373,546 B. 15 nachgestellte
+`//`-Kommentare (705 Zeichen) bleiben absichtlich: sie sicher zu entfernen braeuchte einen Tokenizer
+(`//` in Strings), und 705 Zeichen sind den nicht wert. Die Kommentare leben weiter — im Generator.
+
+**Patch 12, der letzte bestaetigte Befund:** `tippe()` setzte zwei nackte `setTimeout`s ausserhalb von `T`; ein
+Klick innerhalb der 380 ms nach einem Tipp bekam den Rueckruf des alten Laufs in den neuen Zustand. Jetzt
+laeuft der Rueckruf ueber `nach()`, und `stopp()` blendet den Tipp-Punkt aus, damit `gw--fertig` ihn nicht halb
+sichtbar einfriert.
+
+**Nicht gefixt, als Ticket:** (a) im Planer sind `hidden` + `#stage3.revealed #gaesteWeg{display:block}`
+verhaltensneutral, weil Stufe 3 selbst bis zum Reveal verborgen ist — „braucht es das?" sagt nein, der
+Kommentar „derselbe Mechanismus" trifft nicht; beim naechsten Schnitt raus. (b) „Hamburg-Rahlstedt" steht als
+Ort der Demo-Party — Bolles Entscheidung, ob ein echter Stadtteil in der Demo stehen soll. (c) Die
+`tel:`-Entschaerfung hat im heutigen Lauf keinen echten Treffer gesehen (die neue Demo-Party hat keine Nummer)
+— ein Waechter ohne Tor, bis eine Demo-Party mit Nummer ihn einmal rot macht.
+
+**Nebenfund beim Aufraeumen, nicht aus dem Re-Check:** `_dev/scripts/deploy.sh` — ein Zip-Upload-Relikt vom
+26.03.2026 — trug einen **Netlify-Token `nfp_…` im Klartext**, im oeffentlichen Repo, seit zwei Commits.
+Durchsuchung aller 1.099 getrackten Dateien nach Token-Mustern: dieser eine Treffer. Die Datei geht mit diesem
+Commit raus; **der Token bleibt in der Historie und muss von Bolle im Netlify-Dashboard widerrufen werden** —
+ein Entfernen veroeffentlicht nichts zurueck. Ich habe ihn nicht benutzt.
+
+**Gate nach Patch 11/12:** Generator idempotent (4/4 Dateien byte-identisch im zweiten Lauf), `node --check` am
+Fragment-Skript gruen, Bewegungsregeln 31/31 vom Reduced-Motion-Block erreicht, `<!--` 1x (Kopf), `CODE GATE`
+0x, `:is(h1` 0x, `:where(` 1x, `nach(14000` 0x, `gw--ohne-scope` 5x, Eigen-URL 0x, alte Party 0x (Kennung,
+Bollweg, 0176, 16. Oktober). Lint Lauf 9: **0 FAIL, 8 Warnungen** (die bekannten Altlasten).
+
+**Naechster Schritt:** Bolles Wort → `deploy_gaeste_weg.py --wort` (main = draft per Plumbing, Sitemap-lastmod
+nur fuer `/` und `/kindergeburtstag`, Live-Greps, Search Console). Danach Iteration 2 als eigener Schnitt mit
+eigenem Review: die vier „So sieht's aus"-Karten raus, ein Plan-Standbild als Auftakt.
