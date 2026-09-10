@@ -2945,3 +2945,30 @@ Sollwert); Winkel 11 des Gutachters: unter einem Piraten-Plan ist das lila Einho
 Mottos woertlich „nicht so erleben es deine Gaeste" — Beobachtung, kein Fix; Lizenz von demo-kid.jpg
 (ausserhalb jeder Sicht). Dann: Diff-Re-Check des Gutachters in frischem Tab, `lastmod` fuer `/` und
 `/kindergeburtstag`, Bolles Wort zum Deploy, Search Console.
+
+### Zwei Gutachten, eine Bilanz — und Patch 9
+
+Der Pruefstand hat sein eigenes Gutachten als **unvollstaendig** gemeldet, bevor er irgendetwas anderes
+gesagt hat: 10 von 25 Agenten an einem Session-Limit gestorben, darunter der komplette Geometrie-/Gewicht-
+Strang — **genau der, der M1 gefunden haette.** Der Tab fand den schwersten Einzelbefund; die blinden
+Straenge fanden acht Dinge, die der Tab nicht hatte, weil sie messen konnten. Beide zusammen fanden, was
+keiner allein hatte — und der Ausfall zeigt, dass ein zweites Gutachten kein Ersatz fuer ein vollstaendiges
+erstes ist.
+
+**Der Befund, der beide Waechter blossstellt:** `<a href="https://machsleicht.de">machsleicht.de</a>` im
+Telefon-Footer — **ohne Schraegstrich.** Mein Generator-Assert prueft `https://machsleicht.de/` mit, die
+Abnahme des Pruefstands ebenfalls; beide meldeten „0x". Ein Waechter, der eine Invariante nicht findet, ist
+schlimmer als keiner: er bescheinigt Freiheit von etwas, das da ist. Jetzt: Link `href="/"`, Waechter ohne
+Schraegstrich im Koerper und vor dem Write, und eine **Positivkontrolle** — vier bekannte Treffer machen ihn
+rot, das Fragment laesst ihn gruen. Ohne Positivkontrolle ist ein „0x" nur eine Behauptung ueber das Muster.
+
+**Patch 9 (Commit 33c9122b), die uebrigen Straenge-Befunde:** `endzustand()` setzt die Chat-Blasen (Schritt 1
+zeigte im Ruhig-Pfad ein leeres Telefon); drei tote `.countdown*`-Regeln raus; `sperre_pruefen()` vor jedem
+Write (zwischen Gate und erstem Write lagen zwei Netzabrufe von bis zu 45 s, und die Einbett-Schleife schrieb
+zwei Seiten nacheinander); `.gw` 960 px wie die Nachbarn statt 1060; `bilderHolen()` erst mit dem Pass bei
+9,2 s — wer in zwei Sekunden vorbeiscrollt, loest `stopp()` aus und laedt keine 287 KiB. Kommentar „die einzige
+endlose Animation" korrigiert: es sind sieben, die eine haengt an einem Pseudo-Element.
+Fragment 47.093 B, `<div` 104/104, index.html 85.428 B, kindergeburtstag.html 380.784 B, Gate Lauf 6: 0 FAIL.
+
+**Naechster Schritt:** Diff-Re-Check `fbd6c800…33c9122b` in einem FRISCHEN Tab (11 Behauptungen, darunter der
+Ausfallstrang des Pruefstands als Winkel), dann Bolles Wort.

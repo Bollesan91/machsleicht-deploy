@@ -568,8 +568,11 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   // sein Kasten den Bildschirm schneidet — der Kasten steht aber weit unterhalb, bis die
   // Seite hochgeschoben wird. Der Wechsel bei 18,9 s haette ein Loch gezeigt. Deshalb beim
   // START des Ablaufs auf 'eager' stellen: das stoesst den Ladevorgang sofort an.
+  // Gestaffelt, nicht gleichzeitig: zwei Bilder ab demselben Moment teilen sich die Leitung, und
+  // ausgerechnet Bild 1 (zuerst gebraucht, 12,6 s) wuerde von Bild 2 gebremst — bei 50 KB/s fehlt es
+  // dann genau im Moment des Zeigens. Bild 1 bei 9,2 s (3,4 s Vorlauf), Bild 2 bei 14 s (4,9 s). (Pruefstand)
   function bilderHolen(nur){
-    (nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){
+    (nur === 1 ? ['#gameStill1'] : nur === 2 ? ['#gameStill2'] : ['#gameStill1', '#gameStill2']).forEach(function(sel){
       var im = el(sel); if (im) im.loading = 'eager';
     });
   }
@@ -617,9 +620,10 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     nach(4200,  function(){ bub2.classList.add('in','said'); });   // Link-Vorschau
     nach(6600,  function(){ tippe(wrap.querySelector('.gw__prev')); });
     nach(7500,  function(){ chat.classList.add('off'); vp.classList.add('on'); schritt(1); });
-    nach(9200,  function(){ scrollTo(pass(), 1800); bilderHolen(); });   // Hero steht 1,7 s; Bilder jetzt, nicht beim Start — wer vorbeiscrollt, laedt sie nicht
+    nach(9200,  function(){ scrollTo(pass(), 1800); bilderHolen(1); });  // Hero steht 1,7 s; Bild 1 jetzt — wer vorbeiscrollt, laedt nichts
     nach(12600, function(){ scrollTo(el('.game-card'), 1800); });   // Pass steht 3,4 s
     nach(13600, function(){ schritt(2); });
+    nach(14000, function(){ bilderHolen(2); });                      // Bild 2 gestaffelt, 4,9 s vor dem Wechsel
     nach(18400, function(){ tippe(el('.play-pill')); });            // Spiel steht 5,8 s
     nach(18900, function(){ spielbild(2); });                       // Ida fluechtet
     nach(22000, function(){ scrollTo(el('#rsvpCard'), 1800); });    // Jagd steht 3,1 s
