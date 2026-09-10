@@ -31,6 +31,11 @@ os.chdir(r"C:\Users\Bolle\OneDrive - ADVERGY GmbH\Dokumente\Claude\Projects\mach
 # lesen — ein Schreibzugriff waehrenddessen macht die Lesung wertlos (passiert am 10.09. um
 # 15:23, weil die Sperre nur ANGEZEIGT wurde und die Kette weiterlief). Also: Datei da -> Ende,
 # bevor irgendetwas geschrieben wird. Nicht als Warnung, als Abbruch.
+def sperre_pruefen():
+    # Vor JEDEM Write erneut: zwischen Gate und erstem Write liegen zwei Netzabrufe von bis zu 45 s,
+    # und der Einbett-Schritt schreibt zwei Seiten nacheinander (Pruefstand: 'Halbschrieb').
+    if os.path.exists('_dev/.lintlogs/AKTIV'):
+        sys.exit('SPERRE STEHT (' + io.open('_dev/.lintlogs/AKTIV', encoding='utf-8').read().split(chr(10))[0] + ') — Write abgebrochen.')
 if os.path.exists('_dev/.lintlogs/AKTIV'):
     sys.exit('SPERRE STEHT (' + io.open('_dev/.lintlogs/AKTIV', encoding='utf-8').read().split(chr(10))[0]
              + ') — Generator schreibt nichts. Spaeter neu starten.')
@@ -286,9 +291,12 @@ print(f'  Empfehlungsspur der Demo-Party entfernt: {vor_ref}')
 # Telefon klickt das niemand — aber eingebettet auf machsleicht.de ist ein Wurzelpfad dasselbe,
 # und in einer Branch-Vorschau zeigt er nicht still auf die Produktion. Damit gilt die Invariante
 # vor dem Write ohne Ausnahme: KEINE absolute Eigen-URL im Fragment.
-vor_abs = body.count('href="https://machsleicht.de/')
-body = body.replace('href="https://machsleicht.de/', 'href="/')
-assert 'https://machsleicht.de/' not in body, 'absolute Eigen-URL im Koerper'
+# OHNE Schraegstrich pruefen: der Footer der Partyseite verlinkt `https://machsleicht.de` nackt, und ein
+# Waechter mit `https://machsleicht.de/` bescheinigte Freiheit von etwas, das da war (Pruefstand, 10.09.).
+vor_abs = len(re.findall(r'href="https://machsleicht\.de(?=[/"])', body))
+body = re.sub(r'href="https://machsleicht\.de/', 'href="/', body)
+body = re.sub(r'href="https://machsleicht\.de"', 'href="/"', body)
+assert 'https://machsleicht.de' not in body, 'absolute Eigen-URL im Koerper'
 print(f'  Eigen-Links im Telefon wurzelrelativ: {vor_abs}')
 
 # Der Countdown der Partyseite ("Noch 36 Tage!") ist eine Live-Zahl. Eingebacken steht sie in
@@ -298,6 +306,11 @@ vor_cd = body.count('countdown-num')
 body, n_cd = re.subn(r'<div class="countdown[^"]*"[^>]*>(?:(?!</div>).)*?countdown-num(?:(?!</div>).)*?</div>', '', body, flags=re.S)
 assert vor_cd == 1 and n_cd == 1 and 'countdown-num' not in body, (vor_cd, n_cd)
 print('  Countdown entfernt:', n_cd)
+# ... und seine Regeln aus dem Stylesheet, sonst lebt er dort weiter (Pruefstand).
+vor_cdcss = len(re.findall(r'\.countdown[\w-]*[^{}]*\{[^{}]*\}', css))
+css = re.sub(r'\.countdown[\w-]*[^{}]*\{[^{}]*\}', '', css)
+assert 'countdown' not in css, 'Countdown-Regeln leben noch'
+print('  Countdown-Regeln entfernt:', vor_cdcss)
 
 # Letzte Koerper-Aenderung: die Div-Bilanz muss aufgehen. Ein </div> zu viel schliesst auf der
 # Wirtsseite den Container, in dem das Fragment steht — auf der Startseite bliebe der Schwanz
@@ -446,7 +459,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 }}
 
 .gw{{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
-  max-width:1060px;margin:0 auto;padding:32px 20px}}
+  max-width:960px;margin:0 auto;padding:32px 20px}}   /* wie die Nachbarsektionen (960/900), nicht 1060 */
 @media(min-width:920px){{.gw{{grid-template-columns:1fr 360px;gap:64px}}}}
 .gw__h{{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}}
 .gw__steps{{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;counter-reset:gw}}
@@ -533,8 +546,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
      Blende liegen ausserhalb von .gw__page und liefen sonst weiter; im Telefon lief der
      Wunsch-Balken (transition:width .8s) sichtbar nach. Unter reduced-motion steht der
      ENDZUSTAND, keine angehaltene Mitte — dafuer darf nichts mehr blenden. */
-  /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht, und genau dort sass die
-     einzige endlose Animation (.hero::after, gw-shimmer). */
+  /* Pseudo-Elemente eigens: `.gw *` erreicht ::before/::after nicht — .hero::after (gw-shimmer) ist die
+     eine der sieben Endlosanimationen, die an einem Pseudo-Element haengt. */
   .gw,.gw *,.gw::before,.gw::after,.gw *::before,.gw *::after{{transition:none!important;animation:none!important}}
   .gw__tap{{display:none}}
   .gw__dots i{{animation:none}}
@@ -681,6 +694,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   // Zaehler hoch, Knopf gewaehlt, Wunsch vergeben, Balken auf 40 %, und still.
   function endzustand(){{
     chat.classList.add('off'); vp.classList.add('on'); schritt(3);
+    bub1.classList.add('in','said'); bub2.classList.add('in','said');   // sonst zeigt Schritt 1 ein leeres Telefon (Pruefstand)
     zusage(); wunsch(); bilderHolen(2); spielbild(2);   // im Ruhig-Pfad nur das Bild, das man sieht
     page.style.transition = 'none';
     var w = wunschkarte();
@@ -693,7 +707,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     // Zuruecksetzen
     chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
-    tap.hidden = true; schritt(0); bilderHolen(); spielbild(1); wrap.classList.remove('gw--fertig');
+    tap.hidden = true; schritt(0); spielbild(1); wrap.classList.remove('gw--fertig');
     if (startZaehler !== null) el('#guestCounter').innerHTML = startZaehler;
     if (startWunsch  !== null) wunschkarte().innerHTML = startWunsch;
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
@@ -708,7 +722,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     nach(4200,  function(){{ bub2.classList.add('in','said'); }});   // Link-Vorschau
     nach(6600,  function(){{ tippe(wrap.querySelector('.gw__prev')); }});
     nach(7500,  function(){{ chat.classList.add('off'); vp.classList.add('on'); schritt(1); }});
-    nach(9200,  function(){{ scrollTo(pass(), 1800); }});             // Hero steht 1,7 s
+    nach(9200,  function(){{ scrollTo(pass(), 1800); bilderHolen(); }});   // Hero steht 1,7 s; Bilder jetzt, nicht beim Start — wer vorbeiscrollt, laedt sie nicht
     nach(12600, function(){{ scrollTo(el('.game-card'), 1800); }});   // Pass steht 3,4 s
     nach(13600, function(){{ schritt(2); }});
     nach(18400, function(){{ tippe(el('.play-pill')); }});            // Spiel steht 5,8 s
@@ -751,7 +765,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 
 ZIEL = '_dev/marketing/funnel-demos/gaeste-weg.html'
 assert len(re.findall(r'<div\b', BAU)) == BAU.count('</div>'), (len(re.findall(r'<div\b', BAU)), BAU.count('</div>'))
-assert 'https://machsleicht.de/' not in BAU, 'absolute Eigen-URL im Fragment'
+assert 'https://machsleicht.de' not in BAU, 'absolute Eigen-URL im Fragment (auch ohne Schraegstrich)'
+sperre_pruefen()
 io.open(ZIEL, 'w', encoding='utf-8', newline='\n').write(BAU)
 print()
 print('geschrieben:', ZIEL, '·', len(BAU), 'Zeichen')
@@ -781,5 +796,6 @@ for seite in ('index.html', 'kindergeburtstag.html'):
     assert neu.count(M_AUF) == 1 and neu.count(M_ZU) == 1
     assert neu.count('<!-- Gaeste-Weg, ANIMIERT.') == 1, 'Fragment steht nicht genau einmal in der Seite'
     if neu != alt:
+        sperre_pruefen()
         io.open(seite, 'w', encoding='utf-8', newline='').write(neu)
     print(f'  eingebettet: {seite} {len(alt)} -> {len(neu)} Zeichen' + ('' if neu != alt else ' (unveraendert)'))
