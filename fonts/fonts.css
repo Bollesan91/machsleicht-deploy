@@ -51,6 +51,19 @@
  * Wer eine vierte Schrift einfuehrt oder eine dieser drei tauscht, braucht einen neuen Beschluss.
  */
 
+/* NEUER BESCHLUSS 11.09.2026 (Bolle) — die STARTSEITE wechselt von Fraunces auf Baloo 2.
+ * Anlass: „ich find die Animation ziemlich toll und besser als den rest der startseite"; auf die Frage,
+ * ob die Startseite den Ton der Animation uebernehmen soll: „ja soll sie!".
+ * Damit gilt: Startseite (/) = Baloo 2 + DM Sans, wie die Gaesteseite.
+ * Der Grund ist derselbe wie im Sommer bei der Gaesteseite — Fraunces liest sich als sauberes
+ * SaaS-Werkzeug, nicht als Kinderwelt. Die Startseite ist die erste Flaeche, nicht das Werkzeug danach.
+ *
+ * AUSDRUECKLICH NICHT BESCHLOSSEN: die rund 170 uebrigen Seiten (Motto-Seiten, Ratgeber, Checklisten,
+ * Einladungs-Hubs, Schatzsuche, 404). Sie tragen weiter Fraunces ueber `--fd`. Das heisst, der Ton
+ * wechselt beim Klick von der Startseite in die Tiefe — bewusst offen, bis Bolle darueber entscheidet.
+ * Fraunces bleibt deshalb hier deklariert und wird weiter ausgeliefert.
+ */
+
 /* 07.09.2026 — Nachtrag: Lilita One + Nunito (nur der Planer /kindergeburtstag nutzt sie).
  * Sie waren am 06.09. die einzige verbliebene Google-Verbindung der ganzen Seite. Bolle hat
  * das Beschaffen ausdruecklich freigegeben; beide stehen unter der SIL Open Font License 1.1
