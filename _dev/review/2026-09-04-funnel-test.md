@@ -3119,3 +3119,63 @@ den ich selbst nicht pruefen kann: wirken die zwei Toene auf echten Bildschirmen
 Streifen? Dazu Bolles Entscheidung, ob der SEO-Fallback in `index.html` seine Vier-Karten-Prosa behaelt
 (inhaltlich wahr, beschreibt aber eine Sektion, die gerendert nicht mehr existiert). Weiterhin offen:
 Netlify-Token widerrufen, Search Console.
+
+### Der zweite Deploy des Tages — und ein Verfahren, das erst beim zweiten Mal auffaellt
+
+**Der SEO-Teil.** Bolle: „seo kenn ich mich nicht aus, mach das bitte so dass alles technisch und seo
+maessig sauber ist." Gemessen an der gerenderten Startseite stand da: `<h1>` der Seite, `<h2>` der Sektion,
+**`<h1>` „Ida wird 6!"**, `<h3>` „Wir freuen uns auf euch!", dann erst das `<h2>` des Katalogs. Zwei h1 auf
+einer Seite, die Gliederung springt H2 → H1 → H3, und das zweite h1 traegt den Demo-Inhalt einer fremden
+Party. Das ist nicht nur SEO, es ist semantisch falsch: **das Telefon zeigt das Abbild eines anderen
+Dokuments** — dessen Ueberschriften sind so wenig Ueberschriften dieser Seite wie die Ueberschrift in einem
+Screenshot. Der Generator macht daraus jetzt `<div class="gw-tN">` und schreibt die Selektoren mit um
+(`.hero h1` → `.hero .gw-t1`).
+
+Zwei Dinge waeren dabei fast kaputtgegangen, beide nur durch Messen gefunden: (a) als `<div>` verlieren die
+Elemente die Browser-Standardwerte — „Wir freuen uns auf euch!" stand auf `font-weight: 400` statt fett;
+(b) mein erster Nachbau dieser Werte war eine **Klassenregel (0,1,0)** und schlug damit das `*{margin:0}`
+der Partyseite: die Seite im Telefon wurde 24 px laenger (Hero 744 → 768, `margin-top` am Titel 0 →
+28,14 px). Mit `:where()` (Spezifitaet 0) gewinnt wieder jede Regel der echten Seite. Der Nachweis gegen
+den damals live stehenden Stand, beide 1280 px, Messpunkte relativ zum `.gw__page`-Ursprung: Seite 4321,
+Hero 744, Titel y 577 / Hoehe 67 / `margin-top` 0px, Wunschkarte y 2909, Standbilder y 1430 —
+**alle fuenf Differenzen 0.** Der Ueberschriften-Reset von gestern entfaellt ersatzlos: ohne Ueberschriften
+im Telefon kann die `h1,h2,h3,h4`-Regel des Planers sie nicht mehr treffen.
+
+**Der Verfahrensfehler.** Beim Deploy brach das Skript ab: `merge-tree --write-tree origin/main draft`
+meldete **acht Konflikte**, darunter `add/add` fuer Dateien, die in der gemeinsamen Basis (ea5c7448, uralt)
+noch nicht existierten. Ursache ist der Deploy selbst: `commit-tree <draft-tree> -p origin/main` setzt zwar
+den richtigen Baum, aber mit main als **einzigem** Elternteil — danach ist draft kein Vorfahre von main und
+main keiner von draft. Nach dem ersten Plumbing-Deploy divergieren die Branches, und beim zweiten hat
+`merge-tree` keine brauchbare Basis mehr. Gemessen: 59 Commits in main, die nicht in draft sind, 18 umgekehrt.
+
+**Die Baum-Gleichheit war nie in Gefahr — nur die Kontrolle war es.** Und sie stellte die falsche Frage:
+`merge-tree` beantwortet „lassen sich zwei Zweige sauber vereinen?", gebraucht wird aber „kann dieser Deploy
+etwas verlieren?". Die neue Kontrolle beantwortet genau das: **der Baum von `origin/main` muss in drafts
+Historie vorkommen.** Er tat es — 27504589a65b ist der Baum von c83a9621, 2.113 Commits durchsucht. Der
+Live-Stand war ein Zustand, den draft hatte; ein Deploy von draft kann nichts verlieren. Zusaetzlich bekommt
+der Commit jetzt **beide** Eltern, damit die Branches wieder zusammenlaufen. Nachgemessen nach dem Deploy:
+`main` 574ad9b6 mit den Eltern bd718f12 und 83c7d25b, Baeume identisch,
+draft ist Vorfahre von main: JA.
+
+**Live nach dem Deploy** (echter 360-px-Viewport): `h1`-Zahl **1**, Telefon 320 px = Innenraum (Ueberstand 0,
+vorher 6 px bei 360 und 46 px bei 320), **Querscroll 0** (vorher 24–27 px), Link-Vorschau **227x119,
+Verhaeltnis 1.91** (vorher 250x400), Animationsband `#F9F4F7` ueber die volle Fensterbreite, Fussblock
+`#F5F7F1` ueber drei Sektionen, vier Karten weg, `?v=3` 0, alte Party 0. Positivkontrollen im selben Lauf:
+`machsleicht` 21 im HTML, `React.createElement` 115 im Bundle. **Eine meiner Kontrollen zeigte auf die
+falsche Datei** — die Bandfarben suchte ich im HTML, sie stehen im Bundle; sie meldete faelschlich 0.
+
+**Zum SEO-Fallback, den ich als offen gemeldet hatte:** der Pruefstand hat die vier verbliebenen
+„So sieht"-Stellen mit einem Tag-Tiefenzaehler verortet — alle vier liegen **innerhalb `#root`** (Zeichen
+10.923–33.500), das React beim Rendern leert. Wer JavaScript hat, Google eingeschlossen, sieht sie nie.
+Kein Blocker; der Fallback beschreibt aber weiter vier Karten, die es nicht mehr gibt — naechster Schnitt,
+kein Hotfix.
+
+Lint Lauf 11: **0 FAIL, 8 Warnungen.** `main` = **574ad9b6**, `draft` = **83c7d25b**.
+
+**Was Bolle als Naechstes angestossen hat:** die Gestaltung der Startseite. „Ich find die Animation ziemlich
+toll und besser als den Rest der Startseite" — und zum Trust-Block (Zitat, drei Icon-Kacheln, Trust-Zeile):
+„sieht auch einfach kacke aus". Der Pruefstand hat zwei Saetze dazu beigesteuert, die vorab festgehalten
+gehoeren: **der Winkel „braucht es das?" kommt zuerst** (nicht „wie machen wir den Block besser", sondern
+„was soll er leisten, und tut das nicht schon etwas anderes"), und **bei Gestaltung ist Bolles Auge das
+Gate, nicht der Pruefstand** — Kontraste und Breiten sind messbar, „sieht gut aus" nicht. Genau wie heute
+bei den zwei Handy-Defekten, die vier Pruefinstanzen ueberlebt hatten und die er in einer Minute sah.
