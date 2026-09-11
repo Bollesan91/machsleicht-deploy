@@ -474,11 +474,11 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   a,button,input,textarea,select{{pointer-events:none!important}}
 }}
 
-.gw{{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
+.gw{{--gw-a:#B5468C;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center;
   max-width:960px;margin:0 auto;padding:32px 20px}}   /* wie die Nachbarsektionen (960/900), nicht 1060 */
-@media(min-width:920px){{.gw{{grid-template-columns:1fr 360px;gap:64px}}}}
+@media(min-width:920px){{.gw{{grid-template-columns:minmax(0,1fr) 360px;gap:64px}}}}
 /* Ohne @scope (Safari/iOS < 17.4, Firefox < 128): kein Telefon, keine leere Spalte, keine toten Knoepfe. */
-.gw--ohne-scope{{grid-template-columns:1fr!important}}
+.gw--ohne-scope{{grid-template-columns:minmax(0,1fr)!important}}
 .gw--ohne-scope .gw__stage,.gw--ohne-scope .gw__note{{display:none}}
 .gw--ohne-scope .gw__steps button{{cursor:default;pointer-events:none;opacity:1}}
 .gw__h{{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}}
@@ -498,7 +498,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw__cta{{display:inline-block;margin-top:10px;font-weight:700;font-size:15.5px;color:var(--gw-a);
   text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}}
 
-.gw__stage{{justify-self:center}}
+.gw__stage{{justify-self:center;min-width:0;max-width:100%}}   /* min-width:0, sonst haelt das Grid die Spalte auf den 326 px des Telefons */
 /* box-sizing EXPLIZIT, und die Seite folgt dem Bildschirm: die Wirte setzen *{{box-sizing:border-box}},
    die Vorschau setzte es nicht — dort war der Bildschirm 326 px, live 304, die Seite darin 326 →
    6 px jeder Karte abgeschnitten, Hero schief. Gefunden vom externen Gutachten (M1), gemessen. */
@@ -546,7 +546,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw__hk{{color:#53bdeb;letter-spacing:-1px}}
 /* Link-Vorschau, wie sie ein Messenger baut — Bild und Text aus den echten og:-Angaben */
 .gw__prev{{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}}
-.gw__prev img{{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}}
+.gw__prev img{{display:block;width:100%;height:auto;aspect-ratio:1.91/1;object-fit:cover}}   /* height:auto schlaegt das height-Attribut; ohne das ignoriert der Browser aspect-ratio */
 .gw__prev-txt{{display:block;padding:7px 9px 8px}}
 .gw__prev-txt b{{display:block;font-size:13px;line-height:1.25;margin-bottom:2px}}
 .gw__prev-txt i{{display:block;font-style:normal;font-size:11.5px;color:#667781;line-height:1.3;
