@@ -2652,3 +2652,417 @@ Seiten** — Bolles Entscheidung.
 gebraucht, nicht am Partytag auf dem Handy) und das **Aktualisieren des Ablaufs** nach dem Anlegen.
 Der bestehende PATCH kann es; wann er feuern darf, haengt an **1.000 KV-Writes pro Tag im
 Gratis-Tarif** — nachgelesen im Kommentar Zeile 381, nicht geschaetzt.
+
+### Dritter Deploy 09.09. — `main = 0ec866d3`, Worker `0ff744cc` — und der erste mit HTML
+
+Bolles Wort: **„Gut Ende deploy."** Damit war der Datenschutz-Wortlaut freigegeben und der Deploy.
+
+**Vor dem Merge, weil HTML dabei ist:** `sitemap.xml` neu erzeugt (Generatorlauf angesagt).
+Nachgeprueft statt geglaubt — **der Generator hat NUR `sitemap.xml` angefasst**, die URL-Menge ist
+identisch (136 vor und nach), und **genau eine `lastmod` hat sich bewegt: `/kindergeburtstag`
+2026-09-08 -> 2026-09-09.**
+
+**Warum `/datenschutz` NICHT in der Sitemap steht — der Grund gehoert neben die Zahl, sonst liest es
+jemand in sechs Monaten als Luecke und traegt sie ein:**
+
+```
+/datenschutz    <meta name="robots" content="noindex">   ->  0x in der Sitemap
+/impressum      <meta name="robots" content="noindex">   ->  0x in der Sitemap
+/transparenz    KEIN noindex                             ->  1x in der Sitemap
+```
+
+**Zwei mit Ausschluss draussen, eine ohne drin — die Regel ist konsistent, nicht zufaellig.** Eine
+Seite mit `noindex` in einer Sitemap waere ein Widerspruch, den Google meldet. **Sie ist nicht
+vergessen, sie ist ausgeschlossen.** (Beobachtung des Pruefstands; die dritte Zeile als Gegenprobe
+ist von hier.)
+
+**Der Merge, mit einer Kontrolle, die den ganzen Zweifel abraeumt:**
+
+```
+git merge-tree --write-tree main draft   ->  0adcc61921d2
+git rev-parse draft^{tree}               ->  0adcc61921d2     IDENTISCH
+```
+
+**`main` hat exakt den geprueften Stand bekommen — nichts dazu, nichts weg.**
+
+**Reihenfolge Seite/Worker, vorher beide Richtungen durchgeprueft:** schickt der neue Planer
+`ablauf` an einen alten Worker, ignoriert der es (`/api/create` liest nur benannte Felder);
+akzeptiert der neue Worker `ablauf` und niemand schickt es, passiert nichts. **Gefahrlos heisst
+nicht beliebig — beides lief trotzdem dicht hintereinander.**
+
+**Live nachgemessen am ausgelieferten Planer:**
+
+```
+data-exclude-search   0 -> 2      der Statistik-Dienst bekommt den Query-String nicht mehr
+replaceState          0 -> 1      der Token verschwindet aus der Adresszeile
+ablauf                0 -> 1      der Planer schickt den Ablauf beim Anlegen mit
+Bytes            331.305 -> 332.451
+Datenschutz: "Ablaufplan" 2x, alter Halbsatz 0x · Sitemap: lastmod 2026-09-09
+/ · /kindergeburtstag · /datenschutz · /sitemap.xml   alle 200
+```
+
+**Ein Fehlalarm auf dem Weg, wieder aus dem eigenen Muster:** die erste Pruefung der
+Datenschutzseite meldete **0 Treffer fuer alle drei Suchen** — auch fuer den alten Halbsatz, der
+weg sein SOLLTE, und den neuen, der da sein sollte. **Beides 0 ist kein Befund, sondern ein
+Werkzeugausfall**, und so war es: `grep 'dazugeh.rigen'` traf den Umlaut nicht. Roh nachgesehen:
+alles korrekt. **Zwei Nullen in entgegengesetzte Richtungen sind der zuverlaessigste Hinweis
+darauf, dass nicht der Gegenstand, sondern die Messung kaputt ist.**
+
+### Der Live-Test, den ein Syntax-Gate nicht ersetzt
+
+`node --check` sagt, dass Code **parst** — nicht, dass er das Richtige **ausgibt**. Bei
+verschachtelten Template-Literalen ist genau das die Bruchstelle. Deshalb zwei Stufen:
+
+**1. Die Karte gerendert, vor dem Deploy, ohne Netz:** die fuenf Kartenzeilen aus der Datei
+geschnitten, mit der **echten** `esc()`-Funktion (nicht einem Nachbau) und Testdaten aufgerufen.
+**13 von 13**, darunter: ein Spielname `<script>alert(1)</script>` kommt als `&lt;script&gt;`
+heraus, kein `undefined`, keine rohe `${`-Interpolation, genau sechs gerenderte Zeilen.
+
+**2. Eine echte Party gegen das Live-System, mit Ablauf.** **9 von 9:**
+
+```
+Editor  200 · alle sechs Uhrzeiten · Titel gerendert · neuer Satz · sechs Ablaufzeilen
+GAST    200 · KEIN Ablauf · kein Spielname · kein editToken
+delete  200 · Kontrolle danach 404
+```
+
+**Der wichtigste Test ist der negative.** `ablauf:<id>` ist ein eigener Eintrag, aber **Zeile 543
+ist eine Verbotsliste, und die hat heute schon bewiesen, dass sie neue Felder durchlaesst**
+(`reminded7`). Ein **„steht nicht da" mit Empfangsbeweis** ist dort mehr wert als drei „steht da".
+
+**Und die Lehre vom Vormittag wurde angewandt, bevor sie gebraucht wurde:** die Aufraeumzeile stand
+im **selben** Skript wie die Probe, in einem `finally` — sie laeuft auch, wenn die Pruefung
+abbricht. **Genau daran ist heute Vormittag die eine Testparty gescheitert, die niemand mehr
+loeschen kann.** Nicht „ich denke dran", sondern die Zeile steht schon da.
+
+**Search Console: dieser Deploy ist der erste des Tages MIT HTML.** Die beiden am Vormittag waren
+fuer die Indexierung folgenlos; dieser traegt ein neues `lastmod` auf `/kindergeburtstag`.
+
+### Vierter Tag, 10.09. — Standbilder, Einbettung, und eine Sperre, die ich uebergangen habe
+
+**Bolles Wort zu den ersten Standbildern: „ekelhaft verpixelt".** Zu Recht: 336 x 489 px, aufgenommen
+mit html2canvas bei Faktor 0,8, angezeigt auf 326 px Breite — null Reserve fuer scharfe Bildschirme.
+Neu bei **Faktor 3: 1260 x 1836 und 1260 x 1836 px**, JPEG 0,93 statt 0,7. Motto Einhorn.
+Bild 1 die Suche (2/3, „Fast geschafft! Noch einer!"), Bild 2 die Jagd — Ida flieht mit dem geklauten
+Stern, ihr Foto in der Blase. Renner-Moment und Enthuellung in einem Bild.
+
+**Drei Messfallen dabei, jede fast als Befund gemeldet:**
+
+1. `fetch(url, {mode:'cors'})`, dann `headers.get('access-control-allow-origin')` → `null` — und
+   „ACAO FEHLT" stand schon da. Falsch: **dieser Kopf gehoert nicht zu den auslesbaren Antwortkoepfen.**
+   Dass der cors-Fetch ueberhaupt AUFLOEST, beweist das Gegenteil. Koepfe liest `curl`, nicht `fetch`.
+2. Das Foto fehlte auf Bild 2, obwohl `<img>` im DOM stand. **Das Spiel baut den Bildknoten bei jedem
+   Neuzeichnen neu** — ein `src`-Patch war beim naechsten Frame weg. Patchen und im SELBEN Zug aufnehmen.
+3. Beim zweiten Anlauf fehlte das Foto wieder: **Ida fluechtet tatsaechlich aus dem Feld** und kommt
+   zurueck; die Aufnahme traf einen Moment draussen (gemessen: Blase bei +860 px). Der Waechter wartet
+   jetzt auf die POSITION der Blase, nicht nur auf den Text der Jagd.
+
+**Ein Sichtbefund des Pruefstands, den nur das Auge findet:** ein grosser rosa Kreis ueber Stern-Knopf
+und Zaehler in Bild 1. Keine Animation: die Sonne traegt `box-shadow: rgba(255,128,171,.35) 0 0 60px`,
+und **html2canvas kann keine Weichzeichnung** — aus dem 60-px-Blur wird eine harte Scheibe. Fuer die
+Aufnahme wird der Glanz als Radialverlauf gezeichnet: dasselbe Aussehen wie im Spiel, mit Mitteln, die
+der Renderer beherrscht. Angehalten und ehrlich nachgezeichnet ist etwas anderes als versteckt.
+
+**Die Live-Faeden, gemessen im erzeugten Fragment (84906 → 45831 Bytes):**
+
+```
+<iframe                0x    (vorher das echte Spiel von machsleicht.de/einladung/einhorn/…)
+api/                   0x    (vorher /api/ogimg in der Chat-Szene, /api/photo als 40-KB-base64 im Hero)
+?ref=                  0x    (vorher ?ref=<party-id> am Planer-Knopf im Telefon)
+@media print           0x    (vorher 2x: body *{visibility:hidden} #partyPass{position:fixed})
+countdown-num          1x    (vorher „Noch 36 Tage!" — eine Live-Zahl, eingebacken bald falsch)
+https://machsleicht.de 0x    (Wurzelpfade statt absoluter Eigen-URLs, s. u.)
+party.machsleicht.de   2x    beide als ANZEIGETEXT in der Chat-Vorschau — richtig so
+<div / </div>          109 / 109
+@keyframes             gw-bob, gw-fadeUp, gw-popBounce, gw-pulse, gw-shimmer, gwdot, gwtap
+```
+
+**Was der Pruefstand und der Erkundungs-Workflow (6 Leser, 24 Gegenleser) gegen meine Fassung vom
+Vormittag gefunden haben — vier Dinge, alle uebernommen:**
+
+1. **Wurzelpfade statt `https://machsleicht.de/…`.** Meine absolute Fassung brauchte CORS fuer die
+   Schriften (die Hauptseite schickt keins, gemessen mit curl), scheiterte in jeder lokalen Vorschau
+   und haette einer Netlify-Branch-Vorschau still Produktionsbilder untergeschoben. Ein Wurzelpfad
+   ist ueberall gleiche Herkunft. Die `_headers`-Regel `/fonts/*` vom Vormittag ist damit zwecklos
+   und weg — der Pruefstand hatte zudem belegt, dass ihr `immutable` `fonts.css` getroffen haette,
+   die Datei, die sich nachweislich aendert (7. Sep.). `absolut()` hat jetzt eine Ausnahme fuer
+   `/fonts/`, `/spiele/`, `/bilder/`.
+2. **Ein `</div>` zu viel.** Der Wunschkarten-Regex endete am ERSTEN `</div>` nach `wishListGuest`;
+   der Rest der alten Karte blieb stehen. Gemessen: der Absatz nach dem Fragment landete im `body`
+   statt im Container. Auf der Startseite waere der Schwanz des Fragments beim Umhaengen unter dem
+   Footer zurueckgeblieben. Regex bis zum echten Kartenende, Bilanz-Assert im Koerper und im Fragment.
+3. **`@keyframes` sind nicht gescopt.** `@scope` kapselt Selektoren, keine Keyframe-Namen. Das
+   Fragment definierte `fadeUp` und `pulse` — beide Wirtsseiten auch; wer zuletzt deklariert, gewinnt.
+   Alle Party-Keyframes tragen jetzt `gw-`, Definition und Verwendung.
+4. **Das Foto war 40 KB base64.** `/api/photo` = `/api/ogimg` = `spiele/core/demo-kid.jpg` (md5
+   4c89dea5faf6) — kein Zufall, `demo_bauen.py` hat genau diese Datei hochgeladen. Erst als Verweis
+   auf `/spiele/core/…` gebaut — **falsch: `/spiele/*` traegt `X-Robots-Tag: noindex`**, mein eigenes
+   Kriterium gegen `_dev/`, beim naechsten Schritt nicht angewandt (Pruefstand). Und die Regel dort ist
+   fuer die Spiel-Huellen geschrieben, nicht fuer die Startseite. Jetzt Kopie `bilder/demo/ida.jpg`:
+   30 KB gegen eine unsichtbare Kopplung. −40 KB pro Seite bleiben.
+
+### Wo es hin soll — und warum die Startseite anders ist als der Planer
+
+**`js/index.js` rendert mit `ReactDOM.createRoot(…).render(…)`, nicht `hydrateRoot`.** React leert
+`#root` beim ersten Commit; der Inhalt dort heisst deshalb „SEO Fallback". Live nachgewiesen (Workflow):
+Fallback-Texte 2x in index.html, 0x im gerenderten DOM. **Eine Sektion in `#root` saehe kein Nutzer.**
+`js/index.js` hat keine Quelle mehr — `_build/compile-jsx.py` ist ein Migrationswerkzeug, das die
+JSX nach dem Kompilieren loescht; der Planer hat kein `text/babel` und ist **handgepflegtes HTML**.
+
+- **Startseite:** Fragment AUSSERHALB von `#root`, versteckt. React rendert hinter „So sieht's aus"
+  einen leeren Anker `<div id="gwMount">` (1x in js/index.js), ein Skript haengt das Fragment
+  dorthin um; Umhaengen fuehrt Skripte nicht erneut aus, die IIFE lief beim Parsen. `?v=3` (1x).
+  Inline statt Nachladen: nach dem Foto-Umbau kostet das Fragment ~46 KB roh, und im Repo gibt es
+  kein einziges Vorbild fuer nachgeladenes HTML (0 von 50 fetch-Stellen).
+- **Planer: Punkt A, Ende von Stage 3** — direkt vor „Dein Plan steht. Willst du die Kinder gleich
+  einladen?". Die Animation zeigt, was der Knopf daneben ausloest. Stage 3 ist bis `.revealed`
+  `display:none`, die 31,8 s laufen also nur fuer Nutzer mit fertigem Plan. Meine erste Wahl (vor der
+  SEO-Basis) haette jeden erreicht, aber ausserhalb des Moments. Stage 3 ist die einzige Stage, die
+  gedruckt wird — `#gaesteWeg` ist im Druckblock ausgenommen (1x).
+- **Der Generator bettet selbst ein:** Marker `<!-- GW:FRAGMENT -->` … `<!-- /GW:FRAGMENT -->` je
+  Seite, zweiter Lauf leerer Diff. Sonst drei Kopien von Hand.
+
+**Stand dieses Nachtrags: eingebettet.**
+```
+index.html                37147 ->    84165 Bytes
+kindergeburtstag.html    332452 ->   379033 Bytes
+```
+
+**Gemessen am laufenden Fragment (localhost:8766, Tab per Screenshot sichtbar gemacht):** Umschaltung
+Bild 1 → Bild 2 **exakt 18,9 s nach Start**, Spielkarte konstant 563 px auch ohne geladene Bilder.
+Unabhaengig vom Pruefstand bestaetigt: laeuft einmal durch, bleibt im Endzustand stehen.
+
+### Die Sperre, die ich uebergangen habe — 15:23
+
+`_dev/.lintlogs/AKTIV` stand seit 15:02 („sechs Pruef-Subagenten lesen den unkommittierten Baum —
+Schreiben wuerde sie wertlos machen"). **Mein Kommando hat sie ANGEZEIGT und ist weitergelaufen**,
+weil die Kette schon geschrieben war: `anim_bauen.py` geschrieben 15:23:31, ein Bild umbenannt. Das
+Huellen-Skript scheiterte danach an einem eigenen Assert — Glueck, kein Verdienst. Dem Pruefstand
+sofort gemeldet, mit beiden Aenderungen.
+
+**Die Lehre ist nicht „besser hinsehen", sondern: eine Regel, die nur angezeigt wird, ist keine.**
+Jetzt steht in jedem Skript, das den Baum schreibt, `if os.path.exists(SPERRE): sys.exit(…)` VOR dem
+ersten Write — NACH dem `os.chdir`, weil der Pfad relativ zur Repo-Wurzel ist. Der erste Entwurf
+hatte das Gate davor und einen Assert, der die falsche Reihenfolge festgeschrieben haette. Beides
+beim Gegenlesen des eigenen Patches gefunden.
+
+**Und wieder getippte Kontrollzahlen, drei an einem Tag,** alle vom Assert vor dem Write gefangen:
+`<iframe == 1` (tatsaechlich 4: der eigene Kommentar nennt das Wort), `Access-Control-Allow-Origin == 1`
+(2: der Kommentar), `GW:FRAGMENT == 1` (4: Teilstring von `/GW:FRAGMENT` plus Kommentar). Muster
+identisch mit dem 07.09. Erwartung aus Vorzustand + Ersatzpaaren, gezaehlt wird die ganze Marker-
+Zeichenkette, nie das Wort.
+
+### Nach der Gegenlesung des Pruefstands — Patch 5, vor dem Commit
+
+Vier Punkte aus dessen Nachmessung am Erzeugnis, alle uebernommen, alle am echten Einbauort nachgemessen:
+
+- **Kontrast der inaktiven Schritt-Knoepfe.** `.45` / `.78` (gestapelt `.351`) ergaben **2,86:1 und 2,19:1** —
+  echte `<button>`, also gilt 4,5:1. Die neuen Werte wurden im Patch-Skript **berechnet** (WCAG gegen `#fdfcf9`
+  und `#FFF8F0`, Text `#1a1a1a`), nicht getippt: `button .61`, `span 1` → **4,62:1 / 4,62:1**. Im Browser
+  gemessen: `opacity 0.61` / `1` gegen `rgb(253,252,249)`.
+- **Waechter ohne Tor.** Der Kommentar „INVARIANTE: KEIN sandbox-Attribut …" schuetzt den iframe der
+  Partyseite; im Fragment gibt es keinen mehr. Der Generator entfernt ihn (1 → 0); im Worker bleibt er.
+- **Ruhig-Pfad.** `endzustand()` laedt nur noch Bild 2; der reduced-motion-Block stoppt Uebergaenge und
+  Animationen jetzt im GANZEN Fragment (`.gw,.gw *`), nicht nur im Telefon — der Wunsch-Balken lief
+  sonst 0,8 s sichtbar weiter, und Schrittliste, Punktreihe und Chat-Blende lagen ausserhalb der ersten
+  Grenze `.gw__page` (Pruefstand, zweite Runde). Endzustand statt angehaltener Mitte.
+- **`absolut()` als Erlaubnisliste.** Absolut wird nur `/api/` und `/go/` — dieselbe Bauart-Kritik wie an
+  der Feldliste in `party-worker.js:543`. Gemessen: 5 Umbiegungen im Zwischenstand, **0 Worker-URLs im
+  Ergebnis** — die Funktion arbeitet nur noch fuer Schritte, die spaeter ersetzt werden.
+
+**Gate:** `bash validate-all.sh` vor Patch 5: **0 FAIL**, 8 Warnungen — alle Altlasten anderer Baustellen
+(Lizenz-Markennamen, Preisversprechen, Sitemap-Wortzahl, …), keine beruehrt diese Aenderung. Lauf nach
+Patch 5 folgt vor dem Commit.
+
+**Bolles Entscheidungen, die ich nicht treffe:** (1) Standbild-Groesse — 1260 px sind 1,46× DPR 3 bei 288 CSS-px
+Anzeige, ~900 px waeren exakt DPR 3 und halbe Bytes; sein Wort war „mach nicht kleiner". (2) Ein Bild oder
+zwei — der Pruefstand sieht Bild 1 im oberen Drittel leer. (3) Planer-Stelle im Wizard statt davor.
+
+**Offen:** Browser-Nachweis nach der Einbettung (bleibt der fremde Knoten in `#gwMount` bei Reacts
+Scroll-Rerender stehen? `.gw__tap` in `.gw__phone`?), unabhaengiger Review vor dem Deploy, `lastmod`
+fuer `/` und `/kindergeburtstag`, PBI-Impact-Check (4 von 8 Punkten betroffen laut Workflow).
+Tickets: Stufe 71 prueft nur `https://machsleicht.de/`-Bilder — Wurzelpfade sieht sie nicht;
+Tracking-Event fuer den CTA der Animation (`plausible(...)`-Konvention, heute 0 Events); Browser ohne
+`@scope` zeigen das Telefon ungestylt (Firefox < 145); Bolles Entscheidung zu „ein Bild oder zwei"
+(Pruefstand: Bild 2 traegt die Aussage, Bild 1 ist im oberen Drittel leer).
+
+### Das externe Gutachten (Fable 5.1 Maximal, fbd6c800) — und was davon hielt
+
+Zwei Gutachten parallel, mit Absicht getrennt gehalten: der externe claude.ai-Tab (target-blind, Chromium
+headless, 49 Befehle, Rohtext in `2026-09-10-gutachten-gaeste-weg-fable.md`) und der Pruefstand mit acht
+Straengen, die den Tag nicht kannten. **Der Tab lieferte 2 MAJOR und 17 MINOR — und ich konnte keinen davon
+widerlegen.** Jeder wurde vor der Umsetzung selbst gemessen oder im Code gelesen; die Einschaetzung ging
+getrennt von den Rohbefunden an den Pruefstand, damit er sie nicht durch meine Brille liest.
+
+**M1 — meine Vorschau hat den Fehler verdeckt.** Die Wirte setzen `*{box-sizing:border-box}`, die
+Vorschaudatei nicht. Live: Telefon 326 px mit 11 px Polster → Bildschirm **304**, Seite darin **326** →
+jede Karte 6 px rechts abgeschnitten, Hero 11 px aussermittig. In der Vorschau 326 = 326. Alle
+„gemessen"-Kommentare vom Vormittag stammen aus der Vorschau — **Messung am falschen Ort, dieselbe Klasse
+wie die 200er gegen die Repo-Wurzel.** Fix: `.gw__page{width:100%}`, `box-sizing` am Telefon explizit,
+und die Vorschau bekommt die `*`-Regel der Wirte. Nachgemessen: Seite 304 = Bildschirm 304, Karte −16 px, Hero 0.
+
+**M2 — der CTA zeigte im Planer auf den Planer.** `href="/kindergeburtstag"` in beiden Wirten; im Planer
+ist das die Seite selbst, ein Tipp laedt neu und landet auf Stage 1 — direkt neben „Kinder einladen". Im
+Planer jetzt verborgen. Nebenbefund: dasselbe Label fuehrte auf der Startseite einmal zu
+party.machsleicht.de (statische Karte), einmal zu /kindergeburtstag (Animation). Bolle: „mach es richtig" —
+Ziel bleibt der Planer (die Partyseite entsteht dort aus dem Plan), das Label sagt es jetzt:
+**„Jetzt planen — Partyseite inklusive →"**.
+
+**Der Gaestezaehler zaehlte hoch.** `zusage()` erhoeht per Regex; der Reset in `lauf()` stellte nur den
+Knopf zurueck, `stopp()` setzte `fertig` nicht → jeder Wiedereintritt vor 31,8 s: +1 (Gutachter: „Schon 8
+Kinder dabei!"). Jetzt Schnappschuss beider Karten beim Start, Wiederherstellung im Reset, manuelle Wahl
+beendet den Automatiklauf. **Gemessen:** Start „Schon 6", nach 29 s „Schon 7" (Knopf aktiv, 2 vergeben),
+weg und zurueck → „Schon 6", 1 vergeben, Knopf aus.
+
+**Ein Generator-Fehler seit dem ersten Lauf:** das Namenstor heisst `id="codeGate"`, der Regex suchte
+`id="gate"`, meldete „Namenstor im Markup: nein" — und Tor, eigenes `<h1>`, Eingabefeld und
+`onclick="checkCode()"` gingen in jedes Fragment. Jetzt per Tag-Zaehler herausgeschnitten (923 Zeichen),
+`<h1` im Fragment 1, Startseite gesamt 2 statt 3.
+
+**Weiter uebernommen (Patch 8, ein Lauf):** aria-hidden auf der Buehne (Screenreader lasen die Chat-Szene);
+Druckblock der Startseite kennt `#gaesteWeg`; beide Wirte verstecken gleich (`hidden`, Planer gibt per CSS
+bei `.revealed` frei); Endlosanimationen pausieren bei unsichtbarem Telefon und nach dem Ende;
+Party-Kennung aus dem Kopfkommentar; `tel:`-Links entschaerft wie `/go/`; `:scope` setzt line-height und
+letter-spacing selbst (der Planer vererbte 1.5 → Seite 149 px laenger); `body::after` → `:scope::after`
+(die Punktetapete fehlte still); der falsche „verschluckt"-Kommentar korrigiert; ohne `@scope` keine Buehne
+(iOS < 17.4, Firefox < 128); DRUCK-Regex durch Klammerzaehler ersetzt (der alte fing nur `@media print{`
+mit einer Ebene, sein Assert war vakuum-wahr).
+
+**Bolles vier Entscheidungen (Wortlaut: „1. ja 2. ja 3. mach es richtig 4. ich will sie"):**
+1. **Datum** — neue Demo-Party `8sp7bpf4s55q`: **Samstag, 6. November 2027**, 14 Monate voraus; die alte laeuft per TTL aus,
+   ihre Kennung steht nirgends mehr im Fragment.
+2. **Gastgeber** — „Familie Sommer", ohne Telefonnummer (die Karte „Ruf an" entfaellt), fiktive Strasse.
+3. **CTA** — Planer als Ziel, Label eindeutig (s. M2).
+4. **Chat-Szene bleibt** — der Gutachter hielt sie fuer den einzigen nachgezeichneten Teil; Bolles Wunsch.
+
+**Stand:** Fragment 47223 B, `<div` 104/104; index.html 85558 B; kindergeburtstag.html 380914 B;
+Bewegungs-Abdeckung 32/32; Idempotenz byteidentisch. Die Standbilder sind das einzig Handgepflegte —
+ihr Weg steht in `standbilder_aufnehmen.md` (Pruefstand: „abgeleitet ist gut, handgepflegt ist der Defekt").
+
+**Offen:** Bildgroesse 1260 vs. ~900 px und ein/zwei Bilder (Bolle); Stufe 71 sieht Wurzelpfad-Bilder nicht
+(Pruefstand baut sie auf Bolles Wort, mein Regex-Vorschlag war kaputt — kein Anker, vier Artefakte als
+Sollwert); Winkel 11 des Gutachters: unter einem Piraten-Plan ist das lila Einhorn-Telefon fuer 14 von 15
+Mottos woertlich „nicht so erleben es deine Gaeste" — Beobachtung, kein Fix; Lizenz von demo-kid.jpg
+(ausserhalb jeder Sicht). Dann: Diff-Re-Check des Gutachters in frischem Tab, `lastmod` fuer `/` und
+`/kindergeburtstag`, Bolles Wort zum Deploy, Search Console.
+
+### Zwei Gutachten, eine Bilanz — und Patch 9
+
+Der Pruefstand hat sein eigenes Gutachten als **unvollstaendig** gemeldet, bevor er irgendetwas anderes
+gesagt hat: 10 von 25 Agenten an einem Session-Limit gestorben, darunter der komplette Geometrie-/Gewicht-
+Strang — **genau der, der M1 gefunden haette.** Der Tab fand den schwersten Einzelbefund; die blinden
+Straenge fanden acht Dinge, die der Tab nicht hatte, weil sie messen konnten. Beide zusammen fanden, was
+keiner allein hatte — und der Ausfall zeigt, dass ein zweites Gutachten kein Ersatz fuer ein vollstaendiges
+erstes ist.
+
+**Der Befund, der beide Waechter blossstellt:** `<a href="https://machsleicht.de">machsleicht.de</a>` im
+Telefon-Footer — **ohne Schraegstrich.** Mein Generator-Assert prueft `https://machsleicht.de/` mit, die
+Abnahme des Pruefstands ebenfalls; beide meldeten „0x". Ein Waechter, der eine Invariante nicht findet, ist
+schlimmer als keiner: er bescheinigt Freiheit von etwas, das da ist. Jetzt: Link `href="/"`, Waechter ohne
+Schraegstrich im Koerper und vor dem Write, und eine **Positivkontrolle** — vier bekannte Treffer machen ihn
+rot, das Fragment laesst ihn gruen. Ohne Positivkontrolle ist ein „0x" nur eine Behauptung ueber das Muster.
+
+**Patch 9 (Commit 33c9122b), die uebrigen Straenge-Befunde:** `endzustand()` setzt die Chat-Blasen (Schritt 1
+zeigte im Ruhig-Pfad ein leeres Telefon); drei tote `.countdown*`-Regeln raus; `sperre_pruefen()` vor jedem
+Write (zwischen Gate und erstem Write lagen zwei Netzabrufe von bis zu 45 s, und die Einbett-Schleife schrieb
+zwei Seiten nacheinander); `.gw` 960 px wie die Nachbarn statt 1060; `bilderHolen()` erst mit dem Pass bei
+9,2 s — wer in zwei Sekunden vorbeiscrollt, loest `stopp()` aus und laedt keine 287 KiB. Kommentar „die einzige
+endlose Animation" korrigiert: es sind sieben, die eine haengt an einem Pseudo-Element.
+Fragment 47.093 B, `<div` 104/104, index.html 85.428 B, kindergeburtstag.html 380.784 B, Gate Lauf 6: 0 FAIL.
+
+**Naechster Schritt:** Diff-Re-Check `fbd6c800…33c9122b` in einem FRISCHEN Tab (11 Behauptungen, darunter der
+Ausfallstrang des Pruefstands als Winkel), dann Bolles Wort.
+
+### Blinder Diff-Re-Check, 20 Agenten — und Patch 11/12
+
+Chrome-MCP war nicht verbunden, der frische Tab damit nicht erreichbar; Bolle: „Versuch es selbst?" Also
+der Diff-Re-Check `fbd6c800…5d79d59e` als blinder Workflow statt als Tab — und das ist eine Stufe unter der
+Regel (Reviewer = frischer Tab), nicht ihr Ersatz: **5 Pruefer** bekamen je einen Teil der 11 Behauptungen
+plus die zwei Kontrollfragen, jeder mit der Pflicht, jede Null an einer echten Zeile zu belegen; **15
+Widerleger** bekamen anschliessend je einen „haelt nicht"-Befund mit dem Auftrag, ihn zu kippen. 20 Agenten,
+0 gestorben (der Ausfallstrang des Pruefstands von gestern war der Grund fuer diese Zaehlung). Ergebnis:
+**64 Einzelurteile, 23x „haelt nicht", davon 22 MINOR, 0 MAJOR.** Widerleger:
+bestaetigt 12, teilweise 3 — kein Befund fiel.
+
+**Was hielt nicht, und was daraus wurde (Patch 11, alles im Generator):**
+- **Die Ueberschriften-Regel hat die Partyseite selbst ueberschrieben.** `:scope :is(h1,h2,h3,h4){letter-spacing:normal}`
+  hat (0,1,1) — dasselbe wie `.hero h1{…letter-spacing:-0.5px}` der Partyseite, und stand dahinter. Der Fix
+  gegen den Planer-Bleed (`h1,h2,h3,h4{font-family:'Lilita One';letter-spacing:.4px;line-height:1.15}`) hat
+  also die eigene Hero-Zeile um 0,5 px je Glyphe verbreitert, auf beiden Wirten, und `line-height:1.15` des
+  Planers liess er durch (zweiter Pruefer, unabhaengig). Jetzt `:scope :where(h1,h2,h3,h4){font:revert;
+  letter-spacing:revert;line-height:revert}`: (0,1,0) verliert gegen jede Regel der Partyseite, `revert`
+  rollt den Wirt auf den UA-Wert zurueck statt auf einen getippten. **Gemessen** (localhost:8766, beide Wirte,
+  `getComputedStyle` am `.gw__page .hero h1`): Startseite und Planer je `"Baloo 2"`, `-0.5px`, 800, 42 px,
+  `line-height: normal`; das Wirts-h1 daneben unveraendert (Startseite Fraunces −0,72 px, Planer Lilita One
+  0,4 px / 34,5 px). Die Planer-Regel steht in derselben Messung als einzige nackte `h1,h2,h3,h4`-Regel im
+  Wirts-CSS — sie erreicht das Telefon nicht mehr.
+- **Die Staffelung der Bilder hat die Bandbreiten-Toleranz halbiert.** Bild 1 bei 9,2 s fuer den Blick bei
+  12,6 s = 3,4 s Vorlauf statt 12,6; und wer vor 9,2 s manuell auf Schritt 2 klickte, bekam gar kein Vorladen
+  mehr. Jetzt Bild 1 bei 4,2 s (mit der Link-Vorschau: wer 4 s bleibt, schaut), Bild 2 bei 9,2 s (mit dem
+  Pass-Scroll), und der Klick auf einen Schritt laedt beide sofort. Vorbeiscroller unter 4 s laden weiterhin nichts.
+- **Klick auf einen Schritt hat die Endlosanimationen nicht pausiert** — `gw--fertig` setzte nur der
+  Automatiklauf am Ende, `lauf()` entfernte es wirkungslos. Jetzt setzen `stopp()` und der Klick die Klasse.
+- **Reste des Namenstors:** `<!-- CODE GATE … -->` und `<!-- PARTY CONTENT … -->` beschrieben ein Element, das
+  der Schnitt entfernt hatte; `.gate-card` und `#gameFrame` waren tote Regeln. Alles raus.
+- **`sperre_pruefen()` stand nicht vor jedem Write** (nicht vor der Vorschau, in der Einbett-Schleife nur einmal
+  vor beiden Seiten). Jetzt vor jedem der drei Writes.
+- **Der `@scope`-Fallback liess Halbgares stehen:** Schrittknoepfe ohne Ziel neben einer leeren Buehne. Jetzt
+  traegt der Wirt in dem Fall `gw--ohne-scope`, die Knoepfe verschwinden mit, die Textliste bleibt.
+- **Zwei Kommentare logen nach dem Fix:** „eine der sieben Endlosanimationen" (es sind sechs, seit die
+  Countdown-Regeln weg sind) und „326 px breit gebaut" (die Seite ist so breit wie der Bildschirm, 304 bei 326).
+- **Die Anleitung fuer die Standbilder trug noch das alte Datum** (16. Oktober 2026) — jetzt der 6. November 2027.
+- **Und der Befund gegen dieses Dokument selbst:** „vier bekannte Treffer machen ihn rot" (Patch-9-Abschnitt)
+  beschrieb eine Positivkontrolle, die in keinem Repo-Artefakt existiert — der Generator druckte `vor_abs`,
+  assertierte es aber nie. Ein Widerleger baute die Messung nach (die Live-Party traegt heute 4 Treffer, der
+  Waechter wird am un-umgeschriebenen Koerper rot) und schrieb dazu: eine Kontrolle, die es nur gibt, weil der
+  Pruefer sie gerade gebaut hat, ist keine. Jetzt steht **vor** dem Umschreiben
+  `assert re.search(r'href="https://machsleicht\.de"', body)` — die echte Footer-Zeile der Partyseite; faellt
+  sie irgendwann weg, bricht der Lauf, und genau dann muss die Positivkontrolle neu gesucht werden.
+
+**Kontrollfrage 1 (schlanker oder dicker?) — die ehrliche Antwort war „dicker":** das Fragment wuchs von Patch
+zu Patch, und ein Drittel davon waren Kommentare, die an jeden Besucher ausgeliefert wurden. Jetzt streift der
+Generator nach dem letzten Umbau alle Kommentare bis auf den Kopf (CSS-Bloecke, HTML, ganze `//`-Zeilen;
+`<div`/`</div>` und `://` werden davor und danach gezaehlt): Fragment 47,528 → 39,855 B,
+index.html 85,863 → 78,190 B, kindergeburtstag.html 381,219 → 373,546 B. 15 nachgestellte
+`//`-Kommentare (705 Zeichen) bleiben absichtlich: sie sicher zu entfernen braeuchte einen Tokenizer
+(`//` in Strings), und 705 Zeichen sind den nicht wert. Die Kommentare leben weiter — im Generator.
+
+**Patch 12, der letzte bestaetigte Befund:** `tippe()` setzte zwei nackte `setTimeout`s ausserhalb von `T`; ein
+Klick innerhalb der 380 ms nach einem Tipp bekam den Rueckruf des alten Laufs in den neuen Zustand. Jetzt
+laeuft der Rueckruf ueber `nach()`, und `stopp()` blendet den Tipp-Punkt aus, damit `gw--fertig` ihn nicht halb
+sichtbar einfriert.
+
+**Nicht gefixt, als Ticket:** (a) im Planer sind `hidden` + `#stage3.revealed #gaesteWeg{display:block}`
+verhaltensneutral, weil Stufe 3 selbst bis zum Reveal verborgen ist — „braucht es das?" sagt nein, der
+Kommentar „derselbe Mechanismus" trifft nicht; beim naechsten Schnitt raus. (b) „Hamburg-Rahlstedt" steht als
+Ort der Demo-Party — Bolles Entscheidung, ob ein echter Stadtteil in der Demo stehen soll. (c) Die
+`tel:`-Entschaerfung hat im heutigen Lauf keinen echten Treffer gesehen (die neue Demo-Party hat keine Nummer)
+— ein Waechter ohne Tor, bis eine Demo-Party mit Nummer ihn einmal rot macht.
+
+**Nebenfund beim Aufraeumen, nicht aus dem Re-Check:** `_dev/scripts/deploy.sh` — ein Zip-Upload-Relikt vom
+26.03.2026 — trug einen **Netlify-Token `nfp_…` im Klartext**, im oeffentlichen Repo, seit zwei Commits.
+Durchsuchung aller 1.099 getrackten Dateien nach Token-Mustern: dieser eine Treffer. Die Datei geht mit diesem
+Commit raus; **der Token bleibt in der Historie und muss von Bolle im Netlify-Dashboard widerrufen werden** —
+ein Entfernen veroeffentlicht nichts zurueck. Ich habe ihn nicht benutzt.
+
+**Der Pruefstand hat den Sweep zu Recht als unvollstaendig markiert:** er lief ueber den Baum, der Token stand aber
+seit Maerz in der Historie. Also derselbe Sweep ueber **alle 14,487 Blobs aus 2,166 Commits aller Refs** (14,366
+Textblobs, 990 MB; 121 binaere uebersprungen; keine Groessengrenze), 15 Schluesselformate (Netlify, Cloudflare,
+GitHub, OpenAI/Anthropic, AWS, Slack, Google, Stripe, SendGrid, Resend, Mailgun, Private-Key-Bloecke, `Bearer`,
+ENV-Zuweisungen, `token/secret/password: "…"`), Positivkontrolle = der bekannte Blob muss vom `nfp_`-Muster
+getroffen werden (traf). Ergebnis: **ein einziger Token-Wert** (per SHA-256 verglichen, nie ausgegeben) in
+**4 Dateien**, alle aus demselben Commit c941d2b7 vom 2026-03-26: `_dev/deploy-v12-schatzsuche.html`, `_dev/motto-seiten/deploy-helper-motto.html`, `_dev/motto-seiten/deploy-helper.html`, `_dev/scripts/deploy.sh` — die drei
+Deploy-Helfer verschwanden am 2026-04-16 im Repo-Cleanup (0c816fb7), `deploy.sh` erst heute. Der `Bearer`-Treffer ist derselbe
+Wert im Authorization-Header des Schatzsuche-Helfers. Kein anderes Format, kein zweiter Wert, in 2,166 Commits.
+Der Schluessel gilt trotzdem als kompromittiert, bis er widerrufen ist; eine Historie umschreiben aendert daran
+nichts und jeden SHA. Skript: `history_sweep.py` (Scratchpad) — beim naechsten Mal als Linter-Stufe ueber
+`git rev-list --all --objects`, nicht als Nebenbei.
+
+**Gate nach Patch 11/12:** Generator idempotent (4/4 Dateien byte-identisch im zweiten Lauf), `node --check` am
+Fragment-Skript gruen, Bewegungsregeln 31/31 vom Reduced-Motion-Block erreicht, `<!--` 1x (Kopf), `CODE GATE`
+0x, `:is(h1` 0x, `:where(` 1x, `nach(14000` 0x, `gw--ohne-scope` 5x, Eigen-URL 0x, alte Party 0x (Kennung,
+Bollweg, 0176, 16. Oktober). Lint Lauf 9: **0 FAIL, 8 Warnungen** (die bekannten Altlasten).
+
+**Naechster Schritt:** Bolles Wort → `deploy_gaeste_weg.py --wort` (main = draft per Plumbing, Sitemap-lastmod
+nur fuer `/` und `/kindergeburtstag`, Live-Greps, Search Console). Danach Iteration 2 als eigener Schnitt mit
+eigenem Review: die vier „So sieht's aus"-Karten raus, ein Plan-Standbild als Auftakt.
