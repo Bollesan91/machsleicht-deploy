@@ -550,7 +550,12 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw__phone{{position:relative;box-sizing:border-box;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
   background:linear-gradient(160deg,#2b2b33,#141419);
   box-shadow:0 26px 64px rgba(0,0,0,.3),0 2px 0 rgba(255,255,255,.15) inset}}
-.gw__screen{{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff}}
+/* Absolut aufgespannt statt height:100%: die Hoehe des Telefons kommt allein aus aspect-ratio, und
+   dagegen loest Safari eine Prozenthoehe nicht auf — der Bildschirm hatte dann keine Hoehe und
+   `overflow:hidden` schnitt vertikal nichts ab (der Chat lief unten aus dem Rahmen, iPhone 11.09.).
+   `inset:11px` entspricht dem Polster des Telefons: gleiche Geometrie, ohne Prozenthoehe.
+   `isolation:isolate`, weil die transformierten Chat-Blasen sonst an overflow:hidden vorbeilaufen. */
+.gw__screen{{position:absolute;inset:11px;border-radius:29px;overflow:hidden;background:#fff;isolation:isolate}}
 .gw__viewport{{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .5s}}
 .gw__plan{{position:absolute;inset:0;overflow:hidden;background:#FFF8F0;opacity:0;transition:opacity .5s}}
 .gw__plan.on{{opacity:1}}
