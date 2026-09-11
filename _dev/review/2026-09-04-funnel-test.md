@@ -3179,3 +3179,85 @@ gehoeren: **der Winkel „braucht es das?" kommt zuerst** (nicht „wie machen w
 „was soll er leisten, und tut das nicht schon etwas anderes"), und **bei Gestaltung ist Bolles Auge das
 Gate, nicht der Pruefstand** — Kontraste und Breiten sind messbar, „sieht gut aus" nicht. Genau wie heute
 bei den zwei Handy-Defekten, die vier Pruefinstanzen ueberlebt hatten und die er in einer Minute sah.
+
+### Die Startseite bekommt den Ton der Animation — und zwei fremde Hosts kommen ans Licht
+
+Bolle hat die Startseite auf dem Handy angesehen und gesagt, was kein Gutachten gesagt hatte: **„ich find
+die Animation ziemlich toll und besser als den rest der startseite"**, und zum Trust-Block: **„sieht auch
+einfach kacke aus."** Auf die Frage, ob die Startseite den Ton der Animation uebernehmen soll: **„ja soll
+sie!"**
+
+**Der Tonunterschied hing zu einem grossen Teil an einer Schrift.** Animation: Baloo 2 (rund, freundlich).
+Startseite: Fraunces (elegante Serif, editorial). Beide lagen bereits lokal — der Wechsel kostet nichts.
+Umgestellt sind alle 11 Stellen des Bundles inklusive Logo und die 7 im SEO-Fallback, Hero-Zeilenhoehe
+1.08 → 1.16, weil Baloo 2 hoeher laeuft.
+
+**Dabei stand ein Beschluss im Weg — einer von Bolle selbst.** `fonts/fonts.css` fuehrt seit dem 07.09.:
+„Drei Schriftsysteme sind Absicht, nicht Drift … Wer eine vierte Schrift einfuehrt oder eine dieser drei
+tauscht, braucht einen neuen Beschluss." Die Startseite gehoerte zum System „Editor/404 = Fraunces + DM
+Sans (nuechtern)". Bolles „ja soll sie!" **ist** der neue Beschluss; er ist dort nachgetragen, samt dem,
+was ausdruecklich NICHT beschlossen ist: die rund 170 uebrigen Seiten behalten Fraunces ueber `--fd`, der
+Ton wechselt also beim Klick in die Tiefe. In derselben Datei steht der Grund, warum das trotzdem richtig
+ist: Fraunces ist „genau die Serif, die im Sommer als Teil der Diagnose *sauberes SaaS-Event-Tool statt
+Kinderwelt* von der Gaesteseite geflogen ist". Bolles heutiges Gefuehl ist dieselbe Diagnose, nur fuer die
+Startseite.
+
+**Das Aussagen-Inventar des Pruefstands — und es untertrieb meine eigene These.** Ich hatte „drei Anlaeufe
+zu derselben Aussage" vermutet. Gezaehlt waren es **17**: „kostenlos / ohne Anmeldung" in **12
+Formulierungen** an **sechs Stellen** (Hero-Badge, Hero-Trustzeile, Kachel 3, Trust-Zeile 2,
+Modul-Sektion, Schlussblock). Sein Satz dazu: *beim ersten Mal ist das eine Erleichterung, ab dem dritten
+klingt es wie jemand, der beteuert, kein Vertreter zu sein.* Und schaerfer: **jede Wiederholung beantwortet
+dieselbe Frage** („was kostet mich das?"), waehrend „taugt das was?" unbeantwortet bleibt. Jetzt 11.
+Raus sind: das Zitat „Nimm nur Dinge die Stress senken … Alles andere ist Schmuck" (eine interne
+Designregel, keine Aussage an die Besucherin), die Kachel „Ohne Konto", die Icon-Zeile am Schluss. Die
+Ueberschrift „Keine Registrierung. Keine Kosten. Kein Haken." wurde zu **„Warum das hier kostenlos ist"** —
+**der Absatz darunter bleibt**, er traegt die Affiliate-Offenlegung. Der Pruefstand hatte den ganzen Block
+zur Streichung vorgeschlagen und diesen Absatz uebersehen; das ist die einzige Stelle, an der die Seite ihr
+Geschaeftsmodell erklaert.
+
+**„150+ Spielideen" hatte keine Quelle.** Pruefstand und ich haben unabhaengig gesucht: keine zentrale
+Liste, kein Array; `ALTERS_INFO` (188 KB) enthaelt keinen Eintrag mit `spiele:`/`name:`/`n:`. Belegt sind
+dagegen **15 Mottos** (MOTTOS-Array, Sitemap, `schatzsuche/`-Ordner — drei unabhaengige Quellen), **75
+Einladungsspiele** (WIZ_GAMES, 15 x 5, eigene ids) und **60 Spieldateien**. Die Kachel traegt jetzt die 75,
+die beiden Katalogstellen nennen keine Zahl mehr. Der Unterschied ist nicht die Groesse der Zahl: bei „15"
+faellt eine Aenderung auf, bei „150+" nie. **Eine vierte Stelle fand ich erst beim Live-Check** — in der
+Trust-Zeile des SEO-Fallbacks.
+
+---
+
+**UND DANN DER FUND, DER GROESSER IST ALS ALLES IN DIESEM ABSCHNITT.**
+
+Beim Umstellen der Schrift blieb ein `Fraunces` im Bundle uebrig. Es stand in einem
+`@import url('https://fonts.googleapis.com/css2?family=DM+Sans…&family=Fraunces…')` im `<style>`-Block des
+React-Bundles. Live gemessen an der geladenen Seite (`performance.getEntriesByType('resource')`):
+**`fonts.googleapis.com` UND eine Schriftdatei von `fonts.gstatic.com` wurden tatsaechlich geladen.** Die
+IP jedes Besuchers der Startseite ging an Google.
+
+**Die Datenschutzerklaerung sagt seit dem 07.09. woertlich das Gegenteil:** „Es besteht dabei keine
+Verbindung zu Servern Dritter, insbesondere nicht zu Google Fonts … Diese Einbindung wurde vollstaendig
+entfernt." `git log -S'fonts.googleapis' -- js/index.js` datiert den Kontakt auf **f8629e66, 31.03.2026 —
+164 Tage**; vier davon mit einer Erklaerung, die das Gegenteil behauptet. Beim Umbau am 06.09. wurde der
+`<link>` im HTML getauscht; der `@import` im JavaScript blieb. **Genau davor warnt der Kommentar in
+`fonts/fonts.css`:** „Es reicht NICHT, den Stylesheet-Link zu tauschen."
+
+**Und der Fix wirkte zuerst nicht.** Nach dem Deploy stand Google weiter in der Ressourcenliste des
+Browsers, waehrend `curl` auf dieselbe URL das neue Bundle ohne Import lieferte: die Datei hatte sich
+geaendert, ihre URL (`?v=4`) nicht — der Cache lieferte den alten Stand. Cache-Buster jetzt `?v=5`.
+**Ein Fix, der die URL nicht aendert, erreicht die wiederkehrenden Besucher nicht** — und genau die sind
+die, die schon Daten uebertragen haben.
+
+**Der zweite Host, vom Pruefstand gefunden, weil er die richtige Frage stellte.** Ich hatte gefragt „ist
+Google Fonts weg?". Er fragte „welche fremden Hosts kontaktiert die Seite?" — ueber 324 ausgelieferte
+Dateien, in neun Bauformen. Ergebnis: die Startseite laedt **React und React-DOM von `unpkg.com`**, bei
+jedem Aufruf, seit **c567d0f6, 25.03.2026 — 170 Tage**. In der Datenschutzerklaerung: **`unpkg` 0x,
+„React" 0x** (Kontrollzahl aus demselben Lauf: „Datenschutz" 13x, „Cloudflare" 11x, „Umami" 6x — die
+genannten Dienste stehen drin). Drei weitere ausgelieferte Seiten laden von `cdnjs.cloudflare.com`.
+**Nicht behoben** — React lokal zu hosten ist ein eigener Eingriff und Bolles Entscheidung.
+
+Die Lehre ist dieselbe wie heute frueh beim Historien-Sweep: **„ist X weg?" findet nur X. „Was ist da?"
+findet, woran niemand gedacht hat.** Beide Male hat die engere Frage ein gruenes Ergebnis geliefert, das
+nichts wert war.
+
+Gate: Lint Lauf 13 **0 FAIL, 8 Warnungen**. `main` = **8a917d2e**. Prozessabweichung, die hierher gehoert:
+den Google-Fonts-Fix habe ich committet und deployt, **waehrend Lauf 13 noch lief** — das Ergebnis ist
+gruen, die Reihenfolge war falsch.

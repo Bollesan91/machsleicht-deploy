@@ -445,8 +445,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
         <span>Das Einladungsspiel \u2014 mit dem Gesicht des Geburtstagskindes.</span></button></li>
       <li><button type="button" data-s="3"><b>Zusage und Geschenk: ein Tipp</b>
         <span>Kein Anruf, kein Zettel, keine doppelten Geschenke.</span></button></li>
+      <li><button type="button" data-s="4"><b>Und das alles kam aus deinem Plan</b>
+        <span>Zeitplan, Spiele, Einkaufsliste \u2014 mit Kosten pro Kind.</span></button></li>
     </ol>
-    <p class="gw__note">Das ist eine echte Partyseite \u2014 kein Bild davon.</p>
+    <p class="gw__note">Eine Eingabe, zehn Minuten. Alles hier entsteht daraus \u2014 echte Seiten, keine Bilder davon.</p>
     <a class="gw__cta" href="/kindergeburtstag">Jetzt planen \u2014 Partyseite inklusive \u2192</a>
   </div>
 
@@ -480,6 +482,9 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
               <span class="gw__t">14:32 <span class="gw__hk">\u2713\u2713</span></span>
             </span>
           </div>
+        </div>
+        <div class="gw__plan" data-sc="plan" aria-hidden="true" inert>
+          <img src="{DEMOBILD}/plan.jpg" alt="" loading="lazy" decoding="async" width="1125" height="3664">
         </div>
         <div class="gw__viewport" data-sc="page" aria-hidden="true" inert>
           <div class="gw__page">{body}</div>
@@ -547,6 +552,10 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   box-shadow:0 26px 64px rgba(0,0,0,.3),0 2px 0 rgba(255,255,255,.15) inset}}
 .gw__screen{{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff}}
 .gw__viewport{{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .5s}}
+.gw__plan{{position:absolute;inset:0;overflow:hidden;background:#FFF8F0;opacity:0;transition:opacity .5s}}
+.gw__plan.on{{opacity:1}}
+.gw__plan img{{display:block;width:100%;height:auto;will-change:transform;
+  transition:transform 2.6s cubic-bezier(.4,0,.2,1)}}
 /* Die Endlosanimationen der Partyseite (Schimmer, Bob, Pulse) laufen nur, solange das Telefon sichtbar
    ist und die Sequenz laeuft — nicht bei opacity:0, nicht nach dem Ende (Gutachten MINOR 8, Akku). */
 .gw__viewport:not(.on) .gw__page *,.gw__viewport:not(.on) .gw__page *::before,.gw__viewport:not(.on) .gw__page *::after,
@@ -625,6 +634,8 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
       bub1  = wrap.querySelector('.gw__bubble[data-b="1"]'),
       bub2  = wrap.querySelector('.gw__bubble[data-b="2"]'),
       vp    = wrap.querySelector('.gw__viewport'),
+      plan  = wrap.querySelector('.gw__plan'),
+      planB = wrap.querySelector('.gw__plan img'),
       phone = wrap.querySelector('.gw__phone'),
       page  = wrap.querySelector('.gw__page'),
       tap   = wrap.querySelector('.gw__tap'),
@@ -683,6 +694,22 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     var l = el('#wishListGuest');
     return l ? l.closest('.card') : karteMit('Wunschliste');
   }}
+  // Der Plan ist die fuenfte Ansicht: Chat und Partyseite treten ab, das Standbild faehrt langsam
+  // durch — Kopf, Zeitplan, Einkaufsliste, Kosten pro Kind. Der Weg ergibt sich aus der wirklichen
+  // Bildhoehe (kein getippter Wert): was ueber den Bildschirm hinausragt, wird gefahren.
+  function planZeigen(){{
+    planB.removeAttribute('loading');
+    chat.classList.add('off'); vp.classList.remove('on'); plan.classList.add('on');
+  }}
+  function planFahren(){{
+    var ueber = planB.getBoundingClientRect().height - plan.getBoundingClientRect().height;
+    planB.style.transform = 'translateY(' + (-Math.max(0, Math.round(ueber))) + 'px)';
+  }}
+  function planWeg(){{
+    plan.classList.remove('on'); planB.style.transition = 'none';
+    planB.style.transform = 'translateY(0)'; void planB.offsetWidth; planB.style.transition = '';
+  }}
+
   function schritt(n){{
     btns.forEach(function(b,k){{
       if (k===n) b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current');
@@ -763,6 +790,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     page.style.transition = 'none';
     var w = wunschkarte();
     if (w) page.style.transform = 'translateY(' + (-Math.max(0, y(w) - 12)) + 'px)';
+    planZeigen(); schritt(4); planB.style.transition = 'none'; planFahren();
     tap.hidden = true; fertig = true; wrap.classList.add('gw--fertig');
   }}
 
@@ -771,7 +799,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     // Zuruecksetzen
     chat.classList.remove('off'); bub1.classList.remove('in','said'); bub2.classList.remove('in','said');
     vp.classList.remove('on'); page.style.transition='none'; page.style.transform='translateY(0)';
-    tap.hidden = true; schritt(0); spielbild(1); wrap.classList.remove('gw--fertig');
+    tap.hidden = true; schritt(0); spielbild(1); planWeg(); wrap.classList.remove('gw--fertig');
     if (startZaehler !== null) el('#guestCounter').innerHTML = startZaehler;
     if (startWunsch  !== null) wunschkarte().innerHTML = startWunsch;
     var ja = el('.rsvp-btn[data-rsvp="ja"]'); if (ja) ja.classList.remove('{WAHL}');
@@ -796,7 +824,9 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     nach(24800, zusage);
     nach(26800, function(){{ scrollTo(wunschkarte(), 1800); }});
     nach(28800, wunsch);
-    nach(31800, function(){{ fertig = true; laufend = false; wrap.classList.add('gw--fertig'); }});
+    nach(31800, function(){{ planZeigen(); schritt(4); }});          // Wunschliste stand 3,0 s
+    nach(33400, planFahren);                                        // der Plan faehrt 2,6 s durch
+    nach(37000, function(){{ fertig = true; laufend = false; wrap.classList.add('gw--fertig'); }});
   }}
 
   // threshold:0 mit negativem rootMargin, NICHT threshold:.3 — die Sektion ist auf einem
@@ -816,10 +846,20 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
     b.addEventListener('click', function(){{
       var n = +b.dataset.s;
       stopp(); fertig = true; schritt(n); bilderHolen(); wrap.classList.add('gw--fertig');   // manuelle Wahl beendet den Automatiklauf; Bilder jetzt, Animationen pausiert
-      chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0);
-      if (n>0) {{
+      // Drei Ansichten: Chat (0), Partyseite (1-3), Plan (4). Ohne den dritten Fall blieb beim Klick
+      // auf den fuenften Schritt die Partyseite stehen und das Plan-Bild wurde nie angefordert.
+      chat.classList.toggle('off', n>0); vp.classList.toggle('on', n>0 && n<4);
+      if (n>0 && n<4) {{
+        planWeg();
         bub1.classList.add('in','said'); bub2.classList.add('in','said');
         scrollTo(n===1 ? pass() : n===2 ? el('.game-card') : el('#rsvpCard'), 600);
+      }} else if (n===4) {{
+        bub1.classList.add('in','said'); bub2.classList.add('in','said');
+        planZeigen();
+        // erst zeigen, dann fahren: sonst faehrt das Bild, waehrend es noch eingeblendet wird
+        if (planB.complete) planFahren(); else planB.addEventListener('load', planFahren, {{once:true}});
+      }} else {{
+        planWeg();
       }}
     }});
   }});
