@@ -311,6 +311,20 @@ body = re.sub(r'href="https://machsleicht\.de"', 'href="/"', body)
 assert 'https://machsleicht.de' not in body, 'absolute Eigen-URL im Koerper'
 print(f'  Eigen-Links im Telefon wurzelrelativ: {vor_abs}')
 
+# Die Ueberschriften der Partyseite sind KEINE Ueberschriften der Startseite — das Telefon zeigt das
+# Abbild eines anderen Dokuments. Gerendert stand `<h1>Ida wird 6!</h1>` als zweites h1 der Startseite
+# in der Gliederung, zwischen dem h2 der Sektion und dem h2 des Katalogs. Also Tag neutralisieren,
+# Klasse behalten, damit das CSS weiter greift (dort wird `hN` gleich mit umgeschrieben).
+ueber = {int(n): len(re.findall(r'<h' + n + r'\b', body)) for n in '123456'}
+ueber = {n: k for n, k in ueber.items() if k}
+for n, k in ueber.items():
+    assert body.count(f'</h{n}>') == k, (n, k, body.count(f'</h{n}>'))
+    assert not re.search(rf'<h{n}\b[^>]*\bclass=', body), f'h{n} traegt bereits eine Klasse — Zusammenfuehrung noetig'
+    body = re.sub(rf'<h{n}\b([^>]*)>', rf'<div class="gw-t{n}"\1>', body)
+    body = body.replace(f'</h{n}>', '</div>')
+assert not re.search(r'<h[1-6]\b', body), 'Ueberschrift im Telefon uebersehen'
+print(f'  Ueberschriften im Telefon neutralisiert: {ueber}')
+
 # Der Countdown der Partyseite ("Noch 36 Tage!") ist eine Live-Zahl. Eingebacken steht sie in
 # einem Jahr noch da — und ist dann falsch. Ein Standbild darf nichts zeigen, was nur stimmt,
 # solange es lebt. Also raus, samt Huelle. (Workflow-Leser 'gates', 10.09.2026.)
@@ -365,8 +379,34 @@ assert not re.search(r'(?<![\w.#>\-])body(?![\w-])', css_in)
 # :where() statt :is(): (0,1,0) schlaegt die Wirts-Elementregeln h1..h4 (0,0,1), verliert aber gegen jede
 # Party-Regel wie .hero h1 (0,1,1) — die :is()-Fassung hatte deren letter-spacing:-0.5px ueberschrieben
 # (Re-Check). `revert` rollt die Wirtsregel auf den UA-Wert zurueck: exakt der Zustand der echten Seite.
-css_in += ('\n:scope{line-height:normal;letter-spacing:normal}'
-           '\n:scope :where(h1,h2,h3,h4){font:revert;letter-spacing:revert;line-height:revert}\n')
+# Die Selektoren ziehen mit: `.hero h1` -> `.hero .gw-t1`. Nur eigenstaendige Tag-Namen, nie Teile eines
+# Wortes oder einer Klasse (Lookaround), und nur links der Klammer — Werte bleiben unberuehrt.
+def tags_zu_klassen(css):
+    def eine(m):
+        sel, rest = m.group(1), m.group(2)
+        return re.sub(r'(?<![\w.#\-])h([1-6])(?![\w\-])', r'.gw-t\1', sel) + rest
+    return re.sub(r'(?m)^([^{}]*?)(\{)', eine, css)
+vor_h = len(re.findall(r'(?m)^[^{}]*(?<![\w.#\-])h[1-6](?![\w\-])[^{}]*\{', css_in))
+css_in = tags_zu_klassen(css_in)
+# Was ein <hN> vom Browser mitbekommt, bekommt ein <div> nicht: fett, Groesse, Abstaende (HTML-Standard,
+# html.spec.whatwg.org #sections-and-headings). Als Vorspann mit einer Klasse Spezifitaet (0,1,0) — jede
+# Party-Regel (.hero .gw-t1 = 0,2,0) schlaegt ihn weiterhin. Ohne das stand „Wir freuen uns auf euch!"
+# auf font-weight 400 statt bold.
+# :where() macht die Spezifitaet NULL. Das ist hier entscheidend: die Partyseite setzt `*{margin:0}`,
+# und als Klassenregel (0,1,0) haette der Vorspann diesen Reset geschlagen — gemessen war die Seite im
+# Telefon dadurch 24 px laenger (Hero 744 -> 768, margin-top am Titel 0 -> 28,14 px). Mit :where()
+# gewinnt jede Regel der echten Seite, und uebrig bleibt genau das, was sonst der Browser beisteuert.
+css_in = (':where(.gw-t1,.gw-t2,.gw-t3,.gw-t4,.gw-t5,.gw-t6){display:block;font-weight:bold}'
+          ':where(.gw-t1){font-size:2em;margin-block:.67em}:where(.gw-t2){font-size:1.5em;margin-block:.83em}'
+          ':where(.gw-t3){font-size:1.17em;margin-block:1em}:where(.gw-t4){margin-block:1.33em}'
+          ':where(.gw-t5){font-size:.83em;margin-block:1.67em}:where(.gw-t6){font-size:.67em;margin-block:2.33em}\n'
+          + css_in)
+assert not re.search(r'(?m)^[^{}]*(?<![\w.#\-])h[1-6](?![\w\-])[^{}]*\{', css_in)
+print(f'  CSS-Selektoren auf Ueberschriften umgeschrieben: {vor_h}')
+# Der Ueberschriften-Reset entfaellt: er hielt die `h1,h2,h3,h4`-Regel des Planers vom Telefon fern.
+# Ohne Ueberschriften im Telefon gibt es nichts mehr zu treffen. line-height/letter-spacing bleiben,
+# die erbt die Seite weiterhin vom Wirt.
+css_in += '\n:scope{line-height:normal;letter-spacing:normal}\n'
 print(f'  body-Selektoren -> :scope: {vor_body}')
 print(f'  CSS: {len(schriften)} @font-face herausgehoben, '
       f'{vor_root}x :root und {vor_body}x body -> :scope')
@@ -474,11 +514,11 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
   a,button,input,textarea,select{{pointer-events:none!important}}
 }}
 
-.gw{{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
+.gw{{--gw-a:#B5468C;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center;
   max-width:960px;margin:0 auto;padding:32px 20px}}   /* wie die Nachbarsektionen (960/900), nicht 1060 */
-@media(min-width:920px){{.gw{{grid-template-columns:1fr 360px;gap:64px}}}}
+@media(min-width:920px){{.gw{{grid-template-columns:minmax(0,1fr) 360px;gap:64px}}}}
 /* Ohne @scope (Safari/iOS < 17.4, Firefox < 128): kein Telefon, keine leere Spalte, keine toten Knoepfe. */
-.gw--ohne-scope{{grid-template-columns:1fr!important}}
+.gw--ohne-scope{{grid-template-columns:minmax(0,1fr)!important}}
 .gw--ohne-scope .gw__stage,.gw--ohne-scope .gw__note{{display:none}}
 .gw--ohne-scope .gw__steps button{{cursor:default;pointer-events:none;opacity:1}}
 .gw__h{{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}}
@@ -498,7 +538,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw__cta{{display:inline-block;margin-top:10px;font-weight:700;font-size:15.5px;color:var(--gw-a);
   text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}}
 
-.gw__stage{{justify-self:center}}
+.gw__stage{{justify-self:center;min-width:0;max-width:100%}}   /* min-width:0, sonst haelt das Grid die Spalte auf den 326 px des Telefons */
 /* box-sizing EXPLIZIT, und die Seite folgt dem Bildschirm: die Wirte setzen *{{box-sizing:border-box}},
    die Vorschau setzte es nicht — dort war der Bildschirm 326 px, live 304, die Seite darin 326 →
    6 px jeder Karte abgeschnitten, Hero schief. Gefunden vom externen Gutachten (M1), gemessen. */
@@ -546,7 +586,7 @@ BAU = f"""<!-- Gaeste-Weg, ANIMIERT. Erzeugt aus der Demo-Partyseite (Kennung st
 .gw__hk{{color:#53bdeb;letter-spacing:-1px}}
 /* Link-Vorschau, wie sie ein Messenger baut — Bild und Text aus den echten og:-Angaben */
 .gw__prev{{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}}
-.gw__prev img{{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}}
+.gw__prev img{{display:block;width:100%;height:auto;aspect-ratio:1.91/1;object-fit:cover}}   /* height:auto schlaegt das height-Attribut; ohne das ignoriert der Browser aspect-ratio */
 .gw__prev-txt{{display:block;padding:7px 9px 8px}}
 .gw__prev-txt b{{display:block;font-size:13px;line-height:1.25;margin-bottom:2px}}
 .gw__prev-txt i{{display:block;font-style:normal;font-size:11.5px;color:#667781;line-height:1.3;

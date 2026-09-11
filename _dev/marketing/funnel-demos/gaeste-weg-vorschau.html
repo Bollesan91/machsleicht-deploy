@@ -62,7 +62,7 @@
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" style="display:block"><img src="/bilder/demo/ida.jpg" alt="Ida" width="400" height="400" loading="lazy" decoding="async"></div>
   <div class="hero-emoji">🦄</div>
-  <h1><span class="hname">Ida</span> wird 6!</h1>
+  <div class="gw-t1"><span class="hname">Ida</span> wird 6!</div>
   <div class="hero-motto">Einhorn</div>
   <div class="hero-sub" style="font-size:16px;color:#fff;font-weight:800">Ben, deine Mission wartet!</div>
   
@@ -145,7 +145,7 @@
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">🎉</div>
-      <h3 id="rsvpMsg">Wir freuen uns auf euch!</h3>
+      <div class="gw-t3" id="rsvpMsg">Wir freuen uns auf euch!</div>
       <p id="rsvpSub">Deine Antwort ist angekommen.</p>
       <a href="javascript:downloadIcs()" class="cal-btn" style="margin-top:16px;display:inline-flex">📅 Termin speichern</a>
     </div>
@@ -199,6 +199,7 @@
 @font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}
 
 @scope (.gw__page) {
+:where(.gw-t1,.gw-t2,.gw-t3,.gw-t4,.gw-t5,.gw-t6){display:block;font-weight:bold}:where(.gw-t1){font-size:2em;margin-block:.67em}:where(.gw-t2){font-size:1.5em;margin-block:.83em}:where(.gw-t3){font-size:1.17em;margin-block:1em}:where(.gw-t4){margin-block:1.33em}:where(.gw-t5){font-size:.83em;margin-block:1.67em}:where(.gw-t6){font-size:.67em;margin-block:2.33em}
 
 *{margin:0;padding:0;box-sizing:border-box}
 :scope{
@@ -224,8 +225,8 @@
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:gw-bob 3s ease-in-out infinite}
-.hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
-.hero h1 .hname{background:linear-gradient(135deg,#fff 30%,#E1BEE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .gw-t1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
+.hero .gw-t1 .hname{background:linear-gradient(135deg,#fff 30%,#E1BEE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-motto{font-size:16px;color:#fff;font-weight:600}
 .hero-sub{font-size:13px;color:#fff;margin-top:8px}
 
@@ -273,7 +274,7 @@
 .rsvp-success{display:none;text-align:center;padding:24px 16px}
 .rsvp-success.show{display:block;animation:gw-fadeUp .5s ease both}
 .rsvp-success-emoji{font-size:56px;animation:gw-bob 2.5s ease-in-out infinite}
-.rsvp-success h3{font-family:var(--fd);font-size:22px;color:var(--a);margin:8px 0 4px}
+.rsvp-success .gw-t3{font-family:var(--fd);font-size:22px;color:var(--a);margin:8px 0 4px}
 .rsvp-success p{font-size:14px;color:var(--m);line-height:1.5}
 .wish-progress{margin-bottom:14px}
 .wish-progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
@@ -311,7 +312,6 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .hidden{display:none!important}
 
 :scope{line-height:normal;letter-spacing:normal}
-:scope :where(h1,h2,h3,h4){font:revert;letter-spacing:revert;line-height:revert}
 
   .fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3{opacity:1!important;transform:none!important;animation:none!important}
   
@@ -324,11 +324,11 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   a,button,input,textarea,select{pointer-events:none!important}
 }
 
-.gw{--gw-a:#B5468C;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;
+.gw{--gw-a:#B5468C;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center;
   max-width:960px;margin:0 auto;padding:32px 20px}   
-@media(min-width:920px){.gw{grid-template-columns:1fr 360px;gap:64px}}
+@media(min-width:920px){.gw{grid-template-columns:minmax(0,1fr) 360px;gap:64px}}
 
-.gw--ohne-scope{grid-template-columns:1fr!important}
+.gw--ohne-scope{grid-template-columns:minmax(0,1fr)!important}
 .gw--ohne-scope .gw__stage,.gw--ohne-scope .gw__note{display:none}
 .gw--ohne-scope .gw__steps button{cursor:default;pointer-events:none;opacity:1}
 .gw__h{font-size:clamp(25px,4vw,36px);line-height:1.14;margin:0 0 22px;text-wrap:balance}
@@ -346,7 +346,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .gw__cta{display:inline-block;margin-top:10px;font-weight:700;font-size:15.5px;color:var(--gw-a);
   text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
 
-.gw__stage{justify-self:center}
+.gw__stage{justify-self:center;min-width:0;max-width:100%}   
 
 .gw__phone{position:relative;box-sizing:border-box;width:326px;max-width:100%;aspect-ratio:9/18.6;border-radius:40px;padding:11px;
   background:linear-gradient(160deg,#2b2b33,#141419);
@@ -388,7 +388,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .gw__hk{color:#53bdeb;letter-spacing:-1px}
 
 .gw__prev{display:block;background:#f0f2f5;border-radius:6px;overflow:hidden;margin-bottom:4px}
-.gw__prev img{display:block;width:100%;aspect-ratio:1.91/1;object-fit:cover}
+.gw__prev img{display:block;width:100%;height:auto;aspect-ratio:1.91/1;object-fit:cover}   
 .gw__prev-txt{display:block;padding:7px 9px 8px}
 .gw__prev-txt b{display:block;font-size:13px;line-height:1.25;margin-bottom:2px}
 .gw__prev-txt i{display:block;font-style:normal;font-size:11.5px;color:#667781;line-height:1.3;
