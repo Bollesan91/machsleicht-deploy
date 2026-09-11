@@ -3066,3 +3066,56 @@ Bollweg, 0176, 16. Oktober). Lint Lauf 9: **0 FAIL, 8 Warnungen** (die bekannten
 **Naechster Schritt:** Bolles Wort → `deploy_gaeste_weg.py --wort` (main = draft per Plumbing, Sitemap-lastmod
 nur fuer `/` und `/kindergeburtstag`, Live-Greps, Search Console). Danach Iteration 2 als eigener Schnitt mit
 eigenem Review: die vier „So sieht's aus"-Karten raus, ein Plan-Standbild als Auftakt.
+
+### Fuenfter Tag, 11.09. — deployt, und dann das Handy
+
+Vormittags ging die Animation live (`main` **bd718f12**, Baum identisch mit `draft`, Sitemap-lastmod fuer
+die zwei beruehrten Seiten, Live-Nachweis auf beiden Wirten gruen — Struktur, Bilder, Schrift, Zeitachse,
+Party-Kennung 0x im ausgelieferten HTML). Dann hat Bolle die Seite **auf seinem eigenen Telefon** geoeffnet
+und zwei Dinge gesehen, die der Pruefstand und ich beide gruen gemessen hatten.
+
+**Der innere Bildschirm sprengt den Telefonrahmen.** `.gw` ist ein Grid; eine `1fr`-Spalte traegt
+`min-width:auto` und schrumpft nicht unter die Inhaltsbreite. Das Telefon ist 326 px breit, also blieb die
+Spalte 326 px — und `max-width:100%` am Telefon lief ins Leere, weil sein Container nie schmaler wurde.
+Gemessen mit echter Viewport-Emulation: **375 px Fenster → Ueberstand 0. 360 px → 6 px. 320 px → 46 px
+plus 27 px Querscroll.** Wir hatten bei 375 gemessen. Jetzt `minmax(0,1fr)` in beiden Spaltendefinitionen
+und im `gw--ohne-scope`-Fallback, `min-width:0` an der Buehne: Telefon 320 bzw. 280 px, Ueberstand 0.
+
+**Die Link-Vorschau im Chat ist fast quadratisch — und das CSS dafuer war immer richtig.**
+`.gw__prev img{width:100%;aspect-ratio:1.91/1;object-fit:cover}` steht seit dem ersten Entwurf da. Das
+`<img>` traegt daneben `height="400"`; ein Praesentationshinweis setzt die CSS-Eigenschaft `height` auf
+400px, und **`aspect-ratio` wirkt nur, wenn eine der beiden Dimensionen `auto` ist**. Die Regel wurde also
+gelesen und verworfen. Dargestellt 250x400 statt 250x131, **60 % der Chat-Hoehe statt 19 %**. Nach
+`height:auto`: gemessen 227x119, Verhaeltnis 1.91.
+
+Das ist die Lehre des Tages, und sie ist unangenehm: **eine korrekte CSS-Regel neben einem korrekten
+HTML-Attribut kann falsch sein, und kein Waechter findet das.** Ein Linter prueft Syntax, ein Gutachter
+liest Regeln, beide haetten hier bestaetigt. Widerlegt hat es erst `getComputedStyle(img).height` = `"400px"`
+— der berechnete Wert am Element, nicht die Regel im Quelltext. Dazu die zweite Haelfte: **eine
+Fensterbreite, bei der es passt, ist kein Nachweis.** 375 px ist die bequemste Breite, nicht die engste.
+
+**Iteration 2, im selben Schnitt** (Bolles Auftrag vom 10.09., am 11.09. mit Blick auf den Block bestaetigt:
+„das kann doch raus oder?"): die vier „So sieht's aus"-Karten sind raus — `js/index.js` 28,823 → 20,266
+Bytes, Cache-Buster `?v=4`; die Animation steht jetzt direkt hinter den Motto-Kacheln. Die Sektionen sind
+farblich abgesetzt: **Animation `#F9F4F7`** (Rose, aus dem Magenta-Akzent der Animation), **Fussblock
+`#F5F7F1`** (Gruen aus dem Hero-Verlauf) ueber die drei letzten Sektionen. Volle Fensterbreite ueber
+`padding-inline:max(24px,calc((100% - <Inhaltsbreite>)/2))` statt `maxWidth` + auto-Margin — so ist das Band
+so breit wie das Fenster und das Textmass bleibt exakt, was es war (672/652/652 px, nachgemessen).
+
+**Und derselbe Fehlertyp ein zweites Mal, ungefragt gefunden:** die Seite scrollte auf schmalen Handys
+24 px quer. Ursache war nicht die Animation, sondern das Karten-Grid unter `#produkte`:
+`repeat(auto-fit,minmax(320px,1fr))` erzwingt 320 px Kartenbreite auch dann, wenn nur 272 px Platz sind
+(`auto-fit` faltet Spalten zusammen, druckt sie aber nicht unter ihre Mindestbreite). Jetzt
+`minmax(min(320px,100%),1fr)`, ebenso fuer das 200px-Raster daneben; bei 320 px ist
+`scrollWidth == clientWidth`. **Zwei unabhaengige Stellen, dieselbe Ursache — eine Mindestbreite, die
+niemand als Mindestbreite gelesen hat.**
+
+Fragment 39,855 → 39,930 B. Gate: Lint Lauf 10 **0 FAIL, 8 Warnungen**, Generator idempotent
+(5/5 byte-identisch, fasst `?v=4` und die Karten nicht an), `node --check` gruen, gemessen bei
+320/360/390/1280 px auf Startseite UND Planer. Commit **9bae1bc1** auf `draft`; `main` bleibt bd718f12.
+
+**Offen:** unabhaengiger Review dieses Schnitts vor dem Deploy (neuer Live-Content) — besonders der Winkel,
+den ich selbst nicht pruefen kann: wirken die zwei Toene auf echten Bildschirmen als Absetzung oder als
+Streifen? Dazu Bolles Entscheidung, ob der SEO-Fallback in `index.html` seine Vier-Karten-Prosa behaelt
+(inhaltlich wahr, beschreibt aber eine Sektion, die gerendert nicht mehr existiert). Weiterhin offen:
+Netlify-Token widerrufen, Search Console.
