@@ -527,7 +527,9 @@ export default {
       if (Array.isArray(body.ablauf) && body.ablauf.length) {
         const _ab = body.ablauf.slice(0, 24).map(a => ({
           t: /^\d{2}:\d{2}$/.test(asStr(a && a.t)) ? asStr(a.t) : "",
-          e: asStr(a && a.e).slice(0, 4),
+          // firstEmoji statt slice(0,4): vier UTF-16-Einheiten zerschneiden ZWJ-Emojis
+          // (🏴‍☠️ und 🦸‍♀️ brauchen fuenf). Dieselbe Falle wie beim Hero-Emoji, s. firstEmoji().
+          e: (a && a.e) ? firstEmoji(a.e) : "",
           n: asStr(a && a.n).slice(0, 60),
           d: Math.max(0, Math.min(300, parseInt(a && a.d, 10) || 0))
         })).filter(a => a.n);
