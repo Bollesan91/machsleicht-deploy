@@ -3322,3 +3322,72 @@ Planer zur Partyseite, und genau den hat die Bruecke aus guten Gruenden nicht be
 Der Pruefstand hat dazu den Satz beigesteuert, der den Wert der Karte erklaert: **der Plan liegt im
 localStorage des Geraets, auf dem er gebaut wurde — die Partyseite ist von ueberall abrufbar. Die Karte
 ist damit die einzige geraeteunabhaengige Kopie des Ablaufs.**
+
+### Sechster Tag, 14.09. — der Planer hatte eine Sackgasse, und niemand hat sie gemessen
+
+Bolle ruft die Seite auf, die er selbst gebaut hat: „bin wieder verwirrt, will n geburtstag plannen und
+habe keine spiele asuwahl zur verfuegung?" Er hatte recht — es gab keine. Er kam nie bis zum Plan.
+
+**Der Befund.** `#toPlanBtn` trug inline `display:none` und wurde von genau einer Funktion sichtbar
+gemacht: `showPlanBtn()`. Die wird seit **dfc1831c (07.09., „eine Altersfrage statt zwei")** nur noch
+aus `setExactAge()` gerufen — mit einer gueltigen Zahl. Die Alters-Karten mit `onclick="pickAge(...)"`
+sind mit demselben Commit aus dem Markup verschwunden; `pickAge` steht noch da und hat **keinen
+Aufrufer mehr**. Damit fuehrte genau ein Weg zum Plan: eine Zahl ins Feld tippen.
+
+Und das Feld traegt `placeholder="7"` in 38 px. Live gemessen an `main acebbc22`:
+`value=""`, `state.exactAge=null`, Platzhalterfarbe `rgb(117,117,117)` gegen `rgb(30,58,95)` fuer
+echten Text. Wer die 7 fuer einen Wert haelt — und sie sieht aus wie einer — fuellt Name, Datum und
+Gaestezahl aus und hat **dann keinen Weg weiter**: kein Knopf, keine Meldung, keine Markierung. Die
+Stufenpunkte 3 bis 5 sind `locked` mit `tabindex="-1"`, `jumpStage(3)` verweigert. Positivkontrolle:
+eine 7 getippt, und ein 798x54-Knopf erscheint, der Plan laedt mit fuenf Spielen. Sieben Tage live.
+
+**Der Fix ist kein neues Muster, sondern das vorhandene.** Vier Zeilen ueber der Fundstelle stand die
+Regel schon im Code: *„KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt
+klickbar; revealPlan() ist das Verhaltens-Gate."* Der **Name** folgte dieser Regel — fehlt er, bleibt
+der Knopf stehen, heisst „Erst Namen eintragen" und schickt den Klick ins Namefeld. Das **Alter** folgte
+ihr nicht: es liess den Knopf verschwinden. Dabei hielt `revealPlan()` das Gate fuer beide Faelle
+laengst (`aria-invalid`, `scrollIntoView`, Fokus nach 350 ms) — es wurde nur nie erreicht. Jetzt steht
+der Knopf immer und benennt die erste Luecke von oben: Alter, dann Name. Die Reihenfolge in
+`revealPlan()` ist entsprechend getauscht, damit Beschriftung und Sprungziel dasselbe Feld meinen.
+Die dokumentierte Invariante „keine Vorschau auf geratenem Alter" bleibt heil: ein Knopf, der
+„Erst Alter eintragen" sagt, verspricht keinen Plan fuer ein geratenes Alter. Commit **f0a69877**.
+
+**Der Lehrsatz — und er ist unbequem.** Am 11.09. stand hier der Satz, eine Umgebung, in der es
+funktioniert, sei kein Nachweis, dass es funktioniert. Dieser Fall ist schaerfer: Es ging nicht um
+Safari gegen Chromium, um kein Geraet und keinen Browser. **Der Weg war in JEDER Umgebung zu, und
+sieben Tage lang hat ihn niemand gemessen** — weil jede Pruefung den Planer mit gesetztem Alter betrat.
+Wer `setExactAge(7)` ruft oder mit `?alter=` einsteigt, sieht den Knopf immer. Die Luecke liegt genau
+dort, wo niemand hinschaut: im Zustand, in dem der Nutzer **nichts** getan hat. Die Frage, die gefehlt
+hat, ist nicht „haelt der Knopf?", sondern **„wie kommt jemand hierher, der nichts weiss?"** — und sie
+gehoert an den Anfang jedes Durchlaufs, nicht ans Ende.
+
+Nachtrag zur Klassenbildung: dfc1831c hat eine Eingabeart durch eine andere ersetzt (Karten → Zahl) und
+dabei den einzigen Aufrufer eines Reveals mit entfernt. Das ist mechanisch fassbar: **eine Funktion, die
+etwas sichtbar macht, hat nach dem Umbau keinen Aufrufer mehr** — `showPlanBtn` hatte noch einen
+(`setExactAge`), `pickAge` gar keinen. Eine Stufe, die nach Funktionen ohne Aufrufer sucht, haette
+`pickAge` gemeldet und damit die Frage aufgeworfen, was den Knopf jetzt eigentlich zeigt.
+
+**Zweiter Befund, derselbe Satz von Bolle: die Auswahl ist duenn.** Auch wer den Plan erreicht, hat oft
+nichts zu waehlen. Der Plan setzt fuenf Spiele; unter „✏️ Plan anpassen" bietet die Zeile „Weiteres
+Spiel:" an, was im Pool uebrig ist. Gemessen ueber **alle 45 Kombinationen** (15 Mottos x 3 Altersbaender),
+am echten Renderpfad `renderElitePlan()` und an `window.__planPool`, Positivkontrolle Piraten 6-8 = 1:
+
+| | |
+|---|---|
+| ohne **jede** Alternative | **32 von 45** |
+| davon alle 15 Mottos im Band | **3-5 Jahre** |
+| Spanne bei den uebrigen 13 | 1 bis 5 |
+| Schnitt ueber alle 45 | 0,5 |
+
+Das ist kein Code-Fehler, sondern Inhaltstiefe: In 32 von 45 Faellen rendert die Zeile „Weiteres Spiel:"
+gar nicht, weil `unused` leer ist. Wer den Plan anpassen will, kann Punkte verschieben, entfernen und
+einen eigenen Programmpunkt eintragen — aber kein anderes Motto-Spiel waehlen. **Ticket, Bolles
+Entscheidung:** Spiele je Motto/Band aufstocken (Ziel: mindestens zwei Alternativen, also 7 im Band bei
+5 im Plan), oder die Zeile ehrlich beschriften statt sie verschwinden zu lassen.
+
+**Erster Messfehler auf dem Weg dorthin, notiert weil er beinahe durchging:** Der erste Sweep meldete
+„45 von 45 ohne Alternative" — eine saubere, runde, falsche Zahl. Er zaehlte `gamesForAge(MOTTOS, band)`
+und rief `renderPlanPreview()`; der Plan-Kasten kommt aber aus dem **asynchronen** `renderElitePlan()`
+mit eigenen, reicheren Daten. Aufgefallen ist es nur, weil die Positivkontrolle (Piraten 6-8 musste 1
+ergeben, gemessen im echten Durchlauf) ebenfalls 0 lieferte. Ohne diese Kontrolle waere die Null in den
+Bericht gewandert. Genau dafuer steht die Regel „Negativbefund braucht eine Kontrollzahl aus demselben Lauf".
