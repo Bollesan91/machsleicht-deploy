@@ -3261,3 +3261,64 @@ nichts wert war.
 Gate: Lint Lauf 13 **0 FAIL, 8 Warnungen**. `main` = **8a917d2e**. Prozessabweichung, die hierher gehoert:
 den Google-Fonts-Fix habe ich committet und deployt, **waehrend Lauf 13 noch lief** — das Ergebnis ist
 gruen, die Reihenfolge war falsch.
+
+### Der Ablaufplan im Rundlauf — und zwei Fehler, die nur am echten Geraet auffielen
+
+Bolle, nach einem Tag voller Startseiten-Arbeit: „glaube wir sind vom weg abgekommen … ist die bruecke
+gebaut und der plan jetzt auf der partyseite?" Die Antwort auf beides steht seit dem 09.09. im Repo —
+die Bruecke ist **bewusst verworfen**, der Plan steht **auf** der Partyseite. Auf sein „test das einmal
+mit tester" hat der Pruefstand den Rundlauf gemacht, und dabei kam heraus, was ein Blick auf eine
+funktionierende Party nie zeigt.
+
+**Was haelt, und warum es haelt.** Anzeige und Uebertragung des Ablaufs benutzen **dieselbe Funktion**
+(`_planTimes()` in `kindergeburtstag.html`, einmal fuer die Anzeige, einmal fuer den Versand). Es gibt
+keinen zweiten Rechenweg, der auseinanderlaufen koennte — eine Karte, die einen anderen Ablauf zeigt als
+der Plan, ist auf diesem Weg nicht konstruierbar. Genau das meint „Paket kommt aus dem Plan".
+Der Gast-Pfad liest den Schluessel nie (ein einziger Lesezugriff, im `isEditor`-Zweig); Partys ohne
+Ablauf — also alle vor dem 09.09. — bekommen statt einer leeren Karte einen eigenen Text, der einlaedt,
+den Plan zu oeffnen; `DELETE` raeumt `ablauf:<id>` mit ab, keine Waisen; kaputte Daten fallen ueber
+`safeParse` + `Array.isArray` in den Leerfall.
+
+**Der Befund: drei Emoji wurden zerschnitten.** `e: asStr(a.e).slice(0, 4)` kuerzt auf vier
+UTF-16-Codeunits. ZWJ-Emojis brauchen fuenf:
+`🏴‍☠️ → 🏴‍☠`, `🦸‍♀️ → 🦸‍♀`, `🧜‍♀️ → 🧜‍♀` (heil bleiben 🦄, 🛡️, 🚒, 🐒). Kein theoretischer Fall:
+🏴‍☠️ steht 11x im Planer, 🦸‍♀️ am Spiel „Tugend-Quiz", 🧜‍♀️ 4x.
+
+**Und das Bemerkenswerte daran:** vier Zeilen ueber der Fundstelle steht die Loesung — `firstEmoji()` mit
+`Intl.Segmenter`, eingefuehrt mit dem Kommentar *„slice(0,4) zerschnitt ZWJ-Emojis (🏴‍☠️=5 Units, 🧜‍♀️)
+→ kaputtes Hero-Emoji"*. **Derselbe Fehler war schon einmal da, wurde behoben und dokumentiert; als der
+Ablaufplan dazukam, wurde trotzdem wieder `slice(0,4)` getippt.** Der Einzelfall war erledigt, die Klasse
+nicht. Behoben, repoweit gegengeprueft: keine dritte Stelle.
+
+**Der zweite Fehler kam von Bolles iPhone, nicht aus einer Messung.** Der Chat lief unten aus dem
+Telefonrahmen heraus. Ursache:
+`​.gw__phone{aspect-ratio:9/18.6}` + `.gw__screen{height:100%}` — eine Prozenthoehe braucht eine
+aufloesbare Elternhoehe; stammt die allein aus `aspect-ratio`, loest Safari sie nicht zuverlaessig auf.
+Dann hat der Bildschirm keine Hoehe, und `overflow:hidden` schneidet vertikal nichts ab. Jetzt wird er
+absolut aufgespannt (`inset:11px` — dasselbe Mass wie das bisherige Polster), dazu `isolation:isolate`,
+weil die Chat-Blasen `transform` tragen und sonst am Clipping vorbeilaufen. Geometrie nachgemessen:
+identisch (326x674 / 304x652 / 11 px ringsum).
+
+**Dieser zweite Fehler ist der Lehrsatz des Tages**, zusammen mit den beiden vom Vormittag: Ich konnte ihn
+**nicht reproduzieren** — der In-App-Browser ist Chromium und clippt auch mit der alten Regel korrekt.
+Gefunden hat ihn Bolle in zehn Sekunden am eigenen Geraet. Wie schon bei `aspect-ratio` gegen das
+`height`-Attribut und bei der nur-375-px-Messung: **eine Umgebung, in der es funktioniert, ist kein
+Nachweis, dass es funktioniert.**
+
+**Zwei Ausrollungen.** Der Worker per `wrangler deploy` mit transientem `cfut_`-Token (Version
+`26f92666`, Cron erhalten, KV-Binding unveraendert) — live geprueft: im Editor „📝 Dein Ablaufplan"
+mit echten Zeiten („15:00 🦄 Ankommen & Einhorn-Schminken"), keine zerschnittenen Emoji, Gast-Ansicht 0x.
+Die Seite per Plumbing, `main` = **acebbc22**, Cache-Buster `?v=7`.
+
+**Am Deploy-Skript repariert:** die Sperre „Worker geaendert → Netlify liefert ihn nicht aus" blockierte,
+obwohl der Worker laengst per wrangler ausgerollt war. Sie kennt den Fall jetzt — sie greift weiter,
+laesst sich aber mit `--worker-ist-ausgerollt` und genannter Version uebergehen, statt stumm
+abgeschaltet zu werden.
+
+**Benannte Grenze, nicht geschlossen:** aendert der Gastgeber seinen Plan spaeter, bleibt auf der
+Partyseite der Stand vom Anlegen. Der Text sagt das ehrlich („so, wie du ihn beim Anlegen der Partyseite
+hattest"), aber es gibt keinen Weg, ihn zu aktualisieren — der braeuchte wieder einen Schreibweg vom
+Planer zur Partyseite, und genau den hat die Bruecke aus guten Gruenden nicht bekommen.
+Der Pruefstand hat dazu den Satz beigesteuert, der den Wert der Karte erklaert: **der Plan liegt im
+localStorage des Geraets, auf dem er gebaut wurde — die Partyseite ist von ueberall abrufbar. Die Karte
+ist damit die einzige geraeteunabhaengige Kopie des Ablaufs.**
