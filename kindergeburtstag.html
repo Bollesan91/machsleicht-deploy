@@ -2785,7 +2785,17 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     const acts=_planTimes(ensurePlanActs(d,v));
     const gameCount=acts.filter(a=>a.kind==='game').length;
     const planStart=acts.length?acts[0].time:(state.time||''); const planEnd=acts.length?fmt(_toMin(acts[acts.length-1].time)+(+acts[acts.length-1].durationMin||10)):'';
-    const gByName={}; (v.games||[]).forEach(g=>gByName[g.name]=g);
+    /* 14.09.2026: Die Palette zieht aus ALLEN Varianten desselben Mottos und Altersbands, nicht nur
+       aus der aktiven. Vorher bot "Weiteres Spiel:" nur an, was in der aktiven Variante uebrig war —
+       bei 32 von 45 Motto/Alter-Kombinationen war das nichts; dann rendert die Zeile gar nicht und der
+       Plan wirkt festgenagelt (Bolle: "alle spiele sind fest"). Die AUTOMATISCHE Auswahl bleibt
+       unberuehrt: buildPlanActivities() zieht weiter aus v.games, die Aufwand-Stufe haelt also ihr
+       Versprechen. Erweitert wird nur, was man von Hand dazunehmen kann.
+       Aktive Variante zuerst und bei gleichem Namen gewinnend — ihre Fassung traegt die Alters- und
+       Ort-Anpassungen, die zu dieser Stufe gehoeren. */
+    const gByName={};
+    [v].concat((d.variants||[]).filter(x => x !== v))
+       .forEach(x => (x.games||[]).forEach(g => { if(!(g.name in gByName)) gByName[g.name]=g; }));
     const rows=acts.map(a=>{
       const fixed=(a.anchor==='start'||a.anchor==='end');
       const ctrl=fixed?'':`<span class="pl__ctrl"><button type="button" title="nach oben" onclick="planMove('${a.id}',-1)">▲</button><button type="button" title="nach unten" onclick="planMove('${a.id}',1)">▼</button><button type="button" class="pl__rm" title="entfernen" onclick="planRemove('${a.id}')">×</button></span>`;
@@ -2796,11 +2806,11 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     }).join('');
     // ungenutzte Pool-Spiele zum Hinzufuegen
     const inPlan=new Set(acts.filter(a=>a.kind==='game').map(a=>a.gameName));
-    const unused=(v.games||[]).filter(g=>!inPlan.has(g.name) && (!/schatz(suche|spur|jagd)/i.test(g.name||'')||/nacht|stirnlampe/i.test(g.name||'')));
+    const unused=Object.values(gByName).filter(g=>!inPlan.has(g.name) && (!/schatz(suche|spur|jagd)/i.test(g.name||'')||/nacht|stirnlampe/i.test(g.name||'')));
     window.__planPool=unused.map(g=>g.name);
     const addGames=unused.length?`<div class="pl__add"><span class="pl__add-lbl">Weiteres Spiel:</span> ${unused.map((g,i)=>`<button type="button" class="pl__chip" onclick="planAddGame(${i})">+ ${esc(_cleanGameTitle(g.name))}</button>`).join('')}</div>`:'';
     return `<article class="mod plan-mod${window.__planEdit?' plan-mod--edit':''}"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Dein Plan${planStart?' · '+esc(planStart)+'–'+esc(planEnd):''} · ${gameCount} Spiele</h3></header>
-      <p class="games-hint"><button type="button" class="plan-edit-toggle" id="planEditToggle" onclick="togglePlanEdit()" aria-pressed="${window.__planEdit?'true':'false'}">${window.__planEdit?'✓ Fertig angepasst':'✏️ Plan anpassen'}</button><span class="plan-edit-hint">Spiel antippen für die Anleitung.</span></p>
+      <p class="games-hint"><button type="button" class="plan-edit-toggle" id="planEditToggle" onclick="togglePlanEdit()" aria-pressed="${window.__planEdit?'true':'false'}">${window.__planEdit?'✓ Fertig angepasst':'✏️ Plan anpassen'}</button><span class="plan-edit-hint" id="planEditHint">${_planEditHintText()}</span></p>
       <div class="pl">${rows}</div>
       ${addGames}
       <div class="pl__addrow"><button type="button" class="pl__chip pl__chip--cust" onclick="togglePlanForm()">+ Eigener Programmpunkt</button>
@@ -3140,6 +3150,13 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
      Der Zustand lebt bewusst NICHT im gespeicherten state: er ist eine Ansichtssache
      dieses Besuchs, kein Teil der Party. Beim naechsten Oeffnen liest man wieder. */
   window.__planEdit = false;
+  /* Ein Ort fuer beide Zustaende des Hinweises: renderPlanList setzt ihn beim Zeichnen,
+     togglePlanEdit beim Umschalten. Vorher stand nur "Spiel antippen fuer die Anleitung" da —
+     dass man Spiele ueberhaupt tauschen kann, sagte niemand. */
+  function _planEditHintText(){
+    return window.__planEdit ? 'Jetzt tauschen, verschieben, entfernen — oder einen eigenen Punkt ergänzen.'
+                             : 'Spiel antippen für die Anleitung. Spiele tauschen geht über „Plan anpassen“.';
+  }
   function togglePlanEdit(){
     window.__planEdit = !window.__planEdit;
     const box = document.querySelector('.plan-mod');
@@ -3149,6 +3166,8 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
       btn.textContent = window.__planEdit ? '✓ Fertig angepasst' : '✏️ Plan anpassen';
       btn.setAttribute('aria-pressed', window.__planEdit ? 'true' : 'false');
     }
+    const hint = document.getElementById('planEditHint');
+    if(hint) hint.textContent = _planEditHintText();
     try{ if(window.plausible) plausible('plan_edit_mode', {props:{an: window.__planEdit ? '1' : '0'}}); }catch(e){}
   }
   // Bolle 07.09.: gerader Apostroph ueberall (Marken-Stil wie in "mach's"), gleich mit party-worker.js und paket-core.js. Einzeiler bleibt Einzeiler — Stufe 18 liest ihn so.
