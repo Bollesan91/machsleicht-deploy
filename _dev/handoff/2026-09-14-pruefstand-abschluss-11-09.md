@@ -100,3 +100,33 @@ Partyseite, und genau den hat die Brücke aus guten Gründen nicht bekommen.
   steht 0× in der Datenschutzerklärung. Empfehlung: lokal hosten wie bei den Schriften.
 - **Linter-Stufe für Fremd-Hosts** (Vorschlag des Prüfstands: Erlaubnisliste +
   Positivkontrolle als Abbruch) — wartet auf Bolles Wort.
+
+---
+
+## Nachtrag, 14.09. nachmittags — zweiter Ping ging auch nicht durch
+
+Bolle hat auf `/kindergeburtstag` selbst gefunden, was sieben Tage niemand gemessen hat.
+Alles steht im Befund-Doc unter **„Sechster Tag, 14.09. — der Planer hatte eine Sackgasse"**
+(Commit `fe0b50f6`), der Fix ist `f0a69877`. Für dich die zwei Stellen, an denen Arbeit liegt:
+
+**1. Nullzustand als Prüfwinkel.** `#toPlanBtn` trug `display:none` und wurde nur von
+`showPlanBtn()` sichtbar — seit `dfc1831c` (07.09.) erreichbar ausschließlich über
+`setExactAge()` mit gültiger Zahl. Das Feld zeigt `placeholder="7"` in 38 px. Wer die 7 für
+einen Wert hielt, hatte **keinen** Weg weiter. Das war keine Browser-Frage: der Weg war in
+jeder Umgebung zu. Jede Prüfung betrat den Planer mit gesetztem Alter (`setExactAge` direkt
+oder `?alter=`) — und in dem Zustand steht der Knopf immer.
+Befürchteter Fehlgriff für die Probe: eine Stufe, die nur „steht ein Knopf im Markup" prüft,
+meldet grün — der alte stand auch da. Sie muss den **berechneten** Zustand im Nullzustand
+messen (Motto gewählt, sonst nichts) und dass ein Klick in einem fokussierten Pflichtfeld endet.
+
+**2. Zweite, mechanisch greifbare Klasse:** `dfc1831c` hat eine Eingabeart ersetzt und dabei
+den einzigen Aufrufer eines Reveals mitentfernt. `pickAge` steht bis heute da und hat keinen
+Aufrufer. Eine Stufe „Funktion ohne Aufrufer" hätte sie gemeldet — und damit die Frage
+aufgeworfen, was den Knopf jetzt eigentlich zeigt.
+
+**Offen bei Bolle:** 32 von 45 Motto/Alter-Kombinationen bieten unter „Plan anpassen" keine
+einzige Alternative (alle 15 Mottos im Band 3–5). Gemessen am echten Renderpfad
+`renderElitePlan()` / `window.__planPool`, Positivkontrolle Piraten 6–8 = 1.
+
+**Und offen bei dir:** dieser Fix hat **keinen** unabhängigen Review — du warst nicht
+erreichbar. Bolle weiß das.
