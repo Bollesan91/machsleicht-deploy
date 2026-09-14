@@ -847,7 +847,12 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
-      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%;opacity:.6" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
+      <!-- Der Knopf steht IMMER und benennt die erste Luecke (Alter, dann Name) statt zu verschwinden.
+           Bis 14.09.2026 war er bis zur ersten gueltigen Alterszahl display:none — und seit die Alters-Karten
+           dem Zahlenfeld gewichen sind (dfc1831c, 07.09.), gab es genau einen Weg dahin: eine Zahl tippen.
+           Wer den Platzhalter "7" fuer einen Wert hielt, sah nie einen Knopf und kam nie zum Plan.
+           syncPlanGate() setzt Text und Deckkraft, revealPlan() ist das Verhaltens-Gate. -->
+      <button id="toPlanBtn" class="stage-advance__btn" style="margin-top:16px;width:100%;opacity:.6" onclick="revealPlan()">Erst Alter eintragen 🎂</button>
       <div id="nameReqHint" role="alert" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
       <p style="margin-top:14px;font-size:12px;color:#7a7a7a;display:flex;align-items:flex-start;gap:6px;line-height:1.45">🔒 <span><strong style="color:#5A6473">Privat &amp; ohne Konto.</strong> Was du eingibst, bleibt auf deinem Gerät und wird nicht automatisch übertragen. Erst wenn du selbst etwas erstellst — eine Partyseite oder Einladung — verlässt es dein Gerät.</span></p>
     </div>
@@ -2173,7 +2178,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
          zu einer Zahl, die nicht mehr im Feld stand. Ungueltig = kein Alter: Gruppe weg, Knopf weg, die
          Info-Box sagt, was fehlt, und revealPlan verweigert ohne exactAge. */
       state.age = null;
-      try{ const _b = document.getElementById('toPlanBtn'); if(_b) _b.style.display = 'none'; }catch(e){}
+      try{ syncPlanGate(); }catch(e){}   // 14.09.: Knopf bleibt stehen und sagt "Erst Alter eintragen" — frueher verschwand er hier spurlos
       try{ ['stage3','stage4','stage5'].forEach(id => { const s = document.getElementById(id); if(s) s.classList.remove('revealed'); }); }catch(e){}   // Re-Check MINOR 5: enthuellte Stufen zeigten sonst still den 6-8-Fallback
     }
     try{ renderAgeInfo(); }catch(e){}                       // (c) NUR die Info-Box — nie renderAges(),
@@ -2302,7 +2307,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     /* Review m2 (07.09.): Speicherstaende von vor dem Alters-Umbau tragen eine Gruppe, aber keine Zahl.
        Ohne Zahl kein Plan-Knopf und zurueck auf die Eckdaten — die eine Altersfrage gilt auch fuer Rueckkehrer. */
     const _ohneZahl = !state.exactAge;
-    try{ const tpb=document.getElementById('toPlanBtn'); if(tpb) tpb.style.display = _ohneZahl ? 'none' : ''; }catch(e){}
+    try{ syncPlanGate(); }catch(e){}   // 14.09.: sichtbar bleiben, die Beschriftung sagt was fehlt (frueher: ohne Zahl weg)
     if(_ohneZahl){ try{ showFlash('Bitte trag noch das genaue Alter ein — dann passt der Plan.'); }catch(e){} }
     goStage(_ohneZahl && (state.stage || 1) > 2 ? 2 : (state.stage || 1));
   }
@@ -2447,7 +2452,8 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   // Aus pickAge UND setExactAge gerufen -> kein Eintrittspfad strandet. Bewusst NICHT aus syncEckdaten/initFunnel (dort ist state.age
   // per initFunnel-Default '6-8' -> sonst Virgin-Vorschau des Buttons).
   function showPlanBtn(){
-    const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
+    const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';   // no-op, seit der Knopf immer steht — bleibt fuer Speicherstaende, die ihn versteckt tragen
+    try{ syncPlanGate(); }catch(e){}   // Beschriftung zieht mit: gueltiges Alter -> "Erst Namen eintragen" bzw. "Weiter zu deinem Plan"
     try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
     // Proaktiver Pflicht-Cue: nameReqHint zeigen, sobald der Button erscheint. KEIN Auto-Fokus hier — sonst zieht es den Blick ins
     // Namefeld, bevor der Nutzer den gerade erschienenen Button registriert (Reveal-Signal), erzeugt einen Fokus-Race mit
@@ -2490,15 +2496,18 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     a.href='/einladung/studio/?'+p.toString();
   }
   function revealPlan(){
+    /* Reihenfolge 14.09.2026: Alter vor Name — dieselbe Reihenfolge, die syncPlanGate() beschriftet,
+       und dieselbe, in der die Felder auf der Seite stehen. Sonst sagt der Knopf "Erst Alter eintragen"
+       und der Klick springt ins Namefeld darunter. */
+    if(!state.exactAge){   // Review m1: kein Plan ohne gueltiges Alter (1-14)
+      try{ const _a = document.getElementById('iqExactAge'); if(_a){ _a.setAttribute('aria-invalid','true'); _a.scrollIntoView({behavior:'smooth', block:'center'}); setTimeout(()=>{try{_a.focus()}catch(e){}}, 350); } renderAgeInfo(); }catch(e){}
+      return;
+    }
     if(!state.name || !state.name.trim()){
       const hint = document.getElementById('nameReqHint'); if(hint) hint.style.display='';
       const nm = document.getElementById('iqName');
       if(nm){ nm.setAttribute('aria-invalid','true'); nm.setAttribute('aria-describedby','nameReqHint'); const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }   // W-FORMERR: Fehler auch fuer Screenreader/Tastatur ansagen
       return;   // KEIN goStage(3) ohne Namen
-    }
-    if(!state.exactAge){   // Review m1: kein Plan ohne gueltiges Alter (1-14)
-      try{ const _a = document.getElementById('iqExactAge'); if(_a){ _a.setAttribute('aria-invalid','true'); _a.scrollIntoView({behavior:'smooth', block:'center'}); setTimeout(()=>{try{_a.focus()}catch(e){}}, 350); } renderAgeInfo(); }catch(e){}
-      return;
     }
     const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
     const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
@@ -3112,9 +3121,16 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     const tpb = document.getElementById('toPlanBtn');
     if(!tpb) return;
     // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
-    // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
-    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zu deinem Plan →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
-    else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
+    // (markiert das fehlende Feld, scrollt hin, fokussiert es — Alter wie Name). Hier nur visueller Zustand + Label.
+    /* 14.09.2026: deckt BEIDE Luecken ab, in der Reihenfolge der Felder auf der Seite — erst das Alter
+       (Zahlenfeld oben), dann der Name (Eckdaten darunter). Vorher kannte das Gate nur den Namen; das
+       fehlende Alter liess den Knopf verschwinden statt ihn zu beschriften. */
+    const fehltAlter = !state.exactAge;
+    const fehltName  = !state.name || !state.name.trim();
+    const h = document.getElementById('nameReqHint'); if(h && !fehltName) h.style.display='none';
+    if(fehltAlter){ tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Alter eintragen 🎂'; }
+    else if(fehltName){ tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
+    else { tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zu deinem Plan →'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
   /* Verhaltensgleich mit poss() in paket/core/paket-core.js — Stufe 18 prueft das.
