@@ -1,14 +1,15 @@
 # Einladungs-Trailer (Backlog P8-14) — Prototypen
 
-Stand 16.09.2026. Neun von 15 Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
+Stand 16.09.2026. Zehn von 15 Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
 **Ritter** (`ritter.html`, 24 s), **Feuerwehr** (`feuerwehr.html`, 24 s), **Dino** (`dino.html`, 24 s),
 **Meerjungfrau** (`meerjungfrau.html`, 24 s), **Baustelle** (`baustelle.html`, 24 s), **Prinzessin**
-(`prinzessin.html`, 24 s), **Detektiv** (`detektiv.html`, 24 s). Offen: Dschungel, Einhorn, Feen, Pferde, Safari, Superheld. Jede Seite rechnet aus
+(`prinzessin.html`, 24 s), **Detektiv** (`detektiv.html`, 24 s), **Dschungel** (`dschungel.html`, 24 s). Offen: Einhorn,
+Feen, Pferde, Safari, Superheld. Jede Seite rechnet aus
 einer Canvas-Animation ein **MP4 (H.264 + AAC) komplett im Browser** (WebCodecs + mp4-muxer 5.2.2, inline), mit Vorschau,
 Ton-Vorschau, Datei-Input fürs Kinderfoto (bleibt lokal, Standard: Demo-Kind Ida aus `bilder/demo/ida.jpg`) und einem
 Testprotokoll (WebCodecs, Encoder, AAC, Größe, Renderzeit, Wiedergabe, Teilen). **Stories (Bolles Arbeitsdokumente, je
 Motto gespeichert):** `STORY.md` (Weltraum), `STORY-piraten.md`, `STORY-ritter.md`, `STORY-feuerwehr.md`, `STORY-dino.md`,
-`STORY-meerjungfrau.md`, `STORY-baustelle.md`, `STORY-prinzessin.md`, `STORY-detektiv.md`.
+`STORY-meerjungfrau.md`, `STORY-baustelle.md`, `STORY-prinzessin.md`, `STORY-detektiv.md`, `STORY-dschungel.md`.
 
 ## Bauweise: ein Motor, N Drehbücher
 
@@ -16,11 +17,14 @@ Motto gespeichert):** `STORY.md` (Weltraum), `STORY-piraten.md`, `STORY-ritter.m
   (OfflineAudioContext + Synth-Helfer `tone/noise/bell/gull/bed`), Testprotokoll, MP4-Export. Ein Drehbuch liefert
   `{id, title, DUR, drawFrame(i), audio(ac, master, synth), photoDefault}` und ruft `startTrailer(MOTTO)`.
 - `build/src/piraten.js`, `ritter.js`, `feuerwehr.js`, `dino.js`, `meerjungfrau.js`, `baustelle.js`, `prinzessin.js`,
-  `detektiv.js` — Drehbücher (Szenen, Figuren, Texte, Ton). Baustelle bringt einen Schaufelarm mit Zwei-Gelenk-IK (`armIK`, Posen als
+  `detektiv.js`, `dschungel.js` — Drehbücher (Szenen, Figuren, Texte, Ton). Baustelle bringt einen Schaufelarm mit Zwei-Gelenk-IK (`armIK`, Posen als
   Winkel interpoliert) — Vorlage für weitere bewegliche Gliedmaßen. Prinzessin bringt eine fliegende Großfigur (Rosalie:
   Schweben, Aufsteigen, Rückkehr, Landung auf dem Turm) und Feuerwerk aus dem Hintergrundobjekt. Detektiv bringt
   Tag-Nacht-Wechsel über Farbkurven (`keyed(list,t,idx)` für Himmel, Häuser, Pflaster, Straße), Laternen, die mit der
-  Dämmerung angehen, Suchscheinwerfer-Kegel und eine Mitfahrer-Figur (Raffi hopst auf den Gepäckträger).
+  Dämmerung angehen, Suchscheinwerfer-Kegel und eine Mitfahrer-Figur (Raffi hopst auf den Gepäckträger). Dschungel
+  bringt ein Reittier mit Korb (Elefantin Ottilie: Schrittzyklus über vier Beine mit Hüftdrehung, schwingender Rüssel,
+  der sich für die Fontäne hebt), eine Pendel-Figur an der Liane (Kiki) und eine Großfigur, die nur den Kopf zurückdreht
+  statt sich zu spiegeln (Tamu).
 - Regeln aus Bolles Sichtungen: Sitzt das Kind in einem Fahrzeug, ist die Kabine geschlossen und nur Kopf, Helm und
   Schultern schauen heraus (sonst wirkt der Torso beinlos); Reiter brauchen sichtbare Beine oder Flosse. Am Ende muss
   alles Wichtige unter y=560 liegen, weil die Karte den oberen Teil deckt (Rosalie nickt deshalb nach unten).
@@ -59,6 +63,10 @@ Neues Motto: Drehbuch `build/src/<id>.js` nach dem Muster von `ritter.js` schrei
   der Ankerpunkt. Bei Mitfahrern die Blickrichtung so wählen, dass Anhängsel zur Bildmitte zeigen.
 - Was hinter einem Requisit verschwindet, fehlt: Raffis Ringelschwanz lag auf dem Träger komplett hinter dem Kekssack
   (Waschbär ohne Schwanz); Spitze und ein Ring müssen herausschauen.
+- Zeichenreihenfolge auch für Figuren: Tamu war vor `mount` gezeichnet und überholte Ottilie „durch" den Elefanten;
+  wer auf dem Pfad vor dem Reittier läuft, kommt nach `mount`. Ein Sprechblasen-Platz braucht drei freie Nachbarn:
+  Titeltext oben, Wimpel links, Figur unten — im Dschungel wurde der Titel dafür einzeilig (`fitFont`) und die Blase
+  schmaler.
 
 ## Offen
 
