@@ -1,0 +1,127 @@
+<title>__TITLE__</title>
+<style>
+@font-face{font-family:"Baloo 2";src:url(fonts/baloo2.woff2) format("woff2");font-weight:400 800;font-display:block}
+@font-face{font-family:"DM Sans";src:url(fonts/dmsans.woff2) format("woff2");font-weight:300 900;font-display:block}
+:root{color-scheme:dark;
+  --ground:#0B1029; --panel:#141A3F; --panel-2:#1B2250; --line:#2B3370; --ink:#E9EAFF; --muted:#A7A9D9; --dim:#6E73B0;
+  --accent:#9C27B0; --accent-deep:#6A1B9A; --star:#FFD54F; --ok:#7CE0C3; --bad:#FF6F91;
+  --display:"Baloo 2","DM Sans",system-ui,sans-serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  __THEME__}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;padding-block:18px 40px;padding-inline:16px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:18px;grid-template-columns:1fr;grid-template-areas:"top" "stage" "act" "proto" "edit" "foot"}
+@media(min-width:820px){.wrap{grid-template-columns:minmax(300px,420px) 1fr;column-gap:28px;grid-template-areas:"top top" "stage act" "stage proto" "stage edit" "foot foot";align-items:start}}
+.top{grid-area:top}.stage{grid-area:stage}.act{grid-area:act}.proto{grid-area:proto}.edit{grid-area:edit}.foot{grid-area:foot}
+h1{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.1;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:18px;margin:0 0 10px;color:var(--ink)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .rk{font-size:28px;display:inline-block}
+.lede{margin:8px 0 0;color:var(--muted);max-width:62ch}
+.stage{display:grid;gap:10px;justify-items:center}
+#cv{display:block;width:min(100%,calc(62vh * 9 / 16));aspect-ratio:9/16;height:auto;border-radius:22px;background:#04081F;box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 0 1px var(--line)}
+@media(min-width:820px){#cv{width:min(100%,calc(86vh * 9 / 16))}}
+.stagebar{display:flex;align-items:center;gap:10px;width:min(100%,calc(62vh * 9 / 16))}
+@media(min-width:820px){.stagebar{width:min(100%,calc(86vh * 9 / 16))}}
+.stagebar input[type=range]{flex:1;min-width:0;accent-color:var(--accent)}
+.tc{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;min-width:4.5ch;text-align:right}
+button{font:inherit;font-weight:700;padding:10px 14px;border-radius:12px;border:1px solid var(--line);cursor:pointer;background:var(--panel-2);color:var(--ink)}
+button:hover{border-color:var(--dim)}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--star);outline-offset:2px}
+button.primary{width:100%;padding:16px 18px;border:none;font-family:var(--display);font-weight:800;font-size:20px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+button.primary:disabled{opacity:.6;cursor:progress;box-shadow:none}
+button.ghost{background:transparent}
+.act{display:grid;gap:12px}
+.progress{min-height:22px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;border-radius:99px;background:var(--panel-2);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--star));transition:width .15s linear}
+#result{width:100%;border-radius:16px;background:#000;box-shadow:0 0 0 1px var(--line)}
+.proto{background:var(--panel);border-radius:18px;padding:16px 18px}
+.kv{margin:0;display:grid;gap:0}
+.kv>div{display:grid;grid-template-columns:9.5em 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
+.kv>div:first-child{border-top:none;padding-top:0}
+dt{color:var(--muted);font-size:13px;letter-spacing:.02em}
+dd{margin:0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;font-size:13px;font-weight:700;background:var(--panel-2);color:var(--muted);vertical-align:middle}
+.pill.ok{background:rgba(124,224,195,.16);color:var(--ok)}
+.pill.bad{background:rgba(255,111,145,.16);color:var(--bad)}
+.pill.wait{background:rgba(255,213,79,.14);color:var(--star)}
+.copyline{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:var(--ground);color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;user-select:all;-webkit-user-select:all;overflow-wrap:anywhere}
+.edit{background:var(--panel);border-radius:18px;padding:0 18px}
+.edit summary{cursor:pointer;padding:14px 0;font-family:var(--display);font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.edit summary::-webkit-details-marker{display:none}
+.edit summary::after{content:"+";color:var(--muted);font-size:22px;line-height:1}
+.edit[open] summary::after{content:"–"}
+.edit .fields{display:grid;gap:12px;padding:0 0 18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+label{display:block;font-size:12px;color:var(--muted);letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+input[type=text]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--ground);color:var(--ink);font:inherit;font-size:15px}
+input[type=file]{color:var(--muted);font-size:13px;max-width:100%}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.hint{font-size:13px;color:var(--dim);margin:0}
+.foot{color:var(--dim);font-size:13px;text-align:center;margin-top:6px}
+@media(prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+
+<main class="wrap">
+  <header class="top">
+    <div class="brand"><span class="rk" aria-hidden="true">__EMOJI__</span><h1>__TITLE__</h1></div>
+    <p class="lede">__LEDE__</p>
+  </header>
+
+  <section class="stage" aria-label="Vorschau">
+    <canvas id="cv" width="1080" height="1920" aria-label="Vorschau des Trailers"></canvas>
+    <div class="stagebar">
+      <button id="play" class="ghost" aria-label="Pause">⏸</button>
+      <button id="sound" class="ghost" aria-label="Ton einschalten">🔇 Ton aus</button>
+      <input type="range" id="scrub" min="0" max="__SCRUBMAX__" value="0" aria-label="Zeit im Video">
+      <span class="tc" id="tc">0,0 s</span>
+    </div>
+  </section>
+
+  <section class="act" aria-label="Video erzeugen">
+    <button class="primary" id="render">🎬 MP4 erzeugen</button>
+    <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
+    <div class="progress" id="progress" role="status" aria-live="polite">Bereit. __DURTEXT__ s · 1080×1920 · 30 fps · Ton, wenn der Browser AAC kann</div>
+    <video id="result" playsinline controls hidden></video>
+    <button id="share" hidden>📤 Video teilen (z. B. WhatsApp)</button>
+  </section>
+
+  <section class="proto" aria-label="Testprotokoll">
+    <h2>Testprotokoll</h2>
+    <dl class="kv">
+      <div><dt>Gerät</dt><dd id="k-ua">…</dd></div>
+      <div><dt>WebCodecs</dt><dd id="k-wc"><span class="pill wait">prüfe …</span></dd></div>
+      <div><dt>H.264-Encoder</dt><dd id="k-codec"><span class="pill wait">prüfe …</span></dd></div>
+      <div><dt>Ton (AAC)</dt><dd id="k-aac"><span class="pill wait">prüfe …</span></dd></div>
+      <div><dt>Videodatei</dt><dd id="k-file">– noch nicht erzeugt</dd></div>
+      <div><dt>Renderzeit</dt><dd id="k-time">–</dd></div>
+      <div><dt>Wiedergabe</dt><dd id="k-play">–</dd></div>
+      <div><dt>Teilen mit Datei</dt><dd id="k-share">–</dd></div>
+    </dl>
+    <p class="copyline" id="copyline">Protokoll erscheint hier nach dem Rendern.</p>
+  </section>
+
+  <details class="edit">
+    <summary>Text und Foto anpassen</summary>
+    <div class="fields">
+      <div class="row3">
+        <div><label for="name">Name des Kindes</label><input type="text" id="name" value="__NAME__"></div>
+        <div><label for="age">Alter</label><input type="text" id="age" value="__AGE__" inputmode="numeric"></div>
+      </div>
+      <div class="row2">
+        <div><label for="date">Datum</label><input type="text" id="date" value="__DATE__"></div>
+        <div><label for="time">Uhrzeit</label><input type="text" id="time" value="__TIME__"></div>
+      </div>
+      <div><label for="place">Ort</label><input type="text" id="place" value="__PLACE__"></div>
+      <div><label for="photo">Kinderfoto fürs Bullauge</label><input type="file" id="photo" accept="image/*"><p class="hint">Bleibt auf diesem Gerät. Ohne Auswahl sitzt das Demo-Kind Ida im Fenster.</p></div>
+      <div><label for="zoom">Foto-Zoom <span id="zoomv">1,00</span></label><input type="range" id="zoom" min="1" max="2.2" step="0.05" value="1"></div>
+    </div>
+  </details>
+
+  <footer class="foot">machsleicht.de · Prototyp vom 15.09.2026 · Foto und Video verlassen dein Gerät nicht</footer>
+</main>
+
+<script>/*__MUXER__*/</script>
+<script>/*__CORE__*/</script>
+<script>/*__MOTTO__*/</script>
