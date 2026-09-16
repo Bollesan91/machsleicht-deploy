@@ -60,7 +60,7 @@ function valley(i,t){ const ox=valleyX(i); if(ox>W+700) return; ctx.save(); ctx.
   /* Palmentor + Lianenbanner */ for(const [px,h] of [[560,600],[1080,620]]){ ctx.strokeStyle='#8A5A2B'; ctx.lineWidth=26; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(px,1300); ctx.quadraticCurveTo(px+(px<800?30:-30),1300-h*0.5,px+(px<800?40:-40),1300-h); ctx.stroke(); const tx=px+(px<800?40:-40), ty=1300-h; for(let k=0;k<6;k++){ ctx.save(); ctx.translate(tx,ty); ctx.rotate(-3.0+k*0.6+0.05*Math.sin(t*1.3)); ctx.fillStyle=(k%2)?'#2E8B57':'#3CB371'; ctx.beginPath(); ctx.ellipse(76,0,86,24,0,0,6.29); ctx.fill(); ctx.restore(); } }
   ctx.strokeStyle='#5A7A3A'; ctx.lineWidth=8; ctx.beginPath(); ctx.moveTo(600,700); ctx.quadraticCurveTo(820,800,1040,680); ctx.stroke(); { const name=nameVal(); ctx.fillStyle='#F2E8D5'; rrect(700,740,300,110,14); ctx.fill(); ctx.strokeStyle='#8A5A2B'; ctx.lineWidth=6; rrect(700,740,300,110,14); ctx.stroke(); dots([[714,754,4],[986,754,4],[714,836,4],[986,836,4]],'#E8C15A'); text('Willkommen,',850,772,fontB(34,700),'#14352A'); text(name+'!',850,818,fitFont(name+'!',270,48,26),'#A63F25'); }
   for(const [bx,by,c] of [[560,560,'#E8C15A'],[604,528,'#A63F25'],[1020,540,'#FF6F91'],[1058,508,'#7CE0C3']]){ const yy=by+8*Math.sin(t*2+bx); ctx.strokeStyle='rgba(255,255,255,.7)'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(bx,yy+32); ctx.lineTo(bx+4,yy+130); ctx.stroke(); ctx.fillStyle=c; ctx.beginPath(); ctx.ellipse(bx,yy,26,32,0,0,6.29); ctx.fill(); }
-  nestAndEgg(t); steggi(t);
+  nestAndEgg(t); steggi(t); if(t>=16.2&&t<20.2) partyHat(HAT_HOME.x,HAT_HOME.y,-0.2);   /* Hut sitzt auf Steggi und faehrt mit der Szene ein */
   ctx.restore(); }
 function steggi(t){ const x=STEG_X, by=GROUND_Y; const wag=0.3*Math.sin(t*4);
   ctx.strokeStyle='#8FB56A'; ctx.lineWidth=36; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(x+90,by-120); ctx.quadraticCurveTo(x+170,by-130+wag*30,x+210,by-60); ctx.stroke(); dots([[x+205,by-58,10],[x+226,by-70,10]],'#A63F25');
@@ -175,7 +175,7 @@ function drawFrame(i){ i=clamp(i,0,P_N-1); const t=i/FPS; const a=shakeAmp(t);
   if(d&&!d.behind) rex(d,t,i);
   leaves(t);
   const p=pia(t,i); if(p) piaDraw(p.x,p.y,p.dir,p.flap,p.perched);
-  if(t>=16.2){ const hp=hatPos(t); partyHat(hp.x,hp.y,hp.rot); }
+  if(t>=20.2){ const hp=hatPos(t); partyHat(hp.x,hp.y,hp.rot); }
   volcanoConfetti(i,t,14.2,2.6); volcanoConfetti(i,t,19.3,2.8);
   ctx.restore();
   texts(t,i); }

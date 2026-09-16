@@ -1,18 +1,20 @@
 # Einladungs-Trailer (Backlog P8-14) — Prototypen
 
-Stand 16.09.2026. Fünf Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
-**Ritter** (`ritter.html`, 24 s), **Feuerwehr** (`feuerwehr.html`, 24 s), **Dino** (`dino.html`, 24 s). Jede Seite
-rechnet aus einer Canvas-Animation ein **MP4 (H.264 + AAC) komplett im Browser** (WebCodecs + mp4-muxer 5.2.2, inline),
-mit Vorschau, Ton-Vorschau, Datei-Input fürs Kinderfoto (bleibt lokal, Standard: Demo-Kind Ida aus `bilder/demo/ida.jpg`)
-und einem Testprotokoll (WebCodecs, Encoder, AAC, Größe, Renderzeit, Wiedergabe, Teilen). Stories: `STORY.md` (Weltraum),
-`STORY-piraten.md`, `STORY-ritter.md`, `STORY-feuerwehr.md`, `STORY-dino.md`.
+Stand 16.09.2026. Sechs Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
+**Ritter** (`ritter.html`, 24 s), **Feuerwehr** (`feuerwehr.html`, 24 s), **Dino** (`dino.html`, 24 s),
+**Meerjungfrau** (`meerjungfrau.html`, 24 s). Jede Seite rechnet aus einer Canvas-Animation ein **MP4 (H.264 + AAC)
+komplett im Browser** (WebCodecs + mp4-muxer 5.2.2, inline), mit Vorschau, Ton-Vorschau, Datei-Input fürs Kinderfoto
+(bleibt lokal, Standard: Demo-Kind Ida aus `bilder/demo/ida.jpg`) und einem Testprotokoll (WebCodecs, Encoder, AAC, Größe,
+Renderzeit, Wiedergabe, Teilen). Stories: `STORY.md` (Weltraum), `STORY-piraten.md`, `STORY-ritter.md`,
+`STORY-feuerwehr.md`, `STORY-dino.md`, `STORY-meerjungfrau.md`.
 
 ## Bauweise: ein Motor, N Drehbücher
 
 - `build/src/core.js` — der Motor: Konstanten, Zeichen-/Easing-Helfer, Foto-Logik, Vorschau-Loop, Ton-Engine
   (OfflineAudioContext + Synth-Helfer `tone/noise/bell/gull/bed`), Testprotokoll, MP4-Export. Ein Drehbuch liefert
   `{id, title, DUR, drawFrame(i), audio(ac, master, synth), photoDefault}` und ruft `startTrailer(MOTTO)`.
-- `build/src/piraten.js`, `ritter.js`, `feuerwehr.js`, `dino.js` — Drehbücher (Szenen, Figuren, Texte, Ton).
+- `build/src/piraten.js`, `ritter.js`, `feuerwehr.js`, `dino.js`, `meerjungfrau.js` — Drehbücher (Szenen, Figuren,
+  Texte, Ton).
 - `build/src/shell.html` — Seitengerüst mit Platzhaltern (Titel, Lede, Theme, Defaults, Skripte).
 - `build/build-motto.js <id>` — setzt Muxer, Core, Drehbuch und Ida-DataURI in die Shell und schreibt
   `build/<id>.html` **und** `../<id>.html` (diesen Ordner). Motto-Metadaten (Titel, Emoji, Theme, Defaults) stehen oben
@@ -39,6 +41,10 @@ Neues Motto: Drehbuch `build/src/<id>.js` nach dem Muster von `ritter.js` schrei
   („Party?!" lag auf der Fahne mit dem Törtchen, das Rex gerade entdeckt).
 - Seitenwechsel einer Großfigur nicht per Spiegelung mitten im Bild (kopfloser Rumpf, Kopf aus dem Bild): erst hinaus,
   dann umgedreht wieder hinein (Rex saust hinter Trixi vorbei und kommt zurück).
+- Begegnungen zweier Figuren in der Höhe staffeln (Bolles Catch im Dino: Rex' Kopf auf Höhe von Trixis Schild las sich
+  als Kollision). Meerjungfrau: Hektor bleibt unterhalb des Kindes auf Kringels Höhe.
+- Requisiten, die zur einfahrenden Szene gehören (Steggis Hut, Puffis Hut), innerhalb der Szenen-Gruppe zeichnen; in
+  Bildkoordinaten schwebten sie 1,5 s neben der Figur, bis die Szene angekommen war.
 
 ## Offen
 
