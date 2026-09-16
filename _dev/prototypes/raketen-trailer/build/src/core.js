@@ -50,6 +50,7 @@ function demoPhoto(){ const c=document.createElement('canvas'); c.width=c.height
   g.strokeStyle='#b5453c'; g.lineWidth=12; g.lineCap='round'; g.beginPath(); g.arc(240,300,70,0.25*Math.PI,0.75*Math.PI); g.stroke();
   const img=new Image(); img.src=c.toDataURL(); return img; }
 photo=demoPhoto();
+function drawPhotoInRect(x,y,w,h,zoom){ if(photo&&photo.complete&&photo.naturalWidth){ const sc=Math.max(w/photo.naturalWidth,h/photo.naturalHeight)*zoom, dw=photo.naturalWidth*sc, dh=photo.naturalHeight*sc; ctx.drawImage(photo,x+w/2-dw/2,y+h/2-dh/2,dw,dh); } }
 function drawPhotoInCircle(cx,cy,r,zoom){ if(photo&&photo.complete&&photo.naturalWidth){ const d=2*r*zoom, sc=Math.max(d/photo.naturalWidth,d/photo.naturalHeight), dw=photo.naturalWidth*sc, dh=photo.naturalHeight*sc; ctx.drawImage(photo,cx-dw/2,cy-dh/2,dw,dh); } }
 function initPhoto(defaultDataUri){
   if(defaultDataUri&&defaultDataUri.startsWith('data:')){ const img=new Image(); img.onload=()=>{photo=img; redraw();}; img.src=defaultDataUri; }
