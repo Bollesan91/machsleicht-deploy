@@ -1,20 +1,22 @@
 # Einladungs-Trailer (Backlog P8-14) — Prototypen
 
-Stand 16.09.2026. Sechs Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
+Stand 16.09.2026. Sieben Mottos laufen: **Weltraum** (`index.html`, 22 s), **Piraten** (`piraten.html`, 24 s),
 **Ritter** (`ritter.html`, 24 s), **Feuerwehr** (`feuerwehr.html`, 24 s), **Dino** (`dino.html`, 24 s),
-**Meerjungfrau** (`meerjungfrau.html`, 24 s). Jede Seite rechnet aus einer Canvas-Animation ein **MP4 (H.264 + AAC)
-komplett im Browser** (WebCodecs + mp4-muxer 5.2.2, inline), mit Vorschau, Ton-Vorschau, Datei-Input fürs Kinderfoto
-(bleibt lokal, Standard: Demo-Kind Ida aus `bilder/demo/ida.jpg`) und einem Testprotokoll (WebCodecs, Encoder, AAC, Größe,
-Renderzeit, Wiedergabe, Teilen). Stories: `STORY.md` (Weltraum), `STORY-piraten.md`, `STORY-ritter.md`,
-`STORY-feuerwehr.md`, `STORY-dino.md`, `STORY-meerjungfrau.md`.
+**Meerjungfrau** (`meerjungfrau.html`, 24 s), **Baustelle** (`baustelle.html`, 24 s). Jede Seite rechnet aus einer
+Canvas-Animation ein **MP4 (H.264 + AAC) komplett im Browser** (WebCodecs + mp4-muxer 5.2.2, inline), mit Vorschau,
+Ton-Vorschau, Datei-Input fürs Kinderfoto (bleibt lokal, Standard: Demo-Kind Ida aus `bilder/demo/ida.jpg`) und einem
+Testprotokoll (WebCodecs, Encoder, AAC, Größe, Renderzeit, Wiedergabe, Teilen). **Stories (Bolles Arbeitsdokumente, je
+Motto gespeichert):** `STORY.md` (Weltraum), `STORY-piraten.md`, `STORY-ritter.md`, `STORY-feuerwehr.md`, `STORY-dino.md`,
+`STORY-meerjungfrau.md`, `STORY-baustelle.md`.
 
 ## Bauweise: ein Motor, N Drehbücher
 
 - `build/src/core.js` — der Motor: Konstanten, Zeichen-/Easing-Helfer, Foto-Logik, Vorschau-Loop, Ton-Engine
   (OfflineAudioContext + Synth-Helfer `tone/noise/bell/gull/bed`), Testprotokoll, MP4-Export. Ein Drehbuch liefert
   `{id, title, DUR, drawFrame(i), audio(ac, master, synth), photoDefault}` und ruft `startTrailer(MOTTO)`.
-- `build/src/piraten.js`, `ritter.js`, `feuerwehr.js`, `dino.js`, `meerjungfrau.js` — Drehbücher (Szenen, Figuren,
-  Texte, Ton).
+- `build/src/piraten.js`, `ritter.js`, `feuerwehr.js`, `dino.js`, `meerjungfrau.js`, `baustelle.js` — Drehbücher
+  (Szenen, Figuren, Texte, Ton). Baustelle bringt einen Schaufelarm mit Zwei-Gelenk-IK (`armIK`, Posen als Winkel
+  interpoliert) — Vorlage für weitere bewegliche Gliedmaßen.
 - `build/src/shell.html` — Seitengerüst mit Platzhaltern (Titel, Lede, Theme, Defaults, Skripte).
 - `build/build-motto.js <id>` — setzt Muxer, Core, Drehbuch und Ida-DataURI in die Shell und schreibt
   `build/<id>.html` **und** `../<id>.html` (diesen Ordner). Motto-Metadaten (Titel, Emoji, Theme, Defaults) stehen oben
