@@ -10,8 +10,8 @@
 
 | Figur | Rolle | Aussehen |
 |---|---|---|
-| **Das Geburtstagskind** | Bauleiter(in) am Steuer von Brummi; **Foto im Gesicht unter dem gelben Bauhelm** | Bauhelm mit Krempe, orange Warnweste mit Reflexstreifen, blaues Hemd, zwei Hände an den Hebeln |
-| **Brummi**, der Bagger | Reittier mit Raupenketten und Schaufelarm | gelb mit schwarz-gelbem Warnband, offene Kabine mit Dach, Auspuff pufft, Party-Wimpel mit Törtchen auf dem Dach |
+| **Das Geburtstagskind** | Bauleiter(in) am Steuer von Brummi; **Foto im Gesicht unter dem gelben Bauhelm, schaut aus dem Kabinenfenster** (Bolle 16.09.: Kabine geschlossen, sonst sieht das Kind beinlos aus) | Bauhelm mit Krempe, orange Warnweste mit Reflexstreifen, blaues Hemd, eine Hand auf dem Fensterrand |
+| **Brummi**, der Bagger | Reittier mit Raupenketten und Schaufelarm | gelb mit schwarz-gelbem Warnband, geschlossene Kabine mit Fenster und Tür, Auspuff pufft, Party-Wimpel mit Törtchen auf dem Dach |
 | **Summi**, die Baustellen-Drohne | fliegt voraus, zeigt den Weg, trägt den Bauplan (Planauge) | orange, zwei Rotoren, Mini-Bauhelm, Kulleraugen, Planrolle unterm Bauch |
 | **Kranmeister Haki**, der Kranhaken | kommt an der Baustellenstraße vom Ausleger herunter, Brummi gibt ihm mit der Schaufel High-Five; an der Party-Baustelle hängt er am großen Turmdrehkran und hält das Willkommen-Schild | gelber Block mit Gesicht, großer Stahlhaken |
 | **Der Turmdrehkran** | Wahrzeichen der Party-Baustelle: Gitterturm, Kabine, Ausleger mit Laufkatze, Wimpelkette unterm Ausleger; Summi landet auf der Auslegerspitze | gelbes Gitter, graues Gegengewicht |
