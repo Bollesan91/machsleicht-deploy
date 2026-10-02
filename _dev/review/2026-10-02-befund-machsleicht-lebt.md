@@ -75,8 +75,8 @@ Der Plan v10 ist gegen genau diese Ursache gebaut (keine Matrix, Werkzeug statt 
 
 Drei Punkte, die der Plan nicht abdeckt:
 
-1. **Der Umzug kostet die funktionierende Haelfte.** heyhurra.de startet bei Bing, DuckDuckGo und Ecosia genauso bei null wie bei Google. Ohne Weiterleitung — die der Plan verbietet — verliert die neue Marke drei Viertel der heutigen Besucherquelle.
-2. **Zwei Seiten konkurrieren bei Bing** um dieselben Anfragen, solange machsleicht.de dort rankt und heyhurra.de dieselben Themen neu schreibt.
+1. **Der Umzug kostet die funktionierende Haelfte.** <neu> startet bei Bing, DuckDuckGo und Ecosia genauso bei null wie bei Google. Ohne Weiterleitung — die der Plan verbietet — verliert die neue Marke drei Viertel der heutigen Besucherquelle.
+2. **Zwei Seiten konkurrieren bei Bing** um dieselben Anfragen, solange machsleicht.de dort rankt und <neu> dieselben Themen neu schreibt.
 3. **Instagram haengt an der Marke, nicht an der Domain.** Das ist der einzige Kanal, der einen Umzug ueberleben koennte, wenn er aktiv mitgenommen wird.
 
 **Dritter Weg, bisher nicht betrachtet:** auf machsleicht.de die 82 erzeugten Seiten entfernen und nur Werkzeug plus handgeschriebene Seiten stehen lassen. Das greift die wahrscheinlichste Ursache an, kostet nach diesen Zahlen kaum Verkehr, laesst Bing und Instagram unberuehrt, und der Umzug bliebe als Rueckfallebene, falls Google in zwei Monaten nicht reagiert. Entscheidung liegt bei Bolle, offen seit 02.10.2026.
