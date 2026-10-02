@@ -3143,3 +3143,19 @@ familienabhaengig aufbereiten wie der Worker.
 **Danach in dieser Reihenfolge:** Stufe 70 verdrahten (Bau-Session) · `&& --gegenprobe` an
 Stufe 67 zurueck, sobald die echte Gegenprobe versioniert ist · JSON-LD-Stufe fuer die
 og-Bilder · `gegenprobe-beisst-<stufe>` gegen die fuenf ungeprueften Bestands-Gegenproben.
+
+## 2026-10-01 — Relaunch-Plan (neue Domain, „Geburtstags-OS") gegatet: v10, 0 MAJOR
+
+**Gate-Stand (aus einem Lauf je Zeile, frischer zielblinder Diff-Re-Check je Fassung):**
+
+| Fassung | MAJOR | MINOR | Stand |
+|---|---|---|---|
+| v6 | 0 | 7 | fertig nach Regel (Inhalt) |
+| v7 (E21 Illustrationen) | 1 | 4 | behoben in v8 |
+| v8 (E21a Geltungsbereich) | 2 | 4 | behoben in v9 |
+| v9 (N1–N6) | 1 | 8 | behoben in v10 |
+| **v10 (P1–P10)** | **0** | 5 | **gegateter Plan**; MINORs als Pflege in `-v10-fixliste.md` (nicht eingearbeitet) |
+
+Dateien (alle uncommitted, `_dev/review/2026-10-01-*`): Plan-Prompt (Fassung 4), Faktenbasis, Pruefauftrag, Plan v1–v10, Fixlisten v1–v10, `relaunch-entscheidungen.md` (E1 = heyhurra; E2–E20 offen; E21/E21a entschieden; E21b Setzung des Koordinators, von Bolle zu bestaetigen), Startseiten-Mockup (nur Qualitaetsbeispiel). LEKTIONEN L41 + drei Nachtraege (Fixlisten-Annahmen und getippte Mengengroessen erzeugten an einem Tag dreimal den MAJOR der naechsten Runde).
+
+**Naechste Schritte = Bolles Klicks (Phase 0, S1–S8):** GSC-Exporte (S1), Umami (S2), Cloudflare-Token fuer KV-Zaehlung (S4), E2–E20 + E21b entscheiden (S6), DPMA/TMview/Google fuer heyhurra (S7), Registrierung (S8). Claude: nichts vor S6. Kein Commit ohne „Ende".

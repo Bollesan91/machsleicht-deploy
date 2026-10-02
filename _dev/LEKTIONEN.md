@@ -686,3 +686,37 @@ Pruefung gehoert an die Zusicherung, nicht an das Werkzeug.
 
 Verwandt, aber nicht dasselbe wie L39: dort versagt die Pruefung, hier haelt die Regel und
 verfehlt trotzdem, was sie schuetzen sollte.
+
+## L41 — Jeder Fix hat Folgestellen, und die Folgestellen sind die naechste MAJOR-Quelle
+
+**Datum:** 01.10.2026 · **Kontext:** Relaunch-Plan v1 → v2 → v3 (Koordinator-Session mit BDAY/pRÜF).
+
+Die unabhaengige Pruefung von Plan v1 fand 2 MAJOR. Alle 19 Befunde wurden umgesetzt. Der
+frische Diff-Re-Check von v2 fand dann **4 MAJOR — und alle vier waren fix-induziert**: Fix 11
+(Live-Demo-Partyseite als iframe) scheiterte an einer Worker-Zeile, die kein Fix gelesen hatte
+(`frame-ancestors 'self'`, Z. 1334); Fix 1 (Schluessel-Rotation) baute auf `git log -S're_'`,
+einem Substring-Artefakt mit 111 Treffern bei 0 echten Keys; Fix 3 („Stufe 73 ohne _dev-Ausnahme")
+machte die Stufe durch Konstruktion rot, weil der Plan selbst Dateien mit dem Alt-Host anlegt;
+Fix 7 (init-Commit mit `[skip netlify]` + `--ff-only`) liess laut Netlify-Doku den Livegang-Deploy
+ausfallen. Dazu 20 MINOR, fast alle derselben Klasse: eine Zahl, eine Regel oder ein Schrittverweis
+wurde an EINER Stelle geaendert, die drei bis zehn Folgestellen (Phasenuebersicht, Tabellen D/E/F/G,
+Belege, Abhaengigkeiten, Protokoll) nicht.
+
+**Muster:** Ein Fix aendert eine Aussage; die Aussage lebt aber an mehreren Orten und hat
+Vorbedingungen, die der Fix nicht geprueft hat. Die Pruefung des Fixes im selben Kopf findet das
+nicht, weil derselbe Kopf dieselben Orte uebersehen hat.
+
+**Regel:**
+1. Vor jedem Fix: `grep` ueber das ganze Dokument nach Schrittnummer, Zahl und Begriff — die
+   Trefferliste IST die Fixliste, nicht die eine Stelle aus dem Befund.
+2. Jeder Fix, der ein Kommando oder eine Konfiguration einfuehrt, wird vor dem Schreiben einmal
+   ausgefuehrt bzw. gegen die Doku gelesen (das `-S`-Artefakt und das `[skip netlify]`-Verhalten
+   waren in zwei Minuten messbar).
+3. Diff-Re-Check immer durch frische Augen und immer mit den drei Fragen: umgesetzt? Folgestellen?
+   neue Vorbedingung? — nie nur „ist der Befund weg?".
+4. Kontrollzahlen in Belegen ableiten, nie tippen (S6 „20 Zeilen", S43 „4/4" waren beide getippt
+   und beide falsch, vgl. L36).
+
+**Nachtrag L41 (01.10. abends):** Auch Fixlisten haben Vorbedingungen. Die Fixliste v7→v8 nannte die `emoji:`-Felder in `js/motto-data.js` „die Motto-Kachel des Planers" — gemessen waren es sechs Spiel-Karten; die Motto-Kacheln lagen in `const MOTTOS` einer anderen Datei. Der Autor baute die falsche Annahme wortgetreu ein, der naechste Re-Check fand sie als MAJOR. Regel 2 gilt fuer den, der die Fixliste schreibt, genauso wie fuer den, der sie umsetzt: jede Dateinennung in einer Anweisung einmal mit `git show` aufmachen, bevor sie zur Anweisung wird.
+
+**Nachtrag L41 (01.10. spaet):** Dritter Treffer am selben Tag, dieselbe Klasse: die Fixliste v8→v9 schrieb „N = L + 2 + 3" und „F = L + 2 + 3" als Kontrollzahlen hin — getippt, nicht aus der Dateiliste abgeleitet. `planen/index.html` steckt in beiden Mengen (Seiten-Dokument der Allowlist UND Planer-Datei), die Summe stimmte an einer Stelle nicht. Regel fuer Fixlisten: eine Kontrollzahl, die eine Mengengroesse behauptet, wird aus den aufgezaehlten Elementen gebildet (Elemente hinschreiben, dann zaehlen), nie als Formel geschaetzt — und die Mengen vorher auf Ueberschneidung pruefen.
